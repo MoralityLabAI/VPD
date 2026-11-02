@@ -1,0 +1,105 @@
+{
+  "benchmark_id": "7d0528afae3369fcbfa4289be09bd2e453b2cc8b085d43dfdc585557ddb8da22",
+  "design": {
+    "categories": 8,
+    "components": 128,
+    "discovery_and_cluster_validation_semantic_statistics": true,
+    "production_shaped_v1_bundle_verified_first": true,
+    "scenarios": 2
+  },
+  "scenarios": [
+    {
+      "base_bundle_verification": {
+        "clusters": 32,
+        "components": 128,
+        "exact_partition": true,
+        "packets": 32,
+        "schema": "sch.vpd-sae-cluster-verification.v1",
+        "status": "pass"
+      },
+      "candidate_allocation": {
+        "missing_or_untrusted_authority": 4,
+        "other_invalid": 4,
+        "replayed": 4,
+        "revoked": 4,
+        "scope_invalid": 4,
+        "signature_invalid": 4,
+        "time_inactive": 4,
+        "valid_authority": 4
+      },
+      "expected_v2_admitted": true,
+      "expected_v3_admitted": true,
+      "observed_v2_admitted": true,
+      "observed_v3_admitted": true,
+      "scenario_id": "four_mechanisms_semantically_stable_admitted",
+      "status": "pass",
+      "v2_mismatch_count": 0,
+      "v3_allocation": {
+        "missing_or_untrusted_authority": 4,
+        "other_invalid": 4,
+        "replayed": 4,
+        "revoked": 4,
+        "scope_invalid": 4,
+        "signature_invalid": 4,
+        "time_inactive": 4,
+        "valid_authority": 4
+      },
+      "v3_mismatch_count": 0,
+      "v3_semantic_replicate_count": 40
+    },
+    {
+      "base_bundle_verification": {
+        "clusters": 32,
+        "components": 128,
+        "exact_partition": true,
+        "packets": 32,
+        "schema": "sch.vpd-sae-cluster-verification.v1",
+        "status": "pass"
+      },
+      "candidate_allocation": {
+        "missing_or_untrusted_authority": 4,
+        "other_invalid": 4,
+        "replayed": 4,
+        "revoked": 4,
+        "scope_invalid": 4,
+        "signature_invalid": 4,
+        "time_inactive": 4,
+        "valid_authority": 4
+      },
+      "expected_v2_admitted": true,
+      "expected_v3_admitted": false,
+      "observed_v2_admitted": true,
+      "observed_v3_admitted": false,
+      "scenario_id": "condition_partition_confound_rejected",
+      "status": "pass",
+      "v2_mismatch_count": 0,
+      "v3_allocation": {
+        "missing_or_untrusted_authority": 1,
+        "other_invalid": 1,
+        "replayed": 1,
+        "revoked": 1,
+        "scope_invalid": 1,
+        "signature_invalid": 1,
+        "time_inactive": 1,
+        "valid_authority": 1
+      },
+      "v3_mismatch_count": 8,
+      "v3_semantic_replicate_count": 40
+    }
+  ],
+  "schema": "sch.vpd-cluster-candidate-semantic-strata-admission-benchmark.v3",
+  "scientific_boundary": {
+    "does_not_admit_an_empirical_bonsai_candidate": true,
+    "execution_authorized": false,
+    "model_inference_performed": false,
+    "synthetic_effects_only": true,
+    "weights_loaded_or_mutated": false
+  },
+  "seed": 40923,
+  "source": {
+    "admission_v2_runner_sha256": "97ef50383691014371d420722fe4f04f5c3a02ae879be43e0db41aff72ba15a3",
+    "admission_v3_runner_sha256": "838237c3e624e0b114ca4d02e181892a859ec41645157fe590a477ab40704469",
+    "runner_sha256": "d34bd63bc5f26f07c960c935a1297fbe814ac49221b157b56205cc6b993f2f14"
+  },
+  "status": "pass"
+}

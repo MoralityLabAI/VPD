@@ -1,0 +1,56 @@
+{
+  "status": "completed_responses_validated_for_reuse",
+  "source": "artifacts\\nanbeige_reasoning\\nanbeige_skill_comparison_run_v2",
+  "source_manifest_sha256": "8033d3a8d3066aafb25a9eb27a21b7b16a607d00abc61ccf67f29978c21e031b",
+  "validated_responses": 45,
+  "capped_responses": 11,
+  "interrupted_call_output_tokens": 0,
+  "cleanup": {
+    "server_stopped": true,
+    "records": 45
+  },
+  "new_model_calls": 0,
+  "thermal": {
+    "policy": {
+      "pause_c": 85,
+      "resume_c": 80,
+      "stop_c": 87,
+      "poll_seconds": 0.02,
+      "cooling_timeout_seconds": 180,
+      "idle_to_decode_ratio": 4.0,
+      "minimum_idle_seconds": 0.02,
+      "warm_minimum_idle_seconds": 0.3,
+      "warm_c": 80,
+      "wall_seconds": 18000,
+      "synchronize_after_decode": true,
+      "idle_temperature_bands": [
+        {
+          "below_c": 74,
+          "ratio": 0.5
+        },
+        {
+          "below_c": 80,
+          "ratio": 1.0
+        },
+        {
+          "below_c": 83,
+          "ratio": 2.0
+        },
+        {
+          "below_c": null,
+          "ratio": 4.0
+        }
+      ],
+      "cooling_settle_seconds": 2.0,
+      "cooling_poll_seconds": 0.05,
+      "check_after_decode": true
+    },
+    "calls": 19321,
+    "peak_temperature_c": 86.0,
+    "cooling_pauses": 127,
+    "idle_seconds": 5623.882500004636,
+    "elapsed_seconds": 7023.437000000005
+  },
+  "next_action": "Wait for <=75 C sustained 15 seconds before considering fresh run with all 45 replies reused; do not alter thermal thresholds.",
+  "validator_sha256": "1b7a6dcd126b11971d1078fd8220d3e0bb3fd3134b59f19794520e5375c831de"
+}

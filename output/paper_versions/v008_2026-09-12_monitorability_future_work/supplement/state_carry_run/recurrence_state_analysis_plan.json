@@ -1,0 +1,19 @@
+{
+  "status": "analysis_plan_recorded_before_carry_reset_results",
+  "primary": "Layer22 final-pass SAE fidelity at the final prompt token after identical absolute-norm VPD-direction residual writes at L22, carry versus reset",
+  "secondary": [
+    "L12 writes propagated to L22 and norm",
+    "Frozen-baseline-support instrument control",
+    "Unit-norm offline baseline-state/response-direction crossing",
+    "State reconstruction EV",
+    "Next-token logit changes"
+  ],
+  "populations": "Ten previously inspected held-out inputs / eight task groups; descriptive repeated conditions",
+  "cannot_identify": [
+    "Effect of training with tied weights versus independently trained untied layers",
+    "Recurrence independently of effective dependent depth"
+  ],
+  "analysis_code_sha256": "908bedb8259d915f47b0c53643464798c975d6272b76ea71e25fe1cabb43d609",
+  "report_code_sha256": "20b69675e6c6c57e9b50a6e12a8b143485e2c8e37b7617fa84db32cede382938",
+  "recorded_utc": "2026-09-13T00:54:22.9913407Z"
+}

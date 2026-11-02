@@ -1,0 +1,6 @@
+{
+  "recorded_utc": "2026-09-13T01:39:29.1601561Z",
+  "change": "Persist already-computed full top-k and frozen-baseline-support encodings, archive alignment and source snapshots; no change to conditions, hypotheses or metric calculations. Full and frozen-support encodings now reuse the same batched positive encoder response to isolate support selection from matrix-kernel arithmetic differences. Five unit tests pass.",
+  "analysis_code_sha256": "637fd159091871f8d71403470d1b8b779d3dac1eca1f3ce76766a086d63ad56b",
+  "report_code_sha256": "731e1f7e4dd5b6fdb4ad38bea0f28c43b9bc6d7c75350259909bcc9158e8640f"
+}

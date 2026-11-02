@@ -1,0 +1,72 @@
+{
+  "boundary": {
+    "additional_families_admitted": 0,
+    "model_inference_performed": false,
+    "paid_compute_launched": false,
+    "puzzle_generator_executed": true,
+    "sae_training_performed": false,
+    "worker_timeout_seconds": 20
+  },
+  "checks": [
+    {
+      "conflicting_coloring_rejected": true,
+      "deterministic": true,
+      "edges": 20,
+      "id": "graph-coloring-development-medium-seed-0",
+      "max_colors": 3,
+      "permuted_coloring_pass": true,
+      "reference_pass": true,
+      "vertices": 13
+    },
+    {
+      "conflicting_coloring_rejected": true,
+      "deterministic": true,
+      "edges": 11,
+      "id": "graph-coloring-development-medium-seed-1",
+      "max_colors": 3,
+      "permuted_coloring_pass": true,
+      "reference_pass": true,
+      "vertices": 11
+    },
+    {
+      "conflicting_coloring_rejected": true,
+      "deterministic": true,
+      "edges": 9,
+      "id": "graph-coloring-development-medium-seed-2",
+      "max_colors": 2,
+      "permuted_coloring_pass": true,
+      "reference_pass": true,
+      "vertices": 10
+    },
+    {
+      "conflicting_coloring_rejected": true,
+      "deterministic": true,
+      "edges": 14,
+      "id": "graph-coloring-development-medium-seed-3",
+      "max_colors": 3,
+      "permuted_coloring_pass": true,
+      "reference_pass": true,
+      "vertices": 11
+    }
+  ],
+  "graders_content_sha256": "53562b39b777e5e0e765758d9ecf632c430cd63e34afcf01d7cbd521e9ef5c91",
+  "limits": [
+    "Four medium-difficulty development seeds only; not validation across difficulties or a fresh holdout.",
+    "Distinct labeled hashes do not establish non-isomorphic graphs, semantic independence or absence of prior exposure.",
+    "No Prolog/container execution; source-compatible constraints with a new JSON answer interface.",
+    "The source color budget is not certified chromatic optimality."
+  ],
+  "provenance": {
+    "adapter_sha256": "43caa82566197ea350283e81b61da8b824819132f69f907bfac239b12d346883",
+    "runner_sha256": "dad56d37a45f91fcb23afabbfca6db86fb58af387c51365d31730c91ad2c79b9"
+  },
+  "python_version": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "questions_content_sha256": "ff738a087d2c599d80a153c10604df0079db9dd5287597956a3b50451eaaab3d",
+  "report_id": "2dce8a3113493ebfcf86faf886cfc9890af59a40be93652908e9dd3b9f7f9631",
+  "schema": "sch.vpd-graph-coloring-generator-canary.v1",
+  "source_directory": "E:\\Recovered_C_projects\\Remote_clones\\prime_intellect_research_environments\\environments\\reasoning\\prolog\\prolog\\generators",
+  "source_pins": {
+    "base.py": "6257dca4bab8914c31621fddfa160c05bd89cef4a71df07cd0835f51bbd9cbd4",
+    "graph_coloring.py": "fe3c56631a14e2ded2cc360f79f9bdc77460bfb0e18cc0636418e0a5e23eaed2"
+  }
+}

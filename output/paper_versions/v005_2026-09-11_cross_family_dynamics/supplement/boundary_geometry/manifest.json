@@ -1,0 +1,15 @@
+{
+  "status": "saved_normalization_boundary_comparison_complete",
+  "source_manifest_sha256": "a3d059c993d297442856c3796cb5c905a4fe8af73c0c03c675b104369ff7d6c3",
+  "code_sha256": "0cc6bc8d1b132d98f7395f0a85a7b9e4c7afb5f7770439ffad5a19ea0ebb5c02",
+  "rows": 72,
+  "new_model_inference": false,
+  "intervention_performed": false,
+  "interpretation": "A change of geometry across the learned normalization readout is not a behavioral or semantic intervention.",
+  "files": {
+    "grouped.csv": "bdc734d8109d32ed289ae7add0113d37cbfc23d1ac98b7bd9716abdc17618638",
+    "grouped.json": "5c880ee56ed58358608906e3f4e730f9303bdaaa7747c24dd64133a4bb6018c1",
+    "per_input.csv": "f3637662a3d6d32632f66f1f1d6229027c18309913258c61265da17f87b435a8",
+    "per_input.json": "ae216c993843437f563cfa594565a498ec3e60a146e3c388ad1b891b091a25d4"
+  }
+}

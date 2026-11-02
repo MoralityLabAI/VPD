@@ -1,0 +1,1202 @@
+[
+  {
+    "edited_layer": 12,
+    "dose": -0.1,
+    "site": "model.layers.21",
+    "optimizer": "adamw",
+    "encoding": "top_k",
+    "carry_fidelity": -1.1181262651959023,
+    "reset_fidelity": -1.6536967289081201,
+    "carry_minus_reset": 0.5355704637122178
+  },
+  {
+    "edited_layer": 12,
+    "dose": -0.1,
+    "site": "model.layers.21",
+    "optimizer": "adamw",
+    "encoding": "frozen_support",
+    "carry_fidelity": -0.0732231615355523,
+    "reset_fidelity": 0.11017450035184195,
+    "carry_minus_reset": -0.18339766188739426
+  },
+  {
+    "edited_layer": 12,
+    "dose": 0.1,
+    "site": "model.layers.21",
+    "optimizer": "adamw",
+    "encoding": "top_k",
+    "carry_fidelity": -0.9130329005260054,
+    "reset_fidelity": -3.2120890958349015,
+    "carry_minus_reset": 2.2990561953088964
+  },
+  {
+    "edited_layer": 12,
+    "dose": 0.1,
+    "site": "model.layers.21",
+    "optimizer": "adamw",
+    "encoding": "frozen_support",
+    "carry_fidelity": -0.014735295441012264,
+    "reset_fidelity": 0.15676707177471416,
+    "carry_minus_reset": -0.17150236721572643
+  },
+  {
+    "edited_layer": 12,
+    "dose": -1.0,
+    "site": "model.layers.21",
+    "optimizer": "adamw",
+    "encoding": "top_k",
+    "carry_fidelity": -0.7047905728866668,
+    "reset_fidelity": -1.90063773463848,
+    "carry_minus_reset": 1.1958471617518132
+  },
+  {
+    "edited_layer": 12,
+    "dose": -1.0,
+    "site": "model.layers.21",
+    "optimizer": "adamw",
+    "encoding": "frozen_support",
+    "carry_fidelity": -0.08059034982547453,
+    "reset_fidelity": 0.1511386258164552,
+    "carry_minus_reset": -0.23172897564192974
+  },
+  {
+    "edited_layer": 12,
+    "dose": 1.0,
+    "site": "model.layers.21",
+    "optimizer": "adamw",
+    "encoding": "top_k",
+    "carry_fidelity": -0.7791616775935126,
+    "reset_fidelity": -2.901349422922964,
+    "carry_minus_reset": 2.1221877453294513
+  },
+  {
+    "edited_layer": 12,
+    "dose": 1.0,
+    "site": "model.layers.21",
+    "optimizer": "adamw",
+    "encoding": "frozen_support",
+    "carry_fidelity": -0.073532048010029,
+    "reset_fidelity": 0.06551547499046939,
+    "carry_minus_reset": -0.13904752300049839
+  },
+  {
+    "edited_layer": 12,
+    "dose": -10.0,
+    "site": "model.layers.21",
+    "optimizer": "adamw",
+    "encoding": "top_k",
+    "carry_fidelity": -0.3227257848285847,
+    "reset_fidelity": -1.0932170366853424,
+    "carry_minus_reset": 0.7704912518567577
+  },
+  {
+    "edited_layer": 12,
+    "dose": -10.0,
+    "site": "model.layers.21",
+    "optimizer": "adamw",
+    "encoding": "frozen_support",
+    "carry_fidelity": -0.039111348629833786,
+    "reset_fidelity": 0.13826090282406156,
+    "carry_minus_reset": -0.17737225145389535
+  },
+  {
+    "edited_layer": 12,
+    "dose": 10.0,
+    "site": "model.layers.21",
+    "optimizer": "adamw",
+    "encoding": "top_k",
+    "carry_fidelity": -0.584093058255875,
+    "reset_fidelity": -0.3883641982228041,
+    "carry_minus_reset": -0.19572886003307088
+  },
+  {
+    "edited_layer": 12,
+    "dose": 10.0,
+    "site": "model.layers.21",
+    "optimizer": "adamw",
+    "encoding": "frozen_support",
+    "carry_fidelity": -0.0347341509367709,
+    "reset_fidelity": 0.26356323547744287,
+    "carry_minus_reset": -0.29829738641421377
+  },
+  {
+    "edited_layer": 22,
+    "dose": -0.1,
+    "site": "model.layers.21",
+    "optimizer": "adamw",
+    "encoding": "top_k",
+    "carry_fidelity": -0.0145913991893456,
+    "reset_fidelity": -0.024058668489319146,
+    "carry_minus_reset": 0.009467269299973546
+  },
+  {
+    "edited_layer": 22,
+    "dose": -0.1,
+    "site": "model.layers.21",
+    "optimizer": "adamw",
+    "encoding": "frozen_support",
+    "carry_fidelity": -0.014591399189442411,
+    "reset_fidelity": -0.024058668488984525,
+    "carry_minus_reset": 0.009467269299542114
+  },
+  {
+    "edited_layer": 22,
+    "dose": 0.1,
+    "site": "model.layers.21",
+    "optimizer": "adamw",
+    "encoding": "top_k",
+    "carry_fidelity": -0.014591439892061686,
+    "reset_fidelity": -0.024058670788841274,
+    "carry_minus_reset": 0.009467230896779588
+  },
+  {
+    "edited_layer": 22,
+    "dose": 0.1,
+    "site": "model.layers.21",
+    "optimizer": "adamw",
+    "encoding": "frozen_support",
+    "carry_fidelity": -0.014591439892014169,
+    "reset_fidelity": -0.02405867078907331,
+    "carry_minus_reset": 0.009467230897059142
+  },
+  {
+    "edited_layer": 22,
+    "dose": -1.0,
+    "site": "model.layers.21",
+    "optimizer": "adamw",
+    "encoding": "top_k",
+    "carry_fidelity": -0.01459001046485553,
+    "reset_fidelity": -0.02405529095641823,
+    "carry_minus_reset": 0.0094652804915627
+  },
+  {
+    "edited_layer": 22,
+    "dose": -1.0,
+    "site": "model.layers.21",
+    "optimizer": "adamw",
+    "encoding": "frozen_support",
+    "carry_fidelity": -0.014590010464867742,
+    "reset_fidelity": -0.024055290956422448,
+    "carry_minus_reset": 0.009465280491554706
+  },
+  {
+    "edited_layer": 22,
+    "dose": 1.0,
+    "site": "model.layers.21",
+    "optimizer": "adamw",
+    "encoding": "top_k",
+    "carry_fidelity": -0.014590004610706142,
+    "reset_fidelity": -0.02405529192013134,
+    "carry_minus_reset": 0.009465287309425197
+  },
+  {
+    "edited_layer": 22,
+    "dose": 1.0,
+    "site": "model.layers.21",
+    "optimizer": "adamw",
+    "encoding": "frozen_support",
+    "carry_fidelity": -0.014590004610686602,
+    "reset_fidelity": -0.024055291920142885,
+    "carry_minus_reset": 0.009465287309456283
+  },
+  {
+    "edited_layer": 22,
+    "dose": -10.0,
+    "site": "model.layers.21",
+    "optimizer": "adamw",
+    "encoding": "top_k",
+    "carry_fidelity": -3.4850275763734215,
+    "reset_fidelity": -10.519721011784588,
+    "carry_minus_reset": 7.0346934354111665
+  },
+  {
+    "edited_layer": 22,
+    "dose": -10.0,
+    "site": "model.layers.21",
+    "optimizer": "adamw",
+    "encoding": "frozen_support",
+    "carry_fidelity": -0.014589956206099153,
+    "reset_fidelity": -0.024053769034732664,
+    "carry_minus_reset": 0.009463812828633511
+  },
+  {
+    "edited_layer": 22,
+    "dose": 10.0,
+    "site": "model.layers.21",
+    "optimizer": "adamw",
+    "encoding": "top_k",
+    "carry_fidelity": -1.8171879803381419,
+    "reset_fidelity": -0.024053756665851633,
+    "carry_minus_reset": -1.7931342236722903
+  },
+  {
+    "edited_layer": 22,
+    "dose": 10.0,
+    "site": "model.layers.21",
+    "optimizer": "adamw",
+    "encoding": "frozen_support",
+    "carry_fidelity": -0.01458995644721206,
+    "reset_fidelity": -0.024053756665854076,
+    "carry_minus_reset": 0.009463800218642016
+  },
+  {
+    "edited_layer": 12,
+    "dose": -0.1,
+    "site": "model.layers.21",
+    "optimizer": "muon_hybrid",
+    "encoding": "top_k",
+    "carry_fidelity": -0.20210800605832957,
+    "reset_fidelity": 0.4457618529709301,
+    "carry_minus_reset": -0.6478698590292596
+  },
+  {
+    "edited_layer": 12,
+    "dose": -0.1,
+    "site": "model.layers.21",
+    "optimizer": "muon_hybrid",
+    "encoding": "frozen_support",
+    "carry_fidelity": 0.03810995448287158,
+    "reset_fidelity": 0.5297984596040619,
+    "carry_minus_reset": -0.49168850512119033
+  },
+  {
+    "edited_layer": 12,
+    "dose": 0.1,
+    "site": "model.layers.21",
+    "optimizer": "muon_hybrid",
+    "encoding": "top_k",
+    "carry_fidelity": -0.25679103641729206,
+    "reset_fidelity": 0.04683100707296828,
+    "carry_minus_reset": -0.30362204349026034
+  },
+  {
+    "edited_layer": 12,
+    "dose": 0.1,
+    "site": "model.layers.21",
+    "optimizer": "muon_hybrid",
+    "encoding": "frozen_support",
+    "carry_fidelity": 0.06042315576971391,
+    "reset_fidelity": 0.313172460154408,
+    "carry_minus_reset": -0.2527493043846941
+  },
+  {
+    "edited_layer": 12,
+    "dose": -1.0,
+    "site": "model.layers.21",
+    "optimizer": "muon_hybrid",
+    "encoding": "top_k",
+    "carry_fidelity": -0.29880924377000384,
+    "reset_fidelity": 0.5723015475123285,
+    "carry_minus_reset": -0.8711107912823324
+  },
+  {
+    "edited_layer": 12,
+    "dose": -1.0,
+    "site": "model.layers.21",
+    "optimizer": "muon_hybrid",
+    "encoding": "frozen_support",
+    "carry_fidelity": 0.02248958558474423,
+    "reset_fidelity": 0.6553446817555859,
+    "carry_minus_reset": -0.6328550961708417
+  },
+  {
+    "edited_layer": 12,
+    "dose": 1.0,
+    "site": "model.layers.21",
+    "optimizer": "muon_hybrid",
+    "encoding": "top_k",
+    "carry_fidelity": -0.2996354883833592,
+    "reset_fidelity": 0.39268309485751696,
+    "carry_minus_reset": -0.6923185832408761
+  },
+  {
+    "edited_layer": 12,
+    "dose": 1.0,
+    "site": "model.layers.21",
+    "optimizer": "muon_hybrid",
+    "encoding": "frozen_support",
+    "carry_fidelity": 0.05659650529844518,
+    "reset_fidelity": 0.5497487234122129,
+    "carry_minus_reset": -0.49315221811376775
+  },
+  {
+    "edited_layer": 12,
+    "dose": -10.0,
+    "site": "model.layers.21",
+    "optimizer": "muon_hybrid",
+    "encoding": "top_k",
+    "carry_fidelity": -0.045707430078514966,
+    "reset_fidelity": 0.3631996183724524,
+    "carry_minus_reset": -0.40890704845096737
+  },
+  {
+    "edited_layer": 12,
+    "dose": -10.0,
+    "site": "model.layers.21",
+    "optimizer": "muon_hybrid",
+    "encoding": "frozen_support",
+    "carry_fidelity": 0.07411557064303831,
+    "reset_fidelity": 0.4559534665576366,
+    "carry_minus_reset": -0.38183789591459827
+  },
+  {
+    "edited_layer": 12,
+    "dose": 10.0,
+    "site": "model.layers.21",
+    "optimizer": "muon_hybrid",
+    "encoding": "top_k",
+    "carry_fidelity": -0.07489766340994652,
+    "reset_fidelity": 0.3860143376167068,
+    "carry_minus_reset": -0.4609120010266533
+  },
+  {
+    "edited_layer": 12,
+    "dose": 10.0,
+    "site": "model.layers.21",
+    "optimizer": "muon_hybrid",
+    "encoding": "frozen_support",
+    "carry_fidelity": 0.06338154620462233,
+    "reset_fidelity": 0.5003978213049082,
+    "carry_minus_reset": -0.43701627510028584
+  },
+  {
+    "edited_layer": 22,
+    "dose": -0.1,
+    "site": "model.layers.21",
+    "optimizer": "muon_hybrid",
+    "encoding": "top_k",
+    "carry_fidelity": -0.005720008515552877,
+    "reset_fidelity": -0.0005419465882561258,
+    "carry_minus_reset": -0.005178061927296751
+  },
+  {
+    "edited_layer": 22,
+    "dose": -0.1,
+    "site": "model.layers.21",
+    "optimizer": "muon_hybrid",
+    "encoding": "frozen_support",
+    "carry_fidelity": -0.0057200085155661995,
+    "reset_fidelity": -0.0005419465882146035,
+    "carry_minus_reset": -0.005178061927351596
+  },
+  {
+    "edited_layer": 22,
+    "dose": 0.1,
+    "site": "model.layers.21",
+    "optimizer": "muon_hybrid",
+    "encoding": "top_k",
+    "carry_fidelity": -0.005719990060750302,
+    "reset_fidelity": -0.000541943640995024,
+    "carry_minus_reset": -0.005178046419755278
+  },
+  {
+    "edited_layer": 22,
+    "dose": 0.1,
+    "site": "model.layers.21",
+    "optimizer": "muon_hybrid",
+    "encoding": "frozen_support",
+    "carry_fidelity": -0.005719990060752744,
+    "reset_fidelity": -0.0005419436409870304,
+    "carry_minus_reset": -0.005178046419765714
+  },
+  {
+    "edited_layer": 22,
+    "dose": -1.0,
+    "site": "model.layers.21",
+    "optimizer": "muon_hybrid",
+    "encoding": "top_k",
+    "carry_fidelity": -12.953050418187273,
+    "reset_fidelity": -52.3672505033968,
+    "carry_minus_reset": 39.41420008520952
+  },
+  {
+    "edited_layer": 22,
+    "dose": -1.0,
+    "site": "model.layers.21",
+    "optimizer": "muon_hybrid",
+    "encoding": "frozen_support",
+    "carry_fidelity": -0.00572011963754937,
+    "reset_fidelity": -0.000542629109896442,
+    "carry_minus_reset": -0.005177490527652928
+  },
+  {
+    "edited_layer": 22,
+    "dose": 1.0,
+    "site": "model.layers.21",
+    "optimizer": "muon_hybrid",
+    "encoding": "top_k",
+    "carry_fidelity": -0.005720119640679977,
+    "reset_fidelity": -0.0005426265864127977,
+    "carry_minus_reset": -0.005177493054267179
+  },
+  {
+    "edited_layer": 22,
+    "dose": 1.0,
+    "site": "model.layers.21",
+    "optimizer": "muon_hybrid",
+    "encoding": "frozen_support",
+    "carry_fidelity": -0.005720119640675092,
+    "reset_fidelity": -0.0005426265864139079,
+    "carry_minus_reset": -0.005177493054261184
+  },
+  {
+    "edited_layer": 22,
+    "dose": -10.0,
+    "site": "model.layers.21",
+    "optimizer": "muon_hybrid",
+    "encoding": "top_k",
+    "carry_fidelity": -0.4835177611493955,
+    "reset_fidelity": -1.4028189305994267,
+    "carry_minus_reset": 0.9193011694500313
+  },
+  {
+    "edited_layer": 22,
+    "dose": -10.0,
+    "site": "model.layers.21",
+    "optimizer": "muon_hybrid",
+    "encoding": "frozen_support",
+    "carry_fidelity": -0.0057201198677947485,
+    "reset_fidelity": -0.0005442034153919639,
+    "carry_minus_reset": -0.0051759164524027845
+  },
+  {
+    "edited_layer": 22,
+    "dose": 10.0,
+    "site": "model.layers.21",
+    "optimizer": "muon_hybrid",
+    "encoding": "top_k",
+    "carry_fidelity": -0.9687614255783816,
+    "reset_fidelity": -0.0005442031864202335,
+    "carry_minus_reset": -0.9682172223919614
+  },
+  {
+    "edited_layer": 22,
+    "dose": 10.0,
+    "site": "model.layers.21",
+    "optimizer": "muon_hybrid",
+    "encoding": "frozen_support",
+    "carry_fidelity": -0.005720118563112164,
+    "reset_fidelity": -0.0005442031864195673,
+    "carry_minus_reset": -0.005175915376692597
+  },
+  {
+    "edited_layer": 12,
+    "dose": -0.1,
+    "site": "model.layers.11",
+    "optimizer": "adamw",
+    "encoding": "top_k",
+    "carry_fidelity": 0.0010447022413665463,
+    "reset_fidelity": 0.0062211385464457924,
+    "carry_minus_reset": -0.005176436305079246
+  },
+  {
+    "edited_layer": 12,
+    "dose": -0.1,
+    "site": "model.layers.11",
+    "optimizer": "adamw",
+    "encoding": "frozen_support",
+    "carry_fidelity": 0.0010447022413655471,
+    "reset_fidelity": 0.0062211385464462365,
+    "carry_minus_reset": -0.005176436305080689
+  },
+  {
+    "edited_layer": 12,
+    "dose": 0.1,
+    "site": "model.layers.11",
+    "optimizer": "adamw",
+    "encoding": "top_k",
+    "carry_fidelity": 0.0010447045123131993,
+    "reset_fidelity": 0.00622114045938349,
+    "carry_minus_reset": -0.00517643594707029
+  },
+  {
+    "edited_layer": 12,
+    "dose": 0.1,
+    "site": "model.layers.11",
+    "optimizer": "adamw",
+    "encoding": "frozen_support",
+    "carry_fidelity": 0.0010447045123160859,
+    "reset_fidelity": 0.006221140459384267,
+    "carry_minus_reset": -0.005176435947068181
+  },
+  {
+    "edited_layer": 12,
+    "dose": -1.0,
+    "site": "model.layers.11",
+    "optimizer": "adamw",
+    "encoding": "top_k",
+    "carry_fidelity": 0.0010447183031428997,
+    "reset_fidelity": 0.006221166368222786,
+    "carry_minus_reset": -0.005176448065079886
+  },
+  {
+    "edited_layer": 12,
+    "dose": -1.0,
+    "site": "model.layers.11",
+    "optimizer": "adamw",
+    "encoding": "frozen_support",
+    "carry_fidelity": 0.0010447183031425666,
+    "reset_fidelity": 0.006221166368222786,
+    "carry_minus_reset": -0.005176448065080219
+  },
+  {
+    "edited_layer": 12,
+    "dose": 1.0,
+    "site": "model.layers.11",
+    "optimizer": "adamw",
+    "encoding": "top_k",
+    "carry_fidelity": 0.0010447181513236758,
+    "reset_fidelity": 0.0062075799486623895,
+    "carry_minus_reset": -0.005162861797338714
+  },
+  {
+    "edited_layer": 12,
+    "dose": 1.0,
+    "site": "model.layers.11",
+    "optimizer": "adamw",
+    "encoding": "frozen_support",
+    "carry_fidelity": 0.001044718151324009,
+    "reset_fidelity": 0.0062075799486626115,
+    "carry_minus_reset": -0.005162861797338603
+  },
+  {
+    "edited_layer": 12,
+    "dose": -10.0,
+    "site": "model.layers.11",
+    "optimizer": "adamw",
+    "encoding": "top_k",
+    "carry_fidelity": 0.0011288658680010943,
+    "reset_fidelity": 0.006223604124994786,
+    "carry_minus_reset": -0.005094738256993692
+  },
+  {
+    "edited_layer": 12,
+    "dose": -10.0,
+    "site": "model.layers.11",
+    "optimizer": "adamw",
+    "encoding": "frozen_support",
+    "carry_fidelity": 0.0010447419109029799,
+    "reset_fidelity": 0.006221159107438257,
+    "carry_minus_reset": -0.005176417196535277
+  },
+  {
+    "edited_layer": 12,
+    "dose": 10.0,
+    "site": "model.layers.11",
+    "optimizer": "adamw",
+    "encoding": "top_k",
+    "carry_fidelity": 0.0009674485034099067,
+    "reset_fidelity": 0.006169979762861266,
+    "carry_minus_reset": -0.0052025312594513595
+  },
+  {
+    "edited_layer": 12,
+    "dose": 10.0,
+    "site": "model.layers.11",
+    "optimizer": "adamw",
+    "encoding": "frozen_support",
+    "carry_fidelity": 0.0009674485034099067,
+    "reset_fidelity": 0.006169979762861266,
+    "carry_minus_reset": -0.0052025312594513595
+  },
+  {
+    "edited_layer": 12,
+    "dose": -0.1,
+    "site": "model.layers.11",
+    "optimizer": "muon_hybrid",
+    "encoding": "top_k",
+    "carry_fidelity": 0.0009697814804889848,
+    "reset_fidelity": -64.79906191607843,
+    "carry_minus_reset": 64.80003169755892
+  },
+  {
+    "edited_layer": 12,
+    "dose": -0.1,
+    "site": "model.layers.11",
+    "optimizer": "muon_hybrid",
+    "encoding": "frozen_support",
+    "carry_fidelity": 0.0009697814804884297,
+    "reset_fidelity": 0.005040091621879461,
+    "carry_minus_reset": -0.004070310141391031
+  },
+  {
+    "edited_layer": 12,
+    "dose": 0.1,
+    "site": "model.layers.11",
+    "optimizer": "muon_hybrid",
+    "encoding": "top_k",
+    "carry_fidelity": -52.90886139845324,
+    "reset_fidelity": -62.32250441923124,
+    "carry_minus_reset": 9.413643020777997
+  },
+  {
+    "edited_layer": 12,
+    "dose": 0.1,
+    "site": "model.layers.11",
+    "optimizer": "muon_hybrid",
+    "encoding": "frozen_support",
+    "carry_fidelity": 0.0009697829261519075,
+    "reset_fidelity": 0.005040091830772142,
+    "carry_minus_reset": -0.0040703089046202345
+  },
+  {
+    "edited_layer": 12,
+    "dose": -1.0,
+    "site": "model.layers.11",
+    "optimizer": "muon_hybrid",
+    "encoding": "top_k",
+    "carry_fidelity": -1.3261376214360916,
+    "reset_fidelity": -2.7862337563614683,
+    "carry_minus_reset": 1.4600961349253767
+  },
+  {
+    "edited_layer": 12,
+    "dose": -1.0,
+    "site": "model.layers.11",
+    "optimizer": "muon_hybrid",
+    "encoding": "frozen_support",
+    "carry_fidelity": 0.0009696840101873772,
+    "reset_fidelity": 0.005040153343279119,
+    "carry_minus_reset": -0.004070469333091742
+  },
+  {
+    "edited_layer": 12,
+    "dose": 1.0,
+    "site": "model.layers.11",
+    "optimizer": "muon_hybrid",
+    "encoding": "top_k",
+    "carry_fidelity": -1.150802142046353,
+    "reset_fidelity": -1.2586104299478955,
+    "carry_minus_reset": 0.10780828790154251
+  },
+  {
+    "edited_layer": 12,
+    "dose": 1.0,
+    "site": "model.layers.11",
+    "optimizer": "muon_hybrid",
+    "encoding": "frozen_support",
+    "carry_fidelity": 0.0009696835438426366,
+    "reset_fidelity": 0.005040152894375094,
+    "carry_minus_reset": -0.004070469350532457
+  },
+  {
+    "edited_layer": 12,
+    "dose": -10.0,
+    "site": "model.layers.11",
+    "optimizer": "muon_hybrid",
+    "encoding": "top_k",
+    "carry_fidelity": -0.05124936509827349,
+    "reset_fidelity": -0.09447467768760798,
+    "carry_minus_reset": 0.043225312589334486
+  },
+  {
+    "edited_layer": 12,
+    "dose": -10.0,
+    "site": "model.layers.11",
+    "optimizer": "muon_hybrid",
+    "encoding": "frozen_support",
+    "carry_fidelity": 0.0009696895414518236,
+    "reset_fidelity": 0.005040067068306953,
+    "carry_minus_reset": -0.004070377526855129
+  },
+  {
+    "edited_layer": 12,
+    "dose": 10.0,
+    "site": "model.layers.11",
+    "optimizer": "muon_hybrid",
+    "encoding": "top_k",
+    "carry_fidelity": -0.12085719400934591,
+    "reset_fidelity": -0.12341618309045166,
+    "carry_minus_reset": 0.0025589890811057447
+  },
+  {
+    "edited_layer": 12,
+    "dose": 10.0,
+    "site": "model.layers.11",
+    "optimizer": "muon_hybrid",
+    "encoding": "frozen_support",
+    "carry_fidelity": 0.0009696893586587096,
+    "reset_fidelity": 0.005040067232748302,
+    "carry_minus_reset": -0.004070377874089592
+  },
+  {
+    "edited_layer": 12,
+    "dose": -0.1,
+    "site": "model.norm",
+    "optimizer": "adamw",
+    "encoding": "top_k",
+    "carry_fidelity": 0.02623185850608334,
+    "reset_fidelity": -0.07055082328783291,
+    "carry_minus_reset": 0.09678268179391625
+  },
+  {
+    "edited_layer": 12,
+    "dose": -0.1,
+    "site": "model.norm",
+    "optimizer": "adamw",
+    "encoding": "frozen_support",
+    "carry_fidelity": 0.02596657043127737,
+    "reset_fidelity": 0.0171310501176406,
+    "carry_minus_reset": 0.008835520313636769
+  },
+  {
+    "edited_layer": 12,
+    "dose": 0.1,
+    "site": "model.norm",
+    "optimizer": "adamw",
+    "encoding": "top_k",
+    "carry_fidelity": 0.019909432769104507,
+    "reset_fidelity": -0.007547018992332788,
+    "carry_minus_reset": 0.027456451761437295
+  },
+  {
+    "edited_layer": 12,
+    "dose": 0.1,
+    "site": "model.norm",
+    "optimizer": "adamw",
+    "encoding": "frozen_support",
+    "carry_fidelity": 0.018950095534257527,
+    "reset_fidelity": 0.0013627299133450732,
+    "carry_minus_reset": 0.017587365620912454
+  },
+  {
+    "edited_layer": 12,
+    "dose": -1.0,
+    "site": "model.norm",
+    "optimizer": "adamw",
+    "encoding": "top_k",
+    "carry_fidelity": 0.010916145031911073,
+    "reset_fidelity": -0.03480620316379768,
+    "carry_minus_reset": 0.04572234819570875
+  },
+  {
+    "edited_layer": 12,
+    "dose": -1.0,
+    "site": "model.norm",
+    "optimizer": "adamw",
+    "encoding": "frozen_support",
+    "carry_fidelity": 0.01034340277990975,
+    "reset_fidelity": 0.02251271860841797,
+    "carry_minus_reset": -0.01216931582850822
+  },
+  {
+    "edited_layer": 12,
+    "dose": 1.0,
+    "site": "model.norm",
+    "optimizer": "adamw",
+    "encoding": "top_k",
+    "carry_fidelity": 0.03444053151866,
+    "reset_fidelity": -0.0357008077877885,
+    "carry_minus_reset": 0.0701413393064485
+  },
+  {
+    "edited_layer": 12,
+    "dose": 1.0,
+    "site": "model.norm",
+    "optimizer": "adamw",
+    "encoding": "frozen_support",
+    "carry_fidelity": 0.03478565357044039,
+    "reset_fidelity": 0.01662685383846363,
+    "carry_minus_reset": 0.01815879973197676
+  },
+  {
+    "edited_layer": 12,
+    "dose": -10.0,
+    "site": "model.norm",
+    "optimizer": "adamw",
+    "encoding": "top_k",
+    "carry_fidelity": 0.06187903484874169,
+    "reset_fidelity": -0.012230486195720092,
+    "carry_minus_reset": 0.07410952104446178
+  },
+  {
+    "edited_layer": 12,
+    "dose": -10.0,
+    "site": "model.norm",
+    "optimizer": "adamw",
+    "encoding": "frozen_support",
+    "carry_fidelity": 0.05930158552987341,
+    "reset_fidelity": 0.009638436475090661,
+    "carry_minus_reset": 0.04966314905478275
+  },
+  {
+    "edited_layer": 12,
+    "dose": 10.0,
+    "site": "model.norm",
+    "optimizer": "adamw",
+    "encoding": "top_k",
+    "carry_fidelity": 0.05312146762074765,
+    "reset_fidelity": -0.042801395751664195,
+    "carry_minus_reset": 0.09592286337241185
+  },
+  {
+    "edited_layer": 12,
+    "dose": 10.0,
+    "site": "model.norm",
+    "optimizer": "adamw",
+    "encoding": "frozen_support",
+    "carry_fidelity": 0.0416311269226064,
+    "reset_fidelity": 0.008410863966126114,
+    "carry_minus_reset": 0.033220262956480284
+  },
+  {
+    "edited_layer": 22,
+    "dose": -0.1,
+    "site": "model.norm",
+    "optimizer": "adamw",
+    "encoding": "top_k",
+    "carry_fidelity": 6.551786678243854e-05,
+    "reset_fidelity": 0.001974025100677901,
+    "carry_minus_reset": -0.0019085072338954623
+  },
+  {
+    "edited_layer": 22,
+    "dose": -0.1,
+    "site": "model.norm",
+    "optimizer": "adamw",
+    "encoding": "frozen_support",
+    "carry_fidelity": 6.551786677755356e-05,
+    "reset_fidelity": 0.0019740251006907794,
+    "carry_minus_reset": -0.0019085072339132259
+  },
+  {
+    "edited_layer": 22,
+    "dose": 0.1,
+    "site": "model.norm",
+    "optimizer": "adamw",
+    "encoding": "top_k",
+    "carry_fidelity": 6.802178805709325e-05,
+    "reset_fidelity": 0.001973462117560665,
+    "carry_minus_reset": -0.0019054403295035716
+  },
+  {
+    "edited_layer": 22,
+    "dose": 0.1,
+    "site": "model.norm",
+    "optimizer": "adamw",
+    "encoding": "frozen_support",
+    "carry_fidelity": 6.80217880578704e-05,
+    "reset_fidelity": 0.001973462117571323,
+    "carry_minus_reset": -0.0019054403295134525
+  },
+  {
+    "edited_layer": 22,
+    "dose": -1.0,
+    "site": "model.norm",
+    "optimizer": "adamw",
+    "encoding": "top_k",
+    "carry_fidelity": 4.5666065492944163e-05,
+    "reset_fidelity": 0.0019769054780984785,
+    "carry_minus_reset": -0.0019312394126055343
+  },
+  {
+    "edited_layer": 22,
+    "dose": -1.0,
+    "site": "model.norm",
+    "optimizer": "adamw",
+    "encoding": "frozen_support",
+    "carry_fidelity": 4.5666065492055985e-05,
+    "reset_fidelity": 0.0019769054780989226,
+    "carry_minus_reset": -0.0019312394126068666
+  },
+  {
+    "edited_layer": 22,
+    "dose": 1.0,
+    "site": "model.norm",
+    "optimizer": "adamw",
+    "encoding": "top_k",
+    "carry_fidelity": 9.719110283812338e-05,
+    "reset_fidelity": 0.0019738917541366474,
+    "carry_minus_reset": -0.001876700651298524
+  },
+  {
+    "edited_layer": 22,
+    "dose": 1.0,
+    "site": "model.norm",
+    "optimizer": "adamw",
+    "encoding": "frozen_support",
+    "carry_fidelity": 9.719110283912258e-05,
+    "reset_fidelity": 0.0019738917541409773,
+    "carry_minus_reset": -0.0018767006513018547
+  },
+  {
+    "edited_layer": 22,
+    "dose": -10.0,
+    "site": "model.norm",
+    "optimizer": "adamw",
+    "encoding": "top_k",
+    "carry_fidelity": 3.931953087288331e-05,
+    "reset_fidelity": -0.37493962158944916,
+    "carry_minus_reset": 0.37497894112032204
+  },
+  {
+    "edited_layer": 22,
+    "dose": -10.0,
+    "site": "model.norm",
+    "optimizer": "adamw",
+    "encoding": "frozen_support",
+    "carry_fidelity": 3.799543890425916e-05,
+    "reset_fidelity": 0.001985325416840711,
+    "carry_minus_reset": -0.0019473299779364517
+  },
+  {
+    "edited_layer": 22,
+    "dose": 10.0,
+    "site": "model.norm",
+    "optimizer": "adamw",
+    "encoding": "top_k",
+    "carry_fidelity": 0.0006392619254478316,
+    "reset_fidelity": -0.07723947407828202,
+    "carry_minus_reset": 0.07787873600372985
+  },
+  {
+    "edited_layer": 22,
+    "dose": 10.0,
+    "site": "model.norm",
+    "optimizer": "adamw",
+    "encoding": "frozen_support",
+    "carry_fidelity": 0.0006392619254477205,
+    "reset_fidelity": 0.0019646814819235248,
+    "carry_minus_reset": -0.0013254195564758042
+  },
+  {
+    "edited_layer": 12,
+    "dose": -0.1,
+    "site": "model.norm",
+    "optimizer": "muon_hybrid",
+    "encoding": "top_k",
+    "carry_fidelity": -0.136045854331311,
+    "reset_fidelity": -0.6444407532412555,
+    "carry_minus_reset": 0.5083948989099445
+  },
+  {
+    "edited_layer": 12,
+    "dose": -0.1,
+    "site": "model.norm",
+    "optimizer": "muon_hybrid",
+    "encoding": "frozen_support",
+    "carry_fidelity": 0.028273655466063863,
+    "reset_fidelity": 0.020137478793575636,
+    "carry_minus_reset": 0.008136176672488227
+  },
+  {
+    "edited_layer": 12,
+    "dose": 0.1,
+    "site": "model.norm",
+    "optimizer": "muon_hybrid",
+    "encoding": "top_k",
+    "carry_fidelity": -0.12748417182709626,
+    "reset_fidelity": -0.4914329362498251,
+    "carry_minus_reset": 0.36394876442272883
+  },
+  {
+    "edited_layer": 12,
+    "dose": 0.1,
+    "site": "model.norm",
+    "optimizer": "muon_hybrid",
+    "encoding": "frozen_support",
+    "carry_fidelity": 0.020582000093437358,
+    "reset_fidelity": 0.004878252487447221,
+    "carry_minus_reset": 0.015703747605990137
+  },
+  {
+    "edited_layer": 12,
+    "dose": -1.0,
+    "site": "model.norm",
+    "optimizer": "muon_hybrid",
+    "encoding": "top_k",
+    "carry_fidelity": -0.15394716591001134,
+    "reset_fidelity": -0.5925527994172155,
+    "carry_minus_reset": 0.43860563350720416
+  },
+  {
+    "edited_layer": 12,
+    "dose": -1.0,
+    "site": "model.norm",
+    "optimizer": "muon_hybrid",
+    "encoding": "frozen_support",
+    "carry_fidelity": 0.008279516343463023,
+    "reset_fidelity": 0.025155885024991886,
+    "carry_minus_reset": -0.016876368681528864
+  },
+  {
+    "edited_layer": 12,
+    "dose": 1.0,
+    "site": "model.norm",
+    "optimizer": "muon_hybrid",
+    "encoding": "top_k",
+    "carry_fidelity": -0.117489974569148,
+    "reset_fidelity": -0.7451885687077999,
+    "carry_minus_reset": 0.6276985941386519
+  },
+  {
+    "edited_layer": 12,
+    "dose": 1.0,
+    "site": "model.norm",
+    "optimizer": "muon_hybrid",
+    "encoding": "frozen_support",
+    "carry_fidelity": 0.02725223144994815,
+    "reset_fidelity": 0.020618502898896884,
+    "carry_minus_reset": 0.006633728551051266
+  },
+  {
+    "edited_layer": 12,
+    "dose": -10.0,
+    "site": "model.norm",
+    "optimizer": "muon_hybrid",
+    "encoding": "top_k",
+    "carry_fidelity": -0.015399671281994376,
+    "reset_fidelity": -0.21998227542715254,
+    "carry_minus_reset": 0.20458260414515816
+  },
+  {
+    "edited_layer": 12,
+    "dose": -10.0,
+    "site": "model.norm",
+    "optimizer": "muon_hybrid",
+    "encoding": "frozen_support",
+    "carry_fidelity": 0.019406165391253838,
+    "reset_fidelity": 0.018211836925628444,
+    "carry_minus_reset": 0.0011943284656253939
+  },
+  {
+    "edited_layer": 12,
+    "dose": 10.0,
+    "site": "model.norm",
+    "optimizer": "muon_hybrid",
+    "encoding": "top_k",
+    "carry_fidelity": -0.07896256588572181,
+    "reset_fidelity": -0.41613597474112396,
+    "carry_minus_reset": 0.33717340885540215
+  },
+  {
+    "edited_layer": 12,
+    "dose": 10.0,
+    "site": "model.norm",
+    "optimizer": "muon_hybrid",
+    "encoding": "frozen_support",
+    "carry_fidelity": 0.008227744773950496,
+    "reset_fidelity": 0.016133787916129627,
+    "carry_minus_reset": -0.007906043142179131
+  },
+  {
+    "edited_layer": 22,
+    "dose": -0.1,
+    "site": "model.norm",
+    "optimizer": "muon_hybrid",
+    "encoding": "top_k",
+    "carry_fidelity": 0.001501884857030289,
+    "reset_fidelity": -0.000894730478569361,
+    "carry_minus_reset": 0.00239661533559965
+  },
+  {
+    "edited_layer": 22,
+    "dose": -0.1,
+    "site": "model.norm",
+    "optimizer": "muon_hybrid",
+    "encoding": "frozen_support",
+    "carry_fidelity": 0.0015018848570310661,
+    "reset_fidelity": -0.0008947304786468546,
+    "carry_minus_reset": 0.0023966153356779207
+  },
+  {
+    "edited_layer": 22,
+    "dose": 0.1,
+    "site": "model.norm",
+    "optimizer": "muon_hybrid",
+    "encoding": "top_k",
+    "carry_fidelity": 0.0015048786330967845,
+    "reset_fidelity": -0.0008960166118401336,
+    "carry_minus_reset": 0.002400895244936918
+  },
+  {
+    "edited_layer": 22,
+    "dose": 0.1,
+    "site": "model.norm",
+    "optimizer": "muon_hybrid",
+    "encoding": "frozen_support",
+    "carry_fidelity": 0.0015048786331084418,
+    "reset_fidelity": -0.0008960166117679691,
+    "carry_minus_reset": 0.002400895244876411
+  },
+  {
+    "edited_layer": 22,
+    "dose": -1.0,
+    "site": "model.norm",
+    "optimizer": "muon_hybrid",
+    "encoding": "top_k",
+    "carry_fidelity": 0.001462799044918861,
+    "reset_fidelity": -0.0008950450150215783,
+    "carry_minus_reset": 0.0023578440599404393
+  },
+  {
+    "edited_layer": 22,
+    "dose": -1.0,
+    "site": "model.norm",
+    "optimizer": "muon_hybrid",
+    "encoding": "frozen_support",
+    "carry_fidelity": 0.00146279904491875,
+    "reset_fidelity": -0.0008950450150264633,
+    "carry_minus_reset": 0.0023578440599452133
+  },
+  {
+    "edited_layer": 22,
+    "dose": 1.0,
+    "site": "model.norm",
+    "optimizer": "muon_hybrid",
+    "encoding": "top_k",
+    "carry_fidelity": -3.715881217304543,
+    "reset_fidelity": -0.0008960154263815134,
+    "carry_minus_reset": -3.7149852018781613
+  },
+  {
+    "edited_layer": 22,
+    "dose": 1.0,
+    "site": "model.norm",
+    "optimizer": "muon_hybrid",
+    "encoding": "frozen_support",
+    "carry_fidelity": 0.0015506226074956109,
+    "reset_fidelity": -0.0008960154263761844,
+    "carry_minus_reset": 0.0024466380338717952
+  },
+  {
+    "edited_layer": 22,
+    "dose": -10.0,
+    "site": "model.norm",
+    "optimizer": "muon_hybrid",
+    "encoding": "top_k",
+    "carry_fidelity": -0.36606536702830006,
+    "reset_fidelity": -1.4880185484073825,
+    "carry_minus_reset": 1.1219531813790824
+  },
+  {
+    "edited_layer": 22,
+    "dose": -10.0,
+    "site": "model.norm",
+    "optimizer": "muon_hybrid",
+    "encoding": "frozen_support",
+    "carry_fidelity": 0.0012738195436766686,
+    "reset_fidelity": -0.0008930619288733954,
+    "carry_minus_reset": 0.002166881472550064
+  },
+  {
+    "edited_layer": 22,
+    "dose": 10.0,
+    "site": "model.norm",
+    "optimizer": "muon_hybrid",
+    "encoding": "top_k",
+    "carry_fidelity": -0.2984461252621733,
+    "reset_fidelity": -1.4365998932653552,
+    "carry_minus_reset": 1.138153768003182
+  },
+  {
+    "edited_layer": 22,
+    "dose": 10.0,
+    "site": "model.norm",
+    "optimizer": "muon_hybrid",
+    "encoding": "frozen_support",
+    "carry_fidelity": 0.0021547921746256637,
+    "reset_fidelity": -0.0008972049612234745,
+    "carry_minus_reset": 0.0030519971358491382
+  }
+]

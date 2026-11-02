@@ -1,0 +1,60 @@
+{
+  "status": "prepared",
+  "puzzles": 109,
+  "unique_model_calls": 259,
+  "reported_arms": [
+    "vanilla",
+    "logic_skill",
+    "routed_candidate",
+    "routed_final",
+    "plain_candidate_routed_repair"
+  ],
+  "model": "Qwen3.5-27B",
+  "model_lock_sha256": "e64f63985e3197c153db8ed5d649ebae1cb378d4bd0b72c00b803c2f273e5c43",
+  "calls_sha256": "38cda11206ea49e63a2e16738ee8f01393b324bdf959a84d737644f768a9d5bb",
+  "cases_sha256": "ccbff9a905388984df2ccdfcf356360ea59435cd831c54320f1de117ffc24950",
+  "selected_skill_receipt_sha256": "7ebe3dac289c0e160fe558af24de41f9761cd9ca033ad9447831f0bd93c21a6f",
+  "helper_sources": {
+    "trm_critic.py": "2835da7c1475c6dac18373ad7c21bd9f8e25440dcf8d898da1231a263f5f77e5",
+    "trm_logic_corrector.py": "841354d544fc3210a3f61b936defd31b93dc11bfdf977f38e89a51f65e2f5af3",
+    "trm_retrieval.py": "71fd98a8d015e9ef8ab76baa2bbd462cdcb9c9f139f15e30938e50a6671b6e36"
+  },
+  "support_sha256": "3d5631a2e2608cbc0aeabdbdb8c598b95fc977344dbcadee8ac9d5802f51a4eb",
+  "support_train_rows": 128,
+  "exact_and_dihedral_support_overlap": 0,
+  "reference_answers_used_in_queries": false,
+  "skill_revision": "07a177f2751c2adb1cc16dc819c1173c0cd57ad5",
+  "max_new_tokens": 1024,
+  "context": 8192,
+  "thinking_enabled": false,
+  "seed": 42,
+  "temperature": 0,
+  "repeat_penalty": 1.0,
+  "weights": "Q4_K_M",
+  "kv_cache": "q8_0",
+  "tokenizer_assets": {
+    "vocab.json": "ce99b4cb2983d118806ce0a8b777a35b093e2000a503ebde25853284c9dfa003",
+    "merges.txt": "a9d356d7bdf1ef4949e3e748e95b8e10ad9d4e2e838eddc38a0a7b6b94d1db8d",
+    "tokenizer.json": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+    "tokenizer_config.json": "316230d6a809701f4db5ea8f8fc862bc3a6f3229c937c174e674ff3ca0a64ac8",
+    "chat_template.jinja": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715"
+  },
+  "max_prompt_tokens": 792,
+  "route_counts": {
+    "logic_skill": 68,
+    "logic_skill_trm": 41
+  },
+  "repair": {
+    "max_passes": 8,
+    "exact_search": true,
+    "exact_node_limit": 200000
+  },
+  "limitations": [
+    "Fresh integration of selected skill and hash-pinned archived helper implementation, not historical replay.",
+    "Synthetic support replaces exposed historical support; all 128 support labels are positive, so critic discrimination is not tested.",
+    "Frozen signature gate was selected on historical outcomes; this is not a clean generalization estimate.",
+    "Answer-only Qwen generation with a 1024-token cap differs from Nanbeige thinking-mode runs.",
+    "TRM auxiliary retrieval/critic/search paths are not neural recurrent transformer passes."
+  ],
+  "preparer_sha256": "68cd40375b2e9e9f0e40266a89fdef87aa4c9c7349895152250f9a0bb9eb4e93"
+}

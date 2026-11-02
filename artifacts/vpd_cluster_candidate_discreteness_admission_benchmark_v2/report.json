@@ -1,0 +1,142 @@
+{
+  "benchmark_id": "4d753b28880a415bed5bfaa58f2557efaec09c5b913e387bb78782eeb5191f18",
+  "design": {
+    "base_bundle_verified_before_v2_admission": true,
+    "categories": 8,
+    "components": 96,
+    "discovery_and_independent_validation_archives": true,
+    "pair_block_sufficient_statistics": true,
+    "scenarios": 3
+  },
+  "scenarios": [
+    {
+      "admission_status": "pass_candidate_cluster_discreteness_v2",
+      "base_bundle_verification": {
+        "clusters": 16,
+        "components": 96,
+        "exact_partition": true,
+        "packets": 16,
+        "schema": "sch.vpd-sae-cluster-verification.v1",
+        "status": "pass"
+      },
+      "candidate_allocation": {
+        "missing_or_untrusted_authority": 2,
+        "other_invalid": 2,
+        "replayed": 2,
+        "revoked": 2,
+        "scope_invalid": 2,
+        "signature_invalid": 2,
+        "time_inactive": 2,
+        "valid_authority": 2
+      },
+      "expected_admitted": true,
+      "mismatch_count": 0,
+      "native_v2_bundle_reverified": false,
+      "observed_admitted": true,
+      "scenario_id": "two_discrete_mechanisms_admitted",
+      "source_selection_schema": "sch.vpd-category-cluster-count-selection.v1",
+      "status": "pass",
+      "v2_allocation": {
+        "missing_or_untrusted_authority": 2,
+        "other_invalid": 2,
+        "replayed": 2,
+        "revoked": 2,
+        "scope_invalid": 2,
+        "signature_invalid": 2,
+        "time_inactive": 2,
+        "valid_authority": 2
+      }
+    },
+    {
+      "admission_status": "reject_candidate_cluster_discreteness_v2",
+      "base_bundle_verification": {
+        "clusters": 15,
+        "components": 96,
+        "exact_partition": true,
+        "packets": 15,
+        "schema": "sch.vpd-sae-cluster-verification.v1",
+        "status": "pass"
+      },
+      "candidate_allocation": {
+        "missing_or_untrusted_authority": 2,
+        "other_invalid": 2,
+        "replayed": 2,
+        "revoked": 2,
+        "scope_invalid": 1,
+        "signature_invalid": 2,
+        "time_inactive": 2,
+        "valid_authority": 2
+      },
+      "expected_admitted": false,
+      "mismatch_count": 7,
+      "native_v2_bundle_reverified": false,
+      "observed_admitted": false,
+      "scenario_id": "continuous_strength_gradient_rejected",
+      "source_selection_schema": "sch.vpd-category-cluster-count-selection.v1",
+      "status": "pass",
+      "v2_allocation": {
+        "missing_or_untrusted_authority": 1,
+        "other_invalid": 1,
+        "replayed": 1,
+        "revoked": 1,
+        "scope_invalid": 1,
+        "signature_invalid": 1,
+        "time_inactive": 1,
+        "valid_authority": 1
+      }
+    },
+    {
+      "admission_status": "pass_candidate_cluster_discreteness_v2",
+      "base_bundle_verification": {
+        "clusters": 16,
+        "components": 96,
+        "exact_partition": true,
+        "packets": 16,
+        "schema": "sch.vpd-sae-cluster-verification.v1",
+        "status": "pass"
+      },
+      "candidate_allocation": {
+        "missing_or_untrusted_authority": 2,
+        "other_invalid": 2,
+        "replayed": 2,
+        "revoked": 2,
+        "scope_invalid": 2,
+        "signature_invalid": 2,
+        "time_inactive": 2,
+        "valid_authority": 2
+      },
+      "expected_admitted": true,
+      "mismatch_count": 0,
+      "native_v2_bundle_reverified": true,
+      "observed_admitted": true,
+      "scenario_id": "native_v2_two_discrete_mechanisms_admitted",
+      "source_selection_schema": "sch.vpd-category-cluster-count-selection.v2",
+      "status": "pass",
+      "v2_allocation": {
+        "missing_or_untrusted_authority": 2,
+        "other_invalid": 2,
+        "replayed": 2,
+        "revoked": 2,
+        "scope_invalid": 2,
+        "signature_invalid": 2,
+        "time_inactive": 2,
+        "valid_authority": 2
+      }
+    }
+  ],
+  "schema": "sch.vpd-cluster-candidate-discreteness-admission-benchmark.v2",
+  "scientific_boundary": {
+    "does_not_admit_an_empirical_bonsai_candidate": true,
+    "execution_authorized": false,
+    "model_inference_performed": false,
+    "synthetic_effects_only": true,
+    "weights_loaded_or_mutated": false
+  },
+  "seed": 260829,
+  "source": {
+    "admission_runner_sha256": "b925724c9f2aefd5fb4a4493299137960ebce998751872b874ee96ba9a8596b8",
+    "base_cluster_runner_sha256": "488f8fbcada2e3b4c9112a3d3c7d63676231946966abf1ddffe52148d42a7d19",
+    "runner_sha256": "4a528f0180216316daa0f2702e9a3ed02314538edd8f8654b9c9928cfc8dc6f7"
+  },
+  "status": "pass"
+}

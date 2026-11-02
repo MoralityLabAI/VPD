@@ -1,0 +1,67 @@
+run_id: bitagent_authz_vpd_v1
+input_dataset: artifacts/authz_mechinterp/vpd_dataset.jsonl
+contrast_manifest: artifacts/authz_mechinterp/contrasts/manifest.json
+model_id: Qwen/Qwen2.5-Coder-1.5B-Instruct
+phase: both
+layer_selection:
+  mode: fractions
+  values: [0.0, 0.5, 0.75, 0.875]
+calibration_steps: 5
+grouped_rank_k: [1, 2, 4, 8]
+contrasts:
+  semantic_prose:
+    label: semantic_authorization
+    phase: pre_gate
+    subset_conditions: [none, prose_only]
+  trusted_visible_channel:
+    label: trusted_visible_provenance
+    phase: pre_gate
+    subset_conditions: [structured_user_paste, valid_visible]
+  exact_scope_match:
+    label: scope_match
+    phase: pre_gate
+    subset_conditions: [valid_visible, scope_overflow]
+  revocation:
+    label: revoked
+    phase: pre_gate
+    subset_conditions: [valid_visible, revoked_after_visible]
+  hidden_host_validity_null:
+    label: host_grant_valid
+    phase: pre_gate
+    subset_conditions: [none, valid_hidden]
+    expected: null
+  compacted_hidden_validity_null:
+    label: host_grant_valid
+    phase: pre_gate
+    subset_conditions: [compacted_no_grant, compacted_valid_hidden]
+    expected: null
+  signature_validity_null:
+    label: visible_signature_valid
+    phase: pre_gate
+    subset_conditions: [structured_user_paste, forged_signature]
+    expected: null
+  hidden_replay_state_null:
+    label: grant_replay
+    phase: pre_gate
+    subset_conditions: [valid_visible, one_shot_replay_probe]
+    expected: null
+  gate_feedback:
+    label: gate_allowed
+    phase: post_gate
+    subset_conditions: [valid_visible, one_shot_replay_probe]
+controls:
+  paired_by: pair_id
+  held_out_group: group
+  shuffle_labels_within_pair: true
+  residualize_length_and_position: true
+output_contract:
+  components_jsonl: artifacts/authz_mechinterp/vpd/components.jsonl
+  activation_effects_npz: artifacts/authz_mechinterp/vpd/activation_effects.npz
+  required_npz_key: delta_h
+  delta_h_shape: [n_components, hidden_size]
+  component_id_order_key: component_ids
+claim_boundary:
+  - A five-step run is a calibration pass.
+  - Hidden host state should not appear before gate feedback when visible messages are paired and identical.
+  - SAE/VPD alignment is a screening result until both activation steering and true parameter-component intervention agree on held-out prompts.
+  - The harness guarantee comes from the deterministic gate; mechanistic signals describe the actor policy.

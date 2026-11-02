@@ -1,0 +1,117 @@
+{
+  "schema": "vpd.cross-research-utility-verification.v1",
+  "date": "2026-09-11",
+  "status": "new_design_and_arithmetic_checked_historical_v1_lineage_stale",
+  "scope": "four local research tracks; no new empirical comparison",
+  "new_statistics_tests": {
+    "command": ".venv/Scripts/python.exe -m pytest -q tests/test_utility_challenger_envelope.py",
+    "passed": 11,
+    "failed": 0
+  },
+  "combined_tests": {
+    "passed": 12,
+    "failed": 1,
+    "failure": "test_utility_aware_selection_audit_reproduces_without_execution: source activation-category specification ID differs"
+  },
+  "historical_v1_pin_preserved": true,
+  "live_source_spec_id": "63fab03949f9b353f8df13c4b1cf8a8d031178b543fb73f8a409c32ad9c40a48",
+  "catalog_source_paths_and_request_cap_arithmetic": "pass",
+  "model_calls_performed": 0,
+  "model_or_sae_fits_performed": 0,
+  "empirical_interventions_performed": 0,
+  "remote_work_launched": false,
+  "scientific_admissions": 0,
+  "costs": {
+    "local_cpu_flops": null,
+    "local_cpu_flops_reason": "not profiled",
+    "source_bytes": "per-file sizes below; not a storage-free audit",
+    "historical_model_costs": "not measured by this verification"
+  },
+  "sources": [
+    {
+      "path": "configs/evals/vpd_cross_research_utility_v1.json",
+      "sha256": "266e255f09bc53932dd84d5cee5401d1ae9ce1bfe26cc7d9a561dc8ff4808a65",
+      "bytes": 14725
+    },
+    {
+      "path": "VPD_CROSS_RESEARCH_UTILITY_ADDENDUM_V1.md",
+      "sha256": "9ee5664014b51ab8676eefcfdb596e9f8e5ffd7e4ca646a0ca58a2445fae88a7",
+      "bytes": 17172
+    },
+    {
+      "path": "experiments/authz_mechinterp/utility_challenger_envelope.py",
+      "sha256": "37b6ab39c41b86888b74d367b741bdde3dcf387e36754b2295ca2cea6c661aee",
+      "bytes": 5793
+    },
+    {
+      "path": "tests/test_utility_challenger_envelope.py",
+      "sha256": "f85f22c59225909793fb8885fc747dd386e6be64272a00eda876ef62050dc272",
+      "bytes": 2901
+    },
+    {
+      "path": "artifacts/vpd_activation_category_sae_experiment_spec_v1/spec.json",
+      "sha256": "70ba4714b4dcab2633d35a30ae7b4feca48a5d5dc80a688c24df10065b9d15db",
+      "bytes": 25362
+    },
+    {
+      "path": "experiments/nanbeige_reasoning/README.md",
+      "sha256": "1e7b521cc14a2585d29720a8279baef2902bcab589a6223216375e43a016fab8",
+      "bytes": 6682
+    },
+    {
+      "path": "experiments/nanbeige_looped/README.md",
+      "sha256": "7fa31e99fa42ee5d29a4be2e59bd7a68cd552cf34ec0c3c7fdee5d7bf4bf2f4e",
+      "bytes": 13044
+    },
+    {
+      "path": "artifacts/nanbeige_reasoning/q4_feature_answers_PROTOCOL.md",
+      "sha256": "b4726175260e63c1b33d9a66afe735dc9d0fe83bc1d8a952dedce570fd0d3298",
+      "bytes": 3730
+    },
+    {
+      "path": "artifacts/nanbeige_reasoning/answer_steering_index_v1/README.md",
+      "sha256": "8b3ec9dade488519e67c0b0cdb47d9fbbeebe46a41b54721e34cb1ad56ad8cb2",
+      "bytes": 1131
+    },
+    {
+      "path": "experiments/nanbeige_receipt_replay/README.md",
+      "sha256": "f73d5059b0744a655ef93d023f320e3163aa0e6bba782b54f54f1baa54bfc74f",
+      "bytes": 9797
+    },
+    {
+      "path": "artifacts/nanbeige_receipt_replay/STATUS.md",
+      "sha256": "85eb5e8d904198f46363947a602c1cdb84e6f88b9b74368c0deaaf7be18faa7f",
+      "bytes": 4755
+    },
+    {
+      "path": "experiments/nanbeige_receipt_replay/vpd_bridge.py",
+      "sha256": "4df33e267cbaa12c81278e2445b40a0eee86f051280e9e537f1becdb7a1f5987",
+      "bytes": 3875
+    },
+    {
+      "path": "HRM_TEXT_1B_VPD_RL_POLICY_PROTOCOL_V1.md",
+      "sha256": "44f0519663981aa8442b0133aed7912438276b5d9c241e14ec5db32569bcb8a1",
+      "bytes": 18765
+    },
+    {
+      "path": "HRM_TEXT_1B_FULL_VPD_RECOVERY_AUDIT_V1.md",
+      "sha256": "cf1964823e6ef478bea68d0fe24b1d420b34b2f5cf444704fc678a22ab8fb48c",
+      "bytes": 7135
+    },
+    {
+      "path": "HRM_TEXT_1B_LOADER_CONFORMANCE_AND_PRIMELAB_RUN_REPORT_V1.md",
+      "sha256": "a62a056a559a9951daf7ef060160df93a320936de32f320deb89d923bb6f59eb",
+      "bytes": 12782
+    },
+    {
+      "path": "EXPERIMENT_PROTOCOL.md",
+      "sha256": "afeccd73c24cce1040a0086be440774238e7a5ac4f03ff1a4f47ba9a7a6535f3",
+      "bytes": 8753
+    },
+    {
+      "path": "AUTHZ_RETRAINING_EXPERIMENT_V9.md",
+      "sha256": "1e8612ddd5c18250d8331221f671a4899b81dfd335538334af8261772e6a9163",
+      "bytes": 6136
+    }
+  ]
+}

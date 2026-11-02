@@ -1,0 +1,3782 @@
+[
+  {
+    "id": "arc_agi_1/12422b43/0",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/12422b43/0",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": -0.1,
+    "rms_logit_change": 0.03196463404690165,
+    "baseline_to_intervention_kl": 0.0005118033383080287,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/12422b43/0",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": 0.1,
+    "rms_logit_change": 0.03136307469574009,
+    "baseline_to_intervention_kl": 0.0004910345595996835,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/12422b43/0",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": -1.0,
+    "rms_logit_change": 0.034855032588340475,
+    "baseline_to_intervention_kl": 0.0005920686446568596,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/12422b43/0",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": 1.0,
+    "rms_logit_change": 0.038231806521539506,
+    "baseline_to_intervention_kl": 0.0007160793399942602,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/12422b43/0",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": -10.0,
+    "rms_logit_change": 0.053453807071869905,
+    "baseline_to_intervention_kl": 0.001438868148956599,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/12422b43/0",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": 10.0,
+    "rms_logit_change": 0.052330770039885406,
+    "baseline_to_intervention_kl": 0.0012887203454300012,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/12422b43/0",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/12422b43/0",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": -0.1,
+    "rms_logit_change": 0.0017152665054619852,
+    "baseline_to_intervention_kl": 1.1930683812699528e-06,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/12422b43/0",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": 0.1,
+    "rms_logit_change": 0.00222888798154156,
+    "baseline_to_intervention_kl": 2.465792171938626e-06,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/12422b43/0",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": -1.0,
+    "rms_logit_change": 0.0051264753893429035,
+    "baseline_to_intervention_kl": 1.2961359938578481e-05,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/12422b43/0",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": 1.0,
+    "rms_logit_change": 0.006328284510056349,
+    "baseline_to_intervention_kl": 1.992179210138548e-05,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/12422b43/0",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": -10.0,
+    "rms_logit_change": 0.018326985218484203,
+    "baseline_to_intervention_kl": 0.0001596778395927023,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/12422b43/0",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": 10.0,
+    "rms_logit_change": 0.019511558907631947,
+    "baseline_to_intervention_kl": 0.0001895357490705167,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/0",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/0",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": -0.1,
+    "rms_logit_change": 0.03494651963168877,
+    "baseline_to_intervention_kl": 0.0005996722606771606,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/0",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": 0.1,
+    "rms_logit_change": 0.03615069872216221,
+    "baseline_to_intervention_kl": 0.0006530036402019772,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/0",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": -1.0,
+    "rms_logit_change": 0.03485927238638131,
+    "baseline_to_intervention_kl": 0.0006029290253105524,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/0",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": 1.0,
+    "rms_logit_change": 0.03768973937553885,
+    "baseline_to_intervention_kl": 0.0006999547250307725,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/0",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": -10.0,
+    "rms_logit_change": 0.055915906975880565,
+    "baseline_to_intervention_kl": 0.0015829422316750654,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/0",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": 10.0,
+    "rms_logit_change": 0.05896361501043475,
+    "baseline_to_intervention_kl": 0.0016522915297849231,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/0",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/0",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": -0.1,
+    "rms_logit_change": 0.001107647984479105,
+    "baseline_to_intervention_kl": 6.013276222167804e-07,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/0",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": 0.1,
+    "rms_logit_change": 0.0011779252650827637,
+    "baseline_to_intervention_kl": 6.743308460145596e-07,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/0",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": -1.0,
+    "rms_logit_change": 0.00564820752507445,
+    "baseline_to_intervention_kl": 1.57778223863978e-05,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/0",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": 1.0,
+    "rms_logit_change": 0.005486732851517263,
+    "baseline_to_intervention_kl": 1.5062507205220431e-05,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/0",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": -10.0,
+    "rms_logit_change": 0.018316719596793787,
+    "baseline_to_intervention_kl": 0.0001634459417530478,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/0",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": 10.0,
+    "rms_logit_change": 0.018339872423123228,
+    "baseline_to_intervention_kl": 0.00016483053986683747,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/1",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/1",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": -0.1,
+    "rms_logit_change": 0.0340676551438866,
+    "baseline_to_intervention_kl": 0.0005706639352923268,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/1",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": 0.1,
+    "rms_logit_change": 0.03417692823566663,
+    "baseline_to_intervention_kl": 0.0005713495344333173,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/1",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": -1.0,
+    "rms_logit_change": 0.03593178952015606,
+    "baseline_to_intervention_kl": 0.0006274198380805287,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/1",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": 1.0,
+    "rms_logit_change": 0.03650054892775671,
+    "baseline_to_intervention_kl": 0.000672156483945975,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/1",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": -10.0,
+    "rms_logit_change": 0.05449186523264033,
+    "baseline_to_intervention_kl": 0.0014695486906726681,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/1",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": 10.0,
+    "rms_logit_change": 0.053137940980110994,
+    "baseline_to_intervention_kl": 0.0014128610861601821,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/1",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/1",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": -0.1,
+    "rms_logit_change": 0.0018065689458243743,
+    "baseline_to_intervention_kl": 1.607238550614358e-06,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/1",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": 0.1,
+    "rms_logit_change": 0.0010257499988011944,
+    "baseline_to_intervention_kl": 5.212932157453035e-07,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/1",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": -1.0,
+    "rms_logit_change": 0.004440015241439659,
+    "baseline_to_intervention_kl": 9.67715528538109e-06,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/1",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": 1.0,
+    "rms_logit_change": 0.006065163181751298,
+    "baseline_to_intervention_kl": 1.794342820239444e-05,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/1",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": -10.0,
+    "rms_logit_change": 0.018289389527745687,
+    "baseline_to_intervention_kl": 0.00016543938491664606,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/1",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": 10.0,
+    "rms_logit_change": 0.018541694095065973,
+    "baseline_to_intervention_kl": 0.00017159598388495525,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/3dc255db/0",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/3dc255db/0",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": -0.1,
+    "rms_logit_change": 0.033563995597853856,
+    "baseline_to_intervention_kl": 0.0005596605852239988,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/3dc255db/0",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": 0.1,
+    "rms_logit_change": 0.03566417900276549,
+    "baseline_to_intervention_kl": 0.0006376412937742587,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/3dc255db/0",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": -1.0,
+    "rms_logit_change": 0.03701843635709613,
+    "baseline_to_intervention_kl": 0.0006807679321737458,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/3dc255db/0",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": 1.0,
+    "rms_logit_change": 0.035984876448643496,
+    "baseline_to_intervention_kl": 0.0006449310770811055,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/3dc255db/0",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": -10.0,
+    "rms_logit_change": 0.05012720032420349,
+    "baseline_to_intervention_kl": 0.001252735876669517,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/3dc255db/0",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": 10.0,
+    "rms_logit_change": 0.05139626057825407,
+    "baseline_to_intervention_kl": 0.001322041300298862,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/3dc255db/0",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/3dc255db/0",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": -0.1,
+    "rms_logit_change": 0.0010584529821239695,
+    "baseline_to_intervention_kl": 5.400134313981191e-07,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/3dc255db/0",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": 0.1,
+    "rms_logit_change": 0.0022779076093054663,
+    "baseline_to_intervention_kl": 2.5301696976662766e-06,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/3dc255db/0",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": -1.0,
+    "rms_logit_change": 0.005989072560678218,
+    "baseline_to_intervention_kl": 1.6310084160723907e-05,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/3dc255db/0",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": 1.0,
+    "rms_logit_change": 0.006080744849834034,
+    "baseline_to_intervention_kl": 1.8481564462955972e-05,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/3dc255db/0",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": -10.0,
+    "rms_logit_change": 0.018707231420067954,
+    "baseline_to_intervention_kl": 0.00016664607554374834,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/3dc255db/0",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": 10.0,
+    "rms_logit_change": 0.019058199087336147,
+    "baseline_to_intervention_kl": 0.0001798089902418868,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/0",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/0",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": -0.1,
+    "rms_logit_change": 0.03319902272863105,
+    "baseline_to_intervention_kl": 0.0005504796596123367,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/0",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": 0.1,
+    "rms_logit_change": 0.03679428767211156,
+    "baseline_to_intervention_kl": 0.0006802884600687418,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/0",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": -1.0,
+    "rms_logit_change": 0.03690305781568328,
+    "baseline_to_intervention_kl": 0.0006782380072383017,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/0",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": 1.0,
+    "rms_logit_change": 0.03716123407920355,
+    "baseline_to_intervention_kl": 0.0006841776620764694,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/0",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": -10.0,
+    "rms_logit_change": 0.0576806190182927,
+    "baseline_to_intervention_kl": 0.0013927660622322553,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/0",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": 10.0,
+    "rms_logit_change": 0.0553586869349769,
+    "baseline_to_intervention_kl": 0.0012845019324684358,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/0",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/0",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": -0.1,
+    "rms_logit_change": 0.0022176296880425557,
+    "baseline_to_intervention_kl": 2.412752919513618e-06,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/0",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": 0.1,
+    "rms_logit_change": 0.0008096513837552759,
+    "baseline_to_intervention_kl": 3.1778798752233334e-07,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/0",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": -1.0,
+    "rms_logit_change": 0.004485637553862096,
+    "baseline_to_intervention_kl": 9.998827870596886e-06,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/0",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": 1.0,
+    "rms_logit_change": 0.00546403176888009,
+    "baseline_to_intervention_kl": 1.491670568151418e-05,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/0",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": -10.0,
+    "rms_logit_change": 0.01789671848894459,
+    "baseline_to_intervention_kl": 0.00015511739545743153,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/0",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": 10.0,
+    "rms_logit_change": 0.018238671198891478,
+    "baseline_to_intervention_kl": 0.00016049451405190782,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/1",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/1",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": -0.1,
+    "rms_logit_change": 0.03661518845289864,
+    "baseline_to_intervention_kl": 0.000661104014899524,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/1",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": 0.1,
+    "rms_logit_change": 0.034625338239604515,
+    "baseline_to_intervention_kl": 0.0006001542707481103,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/1",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": -1.0,
+    "rms_logit_change": 0.036814004517297105,
+    "baseline_to_intervention_kl": 0.0006726613570788886,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/1",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": 1.0,
+    "rms_logit_change": 0.03600626255328231,
+    "baseline_to_intervention_kl": 0.0006108252089149195,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/1",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": -10.0,
+    "rms_logit_change": 0.05179091016546018,
+    "baseline_to_intervention_kl": 0.0012852934021640385,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/1",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": 10.0,
+    "rms_logit_change": 0.05171191144263238,
+    "baseline_to_intervention_kl": 0.001297215510597854,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/1",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/1",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": -0.1,
+    "rms_logit_change": 0.0010938706619085343,
+    "baseline_to_intervention_kl": 5.7911395370211e-07,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/1",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": 0.1,
+    "rms_logit_change": 0.0024470778086191896,
+    "baseline_to_intervention_kl": 2.9124876543565542e-06,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/1",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": -1.0,
+    "rms_logit_change": 0.006270137048239133,
+    "baseline_to_intervention_kl": 1.9471261030663654e-05,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/1",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": 1.0,
+    "rms_logit_change": 0.006933243084017269,
+    "baseline_to_intervention_kl": 2.3996599791082596e-05,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/1",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": -10.0,
+    "rms_logit_change": 0.018513292369562093,
+    "baseline_to_intervention_kl": 0.00017010307906427098,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/1",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": 10.0,
+    "rms_logit_change": 0.01883801039393701,
+    "baseline_to_intervention_kl": 0.0001750470092914349,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/00062/72b57dbd293b",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/00062/72b57dbd293b",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": -0.1,
+    "rms_logit_change": 0.04151171908976242,
+    "baseline_to_intervention_kl": 0.0008071944136261308,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/00062/72b57dbd293b",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": 0.1,
+    "rms_logit_change": 0.038124512129615394,
+    "baseline_to_intervention_kl": 0.0007270124572573747,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/00062/72b57dbd293b",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": -1.0,
+    "rms_logit_change": 0.036995468884336,
+    "baseline_to_intervention_kl": 0.0006858270303663102,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/00062/72b57dbd293b",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": 1.0,
+    "rms_logit_change": 0.04264865547624864,
+    "baseline_to_intervention_kl": 0.0009032035863554426,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/00062/72b57dbd293b",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": -10.0,
+    "rms_logit_change": 0.062060149569336184,
+    "baseline_to_intervention_kl": 0.001791046480401228,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/00062/72b57dbd293b",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": 10.0,
+    "rms_logit_change": 0.05802547096003294,
+    "baseline_to_intervention_kl": 0.0015458188095141315,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/00062/72b57dbd293b",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/00062/72b57dbd293b",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": -0.1,
+    "rms_logit_change": 0.0019364615814708426,
+    "baseline_to_intervention_kl": 1.8695374963535593e-06,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/00062/72b57dbd293b",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": 0.1,
+    "rms_logit_change": 0.001075146318078373,
+    "baseline_to_intervention_kl": 5.535795617002531e-07,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/00062/72b57dbd293b",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": -1.0,
+    "rms_logit_change": 0.005173992056691045,
+    "baseline_to_intervention_kl": 1.2895515845304424e-05,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/00062/72b57dbd293b",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": 1.0,
+    "rms_logit_change": 0.004668449070478472,
+    "baseline_to_intervention_kl": 1.0822892233495881e-05,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/00062/72b57dbd293b",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": -10.0,
+    "rms_logit_change": 0.014920704218291295,
+    "baseline_to_intervention_kl": 0.00010674683677806222,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/00062/72b57dbd293b",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": 10.0,
+    "rms_logit_change": 0.015167940092910937,
+    "baseline_to_intervention_kl": 0.00011353330427721348,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/05869/5de8a003a86f",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/05869/5de8a003a86f",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": -0.1,
+    "rms_logit_change": 0.04653609915811936,
+    "baseline_to_intervention_kl": 0.0010812430713347605,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/05869/5de8a003a86f",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": 0.1,
+    "rms_logit_change": 0.046072880931602556,
+    "baseline_to_intervention_kl": 0.0010449286384595804,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/05869/5de8a003a86f",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": -1.0,
+    "rms_logit_change": 0.045628971668985344,
+    "baseline_to_intervention_kl": 0.001032397611623937,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/05869/5de8a003a86f",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": 1.0,
+    "rms_logit_change": 0.04413524167928581,
+    "baseline_to_intervention_kl": 0.0009595038383837408,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/05869/5de8a003a86f",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": -10.0,
+    "rms_logit_change": 0.0709459162741205,
+    "baseline_to_intervention_kl": 0.002508655304582462,
+    "argmax_changed": true
+  },
+  {
+    "id": "intellect3_logic/05869/5de8a003a86f",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": 10.0,
+    "rms_logit_change": 0.07316203319005762,
+    "baseline_to_intervention_kl": 0.0026888401935926355,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/05869/5de8a003a86f",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/05869/5de8a003a86f",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": -0.1,
+    "rms_logit_change": 0.0009950688136126807,
+    "baseline_to_intervention_kl": 4.90153741866235e-07,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/05869/5de8a003a86f",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": 0.1,
+    "rms_logit_change": 0.0030992679286022074,
+    "baseline_to_intervention_kl": 4.559953833075059e-06,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/05869/5de8a003a86f",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": -1.0,
+    "rms_logit_change": 0.0055762328939121305,
+    "baseline_to_intervention_kl": 1.5012161780403945e-05,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/05869/5de8a003a86f",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": 1.0,
+    "rms_logit_change": 0.00643574491246026,
+    "baseline_to_intervention_kl": 1.835142427918698e-05,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/05869/5de8a003a86f",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": -10.0,
+    "rms_logit_change": 0.017675811351300037,
+    "baseline_to_intervention_kl": 0.0001502728664816298,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/05869/5de8a003a86f",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": 10.0,
+    "rms_logit_change": 0.017271491848950157,
+    "baseline_to_intervention_kl": 0.00014498069590701041,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/04162/0fae120567d0",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/04162/0fae120567d0",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": -0.1,
+    "rms_logit_change": 0.031485536952708185,
+    "baseline_to_intervention_kl": 0.0004929241478224692,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/04162/0fae120567d0",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": 0.1,
+    "rms_logit_change": 0.030434491750401648,
+    "baseline_to_intervention_kl": 0.0004380006789013052,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/04162/0fae120567d0",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": -1.0,
+    "rms_logit_change": 0.03383586930963192,
+    "baseline_to_intervention_kl": 0.0005415537806521791,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/04162/0fae120567d0",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": 1.0,
+    "rms_logit_change": 0.028858025961200913,
+    "baseline_to_intervention_kl": 0.0004159273801152996,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/04162/0fae120567d0",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": -10.0,
+    "rms_logit_change": 0.04781179826930313,
+    "baseline_to_intervention_kl": 0.0011343865397367347,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/04162/0fae120567d0",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": 10.0,
+    "rms_logit_change": 0.04478357444282583,
+    "baseline_to_intervention_kl": 0.0009759407888656307,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/04162/0fae120567d0",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/04162/0fae120567d0",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": -0.1,
+    "rms_logit_change": 0.001768903303950705,
+    "baseline_to_intervention_kl": 1.558110293934082e-06,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/04162/0fae120567d0",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": 0.1,
+    "rms_logit_change": 0.0005934988852914676,
+    "baseline_to_intervention_kl": 1.7153825915043045e-07,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/04162/0fae120567d0",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": -1.0,
+    "rms_logit_change": 0.006231266946029473,
+    "baseline_to_intervention_kl": 1.816872371459389e-05,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/04162/0fae120567d0",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": 1.0,
+    "rms_logit_change": 0.004683742278968477,
+    "baseline_to_intervention_kl": 1.0699833545071942e-05,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/04162/0fae120567d0",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": -10.0,
+    "rms_logit_change": 0.01655598928518891,
+    "baseline_to_intervention_kl": 0.0001317088973600654,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/04162/0fae120567d0",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": 10.0,
+    "rms_logit_change": 0.015955691972829172,
+    "baseline_to_intervention_kl": 0.00012460201273932153,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/10603/9d30832ed4ab",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/10603/9d30832ed4ab",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": -0.1,
+    "rms_logit_change": 0.034419543023282255,
+    "baseline_to_intervention_kl": 0.0005808274981202459,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/10603/9d30832ed4ab",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": 0.1,
+    "rms_logit_change": 0.03386257349940832,
+    "baseline_to_intervention_kl": 0.0005385404753472108,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/10603/9d30832ed4ab",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": -1.0,
+    "rms_logit_change": 0.03649117775054401,
+    "baseline_to_intervention_kl": 0.0005493746709198684,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/10603/9d30832ed4ab",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": 1.0,
+    "rms_logit_change": 0.03238548895909371,
+    "baseline_to_intervention_kl": 0.0005011162011018922,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/10603/9d30832ed4ab",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": -10.0,
+    "rms_logit_change": 0.04677715376177216,
+    "baseline_to_intervention_kl": 0.0010937011612302153,
+    "argmax_changed": true
+  },
+  {
+    "id": "intellect3_math/10603/9d30832ed4ab",
+    "history": "one_pass",
+    "layer": 12,
+    "dose": 10.0,
+    "rms_logit_change": 0.048594949379960346,
+    "baseline_to_intervention_kl": 0.0010862568964226152,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/10603/9d30832ed4ab",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/10603/9d30832ed4ab",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": -0.1,
+    "rms_logit_change": 0.0013300515911438028,
+    "baseline_to_intervention_kl": 8.382435010674653e-07,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/10603/9d30832ed4ab",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": 0.1,
+    "rms_logit_change": 0.0015111616999085114,
+    "baseline_to_intervention_kl": 1.1280063184328985e-06,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/10603/9d30832ed4ab",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": -1.0,
+    "rms_logit_change": 0.003949985259348612,
+    "baseline_to_intervention_kl": 7.686806163218694e-06,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/10603/9d30832ed4ab",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": 1.0,
+    "rms_logit_change": 0.0043975887579286044,
+    "baseline_to_intervention_kl": 9.59391944186765e-06,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/10603/9d30832ed4ab",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": -10.0,
+    "rms_logit_change": 0.0170818464956728,
+    "baseline_to_intervention_kl": 0.0001412811869041806,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/10603/9d30832ed4ab",
+    "history": "one_pass",
+    "layer": 22,
+    "dose": 10.0,
+    "rms_logit_change": 0.015194131694931818,
+    "baseline_to_intervention_kl": 0.00011426003730731871,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/12422b43/0",
+    "history": "carry",
+    "layer": 12,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/12422b43/0",
+    "history": "carry",
+    "layer": 12,
+    "dose": -0.1,
+    "rms_logit_change": 0.2618539892701208,
+    "baseline_to_intervention_kl": 3.734345783736479e-05,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/12422b43/0",
+    "history": "carry",
+    "layer": 12,
+    "dose": 0.1,
+    "rms_logit_change": 0.23935438042739035,
+    "baseline_to_intervention_kl": 0.0015722691957205076,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/12422b43/0",
+    "history": "carry",
+    "layer": 12,
+    "dose": -1.0,
+    "rms_logit_change": 0.27515230883677744,
+    "baseline_to_intervention_kl": 3.8505006044198695e-05,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/12422b43/0",
+    "history": "carry",
+    "layer": 12,
+    "dose": 1.0,
+    "rms_logit_change": 0.27477299943798383,
+    "baseline_to_intervention_kl": 0.00021161461390780642,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/12422b43/0",
+    "history": "carry",
+    "layer": 12,
+    "dose": -10.0,
+    "rms_logit_change": 0.49894646398439646,
+    "baseline_to_intervention_kl": 0.0006996778778323714,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/12422b43/0",
+    "history": "carry",
+    "layer": 12,
+    "dose": 10.0,
+    "rms_logit_change": 0.4741722569315006,
+    "baseline_to_intervention_kl": 0.0022720554286688095,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/12422b43/0",
+    "history": "carry",
+    "layer": 22,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/12422b43/0",
+    "history": "carry",
+    "layer": 22,
+    "dose": -0.1,
+    "rms_logit_change": 0.01841339264007527,
+    "baseline_to_intervention_kl": 8.01489416160359e-07,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/12422b43/0",
+    "history": "carry",
+    "layer": 22,
+    "dose": 0.1,
+    "rms_logit_change": 0.01436266837611283,
+    "baseline_to_intervention_kl": 1.6477035512682538e-06,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/12422b43/0",
+    "history": "carry",
+    "layer": 22,
+    "dose": -1.0,
+    "rms_logit_change": 0.04538755915892615,
+    "baseline_to_intervention_kl": 9.786171647841097e-07,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/12422b43/0",
+    "history": "carry",
+    "layer": 22,
+    "dose": 1.0,
+    "rms_logit_change": 0.04198966094654777,
+    "baseline_to_intervention_kl": 6.074939213160357e-05,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/12422b43/0",
+    "history": "carry",
+    "layer": 22,
+    "dose": -10.0,
+    "rms_logit_change": 0.13740742959204602,
+    "baseline_to_intervention_kl": 0.00015942446639848008,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/12422b43/0",
+    "history": "carry",
+    "layer": 22,
+    "dose": 10.0,
+    "rms_logit_change": 0.14103369685086317,
+    "baseline_to_intervention_kl": 1.5033169204540065e-05,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/0",
+    "history": "carry",
+    "layer": 12,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/0",
+    "history": "carry",
+    "layer": 12,
+    "dose": -0.1,
+    "rms_logit_change": 0.30260416535689966,
+    "baseline_to_intervention_kl": 1.9581859502359595e-05,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/0",
+    "history": "carry",
+    "layer": 12,
+    "dose": 0.1,
+    "rms_logit_change": 0.2391134065725276,
+    "baseline_to_intervention_kl": 3.800915949539089e-05,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/0",
+    "history": "carry",
+    "layer": 12,
+    "dose": -1.0,
+    "rms_logit_change": 0.2575974484314743,
+    "baseline_to_intervention_kl": 0.0003957749587161375,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/0",
+    "history": "carry",
+    "layer": 12,
+    "dose": 1.0,
+    "rms_logit_change": 0.293213181079164,
+    "baseline_to_intervention_kl": 0.0009056260747971213,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/0",
+    "history": "carry",
+    "layer": 12,
+    "dose": -10.0,
+    "rms_logit_change": 0.507104439352376,
+    "baseline_to_intervention_kl": 0.01539827576176249,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/0",
+    "history": "carry",
+    "layer": 12,
+    "dose": 10.0,
+    "rms_logit_change": 0.5052098544686158,
+    "baseline_to_intervention_kl": 0.0003845766856076866,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/0",
+    "history": "carry",
+    "layer": 22,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/0",
+    "history": "carry",
+    "layer": 22,
+    "dose": -0.1,
+    "rms_logit_change": 0.02062423591058415,
+    "baseline_to_intervention_kl": 1.6258224107591594e-05,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/0",
+    "history": "carry",
+    "layer": 22,
+    "dose": 0.1,
+    "rms_logit_change": 0.010810644704324319,
+    "baseline_to_intervention_kl": 3.220881943787334e-06,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/0",
+    "history": "carry",
+    "layer": 22,
+    "dose": -1.0,
+    "rms_logit_change": 0.044519697842786365,
+    "baseline_to_intervention_kl": 1.2318457195776033e-05,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/0",
+    "history": "carry",
+    "layer": 22,
+    "dose": 1.0,
+    "rms_logit_change": 0.04146262665286373,
+    "baseline_to_intervention_kl": 1.0576672979015182e-06,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/0",
+    "history": "carry",
+    "layer": 22,
+    "dose": -10.0,
+    "rms_logit_change": 0.14300112148959107,
+    "baseline_to_intervention_kl": 0.00016981666695797985,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/0",
+    "history": "carry",
+    "layer": 22,
+    "dose": 10.0,
+    "rms_logit_change": 0.14081717829978144,
+    "baseline_to_intervention_kl": 0.00011484906777403038,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/1",
+    "history": "carry",
+    "layer": 12,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/1",
+    "history": "carry",
+    "layer": 12,
+    "dose": -0.1,
+    "rms_logit_change": 0.2823611318725064,
+    "baseline_to_intervention_kl": 0.0003129456693416759,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/1",
+    "history": "carry",
+    "layer": 12,
+    "dose": 0.1,
+    "rms_logit_change": 0.3147540185547342,
+    "baseline_to_intervention_kl": 0.003563642189031409,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/1",
+    "history": "carry",
+    "layer": 12,
+    "dose": -1.0,
+    "rms_logit_change": 0.29012357732152105,
+    "baseline_to_intervention_kl": 1.2042752398570738e-05,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/1",
+    "history": "carry",
+    "layer": 12,
+    "dose": 1.0,
+    "rms_logit_change": 0.29253868567533414,
+    "baseline_to_intervention_kl": 0.004423704897140347,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/1",
+    "history": "carry",
+    "layer": 12,
+    "dose": -10.0,
+    "rms_logit_change": 0.5704693342215793,
+    "baseline_to_intervention_kl": 0.00019663950543355002,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/1",
+    "history": "carry",
+    "layer": 12,
+    "dose": 10.0,
+    "rms_logit_change": 0.5000214462548405,
+    "baseline_to_intervention_kl": 0.010013692784170143,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/1",
+    "history": "carry",
+    "layer": 22,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/1",
+    "history": "carry",
+    "layer": 22,
+    "dose": -0.1,
+    "rms_logit_change": 0.013738836166587741,
+    "baseline_to_intervention_kl": 1.205906034736343e-06,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/1",
+    "history": "carry",
+    "layer": 22,
+    "dose": 0.1,
+    "rms_logit_change": 0.013186081283412641,
+    "baseline_to_intervention_kl": 9.726507965969768e-07,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/1",
+    "history": "carry",
+    "layer": 22,
+    "dose": -1.0,
+    "rms_logit_change": 0.04085061720602658,
+    "baseline_to_intervention_kl": 1.4867179052218854e-05,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/1",
+    "history": "carry",
+    "layer": 22,
+    "dose": 1.0,
+    "rms_logit_change": 0.041131198459251846,
+    "baseline_to_intervention_kl": 1.5178687065443646e-05,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/1",
+    "history": "carry",
+    "layer": 22,
+    "dose": -10.0,
+    "rms_logit_change": 0.13473450001143572,
+    "baseline_to_intervention_kl": 0.0001803431171339619,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/1",
+    "history": "carry",
+    "layer": 22,
+    "dose": 10.0,
+    "rms_logit_change": 0.13033465912526704,
+    "baseline_to_intervention_kl": 0.00012345334870142113,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/3dc255db/0",
+    "history": "carry",
+    "layer": 12,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/3dc255db/0",
+    "history": "carry",
+    "layer": 12,
+    "dose": -0.1,
+    "rms_logit_change": 0.2733065773818119,
+    "baseline_to_intervention_kl": 0.0008852716281261574,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/3dc255db/0",
+    "history": "carry",
+    "layer": 12,
+    "dose": 0.1,
+    "rms_logit_change": 0.2419839958790717,
+    "baseline_to_intervention_kl": 0.00032054846479700436,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/3dc255db/0",
+    "history": "carry",
+    "layer": 12,
+    "dose": -1.0,
+    "rms_logit_change": 0.2600577016953192,
+    "baseline_to_intervention_kl": 0.0007342300076921594,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/3dc255db/0",
+    "history": "carry",
+    "layer": 12,
+    "dose": 1.0,
+    "rms_logit_change": 0.3737967033701436,
+    "baseline_to_intervention_kl": 6.731411423231616e-05,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/3dc255db/0",
+    "history": "carry",
+    "layer": 12,
+    "dose": -10.0,
+    "rms_logit_change": 0.4961358986863114,
+    "baseline_to_intervention_kl": 0.0004930153540535064,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/3dc255db/0",
+    "history": "carry",
+    "layer": 12,
+    "dose": 10.0,
+    "rms_logit_change": 0.5215915623873578,
+    "baseline_to_intervention_kl": 0.00027306537879602115,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/3dc255db/0",
+    "history": "carry",
+    "layer": 22,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/3dc255db/0",
+    "history": "carry",
+    "layer": 22,
+    "dose": -0.1,
+    "rms_logit_change": 0.016181904215902383,
+    "baseline_to_intervention_kl": 2.872668917168868e-08,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/3dc255db/0",
+    "history": "carry",
+    "layer": 22,
+    "dose": 0.1,
+    "rms_logit_change": 0.015062346002593319,
+    "baseline_to_intervention_kl": 1.4883443277323512e-06,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/3dc255db/0",
+    "history": "carry",
+    "layer": 22,
+    "dose": -1.0,
+    "rms_logit_change": 0.040590592737038446,
+    "baseline_to_intervention_kl": 1.763263952803255e-05,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/3dc255db/0",
+    "history": "carry",
+    "layer": 22,
+    "dose": 1.0,
+    "rms_logit_change": 0.043106444726679155,
+    "baseline_to_intervention_kl": 8.420988119615076e-06,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/3dc255db/0",
+    "history": "carry",
+    "layer": 22,
+    "dose": -10.0,
+    "rms_logit_change": 0.13110023022527126,
+    "baseline_to_intervention_kl": 9.29400013889226e-05,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/3dc255db/0",
+    "history": "carry",
+    "layer": 22,
+    "dose": 10.0,
+    "rms_logit_change": 0.13979110392098917,
+    "baseline_to_intervention_kl": 0.0001409847938574301,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/0",
+    "history": "carry",
+    "layer": 12,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/0",
+    "history": "carry",
+    "layer": 12,
+    "dose": -0.1,
+    "rms_logit_change": 0.29537116161826343,
+    "baseline_to_intervention_kl": 0.0003613922149906056,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/0",
+    "history": "carry",
+    "layer": 12,
+    "dose": 0.1,
+    "rms_logit_change": 0.2725993498983052,
+    "baseline_to_intervention_kl": 0.0007956853445482684,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/0",
+    "history": "carry",
+    "layer": 12,
+    "dose": -1.0,
+    "rms_logit_change": 0.2720395829935306,
+    "baseline_to_intervention_kl": 0.0012344274714306807,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/0",
+    "history": "carry",
+    "layer": 12,
+    "dose": 1.0,
+    "rms_logit_change": 0.2887483925111864,
+    "baseline_to_intervention_kl": 0.0006700352994651267,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/0",
+    "history": "carry",
+    "layer": 12,
+    "dose": -10.0,
+    "rms_logit_change": 0.5111559489248163,
+    "baseline_to_intervention_kl": 0.007161305077652003,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/0",
+    "history": "carry",
+    "layer": 12,
+    "dose": 10.0,
+    "rms_logit_change": 0.5249147744561127,
+    "baseline_to_intervention_kl": 0.03726434867890431,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/0",
+    "history": "carry",
+    "layer": 22,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/0",
+    "history": "carry",
+    "layer": 22,
+    "dose": -0.1,
+    "rms_logit_change": 0.008971452136531723,
+    "baseline_to_intervention_kl": 7.409852730998795e-06,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/0",
+    "history": "carry",
+    "layer": 22,
+    "dose": 0.1,
+    "rms_logit_change": 0.01430219409290239,
+    "baseline_to_intervention_kl": 3.5578894160773815e-06,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/0",
+    "history": "carry",
+    "layer": 22,
+    "dose": -1.0,
+    "rms_logit_change": 0.04029329746645774,
+    "baseline_to_intervention_kl": 1.9702819700067448e-05,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/0",
+    "history": "carry",
+    "layer": 22,
+    "dose": 1.0,
+    "rms_logit_change": 0.03794164774000902,
+    "baseline_to_intervention_kl": 4.334515938078244e-06,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/0",
+    "history": "carry",
+    "layer": 22,
+    "dose": -10.0,
+    "rms_logit_change": 0.13105553731897226,
+    "baseline_to_intervention_kl": 0.00041672739992531567,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/0",
+    "history": "carry",
+    "layer": 22,
+    "dose": 10.0,
+    "rms_logit_change": 0.12987797965586523,
+    "baseline_to_intervention_kl": 0.0003552657867777495,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/1",
+    "history": "carry",
+    "layer": 12,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/1",
+    "history": "carry",
+    "layer": 12,
+    "dose": -0.1,
+    "rms_logit_change": 0.24567591426427324,
+    "baseline_to_intervention_kl": 0.009331963329154164,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/1",
+    "history": "carry",
+    "layer": 12,
+    "dose": 0.1,
+    "rms_logit_change": 0.26167045584971,
+    "baseline_to_intervention_kl": 0.0024196383306705686,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/1",
+    "history": "carry",
+    "layer": 12,
+    "dose": -1.0,
+    "rms_logit_change": 0.2895667646031723,
+    "baseline_to_intervention_kl": 0.005970498441079537,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/1",
+    "history": "carry",
+    "layer": 12,
+    "dose": 1.0,
+    "rms_logit_change": 0.2742847421516606,
+    "baseline_to_intervention_kl": 0.010322537229039643,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/1",
+    "history": "carry",
+    "layer": 12,
+    "dose": -10.0,
+    "rms_logit_change": 0.5728775832652055,
+    "baseline_to_intervention_kl": 0.01438708680753989,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/1",
+    "history": "carry",
+    "layer": 12,
+    "dose": 10.0,
+    "rms_logit_change": 0.4792697402358321,
+    "baseline_to_intervention_kl": 0.001347921440825409,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/1",
+    "history": "carry",
+    "layer": 22,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/1",
+    "history": "carry",
+    "layer": 22,
+    "dose": -0.1,
+    "rms_logit_change": 0.011456469777248865,
+    "baseline_to_intervention_kl": 1.7531968311964782e-07,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/1",
+    "history": "carry",
+    "layer": 22,
+    "dose": 0.1,
+    "rms_logit_change": 0.010555299580709823,
+    "baseline_to_intervention_kl": 1.254939797373898e-06,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/1",
+    "history": "carry",
+    "layer": 22,
+    "dose": -1.0,
+    "rms_logit_change": 0.0374545937677251,
+    "baseline_to_intervention_kl": 2.3575265987502437e-05,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/1",
+    "history": "carry",
+    "layer": 22,
+    "dose": 1.0,
+    "rms_logit_change": 0.0438840163480622,
+    "baseline_to_intervention_kl": 0.00032330750927636495,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/1",
+    "history": "carry",
+    "layer": 22,
+    "dose": -10.0,
+    "rms_logit_change": 0.13379660600535384,
+    "baseline_to_intervention_kl": 0.0013435267385187254,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/1",
+    "history": "carry",
+    "layer": 22,
+    "dose": 10.0,
+    "rms_logit_change": 0.1297657001674519,
+    "baseline_to_intervention_kl": 1.129818339609305e-05,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/00062/72b57dbd293b",
+    "history": "carry",
+    "layer": 12,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/00062/72b57dbd293b",
+    "history": "carry",
+    "layer": 12,
+    "dose": -0.1,
+    "rms_logit_change": 0.25571876263973253,
+    "baseline_to_intervention_kl": 0.0001238510448253972,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/00062/72b57dbd293b",
+    "history": "carry",
+    "layer": 12,
+    "dose": 0.1,
+    "rms_logit_change": 0.2609464309980065,
+    "baseline_to_intervention_kl": 0.00016370373409079614,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/00062/72b57dbd293b",
+    "history": "carry",
+    "layer": 12,
+    "dose": -1.0,
+    "rms_logit_change": 0.25394163745918547,
+    "baseline_to_intervention_kl": 0.00018750385367853,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/00062/72b57dbd293b",
+    "history": "carry",
+    "layer": 12,
+    "dose": 1.0,
+    "rms_logit_change": 0.2777075263551954,
+    "baseline_to_intervention_kl": 0.00011686710971926008,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/00062/72b57dbd293b",
+    "history": "carry",
+    "layer": 12,
+    "dose": -10.0,
+    "rms_logit_change": 0.536669528155459,
+    "baseline_to_intervention_kl": 0.0003816468029021301,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/00062/72b57dbd293b",
+    "history": "carry",
+    "layer": 12,
+    "dose": 10.0,
+    "rms_logit_change": 0.5823132948398001,
+    "baseline_to_intervention_kl": 0.0005656166784235519,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/00062/72b57dbd293b",
+    "history": "carry",
+    "layer": 22,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/00062/72b57dbd293b",
+    "history": "carry",
+    "layer": 22,
+    "dose": -0.1,
+    "rms_logit_change": 0.011858451408811154,
+    "baseline_to_intervention_kl": 6.614006366781435e-08,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/00062/72b57dbd293b",
+    "history": "carry",
+    "layer": 22,
+    "dose": 0.1,
+    "rms_logit_change": 0.014670055282367308,
+    "baseline_to_intervention_kl": 7.358433573715134e-07,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/00062/72b57dbd293b",
+    "history": "carry",
+    "layer": 22,
+    "dose": -1.0,
+    "rms_logit_change": 0.04573713053955148,
+    "baseline_to_intervention_kl": 1.2822226702513924e-06,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/00062/72b57dbd293b",
+    "history": "carry",
+    "layer": 22,
+    "dose": 1.0,
+    "rms_logit_change": 0.043151520307678506,
+    "baseline_to_intervention_kl": 1.773187721044623e-06,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/00062/72b57dbd293b",
+    "history": "carry",
+    "layer": 22,
+    "dose": -10.0,
+    "rms_logit_change": 0.15333215889516139,
+    "baseline_to_intervention_kl": 2.992362253725396e-05,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/00062/72b57dbd293b",
+    "history": "carry",
+    "layer": 22,
+    "dose": 10.0,
+    "rms_logit_change": 0.15288432687932865,
+    "baseline_to_intervention_kl": 3.51128132473779e-07,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/05869/5de8a003a86f",
+    "history": "carry",
+    "layer": 12,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/05869/5de8a003a86f",
+    "history": "carry",
+    "layer": 12,
+    "dose": -0.1,
+    "rms_logit_change": 0.2755355067587345,
+    "baseline_to_intervention_kl": 0.0002975085817019172,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/05869/5de8a003a86f",
+    "history": "carry",
+    "layer": 12,
+    "dose": 0.1,
+    "rms_logit_change": 0.2685620160311406,
+    "baseline_to_intervention_kl": 0.0009651577398185744,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/05869/5de8a003a86f",
+    "history": "carry",
+    "layer": 12,
+    "dose": -1.0,
+    "rms_logit_change": 0.2742540094299663,
+    "baseline_to_intervention_kl": 0.001493854892646518,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/05869/5de8a003a86f",
+    "history": "carry",
+    "layer": 12,
+    "dose": 1.0,
+    "rms_logit_change": 0.2991571532703055,
+    "baseline_to_intervention_kl": 0.000819606076181584,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/05869/5de8a003a86f",
+    "history": "carry",
+    "layer": 12,
+    "dose": -10.0,
+    "rms_logit_change": 0.6860983928033115,
+    "baseline_to_intervention_kl": 0.007577556155151735,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/05869/5de8a003a86f",
+    "history": "carry",
+    "layer": 12,
+    "dose": 10.0,
+    "rms_logit_change": 0.6208026279552066,
+    "baseline_to_intervention_kl": 0.003543760333709027,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/05869/5de8a003a86f",
+    "history": "carry",
+    "layer": 22,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/05869/5de8a003a86f",
+    "history": "carry",
+    "layer": 22,
+    "dose": -0.1,
+    "rms_logit_change": 0.019357643312400336,
+    "baseline_to_intervention_kl": 2.4728329008814765e-08,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/05869/5de8a003a86f",
+    "history": "carry",
+    "layer": 22,
+    "dose": 0.1,
+    "rms_logit_change": 0.010098697017154625,
+    "baseline_to_intervention_kl": 3.544804274049834e-09,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/05869/5de8a003a86f",
+    "history": "carry",
+    "layer": 22,
+    "dose": -1.0,
+    "rms_logit_change": 0.05388301210044826,
+    "baseline_to_intervention_kl": 3.058941639717121e-05,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/05869/5de8a003a86f",
+    "history": "carry",
+    "layer": 22,
+    "dose": 1.0,
+    "rms_logit_change": 0.04809170020219561,
+    "baseline_to_intervention_kl": 1.0049189439326757e-06,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/05869/5de8a003a86f",
+    "history": "carry",
+    "layer": 22,
+    "dose": -10.0,
+    "rms_logit_change": 0.16237982463212025,
+    "baseline_to_intervention_kl": 2.2124069123790927e-05,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/05869/5de8a003a86f",
+    "history": "carry",
+    "layer": 22,
+    "dose": 10.0,
+    "rms_logit_change": 0.16528513350953286,
+    "baseline_to_intervention_kl": 8.020840214909496e-06,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/04162/0fae120567d0",
+    "history": "carry",
+    "layer": 12,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/04162/0fae120567d0",
+    "history": "carry",
+    "layer": 12,
+    "dose": -0.1,
+    "rms_logit_change": 0.21066145894419422,
+    "baseline_to_intervention_kl": 1.0771622160300759e-07,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/04162/0fae120567d0",
+    "history": "carry",
+    "layer": 12,
+    "dose": 0.1,
+    "rms_logit_change": 0.22876805275693804,
+    "baseline_to_intervention_kl": 2.015833131251182e-07,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/04162/0fae120567d0",
+    "history": "carry",
+    "layer": 12,
+    "dose": -1.0,
+    "rms_logit_change": 0.26140008968183914,
+    "baseline_to_intervention_kl": 6.800978765126584e-07,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/04162/0fae120567d0",
+    "history": "carry",
+    "layer": 12,
+    "dose": 1.0,
+    "rms_logit_change": 0.2992496327011355,
+    "baseline_to_intervention_kl": 5.01221721918692e-07,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/04162/0fae120567d0",
+    "history": "carry",
+    "layer": 12,
+    "dose": -10.0,
+    "rms_logit_change": 0.5936755677448772,
+    "baseline_to_intervention_kl": 1.314044427122775e-07,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/04162/0fae120567d0",
+    "history": "carry",
+    "layer": 12,
+    "dose": 10.0,
+    "rms_logit_change": 0.7679195764850121,
+    "baseline_to_intervention_kl": 1.2142117659520726e-06,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/04162/0fae120567d0",
+    "history": "carry",
+    "layer": 22,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/04162/0fae120567d0",
+    "history": "carry",
+    "layer": 22,
+    "dose": -0.1,
+    "rms_logit_change": 0.013417285385666649,
+    "baseline_to_intervention_kl": 8.960204845343154e-11,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/04162/0fae120567d0",
+    "history": "carry",
+    "layer": 22,
+    "dose": 0.1,
+    "rms_logit_change": 0.01714853831883615,
+    "baseline_to_intervention_kl": 3.2645908368563264e-10,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/04162/0fae120567d0",
+    "history": "carry",
+    "layer": 22,
+    "dose": -1.0,
+    "rms_logit_change": 0.0520469848122976,
+    "baseline_to_intervention_kl": 4.016878970569168e-09,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/04162/0fae120567d0",
+    "history": "carry",
+    "layer": 22,
+    "dose": 1.0,
+    "rms_logit_change": 0.05024038817594394,
+    "baseline_to_intervention_kl": 7.273225658453219e-10,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/04162/0fae120567d0",
+    "history": "carry",
+    "layer": 22,
+    "dose": -10.0,
+    "rms_logit_change": 0.17558349637755555,
+    "baseline_to_intervention_kl": 2.4569439061468454e-08,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/04162/0fae120567d0",
+    "history": "carry",
+    "layer": 22,
+    "dose": 10.0,
+    "rms_logit_change": 0.1828623584020375,
+    "baseline_to_intervention_kl": 1.1516262432525165e-07,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/10603/9d30832ed4ab",
+    "history": "carry",
+    "layer": 12,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/10603/9d30832ed4ab",
+    "history": "carry",
+    "layer": 12,
+    "dose": -0.1,
+    "rms_logit_change": 0.26947472515321486,
+    "baseline_to_intervention_kl": 3.062781931240423e-07,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/10603/9d30832ed4ab",
+    "history": "carry",
+    "layer": 12,
+    "dose": 0.1,
+    "rms_logit_change": 0.2266198859968185,
+    "baseline_to_intervention_kl": 2.1362873895295104e-07,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/10603/9d30832ed4ab",
+    "history": "carry",
+    "layer": 12,
+    "dose": -1.0,
+    "rms_logit_change": 0.23955952712933717,
+    "baseline_to_intervention_kl": 2.791789505586245e-07,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/10603/9d30832ed4ab",
+    "history": "carry",
+    "layer": 12,
+    "dose": 1.0,
+    "rms_logit_change": 0.243794240903445,
+    "baseline_to_intervention_kl": 8.5598353098234e-08,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/10603/9d30832ed4ab",
+    "history": "carry",
+    "layer": 12,
+    "dose": -10.0,
+    "rms_logit_change": 0.5552974057401621,
+    "baseline_to_intervention_kl": 1.7165982333615658e-06,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/10603/9d30832ed4ab",
+    "history": "carry",
+    "layer": 12,
+    "dose": 10.0,
+    "rms_logit_change": 0.3768264828547079,
+    "baseline_to_intervention_kl": 3.959969280732242e-06,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/10603/9d30832ed4ab",
+    "history": "carry",
+    "layer": 22,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/10603/9d30832ed4ab",
+    "history": "carry",
+    "layer": 22,
+    "dose": -0.1,
+    "rms_logit_change": 0.02680648205824536,
+    "baseline_to_intervention_kl": 1.4910521419287082e-09,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/10603/9d30832ed4ab",
+    "history": "carry",
+    "layer": 22,
+    "dose": 0.1,
+    "rms_logit_change": 0.012974236737465955,
+    "baseline_to_intervention_kl": 1.6657960759236815e-10,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/10603/9d30832ed4ab",
+    "history": "carry",
+    "layer": 22,
+    "dose": -1.0,
+    "rms_logit_change": 0.04949360197314641,
+    "baseline_to_intervention_kl": 7.059995579786355e-09,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/10603/9d30832ed4ab",
+    "history": "carry",
+    "layer": 22,
+    "dose": 1.0,
+    "rms_logit_change": 0.05034884555225486,
+    "baseline_to_intervention_kl": 1.2463535567399888e-08,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/10603/9d30832ed4ab",
+    "history": "carry",
+    "layer": 22,
+    "dose": -10.0,
+    "rms_logit_change": 0.16189678674136673,
+    "baseline_to_intervention_kl": 4.556596988285567e-08,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/10603/9d30832ed4ab",
+    "history": "carry",
+    "layer": 22,
+    "dose": 10.0,
+    "rms_logit_change": 0.17140369618497148,
+    "baseline_to_intervention_kl": 1.1672415992652201e-07,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/12422b43/0",
+    "history": "reset",
+    "layer": 12,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/12422b43/0",
+    "history": "reset",
+    "layer": 12,
+    "dose": -0.1,
+    "rms_logit_change": 0.03196463404690165,
+    "baseline_to_intervention_kl": 0.0005118033383080287,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/12422b43/0",
+    "history": "reset",
+    "layer": 12,
+    "dose": 0.1,
+    "rms_logit_change": 0.03136307469574009,
+    "baseline_to_intervention_kl": 0.0004910345595996835,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/12422b43/0",
+    "history": "reset",
+    "layer": 12,
+    "dose": -1.0,
+    "rms_logit_change": 0.034855032588340475,
+    "baseline_to_intervention_kl": 0.0005920686446568596,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/12422b43/0",
+    "history": "reset",
+    "layer": 12,
+    "dose": 1.0,
+    "rms_logit_change": 0.038231806521539506,
+    "baseline_to_intervention_kl": 0.0007160793399942602,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/12422b43/0",
+    "history": "reset",
+    "layer": 12,
+    "dose": -10.0,
+    "rms_logit_change": 0.053453807071869905,
+    "baseline_to_intervention_kl": 0.001438868148956599,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/12422b43/0",
+    "history": "reset",
+    "layer": 12,
+    "dose": 10.0,
+    "rms_logit_change": 0.052330770039885406,
+    "baseline_to_intervention_kl": 0.0012887203454300012,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/12422b43/0",
+    "history": "reset",
+    "layer": 22,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/12422b43/0",
+    "history": "reset",
+    "layer": 22,
+    "dose": -0.1,
+    "rms_logit_change": 0.0017152665054619852,
+    "baseline_to_intervention_kl": 1.1930683812699528e-06,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/12422b43/0",
+    "history": "reset",
+    "layer": 22,
+    "dose": 0.1,
+    "rms_logit_change": 0.00222888798154156,
+    "baseline_to_intervention_kl": 2.465792171938626e-06,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/12422b43/0",
+    "history": "reset",
+    "layer": 22,
+    "dose": -1.0,
+    "rms_logit_change": 0.0051264753893429035,
+    "baseline_to_intervention_kl": 1.2961359938578481e-05,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/12422b43/0",
+    "history": "reset",
+    "layer": 22,
+    "dose": 1.0,
+    "rms_logit_change": 0.006328284510056349,
+    "baseline_to_intervention_kl": 1.992179210138548e-05,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/12422b43/0",
+    "history": "reset",
+    "layer": 22,
+    "dose": -10.0,
+    "rms_logit_change": 0.018326985218484203,
+    "baseline_to_intervention_kl": 0.0001596778395927023,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/12422b43/0",
+    "history": "reset",
+    "layer": 22,
+    "dose": 10.0,
+    "rms_logit_change": 0.019511558907631947,
+    "baseline_to_intervention_kl": 0.0001895357490705167,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/0",
+    "history": "reset",
+    "layer": 12,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/0",
+    "history": "reset",
+    "layer": 12,
+    "dose": -0.1,
+    "rms_logit_change": 0.03494651963168877,
+    "baseline_to_intervention_kl": 0.0005996722606771606,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/0",
+    "history": "reset",
+    "layer": 12,
+    "dose": 0.1,
+    "rms_logit_change": 0.03615069872216221,
+    "baseline_to_intervention_kl": 0.0006530036402019772,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/0",
+    "history": "reset",
+    "layer": 12,
+    "dose": -1.0,
+    "rms_logit_change": 0.03485927238638131,
+    "baseline_to_intervention_kl": 0.0006029290253105524,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/0",
+    "history": "reset",
+    "layer": 12,
+    "dose": 1.0,
+    "rms_logit_change": 0.03768973937553885,
+    "baseline_to_intervention_kl": 0.0006999547250307725,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/0",
+    "history": "reset",
+    "layer": 12,
+    "dose": -10.0,
+    "rms_logit_change": 0.055915906975880565,
+    "baseline_to_intervention_kl": 0.0015829422316750654,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/0",
+    "history": "reset",
+    "layer": 12,
+    "dose": 10.0,
+    "rms_logit_change": 0.05896361501043475,
+    "baseline_to_intervention_kl": 0.0016522915297849231,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/0",
+    "history": "reset",
+    "layer": 22,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/0",
+    "history": "reset",
+    "layer": 22,
+    "dose": -0.1,
+    "rms_logit_change": 0.001107647984479105,
+    "baseline_to_intervention_kl": 6.013276222167804e-07,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/0",
+    "history": "reset",
+    "layer": 22,
+    "dose": 0.1,
+    "rms_logit_change": 0.0011779252650827637,
+    "baseline_to_intervention_kl": 6.743308460145596e-07,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/0",
+    "history": "reset",
+    "layer": 22,
+    "dose": -1.0,
+    "rms_logit_change": 0.00564820752507445,
+    "baseline_to_intervention_kl": 1.57778223863978e-05,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/0",
+    "history": "reset",
+    "layer": 22,
+    "dose": 1.0,
+    "rms_logit_change": 0.005486732851517263,
+    "baseline_to_intervention_kl": 1.5062507205220431e-05,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/0",
+    "history": "reset",
+    "layer": 22,
+    "dose": -10.0,
+    "rms_logit_change": 0.018316719596793787,
+    "baseline_to_intervention_kl": 0.0001634459417530478,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/0",
+    "history": "reset",
+    "layer": 22,
+    "dose": 10.0,
+    "rms_logit_change": 0.018339872423123228,
+    "baseline_to_intervention_kl": 0.00016483053986683747,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/1",
+    "history": "reset",
+    "layer": 12,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/1",
+    "history": "reset",
+    "layer": 12,
+    "dose": -0.1,
+    "rms_logit_change": 0.0340676551438866,
+    "baseline_to_intervention_kl": 0.0005706639352923268,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/1",
+    "history": "reset",
+    "layer": 12,
+    "dose": 0.1,
+    "rms_logit_change": 0.03417692823566663,
+    "baseline_to_intervention_kl": 0.0005713495344333173,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/1",
+    "history": "reset",
+    "layer": 12,
+    "dose": -1.0,
+    "rms_logit_change": 0.03593178952015606,
+    "baseline_to_intervention_kl": 0.0006274198380805287,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/1",
+    "history": "reset",
+    "layer": 12,
+    "dose": 1.0,
+    "rms_logit_change": 0.03650054892775671,
+    "baseline_to_intervention_kl": 0.000672156483945975,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/1",
+    "history": "reset",
+    "layer": 12,
+    "dose": -10.0,
+    "rms_logit_change": 0.05449186523264033,
+    "baseline_to_intervention_kl": 0.0014695486906726681,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/1",
+    "history": "reset",
+    "layer": 12,
+    "dose": 10.0,
+    "rms_logit_change": 0.053137940980110994,
+    "baseline_to_intervention_kl": 0.0014128610861601821,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/1",
+    "history": "reset",
+    "layer": 22,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/1",
+    "history": "reset",
+    "layer": 22,
+    "dose": -0.1,
+    "rms_logit_change": 0.0018065689458243743,
+    "baseline_to_intervention_kl": 1.607238550614358e-06,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/1",
+    "history": "reset",
+    "layer": 22,
+    "dose": 0.1,
+    "rms_logit_change": 0.0010257499988011944,
+    "baseline_to_intervention_kl": 5.212932157453035e-07,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/1",
+    "history": "reset",
+    "layer": 22,
+    "dose": -1.0,
+    "rms_logit_change": 0.004440015241439659,
+    "baseline_to_intervention_kl": 9.67715528538109e-06,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/1",
+    "history": "reset",
+    "layer": 22,
+    "dose": 1.0,
+    "rms_logit_change": 0.006065163181751298,
+    "baseline_to_intervention_kl": 1.794342820239444e-05,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/1",
+    "history": "reset",
+    "layer": 22,
+    "dose": -10.0,
+    "rms_logit_change": 0.018289389527745687,
+    "baseline_to_intervention_kl": 0.00016543938491664606,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_1/c074846d/1",
+    "history": "reset",
+    "layer": 22,
+    "dose": 10.0,
+    "rms_logit_change": 0.018541694095065973,
+    "baseline_to_intervention_kl": 0.00017159598388495525,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/3dc255db/0",
+    "history": "reset",
+    "layer": 12,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/3dc255db/0",
+    "history": "reset",
+    "layer": 12,
+    "dose": -0.1,
+    "rms_logit_change": 0.033563995597853856,
+    "baseline_to_intervention_kl": 0.0005596605852239988,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/3dc255db/0",
+    "history": "reset",
+    "layer": 12,
+    "dose": 0.1,
+    "rms_logit_change": 0.03566417900276549,
+    "baseline_to_intervention_kl": 0.0006376412937742587,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/3dc255db/0",
+    "history": "reset",
+    "layer": 12,
+    "dose": -1.0,
+    "rms_logit_change": 0.03701843635709613,
+    "baseline_to_intervention_kl": 0.0006807679321737458,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/3dc255db/0",
+    "history": "reset",
+    "layer": 12,
+    "dose": 1.0,
+    "rms_logit_change": 0.035984876448643496,
+    "baseline_to_intervention_kl": 0.0006449310770811055,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/3dc255db/0",
+    "history": "reset",
+    "layer": 12,
+    "dose": -10.0,
+    "rms_logit_change": 0.05012720032420349,
+    "baseline_to_intervention_kl": 0.001252735876669517,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/3dc255db/0",
+    "history": "reset",
+    "layer": 12,
+    "dose": 10.0,
+    "rms_logit_change": 0.05139626057825407,
+    "baseline_to_intervention_kl": 0.001322041300298862,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/3dc255db/0",
+    "history": "reset",
+    "layer": 22,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/3dc255db/0",
+    "history": "reset",
+    "layer": 22,
+    "dose": -0.1,
+    "rms_logit_change": 0.0010584529821239695,
+    "baseline_to_intervention_kl": 5.400134313981191e-07,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/3dc255db/0",
+    "history": "reset",
+    "layer": 22,
+    "dose": 0.1,
+    "rms_logit_change": 0.0022779076093054663,
+    "baseline_to_intervention_kl": 2.5301696976662766e-06,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/3dc255db/0",
+    "history": "reset",
+    "layer": 22,
+    "dose": -1.0,
+    "rms_logit_change": 0.005989072560678218,
+    "baseline_to_intervention_kl": 1.6310084160723907e-05,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/3dc255db/0",
+    "history": "reset",
+    "layer": 22,
+    "dose": 1.0,
+    "rms_logit_change": 0.006080744849834034,
+    "baseline_to_intervention_kl": 1.8481564462955972e-05,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/3dc255db/0",
+    "history": "reset",
+    "layer": 22,
+    "dose": -10.0,
+    "rms_logit_change": 0.018707231420067954,
+    "baseline_to_intervention_kl": 0.00016664607554374834,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/3dc255db/0",
+    "history": "reset",
+    "layer": 22,
+    "dose": 10.0,
+    "rms_logit_change": 0.019058199087336147,
+    "baseline_to_intervention_kl": 0.0001798089902418868,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/0",
+    "history": "reset",
+    "layer": 12,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/0",
+    "history": "reset",
+    "layer": 12,
+    "dose": -0.1,
+    "rms_logit_change": 0.03319902272863105,
+    "baseline_to_intervention_kl": 0.0005504796596123367,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/0",
+    "history": "reset",
+    "layer": 12,
+    "dose": 0.1,
+    "rms_logit_change": 0.03679428767211156,
+    "baseline_to_intervention_kl": 0.0006802884600687418,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/0",
+    "history": "reset",
+    "layer": 12,
+    "dose": -1.0,
+    "rms_logit_change": 0.03690305781568328,
+    "baseline_to_intervention_kl": 0.0006782380072383017,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/0",
+    "history": "reset",
+    "layer": 12,
+    "dose": 1.0,
+    "rms_logit_change": 0.03716123407920355,
+    "baseline_to_intervention_kl": 0.0006841776620764694,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/0",
+    "history": "reset",
+    "layer": 12,
+    "dose": -10.0,
+    "rms_logit_change": 0.0576806190182927,
+    "baseline_to_intervention_kl": 0.0013927660622322553,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/0",
+    "history": "reset",
+    "layer": 12,
+    "dose": 10.0,
+    "rms_logit_change": 0.0553586869349769,
+    "baseline_to_intervention_kl": 0.0012845019324684358,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/0",
+    "history": "reset",
+    "layer": 22,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/0",
+    "history": "reset",
+    "layer": 22,
+    "dose": -0.1,
+    "rms_logit_change": 0.0022176296880425557,
+    "baseline_to_intervention_kl": 2.412752919513618e-06,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/0",
+    "history": "reset",
+    "layer": 22,
+    "dose": 0.1,
+    "rms_logit_change": 0.0008096513837552759,
+    "baseline_to_intervention_kl": 3.1778798752233334e-07,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/0",
+    "history": "reset",
+    "layer": 22,
+    "dose": -1.0,
+    "rms_logit_change": 0.004485637553862096,
+    "baseline_to_intervention_kl": 9.998827870596886e-06,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/0",
+    "history": "reset",
+    "layer": 22,
+    "dose": 1.0,
+    "rms_logit_change": 0.00546403176888009,
+    "baseline_to_intervention_kl": 1.491670568151418e-05,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/0",
+    "history": "reset",
+    "layer": 22,
+    "dose": -10.0,
+    "rms_logit_change": 0.01789671848894459,
+    "baseline_to_intervention_kl": 0.00015511739545743153,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/0",
+    "history": "reset",
+    "layer": 22,
+    "dose": 10.0,
+    "rms_logit_change": 0.018238671198891478,
+    "baseline_to_intervention_kl": 0.00016049451405190782,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/1",
+    "history": "reset",
+    "layer": 12,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/1",
+    "history": "reset",
+    "layer": 12,
+    "dose": -0.1,
+    "rms_logit_change": 0.03661518845289864,
+    "baseline_to_intervention_kl": 0.000661104014899524,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/1",
+    "history": "reset",
+    "layer": 12,
+    "dose": 0.1,
+    "rms_logit_change": 0.034625338239604515,
+    "baseline_to_intervention_kl": 0.0006001542707481103,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/1",
+    "history": "reset",
+    "layer": 12,
+    "dose": -1.0,
+    "rms_logit_change": 0.036814004517297105,
+    "baseline_to_intervention_kl": 0.0006726613570788886,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/1",
+    "history": "reset",
+    "layer": 12,
+    "dose": 1.0,
+    "rms_logit_change": 0.03600626255328231,
+    "baseline_to_intervention_kl": 0.0006108252089149195,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/1",
+    "history": "reset",
+    "layer": 12,
+    "dose": -10.0,
+    "rms_logit_change": 0.05179091016546018,
+    "baseline_to_intervention_kl": 0.0012852934021640385,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/1",
+    "history": "reset",
+    "layer": 12,
+    "dose": 10.0,
+    "rms_logit_change": 0.05171191144263238,
+    "baseline_to_intervention_kl": 0.001297215510597854,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/1",
+    "history": "reset",
+    "layer": 22,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/1",
+    "history": "reset",
+    "layer": 22,
+    "dose": -0.1,
+    "rms_logit_change": 0.0010938706619085343,
+    "baseline_to_intervention_kl": 5.7911395370211e-07,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/1",
+    "history": "reset",
+    "layer": 22,
+    "dose": 0.1,
+    "rms_logit_change": 0.0024470778086191896,
+    "baseline_to_intervention_kl": 2.9124876543565542e-06,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/1",
+    "history": "reset",
+    "layer": 22,
+    "dose": -1.0,
+    "rms_logit_change": 0.006270137048239133,
+    "baseline_to_intervention_kl": 1.9471261030663654e-05,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/1",
+    "history": "reset",
+    "layer": 22,
+    "dose": 1.0,
+    "rms_logit_change": 0.006933243084017269,
+    "baseline_to_intervention_kl": 2.3996599791082596e-05,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/1",
+    "history": "reset",
+    "layer": 22,
+    "dose": -10.0,
+    "rms_logit_change": 0.018513292369562093,
+    "baseline_to_intervention_kl": 0.00017010307906427098,
+    "argmax_changed": false
+  },
+  {
+    "id": "arc_agi_2/78332cb0/1",
+    "history": "reset",
+    "layer": 22,
+    "dose": 10.0,
+    "rms_logit_change": 0.01883801039393701,
+    "baseline_to_intervention_kl": 0.0001750470092914349,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/00062/72b57dbd293b",
+    "history": "reset",
+    "layer": 12,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/00062/72b57dbd293b",
+    "history": "reset",
+    "layer": 12,
+    "dose": -0.1,
+    "rms_logit_change": 0.04151171908976242,
+    "baseline_to_intervention_kl": 0.0008071944136261308,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/00062/72b57dbd293b",
+    "history": "reset",
+    "layer": 12,
+    "dose": 0.1,
+    "rms_logit_change": 0.038124512129615394,
+    "baseline_to_intervention_kl": 0.0007270124572573747,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/00062/72b57dbd293b",
+    "history": "reset",
+    "layer": 12,
+    "dose": -1.0,
+    "rms_logit_change": 0.036995468884336,
+    "baseline_to_intervention_kl": 0.0006858270303663102,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/00062/72b57dbd293b",
+    "history": "reset",
+    "layer": 12,
+    "dose": 1.0,
+    "rms_logit_change": 0.04264865547624864,
+    "baseline_to_intervention_kl": 0.0009032035863554426,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/00062/72b57dbd293b",
+    "history": "reset",
+    "layer": 12,
+    "dose": -10.0,
+    "rms_logit_change": 0.062060149569336184,
+    "baseline_to_intervention_kl": 0.001791046480401228,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/00062/72b57dbd293b",
+    "history": "reset",
+    "layer": 12,
+    "dose": 10.0,
+    "rms_logit_change": 0.05802547096003294,
+    "baseline_to_intervention_kl": 0.0015458188095141315,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/00062/72b57dbd293b",
+    "history": "reset",
+    "layer": 22,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/00062/72b57dbd293b",
+    "history": "reset",
+    "layer": 22,
+    "dose": -0.1,
+    "rms_logit_change": 0.0019364615814708426,
+    "baseline_to_intervention_kl": 1.8695374963535593e-06,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/00062/72b57dbd293b",
+    "history": "reset",
+    "layer": 22,
+    "dose": 0.1,
+    "rms_logit_change": 0.001075146318078373,
+    "baseline_to_intervention_kl": 5.535795617002531e-07,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/00062/72b57dbd293b",
+    "history": "reset",
+    "layer": 22,
+    "dose": -1.0,
+    "rms_logit_change": 0.005173992056691045,
+    "baseline_to_intervention_kl": 1.2895515845304424e-05,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/00062/72b57dbd293b",
+    "history": "reset",
+    "layer": 22,
+    "dose": 1.0,
+    "rms_logit_change": 0.004668449070478472,
+    "baseline_to_intervention_kl": 1.0822892233495881e-05,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/00062/72b57dbd293b",
+    "history": "reset",
+    "layer": 22,
+    "dose": -10.0,
+    "rms_logit_change": 0.014920704218291295,
+    "baseline_to_intervention_kl": 0.00010674683677806222,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/00062/72b57dbd293b",
+    "history": "reset",
+    "layer": 22,
+    "dose": 10.0,
+    "rms_logit_change": 0.015167940092910937,
+    "baseline_to_intervention_kl": 0.00011353330427721348,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/05869/5de8a003a86f",
+    "history": "reset",
+    "layer": 12,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/05869/5de8a003a86f",
+    "history": "reset",
+    "layer": 12,
+    "dose": -0.1,
+    "rms_logit_change": 0.04653609915811936,
+    "baseline_to_intervention_kl": 0.0010812430713347605,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/05869/5de8a003a86f",
+    "history": "reset",
+    "layer": 12,
+    "dose": 0.1,
+    "rms_logit_change": 0.046072880931602556,
+    "baseline_to_intervention_kl": 0.0010449286384595804,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/05869/5de8a003a86f",
+    "history": "reset",
+    "layer": 12,
+    "dose": -1.0,
+    "rms_logit_change": 0.045628971668985344,
+    "baseline_to_intervention_kl": 0.001032397611623937,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/05869/5de8a003a86f",
+    "history": "reset",
+    "layer": 12,
+    "dose": 1.0,
+    "rms_logit_change": 0.04413524167928581,
+    "baseline_to_intervention_kl": 0.0009595038383837408,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/05869/5de8a003a86f",
+    "history": "reset",
+    "layer": 12,
+    "dose": -10.0,
+    "rms_logit_change": 0.0709459162741205,
+    "baseline_to_intervention_kl": 0.002508655304582462,
+    "argmax_changed": true
+  },
+  {
+    "id": "intellect3_logic/05869/5de8a003a86f",
+    "history": "reset",
+    "layer": 12,
+    "dose": 10.0,
+    "rms_logit_change": 0.07316203319005762,
+    "baseline_to_intervention_kl": 0.0026888401935926355,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/05869/5de8a003a86f",
+    "history": "reset",
+    "layer": 22,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/05869/5de8a003a86f",
+    "history": "reset",
+    "layer": 22,
+    "dose": -0.1,
+    "rms_logit_change": 0.0009950688136126807,
+    "baseline_to_intervention_kl": 4.90153741866235e-07,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/05869/5de8a003a86f",
+    "history": "reset",
+    "layer": 22,
+    "dose": 0.1,
+    "rms_logit_change": 0.0030992679286022074,
+    "baseline_to_intervention_kl": 4.559953833075059e-06,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/05869/5de8a003a86f",
+    "history": "reset",
+    "layer": 22,
+    "dose": -1.0,
+    "rms_logit_change": 0.0055762328939121305,
+    "baseline_to_intervention_kl": 1.5012161780403945e-05,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/05869/5de8a003a86f",
+    "history": "reset",
+    "layer": 22,
+    "dose": 1.0,
+    "rms_logit_change": 0.00643574491246026,
+    "baseline_to_intervention_kl": 1.835142427918698e-05,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/05869/5de8a003a86f",
+    "history": "reset",
+    "layer": 22,
+    "dose": -10.0,
+    "rms_logit_change": 0.017675811351300037,
+    "baseline_to_intervention_kl": 0.0001502728664816298,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_logic/05869/5de8a003a86f",
+    "history": "reset",
+    "layer": 22,
+    "dose": 10.0,
+    "rms_logit_change": 0.017271491848950157,
+    "baseline_to_intervention_kl": 0.00014498069590701041,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/04162/0fae120567d0",
+    "history": "reset",
+    "layer": 12,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/04162/0fae120567d0",
+    "history": "reset",
+    "layer": 12,
+    "dose": -0.1,
+    "rms_logit_change": 0.031485536952708185,
+    "baseline_to_intervention_kl": 0.0004929241478224692,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/04162/0fae120567d0",
+    "history": "reset",
+    "layer": 12,
+    "dose": 0.1,
+    "rms_logit_change": 0.030434491750401648,
+    "baseline_to_intervention_kl": 0.0004380006789013052,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/04162/0fae120567d0",
+    "history": "reset",
+    "layer": 12,
+    "dose": -1.0,
+    "rms_logit_change": 0.03383586930963192,
+    "baseline_to_intervention_kl": 0.0005415537806521791,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/04162/0fae120567d0",
+    "history": "reset",
+    "layer": 12,
+    "dose": 1.0,
+    "rms_logit_change": 0.028858025961200913,
+    "baseline_to_intervention_kl": 0.0004159273801152996,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/04162/0fae120567d0",
+    "history": "reset",
+    "layer": 12,
+    "dose": -10.0,
+    "rms_logit_change": 0.04781179826930313,
+    "baseline_to_intervention_kl": 0.0011343865397367347,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/04162/0fae120567d0",
+    "history": "reset",
+    "layer": 12,
+    "dose": 10.0,
+    "rms_logit_change": 0.04478357444282583,
+    "baseline_to_intervention_kl": 0.0009759407888656307,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/04162/0fae120567d0",
+    "history": "reset",
+    "layer": 22,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/04162/0fae120567d0",
+    "history": "reset",
+    "layer": 22,
+    "dose": -0.1,
+    "rms_logit_change": 0.001768903303950705,
+    "baseline_to_intervention_kl": 1.558110293934082e-06,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/04162/0fae120567d0",
+    "history": "reset",
+    "layer": 22,
+    "dose": 0.1,
+    "rms_logit_change": 0.0005934988852914676,
+    "baseline_to_intervention_kl": 1.7153825915043045e-07,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/04162/0fae120567d0",
+    "history": "reset",
+    "layer": 22,
+    "dose": -1.0,
+    "rms_logit_change": 0.006231266946029473,
+    "baseline_to_intervention_kl": 1.816872371459389e-05,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/04162/0fae120567d0",
+    "history": "reset",
+    "layer": 22,
+    "dose": 1.0,
+    "rms_logit_change": 0.004683742278968477,
+    "baseline_to_intervention_kl": 1.0699833545071942e-05,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/04162/0fae120567d0",
+    "history": "reset",
+    "layer": 22,
+    "dose": -10.0,
+    "rms_logit_change": 0.01655598928518891,
+    "baseline_to_intervention_kl": 0.0001317088973600654,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/04162/0fae120567d0",
+    "history": "reset",
+    "layer": 22,
+    "dose": 10.0,
+    "rms_logit_change": 0.015955691972829172,
+    "baseline_to_intervention_kl": 0.00012460201273932153,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/10603/9d30832ed4ab",
+    "history": "reset",
+    "layer": 12,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/10603/9d30832ed4ab",
+    "history": "reset",
+    "layer": 12,
+    "dose": -0.1,
+    "rms_logit_change": 0.034419543023282255,
+    "baseline_to_intervention_kl": 0.0005808274981202459,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/10603/9d30832ed4ab",
+    "history": "reset",
+    "layer": 12,
+    "dose": 0.1,
+    "rms_logit_change": 0.03386257349940832,
+    "baseline_to_intervention_kl": 0.0005385404753472108,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/10603/9d30832ed4ab",
+    "history": "reset",
+    "layer": 12,
+    "dose": -1.0,
+    "rms_logit_change": 0.03649117775054401,
+    "baseline_to_intervention_kl": 0.0005493746709198684,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/10603/9d30832ed4ab",
+    "history": "reset",
+    "layer": 12,
+    "dose": 1.0,
+    "rms_logit_change": 0.03238548895909371,
+    "baseline_to_intervention_kl": 0.0005011162011018922,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/10603/9d30832ed4ab",
+    "history": "reset",
+    "layer": 12,
+    "dose": -10.0,
+    "rms_logit_change": 0.04677715376177216,
+    "baseline_to_intervention_kl": 0.0010937011612302153,
+    "argmax_changed": true
+  },
+  {
+    "id": "intellect3_math/10603/9d30832ed4ab",
+    "history": "reset",
+    "layer": 12,
+    "dose": 10.0,
+    "rms_logit_change": 0.048594949379960346,
+    "baseline_to_intervention_kl": 0.0010862568964226152,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/10603/9d30832ed4ab",
+    "history": "reset",
+    "layer": 22,
+    "dose": 0.0,
+    "rms_logit_change": 0.0,
+    "baseline_to_intervention_kl": 0.0,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/10603/9d30832ed4ab",
+    "history": "reset",
+    "layer": 22,
+    "dose": -0.1,
+    "rms_logit_change": 0.0013300515911438028,
+    "baseline_to_intervention_kl": 8.382435010674653e-07,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/10603/9d30832ed4ab",
+    "history": "reset",
+    "layer": 22,
+    "dose": 0.1,
+    "rms_logit_change": 0.0015111616999085114,
+    "baseline_to_intervention_kl": 1.1280063184328985e-06,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/10603/9d30832ed4ab",
+    "history": "reset",
+    "layer": 22,
+    "dose": -1.0,
+    "rms_logit_change": 0.003949985259348612,
+    "baseline_to_intervention_kl": 7.686806163218694e-06,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/10603/9d30832ed4ab",
+    "history": "reset",
+    "layer": 22,
+    "dose": 1.0,
+    "rms_logit_change": 0.0043975887579286044,
+    "baseline_to_intervention_kl": 9.59391944186765e-06,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/10603/9d30832ed4ab",
+    "history": "reset",
+    "layer": 22,
+    "dose": -10.0,
+    "rms_logit_change": 0.0170818464956728,
+    "baseline_to_intervention_kl": 0.0001412811869041806,
+    "argmax_changed": false
+  },
+  {
+    "id": "intellect3_math/10603/9d30832ed4ab",
+    "history": "reset",
+    "layer": 22,
+    "dose": 10.0,
+    "rms_logit_change": 0.015194131694931818,
+    "baseline_to_intervention_kl": 0.00011426003730731871,
+    "argmax_changed": false
+  }
+]

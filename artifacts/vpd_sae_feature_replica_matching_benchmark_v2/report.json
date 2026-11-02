@@ -1,0 +1,93 @@
+{
+  "benchmark_id": "832e6481040319877140d1b1a7f33f1b7a933f6345a96b27af469704c38e47f5",
+  "matcher": {
+    "bounded_cosine_block_rows": 11,
+    "full_cosine_matrix_retained": false,
+    "minimum_decoder_cosine": 0.8,
+    "minimum_decoder_coverage": 0.9,
+    "minimum_profile_cosine": 0.8,
+    "minimum_selective_replication_rate": 0.5,
+    "mutual_nearest_neighbor": true,
+    "one_to_one": true,
+    "signed_decoder_cosine": true,
+    "version": "v2"
+  },
+  "provenance": {
+    "runner_sha256": "0442110df181df8ca5be2a94300e56e93bce14546845c0be80045377c0005ac7"
+  },
+  "scenarios": [
+    {
+      "checks": {
+        "decoder_coverage": true,
+        "selective_replication": true
+      },
+      "decoder_coverage": 1.0,
+      "expected_status": "pass",
+      "mutual_matches": 64,
+      "observed_status": "pass",
+      "recovered_exact_permutation": true,
+      "scenario_id": "permuted_noisy_replica",
+      "selective_replication_rate": 1.0
+    },
+    {
+      "checks": {
+        "decoder_coverage": false,
+        "selective_replication": false
+      },
+      "decoder_coverage": 0.0,
+      "expected_status": "reject",
+      "mutual_matches": 0,
+      "observed_status": "reject",
+      "recovered_exact_permutation": null,
+      "scenario_id": "sign_flipped_replica",
+      "selective_replication_rate": 0.0
+    },
+    {
+      "checks": {
+        "decoder_coverage": false,
+        "selective_replication": true
+      },
+      "decoder_coverage": 0.5,
+      "expected_status": "reject",
+      "mutual_matches": 32,
+      "observed_status": "reject",
+      "recovered_exact_permutation": null,
+      "scenario_id": "duplicate_collapsed_replica",
+      "selective_replication_rate": 0.53125
+    },
+    {
+      "checks": {
+        "decoder_coverage": true,
+        "selective_replication": false
+      },
+      "decoder_coverage": 1.0,
+      "expected_status": "reject",
+      "mutual_matches": 64,
+      "observed_status": "reject",
+      "recovered_exact_permutation": null,
+      "scenario_id": "category_profile_swap",
+      "selective_replication_rate": 0.0
+    }
+  ],
+  "schema": "sch.vpd-sae-feature-replica-matching-benchmark.v2",
+  "scientific_boundary": {
+    "decoder_matching_is_not_semantic_interpretation": true,
+    "execution_authorized": false,
+    "new_model_inference_performed": false,
+    "new_sae_training_performed": false,
+    "no_empirical_feature_replication_claim": true,
+    "paid_compute_authorized": false,
+    "synthetic_benchmark_only": true,
+    "v1_matcher_behavior_unchanged": true,
+    "weights_loaded_or_mutated": false
+  },
+  "status": "pass",
+  "summary": {
+    "category_profile_swap_rejected": true,
+    "clean_permutation_recovered": true,
+    "duplicate_collapse_rejected": true,
+    "expected_outcomes_reproduced": 4,
+    "scenarios": 4,
+    "sign_flip_rejected": true
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "status": "partial_matched_campsite_models_compared",
+  "planned_puzzles": 109,
+  "qwen_grading_sha256": "76ac1e16b3892a2ff7aa81ba8f0aa385b8163397c5f7b54ddd8f2bab065be4ec",
+  "nanbeige_grading_sha256": "7d5ba765f9937006d6bc992465a9c635ac0beb8cdf207c459bc3c2499de82cc1",
+  "same_user_messages_verified": 259,
+  "code_sha256": "5cfbe73bfd121933e7bc3cce0f46c19bcbcb179a699f78493b5aaad7c43ba42d",
+  "broader_goal_complete": false,
+  "files": {
+    "all_pairings.json": "f8ddefefaedc0bb3b321a5978b5aaef1a6666d098e75cb19e782d7edb380e0ec",
+    "RESULTS.md": "38e3831cc2aed964ddb65a57e60c07b5e2331499a20c96b1137d0233745245af",
+    "same_procedure_pairs.json": "07bd7acafec30b9c27b80c82701c93bf7cdf65a34239fc7cdeb28a62e9de7576"
+  }
+}

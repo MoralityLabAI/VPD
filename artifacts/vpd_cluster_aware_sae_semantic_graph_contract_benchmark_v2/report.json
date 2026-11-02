@@ -1,0 +1,94 @@
+{
+  "benchmark_id": "ade0e1f19765c8dc1accf66ee86590c21b4a904a499094441f21edb8fa40fd37",
+  "controls": {
+    "all_28_v1_mismatches_are_accounted": true,
+    "all_implemented_verifier_modules_are_local_and_hashed": true,
+    "benchmark_imports_no_model_frameworks": true,
+    "budget_admission_binds_blueprint_id_and_hash": true,
+    "budget_nodes_use_blueprint_bound_v2": true,
+    "budget_proposal_binds_blueprint_id_and_hash": true,
+    "budget_to_runtime_admission_gap_is_explicit": true,
+    "budget_to_signed_release_gap_is_explicit": true,
+    "capture_preflight_digest_is_not_mislabeled_file_hash": true,
+    "capture_receipt_uses_actual_id": true,
+    "contract_is_content_addressed": true,
+    "contract_matches_reproduction": true,
+    "contract_transfers_no_authority": true,
+    "contract_verifier_passes": true,
+    "durable_transition_is_one_combined_receipt": true,
+    "end_to_end_dispatch_remains_disabled": true,
+    "global_pair_split_is_embedded": true,
+    "guarded_v3_capture_replaces_raw_manifest_lineage": true,
+    "materialization_requires_real_companions": true,
+    "one_terminal_node_is_explicit": true,
+    "production_attachment_remains_absent": true,
+    "readdressed_dispatch_enablement_rejected": true,
+    "readdressed_fake_production_attachment_rejected": true,
+    "readdressed_fictional_capture_id_rejected": true,
+    "readdressed_independent_split_rejected": true,
+    "readdressed_missing_v1_correction_rejected": true,
+    "readdressed_path_policy_weakening_rejected": true,
+    "readdressed_split_transition_rejected": true,
+    "readdressed_v1_budget_schema_rejected": true,
+    "registry_joins_are_cryptographic": true,
+    "routing_bundle_uses_actual_id": true,
+    "safe_path_policy_is_mandatory": true,
+    "temporary_attack_files_removed": true,
+    "twenty_implemented_representations_are_evidenced": true,
+    "twenty_one_logical_nodes_are_declared": true,
+    "unaddressed_contract_tamper_rejected": true
+  },
+  "remaining_gaps": [
+    {
+      "gap": "budget_admission_to_signed_release",
+      "reason": "scientific release receipt V1 does not bind blueprint-bound budget admission V2",
+      "required_successor": "new signed release receipt and verifier version binding admission ID and exact file digest"
+    },
+    {
+      "gap": "budget_admission_to_runtime_admission",
+      "reason": "runtime admission V1 reproduces signed release and compute scope but does not consume budget admission V2",
+      "required_successor": "new runtime admission version reproducing blueprint-bound budget admission V2"
+    },
+    {
+      "gap": "production_runtime_attachment",
+      "reason": "only the synthetic inert attachment verifier exists",
+      "required_successor": "separately authorized production attachment implementation and semantic verifier"
+    }
+  ],
+  "schema": "sch.vpd-cluster-aware-sae-semantic-graph-contract-benchmark.v2",
+  "scientific_boundary": {
+    "contract_benchmark_only": true,
+    "empirical_graph_present": false,
+    "execution_authorized": false,
+    "model_framework_imported": false,
+    "model_inference_performed": false,
+    "model_loaded": false,
+    "paid_compute_authorized": false,
+    "persistent_dictionary_output_created": false,
+    "sae_training_authorized": false,
+    "semantic_dispatch_performed": false,
+    "training_performed": false,
+    "weights_loaded_or_mutated": false
+  },
+  "source": {
+    "benchmark_builder_sha256": "1d324a9925af4924330f1d54e6a8210f35b82e2bcc790fb2839542b1762c0b0f",
+    "contract_builder_sha256": "e1fdbf45f722641f4e667b02488df105588bc379e2bdca4ca54b4d4e0857b753",
+    "semantic_graph_contract_id": "6db000c29e0619d6bec26fb85f8d1739bd5fae16e46cccc03516a2171d79adb0",
+    "semantic_graph_contract_path": "artifacts/vpd_cluster_aware_sae_semantic_graph_contract_v2/contract.json",
+    "semantic_graph_contract_sha256": "d2d0a051fdd1dcd6656a586a2f7ac8258057c077d15de7fb07a3687128e53399"
+  },
+  "status": "pass",
+  "summary": {
+    "blueprint_budget_v2_controls_passed": 27,
+    "controls": 36,
+    "end_to_end_semantic_dispatch_allowed": false,
+    "implemented_node_representations": 20,
+    "logical_nodes": 21,
+    "passed": 36,
+    "production_runtime_attachment_verifier_present": false,
+    "semantic_joins": 38,
+    "terminal_gap_joins": 3,
+    "terminal_gap_nodes": 1,
+    "v1_mismatches_accounted": 28
+  }
+}

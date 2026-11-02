@@ -1,0 +1,75 @@
+{
+  "benchmark_id": "f706337b2141574a537a013c8d04ea2ec28f5c4e8fac5f4a580b75f9c00b90a3",
+  "scenarios": [
+    {
+      "compute_authorized": false,
+      "name": "clean_release",
+      "observed_stage": "training_release_receipt",
+      "status": "pass",
+      "training_release_receipt_id": "c7f69e2ec00ffb41fc24d057ea6c2d24c4b9e114d34b177acf6adc703162c7c7"
+    },
+    {
+      "error": "partition audit report content address mismatch",
+      "name": "missing_partition_audit",
+      "observed_stage": "pre_release_rejection",
+      "status": "pass"
+    },
+    {
+      "error": "partition audit did not release category-specific SAE training",
+      "name": "rejected_partition_audit",
+      "observed_stage": "pre_release_rejection",
+      "status": "pass"
+    },
+    {
+      "error": "partition audit lineage differs from the release inputs",
+      "name": "wrong_bundle",
+      "observed_stage": "pre_release_rejection",
+      "status": "pass"
+    },
+    {
+      "error": "partition audit did not release category-specific SAE training",
+      "name": "component_census_mismatch",
+      "observed_stage": "pre_release_rejection",
+      "status": "pass"
+    },
+    {
+      "error": "partition audit lineage differs from the release inputs",
+      "name": "stale_gate_plan",
+      "observed_stage": "pre_release_rejection",
+      "status": "pass"
+    },
+    {
+      "error": "partition audit lineage differs from the release inputs",
+      "name": "stale_fresh_pack",
+      "observed_stage": "pre_release_rejection",
+      "status": "pass"
+    },
+    {
+      "error": "partition audit did not release category-specific SAE training",
+      "name": "shared_only_candidate",
+      "observed_stage": "pre_release_rejection",
+      "status": "pass"
+    },
+    {
+      "error": "partition audit activation identity differs from SAE training",
+      "name": "wrong_effect_space",
+      "observed_stage": "pre_release_rejection",
+      "status": "pass"
+    }
+  ],
+  "schema": "sch.vpd-compartment-sae-training-release-gate-benchmark.v1",
+  "scientific_boundary": {
+    "execution_authorized": false,
+    "model_inference_performed": false,
+    "sae_training_performed": false,
+    "synthetic_only": true,
+    "weights_loaded_or_mutated": false
+  },
+  "status": "pass",
+  "summary": {
+    "passed": 9,
+    "rejected_before_release": 8,
+    "released": 1,
+    "scenarios": 9
+  }
+}

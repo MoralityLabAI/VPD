@@ -1,0 +1,191 @@
+{
+  "design": {
+    "admission_thresholds": {
+      "maximum_exact_upper_tail_p_value": 0.05,
+      "minimum_per_pack_held_out_pass_accuracy": 0.875,
+      "minimum_shared_axis_cosine_to_each_pack_train_direction": 0.8
+    },
+    "axis": "unit_norm_equal_pack_bisector_of_training_mean_pass_transitions",
+    "equal_pack_weighting": true,
+    "evaluation": "source_designated_held_out_examples_only",
+    "random_control": "exact_joint_pair_block_pass_label_flips_across_both_training_packs",
+    "task_family_sets_must_be_disjoint": true
+  },
+  "provenance": {
+    "runner_sha256": "75be0b8b16ac772ae14e818ee032ca22795336b9528d0345cabccc6064f60b5f"
+  },
+  "report_id": "8e88ece4ec085b2becdd055198ef9e7215f12ebbd00ff476c839af299ebe590d",
+  "schema": "sch.vpd-nanbeige-pass-category-shared-axis.v1",
+  "scientific_boundary": {
+    "does_not_authorize_sae_training": true,
+    "execution_authorized": false,
+    "held_out_evaluation_does_not_establish_third_domain_transfer": true,
+    "new_local_analysis_of_recovered_empirical_arrays": true,
+    "new_model_inference_performed": false,
+    "paid_compute_authorized": false,
+    "pooled_training_uses_both_task_packs": true,
+    "shared_axis_is_not_semantic_interpretation": true,
+    "source_checkpoint_revision_independently_verified": false,
+    "weights_loaded_or_mutated": false
+  },
+  "sites": [
+    {
+      "exact_joint_pair_block_label_flip_control": {
+        "arithmetic_pair_configurations": 64,
+        "at_or_above_observed": 8,
+        "exact_upper_tail_p_value": 0.00048828125,
+        "joint_configurations": 16384,
+        "maximum": 0.7396164587378644,
+        "median": 0.0,
+        "minimum": -0.7396164587378644,
+        "observed_equal_pack_held_out_alignment": 0.7389547633199061,
+        "reasoning_pair_configurations": 256
+      },
+      "native_pack_axis_held_out": {
+        "arithmetic": {
+          "minimum_normalized_margin": 0.9912346157349753,
+          "pass_accuracy": 1.0
+        },
+        "reasoning": {
+          "minimum_normalized_margin": 0.3576884449091643,
+          "pass_accuracy": 1.0
+        }
+      },
+      "shared_axis_admission": "pass",
+      "shared_axis_cosine_to_pack_train_directions": {
+        "arithmetic": 0.8026508133661998,
+        "minimum": 0.8026508133661998,
+        "reasoning": 0.8026508133661999
+      },
+      "shared_axis_held_out": {
+        "arithmetic": {
+          "minimum_normalized_margin": 0.7945894895461898,
+          "pass_accuracy": 1.0
+        },
+        "reasoning": {
+          "minimum_normalized_margin": 0.3373108780280448,
+          "pass_accuracy": 1.0
+        }
+      },
+      "site": "model.layers.11",
+      "source_train_direction_cosine": 0.28849665639484445
+    },
+    {
+      "exact_joint_pair_block_label_flip_control": {
+        "arithmetic_pair_configurations": 64,
+        "at_or_above_observed": 5,
+        "exact_upper_tail_p_value": 0.00030517578125,
+        "joint_configurations": 16384,
+        "maximum": 0.9976415944670666,
+        "median": 0.0,
+        "minimum": -0.9976415944670666,
+        "observed_equal_pack_held_out_alignment": 0.9976362690965124,
+        "reasoning_pair_configurations": 256
+      },
+      "native_pack_axis_held_out": {
+        "arithmetic": {
+          "minimum_normalized_margin": 0.9999520315445315,
+          "pass_accuracy": 1.0
+        },
+        "reasoning": {
+          "minimum_normalized_margin": 0.9880180393819001,
+          "pass_accuracy": 1.0
+        }
+      },
+      "shared_axis_admission": "pass",
+      "shared_axis_cosine_to_pack_train_directions": {
+        "arithmetic": 0.9980444439520323,
+        "minimum": 0.9980444439520323,
+        "reasoning": 0.998044443952033
+      },
+      "shared_axis_held_out": {
+        "arithmetic": {
+          "minimum_normalized_margin": 0.9978707143300775,
+          "pass_accuracy": 1.0
+        },
+        "reasoning": {
+          "minimum_normalized_margin": 0.9831616553127113,
+          "pass_accuracy": 1.0
+        }
+      },
+      "site": "model.layers.21",
+      "source_train_direction_cosine": 0.9921854242070439
+    },
+    {
+      "exact_joint_pair_block_label_flip_control": {
+        "arithmetic_pair_configurations": 64,
+        "at_or_above_observed": 215,
+        "exact_upper_tail_p_value": 0.01312255859375,
+        "joint_configurations": 16384,
+        "maximum": 0.9499347683786423,
+        "median": 0.0,
+        "minimum": -0.9499347683786423,
+        "observed_equal_pack_held_out_alignment": 0.9461063565241233,
+        "reasoning_pair_configurations": 256
+      },
+      "native_pack_axis_held_out": {
+        "arithmetic": {
+          "minimum_normalized_margin": 0.9971430354681209,
+          "pass_accuracy": 1.0
+        },
+        "reasoning": {
+          "minimum_normalized_margin": 0.6726793088298026,
+          "pass_accuracy": 1.0
+        }
+      },
+      "shared_axis_admission": "pass",
+      "shared_axis_cosine_to_pack_train_directions": {
+        "arithmetic": 0.9741655120878456,
+        "minimum": 0.9741655120878456,
+        "reasoning": 0.9741655120878463
+      },
+      "shared_axis_held_out": {
+        "arithmetic": {
+          "minimum_normalized_margin": 0.9665445942057342,
+          "pass_accuracy": 1.0
+        },
+        "reasoning": {
+          "minimum_normalized_margin": 0.63603646120923,
+          "pass_accuracy": 1.0
+        }
+      },
+      "site": "model.norm",
+      "source_train_direction_cosine": 0.8979968898827502
+    }
+  ],
+  "sources": {
+    "arithmetic": {
+      "examples_sha256": "d672918d4e778620c02cefd6a5fe9a474e4afebd40e221d9ad0e5e5875cefc82",
+      "families": [
+        "addition"
+      ],
+      "manifest_sha256": "6046aa35c98e0934c57e0acd6864951d4174249bfe26c22041ca37d38608857e",
+      "path": "C:/projects/VPD/artifacts/nanbeige_looped/prime-20260906T034844Z-719/retrieved/artifacts/nanbeige_looped/bf16_multipass_calibration"
+    },
+    "dtype": "torch.bfloat16",
+    "expected_revision": "451ed48c3273ecef7ea8faaa43c31ce529763bb1",
+    "model_id": "Nanbeige/Nanbeige4.2-3B",
+    "reasoning": {
+      "examples_sha256": "83fb39d5cd77bb83ae0fff6160e924217b2e9230c48b6a576ba3c2f1918d6b86",
+      "families": [
+        "arc_grid",
+        "campsite",
+        "dyck_language",
+        "futoshiki",
+        "goods_exchange",
+        "math"
+      ],
+      "manifest_sha256": "7c5205eeb3c1e7c025ac1aababc6e0526bbe82048f633a52e73bfefa07c8a546",
+      "path": "C:/projects/VPD/artifacts/nanbeige_reasoning/prime-20260906T204058Z-561/retrieved/artifacts/nanbeige_looped/bf16_multipass_calibration"
+    },
+    "revision_verified_by_both_sources": false
+  },
+  "status": "pass",
+  "summary": {
+    "maximum_exact_upper_tail_p_value": 0.01312255859375,
+    "minimum_shared_axis_cosine_to_pack_train_direction": 0.8026508133661998,
+    "minimum_shared_axis_held_out_pass_accuracy": 1.0,
+    "shared_axis_admissions": 3,
+    "sites": 3
+  }
+}

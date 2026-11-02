@@ -1,0 +1,128 @@
+{
+  "design": {
+    "feature_assignment_uses_training_split_only": true,
+    "feature_mass_share_threshold": 0.9,
+    "held_out_signed_selective_mass_score": "assigned target-pass mass minus opposite-pass mass divided by all held-out feature mass",
+    "maximum_exact_upper_tail_p_value": 0.05,
+    "minimum_features_per_pass": 16,
+    "minimum_held_out_explained_variance": 0.2,
+    "minimum_held_out_mass_coverage": 0.05,
+    "minimum_held_out_mass_precision": 0.75,
+    "minimum_train_example_support": 4,
+    "random_control": "exact independent pass-label flip per training example"
+  },
+  "report_id": "508871d6b702af2edb42e60b6609b5e7d26e535fb2ee1be261a5dc179fef6c41",
+  "schema": "sch.vpd-nanbeige-q4-sae-pass-selectivity.v1",
+  "scientific_boundary": {
+    "does_not_authorize_separate_dictionary_training": true,
+    "execution_authorized": false,
+    "feature_assignment_is_not_semantic_interpretation": true,
+    "model_weights_loaded": false,
+    "new_model_inference_performed": false,
+    "new_sae_training_performed": false,
+    "paid_compute_authorized": false,
+    "sae_weights_loaded": false,
+    "source_bf16_parity_validated": false,
+    "source_q4_weights_are_quantized": true,
+    "stored_sparse_feature_archives_used": true
+  },
+  "sites": [
+    {
+      "control_score_range": [
+        -0.22856393282380402,
+        0.22856393282380402
+      ],
+      "exact_training_pair_flip_controls": 256,
+      "exact_upper_tail_p_value": 0.00390625,
+      "held_out_explained_variance": {
+        "pass_0": 0.29651429693722264,
+        "pass_1": 0.2629356381461697
+      },
+      "held_out_signed_selective_mass_score": 0.22856393282380402,
+      "monolithic_sae_internal_pass_specialization_admission": "pass",
+      "pass_0": {
+        "assigned_features": 104,
+        "held_out_directional_feature_fraction": 0.9615384615384616,
+        "held_out_mass_coverage": 0.2709590760944334,
+        "held_out_mass_precision": 0.945343828652007
+      },
+      "pass_1": {
+        "assigned_features": 112,
+        "held_out_directional_feature_fraction": 0.9464285714285714,
+        "held_out_mass_coverage": 0.2096267994748644,
+        "held_out_mass_precision": 0.9371166630289566
+      },
+      "site": "model.layers.11"
+    },
+    {
+      "control_score_range": [
+        -0.949110164389926,
+        0.949110164389926
+      ],
+      "exact_training_pair_flip_controls": 256,
+      "exact_upper_tail_p_value": 0.00390625,
+      "held_out_explained_variance": {
+        "pass_0": 0.8311398107088587,
+        "pass_1": -0.1879651772380071
+      },
+      "held_out_signed_selective_mass_score": 0.949110164389926,
+      "monolithic_sae_internal_pass_specialization_admission": "fail",
+      "pass_0": {
+        "assigned_features": 151,
+        "held_out_directional_feature_fraction": 0.9205298013245033,
+        "held_out_mass_coverage": 0.9573763103262484,
+        "held_out_mass_precision": 0.9979009078463097
+      },
+      "pass_1": {
+        "assigned_features": 179,
+        "held_out_directional_feature_fraction": 0.9385474860335196,
+        "held_out_mass_coverage": 0.9441206481276951,
+        "held_out_mass_precision": 0.9990041393019367
+      },
+      "site": "model.layers.21"
+    },
+    {
+      "control_score_range": [
+        -0.8915832610526069,
+        0.8915832610526069
+      ],
+      "exact_training_pair_flip_controls": 256,
+      "exact_upper_tail_p_value": 0.00390625,
+      "held_out_explained_variance": {
+        "pass_0": 0.2922872645304503,
+        "pass_1": 0.42797987788404046
+      },
+      "held_out_signed_selective_mass_score": 0.8915832610526069,
+      "monolithic_sae_internal_pass_specialization_admission": "pass",
+      "pass_0": {
+        "assigned_features": 78,
+        "held_out_directional_feature_fraction": 0.9615384615384616,
+        "held_out_mass_coverage": 0.9647704275373417,
+        "held_out_mass_precision": 0.9950223939459298
+      },
+      "pass_1": {
+        "assigned_features": 236,
+        "held_out_directional_feature_fraction": 0.9872881355932204,
+        "held_out_mass_coverage": 0.8212679895126825,
+        "held_out_mass_precision": 0.9993832739099735
+      },
+      "site": "model.norm"
+    }
+  ],
+  "source": {
+    "capture_manifest_sha256": "6e31e77285cafcc9d2f600a3e6e59d38b5b1d5e66a895c5b89395a2cf22b5caa",
+    "held_out_examples": 10,
+    "manifest_sha256": "8cea34fb5c46b826059d5684c18c5694e38cf1aabf03eb51a152c8a1f785d6e9",
+    "path": "C:/projects/VPD/artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes",
+    "runner_sha256": "a5c6a3f3e3c5fa4299c8343bdd550ac3cc7b2c8ab600714da787546b8bda2430",
+    "sae_quality_sha256": "95d9a270a39904a1cee9af7feb66eca4e95c2344a77b50a77a07791d27e0f6c5",
+    "training_examples": 8,
+    "training_steps": 1000,
+    "weights": "Q4_K_M"
+  },
+  "status": "pass",
+  "summary": {
+    "internal_pass_specialization_admissions": 2,
+    "sites": 3
+  }
+}

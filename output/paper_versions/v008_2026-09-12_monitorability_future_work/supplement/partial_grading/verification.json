@@ -1,0 +1,14 @@
+{
+  "status": "partial_grading_and_correction_complete",
+  "protocol_sha256": "cf372f694789feed46abba7e42b4954e5154ac33af21a5cf295c736086781d1c",
+  "generation_manifest_sha256": "8033d3a8d3066aafb25a9eb27a21b7b16a607d00abc61ccf67f29978c21e031b",
+  "source_grade_sidecar_sha256": "05ddb62580a34c2ba75390616d1ef8311085433c792d716c52f686d59712bb68",
+  "helper_source_sha256": "841354d544fc3210a3f61b936defd31b93dc11bfdf977f38e89a51f65e2f5af3",
+  "grader_implementation_sha256": "9ac6ad58e62d1dfca99167e41ea5eb350a80cc5a76bc76094f1f6d579ccb2246",
+  "files": {
+    "corrections.json": "a13154f799ad5b933c13dee147cfa25b8be2e167efc8ea6d573ede53ac145690",
+    "RESULTS.md": "0b4b53c5dda9813acd6d1a0aa132a435fac11add819c169a5a544d466dfad6ac",
+    "rows.json": "cf6be3e3728395741187e83145920dfab602cbcb8c5271fd1c4ce881e3c80e28",
+    "summary.json": "1e78b4d5b76355bdcd21652cb64fe356d9352d80ea570ed591a71c60b623f6e8"
+  }
+}

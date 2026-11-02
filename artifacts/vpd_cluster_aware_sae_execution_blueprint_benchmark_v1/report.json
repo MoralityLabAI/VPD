@@ -1,0 +1,81 @@
+{
+  "benchmark_id": "7612bb0da7e388f029cbfe66b17a104ff93a32fef22763df3625a462db5daa75",
+  "controls": {
+    "authorization_placeholders_are_explicit": true,
+    "blueprint_tamper_rejected": true,
+    "blueprint_verifies": true,
+    "every_materialized_job_has_execution_contract": true,
+    "exact_episode_and_pair_lists_bound": true,
+    "execution_jobs_bind_source_job_and_compartment": true,
+    "job_sample_tamper_rejected": true,
+    "manifest_only_no_training_authority": true,
+    "materialization_job_tamper_rejected": true,
+    "one_global_pair_split_for_all_jobs": true,
+    "output_directories_are_unique_and_relative": true,
+    "routing_and_stability_ids_bound": true,
+    "runtime_worker_absence_is_explicit": true,
+    "shared_jobs_have_no_fake_cluster_identity": true,
+    "specific_jobs_bind_component_membership": true,
+    "training_and_validation_pair_lists_are_disjoint": true,
+    "two_seed_jobs_per_compartment": true
+  },
+  "design": {
+    "exact_cluster_routed_episode_sets": true,
+    "manifest_only": true,
+    "one_global_pair_assignment": true,
+    "runtime_worker_implemented": false,
+    "synthetic_materialization_only": true,
+    "two_initialization_seeds": true
+  },
+  "results": {
+    "cluster_aware_sae_plan_id": "b2c43a7771509372f5a595041ac606ad5929c4ce5df2c8b95de2b4e7a4bb17af",
+    "execution_blueprint_id": "07122590aae37e4e07dec2077830954e5eeb56ec269c77382f227fb33e233215",
+    "global_pair_split_id": "5620b6c1ad610d312ea18abe922774e6535d3feb48a30b8579fcc433ca6fb457",
+    "materialization_id": "7de298a878bd5c7688dcd4b76000f03ea1ab91cc8ae40648e2fa5c5ea571fd6b",
+    "summary": {
+      "categories": 8,
+      "compartments": 17,
+      "exact_cluster_routed_episode_sets": true,
+      "execution_jobs": 34,
+      "one_global_pair_split": true,
+      "shared_compartments": 1,
+      "specific_compartments": 16,
+      "unique_output_dirs": 34
+    },
+    "verification": {
+      "categories": 8,
+      "cluster_aware_sae_plan_id": "b2c43a7771509372f5a595041ac606ad5929c4ce5df2c8b95de2b4e7a4bb17af",
+      "compartments": 17,
+      "execution_authorized": false,
+      "execution_blueprint_id": "07122590aae37e4e07dec2077830954e5eeb56ec269c77382f227fb33e233215",
+      "execution_jobs": 34,
+      "global_pair_split_id": "5620b6c1ad610d312ea18abe922774e6535d3feb48a30b8579fcc433ca6fb457",
+      "materialization_id": "7de298a878bd5c7688dcd4b76000f03ea1ab91cc8ae40648e2fa5c5ea571fd6b",
+      "runtime_worker_implemented": false,
+      "sae_training_authorized": false,
+      "schema": "sch.vpd-cluster-aware-sae-execution-blueprint-verification.v1",
+      "status": "pass"
+    }
+  },
+  "schema": "sch.vpd-cluster-aware-sae-execution-blueprint-benchmark.v1",
+  "scientific_boundary": {
+    "empirical_blueprint_produced": false,
+    "execution_authorized": false,
+    "model_inference_performed": false,
+    "model_loaded": false,
+    "runtime_worker_implemented": false,
+    "sae_training_authorized": false,
+    "synthetic_materialization_only": true,
+    "weights_loaded_or_mutated": false
+  },
+  "source": {
+    "benchmark_sha256": "d3c82999d3b4dc607bb9219bacb803e7f1fcb81866814bd8c8471d5c13fb35a3",
+    "blueprint_builder_sha256": "478eb659651d4ef5a1060547db356ac4ec24ab73c9a5697cb7b77d105d5f0279",
+    "planner_v2_sha256": "b7fce50af30687d0fe4d7b75f589e1acc61863bddc73c7517caf91b1ad8d17a3"
+  },
+  "status": "pass",
+  "summary": {
+    "controls": 17,
+    "passed": 17
+  }
+}

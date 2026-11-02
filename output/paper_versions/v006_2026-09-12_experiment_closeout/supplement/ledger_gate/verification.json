@@ -1,0 +1,15 @@
+{
+  "status": "terminal_gate_artifacts_preserved",
+  "source_summary_sha256": "36d2661347883e1099ccf281b363f8e2ce7eb52caf59d550940046ea66c79eee",
+  "source_worker_cleanup_sha256": "de1704150360266ce4d7d134779332758a20e06dd6d7a160598980cecf29b845",
+  "source_parent_cleanup_sha256": "b2b7282cfa93eb1ceb22b721f23fab60d3bb0603ade956fd140765a26f54e219",
+  "files": {
+    "protocol.json": "98e4944a9b964502fbd98421556eff3e1466d2e61ea0078418b95a7a46f218d5",
+    "question_00.json": "80b8670192ae56fd945089c6e6f26208b58d8a4e0edc44610dcf2471094f2d0c",
+    "question_01.json": "0a30a97f4f83944e6a2f11615f64d7a6d60c94a9e3559e3c18fc085d717d79a0",
+    "question_02.json": "cc45ada3d8004e9311bfbad389a1e333e2f0f75c17efdb15c45ca0d8a1f37625",
+    "RESULTS.md": "7121ca597952ca94b448132d8ac66e4564f5264687c65f551f55a01b417fb32f",
+    "summary.json": "e078b5244fbd0e1fa0bda282b6c91566452565cf26dcda29febd8755e912247d"
+  },
+  "goal_complete": false
+}

@@ -1,0 +1,1709 @@
+{
+  "boundary": {
+    "capture_reexecuted": false,
+    "freshness_verified": false,
+    "operative_admissions": 0,
+    "paid_compute_launched": false,
+    "real_saved_arrays_read": true,
+    "training_performed": false,
+    "weights_modified": false
+  },
+  "decision": {
+    "allowed_use": "historical activation/VPD diagnostics with existing provenance limits",
+    "q2_import_eligible": false,
+    "reason": "Historical tail-only small calibration is not a fresh four-window Q2 pack; missing activations cannot be reconstructed by relabeling."
+  },
+  "limitations": [
+    "Only the pinned recovered BF16 reasoning calibration was audited, not every local or recovery capture.",
+    "Float32 array storage is not proof of FP32 model inference; declared BF16 execution comes from the source manifest and its revision remains unverified.",
+    "Hash/shape/token checks do not independently prove that the original producer attached the correct model hook or pass label.",
+    "No interpolation, row duplication or archive relabeling can replace the missing observed activation positions."
+  ],
+  "provenance": {
+    "runner_sha256": "555cfb72fe25d78c4aea720f41eb5b1b019fd5436056391dffb8b47fa2a8ade2",
+    "window_recipe_sha256": "83e3127a79788949b430082201f0308a62125595a5a37e44f3719fecfcc35864"
+  },
+  "records": [
+    {
+      "archive": "baseline_0000.npz",
+      "archive_sha256": "54dea9cef763e28d05cc545f022fb06a8ea830ad49b0ced3e67df2689ca3e79a",
+      "arrays_checked": [
+        {
+          "key": "model.layers.11__pass_0",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        },
+        {
+          "key": "model.layers.11__pass_1",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        },
+        {
+          "key": "model.norm__pass_0",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        },
+        {
+          "key": "model.norm__pass_1",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        }
+      ],
+      "family": "arc_grid",
+      "id": "arc_agi_1/a79310a0/0",
+      "position_coverage": {
+        "extra_saved_positions": [],
+        "missing_positions": [
+          375,
+          376,
+          377,
+          378,
+          379,
+          380,
+          381,
+          382,
+          887,
+          888,
+          889,
+          890,
+          891,
+          892,
+          893,
+          894,
+          1399,
+          1400,
+          1401,
+          1402,
+          1403,
+          1404,
+          1405,
+          1406
+        ],
+        "q2_window_layout_possible": true,
+        "q2_windows_present": false,
+        "region_coverage": {
+          "early": {
+            "available": 0,
+            "required": 8
+          },
+          "late": {
+            "available": 8,
+            "required": 8
+          },
+          "middle": {
+            "available": 0,
+            "required": 8
+          },
+          "prompt": {
+            "available": 0,
+            "required": 8
+          }
+        },
+        "required_rows": 32,
+        "saved_rows": 8
+      },
+      "split": "train"
+    },
+    {
+      "archive": "baseline_0001.npz",
+      "archive_sha256": "8dfad573f3a19ed32c182685aead3f486ebdacbd680a47dfbd1de13a8715caae",
+      "arrays_checked": [
+        {
+          "key": "model.layers.11__pass_0",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        },
+        {
+          "key": "model.layers.11__pass_1",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        },
+        {
+          "key": "model.norm__pass_0",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        },
+        {
+          "key": "model.norm__pass_1",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        }
+      ],
+      "family": "arc_grid",
+      "id": "arc_agi_1/bd4472b8/0",
+      "position_coverage": {
+        "extra_saved_positions": [],
+        "missing_positions": [
+          513,
+          514,
+          515,
+          516,
+          517,
+          518,
+          519,
+          520,
+          1025,
+          1026,
+          1027,
+          1028,
+          1029,
+          1030,
+          1031,
+          1032,
+          1537,
+          1538,
+          1539,
+          1540,
+          1541,
+          1542,
+          1543,
+          1544
+        ],
+        "q2_window_layout_possible": true,
+        "q2_windows_present": false,
+        "region_coverage": {
+          "early": {
+            "available": 0,
+            "required": 8
+          },
+          "late": {
+            "available": 8,
+            "required": 8
+          },
+          "middle": {
+            "available": 0,
+            "required": 8
+          },
+          "prompt": {
+            "available": 0,
+            "required": 8
+          }
+        },
+        "required_rows": 32,
+        "saved_rows": 8
+      },
+      "split": "train"
+    },
+    {
+      "archive": "baseline_0002.npz",
+      "archive_sha256": "8485bbc781b3aaa96766fd009e4814df30fd77870ad2f806b36cc6f39e36ac09",
+      "arrays_checked": [
+        {
+          "key": "model.layers.11__pass_0",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        },
+        {
+          "key": "model.layers.11__pass_1",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        },
+        {
+          "key": "model.norm__pass_0",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        },
+        {
+          "key": "model.norm__pass_1",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        }
+      ],
+      "family": "arc_grid",
+      "id": "arc_agi_1/12422b43/0",
+      "position_coverage": {
+        "extra_saved_positions": [],
+        "missing_positions": [
+          1301,
+          1302,
+          1303,
+          1304,
+          1305,
+          1306,
+          1307,
+          1308,
+          1813,
+          1814,
+          1815,
+          1816,
+          1817,
+          1818,
+          1819,
+          1820,
+          2325,
+          2326,
+          2327,
+          2328,
+          2329,
+          2330,
+          2331,
+          2332
+        ],
+        "q2_window_layout_possible": true,
+        "q2_windows_present": false,
+        "region_coverage": {
+          "early": {
+            "available": 0,
+            "required": 8
+          },
+          "late": {
+            "available": 8,
+            "required": 8
+          },
+          "middle": {
+            "available": 0,
+            "required": 8
+          },
+          "prompt": {
+            "available": 0,
+            "required": 8
+          }
+        },
+        "required_rows": 32,
+        "saved_rows": 8
+      },
+      "split": "eval"
+    },
+    {
+      "archive": "baseline_0003.npz",
+      "archive_sha256": "12d0ca0c264c61a47eee62c66a3483a8653346d04e7881547fbc64b1a9c46366",
+      "arrays_checked": [
+        {
+          "key": "model.layers.11__pass_0",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        },
+        {
+          "key": "model.layers.11__pass_1",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        },
+        {
+          "key": "model.norm__pass_0",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        },
+        {
+          "key": "model.norm__pass_1",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        }
+      ],
+      "family": "arc_grid",
+      "id": "arc_agi_1/c074846d/0",
+      "position_coverage": {
+        "extra_saved_positions": [],
+        "missing_positions": [
+          1003,
+          1004,
+          1005,
+          1006,
+          1007,
+          1008,
+          1009,
+          1010,
+          1515,
+          1516,
+          1517,
+          1518,
+          1519,
+          1520,
+          1521,
+          1522,
+          2027,
+          2028,
+          2029,
+          2030,
+          2031,
+          2032,
+          2033,
+          2034
+        ],
+        "q2_window_layout_possible": true,
+        "q2_windows_present": false,
+        "region_coverage": {
+          "early": {
+            "available": 0,
+            "required": 8
+          },
+          "late": {
+            "available": 8,
+            "required": 8
+          },
+          "middle": {
+            "available": 0,
+            "required": 8
+          },
+          "prompt": {
+            "available": 0,
+            "required": 8
+          }
+        },
+        "required_rows": 32,
+        "saved_rows": 8
+      },
+      "split": "eval"
+    },
+    {
+      "archive": "baseline_0004.npz",
+      "archive_sha256": "16a1450125c4220cbd9f6d0c6c5e5c32779ecc117d117aab3807ab289cc8a118",
+      "arrays_checked": [
+        {
+          "key": "model.layers.11__pass_0",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        },
+        {
+          "key": "model.layers.11__pass_1",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        },
+        {
+          "key": "model.norm__pass_0",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        },
+        {
+          "key": "model.norm__pass_1",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        }
+      ],
+      "family": "arc_grid",
+      "id": "arc_agi_1/c074846d/1",
+      "position_coverage": {
+        "extra_saved_positions": [],
+        "missing_positions": [
+          1039,
+          1040,
+          1041,
+          1042,
+          1043,
+          1044,
+          1045,
+          1046,
+          1551,
+          1552,
+          1553,
+          1554,
+          1555,
+          1556,
+          1557,
+          1558,
+          2063,
+          2064,
+          2065,
+          2066,
+          2067,
+          2068,
+          2069,
+          2070
+        ],
+        "q2_window_layout_possible": true,
+        "q2_windows_present": false,
+        "region_coverage": {
+          "early": {
+            "available": 0,
+            "required": 8
+          },
+          "late": {
+            "available": 8,
+            "required": 8
+          },
+          "middle": {
+            "available": 0,
+            "required": 8
+          },
+          "prompt": {
+            "available": 0,
+            "required": 8
+          }
+        },
+        "required_rows": 32,
+        "saved_rows": 8
+      },
+      "split": "eval"
+    },
+    {
+      "archive": "baseline_0005.npz",
+      "archive_sha256": "6c9bf4e31f869921b8478ed11cb9406d8c5eb638a52380e559b94dff7769136f",
+      "arrays_checked": [
+        {
+          "key": "model.layers.11__pass_0",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        },
+        {
+          "key": "model.layers.11__pass_1",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        },
+        {
+          "key": "model.norm__pass_0",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        },
+        {
+          "key": "model.norm__pass_1",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        }
+      ],
+      "family": "arc_grid",
+      "id": "arc_agi_2/2a28add5/0",
+      "position_coverage": {
+        "extra_saved_positions": [],
+        "missing_positions": [
+          1081,
+          1082,
+          1083,
+          1084,
+          1085,
+          1086,
+          1087,
+          1088,
+          1593,
+          1594,
+          1595,
+          1596,
+          1597,
+          1598,
+          1599,
+          1600,
+          2105,
+          2106,
+          2107,
+          2108,
+          2109,
+          2110,
+          2111,
+          2112
+        ],
+        "q2_window_layout_possible": true,
+        "q2_windows_present": false,
+        "region_coverage": {
+          "early": {
+            "available": 0,
+            "required": 8
+          },
+          "late": {
+            "available": 8,
+            "required": 8
+          },
+          "middle": {
+            "available": 0,
+            "required": 8
+          },
+          "prompt": {
+            "available": 0,
+            "required": 8
+          }
+        },
+        "required_rows": 32,
+        "saved_rows": 8
+      },
+      "split": "train"
+    },
+    {
+      "archive": "baseline_0006.npz",
+      "archive_sha256": "da0efe6f9a10831dbc00bf104188635ad7f5386cfdc5e930a5a209963750e2da",
+      "arrays_checked": [
+        {
+          "key": "model.layers.11__pass_0",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        },
+        {
+          "key": "model.layers.11__pass_1",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        },
+        {
+          "key": "model.norm__pass_0",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        },
+        {
+          "key": "model.norm__pass_1",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        }
+      ],
+      "family": "arc_grid",
+      "id": "arc_agi_2/6d1d5c90/0",
+      "position_coverage": {
+        "extra_saved_positions": [],
+        "missing_positions": [
+          641,
+          642,
+          643,
+          644,
+          645,
+          646,
+          647,
+          648,
+          1153,
+          1154,
+          1155,
+          1156,
+          1157,
+          1158,
+          1159,
+          1160,
+          1665,
+          1666,
+          1667,
+          1668,
+          1669,
+          1670,
+          1671,
+          1672
+        ],
+        "q2_window_layout_possible": true,
+        "q2_windows_present": false,
+        "region_coverage": {
+          "early": {
+            "available": 0,
+            "required": 8
+          },
+          "late": {
+            "available": 8,
+            "required": 8
+          },
+          "middle": {
+            "available": 0,
+            "required": 8
+          },
+          "prompt": {
+            "available": 0,
+            "required": 8
+          }
+        },
+        "required_rows": 32,
+        "saved_rows": 8
+      },
+      "split": "train"
+    },
+    {
+      "archive": "baseline_0007.npz",
+      "archive_sha256": "435ea4e2fdfcee72d029397faa67accab2f388546908b89dd0539a15473379eb",
+      "arrays_checked": [
+        {
+          "key": "model.layers.11__pass_0",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        },
+        {
+          "key": "model.layers.11__pass_1",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        },
+        {
+          "key": "model.norm__pass_0",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        },
+        {
+          "key": "model.norm__pass_1",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        }
+      ],
+      "family": "arc_grid",
+      "id": "arc_agi_2/3dc255db/0",
+      "position_coverage": {
+        "extra_saved_positions": [],
+        "missing_positions": [
+          1953,
+          1954,
+          1955,
+          1956,
+          1957,
+          1958,
+          1959,
+          1960,
+          2465,
+          2466,
+          2467,
+          2468,
+          2469,
+          2470,
+          2471,
+          2472,
+          2977,
+          2978,
+          2979,
+          2980,
+          2981,
+          2982,
+          2983,
+          2984
+        ],
+        "q2_window_layout_possible": true,
+        "q2_windows_present": false,
+        "region_coverage": {
+          "early": {
+            "available": 0,
+            "required": 8
+          },
+          "late": {
+            "available": 8,
+            "required": 8
+          },
+          "middle": {
+            "available": 0,
+            "required": 8
+          },
+          "prompt": {
+            "available": 0,
+            "required": 8
+          }
+        },
+        "required_rows": 32,
+        "saved_rows": 8
+      },
+      "split": "eval"
+    },
+    {
+      "archive": "baseline_0008.npz",
+      "archive_sha256": "872e79a4632ec428cb9c83665da02855fef9b1e7d04ce79377423ab485cf6b47",
+      "arrays_checked": [
+        {
+          "key": "model.layers.11__pass_0",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        },
+        {
+          "key": "model.layers.11__pass_1",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        },
+        {
+          "key": "model.norm__pass_0",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        },
+        {
+          "key": "model.norm__pass_1",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        }
+      ],
+      "family": "arc_grid",
+      "id": "arc_agi_2/78332cb0/0",
+      "position_coverage": {
+        "extra_saved_positions": [],
+        "missing_positions": [
+          1483,
+          1484,
+          1485,
+          1486,
+          1487,
+          1488,
+          1489,
+          1490,
+          1995,
+          1996,
+          1997,
+          1998,
+          1999,
+          2000,
+          2001,
+          2002,
+          2507,
+          2508,
+          2509,
+          2510,
+          2511,
+          2512,
+          2513,
+          2514
+        ],
+        "q2_window_layout_possible": true,
+        "q2_windows_present": false,
+        "region_coverage": {
+          "early": {
+            "available": 0,
+            "required": 8
+          },
+          "late": {
+            "available": 8,
+            "required": 8
+          },
+          "middle": {
+            "available": 0,
+            "required": 8
+          },
+          "prompt": {
+            "available": 0,
+            "required": 8
+          }
+        },
+        "required_rows": 32,
+        "saved_rows": 8
+      },
+      "split": "eval"
+    },
+    {
+      "archive": "baseline_0009.npz",
+      "archive_sha256": "2152d0a2658cf8cb534b82c7195154d230229170ebd4665a736f68b68ba4e2bb",
+      "arrays_checked": [
+        {
+          "key": "model.layers.11__pass_0",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        },
+        {
+          "key": "model.layers.11__pass_1",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        },
+        {
+          "key": "model.norm__pass_0",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        },
+        {
+          "key": "model.norm__pass_1",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        }
+      ],
+      "family": "arc_grid",
+      "id": "arc_agi_2/78332cb0/1",
+      "position_coverage": {
+        "extra_saved_positions": [],
+        "missing_positions": [
+          1471,
+          1472,
+          1473,
+          1474,
+          1475,
+          1476,
+          1477,
+          1478,
+          1983,
+          1984,
+          1985,
+          1986,
+          1987,
+          1988,
+          1989,
+          1990,
+          2495,
+          2496,
+          2497,
+          2498,
+          2499,
+          2500,
+          2501,
+          2502
+        ],
+        "q2_window_layout_possible": true,
+        "q2_windows_present": false,
+        "region_coverage": {
+          "early": {
+            "available": 0,
+            "required": 8
+          },
+          "late": {
+            "available": 8,
+            "required": 8
+          },
+          "middle": {
+            "available": 0,
+            "required": 8
+          },
+          "prompt": {
+            "available": 0,
+            "required": 8
+          }
+        },
+        "required_rows": 32,
+        "saved_rows": 8
+      },
+      "split": "eval"
+    },
+    {
+      "archive": "baseline_0010.npz",
+      "archive_sha256": "e74531bdc257e10a18cd3ed1bfb7ec65eae37bed36faca8be99a652813da8605",
+      "arrays_checked": [
+        {
+          "key": "model.layers.11__pass_0",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        },
+        {
+          "key": "model.layers.11__pass_1",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        },
+        {
+          "key": "model.norm__pass_0",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        },
+        {
+          "key": "model.norm__pass_1",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        }
+      ],
+      "family": "goods_exchange",
+      "id": "intellect3_logic/03253/e388bea64650",
+      "position_coverage": {
+        "extra_saved_positions": [],
+        "missing_positions": [
+          855,
+          856,
+          857,
+          858,
+          859,
+          860,
+          861,
+          862,
+          1367,
+          1368,
+          1369,
+          1370,
+          1371,
+          1372,
+          1373,
+          1374,
+          1879,
+          1880,
+          1881,
+          1882,
+          1883,
+          1884,
+          1885,
+          1886
+        ],
+        "q2_window_layout_possible": true,
+        "q2_windows_present": false,
+        "region_coverage": {
+          "early": {
+            "available": 0,
+            "required": 8
+          },
+          "late": {
+            "available": 8,
+            "required": 8
+          },
+          "middle": {
+            "available": 0,
+            "required": 8
+          },
+          "prompt": {
+            "available": 0,
+            "required": 8
+          }
+        },
+        "required_rows": 32,
+        "saved_rows": 8
+      },
+      "split": "train"
+    },
+    {
+      "archive": "baseline_0011.npz",
+      "archive_sha256": "e0e181ec96adff0dae1bf9f0b4fb16ba3b47a4ad05ff2d8b206b5aad33481f7a",
+      "arrays_checked": [
+        {
+          "key": "model.layers.11__pass_0",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        },
+        {
+          "key": "model.layers.11__pass_1",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        },
+        {
+          "key": "model.norm__pass_0",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        },
+        {
+          "key": "model.norm__pass_1",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        }
+      ],
+      "family": "futoshiki",
+      "id": "intellect3_logic/07138/b6065797ee33",
+      "position_coverage": {
+        "extra_saved_positions": [],
+        "missing_positions": [
+          378,
+          379,
+          380,
+          381,
+          382,
+          383,
+          384,
+          385,
+          890,
+          891,
+          892,
+          893,
+          894,
+          895,
+          896,
+          897,
+          1402,
+          1403,
+          1404,
+          1405,
+          1406,
+          1407,
+          1408,
+          1409
+        ],
+        "q2_window_layout_possible": true,
+        "q2_windows_present": false,
+        "region_coverage": {
+          "early": {
+            "available": 0,
+            "required": 8
+          },
+          "late": {
+            "available": 8,
+            "required": 8
+          },
+          "middle": {
+            "available": 0,
+            "required": 8
+          },
+          "prompt": {
+            "available": 0,
+            "required": 8
+          }
+        },
+        "required_rows": 32,
+        "saved_rows": 8
+      },
+      "split": "train"
+    },
+    {
+      "archive": "baseline_0012.npz",
+      "archive_sha256": "0afcda7aae78dc391ec1f8c8be0d2552959d382a5e9c91a91bcd3a7266c5804f",
+      "arrays_checked": [
+        {
+          "key": "model.layers.11__pass_0",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        },
+        {
+          "key": "model.layers.11__pass_1",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        },
+        {
+          "key": "model.norm__pass_0",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        },
+        {
+          "key": "model.norm__pass_1",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        }
+      ],
+      "family": "campsite",
+      "id": "intellect3_logic/00062/72b57dbd293b",
+      "position_coverage": {
+        "extra_saved_positions": [],
+        "missing_positions": [
+          376,
+          377,
+          378,
+          379,
+          380,
+          381,
+          382,
+          383,
+          888,
+          889,
+          890,
+          891,
+          892,
+          893,
+          894,
+          895,
+          1400,
+          1401,
+          1402,
+          1403,
+          1404,
+          1405,
+          1406,
+          1407
+        ],
+        "q2_window_layout_possible": true,
+        "q2_windows_present": false,
+        "region_coverage": {
+          "early": {
+            "available": 0,
+            "required": 8
+          },
+          "late": {
+            "available": 8,
+            "required": 8
+          },
+          "middle": {
+            "available": 0,
+            "required": 8
+          },
+          "prompt": {
+            "available": 0,
+            "required": 8
+          }
+        },
+        "required_rows": 32,
+        "saved_rows": 8
+      },
+      "split": "eval"
+    },
+    {
+      "archive": "baseline_0013.npz",
+      "archive_sha256": "a4744ea0e717355d70d46ca78f19896e4d81ae5fcfd29fc0f501a7d893ed0713",
+      "arrays_checked": [
+        {
+          "key": "model.layers.11__pass_0",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        },
+        {
+          "key": "model.layers.11__pass_1",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        },
+        {
+          "key": "model.norm__pass_0",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        },
+        {
+          "key": "model.norm__pass_1",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        }
+      ],
+      "family": "dyck_language",
+      "id": "intellect3_logic/05869/5de8a003a86f",
+      "position_coverage": {
+        "extra_saved_positions": [],
+        "missing_positions": [
+          88,
+          89,
+          90,
+          91,
+          92,
+          93,
+          94,
+          95,
+          600,
+          601,
+          602,
+          603,
+          604,
+          605,
+          606,
+          607,
+          1112,
+          1113,
+          1114,
+          1115,
+          1116,
+          1117,
+          1118,
+          1119
+        ],
+        "q2_window_layout_possible": true,
+        "q2_windows_present": false,
+        "region_coverage": {
+          "early": {
+            "available": 0,
+            "required": 8
+          },
+          "late": {
+            "available": 8,
+            "required": 8
+          },
+          "middle": {
+            "available": 0,
+            "required": 8
+          },
+          "prompt": {
+            "available": 0,
+            "required": 8
+          }
+        },
+        "required_rows": 32,
+        "saved_rows": 8
+      },
+      "split": "eval"
+    },
+    {
+      "archive": "baseline_0014.npz",
+      "archive_sha256": "2312e3994fe2f7ffb1b722b7efebffd5136a3642736838abdd01b57d9629f304",
+      "arrays_checked": [
+        {
+          "key": "model.layers.11__pass_0",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        },
+        {
+          "key": "model.layers.11__pass_1",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        },
+        {
+          "key": "model.norm__pass_0",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        },
+        {
+          "key": "model.norm__pass_1",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        }
+      ],
+      "family": "math",
+      "id": "intellect3_math/17853/b74de9e5232b",
+      "position_coverage": {
+        "extra_saved_positions": [],
+        "missing_positions": [
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          578,
+          579,
+          580,
+          581,
+          582,
+          583,
+          584,
+          585,
+          1090,
+          1091,
+          1092,
+          1093,
+          1094,
+          1095,
+          1096,
+          1097
+        ],
+        "q2_window_layout_possible": true,
+        "q2_windows_present": false,
+        "region_coverage": {
+          "early": {
+            "available": 0,
+            "required": 8
+          },
+          "late": {
+            "available": 8,
+            "required": 8
+          },
+          "middle": {
+            "available": 0,
+            "required": 8
+          },
+          "prompt": {
+            "available": 0,
+            "required": 8
+          }
+        },
+        "required_rows": 32,
+        "saved_rows": 8
+      },
+      "split": "train"
+    },
+    {
+      "archive": "baseline_0015.npz",
+      "archive_sha256": "c084c430aeefb41a05e4185f29a16495df55faf035230efe6d871044edf14dd3",
+      "arrays_checked": [
+        {
+          "key": "model.layers.11__pass_0",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        },
+        {
+          "key": "model.layers.11__pass_1",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        },
+        {
+          "key": "model.norm__pass_0",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        },
+        {
+          "key": "model.norm__pass_1",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        }
+      ],
+      "family": "math",
+      "id": "intellect3_math/14826/fc54a03d241c",
+      "position_coverage": {
+        "extra_saved_positions": [],
+        "missing_positions": [
+          91,
+          92,
+          93,
+          94,
+          95,
+          96,
+          97,
+          98,
+          603,
+          604,
+          605,
+          606,
+          607,
+          608,
+          609,
+          610,
+          1115,
+          1116,
+          1117,
+          1118,
+          1119,
+          1120,
+          1121,
+          1122
+        ],
+        "q2_window_layout_possible": true,
+        "q2_windows_present": false,
+        "region_coverage": {
+          "early": {
+            "available": 0,
+            "required": 8
+          },
+          "late": {
+            "available": 8,
+            "required": 8
+          },
+          "middle": {
+            "available": 0,
+            "required": 8
+          },
+          "prompt": {
+            "available": 0,
+            "required": 8
+          }
+        },
+        "required_rows": 32,
+        "saved_rows": 8
+      },
+      "split": "train"
+    },
+    {
+      "archive": "baseline_0016.npz",
+      "archive_sha256": "b177cc5fb41fb73ecc915085bf0bd7a4504e490a45eb5916c410d06a9d6663dd",
+      "arrays_checked": [
+        {
+          "key": "model.layers.11__pass_0",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        },
+        {
+          "key": "model.layers.11__pass_1",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        },
+        {
+          "key": "model.norm__pass_0",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        },
+        {
+          "key": "model.norm__pass_1",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        }
+      ],
+      "family": "math",
+      "id": "intellect3_math/04162/0fae120567d0",
+      "position_coverage": {
+        "extra_saved_positions": [],
+        "missing_positions": [
+          122,
+          123,
+          124,
+          125,
+          126,
+          127,
+          128,
+          129,
+          634,
+          635,
+          636,
+          637,
+          638,
+          639,
+          640,
+          641,
+          1146,
+          1147,
+          1148,
+          1149,
+          1150,
+          1151,
+          1152,
+          1153
+        ],
+        "q2_window_layout_possible": true,
+        "q2_windows_present": false,
+        "region_coverage": {
+          "early": {
+            "available": 0,
+            "required": 8
+          },
+          "late": {
+            "available": 8,
+            "required": 8
+          },
+          "middle": {
+            "available": 0,
+            "required": 8
+          },
+          "prompt": {
+            "available": 0,
+            "required": 8
+          }
+        },
+        "required_rows": 32,
+        "saved_rows": 8
+      },
+      "split": "eval"
+    },
+    {
+      "archive": "baseline_0017.npz",
+      "archive_sha256": "9e30afa479fde9332a98be3161f3609d4ba11121f5e715782622e792493dd8d8",
+      "arrays_checked": [
+        {
+          "key": "model.layers.11__pass_0",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        },
+        {
+          "key": "model.layers.11__pass_1",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        },
+        {
+          "key": "model.norm__pass_0",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        },
+        {
+          "key": "model.norm__pass_1",
+          "shape": [
+            8,
+            3072
+          ],
+          "storage_dtype": "float32"
+        }
+      ],
+      "family": "math",
+      "id": "intellect3_math/10603/9d30832ed4ab",
+      "position_coverage": {
+        "extra_saved_positions": [],
+        "missing_positions": [
+          143,
+          144,
+          145,
+          146,
+          147,
+          148,
+          149,
+          150,
+          655,
+          656,
+          657,
+          658,
+          659,
+          660,
+          661,
+          662,
+          1167,
+          1168,
+          1169,
+          1170,
+          1171,
+          1172,
+          1173,
+          1174
+        ],
+        "q2_window_layout_possible": true,
+        "q2_windows_present": false,
+        "region_coverage": {
+          "early": {
+            "available": 0,
+            "required": 8
+          },
+          "late": {
+            "available": 8,
+            "required": 8
+          },
+          "middle": {
+            "available": 0,
+            "required": 8
+          },
+          "prompt": {
+            "available": 0,
+            "required": 8
+          }
+        },
+        "required_rows": 32,
+        "saved_rows": 8
+      },
+      "split": "eval"
+    }
+  ],
+  "report_id": "91e264bd5cc82885cbe9c62796fc6523ad459fc620755a3157f3de7fef06b96d",
+  "schema": "sch.vpd-bf16-q2-capture-coverage.v1",
+  "source": {
+    "manifest_sha256": "7c5205eeb3c1e7c025ac1aababc6e0526bbe82048f633a52e73bfefa07c8a546",
+    "path": "C:\\projects\\VPD\\artifacts\\nanbeige_reasoning\\prime-20260906T204058Z-561\\retrieved\\artifacts\\nanbeige_looped\\bf16_multipass_calibration"
+  },
+  "summary": {
+    "checked_site_pass_arrays": 72,
+    "checkpoint_revision_verified_by_source": false,
+    "declared_model_dtype": "torch.bfloat16",
+    "evaluation_examples": 10,
+    "examples": 18,
+    "examples_with_all_q2_windows": 0,
+    "missing_all_positions_per_site_pass": 432,
+    "missing_training_positions_per_site_pass": 192,
+    "source_declares_family_disjoint": false,
+    "training_examples": 8,
+    "training_family_example_counts": {
+      "arc_grid": 4,
+      "futoshiki": 1,
+      "goods_exchange": 1,
+      "math": 2
+    },
+    "training_inventory_matches_q2": false
+  }
+}

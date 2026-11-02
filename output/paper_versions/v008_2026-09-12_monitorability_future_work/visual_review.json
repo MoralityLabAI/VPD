@@ -1,0 +1,30 @@
+{
+  "status": "all_final_pages_visually_reviewed",
+  "pages": 19,
+  "pdf_sha256": "9960ee13248159fa15d4d60eed17054665f15eb04492dca2fbe16f9a39c19003",
+  "reviewed_utc": "2026-09-13T04:54:09.100104+00:00",
+  "method": "Pages 1-18 inspected in contact sheets; new section on pages 12-13 and final page 19 additionally inspected at full rendered size.",
+  "findings": "No clipping, overlap, missing visible glyphs or near-empty final page. Section and appendix transitions are clean. Inherited tables, equations and figures remain legible.",
+  "render_note": "Poppler Symbol/ArialUnicode fallback warnings were checked against visible rendering.",
+  "images": {
+    "1": "76f91ab3aebff1834cc4936c82a929f523244a749c2c6df54da91482af8f4399",
+    "2": "ac807fc13b2824e558a10e15b052f487b39f84c03aec73c58d4788818bcf8fb7",
+    "3": "9835c03cd9616ba405c5c8cc7ef4869118ebf6cf3e6c5075611b8411761caf31",
+    "4": "b06a04f51bf77eb97168c577284d42c6f19ed56f45eabf0c7ac527b0df68e382",
+    "5": "6a1bfaf9ad5de606c7b54502f7ad8519c555d3d243a6f8578c59adb8d0e01343",
+    "6": "31e49f5ddd691e181766dbfc64d9964621bf07c08519cf128c094f81c5b4c371",
+    "7": "38cd9df97044738a685e58011ef7a086341d00eb8773b017d06bc5d2bc97e53e",
+    "8": "da0bdd70c6951bc5d9aaba29e476081f9c91442e08434fc57fc82c99dfd28cfe",
+    "9": "3d3f299d72cdfd018a3cab1eac9dd6aa317f1337cf102f46a10ea66104d880d1",
+    "10": "7565807d337272369bf9fb898799f478e0a8c8e3a178ca4cf9db1252a9a7c2aa",
+    "11": "0f80cf055a31ddad91c89455f7b9fd94b9388261f34971a55a8bc5a72588c385",
+    "12": "da67220fc4cf3441959f69a60e78387165e6891e276e73099ee6a4f49c5e0fda",
+    "13": "af30907dd1f4e8c1c08135c2729405da54eda2e2b0db5035e4e0949d0bf619ae",
+    "14": "1096fed844d0d46fa2822d4dc681b9625f9d6d1b7705a4dba7a1fc0efe0f8828",
+    "15": "0a2d11e7d227187565707aa67d548cb2b423b4f4d41aabcf4aaad7e0f9857168",
+    "16": "dcc397a22eb66a36d44c6f54c9869468815474119667b5cbea032a1503616c11",
+    "17": "14d7df32ecdab58cad537250ac49a3ab91553da95f651e057dd653f5ea1b9cca",
+    "18": "0780621ddd953d1e8bb11b8c5f2b5fbf20a0324f8ae59f3340a30c07d94972ea",
+    "19": "96334a5e28d3ab7990cc896af7a12750dabc170dacf6af75be3a34453e9ef2d6"
+  }
+}

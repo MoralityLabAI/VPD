@@ -1,0 +1,69 @@
+{
+  "benchmark_id": "128a32c051b18d32be0af877929f7c5344562b13d57993c6fd9c40bedfb8e1e8",
+  "controls": {
+    "active_runtime_rejected_and_closed": true,
+    "active_runtime_rejection_leaves_terminal_claim": true,
+    "all_claim_artifacts_are_temporary": true,
+    "attachment_claim_is_single_use_across_reconstruction": true,
+    "claim_receipt_is_content_addressed": true,
+    "claim_receipt_tamper_rejected": true,
+    "durable_claim_precedes_runtime_factory": true,
+    "factory_failure_leaves_terminal_claim_tombstone": true,
+    "factory_failure_retry_rejected_before_factory": true,
+    "inert_attachment_creates_no_dictionary_output": true,
+    "inert_attachment_imports_no_model_frameworks": true,
+    "inert_attachment_remains_non_authorizing": true,
+    "inert_runtime_attaches_after_claim": true,
+    "ledger_tamper_rejected_before_claim": true,
+    "production_runtime_remains_absent": true,
+    "runtime_close_delegates_exactly_once": true,
+    "source_tamper_rejected_before_claim": true,
+    "trainer_callback_never_invoked": true,
+    "transition_and_signed_admission_reconstruct_exactly": true,
+    "transition_byte_tamper_rejected_after_claim": true
+  },
+  "design": {
+    "durable_attachment_claim_before_factory": true,
+    "exact_ledger_reconstruction": true,
+    "production_runtime_attach_implemented": false,
+    "synthetic_inert_runtime_only": true,
+    "terminal_claim_tombstones": true,
+    "trainer_callback_invocation_implemented": false
+  },
+  "results": {
+    "active_runtime_claim_terminal": true,
+    "execution_blueprint_id": "07122590aae37e4e07dec2077830954e5eeb56ec269c77382f227fb33e233215",
+    "factory_failure_claim_terminal": true,
+    "successful_execution_job_id": "703e053e9397e3d51f98363b7c8d7dc5df63ce0cc02110c6e8dd98118401ac5e",
+    "temporary_claim_receipt_content_addressed": true
+  },
+  "schema": "sch.vpd-cluster-aware-sae-inert-attachment-benchmark.v1",
+  "scientific_boundary": {
+    "empirical_blueprint_present": false,
+    "execution_authorized": false,
+    "inert_runtime_attached": true,
+    "model_framework_imported": false,
+    "model_inference_performed": false,
+    "model_loaded": false,
+    "persistent_dictionary_output_created": false,
+    "persistent_workspace_claim_created": false,
+    "production_runtime_attached": false,
+    "sae_training_authorized": false,
+    "synthetic_keys_receipts_and_runtime_only": true,
+    "temporary_simulation_only": true,
+    "trainer_callback_invoked": false,
+    "weights_loaded_or_mutated": false
+  },
+  "source": {
+    "benchmark_sha256": "5de4bacb0ff0324c70aad20cdd8153ed459e36af777b60134b1bf84420660ca7",
+    "durable_transition_sha256": "3846e771e88d7aa92ff0a519095a6e671c0a7da29b2290157ff685a6ad933d94",
+    "execution_blueprint_id": "07122590aae37e4e07dec2077830954e5eeb56ec269c77382f227fb33e233215",
+    "inert_attachment_sha256": "ebf692b4be8c96e96a30a1c81da53d3988f3d44195e0d921913986ef2da27190",
+    "runtime_worker_sha256": "afade79132182f4af63f24d857aa66f27dfa68246d75ef12938054ea6f867e59"
+  },
+  "status": "pass",
+  "summary": {
+    "controls": 20,
+    "passed": 20
+  }
+}

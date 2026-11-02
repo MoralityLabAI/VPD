@@ -1,0 +1,93 @@
+{
+  "benchmark_id": "1c239f6416c57374a810732496c20f36a7245d882b41c2282c72b8465678da58",
+  "controls": {
+    "admission_is_content_addressed": true,
+    "admission_repeats_exact_blueprint_binding": true,
+    "all_16_specific_compartments_are_derived": true,
+    "all_34_output_directories_are_unique": true,
+    "all_8_categories_are_derived": true,
+    "benchmark_imports_no_model_frameworks": true,
+    "budget_shape_is_admissible": true,
+    "exact_34_job_shape_is_derived": true,
+    "exact_68000_steps_and_20480_rows_are_derived": true,
+    "one_shared_fallback_is_derived_and_uncharged": true,
+    "proposal_and_admission_transfer_no_authority": true,
+    "proposal_authority_broadening_rejected": true,
+    "proposal_binds_exact_blueprint_file_hash": true,
+    "proposal_binds_exact_blueprint_id": true,
+    "proposal_is_content_addressed": true,
+    "proposal_resource_substitution_rejected": true,
+    "readdressed_admission_tamper_rejected_by_reproduction": true,
+    "readdressed_blueprint_category_rebinding_rejected": true,
+    "readdressed_blueprint_output_reuse_rejected": true,
+    "readdressed_blueprint_resource_widening_rejected": true,
+    "specific_and_shared_dictionary_widths_remain_distinct": true,
+    "temporary_blueprint_fixture_removed": true,
+    "unaddressed_admission_tamper_rejected": true,
+    "unaddressed_blueprint_tamper_rejected": true,
+    "wrong_blueprint_file_hash_rejected": true,
+    "wrong_blueprint_id_rejected": true,
+    "wrong_policy_id_rejected": true
+  },
+  "results": {
+    "admission_id": "dadb42b793f491486bcd9677a840f39ad7644f73460254f3b793c5c7c3a60f72",
+    "execution_blueprint_id": "07122590aae37e4e07dec2077830954e5eeb56ec269c77382f227fb33e233215",
+    "execution_blueprint_sha256": "51293f911e7b64d3e330e2cbbb1a7d023d49a594b4891827d824051f781bf50e",
+    "global_requested_resources": {
+      "batch_sizes": [
+        128
+      ],
+      "data_selection_seeds": [
+        1707
+      ],
+      "dictionary_feature_widths": [
+        4096,
+        8192
+      ],
+      "episode_contract_entries": 160,
+      "initialization_seeds": [
+        17,
+        29
+      ],
+      "jobs": 34,
+      "pair_contract_entries": 132,
+      "planned_activation_rows": 20480,
+      "planned_steps": 68000,
+      "unique_output_directories": 34
+    },
+    "proposal_id": "50e09fa4b4247483bf616c9f31226bdd021d7ca609b20a6b911cd361175bb400"
+  },
+  "schema": "sch.vpd-cluster-aware-sae-blueprint-bound-budget-admission-benchmark.v2",
+  "scientific_boundary": {
+    "empirical_blueprint_present": false,
+    "execution_authorized": false,
+    "model_framework_imported": false,
+    "model_inference_performed": false,
+    "model_loaded": false,
+    "paid_compute_authorized": false,
+    "persistent_dictionary_output_created": false,
+    "sae_training_authorized": false,
+    "synthetic_blueprint_fixture_only": true,
+    "training_performed": false,
+    "weights_loaded_or_mutated": false
+  },
+  "source": {
+    "budget_policy_id": "5e9f4fc0841d0e71a2eef6f9ac91f5e27d0702c0e0aadfa5a6f511dad50719f2",
+    "budget_policy_path": "artifacts/vpd_cluster_aware_sae_budget_admission_policy_v1/policy.json",
+    "budget_policy_sha256": "1846d857c2d415cbc337e155996e653ff8ba123319fcb0c79e418ae7d576dbaf",
+    "builder_sha256": "31396ffcab4b5ea88f1287745c17c79a47d9b2620d38187b776db9465c0117e1",
+    "synthetic_blueprint_benchmark_id": "7612bb0da7e388f029cbfe66b17a104ff93a32fef22763df3625a462db5daa75"
+  },
+  "status": "pass",
+  "summary": {
+    "activation_categories": 8,
+    "controls": 27,
+    "execution_jobs": 34,
+    "passed": 27,
+    "planned_activation_rows": 20480,
+    "planned_steps": 68000,
+    "shared_fallback_compartments": 1,
+    "specific_compartments": 16,
+    "synthetic_blueprint_persisted": false
+  }
+}

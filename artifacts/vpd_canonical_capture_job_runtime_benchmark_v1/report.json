@@ -1,0 +1,61 @@
+{
+  "benchmark_id": "df90986f90badd27512b4539093aac77198331409bc7719e1d17ad05b14d6746",
+  "negative_controls": {
+    "callback_failure_output_absent": true,
+    "callback_failure_rejected": true,
+    "callback_failure_restored_factors": true,
+    "component_artifact_tamper_rejected": true,
+    "readdressed_release_boundary_tamper_rejected": true,
+    "synthetic_plan_cannot_enter_actual_loader": true,
+    "wrong_runtime_adapter_output_absent": true,
+    "wrong_runtime_adapter_rejected": true
+  },
+  "scenario": {
+    "activation_categories": 8,
+    "components": 2,
+    "execution_verification": {
+      "capture_authorization_id": "eeb1b66b3ca6da45636215ff49d64951da937251dd75e895a35efcb0ceb3c729",
+      "capture_execution_id": "d216b4eacac562ccdd952b81987e2fd860f7b1d2f7f3ef489932c328e89c00eb",
+      "capture_job_plan_id": "33527cf5005400930b77fef789650c751be1d49806a599c0f84007e794fc5284",
+      "components": 2,
+      "effect_shard_artifact_id": "37d7e3fb733864f4d566b72af02fafcedd4183993f9ee245ec2fd75dcc9c4225",
+      "real_actions_authorized": false,
+      "release_authorized": false,
+      "schema": "sch.vpd-canonical-category-capture-job-execution-verification.v1",
+      "status": "pass"
+    },
+    "factor_restored_after_success": true,
+    "forward_passes": 32,
+    "restored_execution_verification": {
+      "capture_authorization_id": "eeb1b66b3ca6da45636215ff49d64951da937251dd75e895a35efcb0ceb3c729",
+      "capture_execution_id": "d216b4eacac562ccdd952b81987e2fd860f7b1d2f7f3ef489932c328e89c00eb",
+      "capture_job_plan_id": "33527cf5005400930b77fef789650c751be1d49806a599c0f84007e794fc5284",
+      "components": 2,
+      "effect_shard_artifact_id": "37d7e3fb733864f4d566b72af02fafcedd4183993f9ee245ec2fd75dcc9c4225",
+      "real_actions_authorized": false,
+      "release_authorized": false,
+      "schema": "sch.vpd-canonical-category-capture-job-execution-verification.v1",
+      "status": "pass"
+    },
+    "rows": 16,
+    "runtime_closed_after_success": true
+  },
+  "schema": "sch.vpd-canonical-category-capture-job-runtime-benchmark.v1",
+  "scientific_boundary": {
+    "actual_model_inference_performed": false,
+    "actual_model_loaded": false,
+    "fake_peft_objects_only": true,
+    "peft_absent_before_and_after": true,
+    "real_actions_authorized": false,
+    "release_authorized": false,
+    "synthetic_authorization_is_not_user_authorization": true,
+    "synthetic_benchmark_only": true,
+    "torch_absent_before_and_after": true,
+    "weights_persisted": false
+  },
+  "source": {
+    "planner_sha256": "fb0b32df99022fe4a5d411e243cd14c39365a618318a062b916c11e57f2249e7",
+    "runner_sha256": "5e1539bdfecee37773cf0381c25eb55a134fdb95ba1e5d849243803e644fae51"
+  },
+  "status": "pass"
+}

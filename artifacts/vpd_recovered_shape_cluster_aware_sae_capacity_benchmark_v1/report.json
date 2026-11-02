@@ -1,0 +1,536 @@
+{
+  "benchmark_id": "e8021583211fde3fc1185dfb2423a7c56dd33089db66d3143ca5823692239390",
+  "controls": {
+    "all_outputs_explicitly_simulated_not_empirical": true,
+    "all_roles_share_parent_split_but_role_ids_are_distinct": true,
+    "balanced_assigns_all_6292_episodes_once": true,
+    "balanced_preserves_16_specific_plus_shared": true,
+    "balanced_preserves_572_global_pairs": true,
+    "category_sparse_merges_only_one_route": true,
+    "exact_recovered_manifest_and_role_hashes_pass": true,
+    "exact_sae_training_shape_6292_rows_572_pairs": true,
+    "global_pair_split_rejects_unsplittable_triangle": true,
+    "no_shared_fallback_rejected": true,
+    "recovered_incidence_tamper_rejected": true,
+    "routing_effect_and_sae_activation_units_separate": true,
+    "skewed_and_ambiguous_heavy_shapes_verify": true,
+    "sparse_minority_merges_eight_routes_without_oversampling": true,
+    "v1_exact_recovered_shape_collapses_specific_compartments": true
+  },
+  "recovered_incidence": {
+    "manifest_path": "artifacts/vpd_activation_category_capacity_split_v4/split_manifest.json",
+    "manifest_sha256": "5677d42e1ab01aedb12ed7350fd8598cf903f7bf3642015592cba901ec0acfd5",
+    "role_ids": {
+      "cluster_validation": "202637e821396765e920b3e72b03328ccc17debb911e245aff9d632345466676",
+      "discovery": "236958a0a55a7bfb45e96c5e5e2b2da084d45dff71c5cada88db4e452520ed8f",
+      "sae_training": "95f24fbd0785c07aaabbb0a37f74d077d9d769ae198f8c52c6f06f630b818c7d"
+    },
+    "role_summaries": {
+      "cluster_validation": {
+        "activation_category_counts": {
+          "missing_or_untrusted_authority": 1716,
+          "other_invalid": 429,
+          "replayed": 429,
+          "revoked": 429,
+          "scope_invalid": 429,
+          "signature_invalid": 429,
+          "time_inactive": 429,
+          "valid_authority": 429
+        },
+        "episode_id_set_sha256": "5a2216cfef26516384e59c32c131e3d67b849a1a72894723b01b6f5c67b57b7b",
+        "pair_id_set_sha256": "063e652fd197f3041ff9f6284ed63249df6dbabd77337c491391ca566c8a41bb",
+        "pairs": 429,
+        "rows": 4719,
+        "split_role_identity": {
+          "dataset_sha256": "d8b9bbfffca9fad7688fc708c86e390aedf1300ec5736e9435b83d764f7bee4e",
+          "episode_id_set_sha256": "5a2216cfef26516384e59c32c131e3d67b849a1a72894723b01b6f5c67b57b7b",
+          "pair_id_set_sha256": "063e652fd197f3041ff9f6284ed63249df6dbabd77337c491391ca566c8a41bb",
+          "schema": "sch.vpd-semantic-split-role-identity.v1",
+          "semantic_split_id": "a5aa3370406876c1c48ed702b431a64cb6a68c8376ab28b0aad1d852c22dd8dc",
+          "split_role": "cluster_validation",
+          "template_group_set_sha256": "b1f893bce46cc4c7c17819e0a73426bfc8b1499e4f30a1c527d9ca1996949914"
+        },
+        "template_group_set_sha256": "b1f893bce46cc4c7c17819e0a73426bfc8b1499e4f30a1c527d9ca1996949914"
+      },
+      "discovery": {
+        "activation_category_counts": {
+          "missing_or_untrusted_authority": 1716,
+          "other_invalid": 429,
+          "replayed": 429,
+          "revoked": 429,
+          "scope_invalid": 429,
+          "signature_invalid": 429,
+          "time_inactive": 429,
+          "valid_authority": 429
+        },
+        "episode_id_set_sha256": "20175bed01f0b3d23243b9dc3ef4f9aed6c68daf28abdca53267dadaefd342a2",
+        "pair_id_set_sha256": "2a807642c1868e8b3f16d4c315581c6e782f52a940ca38b537b4c85d3cf1f8b2",
+        "pairs": 429,
+        "rows": 4719,
+        "split_role_identity": {
+          "dataset_sha256": "982e2cb0cbb376cf429e0ab1196bcd5cc3619bbf4f8d81361b2c275c6dc41d62",
+          "episode_id_set_sha256": "20175bed01f0b3d23243b9dc3ef4f9aed6c68daf28abdca53267dadaefd342a2",
+          "pair_id_set_sha256": "2a807642c1868e8b3f16d4c315581c6e782f52a940ca38b537b4c85d3cf1f8b2",
+          "schema": "sch.vpd-semantic-split-role-identity.v1",
+          "semantic_split_id": "a5aa3370406876c1c48ed702b431a64cb6a68c8376ab28b0aad1d852c22dd8dc",
+          "split_role": "discovery",
+          "template_group_set_sha256": "e3e713164a1141b2608d02f6f5c89e734443f99940eedd7848460a40c05b89cf"
+        },
+        "template_group_set_sha256": "e3e713164a1141b2608d02f6f5c89e734443f99940eedd7848460a40c05b89cf"
+      },
+      "sae_training": {
+        "activation_category_counts": {
+          "missing_or_untrusted_authority": 2288,
+          "other_invalid": 572,
+          "replayed": 572,
+          "revoked": 572,
+          "scope_invalid": 572,
+          "signature_invalid": 572,
+          "time_inactive": 572,
+          "valid_authority": 572
+        },
+        "episode_id_set_sha256": "13494eb75e5e2aae3b398321112a1d7e4f79238b548ecb2ef0c884e9696cb24f",
+        "pair_id_set_sha256": "9cf1dfe58d3be3cb00083fbed7c9ae70706cce4c728c79053480d9775e40437d",
+        "pairs": 572,
+        "rows": 6292,
+        "split_role_identity": {
+          "dataset_sha256": "3673e72770c5bd1229a1455e4b5aa0e489e2f779f579fe47a42301458b7c71d4",
+          "episode_id_set_sha256": "13494eb75e5e2aae3b398321112a1d7e4f79238b548ecb2ef0c884e9696cb24f",
+          "pair_id_set_sha256": "9cf1dfe58d3be3cb00083fbed7c9ae70706cce4c728c79053480d9775e40437d",
+          "schema": "sch.vpd-semantic-split-role-identity.v1",
+          "semantic_split_id": "a5aa3370406876c1c48ed702b431a64cb6a68c8376ab28b0aad1d852c22dd8dc",
+          "split_role": "sae_training",
+          "template_group_set_sha256": "6410be0f328bbb1b69a846aff0ca4abfbe55a6b9f9aa7009cab0c75af37112f0"
+        },
+        "template_group_set_sha256": "6410be0f328bbb1b69a846aff0ca4abfbe55a6b9f9aa7009cab0c75af37112f0"
+      }
+    },
+    "semantic_split_id": "a5aa3370406876c1c48ed702b431a64cb6a68c8376ab28b0aad1d852c22dd8dc"
+  },
+  "results": {
+    "balanced_compartment_support": {
+      "shared_cross_category": {
+        "episode_id_set_sha256": "2731578f383e8b03ae9f5d1a9a640fec13f50f8b58bbcfe5968c6adb7c618898",
+        "episodes": 638,
+        "pair_id_set_sha256": "14296eea05ae7f33d77779d0183927c21d7e064ca7213f85f239bd1c52f97eca",
+        "pairs": 58,
+        "planning_reason_counts": {
+          "router_shared_fallback": 638
+        },
+        "routing_effect_rows": 638,
+        "routing_effect_rows_per_episode": 1,
+        "sae_activation_rows": 81664,
+        "sae_activation_rows_per_episode": 128
+      },
+      "vpd-sae-compartment-19f2ee2f17e978285b02d6a2e2dd02f5c9542ade74020326cf75086b7eeeac18": {
+        "episode_id_set_sha256": "eac618f6368360075c82dbd2c1ffae04bccf0bf43283a48d6295c54d638f2183",
+        "episodes": 257,
+        "pair_id_set_sha256": "efed312978fcb5bb69d5d86738d708423634a7cb3880b278b9da46130e9bfc74",
+        "pairs": 257,
+        "planning_reason_counts": {
+          "stable_specific_route": 257
+        },
+        "routing_effect_rows": 257,
+        "routing_effect_rows_per_episode": 1,
+        "sae_activation_rows": 32896,
+        "sae_activation_rows_per_episode": 128
+      },
+      "vpd-sae-compartment-1c835857b992c13499789c179f053fd38e8f6916eacb57a511da5193ee29792e": {
+        "episode_id_set_sha256": "97964a289231edf8c3178250b68a6f88971f8e63bab64c61d41a7786e8192c95",
+        "episodes": 257,
+        "pair_id_set_sha256": "efed312978fcb5bb69d5d86738d708423634a7cb3880b278b9da46130e9bfc74",
+        "pairs": 257,
+        "planning_reason_counts": {
+          "stable_specific_route": 257
+        },
+        "routing_effect_rows": 257,
+        "routing_effect_rows_per_episode": 1,
+        "sae_activation_rows": 32896,
+        "sae_activation_rows_per_episode": 128
+      },
+      "vpd-sae-compartment-4921621fe0dfce5411308a721b4cda392ecc85cdcdfb6d77ace87e0e08f3ce57": {
+        "episode_id_set_sha256": "1a71a1a0b533a0082f59c39d0820401015ebbb968c4a5e7b550c6a349f915297",
+        "episodes": 1028,
+        "pair_id_set_sha256": "c7fb8c1f9746e22967bae618bd40b150c6e93331470d1f546cff20eb7e241fa6",
+        "pairs": 257,
+        "planning_reason_counts": {
+          "stable_specific_route": 1028
+        },
+        "routing_effect_rows": 1028,
+        "routing_effect_rows_per_episode": 1,
+        "sae_activation_rows": 131584,
+        "sae_activation_rows_per_episode": 128
+      },
+      "vpd-sae-compartment-495ee904838a09a4ec6afc74acebd6f7689f1a5a790b5e78cb15e51370b6f118": {
+        "episode_id_set_sha256": "d6ebfa11d6c095ca5e75c1c7d3dad56c6eb17a2dacebf251201202373cd84c41",
+        "episodes": 257,
+        "pair_id_set_sha256": "efed312978fcb5bb69d5d86738d708423634a7cb3880b278b9da46130e9bfc74",
+        "pairs": 257,
+        "planning_reason_counts": {
+          "stable_specific_route": 257
+        },
+        "routing_effect_rows": 257,
+        "routing_effect_rows_per_episode": 1,
+        "sae_activation_rows": 32896,
+        "sae_activation_rows_per_episode": 128
+      },
+      "vpd-sae-compartment-5069de7a53caaa7a1e41a87f2f31ab202f685c227c5bcf7a762b2330bc6c8b23": {
+        "episode_id_set_sha256": "ab74f11165af31b1d949af4aae9fbc821f18ed3bc083cb8c86f7ee6e6bf571b3",
+        "episodes": 257,
+        "pair_id_set_sha256": "efed312978fcb5bb69d5d86738d708423634a7cb3880b278b9da46130e9bfc74",
+        "pairs": 257,
+        "planning_reason_counts": {
+          "stable_specific_route": 257
+        },
+        "routing_effect_rows": 257,
+        "routing_effect_rows_per_episode": 1,
+        "sae_activation_rows": 32896,
+        "sae_activation_rows_per_episode": 128
+      },
+      "vpd-sae-compartment-64a11f98ac4dc5e1b8202aa2e96c5aab56938d75150a6a00f436ea39cbdb77e8": {
+        "episode_id_set_sha256": "30d484b511e7bc7de5ac79e19448a36ef66b16e9c2a654b7202369eb76a0f2c4",
+        "episodes": 257,
+        "pair_id_set_sha256": "efed312978fcb5bb69d5d86738d708423634a7cb3880b278b9da46130e9bfc74",
+        "pairs": 257,
+        "planning_reason_counts": {
+          "stable_specific_route": 257
+        },
+        "routing_effect_rows": 257,
+        "routing_effect_rows_per_episode": 1,
+        "sae_activation_rows": 32896,
+        "sae_activation_rows_per_episode": 128
+      },
+      "vpd-sae-compartment-8a0ec93cc556a410d2814dd4ca985229ca611af0b469aee8b3d62aec5c559462": {
+        "episode_id_set_sha256": "624b9e41a1e6b3a5dd368b6ce15c07c732e394d0aad5ddfdedbd954c50c3cb8c",
+        "episodes": 257,
+        "pair_id_set_sha256": "c7fb8c1f9746e22967bae618bd40b150c6e93331470d1f546cff20eb7e241fa6",
+        "pairs": 257,
+        "planning_reason_counts": {
+          "stable_specific_route": 257
+        },
+        "routing_effect_rows": 257,
+        "routing_effect_rows_per_episode": 1,
+        "sae_activation_rows": 32896,
+        "sae_activation_rows_per_episode": 128
+      },
+      "vpd-sae-compartment-8d0378a67cad2385274f20ddce1c7dabaebe917fc54266726e6514d9910cc587": {
+        "episode_id_set_sha256": "1a0c6fa63da335d2b897d17a9e9aa505f29f4c4b9a40bfd38df1e82f09090494",
+        "episodes": 257,
+        "pair_id_set_sha256": "c7fb8c1f9746e22967bae618bd40b150c6e93331470d1f546cff20eb7e241fa6",
+        "pairs": 257,
+        "planning_reason_counts": {
+          "stable_specific_route": 257
+        },
+        "routing_effect_rows": 257,
+        "routing_effect_rows_per_episode": 1,
+        "sae_activation_rows": 32896,
+        "sae_activation_rows_per_episode": 128
+      },
+      "vpd-sae-compartment-9d951ce130366443feb7420271d7e5367e03597e2d6911d129d5985d413d76d7": {
+        "episode_id_set_sha256": "eb7e94748a23fe0dd7d9202ae175efae49f69f7d7e10ecdfecac3ece65a1d89a",
+        "episodes": 257,
+        "pair_id_set_sha256": "c7fb8c1f9746e22967bae618bd40b150c6e93331470d1f546cff20eb7e241fa6",
+        "pairs": 257,
+        "planning_reason_counts": {
+          "stable_specific_route": 257
+        },
+        "routing_effect_rows": 257,
+        "routing_effect_rows_per_episode": 1,
+        "sae_activation_rows": 32896,
+        "sae_activation_rows_per_episode": 128
+      },
+      "vpd-sae-compartment-ad9aad5a366c654c54e07375ffef6b7ce4cb8f1ec0cf1f1b1bc809364880075c": {
+        "episode_id_set_sha256": "d9a468ab5c11129bfe8f9e1f39a6b75e12e16eb2aa53b0f6f6ba12e82cf915f3",
+        "episodes": 257,
+        "pair_id_set_sha256": "efed312978fcb5bb69d5d86738d708423634a7cb3880b278b9da46130e9bfc74",
+        "pairs": 257,
+        "planning_reason_counts": {
+          "stable_specific_route": 257
+        },
+        "routing_effect_rows": 257,
+        "routing_effect_rows_per_episode": 1,
+        "sae_activation_rows": 32896,
+        "sae_activation_rows_per_episode": 128
+      },
+      "vpd-sae-compartment-addcab625a10ec5ac61ccc5d9142b7060ea48569aa8d50ba81b606339cc9808f": {
+        "episode_id_set_sha256": "83fd6b2006f38e497f719e35cd1700e709bec0c1e4aaa62e08893eceb8ed16a6",
+        "episodes": 257,
+        "pair_id_set_sha256": "c7fb8c1f9746e22967bae618bd40b150c6e93331470d1f546cff20eb7e241fa6",
+        "pairs": 257,
+        "planning_reason_counts": {
+          "stable_specific_route": 257
+        },
+        "routing_effect_rows": 257,
+        "routing_effect_rows_per_episode": 1,
+        "sae_activation_rows": 32896,
+        "sae_activation_rows_per_episode": 128
+      },
+      "vpd-sae-compartment-b31b375e7b51f82f405c485d11159e76b3241827ac942139616bdcc98ff16c4c": {
+        "episode_id_set_sha256": "e407f0387a0d288a099006c7cfcddb2545f35791465a17e8f1a4f41baf9baeff",
+        "episodes": 1028,
+        "pair_id_set_sha256": "efed312978fcb5bb69d5d86738d708423634a7cb3880b278b9da46130e9bfc74",
+        "pairs": 257,
+        "planning_reason_counts": {
+          "stable_specific_route": 1028
+        },
+        "routing_effect_rows": 1028,
+        "routing_effect_rows_per_episode": 1,
+        "sae_activation_rows": 131584,
+        "sae_activation_rows_per_episode": 128
+      },
+      "vpd-sae-compartment-bd27733d7fa363d83d8aa76ea59064a4f4270d4eab7d8f16080b7ca60e18dcfb": {
+        "episode_id_set_sha256": "b9566d0b4444d566caee5880e5aa174fc3450ee94e25dec7fd00e4b6971f0673",
+        "episodes": 257,
+        "pair_id_set_sha256": "c7fb8c1f9746e22967bae618bd40b150c6e93331470d1f546cff20eb7e241fa6",
+        "pairs": 257,
+        "planning_reason_counts": {
+          "stable_specific_route": 257
+        },
+        "routing_effect_rows": 257,
+        "routing_effect_rows_per_episode": 1,
+        "sae_activation_rows": 32896,
+        "sae_activation_rows_per_episode": 128
+      },
+      "vpd-sae-compartment-c19124424c2b5ae73518b4d1f15deb4d1bde88aa3d7fbbd78a22ec68b9b595b9": {
+        "episode_id_set_sha256": "b677f6837ae0977221e3ed0b80369a49b3c54eaf3737543325f96faeed9fce10",
+        "episodes": 257,
+        "pair_id_set_sha256": "c7fb8c1f9746e22967bae618bd40b150c6e93331470d1f546cff20eb7e241fa6",
+        "pairs": 257,
+        "planning_reason_counts": {
+          "stable_specific_route": 257
+        },
+        "routing_effect_rows": 257,
+        "routing_effect_rows_per_episode": 1,
+        "sae_activation_rows": 32896,
+        "sae_activation_rows_per_episode": 128
+      },
+      "vpd-sae-compartment-c8506e1259b3000bde7b6a74cec560e4aad5d4d74a223e98f4eedad095050778": {
+        "episode_id_set_sha256": "65c9fa71a464d6366476a8c56140cde8b5a82c191fe5bfb15dd8b0ae6fb16fde",
+        "episodes": 257,
+        "pair_id_set_sha256": "efed312978fcb5bb69d5d86738d708423634a7cb3880b278b9da46130e9bfc74",
+        "pairs": 257,
+        "planning_reason_counts": {
+          "stable_specific_route": 257
+        },
+        "routing_effect_rows": 257,
+        "routing_effect_rows_per_episode": 1,
+        "sae_activation_rows": 32896,
+        "sae_activation_rows_per_episode": 128
+      },
+      "vpd-sae-compartment-e2fa7f7ca7cfa44fe217e86aa2a76c8257e07c03311f2828e50f8dc661f2320b": {
+        "episode_id_set_sha256": "1c05e0fcb4ea829b78c0ee22f15b8e0c281db0d9a331ae80347f775a38869353",
+        "episodes": 257,
+        "pair_id_set_sha256": "c7fb8c1f9746e22967bae618bd40b150c6e93331470d1f546cff20eb7e241fa6",
+        "pairs": 257,
+        "planning_reason_counts": {
+          "stable_specific_route": 257
+        },
+        "routing_effect_rows": 257,
+        "routing_effect_rows_per_episode": 1,
+        "sae_activation_rows": 32896,
+        "sae_activation_rows_per_episode": 128
+      }
+    },
+    "scenarios": {
+      "ambiguous_heavy": {
+        "cluster_aware_sae_plan_id": "9a6212825ba7cdd349c292fa825d544ad47244fe1bace07f2a2bec8886e40ab8",
+        "global_pair_split_id": "0a64e45cc9ef6c6a368747c29fdd2f9c3c2797164251928362e6e6a151683a3e",
+        "summary": {
+          "categories": 8,
+          "cross_compartment_pair_overlap_managed_by_global_split": true,
+          "global_pair_split_consistent": true,
+          "primary_compartment_episode_sets_disjoint": true,
+          "primary_compartment_pair_sets_disjoint": false,
+          "routed_training_episodes": 6292,
+          "routed_training_pairs": 572,
+          "shared_compartments": 1,
+          "specific_compartments": 16,
+          "training_jobs": 34
+        },
+        "under_supported_routes": 0,
+        "verification": {
+          "cluster_aware_sae_plan_id": "9a6212825ba7cdd349c292fa825d544ad47244fe1bace07f2a2bec8886e40ab8",
+          "compartments": 17,
+          "global_pair_split_id": "0a64e45cc9ef6c6a368747c29fdd2f9c3c2797164251928362e6e6a151683a3e",
+          "sae_training_authorized": false,
+          "schema": "sch.vpd-cluster-aware-sae-training-plan-verification.v2",
+          "shared_pair_safe": true,
+          "status": "pass",
+          "training_jobs": 34
+        }
+      },
+      "balanced": {
+        "cluster_aware_sae_plan_id": "b7dcb8d04147c9250e9f0a3204aa631c8b3135b4407713f87b6820d52b6ee409",
+        "global_pair_split_id": "0a64e45cc9ef6c6a368747c29fdd2f9c3c2797164251928362e6e6a151683a3e",
+        "summary": {
+          "categories": 8,
+          "cross_compartment_pair_overlap_managed_by_global_split": true,
+          "global_pair_split_consistent": true,
+          "primary_compartment_episode_sets_disjoint": true,
+          "primary_compartment_pair_sets_disjoint": false,
+          "routed_training_episodes": 6292,
+          "routed_training_pairs": 572,
+          "shared_compartments": 1,
+          "specific_compartments": 16,
+          "training_jobs": 34
+        },
+        "under_supported_routes": 0,
+        "verification": {
+          "cluster_aware_sae_plan_id": "b7dcb8d04147c9250e9f0a3204aa631c8b3135b4407713f87b6820d52b6ee409",
+          "compartments": 17,
+          "global_pair_split_id": "0a64e45cc9ef6c6a368747c29fdd2f9c3c2797164251928362e6e6a151683a3e",
+          "sae_training_authorized": false,
+          "schema": "sch.vpd-cluster-aware-sae-training-plan-verification.v2",
+          "shared_pair_safe": true,
+          "status": "pass",
+          "training_jobs": 34
+        }
+      },
+      "category_sparse": {
+        "cluster_aware_sae_plan_id": "02f890e2f1268f071038122c6f343b8673389cc22cb0aee56d056cbbfcdfcfe9",
+        "global_pair_split_id": "0a64e45cc9ef6c6a368747c29fdd2f9c3c2797164251928362e6e6a151683a3e",
+        "summary": {
+          "categories": 8,
+          "cross_compartment_pair_overlap_managed_by_global_split": true,
+          "global_pair_split_consistent": true,
+          "primary_compartment_episode_sets_disjoint": true,
+          "primary_compartment_pair_sets_disjoint": false,
+          "routed_training_episodes": 6292,
+          "routed_training_pairs": 572,
+          "shared_compartments": 1,
+          "specific_compartments": 15,
+          "training_jobs": 32
+        },
+        "under_supported_routes": 1
+      },
+      "skewed": {
+        "cluster_aware_sae_plan_id": "f0db7f8d2a1c6d3a95b81ef95d06f8e2ee1a95d61765c38b7c529c189e01ded2",
+        "global_pair_split_id": "0a64e45cc9ef6c6a368747c29fdd2f9c3c2797164251928362e6e6a151683a3e",
+        "summary": {
+          "categories": 8,
+          "cross_compartment_pair_overlap_managed_by_global_split": true,
+          "global_pair_split_consistent": true,
+          "primary_compartment_episode_sets_disjoint": true,
+          "primary_compartment_pair_sets_disjoint": false,
+          "routed_training_episodes": 6292,
+          "routed_training_pairs": 572,
+          "shared_compartments": 1,
+          "specific_compartments": 16,
+          "training_jobs": 34
+        },
+        "under_supported_routes": 0,
+        "verification": {
+          "cluster_aware_sae_plan_id": "f0db7f8d2a1c6d3a95b81ef95d06f8e2ee1a95d61765c38b7c529c189e01ded2",
+          "compartments": 17,
+          "global_pair_split_id": "0a64e45cc9ef6c6a368747c29fdd2f9c3c2797164251928362e6e6a151683a3e",
+          "sae_training_authorized": false,
+          "schema": "sch.vpd-cluster-aware-sae-training-plan-verification.v2",
+          "shared_pair_safe": true,
+          "status": "pass",
+          "training_jobs": 34
+        }
+      },
+      "sparse_minority": {
+        "cluster_aware_sae_plan_id": "4ea19ce1fe3fab8d08cc5b899792069a211adf719189a6d707cec3c60f6b954f",
+        "global_pair_split_id": "0a64e45cc9ef6c6a368747c29fdd2f9c3c2797164251928362e6e6a151683a3e",
+        "summary": {
+          "categories": 8,
+          "cross_compartment_pair_overlap_managed_by_global_split": true,
+          "global_pair_split_consistent": true,
+          "primary_compartment_episode_sets_disjoint": true,
+          "primary_compartment_pair_sets_disjoint": false,
+          "routed_training_episodes": 6292,
+          "routed_training_pairs": 572,
+          "shared_compartments": 1,
+          "specific_compartments": 8,
+          "training_jobs": 18
+        },
+        "under_supported_routes": 8,
+        "verification": {
+          "cluster_aware_sae_plan_id": "4ea19ce1fe3fab8d08cc5b899792069a211adf719189a6d707cec3c60f6b954f",
+          "compartments": 9,
+          "global_pair_split_id": "0a64e45cc9ef6c6a368747c29fdd2f9c3c2797164251928362e6e6a151683a3e",
+          "sae_training_authorized": false,
+          "schema": "sch.vpd-cluster-aware-sae-training-plan-verification.v2",
+          "shared_pair_safe": true,
+          "status": "pass",
+          "training_jobs": 18
+        }
+      }
+    },
+    "v1_balanced_specific_compartments": 0
+  },
+  "schema": "sch.vpd-recovered-shape-cluster-aware-sae-capacity-benchmark.v1",
+  "scientific_boundary": {
+    "execution_authorized": false,
+    "model_inference_performed": false,
+    "model_loaded": false,
+    "recovered_episode_metadata_read_only": true,
+    "release_authorized": false,
+    "route_allocations_simulated": true,
+    "sae_dictionary_trained": false,
+    "sae_training_authorized": false,
+    "simulated_routes_are_not_empirical_activation_evidence": true,
+    "weights_loaded_or_mutated": false
+  },
+  "simulation_design": {
+    "scenarios": {
+      "ambiguous_heavy": [
+        0.3,
+        0.3,
+        0.4
+      ],
+      "balanced": [
+        0.45,
+        0.45,
+        0.1
+      ],
+      "category_sparse": {
+        "default": [
+          0.45,
+          0.45,
+          0.1
+        ],
+        "valid_authority": [
+          0.96,
+          0.01,
+          0.03
+        ]
+      },
+      "no_shared": [
+        0.5,
+        0.5,
+        0.0
+      ],
+      "skewed": [
+        0.8,
+        0.15,
+        0.05
+      ],
+      "sparse_minority": [
+        0.96,
+        0.01,
+        0.03
+      ]
+    },
+    "simulated_component_membership": {
+      "simulated-component-a0": "mechanism-a",
+      "simulated-component-a1": "mechanism-a",
+      "simulated-component-b0": "mechanism-b",
+      "simulated-component-b1": "mechanism-b"
+    },
+    "simulated_partition_sha256": "3d4ffd665999de8d7ea37e3324fdab5189dcae84fd85c10bc8aed665610d1019",
+    "simulation_only_not_activation_evidence": true
+  },
+  "source": {
+    "benchmark_sha256": "15421f76859eab780c9460d5a723a4fba01ba48e6ecb24b44fe52d945dac5283",
+    "planner_v2_sha256": "b7fce50af30687d0fe4d7b75f589e1acc61863bddc73c7517caf91b1ad8d17a3",
+    "router_v1_sha256": "8379997e72cd278af8b34fcedb4aad9165651583248d1f1f12e2d0e77d4b3027",
+    "split_role_identity_sha256": "071a261d2250b28a236f760f8d6a16fa0e4858cc72495725d1ee02f1c43ec9f8"
+  },
+  "status": "pass",
+  "summary": {
+    "controls": 15,
+    "passed": 15
+  }
+}

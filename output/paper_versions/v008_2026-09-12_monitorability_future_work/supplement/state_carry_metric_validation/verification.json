@@ -1,0 +1,10 @@
+{
+  "status": "primary_fidelity_independently_verified",
+  "primary_per_input_checks": 1680,
+  "primary_pooled_checks": 168,
+  "max_absolute_per_input_fidelity_difference": 2.979616553488995e-12,
+  "method": "Directly decode saved feature differences, then calculate residual squared norms; compare with paired reconstruction differences and pooled metrics.",
+  "analysis_manifest_sha256": "41afe43d826f1c0e0bd48241eb2d2024145265673a9ec68909410ad1e796bf8d",
+  "code_sha256": "c731af505c33903becd4955ef2b4cae682d5f2c692fca05d7e14b032e8f041b5",
+  "new_model_inference": false
+}

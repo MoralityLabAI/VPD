@@ -1,0 +1,152 @@
+{
+  "boundary": {
+    "additional_families_admitted": 0,
+    "model_inference_performed": false,
+    "paid_compute_launched": false,
+    "puzzle_generation_performed": true,
+    "sae_training_performed": false,
+    "worker_timeout_seconds": 20
+  },
+  "checks": [
+    {
+      "cols": 9,
+      "deterministic": true,
+      "difficulty": "medium",
+      "id": "nonogram-development-medium-seed-0",
+      "reference_accepted": true,
+      "rows": 9,
+      "seed": 0,
+      "single_cell_error_rejected": true
+    },
+    {
+      "cols": 10,
+      "deterministic": true,
+      "difficulty": "medium",
+      "id": "nonogram-development-medium-seed-1",
+      "reference_accepted": true,
+      "rows": 8,
+      "seed": 1,
+      "single_cell_error_rejected": true
+    },
+    {
+      "cols": 8,
+      "deterministic": true,
+      "difficulty": "medium",
+      "id": "nonogram-development-medium-seed-2",
+      "reference_accepted": true,
+      "rows": 8,
+      "seed": 2,
+      "single_cell_error_rejected": true
+    },
+    {
+      "cols": 10,
+      "deterministic": true,
+      "difficulty": "medium",
+      "id": "nonogram-development-medium-seed-3",
+      "reference_accepted": true,
+      "rows": 8,
+      "seed": 3,
+      "single_cell_error_rejected": true
+    },
+    {
+      "cols": 12,
+      "deterministic": true,
+      "difficulty": "hard",
+      "id": "nonogram-development-hard-seed-0",
+      "reference_accepted": true,
+      "rows": 12,
+      "seed": 0,
+      "single_cell_error_rejected": true
+    },
+    {
+      "cols": 13,
+      "deterministic": true,
+      "difficulty": "hard",
+      "id": "nonogram-development-hard-seed-1",
+      "reference_accepted": true,
+      "rows": 11,
+      "seed": 1,
+      "single_cell_error_rejected": true
+    },
+    {
+      "cols": 11,
+      "deterministic": true,
+      "difficulty": "hard",
+      "id": "nonogram-development-hard-seed-2",
+      "reference_accepted": true,
+      "rows": 11,
+      "seed": 2,
+      "single_cell_error_rejected": true
+    },
+    {
+      "cols": 13,
+      "deterministic": true,
+      "difficulty": "hard",
+      "id": "nonogram-development-hard-seed-3",
+      "reference_accepted": true,
+      "rows": 11,
+      "seed": 3,
+      "single_cell_error_rejected": true
+    },
+    {
+      "cols": 15,
+      "deterministic": true,
+      "difficulty": "expert",
+      "id": "nonogram-development-expert-seed-0",
+      "reference_accepted": true,
+      "rows": 15,
+      "seed": 0,
+      "single_cell_error_rejected": true
+    },
+    {
+      "cols": 16,
+      "deterministic": true,
+      "difficulty": "expert",
+      "id": "nonogram-development-expert-seed-1",
+      "reference_accepted": true,
+      "rows": 14,
+      "seed": 1,
+      "single_cell_error_rejected": true
+    },
+    {
+      "cols": 14,
+      "deterministic": true,
+      "difficulty": "expert",
+      "id": "nonogram-development-expert-seed-2",
+      "reference_accepted": true,
+      "rows": 14,
+      "seed": 2,
+      "single_cell_error_rejected": true
+    },
+    {
+      "cols": 16,
+      "deterministic": true,
+      "difficulty": "expert",
+      "id": "nonogram-development-expert-seed-3",
+      "reference_accepted": true,
+      "rows": 14,
+      "seed": 3,
+      "single_cell_error_rejected": true
+    }
+  ],
+  "graders_content_sha256": "3a3e49349198dbfeabfb290ee2adc37275479deaae97580535ebd447f06839d9",
+  "limitations": [
+    "Twelve development puzzles, not a fresh holdout or semantic family admission.",
+    "Exact public-clue hashes do not detect symmetry equivalence or establish prior-exposure absence.",
+    "Any clue-satisfying grid is accepted; reference uniqueness and generator difficulty claims are not certified.",
+    "New text/JSON task interface, not execution of the official Prolog/container task."
+  ],
+  "provenance": {
+    "adapter_sha256": "24f56ffa8191af038a7b09fcef9b09c5760a8b666b17867e6d3d6d04f21785a3",
+    "runner_sha256": "f221ff9c3471da1fa90afca57485f6bf525cff0b069b5aa8ba80885d0066be7d"
+  },
+  "python_version": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "questions_content_sha256": "9a17c4843072bc4ae4bcf55e8cd982399715fdfe34e78c636cf6fc5bc28a2bbd",
+  "report_id": "350a7fc0a8e8a04781d71fdc2e9a067e36a21b6f3607250a3c596b0f17984722",
+  "schema": "sch.vpd-nonogram-generator-canary.v1",
+  "source_directory": "E:\\Recovered_C_projects\\Remote_clones\\prime_intellect_research_environments\\environments\\reasoning\\prolog\\prolog\\generators",
+  "source_pins": {
+    "base.py": "6257dca4bab8914c31621fddfa160c05bd89cef4a71df07cd0835f51bbd9cbd4",
+    "nonogram.py": "817998a6dc21c16ed68fc14d767d9e7ed9cb8fc3005b10812a6dd79bb6129e52"
+  }
+}

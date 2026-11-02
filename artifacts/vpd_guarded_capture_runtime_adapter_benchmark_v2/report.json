@@ -1,0 +1,46 @@
+{
+  "benchmark_id": "f6b9bef6f89f786e90e0ca1f8af4d24395c2dc54be50605d4d7cab339a5d2d36",
+  "controls": {
+    "adapter_v2_imports_no_model_frameworks": true,
+    "callback_values_preserved": true,
+    "close_delegates_exactly_once": true,
+    "exact_job_receipt_preserved": true,
+    "failed_callback_remains_charged": true,
+    "first_callback_observes_preincrement": true,
+    "impossible_allocation_rejected_before_loader": true,
+    "job_and_payload_reserved_before_loader": true,
+    "partial_batch_uses_actual_episode_count": true,
+    "receipt_remains_non_authorizing": true,
+    "reservation_can_stop_without_loading": true,
+    "reservation_object_contains_no_runtime": true,
+    "runtime_attaches_after_reservation": true,
+    "runtime_attachment_is_single_use": true
+  },
+  "results": {
+    "exact_job_receipt_id": "368b38fa59ea954f3c67969cbe1c2c01f83408e8ae0faf55d518d647c361a6e6",
+    "reservation_precedes_runtime_load": true,
+    "synthetic_preflight_id": "a636b8ad01bb37e0acc715441c603df6f2bb69642b763446e7af19b227b66f18"
+  },
+  "schema": "sch.vpd-guarded-capture-runtime-adapter-benchmark.v2",
+  "scientific_boundary": {
+    "capture_authorized": false,
+    "execution_authorized": false,
+    "model_framework_imported": false,
+    "model_loaded": false,
+    "persistent_output_created": false,
+    "real_model_inference_performed": false,
+    "sae_training_authorized": false,
+    "synthetic_callbacks_only": true,
+    "weights_mutated": false
+  },
+  "source": {
+    "adapter_v1_sha256": "74a9feca8bd6e14b8b44befcf11402df78bd3369ffef475650332b5b7df03559",
+    "adapter_v2_sha256": "52d9e973e84e2ce379a9e2f5a0b5d61f7a16d3390598e272b350c3311a8a3c00",
+    "benchmark_sha256": "ac78d67141f9b9e4c32f4c8d2f16296aa5dea3bbeb552a42aca47a85d6bf7435"
+  },
+  "status": "pass",
+  "summary": {
+    "controls": 14,
+    "passed": 14
+  }
+}

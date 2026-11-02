@@ -1,0 +1,275 @@
+{
+  "design": {
+    "comparison": "equal_rank_category_decoder_row_subspaces",
+    "cross_seed_same_objective_pairs": 6,
+    "label_permutation_replicates": 255,
+    "label_permutation_seed": 260913,
+    "maximum_monte_carlo_p_value": 0.05,
+    "multiple_comparison_control": "bonferroni_within_cross_seed_6_and_cross_objective_3_pair_families",
+    "objectives": [
+      "raw_mse",
+      "inverse_variance_mse"
+    ],
+    "posthoc_existing_source_analysis": true,
+    "quality_gate_applied_after_diagnostic_subspace_test": true,
+    "same_seed_cross_objective_pairs": 3,
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "subspace_rank_per_category": 16
+  },
+  "pairs": [
+    {
+      "bonferroni_familywise_alpha": 0.008333333333333333,
+      "comparison_class": "cross_seed_same_objective",
+      "diagnostic_category_subspace_stability_without_quality_gate": "fail",
+      "label_permutation_95th_percentile": 0.022723382727120725,
+      "label_permutation_mean": 0.021688778980967122,
+      "label_permutation_p_value": 0.11328125,
+      "left": "42_raw_mse",
+      "mean_opposite_category_subspace_similarity": 0.01998377728818139,
+      "mean_same_category_subspace_similarity": 0.02249410502910052,
+      "operative_category_subspace_replication_admission": "fail",
+      "opposite_category_subspace_similarity": {
+        "left_pass_0_right_pass_1": 0.023019915284050604,
+        "left_pass_1_right_pass_0": 0.01694763929231218
+      },
+      "quality_qualified_pair": false,
+      "right": "43_raw_mse",
+      "same_category_subspace_similarity": {
+        "pass_0": 0.02016816233194337,
+        "pass_1": 0.02482004772625767
+      },
+      "same_minus_opposite": 0.0025103277409191313,
+      "subspace_rank_per_category": 16
+    },
+    {
+      "bonferroni_familywise_alpha": 0.008333333333333333,
+      "comparison_class": "cross_seed_same_objective",
+      "diagnostic_category_subspace_stability_without_quality_gate": "fail",
+      "label_permutation_95th_percentile": 0.022024336805014207,
+      "label_permutation_mean": 0.02116451197416131,
+      "label_permutation_p_value": 0.04296875,
+      "left": "42_raw_mse",
+      "mean_opposite_category_subspace_similarity": 0.019578404167889703,
+      "mean_same_category_subspace_similarity": 0.022067249471998025,
+      "operative_category_subspace_replication_admission": "fail",
+      "opposite_category_subspace_similarity": {
+        "left_pass_0_right_pass_1": 0.01958790819224854,
+        "left_pass_1_right_pass_0": 0.01956890014353086
+      },
+      "quality_qualified_pair": false,
+      "right": "44_raw_mse",
+      "same_category_subspace_similarity": {
+        "pass_0": 0.021576400478103847,
+        "pass_1": 0.022558098465892202
+      },
+      "same_minus_opposite": 0.002488845304108322,
+      "subspace_rank_per_category": 16
+    },
+    {
+      "bonferroni_familywise_alpha": 0.008333333333333333,
+      "comparison_class": "cross_seed_same_objective",
+      "diagnostic_category_subspace_stability_without_quality_gate": "fail",
+      "label_permutation_95th_percentile": 0.02252487791201559,
+      "label_permutation_mean": 0.02139292141383792,
+      "label_permutation_p_value": 0.1796875,
+      "left": "43_raw_mse",
+      "mean_opposite_category_subspace_similarity": 0.020259881269775737,
+      "mean_same_category_subspace_similarity": 0.02203774069337614,
+      "operative_category_subspace_replication_admission": "fail",
+      "opposite_category_subspace_similarity": {
+        "left_pass_0_right_pass_1": 0.018022964810069684,
+        "left_pass_1_right_pass_0": 0.02249679772948179
+      },
+      "quality_qualified_pair": false,
+      "right": "44_raw_mse",
+      "same_category_subspace_similarity": {
+        "pass_0": 0.018201614813648972,
+        "pass_1": 0.025873866573103307
+      },
+      "same_minus_opposite": 0.0017778594236004044,
+      "subspace_rank_per_category": 16
+    },
+    {
+      "bonferroni_familywise_alpha": 0.008333333333333333,
+      "comparison_class": "cross_seed_same_objective",
+      "diagnostic_category_subspace_stability_without_quality_gate": "fail",
+      "label_permutation_95th_percentile": 0.021093250854204094,
+      "label_permutation_mean": 0.020133301846041483,
+      "label_permutation_p_value": 0.484375,
+      "left": "42_inverse_variance_mse",
+      "mean_opposite_category_subspace_similarity": 0.01694274929272561,
+      "mean_same_category_subspace_similarity": 0.0201880896015061,
+      "operative_category_subspace_replication_admission": "fail",
+      "opposite_category_subspace_similarity": {
+        "left_pass_0_right_pass_1": 0.019333544148838335,
+        "left_pass_1_right_pass_0": 0.014551954436612887
+      },
+      "quality_qualified_pair": false,
+      "right": "43_inverse_variance_mse",
+      "same_category_subspace_similarity": {
+        "pass_0": 0.020710664942857476,
+        "pass_1": 0.019665514260154726
+      },
+      "same_minus_opposite": 0.00324534030878049,
+      "subspace_rank_per_category": 16
+    },
+    {
+      "bonferroni_familywise_alpha": 0.008333333333333333,
+      "comparison_class": "cross_seed_same_objective",
+      "diagnostic_category_subspace_stability_without_quality_gate": "fail",
+      "label_permutation_95th_percentile": 0.021395439793738397,
+      "label_permutation_mean": 0.020405458045543348,
+      "label_permutation_p_value": 0.37890625,
+      "left": "42_inverse_variance_mse",
+      "mean_opposite_category_subspace_similarity": 0.018341990793465827,
+      "mean_same_category_subspace_similarity": 0.0206511224249327,
+      "operative_category_subspace_replication_admission": "fail",
+      "opposite_category_subspace_similarity": {
+        "left_pass_0_right_pass_1": 0.01735381679302287,
+        "left_pass_1_right_pass_0": 0.019330164793908783
+      },
+      "quality_qualified_pair": false,
+      "right": "44_inverse_variance_mse",
+      "same_category_subspace_similarity": {
+        "pass_0": 0.024613473677138918,
+        "pass_1": 0.01668877117272648
+      },
+      "same_minus_opposite": 0.0023091316314668743,
+      "subspace_rank_per_category": 16
+    },
+    {
+      "bonferroni_familywise_alpha": 0.008333333333333333,
+      "comparison_class": "cross_seed_same_objective",
+      "diagnostic_category_subspace_stability_without_quality_gate": "fail",
+      "label_permutation_95th_percentile": 0.017517228760797414,
+      "label_permutation_mean": 0.01667644336815077,
+      "label_permutation_p_value": 0.36328125,
+      "left": "43_inverse_variance_mse",
+      "mean_opposite_category_subspace_similarity": 0.01543751316519974,
+      "mean_same_category_subspace_similarity": 0.01690190052786597,
+      "operative_category_subspace_replication_admission": "fail",
+      "opposite_category_subspace_similarity": {
+        "left_pass_0_right_pass_1": 0.012698171624603075,
+        "left_pass_1_right_pass_0": 0.018176854705796403
+      },
+      "quality_qualified_pair": false,
+      "right": "44_inverse_variance_mse",
+      "same_category_subspace_similarity": {
+        "pass_0": 0.01606066459963803,
+        "pass_1": 0.017743136456093916
+      },
+      "same_minus_opposite": 0.0014643873626662314,
+      "subspace_rank_per_category": 16
+    },
+    {
+      "bonferroni_familywise_alpha": 0.016666666666666666,
+      "comparison_class": "same_seed_cross_objective",
+      "diagnostic_category_subspace_stability_without_quality_gate": "pass",
+      "label_permutation_95th_percentile": 0.4230636131312464,
+      "label_permutation_mean": 0.3337291937718094,
+      "label_permutation_p_value": 0.00390625,
+      "left": "42_raw_mse",
+      "mean_opposite_category_subspace_similarity": 0.020086645050163637,
+      "mean_same_category_subspace_similarity": 0.7448964683132224,
+      "operative_category_subspace_replication_admission": "fail",
+      "opposite_category_subspace_similarity": {
+        "left_pass_0_right_pass_1": 0.01779297217254508,
+        "left_pass_1_right_pass_0": 0.022380317927782195
+      },
+      "quality_qualified_pair": false,
+      "right": "42_inverse_variance_mse",
+      "same_category_subspace_similarity": {
+        "pass_0": 0.7120137689786004,
+        "pass_1": 0.7777791676478444
+      },
+      "same_minus_opposite": 0.7248098232630588,
+      "subspace_rank_per_category": 16
+    },
+    {
+      "bonferroni_familywise_alpha": 0.016666666666666666,
+      "comparison_class": "same_seed_cross_objective",
+      "diagnostic_category_subspace_stability_without_quality_gate": "pass",
+      "label_permutation_95th_percentile": 0.4177340143937482,
+      "label_permutation_mean": 0.31908854832511546,
+      "label_permutation_p_value": 0.00390625,
+      "left": "43_raw_mse",
+      "mean_opposite_category_subspace_similarity": 0.019142092114998156,
+      "mean_same_category_subspace_similarity": 0.6947897178073812,
+      "operative_category_subspace_replication_admission": "fail",
+      "opposite_category_subspace_similarity": {
+        "left_pass_0_right_pass_1": 0.017523850982248172,
+        "left_pass_1_right_pass_0": 0.020760333247748137
+      },
+      "quality_qualified_pair": false,
+      "right": "43_inverse_variance_mse",
+      "same_category_subspace_similarity": {
+        "pass_0": 0.6420393950589129,
+        "pass_1": 0.7475400405558494
+      },
+      "same_minus_opposite": 0.675647625692383,
+      "subspace_rank_per_category": 16
+    },
+    {
+      "bonferroni_familywise_alpha": 0.016666666666666666,
+      "comparison_class": "same_seed_cross_objective",
+      "diagnostic_category_subspace_stability_without_quality_gate": "pass",
+      "label_permutation_95th_percentile": 0.44680193817789304,
+      "label_permutation_mean": 0.34654044321182803,
+      "label_permutation_p_value": 0.00390625,
+      "left": "44_raw_mse",
+      "mean_opposite_category_subspace_similarity": 0.017931532794938712,
+      "mean_same_category_subspace_similarity": 0.7719725930808576,
+      "operative_category_subspace_replication_admission": "fail",
+      "opposite_category_subspace_similarity": {
+        "left_pass_0_right_pass_1": 0.014924386430589291,
+        "left_pass_1_right_pass_0": 0.020938679159288133
+      },
+      "quality_qualified_pair": false,
+      "right": "44_inverse_variance_mse",
+      "same_category_subspace_similarity": {
+        "pass_0": 0.6261633594106866,
+        "pass_1": 0.9177818267510287
+      },
+      "same_minus_opposite": 0.7540410602859189,
+      "subspace_rank_per_category": 16
+    }
+  ],
+  "provenance": {
+    "runner_sha256": "46ac49e320f7d424c71c80d548db0317bbfe48ff24d28fbe27ced808f97609a1"
+  },
+  "report_id": "2a32fc72e1439bc6a9751ad0e78196187e0b80ae24ca06a8bfb70b21366a90be",
+  "schema": "sch.vpd-nanbeige-layer21-sae-category-subspace-stability.v1",
+  "scientific_boundary": {
+    "all_source_conditions_fail_reconstruction_quality": true,
+    "diagnostic_subspace_support_cannot_override_quality_gate": true,
+    "does_not_test_layer11_or_final_norm": true,
+    "execution_authorized": false,
+    "individual_feature_matching_and_subspace_stability_are_distinct": true,
+    "layer21_only": true,
+    "model_weights_loaded": false,
+    "new_model_inference_performed": false,
+    "new_sae_training_performed": false,
+    "paid_compute_authorized": false,
+    "sae_decoder_weights_loaded_for_read_only_analysis": true,
+    "weights_mutated": false
+  },
+  "source": {
+    "seed_objective_report_id": "1d2e0ac58f55e8c5525c52920303fd36fdd4b4ea4ffb67bcf7d87dc63c1d1d14",
+    "seed_objective_report_path": "C:/projects/VPD/artifacts/vpd_nanbeige_layer21_sae_seed_objective_stability_v1/report.json",
+    "seed_objective_report_sha256": "21d9970c25797750fe4ab549c23b80c4a41e02fd92ff22bf2bffc41f3ea38526",
+    "site": "model.layers.21"
+  },
+  "status": "pass",
+  "summary": {
+    "cross_seed_diagnostic_subspace_supports_without_quality_gate": 0,
+    "cross_seed_pair_checks": 6,
+    "operative_category_subspace_replication_admissions": 0,
+    "pair_checks": 9,
+    "same_seed_cross_objective_diagnostic_subspace_supports_without_quality_gate": 3,
+    "same_seed_cross_objective_pair_checks": 3
+  }
+}

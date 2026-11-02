@@ -1,0 +1,104 @@
+{
+  "benchmark_id": "0246dde56cb758cbfb5fb42775bc69c3466b7e94003ed81884589f2c9b4f2ca3",
+  "design": {
+    "discovery_and_independent_validation": true,
+    "exact_label_invariant_candidate_membership_required": true,
+    "pair_condition_and_template_omissions": true,
+    "production_bundle_and_archive_contract": true
+  },
+  "scenarios": [
+    {
+      "base_bundle_verification": {
+        "clusters": 32,
+        "components": 128,
+        "exact_partition": true,
+        "packets": 32,
+        "schema": "sch.vpd-sae-cluster-verification.v1",
+        "status": "pass"
+      },
+      "candidate_allocation": {
+        "missing_or_untrusted_authority": 4,
+        "other_invalid": 4,
+        "replayed": 4,
+        "revoked": 4,
+        "scope_invalid": 4,
+        "signature_invalid": 4,
+        "time_inactive": 4,
+        "valid_authority": 4
+      },
+      "expected_v3_admitted": true,
+      "expected_v4_admitted": true,
+      "observed_v3_admitted": true,
+      "observed_v4_admitted": true,
+      "scenario_id": "four_mechanisms_exact_partition_admitted",
+      "status": "pass",
+      "v4_allocation_mismatch_count": 0,
+      "v4_exact_categories": 8,
+      "v4_partition_rejection_count": 0,
+      "v4_semantic_replicates": 40,
+      "v4_total_replicates": 72
+    },
+    {
+      "base_bundle_verification": {
+        "clusters": 32,
+        "components": 128,
+        "exact_partition": true,
+        "packets": 32,
+        "schema": "sch.vpd-sae-cluster-verification.v1",
+        "status": "pass"
+      },
+      "candidate_allocation": {
+        "missing_or_untrusted_authority": 4,
+        "other_invalid": 4,
+        "replayed": 4,
+        "revoked": 4,
+        "scope_invalid": 4,
+        "signature_invalid": 4,
+        "time_inactive": 4,
+        "valid_authority": 4
+      },
+      "expected_v3_admitted": false,
+      "expected_v4_admitted": false,
+      "observed_v3_admitted": false,
+      "observed_v4_admitted": false,
+      "scenario_id": "condition_partition_confound_rejected_before_membership",
+      "status": "pass",
+      "v4_allocation_mismatch_count": 8,
+      "v4_exact_categories": 0,
+      "v4_partition_rejection_count": 8,
+      "v4_semantic_replicates": 40,
+      "v4_total_replicates": 72
+    }
+  ],
+  "schema": "sch.vpd-cluster-candidate-partition-identity-admission-benchmark.v4",
+  "scientific_boundary": {
+    "does_not_admit_an_empirical_bonsai_candidate": true,
+    "execution_authorized": false,
+    "model_inference_performed": false,
+    "synthetic_effect_archives_only": true,
+    "weights_loaded_or_mutated": false
+  },
+  "seed": 130923,
+  "source": {
+    "admission_v4_runner_sha256": "08b6b1811309d70a56cce8504ed0ff3fbebad23d72290c2198211c159036956d",
+    "partition_identity_benchmark": {
+      "path": "artifacts/vpd_activation_category_cluster_partition_identity_benchmark_v4/report.json",
+      "sha256": "2e7bcc515972c4b07e3e4e820d27b35fc0f31c5a464ea36b8986faeea8069aa2",
+      "verification": {
+        "benchmark_id": "3128fd74149c1fa6763d97a67269094d3c465a3d4f8f29878287c44e4b519c67",
+        "execution_authorized": false,
+        "negative_controls": 6,
+        "schema": "sch.vpd-activation-category-cluster-partition-identity-benchmark-verification.v4",
+        "status": "pass"
+      }
+    },
+    "runner_sha256": "2551db9fe41585ce3501f2ce3c02605d8819644a0d9faa9ba5705b2053e5f845"
+  },
+  "status": "pass",
+  "summary": {
+    "passed": 2,
+    "scenarios": 2,
+    "semantic_confound_rejected": true,
+    "stable_candidate_admitted": true
+  }
+}

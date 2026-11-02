@@ -1,0 +1,159 @@
+{
+  "invariants": {
+    "cross_pack_role_join_forbidden": true,
+    "effect_discovery_calibration_and_cluster_validation_bound": true,
+    "final_evaluation_excluded_from_all_planned_selection_jobs": true,
+    "five_semantic_role_sets_pairwise_disjoint": true,
+    "one_exact_split_for_effects_sae_and_final_evaluation": true,
+    "sae_training_and_quality_calibration_bound": true
+  },
+  "pipeline_receipt_id": "a547bd990d137a841bf2c9cae0b797464178e3368d49bdf89d68014397f72e8e",
+  "resources": {
+    "effect_batch_forwards_at_planned_batch_size": 28667520,
+    "effect_episode_forward_equivalents": 114162048,
+    "sae_capture_rows_by_role": {
+      "calibration": 604032,
+      "sae_training": 805376
+    },
+    "sae_capture_rows_total": 1409408,
+    "sae_training_jobs": 18
+  },
+  "roles": {
+    "calibration": {
+      "episode_id_set_sha256": "5d38f94cd871cd538f664616174ff2ff1e46b223fb8cef9b5557b9008af4e01d",
+      "evidence": "effect_campaign_sae_plan_and_split_manifest",
+      "pair_id_set_sha256": "bf3adac6142d33865e1ab316adb12bc7e112212f4fd1c7941218db0ec82ab21a",
+      "pairs": 429,
+      "rows": 4719,
+      "template_group_set_sha256": "1ff456d8956e9ad06bcacab93239a02f48117c21fe22b616352f8267b4c354ec",
+      "template_groups": [
+        "access_role_assignment",
+        "api_key_rotation",
+        "payment_refund"
+      ]
+    },
+    "cluster_validation": {
+      "episode_id_set_sha256": "5a2216cfef26516384e59c32c131e3d67b849a1a72894723b01b6f5c67b57b7b",
+      "evidence": "effect_campaign_and_split_manifest",
+      "pair_id_set_sha256": "063e652fd197f3041ff9f6284ed63249df6dbabd77337c491391ca566c8a41bb",
+      "pairs": 429,
+      "rows": 4719,
+      "template_group_set_sha256": "b1f893bce46cc4c7c17819e0a73426bfc8b1499e4f30a1c527d9ca1996949914",
+      "template_groups": [
+        "dns_record_change",
+        "feature_flag_rollout",
+        "kubernetes_rollout"
+      ]
+    },
+    "discovery": {
+      "episode_id_set_sha256": "20175bed01f0b3d23243b9dc3ef4f9aed6c68daf28abdca53267dadaefd342a2",
+      "evidence": "effect_campaign_and_split_manifest",
+      "pair_id_set_sha256": "2a807642c1868e8b3f16d4c315581c6e782f52a940ca38b537b4c85d3cf1f8b2",
+      "pairs": 429,
+      "rows": 4719,
+      "template_group_set_sha256": "e3e713164a1141b2608d02f6f5c89e734443f99940eedd7848460a40c05b89cf",
+      "template_groups": [
+        "container_registry_cleanup",
+        "database_schema_migration",
+        "incident_page_update"
+      ]
+    },
+    "final_evaluation": {
+      "episode_id_set_sha256": "30db2788df791c91133dbfa37d34e3963590523dc03d06ff8536046c0578ead6",
+      "evidence": "split_manifest_only",
+      "pair_id_set_sha256": "038185dce851e09b3f3ad180f33e4d18ba66c46df04a386ed8f6e2551b376211",
+      "pairs": 429,
+      "rows": 4719,
+      "template_group_set_sha256": "23a8412eeee082c63c7f2cf845e34ff63838720851234efb6f67ee1ddf704556",
+      "template_groups": [
+        "invoice_approval",
+        "object_storage_lifecycle",
+        "support_ticket_escalation"
+      ]
+    },
+    "sae_training": {
+      "episode_id_set_sha256": "13494eb75e5e2aae3b398321112a1d7e4f79238b548ecb2ef0c884e9696cb24f",
+      "evidence": "sae_plan_and_split_manifest",
+      "pair_id_set_sha256": "9cf1dfe58d3be3cb00083fbed7c9ae70706cce4c728c79053480d9775e40437d",
+      "pairs": 572,
+      "rows": 6292,
+      "template_group_set_sha256": "6410be0f328bbb1b69a846aff0ca4abfbe55a6b9f9aa7009cab0c75af37112f0",
+      "template_groups": [
+        "analytics_data_export",
+        "calendar_reschedule",
+        "document_retention_change",
+        "email_campaign"
+      ]
+    }
+  },
+  "schema": "sch.vpd-unified-compartment-pipeline-receipt.v1",
+  "scientific_boundary": {
+    "empirical_bonsai_categories_or_clusters_claimed": false,
+    "execution_authorized": false,
+    "model_inference_performed": false,
+    "sae_training_performed": false,
+    "v7_negative_release_decision_unchanged": true,
+    "weights_loaded_or_mutated": false
+  },
+  "source": {
+    "effect_campaign": {
+      "path": "artifacts/vpd_effect_capture_campaign_v2/plan.json",
+      "sha256": "22442e2916cc2d31d9d1ee1768312fe8b50ecd1be8274f796e98a58c6d844fab",
+      "verification": {
+        "campaign_plan_id": "3431daf5fd2027b5e1ba49334fd70627326467b2dda83a3c01cd986aa83ffe60",
+        "components_per_role": 4032,
+        "compute_jobs": 48,
+        "execution_authorized": false,
+        "roles": 3,
+        "schema": "sch.vpd-effect-capture-campaign-verification.v1",
+        "status": "pass"
+      }
+    },
+    "protocol": {
+      "path": "configs/evals/vpd_activation_category_compartments_v3.json",
+      "sha256": "5ce45c1e6332eca9e109cb8a9ed169d5f762a7d15a0a955d3d3af7bf0ac7bdf8",
+      "verification": {
+        "effect_episode_forward_equivalents": 114162048,
+        "execution_authorized": false,
+        "protocol_sha256": "5ce45c1e6332eca9e109cb8a9ed169d5f762a7d15a0a955d3d3af7bf0ac7bdf8",
+        "rows": 25168,
+        "schema": "sch.vpd-activation-category-protocol-verification.v3",
+        "split_id": "a5aa3370406876c1c48ed702b431a64cb6a68c8376ab28b0aad1d852c22dd8dc",
+        "status": "pass"
+      }
+    },
+    "sae_training": {
+      "path": "artifacts/vpd_compartment_sae_training_plan_v2/plan.json",
+      "sha256": "3c79b49e2cd446105938151e41c993bf617c241a30386a92eadf173266df994d",
+      "verification": {
+        "capture_jobs": 2,
+        "compartments": 9,
+        "quality_job_id": "da1c6da13db78eadde49db55f425bedc0584c1b1cc20d17417640b27617f7350",
+        "replicas_per_compartment": 2,
+        "schema": "sch.vpd-compartment-sae-training-plan-verification.v1",
+        "status": "pass",
+        "training_jobs": 18,
+        "training_plan_id": "42e69abb5c3837228569085c0f31bf0c04d40fbc027b74fb63477a54c6ee34fb"
+      }
+    },
+    "split": {
+      "path": "artifacts/vpd_activation_category_capacity_split_v4/split_manifest.json",
+      "sha256": "5677d42e1ab01aedb12ed7350fd8598cf903f7bf3642015592cba901ec0acfd5",
+      "split_id": "a5aa3370406876c1c48ed702b431a64cb6a68c8376ab28b0aad1d852c22dd8dc",
+      "verification": {
+        "activation_categories": 8,
+        "exact_partition": true,
+        "pairs": 2288,
+        "roles": 5,
+        "rows": 25168,
+        "schema": "sch.vpd-activation-category-split-verification.v3",
+        "split_id": "a5aa3370406876c1c48ed702b431a64cb6a68c8376ab28b0aad1d852c22dd8dc",
+        "status": "pass",
+        "template_group_sets_pairwise_disjoint": true,
+        "template_groups": 16
+      }
+    },
+    "verifier_sha256": "123cd06ca4a105e225201c3d4b48f7ec8051e194552ed02f040002fef30e9086"
+  },
+  "status": "pass_locally_verified_requires_runtime_identities_and_compute_authorization"
+}

@@ -1,0 +1,6 @@
+{
+  "license": "MIT, Copyright (c) 2025 Goodfire",
+  "source_sha256": "00635fd247511f1f75cea2eb94cae869107aa06d97310ff16ac213b7c023e434",
+  "sections": "A-F; imports reduced to torch and standard library",
+  "source": "D:\\research_engine\\param-decomp-rust\\nano_param_decomp\\run.py"
+}

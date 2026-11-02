@@ -1,0 +1,125 @@
+{
+  "benchmark_id": "5a2bb38b94c43856bcc9d7e7932db98e3cb89192af60e3418706d33713b6db64",
+  "controls": {
+    "admission_covers_exactly_16_specific_compartments": true,
+    "admission_covers_exactly_8_categories": true,
+    "authority_broadening_rejected": true,
+    "benchmark_imports_no_model_frameworks": true,
+    "budget_admission_transfers_no_authority": true,
+    "category_ceiling_broadening_rejected": true,
+    "category_to_compartment_rebinding_rejected": true,
+    "compartment_to_category_rebinding_rejected": true,
+    "duplicate_category_rejected": true,
+    "duplicate_specific_compartment_rejected": true,
+    "exact_reference_shape_is_budget_admissible": true,
+    "global_exact_shape_is_34_jobs_68000_steps_20480_rows": true,
+    "missing_category_rejected": true,
+    "missing_specific_compartment_rejected": true,
+    "nonpositive_resource_request_rejected": true,
+    "output_directory_reuse_rejected": true,
+    "policy_content_tamper_rejected": true,
+    "policy_reproduces_from_pinned_reconciliation_ledger": true,
+    "proposal_content_tamper_rejected": true,
+    "readdressed_policy_tamper_rejected": true,
+    "reference_proposal_is_content_addressed": true,
+    "shared_dictionary_width_substitution_rejected": true,
+    "shared_fallback_category_charge_rejected": true,
+    "shared_fallback_ceiling_broadening_rejected": true,
+    "shared_fallback_global_double_count_rejected": true,
+    "shared_fallback_is_present_once_and_uncharged": true,
+    "specific_and_shared_dictionary_widths_remain_distinct": true,
+    "specific_compartment_ceiling_broadening_rejected": true,
+    "specific_dictionary_width_substitution_rejected": true,
+    "unknown_category_rejected": true,
+    "unknown_specific_compartment_rejected": true,
+    "wrong_policy_source_rejected": true
+  },
+  "reference_admission": {
+    "admission_id": "ad75ce1678bdae7122fedc544a14df9909fc4f1de0103a1e7493fd64b2f7a0b4",
+    "admitted_shape": {
+      "activation_categories": 8,
+      "requested_resources": {
+        "batch_sizes": [
+          128
+        ],
+        "data_selection_seeds": [
+          1707
+        ],
+        "dictionary_feature_widths": [
+          4096,
+          8192
+        ],
+        "episode_contract_entries": 160,
+        "initialization_seeds": [
+          17,
+          29
+        ],
+        "jobs": 34,
+        "pair_contract_entries": 132,
+        "planned_activation_rows": 20480,
+        "planned_steps": 68000,
+        "unique_output_directories": 34
+      },
+      "shared_fallback_charged_to_categories": false,
+      "shared_fallback_compartments": 1,
+      "specific_compartments": 16
+    },
+    "budget_admissible": true,
+    "fresh_active_signed_receipts_required": true,
+    "fresh_empirical_blueprint_required": true,
+    "fresh_nonces_and_output_reservations_required": true,
+    "schema": "sch.vpd-cluster-aware-sae-budget-admission.v1",
+    "scientific_boundary": {
+      "budget_admission_is_execution_authority": false,
+      "empirical_blueprint_present": false,
+      "empirical_evidence_created": false,
+      "execution_authorized": false,
+      "model_inference_performed": false,
+      "model_loaded": false,
+      "model_loading_authorized": false,
+      "paid_compute_authorized": false,
+      "persistent_dictionary_output_created": false,
+      "retry_authorized": false,
+      "sae_training_authorized": false,
+      "training_performed": false,
+      "weight_mutation_authorized": false
+    },
+    "source": {
+      "budget_policy_id": "5e9f4fc0841d0e71a2eef6f9ac91f5e27d0702c0e0aadfa5a6f511dad50719f2",
+      "proposal_id": "fe65c3cece805a1bcf5f9613c346e5584ebdd37b1845521eecc1c5f6ced77b7a"
+    },
+    "status": "budget_shape_admissible_nonexecuting"
+  },
+  "schema": "sch.vpd-cluster-aware-sae-budget-admission-policy-benchmark.v1",
+  "scientific_boundary": {
+    "empirical_blueprint_present": false,
+    "empirical_evidence_created": false,
+    "execution_authorized": false,
+    "model_inference_performed": false,
+    "model_loaded": false,
+    "paid_compute_authorized": false,
+    "persistent_dictionary_output_created": false,
+    "sae_training_authorized": false,
+    "synthetic_reference_proposal_only": true,
+    "training_performed": false,
+    "weights_mutated": false
+  },
+  "source": {
+    "budget_policy_builder_sha256": "c2542fc2859bd01e0a8e4ce533f9257df1ecb65a5cc31db5d5879bd1b16fc8ac",
+    "budget_policy_id": "5e9f4fc0841d0e71a2eef6f9ac91f5e27d0702c0e0aadfa5a6f511dad50719f2",
+    "budget_policy_path": "artifacts/vpd_cluster_aware_sae_budget_admission_policy_v1/policy.json",
+    "budget_policy_sha256": "1846d857c2d415cbc337e155996e653ff8ba123319fcb0c79e418ae7d576dbaf"
+  },
+  "status": "pass",
+  "summary": {
+    "activation_categories": 8,
+    "controls": 32,
+    "jobs_ceiling": 34,
+    "passed": 32,
+    "planned_activation_rows_ceiling": 20480,
+    "planned_steps_ceiling": 68000,
+    "shared_fallback_charged_to_categories": false,
+    "shared_fallback_compartments": 1,
+    "specific_compartments": 16
+  }
+}

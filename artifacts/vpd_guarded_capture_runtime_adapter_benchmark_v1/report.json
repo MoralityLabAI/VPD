@@ -1,0 +1,52 @@
+{
+  "benchmark_id": "7dca595cfc6d37709b144a12089b9407b06ca3a19c5607c271bde7e854763ae2",
+  "controls": {
+    "adapter_imports_no_model_frameworks": true,
+    "capture_after_close_rejected": true,
+    "close_delegates_exactly_once": true,
+    "empty_batch_rejected": true,
+    "exact_job_receipt_is_content_addressed": true,
+    "failed_callback_remains_charged": true,
+    "first_callback_observes_preincremented_counters": true,
+    "incomplete_job_cannot_finalize": true,
+    "invalid_allocation_rejected": true,
+    "job_and_payload_reserved_before_first_callback": true,
+    "job_finalize_is_single_use": true,
+    "nonmonotonic_observation_stops_before_callback": true,
+    "per_job_episode_overage_stops_before_callback": true,
+    "per_job_forward_overage_stops_before_callback": true,
+    "receipt_remains_non_authorizing": true,
+    "role_forward_allocation_overage_rejected_before_session": true,
+    "role_payload_overage_rejected_before_session": true,
+    "second_partial_batch_charged_by_actual_length": true,
+    "synthetic_callback_results_preserved": true,
+    "wrapped_runtime_preserves_nonloading_boundary": true
+  },
+  "results": {
+    "exact_job_receipt_id": "70b64842d865e22b47bb7bbd5842aec4c243b5888db4145ffae2752d022d41cc",
+    "failed_callback_charged_batch_forwards": 1,
+    "failed_callback_charged_episode_forward_equivalents": 1,
+    "synthetic_preflight_id": "be6d5cdfe5d3042d1d5340f862384b64259172ed82cdaa74981163f882144d79"
+  },
+  "schema": "sch.vpd-guarded-capture-runtime-adapter-benchmark.v1",
+  "scientific_boundary": {
+    "capture_authorized": false,
+    "execution_authorized": false,
+    "model_framework_imported": false,
+    "model_loaded": false,
+    "persistent_output_created": false,
+    "real_model_inference_performed": false,
+    "sae_training_authorized": false,
+    "synthetic_callbacks_only": true,
+    "weights_mutated": false
+  },
+  "source": {
+    "adapter_sha256": "74a9feca8bd6e14b8b44befcf11402df78bd3369ffef475650332b5b7df03559",
+    "benchmark_sha256": "20eb913648af86855e8e599565198f0e5f23cb2a5ff8426b22e25883cd3476c1"
+  },
+  "status": "pass",
+  "summary": {
+    "controls": 20,
+    "passed": 20
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "source_manifest_sha256": "30df0f28705d99eabc4740d54a987170a511801b34922ed93d8eefa19b5f2364",
+  "primary": "Full nonlinear frozen SAE encodings of complete baseline and intervention states; pooled zero-change-reference fidelity.",
+  "support_control": "Freeze baseline top-k candidate support; retain ReLU and decoder. This changes the measuring instrument only, not the model.",
+  "state_direction_swap": "At final layer 22 after a layer-12 +1 write, cross carry/reset baseline states with carry/reset response directions, normalized to L2=1. Offline representational assay; no new model states claimed.",
+  "statistics": "Descriptive pooled signal/mismatch energy over 10 inputs. Related ARC grids and repeated doses/masks are not independent replications. No population confidence interval.",
+  "limits": [
+    "Equal executed depth does not equal effective dependent depth.",
+    "No separately trained untied model.",
+    "New CPU Q4 prompt-end distribution, not earlier BF16 continuation interventions.",
+    "Residual VPD-direction writes, not fixed-coefficient full-sequence weight edits."
+  ],
+  "code_sha256": "637fd159091871f8d71403470d1b8b779d3dac1eca1f3ce76766a086d63ad56b"
+}

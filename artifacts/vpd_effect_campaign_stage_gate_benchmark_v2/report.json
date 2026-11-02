@@ -1,0 +1,567 @@
+{
+  "benchmark_id": "e81428da2b614efafae9ff1ef706cfc365c3c905334ba3945e50e679940edb7d",
+  "design": {
+    "countsketch_dimension": 256,
+    "pair_blocks": 8,
+    "scenarios": 7,
+    "synthetic_categories": 2,
+    "synthetic_components": 40
+  },
+  "scenarios": [
+    {
+      "expected_status": "pass_continue_calibration",
+      "result": {
+        "logic": {
+          "necessary_condition_only": true,
+          "pass_does_not_predict_calibration_success": true,
+          "stricter_grid_candidates_cannot_increase_this_specific_upper_bound": true
+        },
+        "metrics": {
+          "components": 40,
+          "eligible_specific_by_category": {
+            "replayed": 20,
+            "valid_authority": 20
+          },
+          "minimum_category_episodes": 32,
+          "minimum_observed_jackknife_stability": 1.0,
+          "optimistic_eligible_specific_upper_bound": 40,
+          "optimistic_specific_count_before_robustness": 40,
+          "rejection_counts": {}
+        },
+        "optimistic_thresholds": {
+          "maximum_normalized_entropy": 0.8,
+          "minimum_dominance_margin": 0.1,
+          "minimum_dominant_share": 0.35,
+          "zero_total_effect_routes_to_shared": true
+        },
+        "policy": {
+          "candidate_grid": {
+            "maximum_normalized_entropy": [
+              0.4,
+              0.5,
+              0.6,
+              0.7,
+              0.8
+            ],
+            "minimum_dominance_margin": [
+              0.1,
+              0.15,
+              0.2,
+              0.3,
+              0.4,
+              0.5,
+              0.6
+            ],
+            "minimum_dominant_share": [
+              0.35,
+              0.45,
+              0.55,
+              0.65,
+              0.75,
+              0.85,
+              0.95
+            ]
+          },
+          "minimum_condition_coverage": 0.75,
+          "minimum_condition_direction_cosine": 0.5,
+          "minimum_condition_relative_norm": 0.25,
+          "minimum_dominant_strength_ratio": 0.5,
+          "minimum_episodes_per_category_per_archive": 8,
+          "minimum_jackknife_stability": 0.875,
+          "minimum_pair_block_coverage": 0.75,
+          "minimum_pair_block_direction_cosine": 0.5,
+          "minimum_pair_block_relative_norm": 0.25,
+          "minimum_replication_rate": 0.9,
+          "minimum_signed_direction_cosine": 0.5,
+          "minimum_sketch_dimension": 256,
+          "minimum_stable_specific_components": 32,
+          "minimum_template_coverage": 0.75,
+          "minimum_template_direction_cosine": 0.5,
+          "minimum_template_relative_norm": 0.25
+        },
+        "reason": "optimistic discovery upper bound meets the frozen minimum",
+        "status": "pass_continue_calibration"
+      },
+      "scenario_id": "clean_discovery_continues",
+      "status": "pass"
+    },
+    {
+      "expected_status": "reject_stop_campaign",
+      "result": {
+        "logic": {
+          "necessary_condition_only": true,
+          "pass_does_not_predict_calibration_success": true,
+          "stricter_grid_candidates_cannot_increase_this_specific_upper_bound": true
+        },
+        "metrics": {
+          "components": 40,
+          "eligible_specific_by_category": {
+            "replayed": 10,
+            "valid_authority": 10
+          },
+          "minimum_category_episodes": 32,
+          "minimum_observed_jackknife_stability": 1.0,
+          "optimistic_eligible_specific_upper_bound": 20,
+          "optimistic_specific_count_before_robustness": 20,
+          "rejection_counts": {
+            "optimistic_threshold_shared": 20
+          }
+        },
+        "optimistic_thresholds": {
+          "maximum_normalized_entropy": 0.8,
+          "minimum_dominance_margin": 0.1,
+          "minimum_dominant_share": 0.35,
+          "zero_total_effect_routes_to_shared": true
+        },
+        "policy": {
+          "candidate_grid": {
+            "maximum_normalized_entropy": [
+              0.4,
+              0.5,
+              0.6,
+              0.7,
+              0.8
+            ],
+            "minimum_dominance_margin": [
+              0.1,
+              0.15,
+              0.2,
+              0.3,
+              0.4,
+              0.5,
+              0.6
+            ],
+            "minimum_dominant_share": [
+              0.35,
+              0.45,
+              0.55,
+              0.65,
+              0.75,
+              0.85,
+              0.95
+            ]
+          },
+          "minimum_condition_coverage": 0.75,
+          "minimum_condition_direction_cosine": 0.5,
+          "minimum_condition_relative_norm": 0.25,
+          "minimum_dominant_strength_ratio": 0.5,
+          "minimum_episodes_per_category_per_archive": 8,
+          "minimum_jackknife_stability": 0.875,
+          "minimum_pair_block_coverage": 0.75,
+          "minimum_pair_block_direction_cosine": 0.5,
+          "minimum_pair_block_relative_norm": 0.25,
+          "minimum_replication_rate": 0.9,
+          "minimum_signed_direction_cosine": 0.5,
+          "minimum_sketch_dimension": 256,
+          "minimum_stable_specific_components": 32,
+          "minimum_template_coverage": 0.75,
+          "minimum_template_direction_cosine": 0.5,
+          "minimum_template_relative_norm": 0.25
+        },
+        "reason": "even the optimistic discovery upper bound cannot meet the frozen minimum",
+        "status": "reject_stop_campaign"
+      },
+      "scenario_id": "insufficient_discovery_upper_bound_stops",
+      "status": "pass"
+    },
+    {
+      "expected_status": "reject_stop_campaign",
+      "result": {
+        "logic": {
+          "necessary_condition_only": true,
+          "pass_does_not_predict_calibration_success": true,
+          "stricter_grid_candidates_cannot_increase_this_specific_upper_bound": true
+        },
+        "metrics": {
+          "components": 40,
+          "eligible_specific_by_category": {
+            "replayed": 12,
+            "valid_authority": 12
+          },
+          "minimum_category_episodes": 32,
+          "minimum_observed_jackknife_stability": 1.0,
+          "optimistic_eligible_specific_upper_bound": 24,
+          "optimistic_specific_count_before_robustness": 40,
+          "rejection_counts": {
+            "stratified_robustness_failed": 16
+          }
+        },
+        "optimistic_thresholds": {
+          "maximum_normalized_entropy": 0.8,
+          "minimum_dominance_margin": 0.1,
+          "minimum_dominant_share": 0.35,
+          "zero_total_effect_routes_to_shared": true
+        },
+        "policy": {
+          "candidate_grid": {
+            "maximum_normalized_entropy": [
+              0.4,
+              0.5,
+              0.6,
+              0.7,
+              0.8
+            ],
+            "minimum_dominance_margin": [
+              0.1,
+              0.15,
+              0.2,
+              0.3,
+              0.4,
+              0.5,
+              0.6
+            ],
+            "minimum_dominant_share": [
+              0.35,
+              0.45,
+              0.55,
+              0.65,
+              0.75,
+              0.85,
+              0.95
+            ]
+          },
+          "minimum_condition_coverage": 0.75,
+          "minimum_condition_direction_cosine": 0.5,
+          "minimum_condition_relative_norm": 0.25,
+          "minimum_dominant_strength_ratio": 0.5,
+          "minimum_episodes_per_category_per_archive": 8,
+          "minimum_jackknife_stability": 0.875,
+          "minimum_pair_block_coverage": 0.75,
+          "minimum_pair_block_direction_cosine": 0.5,
+          "minimum_pair_block_relative_norm": 0.25,
+          "minimum_replication_rate": 0.9,
+          "minimum_signed_direction_cosine": 0.5,
+          "minimum_sketch_dimension": 256,
+          "minimum_stable_specific_components": 32,
+          "minimum_template_coverage": 0.75,
+          "minimum_template_direction_cosine": 0.5,
+          "minimum_template_relative_norm": 0.25
+        },
+        "reason": "even the optimistic discovery upper bound cannot meet the frozen minimum",
+        "status": "reject_stop_campaign"
+      },
+      "scenario_id": "condition_artifact_discovery_stops",
+      "status": "pass"
+    },
+    {
+      "expected_status": "pass_continue_cluster_validation",
+      "result": {
+        "calibration": {
+          "candidate_grid": {
+            "maximum_normalized_entropy": [
+              0.4,
+              0.5,
+              0.6,
+              0.7,
+              0.8
+            ],
+            "minimum_dominance_margin": [
+              0.1,
+              0.15,
+              0.2,
+              0.3,
+              0.4,
+              0.5,
+              0.6
+            ],
+            "minimum_dominant_share": [
+              0.35,
+              0.45,
+              0.55,
+              0.65,
+              0.75,
+              0.85,
+              0.95
+            ]
+          },
+          "policy": {
+            "cross_archive_stratified_robustness_required": true,
+            "minimum_direction_cosine": 0.5,
+            "minimum_replication_rate": 0.9,
+            "minimum_stable_specific_components": 32,
+            "minimum_strength_ratio": 0.5,
+            "replication_rule": "same_non_shared_category_signed_direction_cosine_and_dominant_strength_ratio_in_discovery_and_independent_calibration",
+            "selection_order": [
+              "maximum_stable_specific_count",
+              "maximum_symmetric_replication_rate",
+              "maximum_exact_compartment_agreement_rate",
+              "maximum_minimum_stable_specific_decision_slack",
+              "strictest_thresholds_lexicographic"
+            ]
+          },
+          "selection": {
+            "evaluated_candidate_count": 245,
+            "passing_candidate_count": 245,
+            "selected_metrics": {
+              "calibration_specific_count": 40,
+              "component_count": 40,
+              "direction_rejected_specific_count": 0,
+              "discovery_replication_rate": 1.0,
+              "discovery_specific_count": 40,
+              "exact_compartment_agreement_rate": 1.0,
+              "magnitude_rejected_specific_count": 0,
+              "minimum_stable_specific_decision_slack": 0.4,
+              "stable_label_specific_count": 40,
+              "stable_specific_count": 40,
+              "stratified_robustness_rejected_specific_count": 0,
+              "symmetric_replication_rate": 1.0,
+              "unstable_specific_union_count": 0
+            },
+            "selected_thresholds": {
+              "maximum_normalized_entropy": 0.6,
+              "minimum_dominance_margin": 0.5,
+              "minimum_dominant_share": 0.55,
+              "zero_total_effect_routes_to_shared": true
+            }
+          }
+        },
+        "logic": {
+          "cluster_validation_not_used": true,
+          "pass_does_not_establish_any_nontrivial_cluster_count": true,
+          "selected_thresholds_must_be_recomputed_by_final_cluster_builder": true
+        },
+        "metrics": {
+          "joint_robustness_eligible_cells": 80,
+          "minimum_category_episodes": 32
+        },
+        "policy": {
+          "candidate_grid": {
+            "maximum_normalized_entropy": [
+              0.4,
+              0.5,
+              0.6,
+              0.7,
+              0.8
+            ],
+            "minimum_dominance_margin": [
+              0.1,
+              0.15,
+              0.2,
+              0.3,
+              0.4,
+              0.5,
+              0.6
+            ],
+            "minimum_dominant_share": [
+              0.35,
+              0.45,
+              0.55,
+              0.65,
+              0.75,
+              0.85,
+              0.95
+            ]
+          },
+          "minimum_condition_coverage": 0.75,
+          "minimum_condition_direction_cosine": 0.5,
+          "minimum_condition_relative_norm": 0.25,
+          "minimum_dominant_strength_ratio": 0.5,
+          "minimum_episodes_per_category_per_archive": 8,
+          "minimum_jackknife_stability": 0.875,
+          "minimum_pair_block_coverage": 0.75,
+          "minimum_pair_block_direction_cosine": 0.5,
+          "minimum_pair_block_relative_norm": 0.25,
+          "minimum_replication_rate": 0.9,
+          "minimum_signed_direction_cosine": 0.5,
+          "minimum_sketch_dimension": 256,
+          "minimum_stable_specific_components": 32,
+          "minimum_template_coverage": 0.75,
+          "minimum_template_direction_cosine": 0.5,
+          "minimum_template_relative_norm": 0.25
+        },
+        "reason": "independent calibration selected a passing frozen threshold candidate",
+        "status": "pass_continue_cluster_validation"
+      },
+      "scenario_id": "clean_calibration_continues",
+      "status": "pass"
+    },
+    {
+      "expected_status": "reject_stop_campaign",
+      "result": {
+        "metrics": {
+          "joint_robustness_eligible_cells": 80,
+          "minimum_category_episodes": 32
+        },
+        "policy": {
+          "candidate_grid": {
+            "maximum_normalized_entropy": [
+              0.4,
+              0.5,
+              0.6,
+              0.7,
+              0.8
+            ],
+            "minimum_dominance_margin": [
+              0.1,
+              0.15,
+              0.2,
+              0.3,
+              0.4,
+              0.5,
+              0.6
+            ],
+            "minimum_dominant_share": [
+              0.35,
+              0.45,
+              0.55,
+              0.65,
+              0.75,
+              0.85,
+              0.95
+            ]
+          },
+          "minimum_condition_coverage": 0.75,
+          "minimum_condition_direction_cosine": 0.5,
+          "minimum_condition_relative_norm": 0.25,
+          "minimum_dominant_strength_ratio": 0.5,
+          "minimum_episodes_per_category_per_archive": 8,
+          "minimum_jackknife_stability": 0.875,
+          "minimum_pair_block_coverage": 0.75,
+          "minimum_pair_block_direction_cosine": 0.5,
+          "minimum_pair_block_relative_norm": 0.25,
+          "minimum_replication_rate": 0.9,
+          "minimum_signed_direction_cosine": 0.5,
+          "minimum_sketch_dimension": 256,
+          "minimum_stable_specific_components": 32,
+          "minimum_template_coverage": 0.75,
+          "minimum_template_direction_cosine": 0.5,
+          "minimum_template_relative_norm": 0.25
+        },
+        "reason": "no activation-category threshold candidate meets the frozen independent replication policy",
+        "status": "reject_stop_campaign"
+      },
+      "scenario_id": "category_swap_calibration_stops",
+      "status": "pass"
+    },
+    {
+      "expected_status": "reject_stop_campaign",
+      "result": {
+        "metrics": {
+          "joint_robustness_eligible_cells": 80,
+          "minimum_category_episodes": 32
+        },
+        "policy": {
+          "candidate_grid": {
+            "maximum_normalized_entropy": [
+              0.4,
+              0.5,
+              0.6,
+              0.7,
+              0.8
+            ],
+            "minimum_dominance_margin": [
+              0.1,
+              0.15,
+              0.2,
+              0.3,
+              0.4,
+              0.5,
+              0.6
+            ],
+            "minimum_dominant_share": [
+              0.35,
+              0.45,
+              0.55,
+              0.65,
+              0.75,
+              0.85,
+              0.95
+            ]
+          },
+          "minimum_condition_coverage": 0.75,
+          "minimum_condition_direction_cosine": 0.5,
+          "minimum_condition_relative_norm": 0.25,
+          "minimum_dominant_strength_ratio": 0.5,
+          "minimum_episodes_per_category_per_archive": 8,
+          "minimum_jackknife_stability": 0.875,
+          "minimum_pair_block_coverage": 0.75,
+          "minimum_pair_block_direction_cosine": 0.5,
+          "minimum_pair_block_relative_norm": 0.25,
+          "minimum_replication_rate": 0.9,
+          "minimum_signed_direction_cosine": 0.5,
+          "minimum_sketch_dimension": 256,
+          "minimum_stable_specific_components": 32,
+          "minimum_template_coverage": 0.75,
+          "minimum_template_direction_cosine": 0.5,
+          "minimum_template_relative_norm": 0.25
+        },
+        "reason": "no activation-category threshold candidate meets the frozen independent replication policy",
+        "status": "reject_stop_campaign"
+      },
+      "scenario_id": "direction_reversal_calibration_stops",
+      "status": "pass"
+    },
+    {
+      "expected_status": "reject_stop_campaign",
+      "result": {
+        "metrics": {
+          "joint_robustness_eligible_cells": 80,
+          "minimum_category_episodes": 32
+        },
+        "policy": {
+          "candidate_grid": {
+            "maximum_normalized_entropy": [
+              0.4,
+              0.5,
+              0.6,
+              0.7,
+              0.8
+            ],
+            "minimum_dominance_margin": [
+              0.1,
+              0.15,
+              0.2,
+              0.3,
+              0.4,
+              0.5,
+              0.6
+            ],
+            "minimum_dominant_share": [
+              0.35,
+              0.45,
+              0.55,
+              0.65,
+              0.75,
+              0.85,
+              0.95
+            ]
+          },
+          "minimum_condition_coverage": 0.75,
+          "minimum_condition_direction_cosine": 0.5,
+          "minimum_condition_relative_norm": 0.25,
+          "minimum_dominant_strength_ratio": 0.5,
+          "minimum_episodes_per_category_per_archive": 8,
+          "minimum_jackknife_stability": 0.875,
+          "minimum_pair_block_coverage": 0.75,
+          "minimum_pair_block_direction_cosine": 0.5,
+          "minimum_pair_block_relative_norm": 0.25,
+          "minimum_replication_rate": 0.9,
+          "minimum_signed_direction_cosine": 0.5,
+          "minimum_sketch_dimension": 256,
+          "minimum_stable_specific_components": 32,
+          "minimum_template_coverage": 0.75,
+          "minimum_template_direction_cosine": 0.5,
+          "minimum_template_relative_norm": 0.25
+        },
+        "reason": "no activation-category threshold candidate meets the frozen independent replication policy",
+        "status": "reject_stop_campaign"
+      },
+      "scenario_id": "magnitude_collapse_calibration_stops",
+      "status": "pass"
+    }
+  ],
+  "schema": "sch.vpd-effect-campaign-stage-gate-benchmark.v1",
+  "scientific_boundary": {
+    "does_not_establish_bonsai_cluster_assignments": true,
+    "does_not_establish_bonsai_stage_gate_outcomes": true,
+    "model_inference_performed": false,
+    "synthetic_effects_only": true,
+    "weights_loaded_or_mutated": false
+  },
+  "source": {
+    "benchmark_runner_sha256": "ad97eebf26d180aeeda71e470219a3c0ac6202b2a3d36d010a57f817142553db",
+    "protocol_sha256": "5ce45c1e6332eca9e109cb8a9ed169d5f762a7d15a0a955d3d3af7bf0ac7bdf8",
+    "stage_gate_runner_sha256": "f3d7918df77794bfc0cd98983a15bd2754080920c85ff2b479d84b3317cd7cca"
+  },
+  "status": "pass"
+}

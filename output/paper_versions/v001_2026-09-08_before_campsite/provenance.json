@@ -1,0 +1,19 @@
+{
+  "version": "v001_2026-09-08_before_campsite",
+  "pages": 28,
+  "note": "Preserved draft before the fresh Campsite comparison; archive numbering starts here, not at the first historical draft.",
+  "files": {
+    "paper.pdf": {
+      "sha256": "a22624bf5f125a855ae18d35c5ef71f40663cd62511f47837506aa365b933016",
+      "copied_from": "C:\\projects\\VPD\\artifacts\\nanbeige_reasoning\\logic-prime-20260909T042949Z-897\\paper_before_logic_comparison.pdf"
+    },
+    "PAPER.md": {
+      "sha256": "2efe21bab1572de32bd4f5c68a9e45f80b21935fd7773bdbeefe5ddff0ee2ea0",
+      "copied_from": "C:\\projects\\VPD\\artifacts\\nanbeige_reasoning\\logic-prime-20260909T042949Z-897\\PAPER_before_logic_comparison.md"
+    },
+    "render_receipt.json": {
+      "sha256": "30a0be2fe3739f36dc2cc74223ffd335735ab30cbc492e1654014a6f896062f9",
+      "copied_from": "C:\\projects\\VPD\\artifacts\\nanbeige_reasoning\\logic-prime-20260909T042949Z-897\\paper_before_logic_comparison.receipt.json"
+    }
+  }
+}

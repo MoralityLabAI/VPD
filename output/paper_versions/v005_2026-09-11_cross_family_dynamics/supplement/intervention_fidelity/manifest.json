@@ -1,0 +1,20 @@
+{
+  "status": "intervention_change_fidelity_complete",
+  "created_utc": "2026-09-09T13:54:51.115321+00:00",
+  "input_rows": 1440,
+  "pooled_strata": 144,
+  "paired_strata": 72,
+  "nonzero_paired_strata": 54,
+  "muon_higher_fidelity_strata": 22,
+  "accounting_and_dual_decode_checks": 4320,
+  "analytical_self_checks": 8,
+  "source_files_checked": 146,
+  "checks_scope": "Float64 decoder-difference versus separate reconstruction, reconstruction-error identity, independent energy formula; not independent model execution",
+  "files": {
+    "contract.json": "7ebb7ac3c89b45cb39dc20c472ba941e37f517079a4a503ccc141437a04c319e",
+    "paired.json": "17aea2ef4785d44ea753476c0a1c4a722bfcc874174739cc49c2b44f5112aa2a",
+    "per_input.json": "6b860945bf8722758c4c84d245fec48b17882ffe129d4e6b5f84fb46b3bf097b",
+    "pooled.json": "c106408b5e73206f959531548630d87ab4ead1f501b297d650af8b94f4857de8",
+    "sources.json": "9dca7062990e67807ee9c8b89801e2c96145283528f1e6e872ab6e7b7ccb6452"
+  }
+}

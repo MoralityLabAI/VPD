@@ -1,0 +1,79 @@
+[
+  {
+    "id": "graph-coloring-development-medium-seed-0",
+    "public_instance_sha256": "520369c8f7ac73d72add224c6e4df1caa324744cdf8f9a3cf57a411671d26c6b",
+    "reference_assignment": [
+      2,
+      1,
+      1,
+      2,
+      0,
+      1,
+      0,
+      2,
+      0,
+      1,
+      2,
+      0,
+      0
+    ],
+    "schema": "sch.vpd-graph-coloring-text-grader.v1",
+    "scoring": "constraint_validity_not_reference_exact_match"
+  },
+  {
+    "id": "graph-coloring-development-medium-seed-1",
+    "public_instance_sha256": "56796d13fd5ef7e28f8d9118f7a1fe21e059c3d7171a22ad99888ece9d7495f9",
+    "reference_assignment": [
+      0,
+      1,
+      1,
+      2,
+      0,
+      0,
+      2,
+      1,
+      2,
+      2,
+      0
+    ],
+    "schema": "sch.vpd-graph-coloring-text-grader.v1",
+    "scoring": "constraint_validity_not_reference_exact_match"
+  },
+  {
+    "id": "graph-coloring-development-medium-seed-2",
+    "public_instance_sha256": "4356ca8293002a043021254c9bbda05b1a374ae366b67522b40fe703db4fca91",
+    "reference_assignment": [
+      0,
+      1,
+      1,
+      0,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0
+    ],
+    "schema": "sch.vpd-graph-coloring-text-grader.v1",
+    "scoring": "constraint_validity_not_reference_exact_match"
+  },
+  {
+    "id": "graph-coloring-development-medium-seed-3",
+    "public_instance_sha256": "5365cd9773c2d26a6409d3bb6954662b0c96012d1cc2fdb2f0f4e81706626616",
+    "reference_assignment": [
+      0,
+      2,
+      0,
+      1,
+      1,
+      2,
+      1,
+      0,
+      1,
+      2,
+      1
+    ],
+    "schema": "sch.vpd-graph-coloring-text-grader.v1",
+    "scoring": "constraint_validity_not_reference_exact_match"
+  }
+]

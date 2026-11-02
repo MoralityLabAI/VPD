@@ -1,0 +1,73 @@
+{
+  "benchmark_id": "68555a4dd6e87341cadd4eb3a83bd49223314a44617add980a5337f02d1e6288",
+  "controls": {
+    "all_four_role_ceilings_sum_to_global_ceiling": true,
+    "batch_forward_overage_rejected": true,
+    "calibration_stage_skip_rejected": true,
+    "cluster_validation_stage_skip_rejected": true,
+    "compute_job_overage_rejected": true,
+    "cost_overage_rejected": true,
+    "discovery_is_only_role_with_no_prerequisites": true,
+    "episode_forward_overage_rejected": true,
+    "exact_role_receipt_verifies": true,
+    "final_evaluation_role_rejected": true,
+    "generated_token_attempt_rejected": true,
+    "guard_imports_no_model_frameworks": true,
+    "guard_receipt_remains_non_authorizing": true,
+    "incomplete_role_cannot_finalize": true,
+    "nonmonotonic_cost_rejected": true,
+    "nonmonotonic_wall_time_rejected": true,
+    "payload_overage_rejected": true,
+    "persistent_mutation_attempt_rejected": true,
+    "production_start_without_admission_rejected": true,
+    "real_action_attempt_rejected": true,
+    "sae_training_stage_skip_rejected": true,
+    "wall_time_overage_rejected": true
+  },
+  "results": {
+    "discovery_guard_receipt_id": "c061fe32953f3c1bee6924fbe6e6c0c3f29cbbf3b73848a4d05dd463d0fa2244",
+    "role_prerequisites": {
+      "calibration": [
+        "discovery_capture_complete",
+        "discovery_gate_pass"
+      ],
+      "cluster_validation": [
+        "discovery_capture_complete",
+        "discovery_gate_pass",
+        "calibration_capture_complete",
+        "calibration_gate_pass"
+      ],
+      "discovery": [],
+      "sae_training": [
+        "discovery_capture_complete",
+        "discovery_gate_pass",
+        "calibration_capture_complete",
+        "calibration_gate_pass",
+        "cluster_validation_capture_complete",
+        "partition_identity_admission_pass"
+      ]
+    },
+    "synthetic_preflight_id": "a636b8ad01bb37e0acc715441c603df6f2bb69642b763446e7af19b227b66f18"
+  },
+  "schema": "sch.vpd-cluster-capture-campaign-guard-benchmark.v1",
+  "scientific_boundary": {
+    "capture_started": false,
+    "execution_authorized": false,
+    "model_framework_imported": false,
+    "model_inference_performed": false,
+    "model_loaded": false,
+    "persistent_output_created": false,
+    "sae_training_authorized": false,
+    "synthetic_counter_simulation_only": true,
+    "weights_mutated": false
+  },
+  "source": {
+    "benchmark_sha256": "af4a55afb1a4ce9d905fcdd548ea5cf8c069079769e4d12d55a1824cfe37fbc7",
+    "guard_sha256": "4999633adbf4ec3290cf89070b3a096e07c164ce35381270af882ba02cd280c4"
+  },
+  "status": "pass",
+  "summary": {
+    "controls": 22,
+    "passed": 22
+  }
+}

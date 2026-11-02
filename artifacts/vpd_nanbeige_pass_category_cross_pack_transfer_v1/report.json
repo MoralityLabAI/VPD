@@ -1,0 +1,237 @@
+{
+  "design": {
+    "admission_requires_both_transfer_directions": true,
+    "admission_thresholds": {
+      "maximum_exact_upper_tail_p_value": 0.05,
+      "minimum_cross_pack_held_out_pass_accuracy": 0.875,
+      "minimum_cross_pack_training_direction_cosine": 0.8
+    },
+    "category": "recurrent_pass_index_0_vs_1",
+    "centering": "each_target_example_centered_at_its_paired_pass_midpoint",
+    "direction": "source_training_mean_pass_transition",
+    "random_control": "exact_source_training_pair_block_pass_label_flips_scored_on_other_pack_held_out_transition_alignment",
+    "target": "other_pack_source_designated_held_out_examples_only",
+    "task_family_sets_must_be_disjoint": true
+  },
+  "provenance": {
+    "analysis_kind": "new_local_analysis_of_recovered_empirical_arrays",
+    "runner_sha256": "9aa6817342e0afc722913603f3234196ddc6acbf6e05e60120a88d3465e4ce4a"
+  },
+  "report_id": "8a1d56e07ce02f31ef922bf03e46e26fd3dd4ee21dabdf29ad251107f39e2af1",
+  "schema": "sch.vpd-nanbeige-pass-category-cross-pack-transfer.v1",
+  "scientific_boundary": {
+    "cross_pack_transfer_is_not_semantic_interpretation": true,
+    "does_not_authorize_separate_sae_training": true,
+    "does_not_validate_bonsai_or_hrm_transfer": true,
+    "execution_authorized": false,
+    "new_model_inference_performed": false,
+    "paid_compute_authorized": false,
+    "result_is_conditional_on_matching_claimed_checkpoint": true,
+    "source_checkpoint_revision_independently_verified": false,
+    "stored_empirical_activation_archives_used": true,
+    "weights_loaded_or_mutated": false
+  },
+  "sites": [
+    {
+      "arithmetic_train_to_reasoning_held_out": {
+        "directional_gate": "pass",
+        "exact_source_pair_block_label_flip_controls": 64,
+        "held_out_minimum_normalized_margin": 0.14498964558286487,
+        "held_out_pass_accuracy": 1.0,
+        "observed_source_train_to_target_held_out_transition_alignment": 0.20397820163893,
+        "random_control_accuracy": {
+          "maximum": 1.0,
+          "median": 0.5,
+          "minimum": 0.0
+        },
+        "random_control_transition_alignment": {
+          "at_or_above_observed": 1,
+          "exact_upper_tail_p_value": 0.015625,
+          "maximum": 0.20397820163893,
+          "median": 0.0,
+          "minimum": -0.20397820163893
+        },
+        "source_train_examples": 12,
+        "source_train_pair_blocks": 6,
+        "target_held_out_examples": 10
+      },
+      "bidirectional_cross_pack_category_admission": "fail",
+      "cross_pack_train_direction_cosine": 0.28849665639484445,
+      "reasoning_train_to_arithmetic_held_out": {
+        "directional_gate": "pass",
+        "exact_source_pair_block_label_flip_controls": 256,
+        "held_out_minimum_normalized_margin": 0.2838627168547984,
+        "held_out_pass_accuracy": 1.0,
+        "observed_source_train_to_target_held_out_transition_alignment": 0.17709025047431512,
+        "random_control_accuracy": {
+          "maximum": 1.0,
+          "median": 0.5,
+          "minimum": 0.0
+        },
+        "random_control_transition_alignment": {
+          "at_or_above_observed": 1,
+          "exact_upper_tail_p_value": 0.00390625,
+          "maximum": 0.17709025047431512,
+          "median": 0.0,
+          "minimum": -0.17709025047431512
+        },
+        "source_train_examples": 8,
+        "source_train_pair_blocks": 8,
+        "target_held_out_examples": 4
+      },
+      "site": "model.layers.11"
+    },
+    {
+      "arithmetic_train_to_reasoning_held_out": {
+        "directional_gate": "pass",
+        "exact_source_pair_block_label_flip_controls": 64,
+        "held_out_minimum_normalized_margin": 0.9744600158011697,
+        "held_out_pass_accuracy": 1.0,
+        "observed_source_train_to_target_held_out_transition_alignment": 0.9863798884821321,
+        "random_control_accuracy": {
+          "maximum": 1.0,
+          "median": 0.5,
+          "minimum": 0.0
+        },
+        "random_control_transition_alignment": {
+          "at_or_above_observed": 1,
+          "exact_upper_tail_p_value": 0.015625,
+          "maximum": 0.9863798884821321,
+          "median": 0.0,
+          "minimum": -0.9863798884821321
+        },
+        "source_train_examples": 12,
+        "source_train_pair_blocks": 6,
+        "target_held_out_examples": 10
+      },
+      "bidirectional_cross_pack_category_admission": "pass",
+      "cross_pack_train_direction_cosine": 0.9921854242070439,
+      "reasoning_train_to_arithmetic_held_out": {
+        "directional_gate": "pass",
+        "exact_source_pair_block_label_flip_controls": 256,
+        "held_out_minimum_normalized_margin": 0.9918866128946281,
+        "held_out_pass_accuracy": 1.0,
+        "observed_source_train_to_target_held_out_transition_alignment": 0.9858978002032043,
+        "random_control_accuracy": {
+          "maximum": 1.0,
+          "median": 0.5,
+          "minimum": 0.0
+        },
+        "random_control_transition_alignment": {
+          "at_or_above_observed": 1,
+          "exact_upper_tail_p_value": 0.00390625,
+          "maximum": 0.9858978002032043,
+          "median": 0.0,
+          "minimum": -0.9858978002032043
+        },
+        "source_train_examples": 8,
+        "source_train_pair_blocks": 8,
+        "target_held_out_examples": 4
+      },
+      "site": "model.layers.21"
+    },
+    {
+      "arithmetic_train_to_reasoning_held_out": {
+        "directional_gate": "pass",
+        "exact_source_pair_block_label_flip_controls": 64,
+        "held_out_minimum_normalized_margin": 0.5665302610510593,
+        "held_out_pass_accuracy": 1.0,
+        "observed_source_train_to_target_held_out_transition_alignment": 0.7680103449421667,
+        "random_control_accuracy": {
+          "maximum": 1.0,
+          "median": 0.5,
+          "minimum": 0.0
+        },
+        "random_control_transition_alignment": {
+          "at_or_above_observed": 1,
+          "exact_upper_tail_p_value": 0.015625,
+          "maximum": 0.7680103449421667,
+          "median": 0.0,
+          "minimum": -0.7680103449421667
+        },
+        "source_train_examples": 12,
+        "source_train_pair_blocks": 6,
+        "target_held_out_examples": 10
+      },
+      "bidirectional_cross_pack_category_admission": "pass",
+      "cross_pack_train_direction_cosine": 0.8979968898827502,
+      "reasoning_train_to_arithmetic_held_out": {
+        "directional_gate": "pass",
+        "exact_source_pair_block_label_flip_controls": 256,
+        "held_out_minimum_normalized_margin": 0.8860057836722155,
+        "held_out_pass_accuracy": 1.0,
+        "observed_source_train_to_target_held_out_transition_alignment": 0.8275516082854331,
+        "random_control_accuracy": {
+          "maximum": 1.0,
+          "median": 0.5,
+          "minimum": 0.0
+        },
+        "random_control_transition_alignment": {
+          "at_or_above_observed": 1,
+          "exact_upper_tail_p_value": 0.00390625,
+          "maximum": 0.8275516082854331,
+          "median": 0.0,
+          "minimum": -0.8275516082854331
+        },
+        "source_train_examples": 8,
+        "source_train_pair_blocks": 8,
+        "target_held_out_examples": 4
+      },
+      "site": "model.norm"
+    }
+  ],
+  "sources": [
+    {
+      "dtype": "torch.bfloat16",
+      "examples_sha256": "d672918d4e778620c02cefd6a5fe9a474e4afebd40e221d9ad0e5e5875cefc82",
+      "expected_revision": "451ed48c3273ecef7ea8faaa43c31ce529763bb1",
+      "families": [
+        "addition"
+      ],
+      "held_out_examples": 4,
+      "label": "arithmetic",
+      "manifest_sha256": "6046aa35c98e0934c57e0acd6864951d4174249bfe26c22041ca37d38608857e",
+      "model_id": "Nanbeige/Nanbeige4.2-3B",
+      "path": "C:/projects/VPD/artifacts/nanbeige_looped/prime-20260906T034844Z-719/retrieved/artifacts/nanbeige_looped/bf16_multipass_calibration",
+      "revision_verified_by_source": false,
+      "sites": [
+        "model.layers.11",
+        "model.layers.21",
+        "model.norm"
+      ],
+      "train_examples": 12
+    },
+    {
+      "dtype": "torch.bfloat16",
+      "examples_sha256": "83fb39d5cd77bb83ae0fff6160e924217b2e9230c48b6a576ba3c2f1918d6b86",
+      "expected_revision": "451ed48c3273ecef7ea8faaa43c31ce529763bb1",
+      "families": [
+        "arc_grid",
+        "campsite",
+        "dyck_language",
+        "futoshiki",
+        "goods_exchange",
+        "math"
+      ],
+      "held_out_examples": 10,
+      "label": "reasoning",
+      "manifest_sha256": "7c5205eeb3c1e7c025ac1aababc6e0526bbe82048f633a52e73bfefa07c8a546",
+      "model_id": "Nanbeige/Nanbeige4.2-3B",
+      "path": "C:/projects/VPD/artifacts/nanbeige_reasoning/prime-20260906T204058Z-561/retrieved/artifacts/nanbeige_looped/bf16_multipass_calibration",
+      "revision_verified_by_source": false,
+      "sites": [
+        "model.layers.11",
+        "model.layers.21",
+        "model.norm"
+      ],
+      "train_examples": 8
+    }
+  ],
+  "status": "pass",
+  "summary": {
+    "bidirectional_cross_pack_category_admissions": 2,
+    "minimum_cross_pack_held_out_pass_accuracy": 1.0,
+    "minimum_cross_pack_train_direction_cosine": 0.28849665639484445,
+    "sites": 3
+  }
+}

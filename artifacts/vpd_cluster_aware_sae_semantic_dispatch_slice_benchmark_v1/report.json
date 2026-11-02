@@ -1,0 +1,70 @@
+{
+  "benchmark_id": "60139e5dd07adc7bd79b5028bd99d068bbb32a81ec92afe1e2c77091325f04d3",
+  "controls": {
+    "absolute_path_rejected": true,
+    "all_four_nodes_compare_full_reproduction": true,
+    "benchmark_imports_no_model_frameworks": true,
+    "blueprint_byte_substitution_rejected_by_exact_hash_binding": true,
+    "clean_slice_is_content_addressed": true,
+    "exact_34_job_shape_dispatches": true,
+    "four_real_semantic_verifiers_dispatch": true,
+    "missing_file_rejected": true,
+    "path_traversal_rejected": true,
+    "readdressed_admission_mutation_rejected_by_reproduction": true,
+    "readdressed_blueprint_mutation_rejected_by_reproduction": true,
+    "readdressed_materialization_mutation_rejected_by_reproduction": true,
+    "readdressed_policy_substitution_rejected": true,
+    "readdressed_predecessor_companion_substitution_rejected": true,
+    "readdressed_proposal_authority_broadening_rejected": true,
+    "slice_transfers_no_authority": true,
+    "symbolic_link_or_junction_rejected": true,
+    "synthetic_kind_remains_explicit": true,
+    "temporary_fixture_root_removed": true,
+    "three_terminal_gaps_are_returned": true,
+    "unaddressed_materialization_mutation_rejected": true,
+    "wrong_graph_kind_rejected": true
+  },
+  "results": {
+    "dispatched_node_ids": {
+      "blueprint_bound_budget_admission_v2": "dadb42b793f491486bcd9677a840f39ad7644f73460254f3b793c5c7c3a60f72",
+      "blueprint_bound_budget_proposal_v2": "50e09fa4b4247483bf616c9f31226bdd021d7ca609b20a6b911cd361175bb400",
+      "execution_blueprint": "07122590aae37e4e07dec2077830954e5eeb56ec269c77382f227fb33e233215",
+      "materialization": "7de298a878bd5c7688dcd4b76000f03ea1ab91cc8ae40648e2fa5c5ea571fd6b"
+    },
+    "exact_blueprint_file_sha256": "51293f911e7b64d3e330e2cbbb1a7d023d49a594b4891827d824051f781bf50e",
+    "semantic_dispatch_slice_id": "0efe29534a177e3e4bc242dc091ebcd79c867dfff8c0a80dfe6f153498e68449"
+  },
+  "schema": "sch.vpd-cluster-aware-sae-semantic-dispatch-slice-benchmark.v1",
+  "scientific_boundary": {
+    "durable_transition_dispatched": false,
+    "empirical_graph_present": false,
+    "end_to_end_semantic_dispatch_complete": false,
+    "execution_authorized": false,
+    "model_framework_imported": false,
+    "model_inference_performed": false,
+    "model_loaded": false,
+    "paid_compute_authorized": false,
+    "persistent_dictionary_output_created": false,
+    "production_runtime_attachment_dispatched": false,
+    "sae_training_authorized": false,
+    "semantic_slice_only": true,
+    "signed_authority_dispatched": false,
+    "training_performed": false,
+    "weights_loaded_or_mutated": false
+  },
+  "source": {
+    "benchmark_builder_sha256": "14caba328596aa2fcf43df488c7727353b4f582a4299f1e0148a6e87617f3873",
+    "dispatcher_sha256": "d5bb495f24f7f7c6279a59a9e030eaae63f81b2bc95aa3591ea820ea9cdc924c",
+    "semantic_graph_contract_id": "6db000c29e0619d6bec26fb85f8d1739bd5fae16e46cccc03516a2171d79adb0"
+  },
+  "status": "pass",
+  "summary": {
+    "controls": 22,
+    "dispatched_nodes": 4,
+    "execution_jobs": 34,
+    "full_reproduction_comparisons": 4,
+    "passed": 22,
+    "synthetic_fixture_persisted": false,
+    "terminal_gap_count": 3
+  }
+}

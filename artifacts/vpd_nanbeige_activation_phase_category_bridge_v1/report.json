@@ -1,0 +1,402 @@
+{
+  "design": {
+    "child_allocations_require_parent_admission": true,
+    "discovery_split": "four source-designated train examples",
+    "exact_control_configurations": 16,
+    "held_out_split": "four source-designated eval examples",
+    "maximum_admissible_exact_p_value": 0.05,
+    "minimum_attainable_exact_p_value": 0.0625,
+    "observable_parent_category": "activation_phase_prompt_vs_generation",
+    "pack_is_underpowered_for_statistical_admission": true,
+    "pass_index_is_blocked_within_example": true,
+    "random_control": "exact_train_example_block_phase_label_flips",
+    "within_category_selector": "discreteness-aware_v2_over_eight_projections"
+  },
+  "provenance": {
+    "runner_sha256": "ffc279c8a34708636ab415fdba5eeaf0b2f11f305f6d0f74cee81b74e969284b"
+  },
+  "report_id": "7dfe8681c9f1b9b81469b017682fc3525eef8f7185e643320467fdc64cbc1c6a",
+  "schema": "sch.vpd-nanbeige-activation-phase-category-bridge.v1",
+  "scientific_boundary": {
+    "activation_phase_category_is_screening_only": true,
+    "does_not_authorize_phase_compartment_sae_training": true,
+    "execution_authorized": false,
+    "new_local_analysis_of_recovered_empirical_arrays": true,
+    "new_model_inference_performed": false,
+    "paid_compute_authorized": false,
+    "statistical_admission_impossible_at_current_exact_control_resolution": true,
+    "weights_loaded_or_mutated": false,
+    "within_phase_child_allocations_are_inoperative": true
+  },
+  "sites": [
+    {
+      "activation_phase_category_admission": "fail",
+      "exact_train_example_block_label_flip_control": {
+        "at_or_above_observed": 1,
+        "configurations": 16,
+        "exact_upper_tail_p_value": 0.0625,
+        "maximum": 0.9901150299400411,
+        "median": 0.0,
+        "minimum": -0.9901150299400411,
+        "minimum_attainable_upper_tail_p_value": 0.0625
+      },
+      "held_out_examples": 4,
+      "held_out_minimum_normalized_margin": 0.910647813822241,
+      "held_out_phase_accuracy": 1.0,
+      "held_out_phase_pairs": 8,
+      "leave_one_train_example_block_out_minimum_direction_cosine": 0.9998681382779372,
+      "observed_train_to_held_out_phase_transition_alignment": 0.9901150299400411,
+      "site": "model.layers.11",
+      "train_examples": 4,
+      "train_phase_pairs": 8,
+      "within_phase_allocation_is_operative": false,
+      "within_phase_v2_selection": {
+        "allocation": {
+          "generation": 1,
+          "prompt": 1
+        },
+        "categories": {
+          "generation": {
+            "candidates": [
+              {
+                "cluster_count": 1,
+                "minimum_observed_cluster_size": 8,
+                "minimum_replicate_adjusted_rand": 1.0,
+                "minimum_replicate_boundary_gap_ratio": 0.0,
+                "minimum_replicate_mean_silhouette": 0.0,
+                "minimum_replicate_silhouette_p10": 0.0,
+                "status": "pass_fallback"
+              },
+              {
+                "cluster_count": 2,
+                "minimum_observed_cluster_size": 1,
+                "minimum_replicate_adjusted_rand": -0.15384615384615385,
+                "minimum_replicate_boundary_gap_ratio": 0.0,
+                "minimum_replicate_mean_silhouette": 0.32479767046855657,
+                "minimum_replicate_silhouette_p10": -0.006325768643435522,
+                "status": "reject_replicate_instability"
+              }
+            ],
+            "component_count": 8,
+            "selection": {
+              "cluster_count": 1,
+              "minimum_observed_cluster_size": 8,
+              "minimum_replicate_adjusted_rand": 1.0,
+              "minimum_replicate_boundary_gap_ratio": 0.0,
+              "minimum_replicate_mean_silhouette": 0.0,
+              "minimum_replicate_silhouette_p10": 0.0,
+              "status": "pass_fallback"
+            }
+          },
+          "prompt": {
+            "candidates": [
+              {
+                "cluster_count": 1,
+                "minimum_observed_cluster_size": 8,
+                "minimum_replicate_adjusted_rand": 1.0,
+                "minimum_replicate_boundary_gap_ratio": 0.0,
+                "minimum_replicate_mean_silhouette": 0.0,
+                "minimum_replicate_silhouette_p10": 0.0,
+                "status": "pass_fallback"
+              },
+              {
+                "cluster_count": 2,
+                "minimum_observed_cluster_size": 1,
+                "minimum_replicate_adjusted_rand": -0.14285714285714285,
+                "minimum_replicate_boundary_gap_ratio": 0.0,
+                "minimum_replicate_mean_silhouette": 0.3053670593265514,
+                "minimum_replicate_silhouette_p10": -0.007256640998391636,
+                "status": "reject_replicate_instability"
+              }
+            ],
+            "component_count": 8,
+            "selection": {
+              "cluster_count": 1,
+              "minimum_observed_cluster_size": 8,
+              "minimum_replicate_adjusted_rand": 1.0,
+              "minimum_replicate_boundary_gap_ratio": 0.0,
+              "minimum_replicate_mean_silhouette": 0.0,
+              "minimum_replicate_silhouette_p10": 0.0,
+              "status": "pass_fallback"
+            }
+          }
+        },
+        "policy": {
+          "maximum_clusters_per_category": 2,
+          "minimum_cluster_size": 4,
+          "minimum_replicate_adjusted_rand": 0.9,
+          "minimum_replicate_boundary_gap_ratio": 1.5,
+          "minimum_replicate_mean_silhouette": 0.15,
+          "minimum_replicate_silhouette_p10": 0.05,
+          "no_passing_nontrivial_candidate_rule": "one_cluster_for_category",
+          "replicate_kind_counts": {
+            "projection": 8
+          },
+          "replicates": 8,
+          "selection_order": [
+            "maximum_minimum_replicate_boundary_gap_ratio",
+            "maximum_minimum_replicate_silhouette_p10",
+            "maximum_minimum_replicate_mean_silhouette",
+            "maximum_minimum_replicate_adjusted_rand",
+            "minimum_cluster_count"
+          ]
+        },
+        "schema": "sch.vpd-category-cluster-count-selection.v2",
+        "status": "pass"
+      }
+    },
+    {
+      "activation_phase_category_admission": "fail",
+      "exact_train_example_block_label_flip_control": {
+        "at_or_above_observed": 1,
+        "configurations": 16,
+        "exact_upper_tail_p_value": 0.0625,
+        "maximum": 0.7921286450946958,
+        "median": 0.0,
+        "minimum": -0.7921286450946958,
+        "minimum_attainable_upper_tail_p_value": 0.0625
+      },
+      "held_out_examples": 4,
+      "held_out_minimum_normalized_margin": 0.12231797423125361,
+      "held_out_phase_accuracy": 0.875,
+      "held_out_phase_pairs": 8,
+      "leave_one_train_example_block_out_minimum_direction_cosine": 0.9958483647877394,
+      "observed_train_to_held_out_phase_transition_alignment": 0.7921286450946958,
+      "site": "model.layers.21",
+      "train_examples": 4,
+      "train_phase_pairs": 8,
+      "within_phase_allocation_is_operative": false,
+      "within_phase_v2_selection": {
+        "allocation": {
+          "generation": 1,
+          "prompt": 1
+        },
+        "categories": {
+          "generation": {
+            "candidates": [
+              {
+                "cluster_count": 1,
+                "minimum_observed_cluster_size": 8,
+                "minimum_replicate_adjusted_rand": 1.0,
+                "minimum_replicate_boundary_gap_ratio": 0.0,
+                "minimum_replicate_mean_silhouette": 0.0,
+                "minimum_replicate_silhouette_p10": 0.0,
+                "status": "pass_fallback"
+              },
+              {
+                "cluster_count": 2,
+                "minimum_observed_cluster_size": 1,
+                "minimum_replicate_adjusted_rand": -0.14285714285714285,
+                "minimum_replicate_boundary_gap_ratio": 0.0,
+                "minimum_replicate_mean_silhouette": 0.2033343251665363,
+                "minimum_replicate_silhouette_p10": -0.016218833635554784,
+                "status": "reject_replicate_instability"
+              }
+            ],
+            "component_count": 8,
+            "selection": {
+              "cluster_count": 1,
+              "minimum_observed_cluster_size": 8,
+              "minimum_replicate_adjusted_rand": 1.0,
+              "minimum_replicate_boundary_gap_ratio": 0.0,
+              "minimum_replicate_mean_silhouette": 0.0,
+              "minimum_replicate_silhouette_p10": 0.0,
+              "status": "pass_fallback"
+            }
+          },
+          "prompt": {
+            "candidates": [
+              {
+                "cluster_count": 1,
+                "minimum_observed_cluster_size": 8,
+                "minimum_replicate_adjusted_rand": 1.0,
+                "minimum_replicate_boundary_gap_ratio": 0.0,
+                "minimum_replicate_mean_silhouette": 0.0,
+                "minimum_replicate_silhouette_p10": 0.0,
+                "status": "pass_fallback"
+              },
+              {
+                "cluster_count": 2,
+                "minimum_observed_cluster_size": 1,
+                "minimum_replicate_adjusted_rand": 0.46153846153846156,
+                "minimum_replicate_boundary_gap_ratio": 0.0,
+                "minimum_replicate_mean_silhouette": 0.2046106198344106,
+                "minimum_replicate_silhouette_p10": 0.008904612253362264,
+                "status": "reject_replicate_instability"
+              }
+            ],
+            "component_count": 8,
+            "selection": {
+              "cluster_count": 1,
+              "minimum_observed_cluster_size": 8,
+              "minimum_replicate_adjusted_rand": 1.0,
+              "minimum_replicate_boundary_gap_ratio": 0.0,
+              "minimum_replicate_mean_silhouette": 0.0,
+              "minimum_replicate_silhouette_p10": 0.0,
+              "status": "pass_fallback"
+            }
+          }
+        },
+        "policy": {
+          "maximum_clusters_per_category": 2,
+          "minimum_cluster_size": 4,
+          "minimum_replicate_adjusted_rand": 0.9,
+          "minimum_replicate_boundary_gap_ratio": 1.5,
+          "minimum_replicate_mean_silhouette": 0.15,
+          "minimum_replicate_silhouette_p10": 0.05,
+          "no_passing_nontrivial_candidate_rule": "one_cluster_for_category",
+          "replicate_kind_counts": {
+            "projection": 8
+          },
+          "replicates": 8,
+          "selection_order": [
+            "maximum_minimum_replicate_boundary_gap_ratio",
+            "maximum_minimum_replicate_silhouette_p10",
+            "maximum_minimum_replicate_mean_silhouette",
+            "maximum_minimum_replicate_adjusted_rand",
+            "minimum_cluster_count"
+          ]
+        },
+        "schema": "sch.vpd-category-cluster-count-selection.v2",
+        "status": "pass"
+      }
+    },
+    {
+      "activation_phase_category_admission": "fail",
+      "exact_train_example_block_label_flip_control": {
+        "at_or_above_observed": 1,
+        "configurations": 16,
+        "exact_upper_tail_p_value": 0.0625,
+        "maximum": 0.17378540849882568,
+        "median": 0.0,
+        "minimum": -0.17378540849882568,
+        "minimum_attainable_upper_tail_p_value": 0.0625
+      },
+      "held_out_examples": 4,
+      "held_out_minimum_normalized_margin": 0.08509772083750386,
+      "held_out_phase_accuracy": 0.875,
+      "held_out_phase_pairs": 8,
+      "leave_one_train_example_block_out_minimum_direction_cosine": 0.9297715636831324,
+      "observed_train_to_held_out_phase_transition_alignment": 0.17378540849882568,
+      "site": "model.norm",
+      "train_examples": 4,
+      "train_phase_pairs": 8,
+      "within_phase_allocation_is_operative": false,
+      "within_phase_v2_selection": {
+        "allocation": {
+          "generation": 1,
+          "prompt": 1
+        },
+        "categories": {
+          "generation": {
+            "candidates": [
+              {
+                "cluster_count": 1,
+                "minimum_observed_cluster_size": 8,
+                "minimum_replicate_adjusted_rand": 1.0,
+                "minimum_replicate_boundary_gap_ratio": 0.0,
+                "minimum_replicate_mean_silhouette": 0.0,
+                "minimum_replicate_silhouette_p10": 0.0,
+                "status": "pass_fallback"
+              },
+              {
+                "cluster_count": 2,
+                "minimum_observed_cluster_size": 2,
+                "minimum_replicate_adjusted_rand": 0.5050505050505051,
+                "minimum_replicate_boundary_gap_ratio": 0.9474012102277323,
+                "minimum_replicate_mean_silhouette": 0.14667318265006088,
+                "minimum_replicate_silhouette_p10": 0.05104965675310032,
+                "status": "reject_replicate_instability"
+              }
+            ],
+            "component_count": 8,
+            "selection": {
+              "cluster_count": 1,
+              "minimum_observed_cluster_size": 8,
+              "minimum_replicate_adjusted_rand": 1.0,
+              "minimum_replicate_boundary_gap_ratio": 0.0,
+              "minimum_replicate_mean_silhouette": 0.0,
+              "minimum_replicate_silhouette_p10": 0.0,
+              "status": "pass_fallback"
+            }
+          },
+          "prompt": {
+            "candidates": [
+              {
+                "cluster_count": 1,
+                "minimum_observed_cluster_size": 8,
+                "minimum_replicate_adjusted_rand": 1.0,
+                "minimum_replicate_boundary_gap_ratio": 0.0,
+                "minimum_replicate_mean_silhouette": 0.0,
+                "minimum_replicate_silhouette_p10": 0.0,
+                "status": "pass_fallback"
+              },
+              {
+                "cluster_count": 2,
+                "minimum_observed_cluster_size": 1,
+                "minimum_replicate_adjusted_rand": -0.15384615384615385,
+                "minimum_replicate_boundary_gap_ratio": 0.0,
+                "minimum_replicate_mean_silhouette": 0.11286824520856448,
+                "minimum_replicate_silhouette_p10": 0.0034703469873959888,
+                "status": "reject_replicate_instability"
+              }
+            ],
+            "component_count": 8,
+            "selection": {
+              "cluster_count": 1,
+              "minimum_observed_cluster_size": 8,
+              "minimum_replicate_adjusted_rand": 1.0,
+              "minimum_replicate_boundary_gap_ratio": 0.0,
+              "minimum_replicate_mean_silhouette": 0.0,
+              "minimum_replicate_silhouette_p10": 0.0,
+              "status": "pass_fallback"
+            }
+          }
+        },
+        "policy": {
+          "maximum_clusters_per_category": 2,
+          "minimum_cluster_size": 4,
+          "minimum_replicate_adjusted_rand": 0.9,
+          "minimum_replicate_boundary_gap_ratio": 1.5,
+          "minimum_replicate_mean_silhouette": 0.15,
+          "minimum_replicate_silhouette_p10": 0.05,
+          "no_passing_nontrivial_candidate_rule": "one_cluster_for_category",
+          "replicate_kind_counts": {
+            "projection": 8
+          },
+          "replicates": 8,
+          "selection_order": [
+            "maximum_minimum_replicate_boundary_gap_ratio",
+            "maximum_minimum_replicate_silhouette_p10",
+            "maximum_minimum_replicate_mean_silhouette",
+            "maximum_minimum_replicate_adjusted_rand",
+            "minimum_cluster_count"
+          ]
+        },
+        "schema": "sch.vpd-category-cluster-count-selection.v2",
+        "status": "pass"
+      }
+    }
+  ],
+  "sources": {
+    "common_examples": 8,
+    "common_held_out_examples": 4,
+    "common_train_examples": 4,
+    "generation": {
+      "manifest_sha256": "7c5205eeb3c1e7c025ac1aababc6e0526bbe82048f633a52e73bfefa07c8a546",
+      "path": "C:/projects/VPD/artifacts/nanbeige_reasoning/prime-20260906T204058Z-561/retrieved/artifacts/nanbeige_looped/bf16_multipass_calibration"
+    },
+    "prompt": {
+      "manifest_sha256": "523a54970058491885e696596385a9d15d26102469108813fe2a892a46485c9f",
+      "path": "C:/projects/VPD/artifacts/nanbeige_reasoning/local_prompt_capture_v2"
+    }
+  },
+  "status": "pass",
+  "summary": {
+    "activation_phase_category_admissions": 0,
+    "operative_nontrivial_within_phase_allocations": 0,
+    "screening_only_nontrivial_within_phase_allocations": 0,
+    "screening_sites_with_held_out_accuracy_at_least_0_875": 3,
+    "sites": 3
+  }
+}

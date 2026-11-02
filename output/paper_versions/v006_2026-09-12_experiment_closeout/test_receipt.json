@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "command": ".venv/Scripts/python.exe -m unittest experiments.nanbeige_reasoning.test_partial_skill_grading experiments.nanbeige_reasoning.test_compare_skill_models experiments.nanbeige_reasoning.test_skill_resume experiments.nanbeige_reasoning.test_skill_finisher",
+  "tests": 16,
+  "elapsed_seconds": 10.32,
+  "observed_output": "................\n----------------------------------------------------------------------\nRan 16 tests in 10.320s\n\nOK\n",
+  "historical_ledger_tests": {
+    "tests": 80,
+    "log": "artifacts/nanbeige_receipt_replay/tests_cooling_stability_v1.txt",
+    "sha256": "50948d23ccb27e949a9053d8d60e0f23934dbb06a444f7c27364e524b3078633"
+  }
+}

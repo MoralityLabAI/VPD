@@ -1,0 +1,101 @@
+{
+  "invariants": {
+    "cheap_executor_runbook_v2_reverified": true,
+    "cluster_discreteness_benchmark_reverified": true,
+    "cluster_selector_hash_joined": true,
+    "execution_not_authorized": true,
+    "predecessor_receipt_v7_reverified": true,
+    "research_protocol_v10_reverified": true
+  },
+  "lineage_amendment": {
+    "continuous_direction_arc_negative_control_present": true,
+    "continuous_strength_gradient_negative_control_present": true,
+    "discrete_two_mechanism_positive_control_present": true,
+    "historical_v7_release_rejection_unchanged": true,
+    "legacy_continuous_false_split_reproduced": true,
+    "next_empirical_candidate_requires_selection_v2": true,
+    "predecessor_receipt_v7_preserved_and_reverified": true,
+    "production_v2_candidate_wrapper_and_admission_still_required": true,
+    "research_protocol_v10_is_not_historical_experiment_v10": true,
+    "v1_only_cluster_count_selection_prohibited_for_next_candidate": true
+  },
+  "pipeline_receipt_id": "6315c32b329278aba56f8a29d84ff9c5e9ebaccfe32a168bb36d6d70987a26d9",
+  "resources": {
+    "cheap_executor_stages": 9,
+    "legacy_false_split_scenarios": 2,
+    "safe_stage_now": 0,
+    "synthetic_scenarios": 4
+  },
+  "schema": "sch.vpd-unified-compartment-pipeline-receipt.v8",
+  "scientific_boundary": {
+    "activation_capture_performed": false,
+    "empirical_cluster_discreteness_audit_present": false,
+    "execution_authorized": false,
+    "external_compute_authorization_present": false,
+    "model_inference_performed": false,
+    "production_cluster_candidate_v2_runtime_present": false,
+    "sae_training_performed": false,
+    "scientific_release_receipt_present": false,
+    "weights_loaded_or_mutated": false
+  },
+  "source": {
+    "cheap_executor_runbook_v2": {
+      "path": "artifacts/vpd_cheap_executor_runbook_v2/runbook.json",
+      "runbook_id": "7c4a52e50e0105d26be1badeb002cd5fca5985d8a416f9017e08f61a44ee8c41",
+      "sha256": "3dd1e0479d4bf75723a562a694e45e0e6c1c5336ed371d74b1ef003ac5e8d5b4",
+      "verification": {
+        "cluster_candidate_runtime_ready": false,
+        "execution_authorized": false,
+        "runbook_id": "7c4a52e50e0105d26be1badeb002cd5fca5985d8a416f9017e08f61a44ee8c41",
+        "safe_stage_now": 0,
+        "schema": "sch.vpd-cheap-executor-runbook-verification.v2",
+        "stages": 9,
+        "status": "pass"
+      }
+    },
+    "cluster_count_selector_v2": {
+      "path": "experiments/authz_mechinterp/activation_category_cluster_count_selection_v2.py",
+      "sha256": "fc7d2067268671a28f4758b1da2d92249818c91235fb137339c3c472c760b581"
+    },
+    "cluster_discreteness_benchmark_v2": {
+      "benchmark_id": "3c72d47b3662ccc78bdf2470850f0a644e597226cde988b78335b07a72609d91",
+      "path": "artifacts/vpd_activation_category_cluster_discreteness_benchmark_v2/report.json",
+      "sha256": "b0d6e945f0af0c8bd146cc760d54341d3bcdac68b86569a9d1a1978ba4754e52",
+      "verification": {
+        "benchmark_id": "3c72d47b3662ccc78bdf2470850f0a644e597226cde988b78335b07a72609d91",
+        "execution_authorized": false,
+        "legacy_false_splits_reproduced": 2,
+        "scenarios": 4,
+        "schema": "sch.vpd-activation-category-cluster-discreteness-verification.v2",
+        "status": "pass"
+      }
+    },
+    "predecessor_unified_receipt_v7": {
+      "path": "artifacts/vpd_unified_compartment_pipeline_v7/receipt.json",
+      "pipeline_receipt_id": "e97ea34df8a8e4c12f4b13e5bdf02fe9ed0fe985a1dfdad8237734420a7dc90c",
+      "sha256": "4d54b3ec0c422dd5f494340cb2808c658fe930434c99a09e98638c33bbd80ddb",
+      "verification": {
+        "execution_authorized": false,
+        "guarded_jobs": 22,
+        "pipeline_receipt_id": "e97ea34df8a8e4c12f4b13e5bdf02fe9ed0fe985a1dfdad8237734420a7dc90c",
+        "runtime_benchmark_scenarios": 11,
+        "schema": "sch.vpd-unified-compartment-pipeline-verification.v7",
+        "status": "pass"
+      }
+    },
+    "research_protocol_v10": {
+      "path": "configs/evals/vpd_activation_category_compartments_v10.json",
+      "sha256": "1b53f290aa05a2aefefea665202ba6c22e045c019a05b5796028e895fd062f1c",
+      "verification": {
+        "cluster_discreteness_benchmark_id": "3c72d47b3662ccc78bdf2470850f0a644e597226cde988b78335b07a72609d91",
+        "execution_authorized": false,
+        "legacy_false_splits_reproduced": 2,
+        "predecessor_sha256": "3d4397f3ef270f4d2b0bc00995034543f34a60dedfc9c9587eb06963e2b5bd9c",
+        "protocol_sha256": "1b53f290aa05a2aefefea665202ba6c22e045c019a05b5796028e895fd062f1c",
+        "schema": "sch.vpd-activation-category-protocol-verification.v10",
+        "status": "pass"
+      }
+    }
+  },
+  "status": "pass_local_cluster_discreteness_v2_benchmarked_runtime_pending"
+}

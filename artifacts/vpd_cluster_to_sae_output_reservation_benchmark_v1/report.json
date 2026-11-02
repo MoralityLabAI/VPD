@@ -1,0 +1,44 @@
+{
+  "benchmark_id": "cc8938f2cb5fcf8d0b0ef7922ca07a22622712ae5e8bc8a27bb6a4947bd0c06a",
+  "controls": {
+    "admission_receipt_tamper_rejected": true,
+    "admission_source_tamper_rejected": true,
+    "double_reservation_rejected": true,
+    "real_mode_reject_creates_no_root": true,
+    "receipt_tamper_rejected": true,
+    "reservation_binds_admission_and_preflight": true,
+    "reservation_does_not_start_capture": true,
+    "reservation_imports_no_model_frameworks": true,
+    "reservation_receipt_is_inside_reserved_root": true,
+    "reservation_remains_non_authorizing": true,
+    "reservation_transition_verifies": true,
+    "simulation_reservation_is_atomic_direct_child": true,
+    "synthetic_admission_rejected_in_real_mode": true
+  },
+  "results": {
+    "reservation_transition_content_address_verified": true,
+    "simulation_only": true,
+    "synthetic_admission_content_address_verified": true
+  },
+  "schema": "sch.vpd-cluster-to-sae-output-reservation-benchmark.v1",
+  "scientific_boundary": {
+    "capture_started": false,
+    "execution_authorized": false,
+    "model_framework_imported": false,
+    "model_inference_performed": false,
+    "model_loaded": false,
+    "persistent_output_created": false,
+    "sae_training_authorized": false,
+    "temporary_simulation_only": true,
+    "weights_mutated": false
+  },
+  "source": {
+    "benchmark_sha256": "dcb1d7b9da48e407ba64270ca75e289bdc73283df300dafef72ba1544af855e6",
+    "reservation_transition_sha256": "b3f71d8e02d68fdbac13c8f46925cbab6e180c8aa82191a83268f8af3d9c2839"
+  },
+  "status": "pass",
+  "summary": {
+    "controls": 13,
+    "passed": 13
+  }
+}

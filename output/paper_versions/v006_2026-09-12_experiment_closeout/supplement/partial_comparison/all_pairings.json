@@ -1,0 +1,1975 @@
+{
+  "vanilla": {
+    "arms": [
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/vanilla",
+        "unit": "question",
+        "units": 20,
+        "graded_units": 20,
+        "correct": 0,
+        "incorrect": 20,
+        "missing": 0,
+        "grader_error": 0,
+        "accuracy": 0.0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/vanilla",
+        "unit": "question",
+        "units": 20,
+        "graded_units": 20,
+        "correct": 0,
+        "incorrect": 20,
+        "missing": 0,
+        "grader_error": 0,
+        "accuracy": 0.0
+      }
+    ],
+    "pairs": [
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "left": "qwen27b/vanilla",
+        "right": "nanbeige/vanilla",
+        "units": 20,
+        "paired_graded_units": 20,
+        "both_correct": 0,
+        "left_only_correct": 0,
+        "right_only_correct": 0,
+        "both_incorrect": 20,
+        "missing": 0,
+        "grader_error": 0,
+        "left_minus_right": 0.0
+      }
+    ],
+    "units": [
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/vanilla",
+        "unit": "intellect3_logic/00000/bdbead385328",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 1
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/vanilla",
+        "unit": "intellect3_logic/00000/bdbead385328",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/vanilla",
+        "unit": "intellect3_logic/00001/231c5a3d7b40",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 1
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/vanilla",
+        "unit": "intellect3_logic/00001/231c5a3d7b40",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 1
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/vanilla",
+        "unit": "intellect3_logic/00002/a7761c19c1a6",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 1
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/vanilla",
+        "unit": "intellect3_logic/00002/a7761c19c1a6",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 1
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/vanilla",
+        "unit": "intellect3_logic/00003/7cdca13d558d",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 1
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/vanilla",
+        "unit": "intellect3_logic/00003/7cdca13d558d",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/vanilla",
+        "unit": "intellect3_logic/00004/aa759306b4b0",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 1
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/vanilla",
+        "unit": "intellect3_logic/00004/aa759306b4b0",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 1
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/vanilla",
+        "unit": "intellect3_logic/00005/e9a2239c4d19",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 1
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/vanilla",
+        "unit": "intellect3_logic/00005/e9a2239c4d19",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 1
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/vanilla",
+        "unit": "intellect3_logic/00006/0f4d98b38e47",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 1
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/vanilla",
+        "unit": "intellect3_logic/00006/0f4d98b38e47",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/vanilla",
+        "unit": "intellect3_logic/00007/cbb292744b18",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 1
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/vanilla",
+        "unit": "intellect3_logic/00007/cbb292744b18",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/vanilla",
+        "unit": "intellect3_logic/00008/c1e3ebd48c25",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 1
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/vanilla",
+        "unit": "intellect3_logic/00008/c1e3ebd48c25",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 1
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/vanilla",
+        "unit": "intellect3_logic/00009/2ff6080e31f2",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 1
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/vanilla",
+        "unit": "intellect3_logic/00009/2ff6080e31f2",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/vanilla",
+        "unit": "intellect3_logic/00010/505c0899d3e8",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 1
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/vanilla",
+        "unit": "intellect3_logic/00010/505c0899d3e8",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 1
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/vanilla",
+        "unit": "intellect3_logic/00011/74efdbcfc428",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 1
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/vanilla",
+        "unit": "intellect3_logic/00011/74efdbcfc428",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 1
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/vanilla",
+        "unit": "intellect3_logic/00012/9984133e2eed",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 1
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/vanilla",
+        "unit": "intellect3_logic/00012/9984133e2eed",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/vanilla",
+        "unit": "intellect3_logic/00013/4745c6ef07f9",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 1
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/vanilla",
+        "unit": "intellect3_logic/00013/4745c6ef07f9",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 1
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/vanilla",
+        "unit": "intellect3_logic/00014/6a6e7cd7f1ee",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 1
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/vanilla",
+        "unit": "intellect3_logic/00014/6a6e7cd7f1ee",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/vanilla",
+        "unit": "intellect3_logic/00015/de083a354ea8",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 1
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/vanilla",
+        "unit": "intellect3_logic/00015/de083a354ea8",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 1
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/vanilla",
+        "unit": "intellect3_logic/00016/ec874fb6cb23",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 1
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/vanilla",
+        "unit": "intellect3_logic/00016/ec874fb6cb23",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 1
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/vanilla",
+        "unit": "intellect3_logic/00017/ac1b02824334",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 1
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/vanilla",
+        "unit": "intellect3_logic/00017/ac1b02824334",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/vanilla",
+        "unit": "intellect3_logic/00018/9c9ea221e83e",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 1
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/vanilla",
+        "unit": "intellect3_logic/00018/9c9ea221e83e",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 1
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/vanilla",
+        "unit": "intellect3_logic/00019/931efb5ae93c",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 1
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/vanilla",
+        "unit": "intellect3_logic/00019/931efb5ae93c",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      }
+    ]
+  },
+  "logic_skill": {
+    "arms": [
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/logic_skill",
+        "unit": "question",
+        "units": 19,
+        "graded_units": 19,
+        "correct": 1,
+        "incorrect": 18,
+        "missing": 0,
+        "grader_error": 0,
+        "accuracy": 0.05263157894736842
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/logic_skill",
+        "unit": "question",
+        "units": 19,
+        "graded_units": 19,
+        "correct": 0,
+        "incorrect": 19,
+        "missing": 0,
+        "grader_error": 0,
+        "accuracy": 0.0
+      }
+    ],
+    "pairs": [
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "left": "qwen27b/logic_skill",
+        "right": "nanbeige/logic_skill",
+        "units": 19,
+        "paired_graded_units": 19,
+        "both_correct": 0,
+        "left_only_correct": 1,
+        "right_only_correct": 0,
+        "both_incorrect": 18,
+        "missing": 0,
+        "grader_error": 0,
+        "left_minus_right": 0.05263157894736842
+      }
+    ],
+    "units": [
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/logic_skill",
+        "unit": "intellect3_logic/00000/bdbead385328",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/logic_skill",
+        "unit": "intellect3_logic/00000/bdbead385328",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/logic_skill",
+        "unit": "intellect3_logic/00001/231c5a3d7b40",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/logic_skill",
+        "unit": "intellect3_logic/00001/231c5a3d7b40",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/logic_skill",
+        "unit": "intellect3_logic/00002/a7761c19c1a6",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/logic_skill",
+        "unit": "intellect3_logic/00002/a7761c19c1a6",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/logic_skill",
+        "unit": "intellect3_logic/00003/7cdca13d558d",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/logic_skill",
+        "unit": "intellect3_logic/00003/7cdca13d558d",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/logic_skill",
+        "unit": "intellect3_logic/00004/aa759306b4b0",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/logic_skill",
+        "unit": "intellect3_logic/00004/aa759306b4b0",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/logic_skill",
+        "unit": "intellect3_logic/00005/e9a2239c4d19",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/logic_skill",
+        "unit": "intellect3_logic/00005/e9a2239c4d19",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/logic_skill",
+        "unit": "intellect3_logic/00006/0f4d98b38e47",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/logic_skill",
+        "unit": "intellect3_logic/00006/0f4d98b38e47",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/logic_skill",
+        "unit": "intellect3_logic/00007/cbb292744b18",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/logic_skill",
+        "unit": "intellect3_logic/00007/cbb292744b18",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/logic_skill",
+        "unit": "intellect3_logic/00008/c1e3ebd48c25",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/logic_skill",
+        "unit": "intellect3_logic/00008/c1e3ebd48c25",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/logic_skill",
+        "unit": "intellect3_logic/00009/2ff6080e31f2",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/logic_skill",
+        "unit": "intellect3_logic/00009/2ff6080e31f2",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/logic_skill",
+        "unit": "intellect3_logic/00010/505c0899d3e8",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/logic_skill",
+        "unit": "intellect3_logic/00010/505c0899d3e8",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/logic_skill",
+        "unit": "intellect3_logic/00011/74efdbcfc428",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/logic_skill",
+        "unit": "intellect3_logic/00011/74efdbcfc428",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/logic_skill",
+        "unit": "intellect3_logic/00012/9984133e2eed",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/logic_skill",
+        "unit": "intellect3_logic/00012/9984133e2eed",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/logic_skill",
+        "unit": "intellect3_logic/00013/4745c6ef07f9",
+        "test_inputs": 1,
+        "state": "correct",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/logic_skill",
+        "unit": "intellect3_logic/00013/4745c6ef07f9",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/logic_skill",
+        "unit": "intellect3_logic/00014/6a6e7cd7f1ee",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/logic_skill",
+        "unit": "intellect3_logic/00014/6a6e7cd7f1ee",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/logic_skill",
+        "unit": "intellect3_logic/00015/de083a354ea8",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/logic_skill",
+        "unit": "intellect3_logic/00015/de083a354ea8",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/logic_skill",
+        "unit": "intellect3_logic/00016/ec874fb6cb23",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/logic_skill",
+        "unit": "intellect3_logic/00016/ec874fb6cb23",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/logic_skill",
+        "unit": "intellect3_logic/00017/ac1b02824334",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/logic_skill",
+        "unit": "intellect3_logic/00017/ac1b02824334",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/logic_skill",
+        "unit": "intellect3_logic/00018/9c9ea221e83e",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/logic_skill",
+        "unit": "intellect3_logic/00018/9c9ea221e83e",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      }
+    ]
+  },
+  "routed_candidate": {
+    "arms": [
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/routed_candidate",
+        "unit": "question",
+        "units": 19,
+        "graded_units": 19,
+        "correct": 0,
+        "incorrect": 19,
+        "missing": 0,
+        "grader_error": 0,
+        "accuracy": 0.0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/routed_candidate",
+        "unit": "question",
+        "units": 19,
+        "graded_units": 19,
+        "correct": 0,
+        "incorrect": 19,
+        "missing": 0,
+        "grader_error": 0,
+        "accuracy": 0.0
+      }
+    ],
+    "pairs": [
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "left": "qwen27b/routed_candidate",
+        "right": "nanbeige/routed_candidate",
+        "units": 19,
+        "paired_graded_units": 19,
+        "both_correct": 0,
+        "left_only_correct": 0,
+        "right_only_correct": 0,
+        "both_incorrect": 19,
+        "missing": 0,
+        "grader_error": 0,
+        "left_minus_right": 0.0
+      }
+    ],
+    "units": [
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/routed_candidate",
+        "unit": "intellect3_logic/00000/bdbead385328",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/routed_candidate",
+        "unit": "intellect3_logic/00000/bdbead385328",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/routed_candidate",
+        "unit": "intellect3_logic/00001/231c5a3d7b40",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/routed_candidate",
+        "unit": "intellect3_logic/00001/231c5a3d7b40",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/routed_candidate",
+        "unit": "intellect3_logic/00002/a7761c19c1a6",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/routed_candidate",
+        "unit": "intellect3_logic/00002/a7761c19c1a6",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/routed_candidate",
+        "unit": "intellect3_logic/00003/7cdca13d558d",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/routed_candidate",
+        "unit": "intellect3_logic/00003/7cdca13d558d",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/routed_candidate",
+        "unit": "intellect3_logic/00004/aa759306b4b0",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/routed_candidate",
+        "unit": "intellect3_logic/00004/aa759306b4b0",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/routed_candidate",
+        "unit": "intellect3_logic/00005/e9a2239c4d19",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/routed_candidate",
+        "unit": "intellect3_logic/00005/e9a2239c4d19",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/routed_candidate",
+        "unit": "intellect3_logic/00006/0f4d98b38e47",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/routed_candidate",
+        "unit": "intellect3_logic/00006/0f4d98b38e47",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/routed_candidate",
+        "unit": "intellect3_logic/00007/cbb292744b18",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/routed_candidate",
+        "unit": "intellect3_logic/00007/cbb292744b18",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/routed_candidate",
+        "unit": "intellect3_logic/00008/c1e3ebd48c25",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/routed_candidate",
+        "unit": "intellect3_logic/00008/c1e3ebd48c25",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/routed_candidate",
+        "unit": "intellect3_logic/00009/2ff6080e31f2",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/routed_candidate",
+        "unit": "intellect3_logic/00009/2ff6080e31f2",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/routed_candidate",
+        "unit": "intellect3_logic/00010/505c0899d3e8",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/routed_candidate",
+        "unit": "intellect3_logic/00010/505c0899d3e8",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/routed_candidate",
+        "unit": "intellect3_logic/00011/74efdbcfc428",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/routed_candidate",
+        "unit": "intellect3_logic/00011/74efdbcfc428",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/routed_candidate",
+        "unit": "intellect3_logic/00012/9984133e2eed",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/routed_candidate",
+        "unit": "intellect3_logic/00012/9984133e2eed",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/routed_candidate",
+        "unit": "intellect3_logic/00013/4745c6ef07f9",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/routed_candidate",
+        "unit": "intellect3_logic/00013/4745c6ef07f9",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/routed_candidate",
+        "unit": "intellect3_logic/00014/6a6e7cd7f1ee",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/routed_candidate",
+        "unit": "intellect3_logic/00014/6a6e7cd7f1ee",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/routed_candidate",
+        "unit": "intellect3_logic/00015/de083a354ea8",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/routed_candidate",
+        "unit": "intellect3_logic/00015/de083a354ea8",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/routed_candidate",
+        "unit": "intellect3_logic/00016/ec874fb6cb23",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/routed_candidate",
+        "unit": "intellect3_logic/00016/ec874fb6cb23",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/routed_candidate",
+        "unit": "intellect3_logic/00017/ac1b02824334",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/routed_candidate",
+        "unit": "intellect3_logic/00017/ac1b02824334",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/routed_candidate",
+        "unit": "intellect3_logic/00018/9c9ea221e83e",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/routed_candidate",
+        "unit": "intellect3_logic/00018/9c9ea221e83e",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      }
+    ]
+  },
+  "routed_final": {
+    "arms": [
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/routed_final",
+        "unit": "question",
+        "units": 19,
+        "graded_units": 19,
+        "correct": 3,
+        "incorrect": 16,
+        "missing": 0,
+        "grader_error": 0,
+        "accuracy": 0.15789473684210525
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/routed_final",
+        "unit": "question",
+        "units": 19,
+        "graded_units": 19,
+        "correct": 6,
+        "incorrect": 13,
+        "missing": 0,
+        "grader_error": 0,
+        "accuracy": 0.3157894736842105
+      }
+    ],
+    "pairs": [
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "left": "qwen27b/routed_final",
+        "right": "nanbeige/routed_final",
+        "units": 19,
+        "paired_graded_units": 19,
+        "both_correct": 3,
+        "left_only_correct": 0,
+        "right_only_correct": 3,
+        "both_incorrect": 13,
+        "missing": 0,
+        "grader_error": 0,
+        "left_minus_right": -0.15789473684210525
+      }
+    ],
+    "units": [
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/routed_final",
+        "unit": "intellect3_logic/00000/bdbead385328",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/routed_final",
+        "unit": "intellect3_logic/00000/bdbead385328",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/routed_final",
+        "unit": "intellect3_logic/00001/231c5a3d7b40",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/routed_final",
+        "unit": "intellect3_logic/00001/231c5a3d7b40",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/routed_final",
+        "unit": "intellect3_logic/00002/a7761c19c1a6",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/routed_final",
+        "unit": "intellect3_logic/00002/a7761c19c1a6",
+        "test_inputs": 1,
+        "state": "correct",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/routed_final",
+        "unit": "intellect3_logic/00003/7cdca13d558d",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/routed_final",
+        "unit": "intellect3_logic/00003/7cdca13d558d",
+        "test_inputs": 1,
+        "state": "correct",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/routed_final",
+        "unit": "intellect3_logic/00004/aa759306b4b0",
+        "test_inputs": 1,
+        "state": "correct",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/routed_final",
+        "unit": "intellect3_logic/00004/aa759306b4b0",
+        "test_inputs": 1,
+        "state": "correct",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/routed_final",
+        "unit": "intellect3_logic/00005/e9a2239c4d19",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/routed_final",
+        "unit": "intellect3_logic/00005/e9a2239c4d19",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/routed_final",
+        "unit": "intellect3_logic/00006/0f4d98b38e47",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/routed_final",
+        "unit": "intellect3_logic/00006/0f4d98b38e47",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/routed_final",
+        "unit": "intellect3_logic/00007/cbb292744b18",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/routed_final",
+        "unit": "intellect3_logic/00007/cbb292744b18",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/routed_final",
+        "unit": "intellect3_logic/00008/c1e3ebd48c25",
+        "test_inputs": 1,
+        "state": "correct",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/routed_final",
+        "unit": "intellect3_logic/00008/c1e3ebd48c25",
+        "test_inputs": 1,
+        "state": "correct",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/routed_final",
+        "unit": "intellect3_logic/00009/2ff6080e31f2",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/routed_final",
+        "unit": "intellect3_logic/00009/2ff6080e31f2",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/routed_final",
+        "unit": "intellect3_logic/00010/505c0899d3e8",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/routed_final",
+        "unit": "intellect3_logic/00010/505c0899d3e8",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/routed_final",
+        "unit": "intellect3_logic/00011/74efdbcfc428",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/routed_final",
+        "unit": "intellect3_logic/00011/74efdbcfc428",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/routed_final",
+        "unit": "intellect3_logic/00012/9984133e2eed",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/routed_final",
+        "unit": "intellect3_logic/00012/9984133e2eed",
+        "test_inputs": 1,
+        "state": "correct",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/routed_final",
+        "unit": "intellect3_logic/00013/4745c6ef07f9",
+        "test_inputs": 1,
+        "state": "correct",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/routed_final",
+        "unit": "intellect3_logic/00013/4745c6ef07f9",
+        "test_inputs": 1,
+        "state": "correct",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/routed_final",
+        "unit": "intellect3_logic/00014/6a6e7cd7f1ee",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/routed_final",
+        "unit": "intellect3_logic/00014/6a6e7cd7f1ee",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/routed_final",
+        "unit": "intellect3_logic/00015/de083a354ea8",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/routed_final",
+        "unit": "intellect3_logic/00015/de083a354ea8",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/routed_final",
+        "unit": "intellect3_logic/00016/ec874fb6cb23",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/routed_final",
+        "unit": "intellect3_logic/00016/ec874fb6cb23",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/routed_final",
+        "unit": "intellect3_logic/00017/ac1b02824334",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/routed_final",
+        "unit": "intellect3_logic/00017/ac1b02824334",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/routed_final",
+        "unit": "intellect3_logic/00018/9c9ea221e83e",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/routed_final",
+        "unit": "intellect3_logic/00018/9c9ea221e83e",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      }
+    ]
+  },
+  "plain_candidate_routed_repair": {
+    "arms": [
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/plain_candidate_routed_repair",
+        "unit": "question",
+        "units": 19,
+        "graded_units": 19,
+        "correct": 4,
+        "incorrect": 15,
+        "missing": 0,
+        "grader_error": 0,
+        "accuracy": 0.21052631578947367
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/plain_candidate_routed_repair",
+        "unit": "question",
+        "units": 19,
+        "graded_units": 19,
+        "correct": 4,
+        "incorrect": 15,
+        "missing": 0,
+        "grader_error": 0,
+        "accuracy": 0.21052631578947367
+      }
+    ],
+    "pairs": [
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "left": "qwen27b/plain_candidate_routed_repair",
+        "right": "nanbeige/plain_candidate_routed_repair",
+        "units": 19,
+        "paired_graded_units": 19,
+        "both_correct": 3,
+        "left_only_correct": 1,
+        "right_only_correct": 1,
+        "both_incorrect": 14,
+        "missing": 0,
+        "grader_error": 0,
+        "left_minus_right": 0.0
+      }
+    ],
+    "units": [
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/plain_candidate_routed_repair",
+        "unit": "intellect3_logic/00000/bdbead385328",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/plain_candidate_routed_repair",
+        "unit": "intellect3_logic/00000/bdbead385328",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/plain_candidate_routed_repair",
+        "unit": "intellect3_logic/00001/231c5a3d7b40",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/plain_candidate_routed_repair",
+        "unit": "intellect3_logic/00001/231c5a3d7b40",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/plain_candidate_routed_repair",
+        "unit": "intellect3_logic/00002/a7761c19c1a6",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/plain_candidate_routed_repair",
+        "unit": "intellect3_logic/00002/a7761c19c1a6",
+        "test_inputs": 1,
+        "state": "correct",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/plain_candidate_routed_repair",
+        "unit": "intellect3_logic/00003/7cdca13d558d",
+        "test_inputs": 1,
+        "state": "correct",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/plain_candidate_routed_repair",
+        "unit": "intellect3_logic/00003/7cdca13d558d",
+        "test_inputs": 1,
+        "state": "correct",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/plain_candidate_routed_repair",
+        "unit": "intellect3_logic/00004/aa759306b4b0",
+        "test_inputs": 1,
+        "state": "correct",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/plain_candidate_routed_repair",
+        "unit": "intellect3_logic/00004/aa759306b4b0",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/plain_candidate_routed_repair",
+        "unit": "intellect3_logic/00005/e9a2239c4d19",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/plain_candidate_routed_repair",
+        "unit": "intellect3_logic/00005/e9a2239c4d19",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/plain_candidate_routed_repair",
+        "unit": "intellect3_logic/00006/0f4d98b38e47",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/plain_candidate_routed_repair",
+        "unit": "intellect3_logic/00006/0f4d98b38e47",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/plain_candidate_routed_repair",
+        "unit": "intellect3_logic/00007/cbb292744b18",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/plain_candidate_routed_repair",
+        "unit": "intellect3_logic/00007/cbb292744b18",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/plain_candidate_routed_repair",
+        "unit": "intellect3_logic/00008/c1e3ebd48c25",
+        "test_inputs": 1,
+        "state": "correct",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/plain_candidate_routed_repair",
+        "unit": "intellect3_logic/00008/c1e3ebd48c25",
+        "test_inputs": 1,
+        "state": "correct",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/plain_candidate_routed_repair",
+        "unit": "intellect3_logic/00009/2ff6080e31f2",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/plain_candidate_routed_repair",
+        "unit": "intellect3_logic/00009/2ff6080e31f2",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/plain_candidate_routed_repair",
+        "unit": "intellect3_logic/00010/505c0899d3e8",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/plain_candidate_routed_repair",
+        "unit": "intellect3_logic/00010/505c0899d3e8",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/plain_candidate_routed_repair",
+        "unit": "intellect3_logic/00011/74efdbcfc428",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/plain_candidate_routed_repair",
+        "unit": "intellect3_logic/00011/74efdbcfc428",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/plain_candidate_routed_repair",
+        "unit": "intellect3_logic/00012/9984133e2eed",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/plain_candidate_routed_repair",
+        "unit": "intellect3_logic/00012/9984133e2eed",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/plain_candidate_routed_repair",
+        "unit": "intellect3_logic/00013/4745c6ef07f9",
+        "test_inputs": 1,
+        "state": "correct",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/plain_candidate_routed_repair",
+        "unit": "intellect3_logic/00013/4745c6ef07f9",
+        "test_inputs": 1,
+        "state": "correct",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/plain_candidate_routed_repair",
+        "unit": "intellect3_logic/00014/6a6e7cd7f1ee",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/plain_candidate_routed_repair",
+        "unit": "intellect3_logic/00014/6a6e7cd7f1ee",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/plain_candidate_routed_repair",
+        "unit": "intellect3_logic/00015/de083a354ea8",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/plain_candidate_routed_repair",
+        "unit": "intellect3_logic/00015/de083a354ea8",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/plain_candidate_routed_repair",
+        "unit": "intellect3_logic/00016/ec874fb6cb23",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/plain_candidate_routed_repair",
+        "unit": "intellect3_logic/00016/ec874fb6cb23",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/plain_candidate_routed_repair",
+        "unit": "intellect3_logic/00017/ac1b02824334",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/plain_candidate_routed_repair",
+        "unit": "intellect3_logic/00017/ac1b02824334",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "qwen27b/plain_candidate_routed_repair",
+        "unit": "intellect3_logic/00018/9c9ea221e83e",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      },
+      {
+        "lane": "intellect3_logic",
+        "evaluation_slice": "selected_historical_campsite",
+        "arm": "nanbeige/plain_candidate_routed_repair",
+        "unit": "intellect3_logic/00018/9c9ea221e83e",
+        "test_inputs": 1,
+        "state": "incorrect",
+        "censored_inputs": 0
+      }
+    ]
+  }
+}

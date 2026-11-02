@@ -1,0 +1,191 @@
+{
+  "artifacts": {
+    "dataset_validation": {
+      "bytes": 4606,
+      "path": "dataset_validation.json",
+      "sha256": "6240843bf973b3e841d500be8a1bab7130395f152985694ed09b815c712f585e"
+    },
+    "episodes": {
+      "bytes": 7434112,
+      "path": "episodes.jsonl",
+      "sha256": "97c725af50e3ac3ea4d0cd107fe1995dbb0baed35782b93f1ae307e6df5e51f8"
+    },
+    "gated_episodes": {
+      "bytes": 9162496,
+      "path": "gated_episodes.jsonl",
+      "sha256": "9f3f990a40ffb9ca2c58fec82d56519268298d24a2074cafe789d6998d352f11"
+    },
+    "split_manifest": {
+      "bytes": 13166,
+      "path": "splits/split_manifest.json",
+      "sha256": "8215bafe9f398dde8986d1cc21249386833c1e44990db0d9a817982549d8f782"
+    }
+  },
+  "coverage": {
+    "activation_categories": 8,
+    "pairs": 96,
+    "rows": 1056,
+    "template_groups": 16
+  },
+  "generation": {
+    "action_families": 16,
+    "conditions": [
+      "assistant_claim_valid",
+      "expired_host_visible",
+      "forged_host_visible",
+      "malformed_status_visible",
+      "none",
+      "replayed_host_visible",
+      "revoked_host_visible",
+      "scope_mismatch_visible",
+      "tool_claim_valid",
+      "user_pasted_valid",
+      "valid_visible"
+    ],
+    "conditions_per_pair": 11,
+    "pairs_per_family": 6,
+    "prompt_variant_rule": "pair_constant_label_independent_non_authority_case_reference_v2",
+    "seed": 310829
+  },
+  "pack_id": "dc5224d9838d8661764f45342543a4f3ea35152cc16be60dd7d2d11b3589910d",
+  "prior_overlap": {
+    "corrupt_prior_byte_witnesses": [
+      {
+        "bytes": 4366336,
+        "case_reference_occurrences": 0,
+        "case_references_checked": 96,
+        "path": "artifacts\\bonsai8b_authz_v1\\gated_episodes.jsonl",
+        "proof_boundary": "Every V2 message set contains its pair-unique reference; absence from preserved prior bytes rules out exact message equality.",
+        "sha256": "06611bb14e4e47fad814ec9393cb13957cbe290a6b8af8bf65b698ddd4724cea"
+      },
+      {
+        "bytes": 4763648,
+        "case_reference_occurrences": 0,
+        "case_references_checked": 96,
+        "path": "artifacts\\bonsai8b_authz_v2_calibration\\gated_episodes.jsonl",
+        "proof_boundary": "Every V2 message set contains its pair-unique reference; absence from preserved prior bytes rules out exact message equality.",
+        "sha256": "2fbfba22b4b04c17432bb171810bc740c489842bbbc89efce77c2bc104c68f6e"
+      },
+      {
+        "bytes": 17858560,
+        "case_reference_occurrences": 0,
+        "case_references_checked": 96,
+        "path": "artifacts\\bonsai8b_authz_v2_confirm\\gated_episodes.jsonl",
+        "proof_boundary": "Every V2 message set contains its pair-unique reference; absence from preserved prior bytes rules out exact message equality.",
+        "sha256": "4429f83b273795557d9b3df129f590c1675bf1576cd750f2fab4a8915ab0351f"
+      },
+      {
+        "bytes": 6866832,
+        "case_reference_occurrences": 0,
+        "case_references_checked": 96,
+        "path": "artifacts\\bonsai8b_authz_v6\\gated_episodes.jsonl",
+        "proof_boundary": "Every V2 message set contains its pair-unique reference; absence from preserved prior bytes rules out exact message equality.",
+        "sha256": "2bfa47e1384475f41284033f8867be7b62ece8a49626b9bbf5fb52ccbd7c942a"
+      },
+      {
+        "bytes": 7971792,
+        "case_reference_occurrences": 0,
+        "case_references_checked": 96,
+        "path": "artifacts\\bonsai8b_authz_v7\\gated_episodes.jsonl",
+        "proof_boundary": "Every V2 message set contains its pair-unique reference; absence from preserved prior bytes rules out exact message equality.",
+        "sha256": "e6c585541950209561fc4ac44320634cc68deb14531f970a4b6147b8f971e49f"
+      }
+    ],
+    "episode_id_overlap": 0,
+    "exact_message_overlap": 0,
+    "pair_id_overlap": 0,
+    "parseable_prior_paths": [
+      "artifacts\\recovery_2026-08-29\\v7_gated_episodes_reconstructed.jsonl",
+      "artifacts\\recovery_2026-08-29\\v3_episodes_seed1703.jsonl",
+      "artifacts\\vpd_activation_category_pack_v1\\gated_episodes.jsonl"
+    ],
+    "parseable_prior_rows_checked": 3696
+  },
+  "schema": "sch.vpd-activation-category-pack-manifest.v2",
+  "scientific_boundary": {
+    "execution_paths_exposed": false,
+    "externally_authenticated": false,
+    "final_evaluation_is_algorithmically_held_out_not_secret": true,
+    "model_inference_performed": false,
+    "model_outcomes_recorded": false,
+    "pack_supports_future_study_but_is_not_an_empirical_result": true,
+    "roles_are_pair_and_semantic_template_disjoint": true,
+    "weights_mutated": false
+  },
+  "source_code": {
+    "candidate_gate": {
+      "path": "experiments/authz_mechinterp/run_candidate_gate_dataset.py",
+      "sha256": "09a0a334640d5b97e5ffad4233296030506012caf531b92ead47e50ad95b89f9"
+    },
+    "generator": {
+      "path": "experiments/authz_mechinterp/generate_activation_category_pack_v2.py",
+      "sha256": "30a4c7c0bb4952b10add5d22c423ab34b966ad7f945ebc0098acf91b6e33bcbe"
+    },
+    "split_builder": {
+      "path": "experiments/authz_mechinterp/build_activation_category_splits_v2.py",
+      "sha256": "611bf53434eacbb671860557de75d524a3f7b54501694cb3427a888cba180dc6"
+    },
+    "validator": {
+      "path": "experiments/authz_mechinterp/validate_activation_category_pack_v2.py",
+      "sha256": "bfac9131d5e58777227a943ade7f8740f7b0d1e7086b6ad8f9d4ee7a138d80d8"
+    }
+  },
+  "split": {
+    "exact_partition_verified": true,
+    "pair_sets_pairwise_disjoint": true,
+    "pairs_per_role": {
+      "calibration": 24,
+      "discovery": 24,
+      "final_evaluation": 24,
+      "sae_training": 24
+    },
+    "role_template_groups": {
+      "calibration": [
+        "analytics_data_export",
+        "api_key_rotation",
+        "incident_page_update",
+        "object_storage_lifecycle"
+      ],
+      "discovery": [
+        "access_role_assignment",
+        "dns_record_change",
+        "document_retention_change",
+        "kubernetes_rollout"
+      ],
+      "final_evaluation": [
+        "container_registry_cleanup",
+        "email_campaign",
+        "invoice_approval",
+        "payment_refund"
+      ],
+      "sae_training": [
+        "calendar_reschedule",
+        "database_schema_migration",
+        "feature_flag_rollout",
+        "support_ticket_escalation"
+      ]
+    },
+    "roles": [
+      "sae_training",
+      "discovery",
+      "calibration",
+      "final_evaluation"
+    ],
+    "rows_per_role": {
+      "calibration": 264,
+      "discovery": 264,
+      "final_evaluation": 264,
+      "sae_training": 264
+    },
+    "schema": "sch.vpd-activation-category-split-manifest.v2",
+    "split_id": "bf36a956222f517a68a6d7596033b4d66a59f49e2be37f946d0984f85715c606",
+    "template_group_sets_pairwise_disjoint": true,
+    "template_groups_per_role": {
+      "calibration": 4,
+      "discovery": 4,
+      "final_evaluation": 4,
+      "sae_training": 4
+    }
+  },
+  "status": "locally_validated_no_model_outcomes"
+}

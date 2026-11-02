@@ -1,0 +1,1314 @@
+{
+  "boundary": {
+    "model_inference_performed": false,
+    "operative_admissions": 0,
+    "training_performed": false
+  },
+  "examples": [
+    {
+      "activation_checks": [
+        {
+          "exact_equal_generated_rows": 8,
+          "exact_equal_rows": 16,
+          "max_absolute_difference": 0.0,
+          "pass": 0,
+          "site": "model.layers.11"
+        },
+        {
+          "exact_equal_generated_rows": 8,
+          "exact_equal_rows": 16,
+          "max_absolute_difference": 0.0,
+          "pass": 1,
+          "site": "model.layers.11"
+        },
+        {
+          "exact_equal_generated_rows": 8,
+          "exact_equal_rows": 16,
+          "max_absolute_difference": 0.0,
+          "pass": 0,
+          "site": "model.norm"
+        },
+        {
+          "exact_equal_generated_rows": 8,
+          "exact_equal_rows": 16,
+          "max_absolute_difference": 0.0,
+          "pass": 1,
+          "site": "model.norm"
+        }
+      ],
+      "exact_common_generated_positions_all_sites_passes": [
+        3349,
+        3350,
+        3351,
+        3352,
+        3353,
+        3354,
+        3355,
+        3356
+      ],
+      "exact_common_positions_all_sites_passes": [
+        1301,
+        1302,
+        1303,
+        1304,
+        1305,
+        1306,
+        1307,
+        1308,
+        3349,
+        3350,
+        3351,
+        3352,
+        3353,
+        3354,
+        3355,
+        3356
+      ],
+      "family": "arc_grid",
+      "id": "arc_agi_1/12422b43/0",
+      "left_row_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "position_intersection": [
+        1301,
+        1302,
+        1303,
+        1304,
+        1305,
+        1306,
+        1307,
+        1308,
+        3349,
+        3350,
+        3351,
+        3352,
+        3353,
+        3354,
+        3355,
+        3356
+      ],
+      "prefix_verified_generated_rows": 8,
+      "prefix_verified_positions": [
+        1301,
+        1302,
+        1303,
+        1304,
+        1305,
+        1306,
+        1307,
+        1308,
+        3349,
+        3350,
+        3351,
+        3352,
+        3353,
+        3354,
+        3355,
+        3356
+      ],
+      "prefix_verified_prompt_rows": 8,
+      "right_row_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "shared_prefix_tokens": 3357
+    },
+    {
+      "activation_checks": [
+        {
+          "exact_equal_generated_rows": 8,
+          "exact_equal_rows": 16,
+          "max_absolute_difference": 0.0,
+          "pass": 0,
+          "site": "model.layers.11"
+        },
+        {
+          "exact_equal_generated_rows": 8,
+          "exact_equal_rows": 16,
+          "max_absolute_difference": 0.0,
+          "pass": 1,
+          "site": "model.layers.11"
+        },
+        {
+          "exact_equal_generated_rows": 8,
+          "exact_equal_rows": 16,
+          "max_absolute_difference": 0.0,
+          "pass": 0,
+          "site": "model.norm"
+        },
+        {
+          "exact_equal_generated_rows": 8,
+          "exact_equal_rows": 16,
+          "max_absolute_difference": 0.0,
+          "pass": 1,
+          "site": "model.norm"
+        }
+      ],
+      "exact_common_generated_positions_all_sites_passes": [
+        3051,
+        3052,
+        3053,
+        3054,
+        3055,
+        3056,
+        3057,
+        3058
+      ],
+      "exact_common_positions_all_sites_passes": [
+        1003,
+        1004,
+        1005,
+        1006,
+        1007,
+        1008,
+        1009,
+        1010,
+        3051,
+        3052,
+        3053,
+        3054,
+        3055,
+        3056,
+        3057,
+        3058
+      ],
+      "family": "arc_grid",
+      "id": "arc_agi_1/c074846d/0",
+      "left_row_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "position_intersection": [
+        1003,
+        1004,
+        1005,
+        1006,
+        1007,
+        1008,
+        1009,
+        1010,
+        3051,
+        3052,
+        3053,
+        3054,
+        3055,
+        3056,
+        3057,
+        3058
+      ],
+      "prefix_verified_generated_rows": 8,
+      "prefix_verified_positions": [
+        1003,
+        1004,
+        1005,
+        1006,
+        1007,
+        1008,
+        1009,
+        1010,
+        3051,
+        3052,
+        3053,
+        3054,
+        3055,
+        3056,
+        3057,
+        3058
+      ],
+      "prefix_verified_prompt_rows": 8,
+      "right_row_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "shared_prefix_tokens": 3059
+    },
+    {
+      "activation_checks": [
+        {
+          "exact_equal_generated_rows": 0,
+          "exact_equal_rows": 8,
+          "max_absolute_difference": 0.0,
+          "pass": 0,
+          "site": "model.layers.11"
+        },
+        {
+          "exact_equal_generated_rows": 0,
+          "exact_equal_rows": 8,
+          "max_absolute_difference": 0.0,
+          "pass": 1,
+          "site": "model.layers.11"
+        },
+        {
+          "exact_equal_generated_rows": 0,
+          "exact_equal_rows": 8,
+          "max_absolute_difference": 0.0,
+          "pass": 0,
+          "site": "model.norm"
+        },
+        {
+          "exact_equal_generated_rows": 0,
+          "exact_equal_rows": 8,
+          "max_absolute_difference": 0.0,
+          "pass": 1,
+          "site": "model.norm"
+        }
+      ],
+      "exact_common_generated_positions_all_sites_passes": [],
+      "exact_common_positions_all_sites_passes": [
+        1039,
+        1040,
+        1041,
+        1042,
+        1043,
+        1044,
+        1045,
+        1046
+      ],
+      "family": "arc_grid",
+      "id": "arc_agi_1/c074846d/1",
+      "left_row_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "position_intersection": [
+        1039,
+        1040,
+        1041,
+        1042,
+        1043,
+        1044,
+        1045,
+        1046
+      ],
+      "prefix_verified_generated_rows": 0,
+      "prefix_verified_positions": [
+        1039,
+        1040,
+        1041,
+        1042,
+        1043,
+        1044,
+        1045,
+        1046
+      ],
+      "prefix_verified_prompt_rows": 8,
+      "right_row_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "shared_prefix_tokens": 3095
+    },
+    {
+      "activation_checks": [
+        {
+          "exact_equal_generated_rows": 8,
+          "exact_equal_rows": 16,
+          "max_absolute_difference": 0.0,
+          "pass": 0,
+          "site": "model.layers.11"
+        },
+        {
+          "exact_equal_generated_rows": 8,
+          "exact_equal_rows": 16,
+          "max_absolute_difference": 0.0,
+          "pass": 1,
+          "site": "model.layers.11"
+        },
+        {
+          "exact_equal_generated_rows": 8,
+          "exact_equal_rows": 16,
+          "max_absolute_difference": 0.0,
+          "pass": 0,
+          "site": "model.norm"
+        },
+        {
+          "exact_equal_generated_rows": 8,
+          "exact_equal_rows": 16,
+          "max_absolute_difference": 0.0,
+          "pass": 1,
+          "site": "model.norm"
+        }
+      ],
+      "exact_common_generated_positions_all_sites_passes": [
+        4001,
+        4002,
+        4003,
+        4004,
+        4005,
+        4006,
+        4007,
+        4008
+      ],
+      "exact_common_positions_all_sites_passes": [
+        1953,
+        1954,
+        1955,
+        1956,
+        1957,
+        1958,
+        1959,
+        1960,
+        4001,
+        4002,
+        4003,
+        4004,
+        4005,
+        4006,
+        4007,
+        4008
+      ],
+      "family": "arc_grid",
+      "id": "arc_agi_2/3dc255db/0",
+      "left_row_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "position_intersection": [
+        1953,
+        1954,
+        1955,
+        1956,
+        1957,
+        1958,
+        1959,
+        1960,
+        4001,
+        4002,
+        4003,
+        4004,
+        4005,
+        4006,
+        4007,
+        4008
+      ],
+      "prefix_verified_generated_rows": 8,
+      "prefix_verified_positions": [
+        1953,
+        1954,
+        1955,
+        1956,
+        1957,
+        1958,
+        1959,
+        1960,
+        4001,
+        4002,
+        4003,
+        4004,
+        4005,
+        4006,
+        4007,
+        4008
+      ],
+      "prefix_verified_prompt_rows": 8,
+      "right_row_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "shared_prefix_tokens": 4009
+    },
+    {
+      "activation_checks": [
+        {
+          "exact_equal_generated_rows": 8,
+          "exact_equal_rows": 16,
+          "max_absolute_difference": 0.0,
+          "pass": 0,
+          "site": "model.layers.11"
+        },
+        {
+          "exact_equal_generated_rows": 8,
+          "exact_equal_rows": 16,
+          "max_absolute_difference": 0.0,
+          "pass": 1,
+          "site": "model.layers.11"
+        },
+        {
+          "exact_equal_generated_rows": 8,
+          "exact_equal_rows": 16,
+          "max_absolute_difference": 0.0,
+          "pass": 0,
+          "site": "model.norm"
+        },
+        {
+          "exact_equal_generated_rows": 8,
+          "exact_equal_rows": 16,
+          "max_absolute_difference": 0.0,
+          "pass": 1,
+          "site": "model.norm"
+        }
+      ],
+      "exact_common_generated_positions_all_sites_passes": [
+        3531,
+        3532,
+        3533,
+        3534,
+        3535,
+        3536,
+        3537,
+        3538
+      ],
+      "exact_common_positions_all_sites_passes": [
+        1483,
+        1484,
+        1485,
+        1486,
+        1487,
+        1488,
+        1489,
+        1490,
+        3531,
+        3532,
+        3533,
+        3534,
+        3535,
+        3536,
+        3537,
+        3538
+      ],
+      "family": "arc_grid",
+      "id": "arc_agi_2/78332cb0/0",
+      "left_row_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "position_intersection": [
+        1483,
+        1484,
+        1485,
+        1486,
+        1487,
+        1488,
+        1489,
+        1490,
+        3531,
+        3532,
+        3533,
+        3534,
+        3535,
+        3536,
+        3537,
+        3538
+      ],
+      "prefix_verified_generated_rows": 8,
+      "prefix_verified_positions": [
+        1483,
+        1484,
+        1485,
+        1486,
+        1487,
+        1488,
+        1489,
+        1490,
+        3531,
+        3532,
+        3533,
+        3534,
+        3535,
+        3536,
+        3537,
+        3538
+      ],
+      "prefix_verified_prompt_rows": 8,
+      "right_row_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "shared_prefix_tokens": 3539
+    },
+    {
+      "activation_checks": [
+        {
+          "exact_equal_generated_rows": 1,
+          "exact_equal_rows": 9,
+          "max_absolute_difference": 0.7639541625976562,
+          "pass": 0,
+          "site": "model.layers.11"
+        },
+        {
+          "exact_equal_generated_rows": 1,
+          "exact_equal_rows": 9,
+          "max_absolute_difference": 1.2288397550582886,
+          "pass": 1,
+          "site": "model.layers.11"
+        },
+        {
+          "exact_equal_generated_rows": 1,
+          "exact_equal_rows": 9,
+          "max_absolute_difference": 0.14982479810714722,
+          "pass": 0,
+          "site": "model.norm"
+        },
+        {
+          "exact_equal_generated_rows": 1,
+          "exact_equal_rows": 9,
+          "max_absolute_difference": 3.100433349609375,
+          "pass": 1,
+          "site": "model.norm"
+        }
+      ],
+      "exact_common_generated_positions_all_sites_passes": [
+        3519
+      ],
+      "exact_common_positions_all_sites_passes": [
+        1471,
+        1472,
+        1473,
+        1474,
+        1475,
+        1476,
+        1477,
+        1478,
+        3519
+      ],
+      "family": "arc_grid",
+      "id": "arc_agi_2/78332cb0/1",
+      "left_row_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "position_intersection": [
+        1471,
+        1472,
+        1473,
+        1474,
+        1475,
+        1476,
+        1477,
+        1478,
+        3519,
+        3520,
+        3521,
+        3522,
+        3523,
+        3524,
+        3525,
+        3526
+      ],
+      "prefix_verified_generated_rows": 8,
+      "prefix_verified_positions": [
+        1471,
+        1472,
+        1473,
+        1474,
+        1475,
+        1476,
+        1477,
+        1478,
+        3519,
+        3520,
+        3521,
+        3522,
+        3523,
+        3524,
+        3525,
+        3526
+      ],
+      "prefix_verified_prompt_rows": 8,
+      "right_row_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "shared_prefix_tokens": 3527
+    },
+    {
+      "activation_checks": [
+        {
+          "exact_equal_generated_rows": 8,
+          "exact_equal_rows": 16,
+          "max_absolute_difference": 0.0,
+          "pass": 0,
+          "site": "model.layers.11"
+        },
+        {
+          "exact_equal_generated_rows": 8,
+          "exact_equal_rows": 16,
+          "max_absolute_difference": 0.0,
+          "pass": 1,
+          "site": "model.layers.11"
+        },
+        {
+          "exact_equal_generated_rows": 8,
+          "exact_equal_rows": 16,
+          "max_absolute_difference": 0.0,
+          "pass": 0,
+          "site": "model.norm"
+        },
+        {
+          "exact_equal_generated_rows": 8,
+          "exact_equal_rows": 16,
+          "max_absolute_difference": 0.0,
+          "pass": 1,
+          "site": "model.norm"
+        }
+      ],
+      "exact_common_generated_positions_all_sites_passes": [
+        2424,
+        2425,
+        2426,
+        2427,
+        2428,
+        2429,
+        2430,
+        2431
+      ],
+      "exact_common_positions_all_sites_passes": [
+        376,
+        377,
+        378,
+        379,
+        380,
+        381,
+        382,
+        383,
+        2424,
+        2425,
+        2426,
+        2427,
+        2428,
+        2429,
+        2430,
+        2431
+      ],
+      "family": "campsite",
+      "id": "intellect3_logic/00062/72b57dbd293b",
+      "left_row_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "position_intersection": [
+        376,
+        377,
+        378,
+        379,
+        380,
+        381,
+        382,
+        383,
+        2424,
+        2425,
+        2426,
+        2427,
+        2428,
+        2429,
+        2430,
+        2431
+      ],
+      "prefix_verified_generated_rows": 8,
+      "prefix_verified_positions": [
+        376,
+        377,
+        378,
+        379,
+        380,
+        381,
+        382,
+        383,
+        2424,
+        2425,
+        2426,
+        2427,
+        2428,
+        2429,
+        2430,
+        2431
+      ],
+      "prefix_verified_prompt_rows": 8,
+      "right_row_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "shared_prefix_tokens": 2432
+    },
+    {
+      "activation_checks": [
+        {
+          "exact_equal_generated_rows": 0,
+          "exact_equal_rows": 8,
+          "max_absolute_difference": 0.0,
+          "pass": 0,
+          "site": "model.layers.11"
+        },
+        {
+          "exact_equal_generated_rows": 0,
+          "exact_equal_rows": 8,
+          "max_absolute_difference": 0.0,
+          "pass": 1,
+          "site": "model.layers.11"
+        },
+        {
+          "exact_equal_generated_rows": 0,
+          "exact_equal_rows": 8,
+          "max_absolute_difference": 0.0,
+          "pass": 0,
+          "site": "model.norm"
+        },
+        {
+          "exact_equal_generated_rows": 0,
+          "exact_equal_rows": 8,
+          "max_absolute_difference": 0.0,
+          "pass": 1,
+          "site": "model.norm"
+        }
+      ],
+      "exact_common_generated_positions_all_sites_passes": [],
+      "exact_common_positions_all_sites_passes": [
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95
+      ],
+      "family": "dyck_language",
+      "id": "intellect3_logic/05869/5de8a003a86f",
+      "left_row_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "position_intersection": [
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95
+      ],
+      "prefix_verified_generated_rows": 0,
+      "prefix_verified_positions": [
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95
+      ],
+      "prefix_verified_prompt_rows": 8,
+      "right_row_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "shared_prefix_tokens": 2144
+    },
+    {
+      "activation_checks": [
+        {
+          "exact_equal_generated_rows": 6,
+          "exact_equal_rows": 14,
+          "max_absolute_difference": 0.3925323486328125,
+          "pass": 0,
+          "site": "model.layers.11"
+        },
+        {
+          "exact_equal_generated_rows": 6,
+          "exact_equal_rows": 14,
+          "max_absolute_difference": 0.28931450843811035,
+          "pass": 1,
+          "site": "model.layers.11"
+        },
+        {
+          "exact_equal_generated_rows": 6,
+          "exact_equal_rows": 14,
+          "max_absolute_difference": 0.0745387077331543,
+          "pass": 0,
+          "site": "model.norm"
+        },
+        {
+          "exact_equal_generated_rows": 6,
+          "exact_equal_rows": 14,
+          "max_absolute_difference": 1.3060836791992188,
+          "pass": 1,
+          "site": "model.norm"
+        }
+      ],
+      "exact_common_generated_positions_all_sites_passes": [
+        2170,
+        2171,
+        2172,
+        2173,
+        2174,
+        2175
+      ],
+      "exact_common_positions_all_sites_passes": [
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        2170,
+        2171,
+        2172,
+        2173,
+        2174,
+        2175
+      ],
+      "family": "math",
+      "id": "intellect3_math/04162/0fae120567d0",
+      "left_row_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "position_intersection": [
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        2170,
+        2171,
+        2172,
+        2173,
+        2174,
+        2175,
+        2176,
+        2177
+      ],
+      "prefix_verified_generated_rows": 8,
+      "prefix_verified_positions": [
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        2170,
+        2171,
+        2172,
+        2173,
+        2174,
+        2175,
+        2176,
+        2177
+      ],
+      "prefix_verified_prompt_rows": 8,
+      "right_row_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "shared_prefix_tokens": 2178
+    },
+    {
+      "activation_checks": [
+        {
+          "exact_equal_generated_rows": 8,
+          "exact_equal_rows": 16,
+          "max_absolute_difference": 0.0,
+          "pass": 0,
+          "site": "model.layers.11"
+        },
+        {
+          "exact_equal_generated_rows": 8,
+          "exact_equal_rows": 16,
+          "max_absolute_difference": 0.0,
+          "pass": 1,
+          "site": "model.layers.11"
+        },
+        {
+          "exact_equal_generated_rows": 8,
+          "exact_equal_rows": 16,
+          "max_absolute_difference": 0.0,
+          "pass": 0,
+          "site": "model.norm"
+        },
+        {
+          "exact_equal_generated_rows": 8,
+          "exact_equal_rows": 16,
+          "max_absolute_difference": 0.0,
+          "pass": 1,
+          "site": "model.norm"
+        }
+      ],
+      "exact_common_generated_positions_all_sites_passes": [
+        2191,
+        2192,
+        2193,
+        2194,
+        2195,
+        2196,
+        2197,
+        2198
+      ],
+      "exact_common_positions_all_sites_passes": [
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        2191,
+        2192,
+        2193,
+        2194,
+        2195,
+        2196,
+        2197,
+        2198
+      ],
+      "family": "math",
+      "id": "intellect3_math/10603/9d30832ed4ab",
+      "left_row_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "position_intersection": [
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        2191,
+        2192,
+        2193,
+        2194,
+        2195,
+        2196,
+        2197,
+        2198
+      ],
+      "prefix_verified_generated_rows": 8,
+      "prefix_verified_positions": [
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        2191,
+        2192,
+        2193,
+        2194,
+        2195,
+        2196,
+        2197,
+        2198
+      ],
+      "prefix_verified_prompt_rows": 8,
+      "right_row_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "shared_prefix_tokens": 2199
+    }
+  ],
+  "limits": [
+    "Exact token-prefix agreement is necessary but does not imply equal numerical activations.",
+    "Position equality or matching current tokens after prefix divergence is insufficient.",
+    "Common-row selection changes the evaluation population; report phase and family coverage.",
+    "Train phase counts are metadata-only; held-out token and activation arrays are hash-checked.",
+    "No saved SAE codes or decoder contributions compared by this audit; no functional admission."
+  ],
+  "report_id": "0da6ff1018639b63ab8ce5f004cff421fdb27db18fe68d2bb1c3039466e72cf8",
+  "runner_sha256": "6f8c546234fc2990c9b6e37c36062c82a8ff4048b49987f1d0c03af149ecb8f8",
+  "schema": "sch.vpd-q4-common-capture-rows.v1",
+  "sources": [
+    {
+      "manifest_sha256": "417f0b6014ff3259d7e0885ef85b9b5a070faafd19ce177177e44fbc038aa292",
+      "path": "C:\\projects\\VPD\\artifacts\\nanbeige_reasoning\\q4_reasoning_pilot_v1\\q4_activations",
+      "recorded_phase_counts_per_pass": {
+        "eval": {
+          "generated": 240,
+          "prompt": 80
+        },
+        "train": {
+          "generated": 192,
+          "prompt": 64
+        }
+      }
+    },
+    {
+      "manifest_sha256": "6e31e77285cafcc9d2f600a3e6e59d38b5b1d5e66a895c5b89395a2cf22b5caa",
+      "path": "C:\\projects\\VPD\\artifacts\\nanbeige_reasoning\\q4_reasoning_pilot_8192_v1\\q4_activations",
+      "recorded_phase_counts_per_pass": {
+        "eval": {
+          "generated": 240,
+          "prompt": 80
+        },
+        "train": {
+          "generated": 192,
+          "prompt": 64
+        }
+      }
+    }
+  ],
+  "summary": {
+    "evaluation_examples": 10,
+    "exact_common_generated_rows_all_sites_passes": 55,
+    "exact_common_rows_all_sites_passes": 135,
+    "families_without_exact_common_generated_rows": [
+      "dyck_language"
+    ],
+    "prefix_verified_generated_rows_per_pass": 64,
+    "prefix_verified_prompt_rows_per_pass": 80,
+    "prefix_verified_rows_per_pass": 144
+  }
+}

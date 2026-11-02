@@ -1,0 +1,149 @@
+{
+  "design": {
+    "bootstrap_replicates": 4096,
+    "candidate_router": "observable_activation_phase_prompt_vs_generation",
+    "comparison": "equal_total_rank_held_out_linear_subspace_proxy",
+    "generation_row_selection": "all_eight_stored_rows",
+    "held_out_unit": "source_designated_example_block",
+    "monolithic_total_rank": 64,
+    "phase_routed_rank_per_subspace": 32,
+    "phase_routed_total_rank": 64,
+    "prompt_row_selection": "eight_deterministic_evenly_spaced_indices_including_endpoints",
+    "random_controls": 8,
+    "rows_per_pass_per_phase_per_example": 8,
+    "screening_only_because_phase_parent_is_not_operatively_admitted": true
+  },
+  "provenance": {
+    "runner_sha256": "b0c336b793649bd6262718e61d9209f2a1b4e5865a95367bb57cd3c6a50ce06d"
+  },
+  "report_id": "c40cdbdc0f0f203dde3acb91178dc74f8682c2f7dbd23749dfc24a6a92bc1229",
+  "schema": "sch.vpd-nanbeige-phase-compartment-linear-proxy.v1",
+  "scientific_boundary": {
+    "capacity_preference_cannot_bypass_parent_category_gate": true,
+    "does_not_authorize_phase_compartment_sae_training": true,
+    "execution_authorized": false,
+    "linear_subspace_proxy_is_not_sae_training": true,
+    "new_local_analysis_of_recovered_empirical_arrays": true,
+    "new_model_inference_performed": false,
+    "paid_compute_authorized": false,
+    "phase_parent_category_operatively_admitted": false,
+    "weights_loaded_or_mutated": false
+  },
+  "sites": [
+    {
+      "held_out_examples": 4,
+      "monolithic_explained_variance": 0.9998249451506644,
+      "monolithic_total_rank": 64,
+      "phase_compartment_training_admission": "fail",
+      "phase_minus_monolithic": -1.3169738381946239e-05,
+      "phase_minus_monolithic_paired_bootstrap_95_ci": [
+        -1.533025622077967e-05,
+        -1.0747161850846926e-05
+      ],
+      "phase_minus_random_partition_mean": 2.2886560785528864e-05,
+      "phase_minus_random_partition_mean_paired_bootstrap_95_ci": [
+        1.4250180959616765e-05,
+        3.1522759502753204e-05
+      ],
+      "phase_routed_explained_variance": 0.9998117754122825,
+      "phase_routed_rank_per_subspace": 32,
+      "random_partition_explained_variances": [
+        0.9997940663979096,
+        0.9997686009816984,
+        0.9997942916655413,
+        0.999800841327233,
+        0.9997984224648018,
+        0.9997961350922112,
+        0.999790151900882,
+        0.9997686009816984
+      ],
+      "random_partition_mean_explained_variance": 0.999788888851497,
+      "screening_capacity_preference": "fail",
+      "site": "model.layers.11",
+      "train_examples": 4
+    },
+    {
+      "held_out_examples": 4,
+      "monolithic_explained_variance": 0.9975060569124529,
+      "monolithic_total_rank": 64,
+      "phase_compartment_training_admission": "fail",
+      "phase_minus_monolithic": -0.0002938321838636959,
+      "phase_minus_monolithic_paired_bootstrap_95_ci": [
+        -0.0003727163593053474,
+        -0.00021818452346430425
+      ],
+      "phase_minus_random_partition_mean": 0.00029988549318726854,
+      "phase_minus_random_partition_mean_paired_bootstrap_95_ci": [
+        0.0001693460139611435,
+        0.0004250691074917986
+      ],
+      "phase_routed_explained_variance": 0.9972122247285892,
+      "phase_routed_rank_per_subspace": 32,
+      "random_partition_explained_variances": [
+        0.9970224036779277,
+        0.9965248382200237,
+        0.9970793027303274,
+        0.9971593284423288,
+        0.9971065153211401,
+        0.997082477278431,
+        0.9967990099930127,
+        0.9965248382200237
+      ],
+      "random_partition_mean_explained_variance": 0.9969123392354019,
+      "screening_capacity_preference": "fail",
+      "site": "model.layers.21",
+      "train_examples": 4
+    },
+    {
+      "held_out_examples": 4,
+      "monolithic_explained_variance": 0.8028247692958419,
+      "monolithic_total_rank": 64,
+      "phase_compartment_training_admission": "fail",
+      "phase_minus_monolithic": -0.027262343009264778,
+      "phase_minus_monolithic_paired_bootstrap_95_ci": [
+        -0.04321171993564445,
+        -0.015205272614112617
+      ],
+      "phase_minus_random_partition_mean": 0.021407196761308867,
+      "phase_minus_random_partition_mean_paired_bootstrap_95_ci": [
+        0.010857826830436441,
+        0.033842885623858274
+      ],
+      "phase_routed_explained_variance": 0.7755624262865771,
+      "phase_routed_rank_per_subspace": 32,
+      "random_partition_explained_variances": [
+        0.7637816632646239,
+        0.7222655627852803,
+        0.770466567999991,
+        0.7747060539266258,
+        0.7742259759093733,
+        0.7690270197802618,
+        0.7365034297507091,
+        0.7222655627852803
+      ],
+      "random_partition_mean_explained_variance": 0.7541552295252683,
+      "screening_capacity_preference": "fail",
+      "site": "model.norm",
+      "train_examples": 4
+    }
+  ],
+  "sources": {
+    "common_examples": 8,
+    "generation": {
+      "manifest_sha256": "7c5205eeb3c1e7c025ac1aababc6e0526bbe82048f633a52e73bfefa07c8a546",
+      "path": "C:/projects/VPD/artifacts/nanbeige_reasoning/prime-20260906T204058Z-561/retrieved/artifacts/nanbeige_looped/bf16_multipass_calibration"
+    },
+    "prompt": {
+      "manifest_sha256": "523a54970058491885e696596385a9d15d26102469108813fe2a892a46485c9f",
+      "path": "C:/projects/VPD/artifacts/nanbeige_reasoning/local_prompt_capture_v2"
+    }
+  },
+  "status": "pass",
+  "summary": {
+    "phase_compartment_training_admissions": 0,
+    "phase_routing_wins_vs_monolithic": 0,
+    "phase_routing_wins_vs_random_mean": 3,
+    "screening_capacity_preferences": 0,
+    "sites": 3
+  }
+}

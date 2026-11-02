@@ -1,0 +1,172 @@
+{
+  "archived_metadata_dry_run": {
+    "arms": [
+      {
+        "family_expected_probability": {
+          "arc_grid": 0.5,
+          "futoshiki": 0.125,
+          "goods_exchange": 0.125,
+          "math": 0.25
+        },
+        "family_sampled_rows_per_pass": {
+          "arc_grid": 31835,
+          "futoshiki": 8111,
+          "goods_exchange": 8020,
+          "math": 16034
+        },
+        "roster_sha256": "42425450ab61b6feb88dc795fe726f52bde2a04f87f7987a8cf3f2f32702d616",
+        "sampled_rows_per_pass": 64000,
+        "schedule_sha256_int64_le": "0b42fd72c8a59240044a433051a1f5e0fb8805a2a09a27c9f2d0e17c7636c009",
+        "scheme": "uniform_rows",
+        "training_rows": 256
+      },
+      {
+        "family_expected_probability": {
+          "arc_grid": 0.25,
+          "futoshiki": 0.25,
+          "goods_exchange": 0.25,
+          "math": 0.25
+        },
+        "family_sampled_rows_per_pass": {
+          "arc_grid": 15979,
+          "futoshiki": 16131,
+          "goods_exchange": 15856,
+          "math": 16034
+        },
+        "roster_sha256": "42425450ab61b6feb88dc795fe726f52bde2a04f87f7987a8cf3f2f32702d616",
+        "sampled_rows_per_pass": 64000,
+        "schedule_sha256_int64_le": "5beecefe560fedb6319a3c187d2cfc9bc84ec7494b9ea2d1b408bc154d752b6a",
+        "scheme": "equal_family_example_row",
+        "training_rows": 256
+      }
+    ],
+    "distinct_sampling_distribution": true,
+    "evaluation_families_absent_from_training": [
+      "campsite",
+      "dyck_language"
+    ],
+    "identical_dry_run_schedule": false,
+    "maximum_row_probability_difference": 0.00390625,
+    "rows_per_pass": 64,
+    "seed": 42,
+    "steps": 1000,
+    "training_families": [
+      "arc_grid",
+      "futoshiki",
+      "goods_exchange",
+      "math"
+    ]
+  },
+  "boundary": {
+    "launch_authorized": false,
+    "model_inference_performed": false,
+    "training_performed": false
+  },
+  "candidate": "Q1-sampling-only-draft-v1",
+  "design": {
+    "candidate_change": "Only row sampling probabilities may differ; keep initialization and training-derived pre-bias identical across arms.",
+    "paired_randomness": "Both arms invert their own CDF on the same uniform variates; this does not replay historical randint batches.",
+    "pass_alignment": "Reuse each sampled index vector on both aligned recurrent passes.",
+    "schedule_seeds_here": "Seed 42 is a metadata demonstration only, not a fresh training seed or fitted result."
+  },
+  "limits": [
+    "No evidence that balancing improves SAE quality.",
+    "No absent family can be supplied by reweighting.",
+    "Equal families, examples, and row counts make these two distributions identical.",
+    "Effective sampling weights are not independent experimental sample sizes.",
+    "Metadata hashes checked; activation arrays intentionally not loaded."
+  ],
+  "report_id": "56b87b315e041f8c3a0a14caeb1c223adc2bc45f21fb9a9c9bd09bf6b47ba663",
+  "runner_sha256": "1e8158360ae5e8f0b34940b6e781b6e0f8e2f2cf797752eb58ed11d1aa958f6d",
+  "schema": "sch.vpd-sae-family-sampling-plan.v1",
+  "source": {
+    "capture_directory": "C:\\projects\\VPD\\artifacts\\nanbeige_reasoning\\q4_reasoning_pilot_v1\\q4_activations",
+    "manifest_sha256": "417f0b6014ff3259d7e0885ef85b9b5a070faafd19ce177177e44fbc038aa292",
+    "records_sha256": "780ab2577688de88af8f45c17c477941a4f4f7d3a05cce445546976a015ad0d0"
+  },
+  "synthetic_balanced_F1_roster_dry_run": {
+    "arms": [
+      {
+        "family_expected_probability": {
+          "synthetic-family-0": 0.09999999999999977,
+          "synthetic-family-1": 0.09999999999999977,
+          "synthetic-family-2": 0.09999999999999977,
+          "synthetic-family-3": 0.09999999999999977,
+          "synthetic-family-4": 0.09999999999999977,
+          "synthetic-family-5": 0.09999999999999977,
+          "synthetic-family-6": 0.09999999999999977,
+          "synthetic-family-7": 0.09999999999999977,
+          "synthetic-family-8": 0.09999999999999977,
+          "synthetic-family-9": 0.09999999999999977
+        },
+        "family_sampled_rows_per_pass": {
+          "synthetic-family-0": 6330,
+          "synthetic-family-1": 6446,
+          "synthetic-family-2": 6373,
+          "synthetic-family-3": 6284,
+          "synthetic-family-4": 6402,
+          "synthetic-family-5": 6391,
+          "synthetic-family-6": 6442,
+          "synthetic-family-7": 6597,
+          "synthetic-family-8": 6369,
+          "synthetic-family-9": 6366
+        },
+        "roster_sha256": "782f9c9e77103783c0aa73a9cc8d15451660379f5296928f1ccfdf6d208ba297",
+        "sampled_rows_per_pass": 64000,
+        "schedule_sha256_int64_le": "38a6f7a3395fb53a2883f185f0a5782ea4e3446e0005c07900d4b6025a00a400",
+        "scheme": "uniform_rows",
+        "training_rows": 1280
+      },
+      {
+        "family_expected_probability": {
+          "synthetic-family-0": 0.09999999999999977,
+          "synthetic-family-1": 0.09999999999999977,
+          "synthetic-family-2": 0.09999999999999977,
+          "synthetic-family-3": 0.09999999999999977,
+          "synthetic-family-4": 0.09999999999999977,
+          "synthetic-family-5": 0.09999999999999977,
+          "synthetic-family-6": 0.09999999999999977,
+          "synthetic-family-7": 0.09999999999999977,
+          "synthetic-family-8": 0.09999999999999977,
+          "synthetic-family-9": 0.09999999999999977
+        },
+        "family_sampled_rows_per_pass": {
+          "synthetic-family-0": 6330,
+          "synthetic-family-1": 6446,
+          "synthetic-family-2": 6373,
+          "synthetic-family-3": 6284,
+          "synthetic-family-4": 6402,
+          "synthetic-family-5": 6391,
+          "synthetic-family-6": 6442,
+          "synthetic-family-7": 6597,
+          "synthetic-family-8": 6369,
+          "synthetic-family-9": 6366
+        },
+        "roster_sha256": "782f9c9e77103783c0aa73a9cc8d15451660379f5296928f1ccfdf6d208ba297",
+        "sampled_rows_per_pass": 64000,
+        "schedule_sha256_int64_le": "38a6f7a3395fb53a2883f185f0a5782ea4e3446e0005c07900d4b6025a00a400",
+        "scheme": "equal_family_example_row",
+        "training_rows": 1280
+      }
+    ],
+    "distinct_sampling_distribution": false,
+    "evaluation_families_absent_from_training": [],
+    "identical_dry_run_schedule": true,
+    "maximum_row_probability_difference": 0.0,
+    "rows_per_pass": 64,
+    "seed": 42,
+    "steps": 1000,
+    "training_families": [
+      "synthetic-family-0",
+      "synthetic-family-1",
+      "synthetic-family-2",
+      "synthetic-family-3",
+      "synthetic-family-4",
+      "synthetic-family-5",
+      "synthetic-family-6",
+      "synthetic-family-7",
+      "synthetic-family-8",
+      "synthetic-family-9"
+    ]
+  }
+}

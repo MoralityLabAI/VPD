@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://small-control-harness.local/schemas/action_proposal.schema.json",
+  "title": "ActionProposal",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "proposal_id",
+    "contract_id",
+    "grant_id",
+    "tool",
+    "verb",
+    "args",
+    "estimated_effects",
+    "created_at"
+  ],
+  "properties": {
+    "version": {"const": "sch.action-proposal.v1"},
+    "proposal_id": {"type": "string", "minLength": 8},
+    "contract_id": {"type": "string", "minLength": 8},
+    "grant_id": {"type": ["string", "null"]},
+    "tool": {"type": "string", "minLength": 1},
+    "verb": {"type": "string", "minLength": 1},
+    "args": {"type": "object"},
+    "estimated_effects": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "notional": {"type": "number", "minimum": 0},
+        "fee": {"type": "number", "minimum": 0},
+        "compute_seconds": {"type": "number", "minimum": 0},
+        "network": {"type": "string"},
+        "recipient": {"type": "string"}
+      }
+    },
+    "justification": {"type": "string"},
+    "model_context_hash": {"type": ["string", "null"]},
+    "created_at": {"type": "string", "format": "date-time"},
+    "metadata": {"type": "object"}
+  }
+}

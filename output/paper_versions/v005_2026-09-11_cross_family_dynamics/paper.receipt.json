@@ -1,0 +1,12 @@
+{
+  "status": "pdf_draft_rendered_text_checks_passed",
+  "pages": 12,
+  "tables": 6,
+  "headings_checked": 12,
+  "table_cells_checked": 171,
+  "source_sha256": "38e69becac606b6ff5258f6cda68d66f7c083448d245e6c65db8f291a097abf1",
+  "pdf_sha256": "aaf2ed7cc22d8038187007337932238876cbc10a6b3b27f83f901aa85b72df15",
+  "builder_sha256": "19022d8706783fcb69605493976f97acfdcbb532f6c8e4e2fc51c812ac566516",
+  "created_utc": "2026-09-12T01:12:20.202344+00:00",
+  "visual_review_required": true
+}

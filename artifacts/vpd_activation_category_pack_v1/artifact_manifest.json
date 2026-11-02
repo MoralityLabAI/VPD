@@ -1,0 +1,148 @@
+{
+  "artifacts": {
+    "dataset_validation": {
+      "bytes": 4083,
+      "path": "dataset_validation.json",
+      "sha256": "0fd21c00079f200915086794ee5b2effac0ebf89c9e44c33802f73ca55fdc30b"
+    },
+    "episodes": {
+      "bytes": 7386988,
+      "path": "episodes.jsonl",
+      "sha256": "3c2db4a06f3ce934c1a168be0860b5c3bbcb9ef6f9708b11e6708276fa865de3"
+    },
+    "gated_episodes": {
+      "bytes": 9112780,
+      "path": "gated_episodes.jsonl",
+      "sha256": "f9a99da5635acd389c3f71408a552ff1b82dea6df8f37c15d79e48627262b347"
+    },
+    "split_manifest": {
+      "bytes": 11244,
+      "path": "splits/split_manifest.json",
+      "sha256": "514f92b3328e4f8f2d0b872136fe4a0a2f560e5768c880d683fdf2a8ce2a0ec6"
+    }
+  },
+  "coverage": {
+    "activation_categories": 8,
+    "pairs": 96,
+    "rows": 1056,
+    "template_groups": 4
+  },
+  "generation": {
+    "action_families": 4,
+    "conditions": [
+      "assistant_claim_valid",
+      "expired_host_visible",
+      "forged_host_visible",
+      "malformed_status_visible",
+      "none",
+      "replayed_host_visible",
+      "revoked_host_visible",
+      "scope_mismatch_visible",
+      "tool_claim_valid",
+      "user_pasted_valid",
+      "valid_visible"
+    ],
+    "conditions_per_pair": 11,
+    "pairs_per_family": 24,
+    "prompt_variant_rule": "pair_constant_label_independent_non_authority_case_reference",
+    "seed": 290829
+  },
+  "pack_id": "3dbf9bfea845da9e8dcab78d75436dbfccb13ff5c487f66f5f76ba42b6f4a863",
+  "prior_overlap": {
+    "corrupt_prior_byte_witnesses": [
+      {
+        "bytes": 4366336,
+        "case_reference_occurrences": 0,
+        "case_references_checked": 96,
+        "path": "artifacts\\bonsai8b_authz_v1\\gated_episodes.jsonl",
+        "proof_boundary": "Because every new model-visible message set contains its pair-unique reference, absence from the prior bytes rules out exact message equality.",
+        "sha256": "06611bb14e4e47fad814ec9393cb13957cbe290a6b8af8bf65b698ddd4724cea"
+      },
+      {
+        "bytes": 4763648,
+        "case_reference_occurrences": 0,
+        "case_references_checked": 96,
+        "path": "artifacts\\bonsai8b_authz_v2_calibration\\gated_episodes.jsonl",
+        "proof_boundary": "Because every new model-visible message set contains its pair-unique reference, absence from the prior bytes rules out exact message equality.",
+        "sha256": "2fbfba22b4b04c17432bb171810bc740c489842bbbc89efce77c2bc104c68f6e"
+      },
+      {
+        "bytes": 17858560,
+        "case_reference_occurrences": 0,
+        "case_references_checked": 96,
+        "path": "artifacts\\bonsai8b_authz_v2_confirm\\gated_episodes.jsonl",
+        "proof_boundary": "Because every new model-visible message set contains its pair-unique reference, absence from the prior bytes rules out exact message equality.",
+        "sha256": "4429f83b273795557d9b3df129f590c1675bf1576cd750f2fab4a8915ab0351f"
+      },
+      {
+        "bytes": 6866832,
+        "case_reference_occurrences": 0,
+        "case_references_checked": 96,
+        "path": "artifacts\\bonsai8b_authz_v6\\gated_episodes.jsonl",
+        "proof_boundary": "Because every new model-visible message set contains its pair-unique reference, absence from the prior bytes rules out exact message equality.",
+        "sha256": "2bfa47e1384475f41284033f8867be7b62ece8a49626b9bbf5fb52ccbd7c942a"
+      },
+      {
+        "bytes": 7971792,
+        "case_reference_occurrences": 0,
+        "case_references_checked": 96,
+        "path": "artifacts\\bonsai8b_authz_v7\\gated_episodes.jsonl",
+        "proof_boundary": "Because every new model-visible message set contains its pair-unique reference, absence from the prior bytes rules out exact message equality.",
+        "sha256": "e6c585541950209561fc4ac44320634cc68deb14531f970a4b6147b8f971e49f"
+      }
+    ],
+    "episode_id_overlap": 0,
+    "exact_message_overlap": 0,
+    "pair_id_overlap": 0,
+    "parseable_prior_paths": [
+      "artifacts\\recovery_2026-08-29\\v7_gated_episodes_reconstructed.jsonl",
+      "artifacts\\recovery_2026-08-29\\v3_episodes_seed1703.jsonl"
+    ],
+    "parseable_prior_rows_checked": 2640
+  },
+  "schema": "sch.vpd-activation-category-pack-manifest.v1",
+  "scientific_boundary": {
+    "execution_paths_exposed": false,
+    "externally_authenticated": false,
+    "final_evaluation_is_algorithmically_held_out_not_secret": true,
+    "model_inference_performed": false,
+    "model_outcomes_recorded": false,
+    "pack_supports_future_study_but_is_not_an_empirical_result": true,
+    "weights_mutated": false
+  },
+  "source_code": {
+    "candidate_gate": {
+      "path": "experiments/authz_mechinterp/run_candidate_gate_dataset.py",
+      "sha256": "09a0a334640d5b97e5ffad4233296030506012caf531b92ead47e50ad95b89f9"
+    },
+    "generator": {
+      "path": "experiments/authz_mechinterp/generate_activation_category_pack.py",
+      "sha256": "f53cbdf92893fcfebe87dcf7191ed7df0fd80fe42884c6bd696022d2ae564b34"
+    },
+    "split_builder": {
+      "path": "experiments/authz_mechinterp/build_activation_category_splits.py",
+      "sha256": "e5dfd5b7b8ee71543de8561e6235b3176173c17bd2b467489d49aa9d71e433a3"
+    },
+    "validator": {
+      "path": "experiments/authz_mechinterp/validate_independent_authority_pack_v2.py",
+      "sha256": "64f22b87d0d6fae611fd1a3bb799786c0abe4cd5602b3dd02556c80717f01498"
+    }
+  },
+  "split": {
+    "exact_partition_verified": true,
+    "roles": [
+      "sae_training",
+      "discovery",
+      "calibration",
+      "final_evaluation"
+    ],
+    "rows_per_role": {
+      "calibration": 264,
+      "discovery": 264,
+      "final_evaluation": 264,
+      "sae_training": 264
+    },
+    "split_id": "6fd609e550e6eb6fe11d5e68487e6e2a8e8c23331d4b978d0c3329f0c3de2931"
+  },
+  "status": "locally_validated_no_model_outcomes"
+}

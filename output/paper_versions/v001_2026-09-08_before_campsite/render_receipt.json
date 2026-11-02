@@ -1,0 +1,49 @@
+{
+  "status": "pdf_draft_rendered_text_checks_passed",
+  "pages": 28,
+  "tables": 19,
+  "headings_checked": 28,
+  "table_cells_checked": 422,
+  "source_sha256": "2efe21bab1572de32bd4f5c68a9e45f80b21935fd7773bdbeefe5ddff0ee2ea0",
+  "pdf_sha256": "a22624bf5f125a855ae18d35c5ef71f40663cd62511f47837506aa365b933016",
+  "builder_sha256": "5be3e1695433cb105f2e4b5f125a844c7c3ebef412f08e4363b4667151c93072",
+  "created_utc": "2026-09-09T03:12:16.347332+00:00",
+  "visual_review_required": false,
+  "visual_review": {
+    "render_dpi": 100,
+    "inspected_pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      24,
+      25,
+      26,
+      27,
+      28
+    ],
+    "unchanged_pixel_pages": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+    ],
+    "comparison_pdf_sha256": "366753d0b1efecdd3a6ed5ca98f5b8c5156c0370596e1ffb1d66acf5a13935b1",
+    "findings": "All 28 pages rendered. Changed pages inspected: no overlap, clipping or missing glyphs observed. Remaining pages pixel-identical to the previously reviewed draft."
+  }
+}

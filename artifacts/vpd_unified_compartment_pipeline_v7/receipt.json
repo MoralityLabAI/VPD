@@ -1,0 +1,118 @@
+{
+  "invariants": {
+    "capture_training_bundle_and_quality_handoffs_bound": true,
+    "execution_not_authorized": true,
+    "manifest_v2_hyperparameters_and_exact_samples_bound": true,
+    "predecessor_receipt_v6_reverified": true,
+    "release_gate_v2_recomputed": true,
+    "research_protocol_v9_reverified": true,
+    "runtime_benchmark_v2_recomputed": true,
+    "training_plan_v4_recomputed": true
+  },
+  "lineage_amendment": {
+    "all_22_jobs_require_external_exact_job_compute_authorization": true,
+    "all_22_jobs_require_scientific_release_receipt": true,
+    "final_evaluation_remains_untouched": true,
+    "predecessor_receipt_v6_preserved_and_reverified": true,
+    "recovered_artifacts_not_relabelled_as_reconstructed": true,
+    "repository_does_not_generate_external_authorization": true,
+    "research_protocol_v9_is_not_historical_experiment_v8": true,
+    "runtime_v2_is_new_reconstructed_implementation": true,
+    "scientific_release_is_not_compute_authorization": true
+  },
+  "pipeline_receipt_id": "e97ea34df8a8e4c12f4b13e5bdf02fe9ed0fe985a1dfdad8237734420a7dc90c",
+  "resources": {
+    "bundle_admission_jobs": 1,
+    "capture_jobs": 2,
+    "guarded_jobs": 22,
+    "quality_jobs": 1,
+    "runtime_benchmark_passed": 11,
+    "runtime_benchmark_scenarios": 11,
+    "training_jobs": 18
+  },
+  "schema": "sch.vpd-unified-compartment-pipeline-receipt.v7",
+  "scientific_boundary": {
+    "activation_capture_performed": false,
+    "empirical_category_bundle_present": false,
+    "empirical_dictionary_manifest_v2_present": false,
+    "execution_authorized": false,
+    "external_compute_authorization_present": false,
+    "historical_v7_negative_release_decision_unchanged": true,
+    "interventions_executed": false,
+    "model_inference_performed": false,
+    "sae_training_performed": false,
+    "scientific_release_receipt_present": false,
+    "weights_loaded_or_mutated": false
+  },
+  "source": {
+    "predecessor_unified_receipt_v6": {
+      "path": "artifacts/vpd_unified_compartment_pipeline_v6/receipt.json",
+      "pipeline_receipt_id": "f4391a7bed1c8047d2b4ea08247b667a53619586f3931802b4146dee0d34187f",
+      "sha256": "242e0bdea2b39de5e4b00370a000f022e1209fa9f1de7d85813990b52a1d3a2b",
+      "verification": {
+        "execution_authorized": false,
+        "execution_contract_scenarios": 8,
+        "pipeline_receipt_id": "f4391a7bed1c8047d2b4ea08247b667a53619586f3931802b4146dee0d34187f",
+        "schema": "sch.vpd-unified-compartment-pipeline-verification.v6",
+        "status": "pass",
+        "training_jobs": 18
+      }
+    },
+    "release_gate_v2": {
+      "path": "artifacts/vpd_compartment_sae_training_release_gate_v2/plan.json",
+      "release_gate_plan_id": "5d821b591fa46ee306d335efc9df10e5a0db3a301482d13d54caeaa0d42e575c",
+      "sha256": "b6b369258a928621516e56b92c7625b58bf73279309a41c1affc4c4ca09ec417",
+      "verification": {
+        "compute_authorized": false,
+        "execution_authorized": false,
+        "guarded_jobs": 22,
+        "release_gate_plan_id": "5d821b591fa46ee306d335efc9df10e5a0db3a301482d13d54caeaa0d42e575c",
+        "release_gate_plan_sha256": "b6b369258a928621516e56b92c7625b58bf73279309a41c1affc4c4ca09ec417",
+        "schema": "sch.vpd-compartment-sae-training-release-gate-verification.v2",
+        "status": "pass"
+      }
+    },
+    "research_protocol_v9": {
+      "path": "configs/evals/vpd_activation_category_compartments_v9.json",
+      "sha256": "3d4397f3ef270f4d2b0bc00995034543f34a60dedfc9c9587eb06963e2b5bd9c",
+      "verification": {
+        "execution_authorized": false,
+        "guarded_jobs": 22,
+        "predecessor_sha256": "b66111e7d5e7001ddef5dadefd97eaa0f6ef3bdd658699d6ad3add72e68fab49",
+        "protocol_sha256": "3d4397f3ef270f4d2b0bc00995034543f34a60dedfc9c9587eb06963e2b5bd9c",
+        "release_gate_plan_id": "5d821b591fa46ee306d335efc9df10e5a0db3a301482d13d54caeaa0d42e575c",
+        "schema": "sch.vpd-activation-category-protocol-verification.v9",
+        "status": "pass",
+        "training_plan_id": "a7a050abead2d60a63e16a6d07126609ac38c034f18ad3e37f98cd7c9f4d8c2b"
+      }
+    },
+    "runtime_benchmark_v2": {
+      "benchmark_id": "f044212429c08737719ffe1f64496122d20d94f2f6b4e2333c42d00d452b185c",
+      "path": "artifacts/vpd_compartment_sae_runtime_benchmark_v2/report.json",
+      "sha256": "ce04d89c1d7f6c16177e6e02bdb76a616b125ccd50fcf970b943fc03def408c9",
+      "verification": {
+        "benchmark_id": "f044212429c08737719ffe1f64496122d20d94f2f6b4e2333c42d00d452b185c",
+        "execution_authorized": false,
+        "scenarios": 11,
+        "schema": "sch.vpd-compartment-sae-runtime-benchmark-verification.v2",
+        "status": "pass"
+      }
+    },
+    "training_plan_v4": {
+      "path": "artifacts/vpd_compartment_sae_training_plan_v4/plan.json",
+      "sha256": "f90dc761017b15369fbc31bf8d9efdee4f4d8f6e9c7fce585e8ecc5e94b5975c",
+      "training_plan_id": "a7a050abead2d60a63e16a6d07126609ac38c034f18ad3e37f98cd7c9f4d8c2b",
+      "verification": {
+        "capture_jobs": 2,
+        "execution_authorized": false,
+        "guarded_jobs": 22,
+        "schema": "sch.vpd-compartment-sae-training-plan-verification.v2",
+        "status": "pass",
+        "training_jobs": 18,
+        "training_plan_id": "a7a050abead2d60a63e16a6d07126609ac38c034f18ad3e37f98cd7c9f4d8c2b",
+        "training_plan_sha256": "f90dc761017b15369fbc31bf8d9efdee4f4d8f6e9c7fce585e8ecc5e94b5975c"
+      }
+    }
+  },
+  "status": "pass_local_runtime_v2_implemented_and_benchmarked_not_run"
+}

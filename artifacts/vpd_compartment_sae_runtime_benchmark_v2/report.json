@@ -1,0 +1,74 @@
+{
+  "benchmark_id": "f044212429c08737719ffe1f64496122d20d94f2f6b4e2333c42d00d452b185c",
+  "scenarios": [
+    {
+      "id": "exact_manifest_v2",
+      "status": "pass"
+    },
+    {
+      "id": "changed_batch_size",
+      "status": "pass"
+    },
+    {
+      "id": "changed_learning_rate",
+      "status": "pass"
+    },
+    {
+      "id": "changed_exact_sample_contract",
+      "status": "pass"
+    },
+    {
+      "id": "wrong_job_compute_authorization",
+      "status": "pass"
+    },
+    {
+      "id": "exact_capture_execution",
+      "status": "pass"
+    },
+    {
+      "id": "exact_bundle_v2_quality_handoff",
+      "status": "pass"
+    },
+    {
+      "id": "changed_bundle_job_coverage",
+      "status": "pass"
+    },
+    {
+      "id": "predecessor_manifest_v1_in_bundle",
+      "status": "pass"
+    },
+    {
+      "id": "external_exact_job_compute_authorization",
+      "status": "pass"
+    },
+    {
+      "id": "all_22_jobs_dual_gated",
+      "status": "pass"
+    }
+  ],
+  "schema": "sch.vpd-compartment-sae-runtime-benchmark.v2",
+  "scientific_boundary": {
+    "execution_authorized": false,
+    "model_inference_performed": false,
+    "sae_training_performed": false,
+    "weights_loaded_or_mutated": false
+  },
+  "source": {
+    "benchmark_runner_sha256": "eb078cb5cd8eb01292ac57f3eb072bac638656acb6226c8765edef8dc530258d",
+    "execution_blueprint_id": "33bc09fac66fcec62bc0374c39d7ad4209a5d17eafd9b1003b4353073687e40e",
+    "execution_blueprint_sha256": "167bd226158f47279fecd6c15364f63cd422e3ca7f73f12c9d4c7e4c4b650793",
+    "release_gate_plan_id": "5d821b591fa46ee306d335efc9df10e5a0db3a301482d13d54caeaa0d42e575c",
+    "release_gate_plan_sha256": "b6b369258a928621516e56b92c7625b58bf73279309a41c1affc4c4ca09ec417",
+    "training_plan_id": "a7a050abead2d60a63e16a6d07126609ac38c034f18ad3e37f98cd7c9f4d8c2b",
+    "training_plan_sha256": "f90dc761017b15369fbc31bf8d9efdee4f4d8f6e9c7fce585e8ecc5e94b5975c"
+  },
+  "status": "pass",
+  "summary": {
+    "capture_training_bundle_and_quality_handoffs_bound": true,
+    "manifest_v2_hyperparameters_and_samples_bound": true,
+    "passed": 11,
+    "repository_generated_compute_authorization": false,
+    "scenarios": 11,
+    "scientific_release_and_external_compute_authorization_both_required": true
+  }
+}

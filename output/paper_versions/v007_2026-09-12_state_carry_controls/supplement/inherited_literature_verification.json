@@ -1,0 +1,22 @@
+{
+  "verified_utc": "2026-09-09T14:06:09.476343+00:00",
+  "primary_sources": [
+    {
+      "title": "A Mechanistic Analysis of Looped Reasoning Language Models",
+      "authors": "Hugh Blayney et al.",
+      "submitted": "2026-04-13",
+      "url": "https://arxiv.org/abs/2604.11791",
+      "verified_claim": "Cyclic fixed points and stabilizing attention behavior; effects of recurrent block size, input injection and normalization."
+    },
+    {
+      "title": "Circuit Tracing: Revealing Computational Graphs in Language Models",
+      "url": "https://transformer-circuits.pub/2025/attribution-graphs/methods.html",
+      "verified_sections": [
+        "The Local Replacement Model",
+        "Evaluating Mechanistic Faithfulness",
+        "Evaluating Faithfulness of the Local Replacement Model"
+      ],
+      "verified_claim": "Explicit reconstruction-error nodes and intervention-based faithfulness measurements; discrepancies compound across layers."
+    }
+  ]
+}

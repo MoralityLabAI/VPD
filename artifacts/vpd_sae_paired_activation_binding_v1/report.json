@@ -1,0 +1,69 @@
+{
+  "boundary": {
+    "common_preprocessing_computed": true,
+    "fresh_pack_verified": false,
+    "initialization_equality_verified": false,
+    "launch_authorized": false,
+    "operative_admissions": 0,
+    "paid_compute_launched": false,
+    "real_activation_arrays_loaded": false,
+    "synthetic_arrays_loaded": true,
+    "trainer_integration_verified": false,
+    "training_performed": false
+  },
+  "limitations": [
+    "Five-dimensional synthetic identity sentinels, not model activations or a fresh 3072-wide capture.",
+    "Per-array hashes detect changes relative to a frozen producer manifest; they cannot prove the producer originally labeled model hooks/passes correctly.",
+    "Bias is computed once from the complete training pool using float64 accumulation then float32 storage; no model parameter receives it here.",
+    "No model initialization, encoder, decoder, loss, optimizer or provider termination control is exercised."
+  ],
+  "provenance": {
+    "numpy_version": "2.5.2",
+    "row_planner_sha256": "edbefb46a40f696b3e01c9c2075ee486705ae3d70ba7e7a36f5b63e75e16a917",
+    "runner_sha256": "c20045cb0ce5b1e480dececaf7f328760ced035b14a75c5c51ba8dc76605db93",
+    "schedule_runner_sha256": "2b2e428b0f9bf8c4ecd12bd2f02e4df7ebebd44196da30e1adfe11626b87bfde"
+  },
+  "report_id": "5a5beb7fd739c413aeba58d299e5ab413ff36d6bf3e382f258618d0eb56a0ff4",
+  "results": {
+    "all_consumed_rows_match_identity_oracle": true,
+    "common_pre_bias_sha256": {
+      "model.layers.11": "921ee54f2c6bf19bbf6f54fc4aa90d12f1b057030de1f21d2a5339e9dc8530a7",
+      "model.norm": "25816904669fe70ea87f15ed61e52930cfd2985e86b965cb115d77ed843f004b"
+    },
+    "complete_pool_rows_per_pass": 1280,
+    "consumed_batches": 1000,
+    "consumption_trace_sha256": {
+      "model.layers.11": {
+        "Q2-B": {
+          "pass_0": "6d9f9c58c748e2e81d1f9aea51d2136ce9e484916b7f98b6bad1fa6ed88059b9",
+          "pass_1": "a818ca789a09963cedbc376f13a9dac816ed86757ad199f56b89e700b6116db1"
+        },
+        "Q2-N": {
+          "pass_0": "a74ac2ce02e8b2caca0d2d7a0ab67514112ae78918ccab6cd2bc24a87f8d8375",
+          "pass_1": "8c368fd1acf1665ea19dc06b4cd0114d295356829e43e1098655bc8279fe3730"
+        }
+      },
+      "model.norm": {
+        "Q2-B": {
+          "pass_0": "6b9abc954c86d8b33249b8fbf6a1b0fb85bdd4d8408fb9ea8993d2135dd6b796",
+          "pass_1": "1adc56dd13737f76af3ef5ef48c10e99bc6f41c2f678edc32e3745d905dec4c1"
+        },
+        "Q2-N": {
+          "pass_0": "d26440f56add249a73e61050952e6b636e8039744b5d767d9c5b69785525ec7c",
+          "pass_1": "2283de29db5fca1f199377802319b38e41fa117cea88d27dfcb10bf38b899f86"
+        }
+      }
+    },
+    "draws_per_site_arm_pass": 64000,
+    "fixture_width": 5
+  },
+  "schema": "sch.vpd-sae-paired-activation-binding-benchmark.v1",
+  "source": {
+    "fixture_kind": "synthetic_identity_sentinel",
+    "fixture_manifest_content_sha256": "5dcf17a80e70079ad7c6b7ebec89941bd41a309ab7be7efbf6cbe31b628a6ef8",
+    "schedule_path": "C:\\projects\\VPD\\artifacts\\vpd_sae_paired_schedule_v1\\report.json",
+    "schedule_report_id": "63eecd979e8438df1c2fce012b8aad7a9825abac865ba4e0ea22a2b9a95828fb",
+    "schedule_sha256": "1e06836e09bd27b2a365b861a163166195bd2d1dae2172ef44fb5b62dea73d8d"
+  },
+  "status": "synthetic_binding_verified"
+}

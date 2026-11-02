@@ -1,0 +1,13 @@
+# Nanbeige mechanistic dataset, index v2
+
+This index retains all 18 inputs and measurements from index v1 and adds the completed state-carry experiment on ten of those inputs (eight task groups). It adds 450 conditions, not 450 independent examples. The 18-input cohort remains five ARC-AGI-1, five ARC-AGI-2, four INTELLECT-3 logic and four INTELLECT-3 math inputs. This is a local measured pilot, not the full benchmark.
+
+`examples.jsonl` retains earlier links and adds condition IDs. Join these to `state_carry_conditions.jsonl`; join each context ID to `state_carry_contexts.jsonl`. Assets resolve relative to the project root and carry SHA256 checksums in `assets.json`. No model loading is needed to inspect saved arrays.
+
+Each condition specifies its authoritative prompt-end token position, native archive, same-history baseline, signed residual write, physical layer and pass. Archive keys use zero-based layer/pass indices; index fields use one-based numbers. Loop normalization has no physical-layer number. There are 17,250 layer/normalization vectors in total. Six dictionaries provide 2,700 linked encoding rows, each available with ordinary top-k and frozen-baseline-support encoding. These encodings cover the final executed pass at layers 12, 22 and loop normalization; native states cover every executed layer invocation.
+
+The stored token IDs are the authoritative model input. Source prompt text and a tokenizer-decoded context are both retained; re-tokenizing source text is not asserted to reproduce the native input. Decoded token pieces can contain whitespace or byte fragments and are not semantic units. These are prompt-end states with no generated continuation, and must not be joined by row index to earlier Q4/BF16 continuation captures.
+
+One-pass executes 22 layers. Carry and reset execute 44; reset replaces every token's boundary state with its original embedding. This controls state carry within one checkpoint, not the effect of training a looped architecture. Writes follow a normalized fitted VPD direction at the final token/final pass; they are not the earlier fixed-coefficient weight edits. Frozen feature IDs are dictionary-specific. See the linked analysis for state and change reconstruction quality before interpreting feature differences.
+
+The native run and numerical validation are complete. The full ARC/logic/math benchmark comparison and ledger semantic experiment remain incomplete. This index establishes neither hidden chain-of-thought nor semantic localization. Existing source rights and the v1 execution-variant limitations remain applicable. No weights or activation data are copied or redistributed by this index.

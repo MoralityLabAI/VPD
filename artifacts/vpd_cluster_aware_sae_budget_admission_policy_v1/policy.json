@@ -1,0 +1,834 @@
+{
+  "admission_contract": {
+    "all_eight_categories_required": true,
+    "all_sixteen_specific_compartments_required": true,
+    "budget_admission_transfers_execution_authority": false,
+    "category_totals_must_equal_specific_compartment_sums": true,
+    "fresh_empirical_blueprint_and_active_signed_receipts_required": true,
+    "global_totals_must_equal_specific_plus_shared_once": true,
+    "one_shared_fallback_required": true,
+    "requested_counts_must_not_exceed_any_bound_ceiling": true,
+    "resource_shape_lists_must_match_bound_values_exactly": true,
+    "unique_output_directories_must_equal_jobs": true
+  },
+  "budget_policy_id": "5e9f4fc0841d0e71a2eef6f9ac91f5e27d0702c0e0aadfa5a6f511dad50719f2",
+  "category_specific_budgets": [
+    {
+      "activation_category": "missing_or_untrusted_authority",
+      "ceiling": {
+        "batch_sizes": [
+          128
+        ],
+        "data_selection_seeds": [
+          1707
+        ],
+        "dictionary_feature_widths": [
+          4096
+        ],
+        "episode_contract_entries": 16,
+        "initialization_seeds": [
+          17,
+          29
+        ],
+        "jobs": 4,
+        "pair_contract_entries": 16,
+        "planned_activation_rows": 2048,
+        "planned_steps": 8000,
+        "unique_output_directories": 4
+      },
+      "shared_fallback_excluded": true,
+      "specific_compartment_ids": [
+        "vpd-sae-compartment-831f475557bd7f757fa2cd866a119415f066cb0da05a4f1af97b8f88313b2457",
+        "vpd-sae-compartment-d17460c16b97106f98af68cc2b84ec986db69a64cf6d21846a14e9c26cff83cd"
+      ]
+    },
+    {
+      "activation_category": "other_invalid",
+      "ceiling": {
+        "batch_sizes": [
+          128
+        ],
+        "data_selection_seeds": [
+          1707
+        ],
+        "dictionary_feature_widths": [
+          4096
+        ],
+        "episode_contract_entries": 16,
+        "initialization_seeds": [
+          17,
+          29
+        ],
+        "jobs": 4,
+        "pair_contract_entries": 16,
+        "planned_activation_rows": 2048,
+        "planned_steps": 8000,
+        "unique_output_directories": 4
+      },
+      "shared_fallback_excluded": true,
+      "specific_compartment_ids": [
+        "vpd-sae-compartment-10d982cd345e13c10a0e02186fe84ea861874dd9b5b43809868b226bfc3b59a7",
+        "vpd-sae-compartment-feb1f43ec79931b97245795212d31cd491a26827d48d84e567d07f57e0d575b1"
+      ]
+    },
+    {
+      "activation_category": "replayed",
+      "ceiling": {
+        "batch_sizes": [
+          128
+        ],
+        "data_selection_seeds": [
+          1707
+        ],
+        "dictionary_feature_widths": [
+          4096
+        ],
+        "episode_contract_entries": 16,
+        "initialization_seeds": [
+          17,
+          29
+        ],
+        "jobs": 4,
+        "pair_contract_entries": 16,
+        "planned_activation_rows": 2048,
+        "planned_steps": 8000,
+        "unique_output_directories": 4
+      },
+      "shared_fallback_excluded": true,
+      "specific_compartment_ids": [
+        "vpd-sae-compartment-55e20520628848a5b85958e097dac1ddefe17d0f25ef26a1460a28b27c69b369",
+        "vpd-sae-compartment-acbdb1d468f28dd71490de0c1d94a61f5a71eb7bdaed4d676253dcf037a9450a"
+      ]
+    },
+    {
+      "activation_category": "revoked",
+      "ceiling": {
+        "batch_sizes": [
+          128
+        ],
+        "data_selection_seeds": [
+          1707
+        ],
+        "dictionary_feature_widths": [
+          4096
+        ],
+        "episode_contract_entries": 16,
+        "initialization_seeds": [
+          17,
+          29
+        ],
+        "jobs": 4,
+        "pair_contract_entries": 16,
+        "planned_activation_rows": 2048,
+        "planned_steps": 8000,
+        "unique_output_directories": 4
+      },
+      "shared_fallback_excluded": true,
+      "specific_compartment_ids": [
+        "vpd-sae-compartment-8377dd927480a9e26d08f5a851be5d89681a6ad83b8524d82d2b3d422cea3501",
+        "vpd-sae-compartment-b710a95f078953f6a73f95e55decf3b4e257e1100177aad354b594cce0bf6136"
+      ]
+    },
+    {
+      "activation_category": "scope_invalid",
+      "ceiling": {
+        "batch_sizes": [
+          128
+        ],
+        "data_selection_seeds": [
+          1707
+        ],
+        "dictionary_feature_widths": [
+          4096
+        ],
+        "episode_contract_entries": 16,
+        "initialization_seeds": [
+          17,
+          29
+        ],
+        "jobs": 4,
+        "pair_contract_entries": 16,
+        "planned_activation_rows": 2048,
+        "planned_steps": 8000,
+        "unique_output_directories": 4
+      },
+      "shared_fallback_excluded": true,
+      "specific_compartment_ids": [
+        "vpd-sae-compartment-213ef2079c10e199965d5b7a049675120d484072032d74a87a09263919c0baed",
+        "vpd-sae-compartment-a3efad1ab8a962dfbc3ad789065de50f45eef05d506d6aff1b1b54b9d43851a9"
+      ]
+    },
+    {
+      "activation_category": "signature_invalid",
+      "ceiling": {
+        "batch_sizes": [
+          128
+        ],
+        "data_selection_seeds": [
+          1707
+        ],
+        "dictionary_feature_widths": [
+          4096
+        ],
+        "episode_contract_entries": 16,
+        "initialization_seeds": [
+          17,
+          29
+        ],
+        "jobs": 4,
+        "pair_contract_entries": 16,
+        "planned_activation_rows": 2048,
+        "planned_steps": 8000,
+        "unique_output_directories": 4
+      },
+      "shared_fallback_excluded": true,
+      "specific_compartment_ids": [
+        "vpd-sae-compartment-15923e0a988e425624002b51fa9482efcc3146abb4f57691f5a25733b76efa7e",
+        "vpd-sae-compartment-8a7364e626e39e2b2f5d29801def919224f9eaaeea62be2723a4a97ef6ab108d"
+      ]
+    },
+    {
+      "activation_category": "time_inactive",
+      "ceiling": {
+        "batch_sizes": [
+          128
+        ],
+        "data_selection_seeds": [
+          1707
+        ],
+        "dictionary_feature_widths": [
+          4096
+        ],
+        "episode_contract_entries": 16,
+        "initialization_seeds": [
+          17,
+          29
+        ],
+        "jobs": 4,
+        "pair_contract_entries": 16,
+        "planned_activation_rows": 2048,
+        "planned_steps": 8000,
+        "unique_output_directories": 4
+      },
+      "shared_fallback_excluded": true,
+      "specific_compartment_ids": [
+        "vpd-sae-compartment-95d80cbe9259bd905f009d3031062be1a250862be19860379503e077f55a6de1",
+        "vpd-sae-compartment-ef0432a24007c189056df4176599f211610a95a30a37e3fe5e338f88675331f6"
+      ]
+    },
+    {
+      "activation_category": "valid_authority",
+      "ceiling": {
+        "batch_sizes": [
+          128
+        ],
+        "data_selection_seeds": [
+          1707
+        ],
+        "dictionary_feature_widths": [
+          4096
+        ],
+        "episode_contract_entries": 16,
+        "initialization_seeds": [
+          17,
+          29
+        ],
+        "jobs": 4,
+        "pair_contract_entries": 16,
+        "planned_activation_rows": 2048,
+        "planned_steps": 8000,
+        "unique_output_directories": 4
+      },
+      "shared_fallback_excluded": true,
+      "specific_compartment_ids": [
+        "vpd-sae-compartment-027c99d6175beb0988e88312e9ab698b3a4cd2691a5b53b39d6efec19fc3c5aa",
+        "vpd-sae-compartment-94181dcc49793146a9bc52d8badb5df817b24fe542e8fdc654af1e1484744817"
+      ]
+    }
+  ],
+  "global_ceiling": {
+    "batch_sizes": [
+      128
+    ],
+    "data_selection_seeds": [
+      1707
+    ],
+    "dictionary_feature_widths": [
+      4096,
+      8192
+    ],
+    "episode_contract_entries": 160,
+    "initialization_seeds": [
+      17,
+      29
+    ],
+    "jobs": 34,
+    "pair_contract_entries": 132,
+    "planned_activation_rows": 20480,
+    "planned_steps": 68000,
+    "unique_output_directories": 34
+  },
+  "schema": "sch.vpd-cluster-aware-sae-budget-admission-policy.v1",
+  "scientific_boundary": {
+    "empirical_blueprint_present": false,
+    "empirical_budget_observation": false,
+    "execution_authorized": false,
+    "model_inference_performed": false,
+    "model_loaded": false,
+    "model_loading_authorized": false,
+    "paid_compute_authorized": false,
+    "persistent_dictionary_output_created": false,
+    "retry_authorized": false,
+    "sae_training_authorized": false,
+    "synthetic_reconstructed_ceiling_source": true,
+    "training_performed": false,
+    "weight_mutation_authorized": false,
+    "weights_loaded_or_mutated": false
+  },
+  "shared_fallback_budget": {
+    "accounted_once_globally": true,
+    "activation_categories": [
+      "missing_or_untrusted_authority",
+      "other_invalid",
+      "replayed",
+      "revoked",
+      "scope_invalid",
+      "signature_invalid",
+      "time_inactive",
+      "valid_authority"
+    ],
+    "ceiling": {
+      "batch_sizes": [
+        128
+      ],
+      "data_selection_seeds": [
+        1707
+      ],
+      "dictionary_feature_widths": [
+        8192
+      ],
+      "episode_contract_entries": 32,
+      "initialization_seeds": [
+        17,
+        29
+      ],
+      "jobs": 2,
+      "pair_contract_entries": 4,
+      "planned_activation_rows": 4096,
+      "planned_steps": 4000,
+      "unique_output_directories": 2
+    },
+    "charged_to_category_budgets": false,
+    "cluster_ids": [
+      null
+    ],
+    "compartment_id": "shared_cross_category",
+    "compartment_kind": "shared_fallback"
+  },
+  "source": {
+    "raw_campaign_receipts_recovered": false,
+    "reconstructed_resource_values_are_empirical_consumption": false,
+    "resource_reconciliation_id": "c9759d5e1f89cd3f2e6d3a9fa264e27f0ae7e1eee933c3413de5ac3de54bf0ff",
+    "resource_reconciliation_path": "artifacts/vpd_cluster_aware_sae_compartment_resource_reconciliation_v1/ledger.json",
+    "resource_reconciliation_sha256": "3e690917a3cd7ec7797011e77843c3cde973d2015eb40be7999d1f8530de42f5"
+  },
+  "specific_compartment_budgets": [
+    {
+      "activation_categories": [
+        "valid_authority"
+      ],
+      "ceiling": {
+        "batch_sizes": [
+          128
+        ],
+        "data_selection_seeds": [
+          1707
+        ],
+        "dictionary_feature_widths": [
+          4096
+        ],
+        "episode_contract_entries": 8,
+        "initialization_seeds": [
+          17,
+          29
+        ],
+        "jobs": 2,
+        "pair_contract_entries": 8,
+        "planned_activation_rows": 1024,
+        "planned_steps": 4000,
+        "unique_output_directories": 2
+      },
+      "cluster_ids": [
+        "vpd-cluster-5b673bbf11c63f28773550a2a5434fdffe522c9a4e029bc1463293ccf8cbba54"
+      ],
+      "compartment_id": "vpd-sae-compartment-027c99d6175beb0988e88312e9ab698b3a4cd2691a5b53b39d6efec19fc3c5aa",
+      "compartment_kind": "specific_cluster"
+    },
+    {
+      "activation_categories": [
+        "other_invalid"
+      ],
+      "ceiling": {
+        "batch_sizes": [
+          128
+        ],
+        "data_selection_seeds": [
+          1707
+        ],
+        "dictionary_feature_widths": [
+          4096
+        ],
+        "episode_contract_entries": 8,
+        "initialization_seeds": [
+          17,
+          29
+        ],
+        "jobs": 2,
+        "pair_contract_entries": 8,
+        "planned_activation_rows": 1024,
+        "planned_steps": 4000,
+        "unique_output_directories": 2
+      },
+      "cluster_ids": [
+        "vpd-cluster-6f562ac72e57615c92660ee39cae9413df0717f56b10431e5931915543325809"
+      ],
+      "compartment_id": "vpd-sae-compartment-10d982cd345e13c10a0e02186fe84ea861874dd9b5b43809868b226bfc3b59a7",
+      "compartment_kind": "specific_cluster"
+    },
+    {
+      "activation_categories": [
+        "signature_invalid"
+      ],
+      "ceiling": {
+        "batch_sizes": [
+          128
+        ],
+        "data_selection_seeds": [
+          1707
+        ],
+        "dictionary_feature_widths": [
+          4096
+        ],
+        "episode_contract_entries": 8,
+        "initialization_seeds": [
+          17,
+          29
+        ],
+        "jobs": 2,
+        "pair_contract_entries": 8,
+        "planned_activation_rows": 1024,
+        "planned_steps": 4000,
+        "unique_output_directories": 2
+      },
+      "cluster_ids": [
+        "vpd-cluster-6f562ac72e57615c92660ee39cae9413df0717f56b10431e5931915543325809"
+      ],
+      "compartment_id": "vpd-sae-compartment-15923e0a988e425624002b51fa9482efcc3146abb4f57691f5a25733b76efa7e",
+      "compartment_kind": "specific_cluster"
+    },
+    {
+      "activation_categories": [
+        "scope_invalid"
+      ],
+      "ceiling": {
+        "batch_sizes": [
+          128
+        ],
+        "data_selection_seeds": [
+          1707
+        ],
+        "dictionary_feature_widths": [
+          4096
+        ],
+        "episode_contract_entries": 8,
+        "initialization_seeds": [
+          17,
+          29
+        ],
+        "jobs": 2,
+        "pair_contract_entries": 8,
+        "planned_activation_rows": 1024,
+        "planned_steps": 4000,
+        "unique_output_directories": 2
+      },
+      "cluster_ids": [
+        "vpd-cluster-5b673bbf11c63f28773550a2a5434fdffe522c9a4e029bc1463293ccf8cbba54"
+      ],
+      "compartment_id": "vpd-sae-compartment-213ef2079c10e199965d5b7a049675120d484072032d74a87a09263919c0baed",
+      "compartment_kind": "specific_cluster"
+    },
+    {
+      "activation_categories": [
+        "replayed"
+      ],
+      "ceiling": {
+        "batch_sizes": [
+          128
+        ],
+        "data_selection_seeds": [
+          1707
+        ],
+        "dictionary_feature_widths": [
+          4096
+        ],
+        "episode_contract_entries": 8,
+        "initialization_seeds": [
+          17,
+          29
+        ],
+        "jobs": 2,
+        "pair_contract_entries": 8,
+        "planned_activation_rows": 1024,
+        "planned_steps": 4000,
+        "unique_output_directories": 2
+      },
+      "cluster_ids": [
+        "vpd-cluster-6f562ac72e57615c92660ee39cae9413df0717f56b10431e5931915543325809"
+      ],
+      "compartment_id": "vpd-sae-compartment-55e20520628848a5b85958e097dac1ddefe17d0f25ef26a1460a28b27c69b369",
+      "compartment_kind": "specific_cluster"
+    },
+    {
+      "activation_categories": [
+        "missing_or_untrusted_authority"
+      ],
+      "ceiling": {
+        "batch_sizes": [
+          128
+        ],
+        "data_selection_seeds": [
+          1707
+        ],
+        "dictionary_feature_widths": [
+          4096
+        ],
+        "episode_contract_entries": 8,
+        "initialization_seeds": [
+          17,
+          29
+        ],
+        "jobs": 2,
+        "pair_contract_entries": 8,
+        "planned_activation_rows": 1024,
+        "planned_steps": 4000,
+        "unique_output_directories": 2
+      },
+      "cluster_ids": [
+        "vpd-cluster-6f562ac72e57615c92660ee39cae9413df0717f56b10431e5931915543325809"
+      ],
+      "compartment_id": "vpd-sae-compartment-831f475557bd7f757fa2cd866a119415f066cb0da05a4f1af97b8f88313b2457",
+      "compartment_kind": "specific_cluster"
+    },
+    {
+      "activation_categories": [
+        "revoked"
+      ],
+      "ceiling": {
+        "batch_sizes": [
+          128
+        ],
+        "data_selection_seeds": [
+          1707
+        ],
+        "dictionary_feature_widths": [
+          4096
+        ],
+        "episode_contract_entries": 8,
+        "initialization_seeds": [
+          17,
+          29
+        ],
+        "jobs": 2,
+        "pair_contract_entries": 8,
+        "planned_activation_rows": 1024,
+        "planned_steps": 4000,
+        "unique_output_directories": 2
+      },
+      "cluster_ids": [
+        "vpd-cluster-6f562ac72e57615c92660ee39cae9413df0717f56b10431e5931915543325809"
+      ],
+      "compartment_id": "vpd-sae-compartment-8377dd927480a9e26d08f5a851be5d89681a6ad83b8524d82d2b3d422cea3501",
+      "compartment_kind": "specific_cluster"
+    },
+    {
+      "activation_categories": [
+        "signature_invalid"
+      ],
+      "ceiling": {
+        "batch_sizes": [
+          128
+        ],
+        "data_selection_seeds": [
+          1707
+        ],
+        "dictionary_feature_widths": [
+          4096
+        ],
+        "episode_contract_entries": 8,
+        "initialization_seeds": [
+          17,
+          29
+        ],
+        "jobs": 2,
+        "pair_contract_entries": 8,
+        "planned_activation_rows": 1024,
+        "planned_steps": 4000,
+        "unique_output_directories": 2
+      },
+      "cluster_ids": [
+        "vpd-cluster-5b673bbf11c63f28773550a2a5434fdffe522c9a4e029bc1463293ccf8cbba54"
+      ],
+      "compartment_id": "vpd-sae-compartment-8a7364e626e39e2b2f5d29801def919224f9eaaeea62be2723a4a97ef6ab108d",
+      "compartment_kind": "specific_cluster"
+    },
+    {
+      "activation_categories": [
+        "valid_authority"
+      ],
+      "ceiling": {
+        "batch_sizes": [
+          128
+        ],
+        "data_selection_seeds": [
+          1707
+        ],
+        "dictionary_feature_widths": [
+          4096
+        ],
+        "episode_contract_entries": 8,
+        "initialization_seeds": [
+          17,
+          29
+        ],
+        "jobs": 2,
+        "pair_contract_entries": 8,
+        "planned_activation_rows": 1024,
+        "planned_steps": 4000,
+        "unique_output_directories": 2
+      },
+      "cluster_ids": [
+        "vpd-cluster-6f562ac72e57615c92660ee39cae9413df0717f56b10431e5931915543325809"
+      ],
+      "compartment_id": "vpd-sae-compartment-94181dcc49793146a9bc52d8badb5df817b24fe542e8fdc654af1e1484744817",
+      "compartment_kind": "specific_cluster"
+    },
+    {
+      "activation_categories": [
+        "time_inactive"
+      ],
+      "ceiling": {
+        "batch_sizes": [
+          128
+        ],
+        "data_selection_seeds": [
+          1707
+        ],
+        "dictionary_feature_widths": [
+          4096
+        ],
+        "episode_contract_entries": 8,
+        "initialization_seeds": [
+          17,
+          29
+        ],
+        "jobs": 2,
+        "pair_contract_entries": 8,
+        "planned_activation_rows": 1024,
+        "planned_steps": 4000,
+        "unique_output_directories": 2
+      },
+      "cluster_ids": [
+        "vpd-cluster-5b673bbf11c63f28773550a2a5434fdffe522c9a4e029bc1463293ccf8cbba54"
+      ],
+      "compartment_id": "vpd-sae-compartment-95d80cbe9259bd905f009d3031062be1a250862be19860379503e077f55a6de1",
+      "compartment_kind": "specific_cluster"
+    },
+    {
+      "activation_categories": [
+        "scope_invalid"
+      ],
+      "ceiling": {
+        "batch_sizes": [
+          128
+        ],
+        "data_selection_seeds": [
+          1707
+        ],
+        "dictionary_feature_widths": [
+          4096
+        ],
+        "episode_contract_entries": 8,
+        "initialization_seeds": [
+          17,
+          29
+        ],
+        "jobs": 2,
+        "pair_contract_entries": 8,
+        "planned_activation_rows": 1024,
+        "planned_steps": 4000,
+        "unique_output_directories": 2
+      },
+      "cluster_ids": [
+        "vpd-cluster-6f562ac72e57615c92660ee39cae9413df0717f56b10431e5931915543325809"
+      ],
+      "compartment_id": "vpd-sae-compartment-a3efad1ab8a962dfbc3ad789065de50f45eef05d506d6aff1b1b54b9d43851a9",
+      "compartment_kind": "specific_cluster"
+    },
+    {
+      "activation_categories": [
+        "replayed"
+      ],
+      "ceiling": {
+        "batch_sizes": [
+          128
+        ],
+        "data_selection_seeds": [
+          1707
+        ],
+        "dictionary_feature_widths": [
+          4096
+        ],
+        "episode_contract_entries": 8,
+        "initialization_seeds": [
+          17,
+          29
+        ],
+        "jobs": 2,
+        "pair_contract_entries": 8,
+        "planned_activation_rows": 1024,
+        "planned_steps": 4000,
+        "unique_output_directories": 2
+      },
+      "cluster_ids": [
+        "vpd-cluster-5b673bbf11c63f28773550a2a5434fdffe522c9a4e029bc1463293ccf8cbba54"
+      ],
+      "compartment_id": "vpd-sae-compartment-acbdb1d468f28dd71490de0c1d94a61f5a71eb7bdaed4d676253dcf037a9450a",
+      "compartment_kind": "specific_cluster"
+    },
+    {
+      "activation_categories": [
+        "revoked"
+      ],
+      "ceiling": {
+        "batch_sizes": [
+          128
+        ],
+        "data_selection_seeds": [
+          1707
+        ],
+        "dictionary_feature_widths": [
+          4096
+        ],
+        "episode_contract_entries": 8,
+        "initialization_seeds": [
+          17,
+          29
+        ],
+        "jobs": 2,
+        "pair_contract_entries": 8,
+        "planned_activation_rows": 1024,
+        "planned_steps": 4000,
+        "unique_output_directories": 2
+      },
+      "cluster_ids": [
+        "vpd-cluster-5b673bbf11c63f28773550a2a5434fdffe522c9a4e029bc1463293ccf8cbba54"
+      ],
+      "compartment_id": "vpd-sae-compartment-b710a95f078953f6a73f95e55decf3b4e257e1100177aad354b594cce0bf6136",
+      "compartment_kind": "specific_cluster"
+    },
+    {
+      "activation_categories": [
+        "missing_or_untrusted_authority"
+      ],
+      "ceiling": {
+        "batch_sizes": [
+          128
+        ],
+        "data_selection_seeds": [
+          1707
+        ],
+        "dictionary_feature_widths": [
+          4096
+        ],
+        "episode_contract_entries": 8,
+        "initialization_seeds": [
+          17,
+          29
+        ],
+        "jobs": 2,
+        "pair_contract_entries": 8,
+        "planned_activation_rows": 1024,
+        "planned_steps": 4000,
+        "unique_output_directories": 2
+      },
+      "cluster_ids": [
+        "vpd-cluster-5b673bbf11c63f28773550a2a5434fdffe522c9a4e029bc1463293ccf8cbba54"
+      ],
+      "compartment_id": "vpd-sae-compartment-d17460c16b97106f98af68cc2b84ec986db69a64cf6d21846a14e9c26cff83cd",
+      "compartment_kind": "specific_cluster"
+    },
+    {
+      "activation_categories": [
+        "time_inactive"
+      ],
+      "ceiling": {
+        "batch_sizes": [
+          128
+        ],
+        "data_selection_seeds": [
+          1707
+        ],
+        "dictionary_feature_widths": [
+          4096
+        ],
+        "episode_contract_entries": 8,
+        "initialization_seeds": [
+          17,
+          29
+        ],
+        "jobs": 2,
+        "pair_contract_entries": 8,
+        "planned_activation_rows": 1024,
+        "planned_steps": 4000,
+        "unique_output_directories": 2
+      },
+      "cluster_ids": [
+        "vpd-cluster-6f562ac72e57615c92660ee39cae9413df0717f56b10431e5931915543325809"
+      ],
+      "compartment_id": "vpd-sae-compartment-ef0432a24007c189056df4176599f211610a95a30a37e3fe5e338f88675331f6",
+      "compartment_kind": "specific_cluster"
+    },
+    {
+      "activation_categories": [
+        "other_invalid"
+      ],
+      "ceiling": {
+        "batch_sizes": [
+          128
+        ],
+        "data_selection_seeds": [
+          1707
+        ],
+        "dictionary_feature_widths": [
+          4096
+        ],
+        "episode_contract_entries": 8,
+        "initialization_seeds": [
+          17,
+          29
+        ],
+        "jobs": 2,
+        "pair_contract_entries": 8,
+        "planned_activation_rows": 1024,
+        "planned_steps": 4000,
+        "unique_output_directories": 2
+      },
+      "cluster_ids": [
+        "vpd-cluster-5b673bbf11c63f28773550a2a5434fdffe522c9a4e029bc1463293ccf8cbba54"
+      ],
+      "compartment_id": "vpd-sae-compartment-feb1f43ec79931b97245795212d31cd491a26827d48d84e567d07f57e0d575b1",
+      "compartment_kind": "specific_cluster"
+    }
+  ],
+  "status": "sealed_nonexecuting_category_compartment_budget_ceilings"
+}

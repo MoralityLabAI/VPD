@@ -1,0 +1,2628 @@
+{
+  "archives": [
+    {
+      "path": "C:\\projects\\VPD\\artifacts\\nanbeige_reasoning\\q4_reasoning_pilot_v1\\q4_reasoning_saes",
+      "sites": [
+        {
+          "results": [
+            {
+              "descriptive_evaluation_example_pearson_r": 0.9983896179699769,
+              "evaluation_examples": [
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_1/12422b43/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.12438018857350927,
+                  "mean_matched_distance_squared_over_training_variance": 0.1267689601699969,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.09005434006171602,
+                  "rows": 8
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_1/c074846d/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.12752855036655952,
+                  "mean_matched_distance_squared_over_training_variance": 0.1310683116688856,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.09650700777380689,
+                  "rows": 8
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_1/c074846d/1",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.13365198882693394,
+                  "mean_matched_distance_squared_over_training_variance": 0.13699097474943106,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.10200382594257487,
+                  "rows": 8
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_2/3dc255db/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.12556388899251195,
+                  "mean_matched_distance_squared_over_training_variance": 0.13471094488756705,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.11474052592638759,
+                  "rows": 8
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_2/78332cb0/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.12011530539238718,
+                  "mean_matched_distance_squared_over_training_variance": 0.12671823224492507,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.10468405977266287,
+                  "rows": 8
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_2/78332cb0/1",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.11595955525126905,
+                  "mean_matched_distance_squared_over_training_variance": 0.12248942582184977,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.10068105543501965,
+                  "rows": 8
+                },
+                {
+                  "family": "campsite",
+                  "id": "intellect3_logic/00062/72b57dbd293b",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.8359097854114159,
+                  "mean_matched_distance_squared_over_training_variance": 0.8425129242168947,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.5867465348375881,
+                  "rows": 8
+                },
+                {
+                  "family": "dyck_language",
+                  "id": "intellect3_logic/05869/5de8a003a86f",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.5555213746148413,
+                  "mean_matched_distance_squared_over_training_variance": 1.5666779623863551,
+                  "mean_reconstruction_error_squared_over_training_variance": 1.2111991513384393,
+                  "rows": 8
+                },
+                {
+                  "family": "math",
+                  "id": "intellect3_math/04162/0fae120567d0",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.5762701521213804,
+                  "mean_matched_distance_squared_over_training_variance": 0.5933488278367406,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.4347980738377924,
+                  "rows": 8
+                },
+                {
+                  "family": "math",
+                  "id": "intellect3_math/10603/9d30832ed4ab",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.5074046304162464,
+                  "mean_matched_distance_squared_over_training_variance": 0.5253150258590034,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.40058075088287864,
+                  "rows": 8
+                }
+              ],
+              "evaluation_over_training_median_distance_ratio": 0.33434629978056923,
+              "families": [
+                {
+                  "examples": 6,
+                  "family": "arc_grid",
+                  "mean_example_matched_distance": 0.12979114159044255,
+                  "mean_example_reconstruction_error": 0.10144513581869467
+                },
+                {
+                  "examples": 1,
+                  "family": "campsite",
+                  "mean_example_matched_distance": 0.8425129242168947,
+                  "mean_example_reconstruction_error": 0.5867465348375881
+                },
+                {
+                  "examples": 1,
+                  "family": "dyck_language",
+                  "mean_example_matched_distance": 1.5666779623863551,
+                  "mean_example_reconstruction_error": 1.2111991513384393
+                },
+                {
+                  "examples": 2,
+                  "family": "math",
+                  "mean_example_matched_distance": 0.559331926847872,
+                  "mean_example_reconstruction_error": 0.4176894123603355
+                }
+              ],
+              "median_evaluation_example_matched_distance": 0.13585095981849904,
+              "median_training_example_loto_distance": 0.4063181195893531,
+              "pass": 0,
+              "phase": "prompt",
+              "reference_trajectories_per_comparison": 7,
+              "training_examples": [
+                {
+                  "id": "arc_agi_1/a79310a0/0",
+                  "mean_loto_distance_squared_over_training_variance": 0.16831213990509686,
+                  "rows": 8
+                },
+                {
+                  "id": "arc_agi_1/bd4472b8/0",
+                  "mean_loto_distance_squared_over_training_variance": 0.1578792974928258,
+                  "rows": 8
+                },
+                {
+                  "id": "arc_agi_2/2a28add5/0",
+                  "mean_loto_distance_squared_over_training_variance": 0.11920492677929537,
+                  "rows": 8
+                },
+                {
+                  "id": "arc_agi_2/6d1d5c90/0",
+                  "mean_loto_distance_squared_over_training_variance": 0.10682331603800388,
+                  "rows": 8
+                },
+                {
+                  "id": "intellect3_logic/03253/e388bea64650",
+                  "mean_loto_distance_squared_over_training_variance": 0.9346159726126494,
+                  "rows": 8
+                },
+                {
+                  "id": "intellect3_logic/07138/b6065797ee33",
+                  "mean_loto_distance_squared_over_training_variance": 1.2002630208300704,
+                  "rows": 8
+                },
+                {
+                  "id": "intellect3_math/14826/fc54a03d241c",
+                  "mean_loto_distance_squared_over_training_variance": 0.6443240992736093,
+                  "rows": 8
+                },
+                {
+                  "id": "intellect3_math/17853/b74de9e5232b",
+                  "mean_loto_distance_squared_over_training_variance": 0.6880493712205628,
+                  "rows": 8
+                }
+              ],
+              "training_variance_per_row": 4815.239621860348
+            },
+            {
+              "descriptive_evaluation_example_pearson_r": 0.985108061285123,
+              "evaluation_examples": [
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_1/12422b43/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.2102118025449704,
+                  "mean_matched_distance_squared_over_training_variance": 1.2235209347299572,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.8226279297046047,
+                  "rows": 24
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_1/c074846d/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.3039012018089984,
+                  "mean_matched_distance_squared_over_training_variance": 1.3129644143413015,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.8633972586956951,
+                  "rows": 24
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_1/c074846d/1",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.2663864011621981,
+                  "mean_matched_distance_squared_over_training_variance": 1.2842526331452209,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.9151945054033082,
+                  "rows": 24
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_2/3dc255db/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.9341720623945267,
+                  "mean_matched_distance_squared_over_training_variance": 0.9627865981317182,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.6693679100915889,
+                  "rows": 24
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_2/78332cb0/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.0958890200694273,
+                  "mean_matched_distance_squared_over_training_variance": 1.114359999262343,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.7361571178282076,
+                  "rows": 24
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_2/78332cb0/1",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.0684886192836467,
+                  "mean_matched_distance_squared_over_training_variance": 1.079480814509677,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.7402245309961936,
+                  "rows": 24
+                },
+                {
+                  "family": "campsite",
+                  "id": "intellect3_logic/00062/72b57dbd293b",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.415233037371008,
+                  "mean_matched_distance_squared_over_training_variance": 1.425145733247679,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.9513518840731701,
+                  "rows": 24
+                },
+                {
+                  "family": "dyck_language",
+                  "id": "intellect3_logic/05869/5de8a003a86f",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.3812660720724923,
+                  "mean_matched_distance_squared_over_training_variance": 1.3917899742322621,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.9441031542266654,
+                  "rows": 24
+                },
+                {
+                  "family": "math",
+                  "id": "intellect3_math/04162/0fae120567d0",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.6305904954852555,
+                  "mean_matched_distance_squared_over_training_variance": 1.6428588638486215,
+                  "mean_reconstruction_error_squared_over_training_variance": 1.1499914860520202,
+                  "rows": 24
+                },
+                {
+                  "family": "math",
+                  "id": "intellect3_math/10603/9d30832ed4ab",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.455753308296618,
+                  "mean_matched_distance_squared_over_training_variance": 1.4642091552411873,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.9729806823714701,
+                  "rows": 24
+                }
+              ],
+              "evaluation_over_training_median_distance_ratio": 1.0301919610619206,
+              "families": [
+                {
+                  "examples": 6,
+                  "family": "arc_grid",
+                  "mean_example_matched_distance": 1.1628942323533695,
+                  "mean_example_reconstruction_error": 0.7911615421199328
+                },
+                {
+                  "examples": 1,
+                  "family": "campsite",
+                  "mean_example_matched_distance": 1.425145733247679,
+                  "mean_example_reconstruction_error": 0.9513518840731701
+                },
+                {
+                  "examples": 1,
+                  "family": "dyck_language",
+                  "mean_example_matched_distance": 1.3917899742322621,
+                  "mean_example_reconstruction_error": 0.9441031542266654
+                },
+                {
+                  "examples": 2,
+                  "family": "math",
+                  "mean_example_matched_distance": 1.5535340095449044,
+                  "mean_example_reconstruction_error": 1.061486084211745
+                }
+              ],
+              "median_evaluation_example_matched_distance": 1.2986085237432612,
+              "median_training_example_loto_distance": 1.2605500458425798,
+              "pass": 0,
+              "phase": "generated",
+              "reference_trajectories_per_comparison": 7,
+              "training_examples": [
+                {
+                  "id": "arc_agi_1/a79310a0/0",
+                  "mean_loto_distance_squared_over_training_variance": 1.16739483871905,
+                  "rows": 24
+                },
+                {
+                  "id": "arc_agi_1/bd4472b8/0",
+                  "mean_loto_distance_squared_over_training_variance": 1.1714945156051444,
+                  "rows": 24
+                },
+                {
+                  "id": "arc_agi_2/2a28add5/0",
+                  "mean_loto_distance_squared_over_training_variance": 1.0207338071251797,
+                  "rows": 24
+                },
+                {
+                  "id": "arc_agi_2/6d1d5c90/0",
+                  "mean_loto_distance_squared_over_training_variance": 1.070303960219818,
+                  "rows": 24
+                },
+                {
+                  "id": "intellect3_logic/03253/e388bea64650",
+                  "mean_loto_distance_squared_over_training_variance": 1.3734602300789034,
+                  "rows": 24
+                },
+                {
+                  "id": "intellect3_logic/07138/b6065797ee33",
+                  "mean_loto_distance_squared_over_training_variance": 1.349605576080015,
+                  "rows": 24
+                },
+                {
+                  "id": "intellect3_math/14826/fc54a03d241c",
+                  "mean_loto_distance_squared_over_training_variance": 1.7240349299454625,
+                  "rows": 24
+                },
+                {
+                  "id": "intellect3_math/17853/b74de9e5232b",
+                  "mean_loto_distance_squared_over_training_variance": 1.4801046382639775,
+                  "rows": 24
+                }
+              ],
+              "training_variance_per_row": 6447.896116046533
+            },
+            {
+              "descriptive_evaluation_example_pearson_r": 0.9969502712171561,
+              "evaluation_examples": [
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_1/12422b43/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.2645251435222174,
+                  "mean_matched_distance_squared_over_training_variance": 0.2697908934163433,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.20397288033904368,
+                  "rows": 8
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_1/c074846d/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.2821204559750396,
+                  "mean_matched_distance_squared_over_training_variance": 0.28734218058016814,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.20704149113501286,
+                  "rows": 8
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_1/c074846d/1",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.281780900581785,
+                  "mean_matched_distance_squared_over_training_variance": 0.287584446866308,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.21520171597970517,
+                  "rows": 8
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_2/3dc255db/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.31515452176440717,
+                  "mean_matched_distance_squared_over_training_variance": 0.3241025760769157,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.2562824614514678,
+                  "rows": 8
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_2/78332cb0/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.23697457294443341,
+                  "mean_matched_distance_squared_over_training_variance": 0.24560433946514468,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.21456701809883352,
+                  "rows": 8
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_2/78332cb0/1",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.2381496646007798,
+                  "mean_matched_distance_squared_over_training_variance": 0.24635055054095634,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.21997630213284616,
+                  "rows": 8
+                },
+                {
+                  "family": "campsite",
+                  "id": "intellect3_logic/00062/72b57dbd293b",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.9955668312583166,
+                  "mean_matched_distance_squared_over_training_variance": 1.018949113551591,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.7143964986168299,
+                  "rows": 8
+                },
+                {
+                  "family": "dyck_language",
+                  "id": "intellect3_logic/05869/5de8a003a86f",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.4757657740618138,
+                  "mean_matched_distance_squared_over_training_variance": 1.491186131023897,
+                  "mean_reconstruction_error_squared_over_training_variance": 1.0623214303990274,
+                  "rows": 8
+                },
+                {
+                  "family": "math",
+                  "id": "intellect3_math/04162/0fae120567d0",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.936840342881333,
+                  "mean_matched_distance_squared_over_training_variance": 0.9472520136786455,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.7422305397844896,
+                  "rows": 8
+                },
+                {
+                  "family": "math",
+                  "id": "intellect3_math/10603/9d30832ed4ab",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.6758936644996985,
+                  "mean_matched_distance_squared_over_training_variance": 0.6919390328226303,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.49435333931710423,
+                  "rows": 8
+                }
+              ],
+              "evaluation_over_training_median_distance_ratio": 0.5338957845308053,
+              "families": [
+                {
+                  "examples": 6,
+                  "family": "arc_grid",
+                  "mean_example_matched_distance": 0.27679583115763934,
+                  "mean_example_reconstruction_error": 0.21950697818948486
+                },
+                {
+                  "examples": 1,
+                  "family": "campsite",
+                  "mean_example_matched_distance": 1.018949113551591,
+                  "mean_example_reconstruction_error": 0.7143964986168299
+                },
+                {
+                  "examples": 1,
+                  "family": "dyck_language",
+                  "mean_example_matched_distance": 1.491186131023897,
+                  "mean_example_reconstruction_error": 1.0623214303990274
+                },
+                {
+                  "examples": 2,
+                  "family": "math",
+                  "mean_example_matched_distance": 0.8195955232506379,
+                  "mean_example_reconstruction_error": 0.6182919395507969
+                }
+              ],
+              "median_evaluation_example_matched_distance": 0.3058435114716119,
+              "median_training_example_loto_distance": 0.572852456103191,
+              "pass": 1,
+              "phase": "prompt",
+              "reference_trajectories_per_comparison": 7,
+              "training_examples": [
+                {
+                  "id": "arc_agi_1/a79310a0/0",
+                  "mean_loto_distance_squared_over_training_variance": 0.35499702913153197,
+                  "rows": 8
+                },
+                {
+                  "id": "arc_agi_1/bd4472b8/0",
+                  "mean_loto_distance_squared_over_training_variance": 0.35555986536788436,
+                  "rows": 8
+                },
+                {
+                  "id": "arc_agi_2/2a28add5/0",
+                  "mean_loto_distance_squared_over_training_variance": 0.25019970796950725,
+                  "rows": 8
+                },
+                {
+                  "id": "arc_agi_2/6d1d5c90/0",
+                  "mean_loto_distance_squared_over_training_variance": 0.2433068747372641,
+                  "rows": 8
+                },
+                {
+                  "id": "intellect3_logic/03253/e388bea64650",
+                  "mean_loto_distance_squared_over_training_variance": 1.1825437784954809,
+                  "rows": 8
+                },
+                {
+                  "id": "intellect3_logic/07138/b6065797ee33",
+                  "mean_loto_distance_squared_over_training_variance": 1.3321265653120342,
+                  "rows": 8
+                },
+                {
+                  "id": "intellect3_math/14826/fc54a03d241c",
+                  "mean_loto_distance_squared_over_training_variance": 0.7901450468384976,
+                  "rows": 8
+                },
+                {
+                  "id": "intellect3_math/17853/b74de9e5232b",
+                  "mean_loto_distance_squared_over_training_variance": 0.8605706961183209,
+                  "rows": 8
+                }
+              ],
+              "training_variance_per_row": 3159.393806101698
+            },
+            {
+              "descriptive_evaluation_example_pearson_r": 0.9843079785522026,
+              "evaluation_examples": [
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_1/12422b43/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.212794400415144,
+                  "mean_matched_distance_squared_over_training_variance": 1.2279863593235596,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.8246308514690659,
+                  "rows": 24
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_1/c074846d/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.1828442933802157,
+                  "mean_matched_distance_squared_over_training_variance": 1.1983769990696544,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.7967270808329765,
+                  "rows": 24
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_1/c074846d/1",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.3830966721503704,
+                  "mean_matched_distance_squared_over_training_variance": 1.39134775304389,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.9520739022018629,
+                  "rows": 24
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_2/3dc255db/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.169497324337961,
+                  "mean_matched_distance_squared_over_training_variance": 1.1871332331951119,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.8067306692563047,
+                  "rows": 24
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_2/78332cb0/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.3435421562477028,
+                  "mean_matched_distance_squared_over_training_variance": 1.3563005079647936,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.9155573472630735,
+                  "rows": 24
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_2/78332cb0/1",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.218114818669615,
+                  "mean_matched_distance_squared_over_training_variance": 1.2330300059570545,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.8555858700073911,
+                  "rows": 24
+                },
+                {
+                  "family": "campsite",
+                  "id": "intellect3_logic/00062/72b57dbd293b",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.4006012209075456,
+                  "mean_matched_distance_squared_over_training_variance": 1.4065206557802281,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.9117916873562703,
+                  "rows": 24
+                },
+                {
+                  "family": "dyck_language",
+                  "id": "intellect3_logic/05869/5de8a003a86f",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.2679706363025038,
+                  "mean_matched_distance_squared_over_training_variance": 1.2816971958457908,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.8452993974483509,
+                  "rows": 24
+                },
+                {
+                  "family": "math",
+                  "id": "intellect3_math/04162/0fae120567d0",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.6906645004661642,
+                  "mean_matched_distance_squared_over_training_variance": 1.7061114381900102,
+                  "mean_reconstruction_error_squared_over_training_variance": 1.19576023598207,
+                  "rows": 24
+                },
+                {
+                  "family": "math",
+                  "id": "intellect3_math/10603/9d30832ed4ab",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.3313441728887188,
+                  "mean_matched_distance_squared_over_training_variance": 1.3423102149875314,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.8977249653508785,
+                  "rows": 24
+                }
+              ],
+              "evaluation_over_training_median_distance_ratio": 1.0415723280036087,
+              "families": [
+                {
+                  "examples": 6,
+                  "family": "arc_grid",
+                  "mean_example_matched_distance": 1.2656958097590107,
+                  "mean_example_reconstruction_error": 0.8585509535051123
+                },
+                {
+                  "examples": 1,
+                  "family": "campsite",
+                  "mean_example_matched_distance": 1.4065206557802281,
+                  "mean_example_reconstruction_error": 0.9117916873562703
+                },
+                {
+                  "examples": 1,
+                  "family": "dyck_language",
+                  "mean_example_matched_distance": 1.2816971958457908,
+                  "mean_example_reconstruction_error": 0.8452993974483509
+                },
+                {
+                  "examples": 2,
+                  "family": "math",
+                  "mean_example_matched_distance": 1.5242108265887708,
+                  "mean_example_reconstruction_error": 1.0467426006664744
+                }
+              ],
+              "median_evaluation_example_matched_distance": 1.3120037054166611,
+              "median_training_example_loto_distance": 1.2596376364293307,
+              "pass": 1,
+              "phase": "generated",
+              "reference_trajectories_per_comparison": 7,
+              "training_examples": [
+                {
+                  "id": "arc_agi_1/a79310a0/0",
+                  "mean_loto_distance_squared_over_training_variance": 1.0870352340891731,
+                  "rows": 24
+                },
+                {
+                  "id": "arc_agi_1/bd4472b8/0",
+                  "mean_loto_distance_squared_over_training_variance": 1.193621984625538,
+                  "rows": 24
+                },
+                {
+                  "id": "arc_agi_2/2a28add5/0",
+                  "mean_loto_distance_squared_over_training_variance": 1.2312547402063116,
+                  "rows": 24
+                },
+                {
+                  "id": "arc_agi_2/6d1d5c90/0",
+                  "mean_loto_distance_squared_over_training_variance": 1.197052356853917,
+                  "rows": 24
+                },
+                {
+                  "id": "intellect3_logic/03253/e388bea64650",
+                  "mean_loto_distance_squared_over_training_variance": 1.4204113879468097,
+                  "rows": 24
+                },
+                {
+                  "id": "intellect3_logic/07138/b6065797ee33",
+                  "mean_loto_distance_squared_over_training_variance": 1.2880205326523497,
+                  "rows": 24
+                },
+                {
+                  "id": "intellect3_math/14826/fc54a03d241c",
+                  "mean_loto_distance_squared_over_training_variance": 1.6572281700274967,
+                  "rows": 24
+                },
+                {
+                  "id": "intellect3_math/17853/b74de9e5232b",
+                  "mean_loto_distance_squared_over_training_variance": 1.4052565330149174,
+                  "rows": 24
+                }
+              ],
+              "training_variance_per_row": 4308.969714373703
+            }
+          ],
+          "site": "model.layers.11"
+        },
+        {
+          "results": [
+            {
+              "descriptive_evaluation_example_pearson_r": 0.9914516658931076,
+              "evaluation_examples": [
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_1/12422b43/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.23617019588849136,
+                  "mean_matched_distance_squared_over_training_variance": 0.23993963513015043,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.23600794950762266,
+                  "rows": 8
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_1/c074846d/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.22158731427619005,
+                  "mean_matched_distance_squared_over_training_variance": 0.2259459580790179,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.21943733013684635,
+                  "rows": 8
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_1/c074846d/1",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.21213636991857254,
+                  "mean_matched_distance_squared_over_training_variance": 0.2165952538472481,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.22053610983646288,
+                  "rows": 8
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_2/3dc255db/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.238326483908957,
+                  "mean_matched_distance_squared_over_training_variance": 0.2471061359720371,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.27928296009521636,
+                  "rows": 8
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_2/78332cb0/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.18126177981193314,
+                  "mean_matched_distance_squared_over_training_variance": 0.18924337551558232,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.2416453817089031,
+                  "rows": 8
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_2/78332cb0/1",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.18380158685614914,
+                  "mean_matched_distance_squared_over_training_variance": 0.19042093321917763,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.23202075973262903,
+                  "rows": 8
+                },
+                {
+                  "family": "campsite",
+                  "id": "intellect3_logic/00062/72b57dbd293b",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.8804003179527154,
+                  "mean_matched_distance_squared_over_training_variance": 0.891638873772588,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.5852306746129641,
+                  "rows": 8
+                },
+                {
+                  "family": "dyck_language",
+                  "id": "intellect3_logic/05869/5de8a003a86f",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.6555252061471855,
+                  "mean_matched_distance_squared_over_training_variance": 1.6710039058446526,
+                  "mean_reconstruction_error_squared_over_training_variance": 1.2053429302353145,
+                  "rows": 8
+                },
+                {
+                  "family": "math",
+                  "id": "intellect3_math/04162/0fae120567d0",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.64929116564311,
+                  "mean_matched_distance_squared_over_training_variance": 0.6676743439709326,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.5806220167877852,
+                  "rows": 8
+                },
+                {
+                  "family": "math",
+                  "id": "intellect3_math/10603/9d30832ed4ab",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.6098625452129067,
+                  "mean_matched_distance_squared_over_training_variance": 0.6224602655265681,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.5406076841876318,
+                  "rows": 8
+                }
+              ],
+              "evaluation_over_training_median_distance_ratio": 0.5105527684410804,
+              "families": [
+                {
+                  "examples": 6,
+                  "family": "arc_grid",
+                  "mean_example_matched_distance": 0.2182085486272022,
+                  "mean_example_reconstruction_error": 0.2381550818362801
+                },
+                {
+                  "examples": 1,
+                  "family": "campsite",
+                  "mean_example_matched_distance": 0.891638873772588,
+                  "mean_example_reconstruction_error": 0.5852306746129641
+                },
+                {
+                  "examples": 1,
+                  "family": "dyck_language",
+                  "mean_example_matched_distance": 1.6710039058446526,
+                  "mean_example_reconstruction_error": 1.2053429302353145
+                },
+                {
+                  "examples": 2,
+                  "family": "math",
+                  "mean_example_matched_distance": 0.6450673047487503,
+                  "mean_example_reconstruction_error": 0.5606148504877085
+                }
+              ],
+              "median_evaluation_example_matched_distance": 0.24352288555109375,
+              "median_training_example_loto_distance": 0.4769788758460079,
+              "pass": 0,
+              "phase": "prompt",
+              "reference_trajectories_per_comparison": 7,
+              "training_examples": [
+                {
+                  "id": "arc_agi_1/a79310a0/0",
+                  "mean_loto_distance_squared_over_training_variance": 0.24095471671168103,
+                  "rows": 8
+                },
+                {
+                  "id": "arc_agi_1/bd4472b8/0",
+                  "mean_loto_distance_squared_over_training_variance": 0.27763037473984564,
+                  "rows": 8
+                },
+                {
+                  "id": "arc_agi_2/2a28add5/0",
+                  "mean_loto_distance_squared_over_training_variance": 0.20323271332395115,
+                  "rows": 8
+                },
+                {
+                  "id": "arc_agi_2/6d1d5c90/0",
+                  "mean_loto_distance_squared_over_training_variance": 0.19626235125801503,
+                  "rows": 8
+                },
+                {
+                  "id": "intellect3_logic/03253/e388bea64650",
+                  "mean_loto_distance_squared_over_training_variance": 1.1743120744570776,
+                  "rows": 8
+                },
+                {
+                  "id": "intellect3_logic/07138/b6065797ee33",
+                  "mean_loto_distance_squared_over_training_variance": 1.047007768563656,
+                  "rows": 8
+                },
+                {
+                  "id": "intellect3_math/14826/fc54a03d241c",
+                  "mean_loto_distance_squared_over_training_variance": 0.6763273769521702,
+                  "rows": 8
+                },
+                {
+                  "id": "intellect3_math/17853/b74de9e5232b",
+                  "mean_loto_distance_squared_over_training_variance": 0.7492657463258441,
+                  "rows": 8
+                }
+              ],
+              "training_variance_per_row": 248.21050602593883
+            },
+            {
+              "descriptive_evaluation_example_pearson_r": 0.9812033118012534,
+              "evaluation_examples": [
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_1/12422b43/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.1300530997308835,
+                  "mean_matched_distance_squared_over_training_variance": 1.13797230781723,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.8146457923183865,
+                  "rows": 24
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_1/c074846d/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.2887260322674294,
+                  "mean_matched_distance_squared_over_training_variance": 1.2964633200132774,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.9455856707520885,
+                  "rows": 24
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_1/c074846d/1",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.1082296287417661,
+                  "mean_matched_distance_squared_over_training_variance": 1.1123641135286573,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.794570428724891,
+                  "rows": 24
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_2/3dc255db/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.917153618975148,
+                  "mean_matched_distance_squared_over_training_variance": 0.9289102745532295,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.6740434217245587,
+                  "rows": 24
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_2/78332cb0/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.1023084624493638,
+                  "mean_matched_distance_squared_over_training_variance": 1.1114619281300113,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.8059623232207809,
+                  "rows": 24
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_2/78332cb0/1",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.9077459572597021,
+                  "mean_matched_distance_squared_over_training_variance": 0.917498928179613,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.6540077675535738,
+                  "rows": 24
+                },
+                {
+                  "family": "campsite",
+                  "id": "intellect3_logic/00062/72b57dbd293b",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.4828504224082033,
+                  "mean_matched_distance_squared_over_training_variance": 1.4870297270035158,
+                  "mean_reconstruction_error_squared_over_training_variance": 1.0966186955699844,
+                  "rows": 24
+                },
+                {
+                  "family": "dyck_language",
+                  "id": "intellect3_logic/05869/5de8a003a86f",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.4698230615577497,
+                  "mean_matched_distance_squared_over_training_variance": 1.4732324388968803,
+                  "mean_reconstruction_error_squared_over_training_variance": 1.0876374618416245,
+                  "rows": 24
+                },
+                {
+                  "family": "math",
+                  "id": "intellect3_math/04162/0fae120567d0",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.0703179606421205,
+                  "mean_matched_distance_squared_over_training_variance": 1.0747983574813864,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.8555722921277198,
+                  "rows": 24
+                },
+                {
+                  "family": "math",
+                  "id": "intellect3_math/10603/9d30832ed4ab",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.2988943435077858,
+                  "mean_matched_distance_squared_over_training_variance": 1.3048629583927118,
+                  "mean_reconstruction_error_squared_over_training_variance": 1.0119633516381539,
+                  "rows": 24
+                }
+              ],
+              "evaluation_over_training_median_distance_ratio": 1.0318764592646017,
+              "families": [
+                {
+                  "examples": 6,
+                  "family": "arc_grid",
+                  "mean_example_matched_distance": 1.084111812037003,
+                  "mean_example_reconstruction_error": 0.7814692340490464
+                },
+                {
+                  "examples": 1,
+                  "family": "campsite",
+                  "mean_example_matched_distance": 1.4870297270035158,
+                  "mean_example_reconstruction_error": 1.0966186955699844
+                },
+                {
+                  "examples": 1,
+                  "family": "dyck_language",
+                  "mean_example_matched_distance": 1.4732324388968803,
+                  "mean_example_reconstruction_error": 1.0876374618416245
+                },
+                {
+                  "examples": 2,
+                  "family": "math",
+                  "mean_example_matched_distance": 1.189830657937049,
+                  "mean_example_reconstruction_error": 0.9337678218829368
+                }
+              ],
+              "median_evaluation_example_matched_distance": 1.1251682106729435,
+              "median_training_example_loto_distance": 1.0904098068821426,
+              "pass": 0,
+              "phase": "generated",
+              "reference_trajectories_per_comparison": 7,
+              "training_examples": [
+                {
+                  "id": "arc_agi_1/a79310a0/0",
+                  "mean_loto_distance_squared_over_training_variance": 0.9348548084231147,
+                  "rows": 24
+                },
+                {
+                  "id": "arc_agi_1/bd4472b8/0",
+                  "mean_loto_distance_squared_over_training_variance": 1.0480978552646258,
+                  "rows": 24
+                },
+                {
+                  "id": "arc_agi_2/2a28add5/0",
+                  "mean_loto_distance_squared_over_training_variance": 0.8930391509548681,
+                  "rows": 24
+                },
+                {
+                  "id": "arc_agi_2/6d1d5c90/0",
+                  "mean_loto_distance_squared_over_training_variance": 0.890719021759567,
+                  "rows": 24
+                },
+                {
+                  "id": "intellect3_logic/03253/e388bea64650",
+                  "mean_loto_distance_squared_over_training_variance": 1.574422607538441,
+                  "rows": 24
+                },
+                {
+                  "id": "intellect3_logic/07138/b6065797ee33",
+                  "mean_loto_distance_squared_over_training_variance": 1.1327217584996596,
+                  "rows": 24
+                },
+                {
+                  "id": "intellect3_math/14826/fc54a03d241c",
+                  "mean_loto_distance_squared_over_training_variance": 1.601996106441159,
+                  "rows": 24
+                },
+                {
+                  "id": "intellect3_math/17853/b74de9e5232b",
+                  "mean_loto_distance_squared_over_training_variance": 1.2280562961000625,
+                  "rows": 24
+                }
+              ],
+              "training_variance_per_row": 463.759279503518
+            },
+            {
+              "descriptive_evaluation_example_pearson_r": 0.993949393789755,
+              "evaluation_examples": [
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_1/12422b43/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.373291472668153,
+                  "mean_matched_distance_squared_over_training_variance": 0.3784544149282073,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.29038144091506873,
+                  "rows": 8
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_1/c074846d/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.4083033897554359,
+                  "mean_matched_distance_squared_over_training_variance": 0.4243885326189937,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.3340396748582458,
+                  "rows": 8
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_1/c074846d/1",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.3678828455898627,
+                  "mean_matched_distance_squared_over_training_variance": 0.37889133663342867,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.3005259802088924,
+                  "rows": 8
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_2/3dc255db/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.3076896926384478,
+                  "mean_matched_distance_squared_over_training_variance": 0.3176493749944533,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.26112118531960365,
+                  "rows": 8
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_2/78332cb0/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.2813689927857145,
+                  "mean_matched_distance_squared_over_training_variance": 0.2978267514172319,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.23864836476118445,
+                  "rows": 8
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_2/78332cb0/1",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.3019254497935737,
+                  "mean_matched_distance_squared_over_training_variance": 0.31249939671828064,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.23721060957880066,
+                  "rows": 8
+                },
+                {
+                  "family": "campsite",
+                  "id": "intellect3_logic/00062/72b57dbd293b",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.6318530694049693,
+                  "mean_matched_distance_squared_over_training_variance": 0.6542780168481757,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.48858816797692195,
+                  "rows": 8
+                },
+                {
+                  "family": "dyck_language",
+                  "id": "intellect3_logic/05869/5de8a003a86f",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.7296392212091478,
+                  "mean_matched_distance_squared_over_training_variance": 0.7450985853383669,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.5473433704800794,
+                  "rows": 8
+                },
+                {
+                  "family": "math",
+                  "id": "intellect3_math/04162/0fae120567d0",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.8573845495311982,
+                  "mean_matched_distance_squared_over_training_variance": 0.873480736704427,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.7046261993980154,
+                  "rows": 8
+                },
+                {
+                  "family": "math",
+                  "id": "intellect3_math/10603/9d30832ed4ab",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.5902377104960516,
+                  "mean_matched_distance_squared_over_training_variance": 0.6091854617830498,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.45251597190281856,
+                  "rows": 8
+                }
+              ],
+              "evaluation_over_training_median_distance_ratio": 0.7275364683583128,
+              "families": [
+                {
+                  "examples": 6,
+                  "family": "arc_grid",
+                  "mean_example_matched_distance": 0.3516183012184326,
+                  "mean_example_reconstruction_error": 0.27698787594029933
+                },
+                {
+                  "examples": 1,
+                  "family": "campsite",
+                  "mean_example_matched_distance": 0.6542780168481757,
+                  "mean_example_reconstruction_error": 0.48858816797692195
+                },
+                {
+                  "examples": 1,
+                  "family": "dyck_language",
+                  "mean_example_matched_distance": 0.7450985853383669,
+                  "mean_example_reconstruction_error": 0.5473433704800794
+                },
+                {
+                  "examples": 2,
+                  "family": "math",
+                  "mean_example_matched_distance": 0.7413330992437384,
+                  "mean_example_reconstruction_error": 0.5785710856504169
+                }
+              ],
+              "median_evaluation_example_matched_distance": 0.40163993462621117,
+              "median_training_example_loto_distance": 0.5520547107865429,
+              "pass": 1,
+              "phase": "prompt",
+              "reference_trajectories_per_comparison": 7,
+              "training_examples": [
+                {
+                  "id": "arc_agi_1/a79310a0/0",
+                  "mean_loto_distance_squared_over_training_variance": 0.36260036039722,
+                  "rows": 8
+                },
+                {
+                  "id": "arc_agi_1/bd4472b8/0",
+                  "mean_loto_distance_squared_over_training_variance": 0.33224362588028133,
+                  "rows": 8
+                },
+                {
+                  "id": "arc_agi_2/2a28add5/0",
+                  "mean_loto_distance_squared_over_training_variance": 0.31679115613181175,
+                  "rows": 8
+                },
+                {
+                  "id": "arc_agi_2/6d1d5c90/0",
+                  "mean_loto_distance_squared_over_training_variance": 0.3385072424774641,
+                  "rows": 8
+                },
+                {
+                  "id": "intellect3_logic/03253/e388bea64650",
+                  "mean_loto_distance_squared_over_training_variance": 0.7415090611758658,
+                  "rows": 8
+                },
+                {
+                  "id": "intellect3_logic/07138/b6065797ee33",
+                  "mean_loto_distance_squared_over_training_variance": 0.7682121270112824,
+                  "rows": 8
+                },
+                {
+                  "id": "intellect3_math/14826/fc54a03d241c",
+                  "mean_loto_distance_squared_over_training_variance": 1.0916407671953627,
+                  "rows": 8
+                },
+                {
+                  "id": "intellect3_math/17853/b74de9e5232b",
+                  "mean_loto_distance_squared_over_training_variance": 0.7468223924908258,
+                  "rows": 8
+                }
+              ],
+              "training_variance_per_row": 16513.840264056354
+            },
+            {
+              "descriptive_evaluation_example_pearson_r": 0.9940435197081523,
+              "evaluation_examples": [
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_1/12422b43/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.9825702954956684,
+                  "mean_matched_distance_squared_over_training_variance": 1.002182882625112,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.6815751067310915,
+                  "rows": 24
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_1/c074846d/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.3671410795638572,
+                  "mean_matched_distance_squared_over_training_variance": 1.3832423129600595,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.9488334741506742,
+                  "rows": 24
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_1/c074846d/1",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.016112313187154,
+                  "mean_matched_distance_squared_over_training_variance": 1.0268505638272925,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.7063885686359826,
+                  "rows": 24
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_2/3dc255db/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.6444088375986465,
+                  "mean_matched_distance_squared_over_training_variance": 0.6542238618803975,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.4414753859979743,
+                  "rows": 24
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_2/78332cb0/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.6417006695364496,
+                  "mean_matched_distance_squared_over_training_variance": 0.6514938184418698,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.47198997859017683,
+                  "rows": 24
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_2/78332cb0/1",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.6453560578502517,
+                  "mean_matched_distance_squared_over_training_variance": 0.6546011996201698,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.459007945778443,
+                  "rows": 24
+                },
+                {
+                  "family": "campsite",
+                  "id": "intellect3_logic/00062/72b57dbd293b",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.0402617534708487,
+                  "mean_matched_distance_squared_over_training_variance": 1.0532712773534523,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.7717429889123437,
+                  "rows": 24
+                },
+                {
+                  "family": "dyck_language",
+                  "id": "intellect3_logic/05869/5de8a003a86f",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.1049405296457337,
+                  "mean_matched_distance_squared_over_training_variance": 1.1188959161314054,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.8200055157145476,
+                  "rows": 24
+                },
+                {
+                  "family": "math",
+                  "id": "intellect3_math/04162/0fae120567d0",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.2901115914782268,
+                  "mean_matched_distance_squared_over_training_variance": 1.3045841517363896,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.9183132369396926,
+                  "rows": 24
+                },
+                {
+                  "family": "math",
+                  "id": "intellect3_math/10603/9d30832ed4ab",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.2181973501407637,
+                  "mean_matched_distance_squared_over_training_variance": 1.2327179192922098,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.8649654175733943,
+                  "rows": 24
+                }
+              ],
+              "evaluation_over_training_median_distance_ratio": 1.02374496724932,
+              "families": [
+                {
+                  "examples": 6,
+                  "family": "arc_grid",
+                  "mean_example_matched_distance": 0.8954324398924837,
+                  "mean_example_reconstruction_error": 0.618211743314057
+                },
+                {
+                  "examples": 1,
+                  "family": "campsite",
+                  "mean_example_matched_distance": 1.0532712773534523,
+                  "mean_example_reconstruction_error": 0.7717429889123437
+                },
+                {
+                  "examples": 1,
+                  "family": "dyck_language",
+                  "mean_example_matched_distance": 1.1188959161314054,
+                  "mean_example_reconstruction_error": 0.8200055157145476
+                },
+                {
+                  "examples": 2,
+                  "family": "math",
+                  "mean_example_matched_distance": 1.2686510355142997,
+                  "mean_example_reconstruction_error": 0.8916393272565435
+                }
+              ],
+              "median_evaluation_example_matched_distance": 1.0400609205903724,
+              "median_training_example_loto_distance": 1.015937517509748,
+              "pass": 1,
+              "phase": "generated",
+              "reference_trajectories_per_comparison": 7,
+              "training_examples": [
+                {
+                  "id": "arc_agi_1/a79310a0/0",
+                  "mean_loto_distance_squared_over_training_variance": 0.895352400857575,
+                  "rows": 24
+                },
+                {
+                  "id": "arc_agi_1/bd4472b8/0",
+                  "mean_loto_distance_squared_over_training_variance": 1.0370859454844499,
+                  "rows": 24
+                },
+                {
+                  "id": "arc_agi_2/2a28add5/0",
+                  "mean_loto_distance_squared_over_training_variance": 0.634343487779209,
+                  "rows": 24
+                },
+                {
+                  "id": "arc_agi_2/6d1d5c90/0",
+                  "mean_loto_distance_squared_over_training_variance": 0.5452936648403545,
+                  "rows": 24
+                },
+                {
+                  "id": "intellect3_logic/03253/e388bea64650",
+                  "mean_loto_distance_squared_over_training_variance": 1.1692211245912254,
+                  "rows": 24
+                },
+                {
+                  "id": "intellect3_logic/07138/b6065797ee33",
+                  "mean_loto_distance_squared_over_training_variance": 0.994789089535046,
+                  "rows": 24
+                },
+                {
+                  "id": "intellect3_math/14826/fc54a03d241c",
+                  "mean_loto_distance_squared_over_training_variance": 1.3656816885057703,
+                  "rows": 24
+                },
+                {
+                  "id": "intellect3_math/17853/b74de9e5232b",
+                  "mean_loto_distance_squared_over_training_variance": 1.0880972670056634,
+                  "rows": 24
+                }
+              ],
+              "training_variance_per_row": 14581.716091031883
+            }
+          ],
+          "site": "model.norm"
+        }
+      ]
+    },
+    {
+      "path": "C:\\projects\\VPD\\artifacts\\nanbeige_reasoning\\q4_reasoning_pilot_8192_v1\\q4_reasoning_saes",
+      "sites": [
+        {
+          "results": [
+            {
+              "descriptive_evaluation_example_pearson_r": 0.997492186351171,
+              "evaluation_examples": [
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_1/12422b43/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.12438018857350927,
+                  "mean_matched_distance_squared_over_training_variance": 0.1267689601699969,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.09432566984171113,
+                  "rows": 8
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_1/c074846d/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.12752855036655952,
+                  "mean_matched_distance_squared_over_training_variance": 0.1310683116688856,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.10054447523411125,
+                  "rows": 8
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_1/c074846d/1",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.13365198882693394,
+                  "mean_matched_distance_squared_over_training_variance": 0.13699097474943106,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.10456477340966416,
+                  "rows": 8
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_2/3dc255db/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.12556388899251195,
+                  "mean_matched_distance_squared_over_training_variance": 0.13471094488756705,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.11771046539449811,
+                  "rows": 8
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_2/78332cb0/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.12011530539238718,
+                  "mean_matched_distance_squared_over_training_variance": 0.12671823224492507,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.10663456720019596,
+                  "rows": 8
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_2/78332cb0/1",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.11595955525126905,
+                  "mean_matched_distance_squared_over_training_variance": 0.12248942582184977,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.10444247530597978,
+                  "rows": 8
+                },
+                {
+                  "family": "campsite",
+                  "id": "intellect3_logic/00062/72b57dbd293b",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.8359097854114159,
+                  "mean_matched_distance_squared_over_training_variance": 0.8425129242168947,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.5654244344741992,
+                  "rows": 8
+                },
+                {
+                  "family": "dyck_language",
+                  "id": "intellect3_logic/05869/5de8a003a86f",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.5555213746148413,
+                  "mean_matched_distance_squared_over_training_variance": 1.5666779623863551,
+                  "mean_reconstruction_error_squared_over_training_variance": 1.1970815394219256,
+                  "rows": 8
+                },
+                {
+                  "family": "math",
+                  "id": "intellect3_math/04162/0fae120567d0",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.5762701521213804,
+                  "mean_matched_distance_squared_over_training_variance": 0.5933488278367406,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.425918839703066,
+                  "rows": 8
+                },
+                {
+                  "family": "math",
+                  "id": "intellect3_math/10603/9d30832ed4ab",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.5074046304162464,
+                  "mean_matched_distance_squared_over_training_variance": 0.5253150258590034,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.3902358972415705,
+                  "rows": 8
+                }
+              ],
+              "evaluation_over_training_median_distance_ratio": 0.33434629978056923,
+              "families": [
+                {
+                  "examples": 6,
+                  "family": "arc_grid",
+                  "mean_example_matched_distance": 0.12979114159044255,
+                  "mean_example_reconstruction_error": 0.10470373773102674
+                },
+                {
+                  "examples": 1,
+                  "family": "campsite",
+                  "mean_example_matched_distance": 0.8425129242168947,
+                  "mean_example_reconstruction_error": 0.5654244344741992
+                },
+                {
+                  "examples": 1,
+                  "family": "dyck_language",
+                  "mean_example_matched_distance": 1.5666779623863551,
+                  "mean_example_reconstruction_error": 1.1970815394219256
+                },
+                {
+                  "examples": 2,
+                  "family": "math",
+                  "mean_example_matched_distance": 0.559331926847872,
+                  "mean_example_reconstruction_error": 0.40807736847231824
+                }
+              ],
+              "median_evaluation_example_matched_distance": 0.13585095981849904,
+              "median_training_example_loto_distance": 0.4063181195893531,
+              "pass": 0,
+              "phase": "prompt",
+              "reference_trajectories_per_comparison": 7,
+              "training_examples": [
+                {
+                  "id": "arc_agi_1/a79310a0/0",
+                  "mean_loto_distance_squared_over_training_variance": 0.16831213990509686,
+                  "rows": 8
+                },
+                {
+                  "id": "arc_agi_1/bd4472b8/0",
+                  "mean_loto_distance_squared_over_training_variance": 0.1578792974928258,
+                  "rows": 8
+                },
+                {
+                  "id": "arc_agi_2/2a28add5/0",
+                  "mean_loto_distance_squared_over_training_variance": 0.11920492677929537,
+                  "rows": 8
+                },
+                {
+                  "id": "arc_agi_2/6d1d5c90/0",
+                  "mean_loto_distance_squared_over_training_variance": 0.10682331603800388,
+                  "rows": 8
+                },
+                {
+                  "id": "intellect3_logic/03253/e388bea64650",
+                  "mean_loto_distance_squared_over_training_variance": 0.9346159726126494,
+                  "rows": 8
+                },
+                {
+                  "id": "intellect3_logic/07138/b6065797ee33",
+                  "mean_loto_distance_squared_over_training_variance": 1.2002630208300704,
+                  "rows": 8
+                },
+                {
+                  "id": "intellect3_math/14826/fc54a03d241c",
+                  "mean_loto_distance_squared_over_training_variance": 0.6443240992736093,
+                  "rows": 8
+                },
+                {
+                  "id": "intellect3_math/17853/b74de9e5232b",
+                  "mean_loto_distance_squared_over_training_variance": 0.6880493712205628,
+                  "rows": 8
+                }
+              ],
+              "training_variance_per_row": 4815.239621860348
+            },
+            {
+              "descriptive_evaluation_example_pearson_r": 0.9844969758492687,
+              "evaluation_examples": [
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_1/12422b43/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.1442142720725814,
+                  "mean_matched_distance_squared_over_training_variance": 1.160815092337968,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.801622204903345,
+                  "rows": 24
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_1/c074846d/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.2993423312350314,
+                  "mean_matched_distance_squared_over_training_variance": 1.3130063419087379,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.9160517042354045,
+                  "rows": 24
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_1/c074846d/1",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.9098650004665209,
+                  "mean_matched_distance_squared_over_training_variance": 0.9270230149769682,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.6439369407777497,
+                  "rows": 24
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_2/3dc255db/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.280698471343314,
+                  "mean_matched_distance_squared_over_training_variance": 1.3119184331993992,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.9455605124954776,
+                  "rows": 24
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_2/78332cb0/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.1636006794784655,
+                  "mean_matched_distance_squared_over_training_variance": 1.1921711439409526,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.9010967515010542,
+                  "rows": 24
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_2/78332cb0/1",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.1360938644527607,
+                  "mean_matched_distance_squared_over_training_variance": 1.1674498427409612,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.8338885648752518,
+                  "rows": 24
+                },
+                {
+                  "family": "campsite",
+                  "id": "intellect3_logic/00062/72b57dbd293b",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.404379726977,
+                  "mean_matched_distance_squared_over_training_variance": 1.4126565527346298,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.9843537445999225,
+                  "rows": 24
+                },
+                {
+                  "family": "dyck_language",
+                  "id": "intellect3_logic/05869/5de8a003a86f",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.5793067129691218,
+                  "mean_matched_distance_squared_over_training_variance": 1.585370479276549,
+                  "mean_reconstruction_error_squared_over_training_variance": 1.165514456295752,
+                  "rows": 24
+                },
+                {
+                  "family": "math",
+                  "id": "intellect3_math/04162/0fae120567d0",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.5193822500053955,
+                  "mean_matched_distance_squared_over_training_variance": 1.5301701812688115,
+                  "mean_reconstruction_error_squared_over_training_variance": 1.0943251585668106,
+                  "rows": 24
+                },
+                {
+                  "family": "math",
+                  "id": "intellect3_math/10603/9d30832ed4ab",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.3730183492442627,
+                  "mean_matched_distance_squared_over_training_variance": 1.381281640015451,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.9630381558779293,
+                  "rows": 24
+                }
+              ],
+              "evaluation_over_training_median_distance_ratio": 1.0221593014300425,
+              "families": [
+                {
+                  "examples": 6,
+                  "family": "arc_grid",
+                  "mean_example_matched_distance": 1.1787306448508312,
+                  "mean_example_reconstruction_error": 0.8403594464647136
+                },
+                {
+                  "examples": 1,
+                  "family": "campsite",
+                  "mean_example_matched_distance": 1.4126565527346298,
+                  "mean_example_reconstruction_error": 0.9843537445999225
+                },
+                {
+                  "examples": 1,
+                  "family": "dyck_language",
+                  "mean_example_matched_distance": 1.585370479276549,
+                  "mean_example_reconstruction_error": 1.165514456295752
+                },
+                {
+                  "examples": 2,
+                  "family": "math",
+                  "mean_example_matched_distance": 1.4557259106421312,
+                  "mean_example_reconstruction_error": 1.02868165722237
+                }
+              ],
+              "median_evaluation_example_matched_distance": 1.3124623875540684,
+              "median_training_example_loto_distance": 1.2840096310994578,
+              "pass": 0,
+              "phase": "generated",
+              "reference_trajectories_per_comparison": 7,
+              "training_examples": [
+                {
+                  "id": "arc_agi_1/a79310a0/0",
+                  "mean_loto_distance_squared_over_training_variance": 1.0134944726809658,
+                  "rows": 24
+                },
+                {
+                  "id": "arc_agi_1/bd4472b8/0",
+                  "mean_loto_distance_squared_over_training_variance": 1.0175135780909104,
+                  "rows": 24
+                },
+                {
+                  "id": "arc_agi_2/2a28add5/0",
+                  "mean_loto_distance_squared_over_training_variance": 1.2688088257761188,
+                  "rows": 24
+                },
+                {
+                  "id": "arc_agi_2/6d1d5c90/0",
+                  "mean_loto_distance_squared_over_training_variance": 1.3435205917173674,
+                  "rows": 24
+                },
+                {
+                  "id": "intellect3_logic/03253/e388bea64650",
+                  "mean_loto_distance_squared_over_training_variance": 1.2214679422793393,
+                  "rows": 24
+                },
+                {
+                  "id": "intellect3_logic/07138/b6065797ee33",
+                  "mean_loto_distance_squared_over_training_variance": 1.3795631397092343,
+                  "rows": 24
+                },
+                {
+                  "id": "intellect3_math/14826/fc54a03d241c",
+                  "mean_loto_distance_squared_over_training_variance": 1.7081621388270802,
+                  "rows": 24
+                },
+                {
+                  "id": "intellect3_math/17853/b74de9e5232b",
+                  "mean_loto_distance_squared_over_training_variance": 1.2992104364227968,
+                  "rows": 24
+                }
+              ],
+              "training_variance_per_row": 6018.775310883891
+            },
+            {
+              "descriptive_evaluation_example_pearson_r": 0.9973666462211571,
+              "evaluation_examples": [
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_1/12422b43/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.2645251435222174,
+                  "mean_matched_distance_squared_over_training_variance": 0.2697908934163433,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.19706268740740715,
+                  "rows": 8
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_1/c074846d/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.2821204559750396,
+                  "mean_matched_distance_squared_over_training_variance": 0.28734218058016814,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.2097800638196226,
+                  "rows": 8
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_1/c074846d/1",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.281780900581785,
+                  "mean_matched_distance_squared_over_training_variance": 0.287584446866308,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.21554859009389565,
+                  "rows": 8
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_2/3dc255db/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.31515452176440717,
+                  "mean_matched_distance_squared_over_training_variance": 0.3241025760769157,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.24534722942278406,
+                  "rows": 8
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_2/78332cb0/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.23697457294443341,
+                  "mean_matched_distance_squared_over_training_variance": 0.24560433946514468,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.19729104898656752,
+                  "rows": 8
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_2/78332cb0/1",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.2381496646007798,
+                  "mean_matched_distance_squared_over_training_variance": 0.24635055054095634,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.200749727963261,
+                  "rows": 8
+                },
+                {
+                  "family": "campsite",
+                  "id": "intellect3_logic/00062/72b57dbd293b",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.9955668312583166,
+                  "mean_matched_distance_squared_over_training_variance": 1.018949113551591,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.7118039775318492,
+                  "rows": 8
+                },
+                {
+                  "family": "dyck_language",
+                  "id": "intellect3_logic/05869/5de8a003a86f",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.4757657740618138,
+                  "mean_matched_distance_squared_over_training_variance": 1.491186131023897,
+                  "mean_reconstruction_error_squared_over_training_variance": 1.0927275101600982,
+                  "rows": 8
+                },
+                {
+                  "family": "math",
+                  "id": "intellect3_math/04162/0fae120567d0",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.936840342881333,
+                  "mean_matched_distance_squared_over_training_variance": 0.9472520136786455,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.7483073462608776,
+                  "rows": 8
+                },
+                {
+                  "family": "math",
+                  "id": "intellect3_math/10603/9d30832ed4ab",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.6758936644996985,
+                  "mean_matched_distance_squared_over_training_variance": 0.6919390328226303,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.49183178704497105,
+                  "rows": 8
+                }
+              ],
+              "evaluation_over_training_median_distance_ratio": 0.5338957845308053,
+              "families": [
+                {
+                  "examples": 6,
+                  "family": "arc_grid",
+                  "mean_example_matched_distance": 0.27679583115763934,
+                  "mean_example_reconstruction_error": 0.2109632246155897
+                },
+                {
+                  "examples": 1,
+                  "family": "campsite",
+                  "mean_example_matched_distance": 1.018949113551591,
+                  "mean_example_reconstruction_error": 0.7118039775318492
+                },
+                {
+                  "examples": 1,
+                  "family": "dyck_language",
+                  "mean_example_matched_distance": 1.491186131023897,
+                  "mean_example_reconstruction_error": 1.0927275101600982
+                },
+                {
+                  "examples": 2,
+                  "family": "math",
+                  "mean_example_matched_distance": 0.8195955232506379,
+                  "mean_example_reconstruction_error": 0.6200695666529243
+                }
+              ],
+              "median_evaluation_example_matched_distance": 0.3058435114716119,
+              "median_training_example_loto_distance": 0.572852456103191,
+              "pass": 1,
+              "phase": "prompt",
+              "reference_trajectories_per_comparison": 7,
+              "training_examples": [
+                {
+                  "id": "arc_agi_1/a79310a0/0",
+                  "mean_loto_distance_squared_over_training_variance": 0.35499702913153197,
+                  "rows": 8
+                },
+                {
+                  "id": "arc_agi_1/bd4472b8/0",
+                  "mean_loto_distance_squared_over_training_variance": 0.35555986536788436,
+                  "rows": 8
+                },
+                {
+                  "id": "arc_agi_2/2a28add5/0",
+                  "mean_loto_distance_squared_over_training_variance": 0.25019970796950725,
+                  "rows": 8
+                },
+                {
+                  "id": "arc_agi_2/6d1d5c90/0",
+                  "mean_loto_distance_squared_over_training_variance": 0.2433068747372641,
+                  "rows": 8
+                },
+                {
+                  "id": "intellect3_logic/03253/e388bea64650",
+                  "mean_loto_distance_squared_over_training_variance": 1.1825437784954809,
+                  "rows": 8
+                },
+                {
+                  "id": "intellect3_logic/07138/b6065797ee33",
+                  "mean_loto_distance_squared_over_training_variance": 1.3321265653120342,
+                  "rows": 8
+                },
+                {
+                  "id": "intellect3_math/14826/fc54a03d241c",
+                  "mean_loto_distance_squared_over_training_variance": 0.7901450468384976,
+                  "rows": 8
+                },
+                {
+                  "id": "intellect3_math/17853/b74de9e5232b",
+                  "mean_loto_distance_squared_over_training_variance": 0.8605706961183209,
+                  "rows": 8
+                }
+              ],
+              "training_variance_per_row": 3159.393806101698
+            },
+            {
+              "descriptive_evaluation_example_pearson_r": 0.949207207574743,
+              "evaluation_examples": [
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_1/12422b43/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.2470770079460998,
+                  "mean_matched_distance_squared_over_training_variance": 1.2610321202664176,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.8383944735756454,
+                  "rows": 24
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_1/c074846d/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.2078162396223566,
+                  "mean_matched_distance_squared_over_training_variance": 1.2198503077509992,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.8139171978361469,
+                  "rows": 24
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_1/c074846d/1",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.9939945263671456,
+                  "mean_matched_distance_squared_over_training_variance": 1.0168309073760289,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.7252812622265639,
+                  "rows": 24
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_2/3dc255db/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.2205007753836765,
+                  "mean_matched_distance_squared_over_training_variance": 1.240501427881474,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.8881512228399502,
+                  "rows": 24
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_2/78332cb0/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.4076082932315106,
+                  "mean_matched_distance_squared_over_training_variance": 1.4221039164446807,
+                  "mean_reconstruction_error_squared_over_training_variance": 1.043266444727433,
+                  "rows": 24
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_2/78332cb0/1",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.2603736076136551,
+                  "mean_matched_distance_squared_over_training_variance": 1.2810478708822464,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.9152596834870211,
+                  "rows": 24
+                },
+                {
+                  "family": "campsite",
+                  "id": "intellect3_logic/00062/72b57dbd293b",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.3636505383401953,
+                  "mean_matched_distance_squared_over_training_variance": 1.3705293368325078,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.9282764893098573,
+                  "rows": 24
+                },
+                {
+                  "family": "dyck_language",
+                  "id": "intellect3_logic/05869/5de8a003a86f",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.3849633073011158,
+                  "mean_matched_distance_squared_over_training_variance": 1.3943828219643244,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.9779504260802706,
+                  "rows": 24
+                },
+                {
+                  "family": "math",
+                  "id": "intellect3_math/04162/0fae120567d0",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.5262229694603124,
+                  "mean_matched_distance_squared_over_training_variance": 1.5363088966185783,
+                  "mean_reconstruction_error_squared_over_training_variance": 1.0506480686550035,
+                  "rows": 24
+                },
+                {
+                  "family": "math",
+                  "id": "intellect3_math/10603/9d30832ed4ab",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.2673157556391175,
+                  "mean_matched_distance_squared_over_training_variance": 1.2775486755183396,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.8542116446680449,
+                  "rows": 24
+                }
+              ],
+              "evaluation_over_training_median_distance_ratio": 0.9776258297355184,
+              "families": [
+                {
+                  "examples": 6,
+                  "family": "arc_grid",
+                  "mean_example_matched_distance": 1.2402277584336412,
+                  "mean_example_reconstruction_error": 0.8707117141154601
+                },
+                {
+                  "examples": 1,
+                  "family": "campsite",
+                  "mean_example_matched_distance": 1.3705293368325078,
+                  "mean_example_reconstruction_error": 0.9282764893098573
+                },
+                {
+                  "examples": 1,
+                  "family": "dyck_language",
+                  "mean_example_matched_distance": 1.3943828219643244,
+                  "mean_example_reconstruction_error": 0.9779504260802706
+                },
+                {
+                  "examples": 2,
+                  "family": "math",
+                  "mean_example_matched_distance": 1.406928786068459,
+                  "mean_example_reconstruction_error": 0.9524298566615241
+                }
+              ],
+              "median_evaluation_example_matched_distance": 1.2792982732002929,
+              "median_training_example_loto_distance": 1.308576588597692,
+              "pass": 1,
+              "phase": "generated",
+              "reference_trajectories_per_comparison": 7,
+              "training_examples": [
+                {
+                  "id": "arc_agi_1/a79310a0/0",
+                  "mean_loto_distance_squared_over_training_variance": 1.0123636572319645,
+                  "rows": 24
+                },
+                {
+                  "id": "arc_agi_1/bd4472b8/0",
+                  "mean_loto_distance_squared_over_training_variance": 1.0369444228116693,
+                  "rows": 24
+                },
+                {
+                  "id": "arc_agi_2/2a28add5/0",
+                  "mean_loto_distance_squared_over_training_variance": 1.3506377646815337,
+                  "rows": 24
+                },
+                {
+                  "id": "arc_agi_2/6d1d5c90/0",
+                  "mean_loto_distance_squared_over_training_variance": 1.2381025221386375,
+                  "rows": 24
+                },
+                {
+                  "id": "intellect3_logic/03253/e388bea64650",
+                  "mean_loto_distance_squared_over_training_variance": 1.3243986175103182,
+                  "rows": 24
+                },
+                {
+                  "id": "intellect3_logic/07138/b6065797ee33",
+                  "mean_loto_distance_squared_over_training_variance": 1.323012273125382,
+                  "rows": 24
+                },
+                {
+                  "id": "intellect3_math/14826/fc54a03d241c",
+                  "mean_loto_distance_squared_over_training_variance": 1.534798436981992,
+                  "rows": 24
+                },
+                {
+                  "id": "intellect3_math/17853/b74de9e5232b",
+                  "mean_loto_distance_squared_over_training_variance": 1.2941409040700023,
+                  "rows": 24
+                }
+              ],
+              "training_variance_per_row": 4321.339576835172
+            }
+          ],
+          "site": "model.layers.11"
+        },
+        {
+          "results": [
+            {
+              "descriptive_evaluation_example_pearson_r": 0.993020865169388,
+              "evaluation_examples": [
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_1/12422b43/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.23617019588849136,
+                  "mean_matched_distance_squared_over_training_variance": 0.23993963513015043,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.19821474424992347,
+                  "rows": 8
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_1/c074846d/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.22158731427619005,
+                  "mean_matched_distance_squared_over_training_variance": 0.2259459580790179,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.1834432249980725,
+                  "rows": 8
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_1/c074846d/1",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.21213636991857254,
+                  "mean_matched_distance_squared_over_training_variance": 0.2165952538472481,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.1825271062696774,
+                  "rows": 8
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_2/3dc255db/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.238326483908957,
+                  "mean_matched_distance_squared_over_training_variance": 0.2471061359720371,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.2365555093051586,
+                  "rows": 8
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_2/78332cb0/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.18126177981193314,
+                  "mean_matched_distance_squared_over_training_variance": 0.18924337551558232,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.2067760852258745,
+                  "rows": 8
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_2/78332cb0/1",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.18380158685614914,
+                  "mean_matched_distance_squared_over_training_variance": 0.19042093321917763,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.1993602639307056,
+                  "rows": 8
+                },
+                {
+                  "family": "campsite",
+                  "id": "intellect3_logic/00062/72b57dbd293b",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.8804003179527154,
+                  "mean_matched_distance_squared_over_training_variance": 0.891638873772588,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.5610397331236825,
+                  "rows": 8
+                },
+                {
+                  "family": "dyck_language",
+                  "id": "intellect3_logic/05869/5de8a003a86f",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.6555252061471855,
+                  "mean_matched_distance_squared_over_training_variance": 1.6710039058446526,
+                  "mean_reconstruction_error_squared_over_training_variance": 1.205684004469918,
+                  "rows": 8
+                },
+                {
+                  "family": "math",
+                  "id": "intellect3_math/04162/0fae120567d0",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.64929116564311,
+                  "mean_matched_distance_squared_over_training_variance": 0.6676743439709326,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.5313413224978917,
+                  "rows": 8
+                },
+                {
+                  "family": "math",
+                  "id": "intellect3_math/10603/9d30832ed4ab",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.6098625452129067,
+                  "mean_matched_distance_squared_over_training_variance": 0.6224602655265681,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.4977658755119293,
+                  "rows": 8
+                }
+              ],
+              "evaluation_over_training_median_distance_ratio": 0.5105527684410804,
+              "families": [
+                {
+                  "examples": 6,
+                  "family": "arc_grid",
+                  "mean_example_matched_distance": 0.2182085486272022,
+                  "mean_example_reconstruction_error": 0.20114615566323532
+                },
+                {
+                  "examples": 1,
+                  "family": "campsite",
+                  "mean_example_matched_distance": 0.891638873772588,
+                  "mean_example_reconstruction_error": 0.5610397331236825
+                },
+                {
+                  "examples": 1,
+                  "family": "dyck_language",
+                  "mean_example_matched_distance": 1.6710039058446526,
+                  "mean_example_reconstruction_error": 1.205684004469918
+                },
+                {
+                  "examples": 2,
+                  "family": "math",
+                  "mean_example_matched_distance": 0.6450673047487503,
+                  "mean_example_reconstruction_error": 0.5145535990049105
+                }
+              ],
+              "median_evaluation_example_matched_distance": 0.24352288555109375,
+              "median_training_example_loto_distance": 0.4769788758460079,
+              "pass": 0,
+              "phase": "prompt",
+              "reference_trajectories_per_comparison": 7,
+              "training_examples": [
+                {
+                  "id": "arc_agi_1/a79310a0/0",
+                  "mean_loto_distance_squared_over_training_variance": 0.24095471671168103,
+                  "rows": 8
+                },
+                {
+                  "id": "arc_agi_1/bd4472b8/0",
+                  "mean_loto_distance_squared_over_training_variance": 0.27763037473984564,
+                  "rows": 8
+                },
+                {
+                  "id": "arc_agi_2/2a28add5/0",
+                  "mean_loto_distance_squared_over_training_variance": 0.20323271332395115,
+                  "rows": 8
+                },
+                {
+                  "id": "arc_agi_2/6d1d5c90/0",
+                  "mean_loto_distance_squared_over_training_variance": 0.19626235125801503,
+                  "rows": 8
+                },
+                {
+                  "id": "intellect3_logic/03253/e388bea64650",
+                  "mean_loto_distance_squared_over_training_variance": 1.1743120744570776,
+                  "rows": 8
+                },
+                {
+                  "id": "intellect3_logic/07138/b6065797ee33",
+                  "mean_loto_distance_squared_over_training_variance": 1.047007768563656,
+                  "rows": 8
+                },
+                {
+                  "id": "intellect3_math/14826/fc54a03d241c",
+                  "mean_loto_distance_squared_over_training_variance": 0.6763273769521702,
+                  "rows": 8
+                },
+                {
+                  "id": "intellect3_math/17853/b74de9e5232b",
+                  "mean_loto_distance_squared_over_training_variance": 0.7492657463258441,
+                  "rows": 8
+                }
+              ],
+              "training_variance_per_row": 248.21050602593883
+            },
+            {
+              "descriptive_evaluation_example_pearson_r": 0.9770750964103218,
+              "evaluation_examples": [
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_1/12422b43/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.0509005945234315,
+                  "mean_matched_distance_squared_over_training_variance": 1.0612364292730427,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.7380730959905973,
+                  "rows": 24
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_1/c074846d/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.253215616589555,
+                  "mean_matched_distance_squared_over_training_variance": 1.2607858310147464,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.9046779633400085,
+                  "rows": 24
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_1/c074846d/1",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.8500912937970044,
+                  "mean_matched_distance_squared_over_training_variance": 0.8696151958152322,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.6264529929520144,
+                  "rows": 24
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_2/3dc255db/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.9674375292400569,
+                  "mean_matched_distance_squared_over_training_variance": 0.9849676703792625,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.7126082640322835,
+                  "rows": 24
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_2/78332cb0/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.0237726965038092,
+                  "mean_matched_distance_squared_over_training_variance": 1.0336193977859922,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.7316307822146535,
+                  "rows": 24
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_2/78332cb0/1",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.8367611929819226,
+                  "mean_matched_distance_squared_over_training_variance": 0.8510898584188888,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.6058905746209166,
+                  "rows": 24
+                },
+                {
+                  "family": "campsite",
+                  "id": "intellect3_logic/00062/72b57dbd293b",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.2918764379300411,
+                  "mean_matched_distance_squared_over_training_variance": 1.2996986413622722,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.9723263328064089,
+                  "rows": 24
+                },
+                {
+                  "family": "dyck_language",
+                  "id": "intellect3_logic/05869/5de8a003a86f",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.3454454195966186,
+                  "mean_matched_distance_squared_over_training_variance": 1.3493003186227561,
+                  "mean_reconstruction_error_squared_over_training_variance": 1.0670454671316152,
+                  "rows": 24
+                },
+                {
+                  "family": "math",
+                  "id": "intellect3_math/04162/0fae120567d0",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.1107923227641712,
+                  "mean_matched_distance_squared_over_training_variance": 1.1166941358409663,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.8712195580126932,
+                  "rows": 24
+                },
+                {
+                  "family": "math",
+                  "id": "intellect3_math/10603/9d30832ed4ab",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.1229560401337797,
+                  "mean_matched_distance_squared_over_training_variance": 1.1279066770294255,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.8034882919899119,
+                  "rows": 24
+                }
+              ],
+              "evaluation_over_training_median_distance_ratio": 0.9720349175139514,
+              "families": [
+                {
+                  "examples": 6,
+                  "family": "arc_grid",
+                  "mean_example_matched_distance": 1.010219063781194,
+                  "mean_example_reconstruction_error": 0.7198889455250789
+                },
+                {
+                  "examples": 1,
+                  "family": "campsite",
+                  "mean_example_matched_distance": 1.2996986413622722,
+                  "mean_example_reconstruction_error": 0.9723263328064089
+                },
+                {
+                  "examples": 1,
+                  "family": "dyck_language",
+                  "mean_example_matched_distance": 1.3493003186227561,
+                  "mean_example_reconstruction_error": 1.0670454671316152
+                },
+                {
+                  "examples": 2,
+                  "family": "math",
+                  "mean_example_matched_distance": 1.1223004064351958,
+                  "mean_example_reconstruction_error": 0.8373539250013026
+                }
+              ],
+              "median_evaluation_example_matched_distance": 1.0889652825570044,
+              "median_training_example_loto_distance": 1.1202944080878399,
+              "pass": 0,
+              "phase": "generated",
+              "reference_trajectories_per_comparison": 7,
+              "training_examples": [
+                {
+                  "id": "arc_agi_1/a79310a0/0",
+                  "mean_loto_distance_squared_over_training_variance": 0.8190447628102852,
+                  "rows": 24
+                },
+                {
+                  "id": "arc_agi_1/bd4472b8/0",
+                  "mean_loto_distance_squared_over_training_variance": 0.9036686532911077,
+                  "rows": 24
+                },
+                {
+                  "id": "arc_agi_2/2a28add5/0",
+                  "mean_loto_distance_squared_over_training_variance": 1.1908536817385162,
+                  "rows": 24
+                },
+                {
+                  "id": "arc_agi_2/6d1d5c90/0",
+                  "mean_loto_distance_squared_over_training_variance": 1.2015874329704708,
+                  "rows": 24
+                },
+                {
+                  "id": "intellect3_logic/03253/e388bea64650",
+                  "mean_loto_distance_squared_over_training_variance": 1.3332124696792966,
+                  "rows": 24
+                },
+                {
+                  "id": "intellect3_logic/07138/b6065797ee33",
+                  "mean_loto_distance_squared_over_training_variance": 1.02741056594941,
+                  "rows": 24
+                },
+                {
+                  "id": "intellect3_math/14826/fc54a03d241c",
+                  "mean_loto_distance_squared_over_training_variance": 1.4408806006709074,
+                  "rows": 24
+                },
+                {
+                  "id": "intellect3_math/17853/b74de9e5232b",
+                  "mean_loto_distance_squared_over_training_variance": 1.0497351344371637,
+                  "rows": 24
+                }
+              ],
+              "training_variance_per_row": 501.62607543350487
+            },
+            {
+              "descriptive_evaluation_example_pearson_r": 0.9929510175103892,
+              "evaluation_examples": [
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_1/12422b43/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.373291472668153,
+                  "mean_matched_distance_squared_over_training_variance": 0.3784544149282073,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.2710300634395023,
+                  "rows": 8
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_1/c074846d/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.4083033897554359,
+                  "mean_matched_distance_squared_over_training_variance": 0.4243885326189937,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.2994634245714929,
+                  "rows": 8
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_1/c074846d/1",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.3678828455898627,
+                  "mean_matched_distance_squared_over_training_variance": 0.37889133663342867,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.26951077163135595,
+                  "rows": 8
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_2/3dc255db/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.3076896926384478,
+                  "mean_matched_distance_squared_over_training_variance": 0.3176493749944533,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.2598515533503204,
+                  "rows": 8
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_2/78332cb0/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.2813689927857145,
+                  "mean_matched_distance_squared_over_training_variance": 0.2978267514172319,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.25395012287208585,
+                  "rows": 8
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_2/78332cb0/1",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.3019254497935737,
+                  "mean_matched_distance_squared_over_training_variance": 0.31249939671828064,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.2579165733407,
+                  "rows": 8
+                },
+                {
+                  "family": "campsite",
+                  "id": "intellect3_logic/00062/72b57dbd293b",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.6318530694049693,
+                  "mean_matched_distance_squared_over_training_variance": 0.6542780168481757,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.4897388698125183,
+                  "rows": 8
+                },
+                {
+                  "family": "dyck_language",
+                  "id": "intellect3_logic/05869/5de8a003a86f",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.7296392212091478,
+                  "mean_matched_distance_squared_over_training_variance": 0.7450985853383669,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.5700906127616866,
+                  "rows": 8
+                },
+                {
+                  "family": "math",
+                  "id": "intellect3_math/04162/0fae120567d0",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.8573845495311982,
+                  "mean_matched_distance_squared_over_training_variance": 0.873480736704427,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.6627219647129119,
+                  "rows": 8
+                },
+                {
+                  "family": "math",
+                  "id": "intellect3_math/10603/9d30832ed4ab",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.5902377104960516,
+                  "mean_matched_distance_squared_over_training_variance": 0.6091854617830498,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.4414844636809505,
+                  "rows": 8
+                }
+              ],
+              "evaluation_over_training_median_distance_ratio": 0.7275364683583128,
+              "families": [
+                {
+                  "examples": 6,
+                  "family": "arc_grid",
+                  "mean_example_matched_distance": 0.3516183012184326,
+                  "mean_example_reconstruction_error": 0.2686204182009096
+                },
+                {
+                  "examples": 1,
+                  "family": "campsite",
+                  "mean_example_matched_distance": 0.6542780168481757,
+                  "mean_example_reconstruction_error": 0.4897388698125183
+                },
+                {
+                  "examples": 1,
+                  "family": "dyck_language",
+                  "mean_example_matched_distance": 0.7450985853383669,
+                  "mean_example_reconstruction_error": 0.5700906127616866
+                },
+                {
+                  "examples": 2,
+                  "family": "math",
+                  "mean_example_matched_distance": 0.7413330992437384,
+                  "mean_example_reconstruction_error": 0.5521032141969312
+                }
+              ],
+              "median_evaluation_example_matched_distance": 0.40163993462621117,
+              "median_training_example_loto_distance": 0.5520547107865429,
+              "pass": 1,
+              "phase": "prompt",
+              "reference_trajectories_per_comparison": 7,
+              "training_examples": [
+                {
+                  "id": "arc_agi_1/a79310a0/0",
+                  "mean_loto_distance_squared_over_training_variance": 0.36260036039722,
+                  "rows": 8
+                },
+                {
+                  "id": "arc_agi_1/bd4472b8/0",
+                  "mean_loto_distance_squared_over_training_variance": 0.33224362588028133,
+                  "rows": 8
+                },
+                {
+                  "id": "arc_agi_2/2a28add5/0",
+                  "mean_loto_distance_squared_over_training_variance": 0.31679115613181175,
+                  "rows": 8
+                },
+                {
+                  "id": "arc_agi_2/6d1d5c90/0",
+                  "mean_loto_distance_squared_over_training_variance": 0.3385072424774641,
+                  "rows": 8
+                },
+                {
+                  "id": "intellect3_logic/03253/e388bea64650",
+                  "mean_loto_distance_squared_over_training_variance": 0.7415090611758658,
+                  "rows": 8
+                },
+                {
+                  "id": "intellect3_logic/07138/b6065797ee33",
+                  "mean_loto_distance_squared_over_training_variance": 0.7682121270112824,
+                  "rows": 8
+                },
+                {
+                  "id": "intellect3_math/14826/fc54a03d241c",
+                  "mean_loto_distance_squared_over_training_variance": 1.0916407671953627,
+                  "rows": 8
+                },
+                {
+                  "id": "intellect3_math/17853/b74de9e5232b",
+                  "mean_loto_distance_squared_over_training_variance": 0.7468223924908258,
+                  "rows": 8
+                }
+              ],
+              "training_variance_per_row": 16513.840264056354
+            },
+            {
+              "descriptive_evaluation_example_pearson_r": 0.9929444724599605,
+              "evaluation_examples": [
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_1/12422b43/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.0229552297606177,
+                  "mean_matched_distance_squared_over_training_variance": 1.03641797323207,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.7121733338640136,
+                  "rows": 24
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_1/c074846d/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.3484747072751402,
+                  "mean_matched_distance_squared_over_training_variance": 1.3674624079459183,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.9206015918543605,
+                  "rows": 24
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_1/c074846d/1",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.8983026444421239,
+                  "mean_matched_distance_squared_over_training_variance": 0.9186453433861299,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.6499926867238895,
+                  "rows": 24
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_2/3dc255db/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.7938321706114094,
+                  "mean_matched_distance_squared_over_training_variance": 0.814055258418443,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.5665785221233813,
+                  "rows": 24
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_2/78332cb0/0",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.6226983055183832,
+                  "mean_matched_distance_squared_over_training_variance": 0.6312292105744182,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.4657952997958734,
+                  "rows": 24
+                },
+                {
+                  "family": "arc_grid",
+                  "id": "arc_agi_2/78332cb0/1",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.8181811765331849,
+                  "mean_matched_distance_squared_over_training_variance": 0.8338034409717423,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.5583122036938882,
+                  "rows": 24
+                },
+                {
+                  "family": "campsite",
+                  "id": "intellect3_logic/00062/72b57dbd293b",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.0824957671153825,
+                  "mean_matched_distance_squared_over_training_variance": 1.0911392180495907,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.73875891280055,
+                  "rows": 24
+                },
+                {
+                  "family": "dyck_language",
+                  "id": "intellect3_logic/05869/5de8a003a86f",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.3592801970511168,
+                  "mean_matched_distance_squared_over_training_variance": 1.36859775095367,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.9456750487727096,
+                  "rows": 24
+                },
+                {
+                  "family": "math",
+                  "id": "intellect3_math/04162/0fae120567d0",
+                  "mean_full_pool_distance_squared_over_training_variance": 1.0852713091287813,
+                  "mean_matched_distance_squared_over_training_variance": 1.0950657884130124,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.7908673511576415,
+                  "rows": 24
+                },
+                {
+                  "family": "math",
+                  "id": "intellect3_math/10603/9d30832ed4ab",
+                  "mean_full_pool_distance_squared_over_training_variance": 0.9294597290395347,
+                  "mean_matched_distance_squared_over_training_variance": 0.9381542333835459,
+                  "mean_reconstruction_error_squared_over_training_variance": 0.6703253825634437,
+                  "rows": 24
+                }
+              ],
+              "evaluation_over_training_median_distance_ratio": 1.1012995538789176,
+              "families": [
+                {
+                  "examples": 6,
+                  "family": "arc_grid",
+                  "mean_example_matched_distance": 0.9336022724214535,
+                  "mean_example_reconstruction_error": 0.6455756063425678
+                },
+                {
+                  "examples": 1,
+                  "family": "campsite",
+                  "mean_example_matched_distance": 1.0911392180495907,
+                  "mean_example_reconstruction_error": 0.73875891280055
+                },
+                {
+                  "examples": 1,
+                  "family": "dyck_language",
+                  "mean_example_matched_distance": 1.36859775095367,
+                  "mean_example_reconstruction_error": 0.9456750487727096
+                },
+                {
+                  "examples": 2,
+                  "family": "math",
+                  "mean_example_matched_distance": 1.0166100108982792,
+                  "mean_example_reconstruction_error": 0.7305963668605426
+                }
+              ],
+              "median_evaluation_example_matched_distance": 0.987286103307808,
+              "median_training_example_loto_distance": 0.8964737158300484,
+              "pass": 1,
+              "phase": "generated",
+              "reference_trajectories_per_comparison": 7,
+              "training_examples": [
+                {
+                  "id": "arc_agi_1/a79310a0/0",
+                  "mean_loto_distance_squared_over_training_variance": 0.6506375375446523,
+                  "rows": 24
+                },
+                {
+                  "id": "arc_agi_1/bd4472b8/0",
+                  "mean_loto_distance_squared_over_training_variance": 0.8620235604753587,
+                  "rows": 24
+                },
+                {
+                  "id": "arc_agi_2/2a28add5/0",
+                  "mean_loto_distance_squared_over_training_variance": 0.9288100639470344,
+                  "rows": 24
+                },
+                {
+                  "id": "arc_agi_2/6d1d5c90/0",
+                  "mean_loto_distance_squared_over_training_variance": 1.115832838353582,
+                  "rows": 24
+                },
+                {
+                  "id": "intellect3_logic/03253/e388bea64650",
+                  "mean_loto_distance_squared_over_training_variance": 0.9251349592629393,
+                  "rows": 24
+                },
+                {
+                  "id": "intellect3_logic/07138/b6065797ee33",
+                  "mean_loto_distance_squared_over_training_variance": 0.6974087560312495,
+                  "rows": 24
+                },
+                {
+                  "id": "intellect3_math/14826/fc54a03d241c",
+                  "mean_loto_distance_squared_over_training_variance": 1.426953657361486,
+                  "rows": 24
+                },
+                {
+                  "id": "intellect3_math/17853/b74de9e5232b",
+                  "mean_loto_distance_squared_over_training_variance": 0.8678124723971575,
+                  "rows": 24
+                }
+              ],
+              "training_variance_per_row": 18317.06049016651
+            }
+          ],
+          "site": "model.norm"
+        }
+      ]
+    }
+  ],
+  "boundary": {
+    "encoder_recomputed": false,
+    "model_inference_performed": false,
+    "operative_admissions": 0,
+    "paid_compute_launched": false,
+    "training_performed": false
+  },
+  "design": {
+    "aggregation": "mean rows within each example; median examples for train/evaluation ratio; descriptive Pearson correlation over evaluation examples only",
+    "distance": "squared Euclidean nearest-row distance divided by same-phase/pass training variance per row",
+    "evaluation_reference": "average nearest distance across all leave-one-training-trajectory-out pools, matching reference size",
+    "scope": "exploratory, phase/pass/site-specific local saved-array diagnostic",
+    "training_reference": "exclude the entire query trajectory, not merely its own row"
+  },
+  "limitations": [
+    "Tiny development archives, overlapping family labels, and same seed; no independent replication or significance test.",
+    "Euclidean distance includes activation magnitude and direction and is not a semantic or density estimate.",
+    "Training LOTO distances are not out-of-sample SAE errors: the SAE was fitted on these training rows.",
+    "Distance-error association is descriptive and confounded by family/content/scale; it cannot establish that broader training will repair quality.",
+    "Nearest captured rows do not measure coverage of the full activation manifold; only retained windows are observed."
+  ],
+  "provenance": {
+    "audit_q4_common_capture_rows_v1.py": "6f8c546234fc2990c9b6e37c36062c82a8ff4048b49987f1d0c03af149ecb8f8",
+    "audit_q4_sae_phase_quality_v1.py": "6ef8aab76c1d7f524530a27b0a416afe6a1dc1843a49d6a2a142f26dd102c95e",
+    "audit_q4_sae_training_coverage_v1.py": "61fdb8762d5d649ef430b5ee329783788dbfef6ab5c5b3975c766e1282f88f30",
+    "benchmark_nanbeige_q4_sae_pass_selectivity_v1.py": "a5c6a3f3e3c5fa4299c8343bdd550ac3cc7b2c8ab600714da787546b8bda2430"
+  },
+  "report_id": "01e2949e876ad93d9c389c77cff2630ddca5395cc95e4134d0836ffb9ee3517d",
+  "schema": "sch.vpd-q4-sae-training-coverage.v1",
+  "source": {
+    "path": "C:\\projects\\VPD\\artifacts\\vpd_q4_sae_family_contributions_v1\\report.json",
+    "report_id": "2b2aeb74ec4d644c3fcb70b5fa22ff937f638b7ac21210a714969fdba4317b44",
+    "sha256": "1f369231fb2f918f868aa6d0b2246f21020ef798b3762db91a37d7d449b0121d"
+  }
+}

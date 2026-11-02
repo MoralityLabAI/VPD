@@ -1,0 +1,917 @@
+{
+  "benchmark_id": "eb6ea4b61c17bd124a784b1efe532eb94f7fd79a3743725c284be296e48635c0",
+  "design": {
+    "categories": 8,
+    "components": 128,
+    "condition_robustness_required": true,
+    "conditions_per_category": 2,
+    "countsketch_dimension": 256,
+    "hidden_size": 64,
+    "known_ground_truth": true,
+    "pair_block_direction_robustness_required": true,
+    "pair_blocks": 8,
+    "scenarios": 13,
+    "shared_components": 32,
+    "sketch_fidelity_hidden_size": 4096,
+    "specific_components_per_category": 12,
+    "template_groups_per_category": 4,
+    "template_robustness_required": true
+  },
+  "scenarios": [
+    {
+      "calibration_metrics": {
+        "calibration_specific_count": 96,
+        "component_count": 128,
+        "direction_rejected_specific_count": 0,
+        "discovery_replication_rate": 1.0,
+        "discovery_specific_count": 96,
+        "exact_compartment_agreement_rate": 1.0,
+        "magnitude_rejected_specific_count": 0,
+        "minimum_stable_specific_decision_slack": 0.3104367311862314,
+        "stable_label_specific_count": 96,
+        "stable_specific_count": 96,
+        "stratified_robustness_rejected_specific_count": 0,
+        "symmetric_replication_rate": 1.0,
+        "unstable_specific_union_count": 0
+      },
+      "calibration_rejected": false,
+      "checks": {
+        "final_accuracy": true,
+        "shared_recall": true,
+        "specific_precision": true,
+        "specific_recall": true
+      },
+      "cluster_ground_truth_purity": 1.0,
+      "condition_specific_to_shared_reroutes": 0,
+      "cross_archive_specific_to_shared_reroutes": 0,
+      "discovery": {
+        "components": 128,
+        "confusion": {
+          "missing_or_untrusted_authority": {
+            "missing_or_untrusted_authority": 12
+          },
+          "other_invalid": {
+            "other_invalid": 12
+          },
+          "replayed": {
+            "replayed": 12
+          },
+          "revoked": {
+            "revoked": 12
+          },
+          "scope_invalid": {
+            "scope_invalid": 12
+          },
+          "shared_cross_category": {
+            "shared_cross_category": 32
+          },
+          "signature_invalid": {
+            "signature_invalid": 12
+          },
+          "time_inactive": {
+            "time_inactive": 12
+          },
+          "valid_authority": {
+            "valid_authority": 12
+          }
+        },
+        "correct_specific": 96,
+        "exact_accuracy": 1.0,
+        "predicted_specific": 96,
+        "shared_recall": 1.0,
+        "specific_precision": 1.0,
+        "specific_recall": 1.0,
+        "true_shared": 32,
+        "true_specific": 96
+      },
+      "expectation": "recover",
+      "final_unseen_template_proxy": {
+        "components": 128,
+        "confusion": {
+          "missing_or_untrusted_authority": {
+            "missing_or_untrusted_authority": 12
+          },
+          "other_invalid": {
+            "other_invalid": 12
+          },
+          "replayed": {
+            "replayed": 12
+          },
+          "revoked": {
+            "revoked": 12
+          },
+          "scope_invalid": {
+            "scope_invalid": 12
+          },
+          "shared_cross_category": {
+            "shared_cross_category": 32
+          },
+          "signature_invalid": {
+            "signature_invalid": 12
+          },
+          "time_inactive": {
+            "time_inactive": 12
+          },
+          "valid_authority": {
+            "valid_authority": 12
+          }
+        },
+        "correct_specific": 96,
+        "exact_accuracy": 1.0,
+        "predicted_specific": 96,
+        "shared_recall": 1.0,
+        "specific_precision": 1.0,
+        "specific_recall": 1.0,
+        "true_shared": 32,
+        "true_specific": 96
+      },
+      "jackknife_specific_to_shared_reroutes": 0,
+      "pair_block_direction_specific_to_shared_reroutes": 0,
+      "scenario_id": "clean_cross_template",
+      "selected_thresholds": {
+        "maximum_normalized_entropy": 0.8,
+        "minimum_dominance_margin": 0.4,
+        "minimum_dominant_share": 0.35,
+        "zero_total_effect_routes_to_shared": true
+      },
+      "status": "pass",
+      "template_specific_to_shared_reroutes": 0
+    },
+    {
+      "calibration_metrics": {
+        "calibration_specific_count": 96,
+        "component_count": 128,
+        "direction_rejected_specific_count": 0,
+        "discovery_replication_rate": 1.0,
+        "discovery_specific_count": 96,
+        "exact_compartment_agreement_rate": 1.0,
+        "magnitude_rejected_specific_count": 0,
+        "minimum_stable_specific_decision_slack": 0.09246746442615905,
+        "stable_label_specific_count": 96,
+        "stable_specific_count": 96,
+        "stratified_robustness_rejected_specific_count": 0,
+        "symmetric_replication_rate": 1.0,
+        "unstable_specific_union_count": 0
+      },
+      "calibration_rejected": false,
+      "checks": {
+        "final_accuracy": true,
+        "shared_recall": true,
+        "specific_precision": true,
+        "specific_recall": true
+      },
+      "cluster_ground_truth_purity": 1.0,
+      "condition_specific_to_shared_reroutes": 0,
+      "cross_archive_specific_to_shared_reroutes": 0,
+      "discovery": {
+        "components": 128,
+        "confusion": {
+          "missing_or_untrusted_authority": {
+            "missing_or_untrusted_authority": 12
+          },
+          "other_invalid": {
+            "other_invalid": 12
+          },
+          "replayed": {
+            "replayed": 12
+          },
+          "revoked": {
+            "revoked": 12
+          },
+          "scope_invalid": {
+            "scope_invalid": 12
+          },
+          "shared_cross_category": {
+            "shared_cross_category": 32
+          },
+          "signature_invalid": {
+            "signature_invalid": 12
+          },
+          "time_inactive": {
+            "time_inactive": 12
+          },
+          "valid_authority": {
+            "valid_authority": 12
+          }
+        },
+        "correct_specific": 96,
+        "exact_accuracy": 1.0,
+        "predicted_specific": 96,
+        "shared_recall": 1.0,
+        "specific_precision": 1.0,
+        "specific_recall": 1.0,
+        "true_shared": 32,
+        "true_specific": 96
+      },
+      "expectation": "recover",
+      "final_unseen_template_proxy": {
+        "components": 128,
+        "confusion": {
+          "missing_or_untrusted_authority": {
+            "missing_or_untrusted_authority": 12
+          },
+          "other_invalid": {
+            "other_invalid": 12
+          },
+          "replayed": {
+            "replayed": 12
+          },
+          "revoked": {
+            "revoked": 12
+          },
+          "scope_invalid": {
+            "scope_invalid": 12
+          },
+          "shared_cross_category": {
+            "shared_cross_category": 32
+          },
+          "signature_invalid": {
+            "signature_invalid": 12
+          },
+          "time_inactive": {
+            "time_inactive": 12
+          },
+          "valid_authority": {
+            "valid_authority": 12
+          }
+        },
+        "correct_specific": 96,
+        "exact_accuracy": 1.0,
+        "predicted_specific": 96,
+        "shared_recall": 1.0,
+        "specific_precision": 1.0,
+        "specific_recall": 1.0,
+        "true_shared": 32,
+        "true_specific": 96
+      },
+      "jackknife_specific_to_shared_reroutes": 0,
+      "pair_block_direction_specific_to_shared_reroutes": 0,
+      "scenario_id": "moderate_noise_and_shift",
+      "selected_thresholds": {
+        "maximum_normalized_entropy": 0.8,
+        "minimum_dominance_margin": 0.4,
+        "minimum_dominant_share": 0.45,
+        "zero_total_effect_routes_to_shared": true
+      },
+      "status": "pass",
+      "template_specific_to_shared_reroutes": 0
+    },
+    {
+      "calibration_metrics": {
+        "calibration_specific_count": 96,
+        "component_count": 128,
+        "direction_rejected_specific_count": 0,
+        "discovery_replication_rate": 1.0,
+        "discovery_specific_count": 96,
+        "exact_compartment_agreement_rate": 1.0,
+        "magnitude_rejected_specific_count": 0,
+        "minimum_stable_specific_decision_slack": 0.014623359576992123,
+        "stable_label_specific_count": 96,
+        "stable_specific_count": 96,
+        "stratified_robustness_rejected_specific_count": 0,
+        "symmetric_replication_rate": 1.0,
+        "unstable_specific_union_count": 0
+      },
+      "calibration_rejected": false,
+      "checks": {
+        "shared_recall": true,
+        "specific_precision": true
+      },
+      "cluster_ground_truth_purity": 0.25,
+      "condition_specific_to_shared_reroutes": 0,
+      "cross_archive_specific_to_shared_reroutes": 0,
+      "discovery": {
+        "components": 128,
+        "confusion": {
+          "missing_or_untrusted_authority": {
+            "shared_cross_category": 12
+          },
+          "other_invalid": {
+            "shared_cross_category": 12
+          },
+          "replayed": {
+            "shared_cross_category": 12
+          },
+          "revoked": {
+            "shared_cross_category": 12
+          },
+          "scope_invalid": {
+            "shared_cross_category": 12
+          },
+          "shared_cross_category": {
+            "shared_cross_category": 32
+          },
+          "signature_invalid": {
+            "shared_cross_category": 12
+          },
+          "time_inactive": {
+            "shared_cross_category": 12
+          },
+          "valid_authority": {
+            "shared_cross_category": 12
+          }
+        },
+        "correct_specific": 0,
+        "exact_accuracy": 0.25,
+        "predicted_specific": 0,
+        "shared_recall": 1.0,
+        "specific_precision": 1.0,
+        "specific_recall": 0.0,
+        "true_shared": 32,
+        "true_specific": 96
+      },
+      "expectation": "fail_closed_or_recover",
+      "final_unseen_template_proxy": {
+        "components": 128,
+        "confusion": {
+          "missing_or_untrusted_authority": {
+            "shared_cross_category": 12
+          },
+          "other_invalid": {
+            "shared_cross_category": 12
+          },
+          "replayed": {
+            "shared_cross_category": 12
+          },
+          "revoked": {
+            "shared_cross_category": 12
+          },
+          "scope_invalid": {
+            "shared_cross_category": 12
+          },
+          "shared_cross_category": {
+            "shared_cross_category": 32
+          },
+          "signature_invalid": {
+            "shared_cross_category": 12
+          },
+          "time_inactive": {
+            "shared_cross_category": 12
+          },
+          "valid_authority": {
+            "shared_cross_category": 12
+          }
+        },
+        "correct_specific": 0,
+        "exact_accuracy": 0.25,
+        "predicted_specific": 0,
+        "shared_recall": 1.0,
+        "specific_precision": 1.0,
+        "specific_recall": 0.0,
+        "true_shared": 32,
+        "true_specific": 96
+      },
+      "jackknife_specific_to_shared_reroutes": 96,
+      "pair_block_direction_specific_to_shared_reroutes": 0,
+      "scenario_id": "high_pair_block_noise",
+      "selected_thresholds": {
+        "maximum_normalized_entropy": 0.8,
+        "minimum_dominance_margin": 0.4,
+        "minimum_dominant_share": 0.45,
+        "zero_total_effect_routes_to_shared": true
+      },
+      "status": "pass",
+      "template_specific_to_shared_reroutes": 0
+    },
+    {
+      "calibration_rejected": true,
+      "expectation": "reject_calibration",
+      "rejection_reason": "no activation-category threshold candidate meets the frozen independent replication policy",
+      "scenario_id": "direction_reversal",
+      "status": "pass"
+    },
+    {
+      "calibration_rejected": true,
+      "expectation": "reject_calibration",
+      "rejection_reason": "no activation-category threshold candidate meets the frozen independent replication policy",
+      "scenario_id": "calibration_magnitude_collapse",
+      "status": "pass"
+    },
+    {
+      "calibration_rejected": true,
+      "expectation": "reject_calibration",
+      "rejection_reason": "no activation-category threshold candidate meets the frozen independent replication policy",
+      "scenario_id": "category_label_swap",
+      "status": "pass"
+    },
+    {
+      "calibration_metrics": {
+        "calibration_specific_count": 96,
+        "component_count": 128,
+        "direction_rejected_specific_count": 0,
+        "discovery_replication_rate": 0.9166666666666666,
+        "discovery_specific_count": 96,
+        "exact_compartment_agreement_rate": 0.9375,
+        "magnitude_rejected_specific_count": 0,
+        "minimum_stable_specific_decision_slack": 0.31043673041540054,
+        "stable_label_specific_count": 88,
+        "stable_specific_count": 88,
+        "stratified_robustness_rejected_specific_count": 0,
+        "symmetric_replication_rate": 0.9166666666666666,
+        "unstable_specific_union_count": 8
+      },
+      "calibration_rejected": false,
+      "checks": {
+        "minority_cross_archive_disagreement_rerouted": true,
+        "shared_recall": true,
+        "specific_precision": true
+      },
+      "cluster_ground_truth_purity": 1.0,
+      "condition_specific_to_shared_reroutes": 0,
+      "cross_archive_specific_to_shared_reroutes": 8,
+      "discovery": {
+        "components": 128,
+        "confusion": {
+          "missing_or_untrusted_authority": {
+            "missing_or_untrusted_authority": 4,
+            "shared_cross_category": 8
+          },
+          "other_invalid": {
+            "other_invalid": 12
+          },
+          "replayed": {
+            "replayed": 12
+          },
+          "revoked": {
+            "revoked": 12
+          },
+          "scope_invalid": {
+            "scope_invalid": 12
+          },
+          "shared_cross_category": {
+            "shared_cross_category": 32
+          },
+          "signature_invalid": {
+            "signature_invalid": 12
+          },
+          "time_inactive": {
+            "time_inactive": 12
+          },
+          "valid_authority": {
+            "valid_authority": 12
+          }
+        },
+        "correct_specific": 88,
+        "exact_accuracy": 0.9375,
+        "predicted_specific": 88,
+        "shared_recall": 1.0,
+        "specific_precision": 1.0,
+        "specific_recall": 0.9166666666666666,
+        "true_shared": 32,
+        "true_specific": 96
+      },
+      "expectation": "cross_archive_component_reroute",
+      "final_unseen_template_proxy": {
+        "components": 128,
+        "confusion": {
+          "missing_or_untrusted_authority": {
+            "missing_or_untrusted_authority": 12
+          },
+          "other_invalid": {
+            "other_invalid": 12
+          },
+          "replayed": {
+            "replayed": 12
+          },
+          "revoked": {
+            "revoked": 12
+          },
+          "scope_invalid": {
+            "scope_invalid": 12
+          },
+          "shared_cross_category": {
+            "shared_cross_category": 32
+          },
+          "signature_invalid": {
+            "signature_invalid": 12
+          },
+          "time_inactive": {
+            "time_inactive": 12
+          },
+          "valid_authority": {
+            "valid_authority": 12
+          }
+        },
+        "correct_specific": 96,
+        "exact_accuracy": 1.0,
+        "predicted_specific": 96,
+        "shared_recall": 1.0,
+        "specific_precision": 1.0,
+        "specific_recall": 1.0,
+        "true_shared": 32,
+        "true_specific": 96
+      },
+      "jackknife_specific_to_shared_reroutes": 0,
+      "pair_block_direction_specific_to_shared_reroutes": 0,
+      "scenario_id": "minority_cross_archive_category_disagreement",
+      "selected_thresholds": {
+        "maximum_normalized_entropy": 0.8,
+        "minimum_dominance_margin": 0.4,
+        "minimum_dominant_share": 0.35,
+        "zero_total_effect_routes_to_shared": true
+      },
+      "status": "pass",
+      "template_specific_to_shared_reroutes": 0
+    },
+    {
+      "calibration_metrics": {
+        "calibration_specific_count": 96,
+        "component_count": 128,
+        "direction_rejected_specific_count": 0,
+        "discovery_replication_rate": 0.9166666666666666,
+        "discovery_specific_count": 96,
+        "exact_compartment_agreement_rate": 1.0,
+        "magnitude_rejected_specific_count": 0,
+        "minimum_stable_specific_decision_slack": 0.31043673136154154,
+        "stable_label_specific_count": 96,
+        "stable_specific_count": 88,
+        "stratified_robustness_rejected_specific_count": 8,
+        "symmetric_replication_rate": 0.9166666666666666,
+        "unstable_specific_union_count": 8
+      },
+      "calibration_rejected": false,
+      "checks": {
+        "condition_narrow_specificity_rerouted": true,
+        "shared_recall": true,
+        "specific_precision": true
+      },
+      "cluster_ground_truth_purity": 0.9375,
+      "condition_specific_to_shared_reroutes": 8,
+      "cross_archive_specific_to_shared_reroutes": 0,
+      "discovery": {
+        "components": 128,
+        "confusion": {
+          "missing_or_untrusted_authority": {
+            "missing_or_untrusted_authority": 12
+          },
+          "other_invalid": {
+            "other_invalid": 12
+          },
+          "replayed": {
+            "replayed": 4,
+            "shared_cross_category": 8
+          },
+          "revoked": {
+            "revoked": 12
+          },
+          "scope_invalid": {
+            "scope_invalid": 12
+          },
+          "shared_cross_category": {
+            "shared_cross_category": 32
+          },
+          "signature_invalid": {
+            "signature_invalid": 12
+          },
+          "time_inactive": {
+            "time_inactive": 12
+          },
+          "valid_authority": {
+            "valid_authority": 12
+          }
+        },
+        "correct_specific": 88,
+        "exact_accuracy": 0.9375,
+        "predicted_specific": 88,
+        "shared_recall": 1.0,
+        "specific_precision": 1.0,
+        "specific_recall": 0.9166666666666666,
+        "true_shared": 32,
+        "true_specific": 96
+      },
+      "expectation": "condition_reroute",
+      "final_unseen_template_proxy": {
+        "components": 128,
+        "confusion": {
+          "missing_or_untrusted_authority": {
+            "missing_or_untrusted_authority": 12
+          },
+          "other_invalid": {
+            "other_invalid": 12
+          },
+          "replayed": {
+            "replayed": 12
+          },
+          "revoked": {
+            "revoked": 12
+          },
+          "scope_invalid": {
+            "scope_invalid": 12
+          },
+          "shared_cross_category": {
+            "shared_cross_category": 32
+          },
+          "signature_invalid": {
+            "signature_invalid": 12
+          },
+          "time_inactive": {
+            "time_inactive": 12
+          },
+          "valid_authority": {
+            "valid_authority": 12
+          }
+        },
+        "correct_specific": 96,
+        "exact_accuracy": 1.0,
+        "predicted_specific": 96,
+        "shared_recall": 1.0,
+        "specific_precision": 1.0,
+        "specific_recall": 1.0,
+        "true_shared": 32,
+        "true_specific": 96
+      },
+      "jackknife_specific_to_shared_reroutes": 0,
+      "pair_block_direction_specific_to_shared_reroutes": 0,
+      "scenario_id": "single_condition_category_artifact",
+      "selected_thresholds": {
+        "maximum_normalized_entropy": 0.8,
+        "minimum_dominance_margin": 0.4,
+        "minimum_dominant_share": 0.35,
+        "zero_total_effect_routes_to_shared": true
+      },
+      "status": "pass",
+      "template_specific_to_shared_reroutes": 0
+    },
+    {
+      "calibration_metrics": {
+        "calibration_specific_count": 96,
+        "component_count": 128,
+        "direction_rejected_specific_count": 0,
+        "discovery_replication_rate": 0.9166666666666666,
+        "discovery_specific_count": 96,
+        "exact_compartment_agreement_rate": 1.0,
+        "magnitude_rejected_specific_count": 0,
+        "minimum_stable_specific_decision_slack": 0.31043673036271724,
+        "stable_label_specific_count": 96,
+        "stable_specific_count": 88,
+        "stratified_robustness_rejected_specific_count": 8,
+        "symmetric_replication_rate": 0.9166666666666666,
+        "unstable_specific_union_count": 8
+      },
+      "calibration_rejected": false,
+      "checks": {
+        "shared_recall": true,
+        "specific_precision": true,
+        "template_narrow_specificity_rerouted": true
+      },
+      "cluster_ground_truth_purity": 0.9375,
+      "condition_specific_to_shared_reroutes": 0,
+      "cross_archive_specific_to_shared_reroutes": 0,
+      "discovery": {
+        "components": 128,
+        "confusion": {
+          "missing_or_untrusted_authority": {
+            "missing_or_untrusted_authority": 12
+          },
+          "other_invalid": {
+            "other_invalid": 12
+          },
+          "replayed": {
+            "replayed": 4,
+            "shared_cross_category": 8
+          },
+          "revoked": {
+            "revoked": 12
+          },
+          "scope_invalid": {
+            "scope_invalid": 12
+          },
+          "shared_cross_category": {
+            "shared_cross_category": 32
+          },
+          "signature_invalid": {
+            "signature_invalid": 12
+          },
+          "time_inactive": {
+            "time_inactive": 12
+          },
+          "valid_authority": {
+            "valid_authority": 12
+          }
+        },
+        "correct_specific": 88,
+        "exact_accuracy": 0.9375,
+        "predicted_specific": 88,
+        "shared_recall": 1.0,
+        "specific_precision": 1.0,
+        "specific_recall": 0.9166666666666666,
+        "true_shared": 32,
+        "true_specific": 96
+      },
+      "expectation": "template_reroute",
+      "final_unseen_template_proxy": {
+        "components": 128,
+        "confusion": {
+          "missing_or_untrusted_authority": {
+            "missing_or_untrusted_authority": 12
+          },
+          "other_invalid": {
+            "other_invalid": 12
+          },
+          "replayed": {
+            "replayed": 12
+          },
+          "revoked": {
+            "revoked": 12
+          },
+          "scope_invalid": {
+            "scope_invalid": 12
+          },
+          "shared_cross_category": {
+            "shared_cross_category": 32
+          },
+          "signature_invalid": {
+            "signature_invalid": 12
+          },
+          "time_inactive": {
+            "time_inactive": 12
+          },
+          "valid_authority": {
+            "valid_authority": 12
+          }
+        },
+        "correct_specific": 96,
+        "exact_accuracy": 1.0,
+        "predicted_specific": 96,
+        "shared_recall": 1.0,
+        "specific_precision": 1.0,
+        "specific_recall": 1.0,
+        "true_shared": 32,
+        "true_specific": 96
+      },
+      "jackknife_specific_to_shared_reroutes": 0,
+      "pair_block_direction_specific_to_shared_reroutes": 0,
+      "scenario_id": "single_template_category_artifact",
+      "selected_thresholds": {
+        "maximum_normalized_entropy": 0.8,
+        "minimum_dominance_margin": 0.4,
+        "minimum_dominant_share": 0.35,
+        "zero_total_effect_routes_to_shared": true
+      },
+      "status": "pass",
+      "template_specific_to_shared_reroutes": 8
+    },
+    {
+      "calibration_metrics": {
+        "calibration_specific_count": 96,
+        "component_count": 128,
+        "direction_rejected_specific_count": 0,
+        "discovery_replication_rate": 0.9166666666666666,
+        "discovery_specific_count": 96,
+        "exact_compartment_agreement_rate": 1.0,
+        "magnitude_rejected_specific_count": 0,
+        "minimum_stable_specific_decision_slack": 0.31043673001889144,
+        "stable_label_specific_count": 96,
+        "stable_specific_count": 88,
+        "stratified_robustness_rejected_specific_count": 8,
+        "symmetric_replication_rate": 0.9166666666666666,
+        "unstable_specific_union_count": 8
+      },
+      "calibration_rejected": false,
+      "checks": {
+        "opposing_pair_block_directions_rerouted": true,
+        "shared_recall": true,
+        "specific_precision": true
+      },
+      "cluster_ground_truth_purity": 1.0,
+      "condition_specific_to_shared_reroutes": 0,
+      "cross_archive_specific_to_shared_reroutes": 0,
+      "discovery": {
+        "components": 128,
+        "confusion": {
+          "missing_or_untrusted_authority": {
+            "missing_or_untrusted_authority": 12
+          },
+          "other_invalid": {
+            "other_invalid": 12
+          },
+          "replayed": {
+            "replayed": 4,
+            "shared_cross_category": 8
+          },
+          "revoked": {
+            "revoked": 12
+          },
+          "scope_invalid": {
+            "scope_invalid": 12
+          },
+          "shared_cross_category": {
+            "shared_cross_category": 32
+          },
+          "signature_invalid": {
+            "signature_invalid": 12
+          },
+          "time_inactive": {
+            "time_inactive": 12
+          },
+          "valid_authority": {
+            "valid_authority": 12
+          }
+        },
+        "correct_specific": 88,
+        "exact_accuracy": 0.9375,
+        "predicted_specific": 88,
+        "shared_recall": 1.0,
+        "specific_precision": 1.0,
+        "specific_recall": 0.9166666666666666,
+        "true_shared": 32,
+        "true_specific": 96
+      },
+      "expectation": "pair_block_direction_reroute",
+      "final_unseen_template_proxy": {
+        "components": 128,
+        "confusion": {
+          "missing_or_untrusted_authority": {
+            "missing_or_untrusted_authority": 12
+          },
+          "other_invalid": {
+            "other_invalid": 12
+          },
+          "replayed": {
+            "replayed": 12
+          },
+          "revoked": {
+            "revoked": 12
+          },
+          "scope_invalid": {
+            "scope_invalid": 12
+          },
+          "shared_cross_category": {
+            "shared_cross_category": 32
+          },
+          "signature_invalid": {
+            "signature_invalid": 12
+          },
+          "time_inactive": {
+            "time_inactive": 12
+          },
+          "valid_authority": {
+            "valid_authority": 12
+          }
+        },
+        "correct_specific": 96,
+        "exact_accuracy": 1.0,
+        "predicted_specific": 96,
+        "shared_recall": 1.0,
+        "specific_precision": 1.0,
+        "specific_recall": 1.0,
+        "true_shared": 32,
+        "true_specific": 96
+      },
+      "jackknife_specific_to_shared_reroutes": 0,
+      "pair_block_direction_specific_to_shared_reroutes": 8,
+      "scenario_id": "opposing_pair_block_directions",
+      "selected_thresholds": {
+        "maximum_normalized_entropy": 0.8,
+        "minimum_dominance_margin": 0.4,
+        "minimum_dominant_share": 0.35,
+        "zero_total_effect_routes_to_shared": true
+      },
+      "status": "pass",
+      "template_specific_to_shared_reroutes": 0
+    },
+    {
+      "calibration_rejected": true,
+      "expectation": "reject_calibration",
+      "rejection_reason": "no activation-category threshold candidate meets the frozen independent replication policy",
+      "scenario_id": "calibration_single_condition_category_artifact",
+      "status": "pass"
+    },
+    {
+      "calibration_rejected": true,
+      "expectation": "reject_calibration",
+      "rejection_reason": "no activation-category threshold candidate meets the frozen independent replication policy",
+      "scenario_id": "calibration_single_template_category_artifact",
+      "status": "pass"
+    },
+    {
+      "calibration_rejected": true,
+      "expectation": "reject_calibration",
+      "rejection_reason": "no activation-category threshold candidate meets the frozen independent replication policy",
+      "scenario_id": "calibration_opposing_pair_block_directions",
+      "status": "pass"
+    }
+  ],
+  "schema": "sch.vpd-activation-category-synthetic-benchmark.v1",
+  "scientific_boundary": {
+    "does_not_establish_bonsai_component_categories": true,
+    "model_inference_performed": false,
+    "purpose": "Executable protocol validation and failure-boundary checks before authorized empirical effect capture.",
+    "synthetic_effects_only": true,
+    "weights_loaded_or_mutated": false
+  },
+  "seed": 240829,
+  "source": {
+    "cluster_count_benchmark_id": "32ced135dd8ee66af5a1fd56f592c5f407da0a7636f050c75c5a9c3febaaa996",
+    "cluster_count_benchmark_sha256": "91080cd2a093a856a7e13598cb024c1f0ba36a2d37ad579104d04b581603e21f",
+    "clustering_geometry_benchmark_id": "7098172918613a6f74e1f2d4032a5d720440dc654d1465cbc73f25d416c07428",
+    "clustering_geometry_benchmark_sha256": "5d1092a936dd4805b0f4d59f1aa0ce9eaedf6bca66ab67c37e2dd33739e335bb",
+    "clustering_implementation_sha256": "fac38ef4d3f578d94dafa596003805beddb6d81b211d91624b179a241afceeeb",
+    "pack_manifest_sha256": "be61d446ca5294035eca8a8361b5be8795f1980cb78ec62d30d88de14675f921",
+    "protocol_sha256": "ff8e42728f77e21c5d61d6425858e16159e0cef887959052ed2de50699c41822",
+    "runner_sha256": "c9808e56bc0124379f92eb5cc812d863e8855fb4b755e1e7a26e35770d8d7b39",
+    "sketch_fidelity_benchmark_id": "4ed9790051cabd86dd4b2faffd68d57bfd1a8fbead2e8ea0df0b107ab29e04dd",
+    "sketch_fidelity_benchmark_sha256": "6cdda342f83ca03b3dd423bf488afb8b8625db339a573aa37f86d3c7e6c510b9"
+  },
+  "status": "pass"
+}

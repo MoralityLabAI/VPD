@@ -1,0 +1,13 @@
+{
+  "status": "pdf_rendered_and_visually_reviewed",
+  "pages": 9,
+  "tables": 4,
+  "headings_checked": 10,
+  "table_cells_checked": 122,
+  "source_sha256": "84e2f0c22a75dd490dcfb74ca8bcd09b9b9815e12d0664eafcab29f32d62975e",
+  "pdf_sha256": "2161f3cc417e5a5ee6e2ce6e398e56680d8f6b69cd3be1330d19f098820f4afa",
+  "builder_sha256": "94007c4747dca841b424ce18882d88cd23a3e7d7de76eba1dc5c4e431be758a8",
+  "created_utc": "2026-09-09T14:04:27.825568+00:00",
+  "visual_review_required": false,
+  "visual_review_receipt": "visual_review.json"
+}

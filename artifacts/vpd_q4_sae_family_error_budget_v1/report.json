@@ -1,0 +1,492 @@
+{
+  "archives": [
+    {
+      "path": "C:\\projects\\VPD\\artifacts\\nanbeige_reasoning\\q4_reasoning_pilot_v1\\q4_reasoning_saes",
+      "sites": [
+        {
+          "passes": [
+            {
+              "between_family_fraction_of_pooled_tss": 0.04174829918782249,
+              "families": [
+                {
+                  "examples": 6,
+                  "family": "arc_grid",
+                  "mean_offset_fraction_of_sse": 0.052772784818748086,
+                  "mean_offset_sse": 40003.79299688246,
+                  "oracle_mean_corrected_ev": 0.3973563336416508,
+                  "raw_ev": 0.3637813011495522,
+                  "rows": 192,
+                  "sse": 758038.317179553,
+                  "within_family_residual_sse": 718034.5241826705,
+                  "within_family_tss": 1191474.4388198822
+                },
+                {
+                  "examples": 1,
+                  "family": "campsite",
+                  "mean_offset_fraction_of_sse": 0.11517285960531502,
+                  "mean_offset_sse": 19559.096837356963,
+                  "oracle_mean_corrected_ev": 0.2226268454688004,
+                  "raw_ev": 0.12144065316029373,
+                  "rows": 32,
+                  "sse": 169823.8361397284,
+                  "within_family_residual_sse": 150264.73930237145,
+                  "within_family_tss": 193298.08139951742
+                },
+                {
+                  "examples": 1,
+                  "family": "dyck_language",
+                  "mean_offset_fraction_of_sse": 0.12948197840130796,
+                  "mean_offset_sse": 24958.584982034306,
+                  "oracle_mean_corrected_ev": 0.17118741895621115,
+                  "raw_ev": 0.047908761817833434,
+                  "rows": 32,
+                  "sse": 192757.21061875735,
+                  "within_family_residual_sse": 167798.62563672307,
+                  "within_family_tss": 202456.6584467155
+                },
+                {
+                  "examples": 2,
+                  "family": "math",
+                  "mean_offset_fraction_of_sse": 0.09095981062902407,
+                  "mean_offset_sse": 32810.04868419957,
+                  "oracle_mean_corrected_ev": 0.2365208022994465,
+                  "raw_ev": 0.16012602453929514,
+                  "rows": 64,
+                  "sse": 360709.28971052985,
+                  "within_family_residual_sse": 327899.2410263303,
+                  "within_family_tss": 429480.25566891296
+                }
+              ],
+              "pass": 0,
+              "pooled_raw_ev": 0.29613771936927424
+            },
+            {
+              "between_family_fraction_of_pooled_tss": 0.041135862873580856,
+              "families": [
+                {
+                  "examples": 6,
+                  "family": "arc_grid",
+                  "mean_offset_fraction_of_sse": 0.05900077959932655,
+                  "mean_offset_sse": 33395.1563180908,
+                  "oracle_mean_corrected_ev": 0.33632164904285133,
+                  "raw_ev": 0.2947089258218969,
+                  "rows": 192,
+                  "sse": 566012.11958345,
+                  "within_family_residual_sse": 532616.9632653593,
+                  "within_family_tss": 802522.7318281902
+                },
+                {
+                  "examples": 1,
+                  "family": "campsite",
+                  "mean_offset_fraction_of_sse": 0.12236540799303147,
+                  "mean_offset_sse": 13747.712642337585,
+                  "oracle_mean_corrected_ev": 0.21690086444143075,
+                  "raw_ev": 0.10771619226199414,
+                  "rows": 32,
+                  "sse": 112349.66538190676,
+                  "within_family_residual_sse": 98601.95273956918,
+                  "within_family_tss": 125912.47807883014
+                },
+                {
+                  "examples": 1,
+                  "family": "dyck_language",
+                  "mean_offset_fraction_of_sse": 0.13880656999796376,
+                  "mean_offset_sse": 15861.038380481776,
+                  "oracle_mean_corrected_ev": 0.17452008476570102,
+                  "raw_ev": 0.04146979473316781,
+                  "rows": 32,
+                  "sse": 114267.20205473308,
+                  "within_family_residual_sse": 98406.1636742513,
+                  "within_family_tss": 119210.85160057506
+                },
+                {
+                  "examples": 2,
+                  "family": "math",
+                  "mean_offset_fraction_of_sse": 0.09153193178244896,
+                  "mean_offset_sse": 22677.32785783609,
+                  "oracle_mean_corrected_ev": 0.20885034240763545,
+                  "raw_ev": 0.12913872785354974,
+                  "rows": 64,
+                  "sse": 247753.18750766732,
+                  "within_family_residual_sse": 225075.85964983123,
+                  "within_family_tss": 284492.14063339744
+                }
+              ],
+              "pass": 1,
+              "pooled_raw_ev": 0.25113989340072873
+            }
+          ],
+          "site": "model.layers.11"
+        },
+        {
+          "passes": [
+            {
+              "between_family_fraction_of_pooled_tss": 0.05336386895763796,
+              "families": [
+                {
+                  "examples": 6,
+                  "family": "arc_grid",
+                  "mean_offset_fraction_of_sse": 0.06513144128880327,
+                  "mean_offset_sse": 3583.8552231854355,
+                  "oracle_mean_corrected_ev": 0.3558282509893733,
+                  "raw_ev": 0.3109493917533419,
+                  "rows": 192,
+                  "sse": 55024.9641689034,
+                  "within_family_residual_sse": 51441.10894571797,
+                  "within_family_tss": 79856.20143187832
+                },
+                {
+                  "examples": 1,
+                  "family": "campsite",
+                  "mean_offset_fraction_of_sse": 0.16389049728578597,
+                  "mean_offset_sse": 2190.8379389900488,
+                  "oracle_mean_corrected_ev": 0.2031477433318286,
+                  "raw_ev": 0.04695227828245474,
+                  "rows": 32,
+                  "sse": 13367.693522643654,
+                  "within_family_residual_sse": 11176.855583653605,
+                  "within_family_tss": 14026.258305883068
+                },
+                {
+                  "examples": 1,
+                  "family": "dyck_language",
+                  "mean_offset_fraction_of_sse": 0.15856180366069972,
+                  "mean_offset_sse": 2298.999864775243,
+                  "oracle_mean_corrected_ev": 0.16404554142696537,
+                  "raw_ev": 0.006517101065916409,
+                  "rows": 32,
+                  "sse": 14499.077405140926,
+                  "within_family_residual_sse": 12200.077540365683,
+                  "within_family_tss": 14594.18921120546
+                },
+                {
+                  "examples": 2,
+                  "family": "math",
+                  "mean_offset_fraction_of_sse": 0.11140924068079047,
+                  "mean_offset_sse": 2563.8046567328556,
+                  "oracle_mean_corrected_ev": 0.18619934071920907,
+                  "raw_ev": 0.0841670918294477,
+                  "rows": 64,
+                  "sse": 23012.495562003365,
+                  "within_family_residual_sse": 20448.69090527051,
+                  "within_family_tss": 25127.395354216547
+                }
+              ],
+              "pass": 0,
+              "pooled_raw_ev": 0.24962772126672272
+            },
+            {
+              "between_family_fraction_of_pooled_tss": 0.04390722885584356,
+              "families": [
+                {
+                  "examples": 6,
+                  "family": "arc_grid",
+                  "mean_offset_fraction_of_sse": 0.06011108026766271,
+                  "mean_offset_sse": 91228.12797077959,
+                  "oracle_mean_corrected_ev": 0.5473723998882343,
+                  "raw_ev": 0.5184243684448737,
+                  "rows": 192,
+                  "sse": 1517659.0998624354,
+                  "within_family_residual_sse": 1426430.9718916556,
+                  "within_family_tss": 3151444.966103331
+                },
+                {
+                  "examples": 1,
+                  "family": "campsite",
+                  "mean_offset_fraction_of_sse": 0.16146202999278095,
+                  "mean_offset_sse": 54029.68832289964,
+                  "oracle_mean_corrected_ev": 0.44240831655906543,
+                  "raw_ev": 0.3350430113067697,
+                  "rows": 32,
+                  "sse": 334627.8275165705,
+                  "within_family_residual_sse": 280598.1391936709,
+                  "within_family_tss": 503232.289014932
+                },
+                {
+                  "examples": 1,
+                  "family": "dyck_language",
+                  "mean_offset_fraction_of_sse": 0.17145662293803837,
+                  "mean_offset_sse": 61600.94078291865,
+                  "oracle_mean_corrected_ev": 0.4061603618999696,
+                  "raw_ev": 0.2832727235044682,
+                  "rows": 32,
+                  "sse": 359280.0308750991,
+                  "within_family_residual_sse": 297679.09009218053,
+                  "within_family_tss": 501278.5792551582
+                },
+                {
+                  "examples": 2,
+                  "family": "math",
+                  "mean_offset_fraction_of_sse": 0.08399778651855212,
+                  "mean_offset_sse": 65262.01312712782,
+                  "oracle_mean_corrected_ev": 0.3982779049022913,
+                  "raw_ev": 0.3430997368327914,
+                  "rows": 64,
+                  "sse": 776949.2010686944,
+                  "within_family_residual_sse": 711687.1879415666,
+                  "within_family_tss": 1182750.6314621894
+                }
+              ],
+              "pass": 1,
+              "pooled_raw_ev": 0.46479569261562614
+            }
+          ],
+          "site": "model.norm"
+        }
+      ]
+    },
+    {
+      "path": "C:\\projects\\VPD\\artifacts\\nanbeige_reasoning\\q4_reasoning_pilot_8192_v1\\q4_reasoning_saes",
+      "sites": [
+        {
+          "passes": [
+            {
+              "between_family_fraction_of_pooled_tss": 0.04106445417224515,
+              "families": [
+                {
+                  "examples": 6,
+                  "family": "arc_grid",
+                  "mean_offset_fraction_of_sse": 0.05118585474616552,
+                  "mean_offset_sse": 38519.5529678811,
+                  "oracle_mean_corrected_ev": 0.3952292405886678,
+                  "raw_ev": 0.3626035589408937,
+                  "rows": 192,
+                  "sse": 752542.9273165886,
+                  "within_family_residual_sse": 714023.3743487076,
+                  "within_family_tss": 1180651.2851972524
+                },
+                {
+                  "examples": 1,
+                  "family": "campsite",
+                  "mean_offset_fraction_of_sse": 0.12155591310056306,
+                  "mean_offset_sse": 19931.7333001747,
+                  "oracle_mean_corrected_ev": 0.2316253247645551,
+                  "raw_ev": 0.12530041843925876,
+                  "rows": 32,
+                  "sse": 163971.72948456404,
+                  "within_family_residual_sse": 144039.99618438934,
+                  "within_family_tss": 187460.62412878548
+                },
+                {
+                  "examples": 1,
+                  "family": "dyck_language",
+                  "mean_offset_fraction_of_sse": 0.14963235287925872,
+                  "mean_offset_sse": 32092.121598647907,
+                  "oracle_mean_corrected_ev": 0.16069168715698134,
+                  "raw_ev": 0.013005356348125718,
+                  "rows": 32,
+                  "sse": 214473.14689052352,
+                  "within_family_residual_sse": 182381.0252918756,
+                  "within_family_tss": 217299.20042622942
+                },
+                {
+                  "examples": 2,
+                  "family": "math",
+                  "mean_offset_fraction_of_sse": 0.07995907069519417,
+                  "mean_offset_sse": 26276.727560533487,
+                  "oracle_mean_corrected_ev": 0.2520140772984778,
+                  "raw_ev": 0.18700799184367833,
+                  "rows": 64,
+                  "sse": 328627.22555519664,
+                  "within_family_residual_sse": 302350.4979946631,
+                  "within_family_tss": 404219.50309259177
+                }
+              ],
+              "pass": 0,
+              "pooled_raw_ev": 0.2965142746934686
+            },
+            {
+              "between_family_fraction_of_pooled_tss": 0.03927978862636222,
+              "families": [
+                {
+                  "examples": 6,
+                  "family": "arc_grid",
+                  "mean_offset_fraction_of_sse": 0.05950353532829014,
+                  "mean_offset_sse": 34143.9060469336,
+                  "oracle_mean_corrected_ev": 0.3507436545140492,
+                  "raw_ev": 0.30966636252845425,
+                  "rows": 192,
+                  "sse": 573813.0660397978,
+                  "within_family_residual_sse": 539669.1599928644,
+                  "within_family_tss": 831211.2214920851
+                },
+                {
+                  "examples": 1,
+                  "family": "campsite",
+                  "mean_offset_fraction_of_sse": 0.13518894589772062,
+                  "mean_offset_sse": 15447.29771114827,
+                  "oracle_mean_corrected_ev": 0.21779006604148787,
+                  "raw_ev": 0.09551348789072966,
+                  "rows": 32,
+                  "sse": 114264.50297818855,
+                  "within_family_residual_sse": 98817.20526704028,
+                  "within_family_tss": 126330.79813619636
+                },
+                {
+                  "examples": 1,
+                  "family": "dyck_language",
+                  "mean_offset_fraction_of_sse": 0.147619885737687,
+                  "mean_offset_sse": 19049.48907722313,
+                  "oracle_mean_corrected_ev": 0.17814070608405663,
+                  "raw_ev": 0.03580658421716443,
+                  "rows": 32,
+                  "sse": 129044.19334853775,
+                  "within_family_residual_sse": 109994.70427131464,
+                  "within_family_tss": 133836.41833289832
+                },
+                {
+                  "examples": 2,
+                  "family": "math",
+                  "mean_offset_fraction_of_sse": 0.07610485565396227,
+                  "mean_offset_sse": 17420.538386424923,
+                  "oracle_mean_corrected_ev": 0.22264336642224014,
+                  "raw_ev": 0.15860946089504824,
+                  "rows": 64,
+                  "sse": 228901.79919180955,
+                  "within_family_residual_sse": 211481.2608053846,
+                  "within_family_tss": 272051.7863622629
+                }
+              ],
+              "pass": 1,
+              "pooled_raw_ev": 0.2629355289077634
+            }
+          ],
+          "site": "model.layers.11"
+        },
+        {
+          "passes": [
+            {
+              "between_family_fraction_of_pooled_tss": 0.04609609780653123,
+              "families": [
+                {
+                  "examples": 6,
+                  "family": "arc_grid",
+                  "mean_offset_fraction_of_sse": 0.04755077232139455,
+                  "mean_offset_sse": 2586.621542205886,
+                  "oracle_mean_corrected_ev": 0.39375656720157315,
+                  "raw_ev": 0.3634900263649564,
+                  "rows": 192,
+                  "sse": 54397.04585075867,
+                  "within_family_residual_sse": 51810.42430855279,
+                  "within_family_tss": 85461.41946543695
+                },
+                {
+                  "examples": 1,
+                  "family": "campsite",
+                  "mean_offset_fraction_of_sse": 0.14794956693959682,
+                  "mean_offset_sse": 1896.7000535909776,
+                  "oracle_mean_corrected_ev": 0.23394287305505312,
+                  "raw_ev": 0.10092513632859113,
+                  "rows": 32,
+                  "sse": 12819.909465266235,
+                  "within_family_residual_sse": 10923.209411675258,
+                  "within_family_tss": 14259.00109465369
+                },
+                {
+                  "examples": 1,
+                  "family": "dyck_language",
+                  "mean_offset_fraction_of_sse": 0.174977343307367,
+                  "mean_offset_sse": 2666.7064028534,
+                  "oracle_mean_corrected_ev": 0.17361370181663305,
+                  "raw_ev": -0.00165285338490051,
+                  "rows": 32,
+                  "sse": 15240.295414527103,
+                  "within_family_residual_sse": 12573.589011673703,
+                  "within_family_tss": 15215.14700729434
+                },
+                {
+                  "examples": 2,
+                  "family": "math",
+                  "mean_offset_fraction_of_sse": 0.0929764662459412,
+                  "mean_offset_sse": 2064.573373518386,
+                  "oracle_mean_corrected_ev": 0.22938225290424918,
+                  "raw_ev": 0.1503883654415683,
+                  "rows": 64,
+                  "sse": 22205.33277805138,
+                  "within_family_residual_sse": 20140.759404532993,
+                  "within_family_tss": 26135.862404464537
+                }
+              ],
+              "pass": 0,
+              "pooled_raw_ev": 0.2922872700558219
+            },
+            {
+              "between_family_fraction_of_pooled_tss": 0.03196338623390096,
+              "families": [
+                {
+                  "examples": 6,
+                  "family": "arc_grid",
+                  "mean_offset_fraction_of_sse": 0.04510897083988202,
+                  "mean_offset_sse": 86416.72846214923,
+                  "oracle_mean_corrected_ev": 0.50053456740397,
+                  "raw_ev": 0.4769398629335341,
+                  "rows": 192,
+                  "sse": 1915732.6547948183,
+                  "within_family_residual_sse": 1829315.926332669,
+                  "within_family_tss": 3662547.609800713
+                },
+                {
+                  "examples": 1,
+                  "family": "campsite",
+                  "mean_offset_fraction_of_sse": 0.11577662858683226,
+                  "mean_offset_sse": 45090.96275765994,
+                  "oracle_mean_corrected_ev": 0.39816081541841253,
+                  "raw_ev": 0.3193584290587945,
+                  "rows": 32,
+                  "sse": 389465.15637948294,
+                  "within_family_residual_sse": 344374.19362182304,
+                  "within_family_tss": 572203.011110418
+                },
+                {
+                  "examples": 1,
+                  "family": "dyck_language",
+                  "mean_offset_fraction_of_sse": 0.13184802528251405,
+                  "mean_offset_sse": 64743.0198516449,
+                  "oracle_mean_corrected_ev": 0.3229389661810502,
+                  "raw_ev": 0.22011231496734296,
+                  "rows": 32,
+                  "sse": 491042.77225933736,
+                  "within_family_residual_sse": 426299.7524076924,
+                  "within_family_tss": 629632.6787603723
+                },
+                {
+                  "examples": 2,
+                  "family": "math",
+                  "mean_offset_fraction_of_sse": 0.07665432148742353,
+                  "mean_offset_sse": 60421.361938410264,
+                  "oracle_mean_corrected_ev": 0.39433031551970843,
+                  "raw_ev": 0.3440488231276839,
+                  "rows": 64,
+                  "sse": 788231.6452089846,
+                  "within_family_residual_sse": 727810.2832705742,
+                  "within_family_tss": 1201662.0641911244
+                }
+              ],
+              "pass": 1,
+              "pooled_raw_ev": 0.427979820423841
+            }
+          ],
+          "site": "model.norm"
+        }
+      ]
+    }
+  ],
+  "boundary": {
+    "encoder_recomputed": false,
+    "model_inference_performed": false,
+    "operative_admissions": 0,
+    "training_performed": false
+  },
+  "interpretation": "Exploratory algebraic diagnostic. Oracle correction uses held-out residual means, is not deployable, and cannot qualify a fit.",
+  "provenance": {
+    "loader_sha256": "a5c6a3f3e3c5fa4299c8343bdd550ac3cc7b2c8ab600714da787546b8bda2430",
+    "runner_sha256": "afc0d399a46e93c1aaea0e1e2819deffbcd92406d82597d5ebcd54984a1c4823"
+  },
+  "report_id": "eef2becaaa6567fa4f8e243d32bee1bcc2a483fb2220936994494372d454ea0e",
+  "schema": "sch.vpd-q4-sae-family-error-budget.v1",
+  "source": {
+    "path": "C:\\projects\\VPD\\artifacts\\vpd_q4_sae_family_contributions_v1\\report.json",
+    "report_id": "2b2aeb74ec4d644c3fcb70b5fa22ff937f638b7ac21210a714969fdba4317b44",
+    "sha256": "1f369231fb2f918f868aa6d0b2246f21020ef798b3762db91a37d7d449b0121d"
+  }
+}

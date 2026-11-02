@@ -1,0 +1,127 @@
+{
+  "schema": "sch.vpd-activation-category-protocol.v1",
+  "status": "locally_verified_design_no_empirical_effect_archive",
+  "category_contract": {
+    "schema": "sch.vpd-activation-category-contract.v1",
+    "basis": "model_visible_authorization_state_not_model_outcome",
+    "categories": [
+      {"id": "valid_authority", "sae_protocol": "valid_authority_retention"},
+      {"id": "missing_or_untrusted_authority", "sae_protocol": "provenance_rejection"},
+      {"id": "signature_invalid", "sae_protocol": "cryptographic_validity_rejection"},
+      {"id": "time_inactive", "sae_protocol": "temporal_validity_rejection"},
+      {"id": "revoked", "sae_protocol": "revocation_state_rejection"},
+      {"id": "replayed", "sae_protocol": "nonce_freshness_rejection"},
+      {"id": "scope_invalid", "sae_protocol": "scope_and_resource_rejection"},
+      {"id": "other_invalid", "sae_protocol": "conservative_request_rejection"}
+    ],
+    "unknown_condition_rule": "allow_maps_to_valid_authority_else_other_invalid",
+    "explicit_category_must_be_known": true
+  },
+  "effect_capture": {
+    "receipt_schema": "sch.vpd-effect-shard-receipt.v3",
+    "aggregate_array": "delta_h",
+    "category_array": "delta_h_by_category",
+    "category_array_axes": ["component", "category", "hidden"],
+    "aggregate_rule": "category_episode_count_weighted_mean",
+    "capture_phase": "pre_gate",
+    "generated_tokens": 0,
+    "episode_selection_default": "full_verified_split_role",
+    "uncertainty_sufficient_statistics": {
+      "atomic_unit": "pair_id",
+      "blocks": 8,
+      "assignment": "stable_hash_rank_round_robin",
+      "countsketch_dimension": 64,
+      "arrays": [
+        "category_uncertainty_block_counts",
+        "delta_h_countsketch_block_sums"
+      ],
+      "full_per_episode_hidden_states_retained": false
+    }
+  },
+  "data_pack": {
+    "path": "artifacts/vpd_activation_category_pack_v1",
+    "status": "locally_validated_no_model_outcomes",
+    "pack_id": "3dbf9bfea845da9e8dcab78d75436dbfccb13ff5c487f66f5f76ba42b6f4a863",
+    "split_id": "6fd609e550e6eb6fe11d5e68487e6e2a8e8c23331d4b978d0c3329f0c3de2931",
+    "generation_seed": 290829,
+    "rows": 1056,
+    "pairs": 96,
+    "template_groups": 4,
+    "activation_categories": 8,
+    "roles": {
+      "sae_training": {"rows": 264, "optimizer_or_threshold_use": "fixed_base_dictionary_learning_only"},
+      "discovery": {"rows": 264, "optimizer_or_threshold_use": "effect_clustering_only"},
+      "calibration": {"rows": 264, "optimizer_or_threshold_use": "threshold_selection_only"},
+      "final_evaluation": {"rows": 264, "optimizer_or_threshold_use": "never"}
+    },
+    "atomic_unit": "pair_id",
+    "stratification": ["template_group", "within_pair_activation_category_histogram"],
+    "pair_and_episode_sets_are_disjoint": true,
+    "all_declared_categories_in_every_role": true,
+    "pair_constant_prompt_variant_is_label_independent": true,
+    "final_evaluation_is_algorithmically_held_out_not_secret": true
+  },
+  "component_compartments": {
+    "specificity_thresholds": {
+      "minimum_dominant_share": 0.35,
+      "minimum_dominance_margin": 0.10,
+      "maximum_normalized_entropy": 0.80,
+      "zero_total_effect_routes_to_shared": true
+    },
+    "ambiguous_compartment": "shared_cross_category",
+    "cluster_rule": "deterministic_kmeans_within_compartment",
+    "packets_must_be_compartment_homogeneous": true,
+    "thresholds_bound_into_packet_id": true,
+    "within_split_uncertainty_screen": {
+      "mode": "leave_one_pair_block_out_countsketch",
+      "minimum_same_compartment_stability": 0.875,
+      "low_stability_specific_routes_to": "shared_cross_category",
+      "required_for_production_category_bundle": true,
+      "does_not_replace_independent_calibration_split": true
+    },
+    "threshold_calibration": {
+      "mode": "independent_effect_archive_stability_selection",
+      "minimum_replication_rate": 0.90,
+      "minimum_stable_specific_components": 32,
+      "minimum_episodes_per_category_per_archive": 8,
+      "minimum_signed_direction_cosine": 0.50,
+      "candidate_grid": {
+        "minimum_dominant_share": [0.35, 0.45, 0.55, 0.65, 0.75, 0.85, 0.95],
+        "minimum_dominance_margin": [0.10, 0.15, 0.20, 0.30, 0.40, 0.50, 0.60],
+        "maximum_normalized_entropy": [0.40, 0.50, 0.60, 0.70, 0.80]
+      },
+      "selection_order": [
+        "maximum_stable_specific_count",
+        "maximum_symmetric_replication_rate",
+        "maximum_exact_compartment_agreement_rate",
+        "maximum_minimum_stable_specific_decision_slack",
+        "strictest_thresholds_lexicographic"
+      ],
+      "discovery_archive_is_only_clustering_feature_source": true,
+      "calibration_archive_may_only_select_thresholds": true,
+      "independent_prompt_split_required_upstream": true,
+      "verified_split_role_in_effect_merge_manifest_required": true,
+      "no_passing_candidate_rule": "reject_bundle"
+    }
+  },
+  "sae_training": {
+    "specific_component_dictionary": "fixed_base_per_activation_category",
+    "shared_component_dictionary": "fixed_base_balanced_cross_category",
+    "shared_balance_rule": "equal_rows_per_observed_activation_category",
+    "same_alignment_activation_key_required": true,
+    "base_model_capture_required": true
+  },
+  "focused_evaluation": {
+    "specific_compartment_requires_target_and_cross_category_rows": true,
+    "shared_compartment_requires_multiple_categories": true,
+    "shared_interventions_cover_every_family_category_cell": true,
+    "report_effects_by_category_and_in_aggregate": true,
+    "matched_parameter_control_required": true
+  },
+  "scientific_boundary": {
+    "cluster_membership_is_screening_only": true,
+    "individual_causality_requires_signed_heldout_intervention_agreement": true,
+    "paid_compute_authorized": false,
+    "weight_mutation_authorized": false
+  }
+}

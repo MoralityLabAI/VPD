@@ -1,0 +1,70 @@
+{
+  "benchmark_id": "e6ca589f69c120db4a5a9c71d34ba541b9f909673bb6963d0374a632fe326397",
+  "controls": {
+    "all_execution_artifacts_are_temporary": true,
+    "attachment_claim_tamper_rejected_transitively": true,
+    "boundary_weakening_result_becomes_charged_failure": true,
+    "callback_exception_emits_terminal_failure_receipt": true,
+    "callback_execution_imports_no_model_frameworks": true,
+    "callback_receipts_remain_non_authorizing": true,
+    "callbacks_create_no_dictionary_output": true,
+    "execution_claim_precedes_failed_callback": true,
+    "execution_claim_precedes_success_callback": true,
+    "failed_callback_invoked_exactly_once": true,
+    "failed_callback_is_charged": true,
+    "failed_runtime_closed_exactly_once": true,
+    "failure_receipt_tamper_rejected": true,
+    "failure_replay_rejected_before_second_callback": true,
+    "success_callback_invoked_exactly_once": true,
+    "success_charge_is_completed_once": true,
+    "success_receipt_is_durable_and_verifiable": true,
+    "success_receipt_tamper_rejected": true,
+    "success_replay_rejected_before_second_callback": true,
+    "success_runtime_closed_exactly_once": true,
+    "success_worker_receipt_is_content_addressed": true
+  },
+  "design": {
+    "callback_single_use": true,
+    "durable_execution_claim_before_callback": true,
+    "production_callback_invocation_implemented": false,
+    "synthetic_success_receipt": true,
+    "terminal_charged_failure_receipt": true,
+    "trainer_or_model_implementation_present": false
+  },
+  "results": {
+    "charged_callback_invocations": 3,
+    "execution_blueprint_id": "07122590aae37e4e07dec2077830954e5eeb56ec269c77382f227fb33e233215",
+    "persistent_callback_receipts_created": false,
+    "synthetic_failed_callback_invocations": 2,
+    "synthetic_success_callback_invocations": 1
+  },
+  "schema": "sch.vpd-cluster-aware-sae-inert-callback-benchmark.v1",
+  "scientific_boundary": {
+    "empirical_blueprint_present": false,
+    "execution_authorized": false,
+    "model_framework_imported": false,
+    "model_inference_performed": false,
+    "model_loaded": false,
+    "persistent_dictionary_output_created": false,
+    "production_callback_invoked": false,
+    "production_runtime_attached": false,
+    "sae_training_authorized": false,
+    "synthetic_callback_invoked": true,
+    "synthetic_keys_receipts_runtime_and_callbacks_only": true,
+    "temporary_simulation_only": true,
+    "training_performed": false,
+    "weights_loaded_or_mutated": false
+  },
+  "source": {
+    "benchmark_sha256": "44d4130b1dc2690db5835e6555afb610eeb19add94388d71c5191727ddfea36f",
+    "execution_blueprint_id": "07122590aae37e4e07dec2077830954e5eeb56ec269c77382f227fb33e233215",
+    "inert_attachment_sha256": "ebf692b4be8c96e96a30a1c81da53d3988f3d44195e0d921913986ef2da27190",
+    "inert_callback_execution_sha256": "ff4867940adb549c7e38c49c806aee26470a62fc20da9c462d6c7f62fe76aab0",
+    "runtime_worker_sha256": "afade79132182f4af63f24d857aa66f27dfa68246d75ef12938054ea6f867e59"
+  },
+  "status": "pass",
+  "summary": {
+    "controls": 21,
+    "passed": 21
+  }
+}

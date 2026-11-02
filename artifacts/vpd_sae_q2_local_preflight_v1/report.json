@@ -1,0 +1,173 @@
+{
+  "boundary": {
+    "operative_admissions": 0,
+    "paid_compute_launched": false,
+    "provider_status_verified": false,
+    "research_training_performed": false,
+    "research_weights_modified": false
+  },
+  "checks": [
+    {
+      "id": "q2_unit_tests",
+      "passed_tests": 64,
+      "status": "pass"
+    },
+    {
+      "id": "initialization_chain",
+      "status": "pass",
+      "verified_report_id": "60fc5386875c9cf2d877c75c4eb8a72ae683aafb4600f81859e4a272ab6b871a"
+    },
+    {
+      "id": "source_inventory",
+      "status": "pass",
+      "verified_report_id": "6510d89f24e688233fba991c991d306259f5df1f0d56230904a682082c4a5dcc"
+    },
+    {
+      "id": "phase_quality",
+      "status": "pass",
+      "verified_report_id": "6a0ed1c025177bcf5dca22c46fe00a06aa0effe0ec6fcc138541556211a3cd04"
+    }
+  ],
+  "decision": {
+    "launch_authorized": false,
+    "local_checks_status": "pass",
+    "reason": "This V1 command accepts no research or authorization proofs; it verifies fixtures and archived evidence only.",
+    "research_readiness": "not_ready",
+    "research_requirements": [
+      {
+        "id": "fresh_role_disjoint_pack",
+        "required_evidence": "Reviewed actual Q2 pack, semantic-family/alias audit, exposure review and frozen role/ID manifest.",
+        "status": "not_verified_by_this_preflight"
+      },
+      {
+        "id": "capture_producer_and_real_arrays",
+        "required_evidence": "Pinned model/capture stack, actual full-width captures, producer hook/pass verification and real array binding.",
+        "status": "not_verified_by_this_preflight"
+      },
+      {
+        "id": "research_initialization",
+        "required_evidence": "Equal full-size initial parameters and common complete-pool bias verified on the intended runtime.",
+        "status": "not_verified_by_this_preflight"
+      },
+      {
+        "id": "paired_optimizer_integration",
+        "required_evidence": "Reviewed trainer consuming the bound schedule for exactly 1000 matched updates, with numerical/failure controls.",
+        "status": "not_verified_by_this_preflight"
+      },
+      {
+        "id": "scientific_decision_rule",
+        "required_evidence": "Frozen useful-effect margin, prompt non-degradation rule, uncertainty/power analysis and joint stopping decision.",
+        "status": "not_verified_by_this_preflight"
+      },
+      {
+        "id": "explicit_training_and_spending_authority",
+        "required_evidence": "Explicit approval covering weight fitting, exact run conditions and any spending cap.",
+        "status": "not_verified_by_this_preflight"
+      },
+      {
+        "id": "independent_provider_shutdown",
+        "required_evidence": "Verified termination mechanism independent of this task, finite deadline and provider receipt/status checks.",
+        "status": "not_verified_by_this_preflight"
+      }
+    ]
+  },
+  "execution_contract": {
+    "commands": [
+      {
+        "argv": [
+          "C:\\projects\\VPD\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-m",
+          "pytest",
+          "-q",
+          "tests/test_vpd_sae_paired_initialization.py",
+          "tests/test_vpd_sae_paired_activation_binding.py",
+          "tests/test_vpd_sae_paired_schedule.py",
+          "tests/test_vpd_sae_trajectory_breadth_plan.py"
+        ],
+        "id": "q2_unit_tests"
+      },
+      {
+        "argv": [
+          "C:\\projects\\VPD\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-m",
+          "experiments.authz_mechinterp.check_sae_paired_initialization_v1",
+          "--verify",
+          "artifacts/vpd_sae_paired_initialization_v1/report.json"
+        ],
+        "id": "initialization_chain"
+      },
+      {
+        "argv": [
+          "C:\\projects\\VPD\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-m",
+          "experiments.authz_mechinterp.audit_sae_source_family_inventory_v1",
+          "--verify",
+          "artifacts/vpd_sae_source_family_inventory_v1/report.json"
+        ],
+        "id": "source_inventory"
+      },
+      {
+        "argv": [
+          "C:\\projects\\VPD\\.venv\\Scripts\\python.exe",
+          "-B",
+          "-m",
+          "experiments.authz_mechinterp.audit_q4_sae_phase_quality_v1",
+          "--verify",
+          "artifacts/vpd_q4_sae_phase_quality_v1/report.json"
+        ],
+        "id": "phase_quality"
+      }
+    ],
+    "launch_option_exists": false,
+    "local_failure_exit_code": 1,
+    "not_ready_exit_code": 3,
+    "per_check_timeout_seconds": 45,
+    "stop_after_first_failure": true
+  },
+  "limitations": [
+    "Only the four fixed local checks run; this is not the entire project suite or the full canonical release audit.",
+    "Missing research proofs are not inferred absent everywhere on disk; they are not accepted or certified by this fixture-only V1 interface.",
+    "A timeout is a failed local check, not evidence that any remote pod has stopped.",
+    "All local checks passing still returns not_ready and exit 3; it never grants training or spending permission."
+  ],
+  "report_id": "c7f526c49ee27906bea960e41c115e74a02eaa892959279aa6b19592d8610e45",
+  "schema": "sch.vpd-sae-q2-local-preflight.v1",
+  "verified_evidence_summary": {
+    "archived_generated_phase_quality": {
+      "all_family_quality_passes": 0,
+      "family_checks": 16,
+      "family_passes": 1,
+      "fits": 4,
+      "phase": "generated",
+      "pooled_quality_passes": 0
+    },
+    "current_provider_pod_status": "not_queried_unknown",
+    "fixture_scope": "synthetic rows and width-5, ten-feature initialization only",
+    "source_family_count_check": {
+      "available_label_upper_bound": 29,
+      "families_per_pack_required": 32,
+      "is_sufficient_feasibility_test": false,
+      "packs_required": 2,
+      "single_pack_count_possible": false,
+      "total_pairwise_disjoint_labels_required": 64,
+      "two_pack_count_possible": false
+    }
+  },
+  "watched_input_sha256": {
+    "artifacts/vpd_q4_sae_phase_quality_v1/report.json": "85c3c2d40191e2af9d229261c359d0a49d75990641ec62f8fba9bafd25c5e835",
+    "artifacts/vpd_sae_paired_activation_binding_v1/report.json": "39d920a11f223d78b4e54d5f28d59df0a4175955892ccf03ad96835e4e2463a7",
+    "artifacts/vpd_sae_paired_initialization_v1/report.json": "7fb7a48a2f3efd26874c28b4c138e414662c07e02bb48b347eac2213d323765f",
+    "artifacts/vpd_sae_paired_schedule_v1/report.json": "1e06836e09bd27b2a365b861a163166195bd2d1dae2172ef44fb5b62dea73d8d",
+    "artifacts/vpd_sae_paired_schedule_v1/slot_indices.json": "706e031742175ca3d30f9e7a1b74cb5349762a33828c891fcb84a72de0394ecd",
+    "artifacts/vpd_sae_source_family_inventory_v1/report.json": "856777312261dc24721e9369656ac0b60c48b626290c77183a387cccef81870c",
+    "artifacts/vpd_sae_trajectory_breadth_plan_v1/report.json": "9d3296e86d4ba42008362f1065d85750aa6601619ce7fc3e337882f4052b1114",
+    "experiments/authz_mechinterp/preflight_sae_q2_v1.py": "0132579c8cb99c53f50471a91bb7d966ebbf17ec5a4d985bd1d50c6f2e464783",
+    "tests/test_vpd_sae_paired_activation_binding.py": "ae5f82659f727236616496ebf85e09ae2a191d87a18ea1e96dff28c3f8f3c2b7",
+    "tests/test_vpd_sae_paired_initialization.py": "fa7af3b27d833e104a91df91a0bcf58ebda95182c9959c480113857edb2b80fd",
+    "tests/test_vpd_sae_paired_schedule.py": "a42ae1cb97aef763b5195d465880e4bf9132a5889355679930572436eda85721",
+    "tests/test_vpd_sae_trajectory_breadth_plan.py": "8440917c3eaf76795c1d552a0356a566a97d59a61ffdb3d43ba97f7cfc53bf44"
+  }
+}

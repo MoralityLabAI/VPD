@@ -1,0 +1,67 @@
+{
+  "benchmark_id": "51ebf5afb2cf0e1cc109ed8a7672d9ff8f0adb7c65fb4e442128164fbc5f0964",
+  "contract": {
+    "episode_window_order_bound_to_source_dataset": true,
+    "observable_activation_category_recomputed_from_source_episode": true,
+    "sampling_identity_receipt_recomputed": true,
+    "source_episode_content_address_required_per_metadata_row": true,
+    "token_window_coordinates_reproduced_without_model_inference": true
+  },
+  "scenarios": [
+    {
+      "expected_status": "pass",
+      "observed_status": "pass",
+      "scenario_id": "exact_source_order_category_and_window_pass",
+      "status": "pass"
+    },
+    {
+      "expected_status": "reject",
+      "observed_status": "reject",
+      "scenario_id": "reordered_episode_windows_reject",
+      "status": "pass"
+    },
+    {
+      "expected_status": "reject",
+      "observed_status": "reject",
+      "scenario_id": "relabeled_activation_category_reject",
+      "status": "pass"
+    },
+    {
+      "expected_status": "reject",
+      "observed_status": "reject",
+      "scenario_id": "shifted_token_coordinate_reject",
+      "status": "pass"
+    },
+    {
+      "expected_status": "reject",
+      "observed_status": "reject",
+      "scenario_id": "substituted_source_episode_digest_reject",
+      "status": "pass"
+    },
+    {
+      "expected_status": "reject",
+      "observed_status": "reject",
+      "scenario_id": "duplicated_episode_window_reject",
+      "status": "pass"
+    },
+    {
+      "expected_status": "reject",
+      "observed_status": "reject",
+      "scenario_id": "misstated_sampling_identity_reject",
+      "status": "pass"
+    }
+  ],
+  "schema": "sch.vpd-activation-capture-semantic-benchmark.v1",
+  "scientific_boundary": {
+    "empirical_cluster_quality_claimed": false,
+    "execution_authorized": false,
+    "model_inference_performed": false,
+    "synthetic_metadata_only": true,
+    "weights_loaded_or_mutated": false
+  },
+  "source": {
+    "benchmark_runner_sha256": "cb4e6f98a98d6fa4fe8b7e774ef9ca1a5fccaab65c9191244c6410d5d3f16772",
+    "semantic_verifier_sha256": "a6f0673bdee84eef901be4f62a2bd59f1fc81ed3b93a2ad2aacb405110a73917"
+  },
+  "status": "pass"
+}

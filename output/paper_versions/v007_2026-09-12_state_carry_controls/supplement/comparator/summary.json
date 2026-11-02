@@ -1,0 +1,193 @@
+{
+  "status": "fresh_logic_skill_comparison_graded",
+  "unique_model_calls": 259,
+  "puzzles": 109,
+  "actual_generated_tokens": 123184,
+  "total_capped_calls": 109,
+  "candidate_native_grading_disagreements": 0,
+  "totals": {
+    "vanilla": {
+      "puzzles": 109,
+      "official_correct": 0.0,
+      "canonical_exact": 0,
+      "literal_valid": 0,
+      "capped_candidates": 109,
+      "source_generated_tokens": 111616
+    },
+    "logic_skill": {
+      "puzzles": 109,
+      "official_correct": 13.0,
+      "canonical_exact": 11,
+      "literal_valid": 4,
+      "capped_candidates": 0,
+      "source_generated_tokens": 8415
+    },
+    "routed_candidate": {
+      "puzzles": 109,
+      "official_correct": 11.0,
+      "canonical_exact": 9,
+      "literal_valid": 2,
+      "capped_candidates": 0,
+      "source_generated_tokens": 8415
+    },
+    "routed_final": {
+      "puzzles": 109,
+      "official_correct": 35.0,
+      "canonical_exact": 31,
+      "literal_valid": 6,
+      "capped_candidates": 0,
+      "source_generated_tokens": 8415
+    },
+    "plain_candidate_routed_repair": {
+      "puzzles": 109,
+      "official_correct": 34.0,
+      "canonical_exact": 32,
+      "literal_valid": 6,
+      "capped_candidates": 0,
+      "source_generated_tokens": 8415
+    }
+  },
+  "paired": [
+    {
+      "a": "routed_final",
+      "b": "vanilla",
+      "pairs": 109,
+      "both_correct": 0,
+      "a_only": 35,
+      "b_only": 0,
+      "both_incorrect": 74
+    },
+    {
+      "a": "logic_skill",
+      "b": "vanilla",
+      "pairs": 109,
+      "both_correct": 0,
+      "a_only": 13,
+      "b_only": 0,
+      "both_incorrect": 96
+    },
+    {
+      "a": "routed_final",
+      "b": "routed_candidate",
+      "pairs": 109,
+      "both_correct": 11,
+      "a_only": 24,
+      "b_only": 0,
+      "both_incorrect": 74
+    },
+    {
+      "a": "routed_final",
+      "b": "plain_candidate_routed_repair",
+      "pairs": 109,
+      "both_correct": 31,
+      "a_only": 4,
+      "b_only": 3,
+      "both_incorrect": 71
+    }
+  ],
+  "pilot": [
+    {
+      "id": "intellect3_logic/00062/72b57dbd293b",
+      "arm": "vanilla",
+      "route": "logic_skill_trm",
+      "pilot_split": "eval",
+      "official_score": 0.0,
+      "canonical_exact": false,
+      "literal_valid": false,
+      "source_call_id": "intellect3_logic/00062/72b57dbd293b::vanilla",
+      "generated_tokens": 1024,
+      "max_token_censored": true,
+      "original_candidate_official_score": 0.0,
+      "native_candidate_official_score": 0.0,
+      "correction": null,
+      "action": "To solve this Campsite logic puzzle, let's break down the constraints and deduce the position of the tents step by step.\n\n### 1. Analyze the Input Grid and Constraints\n\n**Grid Layout (0-indexed rows and columns):**\n- Row 0: `X T T X` (Constraint: 1 tent)\n- Row 1: `X X X X` (Constraint: 1 tent)\n- Row 2: `X X X X` (Constraint: 0 tents)\n- Row 3: `X T X X` (Constraint: 2 tents)\n- Row 4: `T X X X` (Constraint: 0 tents)\n\n**Column Constraints:**\n- Col 0: 1 tent\n- Col 1: 1 tent\n- Col 2: 1 tent\n- Col 3: 1 tent\n\n**Trees Locations:**\n- (0, 1)\n- (0, 2)\n- (3, 1)\n- (4, 0)\n\n### 2. Logical Deduction\n\n**Step 1: Handle Rows with 0 Tents**\n- **Row 2** has a constraint of 0. No tents can be placed in this row. All cells in Row 2 are effectively empty grass (`X`).\n- **Row 4** has a constraint of 0. No tents can be placed in this row.\n  - The tree at **(4, 0)** needs a tent. Since Row 4 cannot have a tent, the tent must be adjacent vertically or horizontally.\n  - Neighbors of (4, 0): (3, 0) and (4, 1).\n  - (4, 1) is in Row 4 (forbidden).\n  - Therefore, the tent for tree (4, 0) **must be at (3, 0)**.\n\n**Step 2: Update Constraints based on Step 1**\n- We placed a tent at **(3, 0)**.\n- **Row 3** constraint is 2. We have 1 tent so far. We need 1 more.\n- **Col 0** constraint is 1. We have 1 tent at (3, 0). So, no other tents can be in Col 0.\n  - This means (0, 0), (1, 0), (2, 0) cannot be tents.\n\n**Step 3: Analyze Tree at (3, 1)**\n- The tree at **(3, 1)** needs a tent.\n- Possible neighbors: (2, 1), (3, 0), (3, 2), (4, 1).\n  - (2, 1) is in Row 2 (0 tents allowed) -> Invalid.\n  - (4, 1) is in Row 4 (0 tents allowed) -> Invalid.\n  - (3, 0) is already occupied by the tent for tree (4, 0). A tent cannot serve two trees, and specifically, rule 1 says \"adjacent to exactly one tree\". If we put a tent at (3,0), it is adjacent to tree (4,0) and tree (3,1). Wait, let's re-read rule 1: \"Each tent must be adjacent to exactly one tree\".\n  - If we place a tent at (3,0), it is adjacent to Tree (4,0) and Tree (3,1). This violates the rule that a tent is adjacent to *exactly one* tree.\n  - **Correction**: Let's re-evaluate the placement for Tree (4,0).\n    - Tree (4,0) neighbors: (3,0) and (4,1).\n    - (4,1) is Row 4 (0 tents). So tent MUST be at (3,0).\n    - If tent is at (3,0), it is adjacent to Tree (4,0) AND Tree (3,1).\n    - This implies a contradiction unless my interpretation of \"adjacent to exactly one tree\" allows a tent to be next to multiple trees but *assigned* to one?\n    - Standard Campsite rules usually state: \"Each tent is attached to one tree... A tent can be adjacent to multiple trees, but it is only 'attached' to one.\" However, the prompt says: \"Each tent (C) must be horizontally or vertically adjacent to exactly one tree (T).\" This phrasing is strict. It implies a tent cannot touch two trees.\n    - Let's re-examine the grid.\n      - Tree at (4,0). Neighbors: (3,0), (4,1).\n      - Tree at (3,1). Neighbors"
+    },
+    {
+      "id": "intellect3_logic/00062/72b57dbd293b",
+      "arm": "logic_skill",
+      "route": "logic_skill_trm",
+      "pilot_split": "eval",
+      "official_score": 0.0,
+      "canonical_exact": false,
+      "literal_valid": false,
+      "source_call_id": "intellect3_logic/00062/72b57dbd293b::logic_skill",
+      "generated_tokens": 74,
+      "max_token_censored": false,
+      "original_candidate_official_score": 0.0,
+      "native_candidate_official_score": 0.0,
+      "correction": null,
+      "action": "[\n    ['X', 'T', 'T', 'C'],\n    ['X', 'X', 'X', 'X'],\n    ['X', 'X', 'X', 'X'],\n    ['C', 'T', 'X', 'X'],\n    ['T', 'X', 'X', 'X']\n]<|im_end|>"
+    },
+    {
+      "id": "intellect3_logic/00062/72b57dbd293b",
+      "arm": "routed_candidate",
+      "route": "logic_skill_trm",
+      "pilot_split": "eval",
+      "official_score": 0.0,
+      "canonical_exact": false,
+      "literal_valid": false,
+      "source_call_id": "intellect3_logic/00062/72b57dbd293b::logic_skill_trm",
+      "generated_tokens": 74,
+      "max_token_censored": false,
+      "original_candidate_official_score": 0.0,
+      "native_candidate_official_score": 0.0,
+      "correction": null,
+      "action": "[\n    ['X', 'T', 'T', 'C'],\n    ['X', 'X', 'X', 'X'],\n    ['X', 'X', 'X', 'X'],\n    ['C', 'T', 'C', 'X'],\n    ['T', 'X', 'X', 'X']\n]<|im_end|>"
+    },
+    {
+      "id": "intellect3_logic/00062/72b57dbd293b",
+      "arm": "routed_final",
+      "route": "logic_skill_trm",
+      "pilot_split": "eval",
+      "official_score": 1.0,
+      "canonical_exact": true,
+      "literal_valid": false,
+      "source_call_id": "intellect3_logic/00062/72b57dbd293b::logic_skill_trm",
+      "generated_tokens": 74,
+      "max_token_censored": false,
+      "original_candidate_official_score": 0.0,
+      "native_candidate_official_score": 0.0,
+      "correction": {
+        "id": "intellect3_logic/00062/72b57dbd293b",
+        "arm": "routed_final",
+        "action": "[[\"X\",\"T\",\"T\",\"C\"],[\"X\",\"C\",\"X\",\"X\"],[\"X\",\"X\",\"X\",\"X\"],[\"C\",\"T\",\"C\",\"X\"],[\"T\",\"X\",\"X\",\"X\"]]",
+        "source_call_id": "intellect3_logic/00062/72b57dbd293b::logic_skill_trm",
+        "helper_applied": true,
+        "helper_seconds": 0.0013951999972050544,
+        "changed_grid": true
+      },
+      "action": "[[\"X\",\"T\",\"T\",\"C\"],[\"X\",\"C\",\"X\",\"X\"],[\"X\",\"X\",\"X\",\"X\"],[\"C\",\"T\",\"C\",\"X\"],[\"T\",\"X\",\"X\",\"X\"]]"
+    },
+    {
+      "id": "intellect3_logic/00062/72b57dbd293b",
+      "arm": "plain_candidate_routed_repair",
+      "route": "logic_skill_trm",
+      "pilot_split": "eval",
+      "official_score": 1.0,
+      "canonical_exact": true,
+      "literal_valid": false,
+      "source_call_id": "intellect3_logic/00062/72b57dbd293b::logic_skill",
+      "generated_tokens": 74,
+      "max_token_censored": false,
+      "original_candidate_official_score": 0.0,
+      "native_candidate_official_score": 0.0,
+      "correction": {
+        "id": "intellect3_logic/00062/72b57dbd293b",
+        "arm": "plain_candidate_routed_repair",
+        "action": "[[\"X\",\"T\",\"T\",\"C\"],[\"X\",\"C\",\"X\",\"X\"],[\"X\",\"X\",\"X\",\"X\"],[\"C\",\"T\",\"C\",\"X\"],[\"T\",\"X\",\"X\",\"X\"]]",
+        "source_call_id": "intellect3_logic/00062/72b57dbd293b::logic_skill",
+        "helper_applied": true,
+        "helper_seconds": 0.0014407000016944949,
+        "changed_grid": true
+      },
+      "action": "[[\"X\",\"T\",\"T\",\"C\"],[\"X\",\"C\",\"X\",\"X\"],[\"X\",\"X\",\"X\",\"X\"],[\"C\",\"T\",\"C\",\"X\"],[\"T\",\"X\",\"X\",\"X\"]]"
+    }
+  ],
+  "limitations": [
+    "Fresh integration of selected skill and hash-pinned archived helper implementation, not historical replay.",
+    "Synthetic support replaces exposed historical support; all 128 support labels are positive, so critic discrimination is not tested.",
+    "Frozen signature gate was selected on historical outcomes; this is not a clean generalization estimate.",
+    "Answer-only Qwen generation with a 1024-token cap differs from Nanbeige thinking-mode runs.",
+    "TRM auxiliary retrieval/critic/search paths are not neural recurrent transformer passes."
+  ]
+}

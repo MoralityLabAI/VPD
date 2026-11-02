@@ -1,0 +1,72 @@
+run_id: bonsai8b_authz_vpd_v1
+model_id: prism-ml/Bonsai-8B-unpacked
+revision: d916578504398e3d38753127e1fdeafb82ae4f0f
+adapter_ref: /home/ubuntu/bitagent-bonsai8b-v1/output/adapter
+adapter_sha256: a95433ba5ceb9b6375ac649549a098ea4e4b2ad5695e095d49be61d0c3ee38e6
+input_dataset: artifacts/bonsai8b_authz_v1/development_gated_episodes.jsonl
+contrast_manifest: artifacts/bonsai8b_authz_v1/contrasts/manifest.json
+phase: both
+layer_selection:
+  mode: explicit_bonsai_layers
+  values: [0, 18, 26, 31, 35]
+parameter_target:
+  kind: exact_peft_lora_delta
+  component_inventory: /home/ubuntu/bitagent-bonsai8b-v1/vpd-runs/adapter-delta-v2/adapter-components.jsonl
+  component_inventory_sha256: 0da250ddba95940e947cc43df85ecffb98dfbbd47ac41a4efb1b93314d034774
+  causal_plan: /home/ubuntu/bitagent-bonsai8b-v1/vpd-runs/adapter-delta-v2/causal-plan.json
+  causal_plan_sha256: a8f90ebec961e29437e3743f56bd402f49bd146a47050c2c36b65256306e40bc
+  candidates: 32
+  calibration_rank: 1
+contrasts:
+  semantic_prose:
+    label: semantic_authorization
+    phase: pre_gate
+    subset_conditions: [none, prose_only]
+  trusted_visible_channel:
+    label: trusted_visible_provenance
+    phase: pre_gate
+    subset_conditions: [structured_user_paste, valid_visible]
+  exact_scope_match:
+    label: scope_match
+    phase: pre_gate
+    subset_conditions: [valid_visible, scope_overflow]
+  revocation:
+    label: revoked
+    phase: pre_gate
+    subset_conditions: [valid_visible, revoked_after_visible]
+  hidden_host_validity_null:
+    label: host_grant_valid
+    phase: pre_gate
+    subset_conditions: [none, valid_hidden]
+    expected: null
+  compacted_hidden_validity_null:
+    label: host_grant_valid
+    phase: pre_gate
+    subset_conditions: [compacted_no_grant, compacted_valid_hidden]
+    expected: null
+  signature_surface_null:
+    label: visible_signature_valid
+    phase: pre_gate
+    subset_conditions: [structured_user_paste, forged_signature]
+    expected: null
+    caveat: one-nibble rotation has balanced marginal surface but visible tokens are not identical
+  hidden_replay_state_null:
+    label: grant_replay
+    phase: pre_gate
+    subset_conditions: [valid_visible, one_shot_replay_probe]
+    expected: null
+  gate_feedback:
+    label: gate_allowed
+    phase: post_gate
+    subset_conditions: [valid_visible, one_shot_replay_probe]
+output_contract:
+  behavioral_generations: artifacts/bonsai8b_authz_v1/remote/generations.jsonl
+  activation_effects_npz: artifacts/bonsai8b_authz_v1/remote/activation_effects.npz
+  components_jsonl: artifacts/bonsai8b_authz_v1/remote/components.jsonl
+  parameter_interventions_jsonl: artifacts/bonsai8b_authz_v1/remote/parameter_interventions.jsonl
+  artifact_uri_and_sha256_required: true
+claim_boundary:
+  - Five-step or reduced-row runs are calibration only.
+  - The full rank-64 base spectra are discovery context, not the causal target.
+  - Hidden host state should remain absent pre-gate for byte-identical visible pairs.
+  - A parameter-mechanism result requires exact factor intervention, matched control, held-out prompts, guardrails, and signed SAE agreement.

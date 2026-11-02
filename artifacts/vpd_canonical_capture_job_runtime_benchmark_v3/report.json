@@ -1,0 +1,52 @@
+{
+  "benchmark_id": "882f038f16bddca72b9db40b8b952406e860c21eb20e21de3163b399180f7a43",
+  "controls": {
+    "all_callbacks_are_preaccounted": true,
+    "all_episode_equivalents_are_exact": true,
+    "bad_allocation_creates_no_output": true,
+    "bad_allocation_rejected_before_loader": true,
+    "callback_failure_creates_no_output": true,
+    "callback_failure_remains_charged": true,
+    "guarded_job_receipt_is_exact": true,
+    "reservation_precedes_loader": true,
+    "runner_imports_no_model_frameworks": true,
+    "runner_remains_non_authorizing": true,
+    "runtime_closes_and_factors_restore": true,
+    "synthetic_production_context_mix_rejected": true,
+    "synthetic_v3_execution_completes": true,
+    "three_receipts_are_persisted": true,
+    "v3_and_v2_receipts_verify": true,
+    "v3_wrapper_tamper_rejected": true,
+    "wrong_adapter_creates_no_output": true,
+    "wrong_adapter_rejected_after_reserved_load": true
+  },
+  "results": {
+    "capture_execution_v3_id": "a0a01102002a1c8bcc014b009c270e01e416a4aabb0daa62e2051c93b4b00871",
+    "episode_forward_equivalents": 64,
+    "forward_passes": 32,
+    "guarded_job_receipt_id": "185417e7e7819212bcc88de6f09ba6fd14ad675ac892c4ca27d02cdbfa541106"
+  },
+  "schema": "sch.vpd-canonical-capture-job-runtime-benchmark.v3",
+  "scientific_boundary": {
+    "capture_authorized": false,
+    "execution_authorized": false,
+    "model_framework_imported": false,
+    "model_loaded": false,
+    "persistent_output_created": false,
+    "production_runner_code_path_present": true,
+    "production_runner_empirically_exercised": false,
+    "real_model_inference_performed": false,
+    "sae_training_authorized": false,
+    "synthetic_runtime_only": true,
+    "weights_mutated": false
+  },
+  "source": {
+    "benchmark_sha256": "3c7d0b57f1ff092e59baa72a1b911088a3cc7662e6c7b62c9f0c45c85743c65d",
+    "runner_v3_sha256": "6b032dcae805a1f20f574b8e54bf872c65a128fd741c567d05ab9545a0b31bc2"
+  },
+  "status": "pass",
+  "summary": {
+    "controls": 18,
+    "passed": 18
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "status": "verified",
+  "index_manifest_sha256": "f8788456d31ce718f12fd1f5780cbcf04901d49d66aa9f202dafabec1f7895fc",
+  "verifier_sha256": "6f78b96417a42b536d6b1911099f06aa5beccd37d7319c20b1edbde6b214fac1",
+  "assets_checked": 916,
+  "condition_links": 450,
+  "native_state_links": 17250,
+  "feature_row_links": 2700,
+  "exact_reset_pairs": 150,
+  "examples": 18,
+  "independent_state_carry_inputs": 10,
+  "lanes": {
+    "arc_agi_1": 3,
+    "arc_agi_2": 3,
+    "intellect3_logic": 2,
+    "intellect3_math": 2
+  },
+  "groups": 8,
+  "inference_performed": false
+}

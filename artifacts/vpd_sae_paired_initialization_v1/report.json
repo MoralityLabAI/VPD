@@ -1,0 +1,526 @@
+{
+  "boundary": {
+    "launch_authorized": false,
+    "model_forward_performed": false,
+    "operative_admissions": 0,
+    "optimizer_steps": 0,
+    "paid_compute_launched": false,
+    "research_initialization_verified": false,
+    "research_weights_modified": false,
+    "tiny_synthetic_initializations_created": true,
+    "training_performed": false
+  },
+  "caller_cpu_rng_preserved": true,
+  "design": "Construct one existing SharedSAE template per site/seed, copy the complete-pool bias, freeze it, then deepcopy independently for each arm.",
+  "fixture": {
+    "features": 10,
+    "sites": [
+      "model.layers.11",
+      "model.norm"
+    ],
+    "top_k": 2,
+    "width": 5
+  },
+  "limitations": [
+    "Tiny synthetic fixtures only; no 3072-by-6144 research initialization or fresh activation pack was verified.",
+    "No forward pass, feature interpretation, loss, backward pass, optimizer, or trained checkpoint export occurs.",
+    "The historical fit_shared_sae helper recomputes bias from its input rows and must not independently initialize the two Q2 arms.",
+    "Returned models are frozen CPU float32 instances. A later authorized trainer must explicitly enable training and verify this contract on its real runtime."
+  ],
+  "provenance": {
+    "binding_runner_sha256": "c20045cb0ce5b1e480dececaf7f328760ced035b14a75c5c51ba8dc76605db93",
+    "runner_sha256": "236f900ad56ec8c67916af00b60ace325b83ff4e45e162f24866c6f2358ae5bb",
+    "shared_sae_sha256": "0d63ca386ba7e28dd1d3c69f81888c7a429e93bc70f0d35b8826b6633dc9b1c2",
+    "torch_version": "2.14.0+cpu"
+  },
+  "report_id": "60fc5386875c9cf2d877c75c4eb8a72ae683aafb4600f81859e4a272ab6b871a",
+  "results": [
+    {
+      "arms": {
+        "Q2-B": {
+          "parameters": {
+            "decoder.weight": {
+              "array_content_sha256": "80c13fb90b788c2a581f14e4e5a0b617e5130d5ab83fc156fc41ec25e7219ab1",
+              "dtype": "torch.float32",
+              "shape": [
+                5,
+                10
+              ]
+            },
+            "encoder.bias": {
+              "array_content_sha256": "e7801cefea8c2ccb01039d2c194098d902a891528f694d9e6d27ae70dcb2a113",
+              "dtype": "torch.float32",
+              "shape": [
+                10
+              ]
+            },
+            "encoder.weight": {
+              "array_content_sha256": "0fe5a171158f77349493c7afe598379a4201e54dc337d3985b5975337e770550",
+              "dtype": "torch.float32",
+              "shape": [
+                10,
+                5
+              ]
+            },
+            "pre_bias": {
+              "array_content_sha256": "921ee54f2c6bf19bbf6f54fc4aa90d12f1b057030de1f21d2a5339e9dc8530a7",
+              "dtype": "torch.float32",
+              "shape": [
+                5
+              ]
+            }
+          },
+          "state_sha256": "5e31e4ea21a164ba1b7e4f5f050124004373bbfe40996e9c355380a7ae51249f"
+        },
+        "Q2-N": {
+          "parameters": {
+            "decoder.weight": {
+              "array_content_sha256": "80c13fb90b788c2a581f14e4e5a0b617e5130d5ab83fc156fc41ec25e7219ab1",
+              "dtype": "torch.float32",
+              "shape": [
+                5,
+                10
+              ]
+            },
+            "encoder.bias": {
+              "array_content_sha256": "e7801cefea8c2ccb01039d2c194098d902a891528f694d9e6d27ae70dcb2a113",
+              "dtype": "torch.float32",
+              "shape": [
+                10
+              ]
+            },
+            "encoder.weight": {
+              "array_content_sha256": "0fe5a171158f77349493c7afe598379a4201e54dc337d3985b5975337e770550",
+              "dtype": "torch.float32",
+              "shape": [
+                10,
+                5
+              ]
+            },
+            "pre_bias": {
+              "array_content_sha256": "921ee54f2c6bf19bbf6f54fc4aa90d12f1b057030de1f21d2a5339e9dc8530a7",
+              "dtype": "torch.float32",
+              "shape": [
+                5
+              ]
+            }
+          },
+          "state_sha256": "5e31e4ea21a164ba1b7e4f5f050124004373bbfe40996e9c355380a7ae51249f"
+        }
+      },
+      "common_pre_bias_sha256": "921ee54f2c6bf19bbf6f54fc4aa90d12f1b057030de1f21d2a5339e9dc8530a7",
+      "disjoint_parameter_storage": true,
+      "exact_parameter_equality": true,
+      "frozen_cpu_float32": true,
+      "initialization_seed": 1707,
+      "site": "model.layers.11"
+    },
+    {
+      "arms": {
+        "Q2-B": {
+          "parameters": {
+            "decoder.weight": {
+              "array_content_sha256": "51a7c6914528186862ddf79e60dae5e76bfc98edbbd038a5de870b69cd95076b",
+              "dtype": "torch.float32",
+              "shape": [
+                5,
+                10
+              ]
+            },
+            "encoder.bias": {
+              "array_content_sha256": "e7801cefea8c2ccb01039d2c194098d902a891528f694d9e6d27ae70dcb2a113",
+              "dtype": "torch.float32",
+              "shape": [
+                10
+              ]
+            },
+            "encoder.weight": {
+              "array_content_sha256": "384be0fc03cc4ba03354876466c8fcf02beeecc0797344d23dce95f8b8207216",
+              "dtype": "torch.float32",
+              "shape": [
+                10,
+                5
+              ]
+            },
+            "pre_bias": {
+              "array_content_sha256": "921ee54f2c6bf19bbf6f54fc4aa90d12f1b057030de1f21d2a5339e9dc8530a7",
+              "dtype": "torch.float32",
+              "shape": [
+                5
+              ]
+            }
+          },
+          "state_sha256": "1bae751fcd707d4fbf2bc5787f022b3fefafddb23fc5b3f1935545323f0c8ad8"
+        },
+        "Q2-N": {
+          "parameters": {
+            "decoder.weight": {
+              "array_content_sha256": "51a7c6914528186862ddf79e60dae5e76bfc98edbbd038a5de870b69cd95076b",
+              "dtype": "torch.float32",
+              "shape": [
+                5,
+                10
+              ]
+            },
+            "encoder.bias": {
+              "array_content_sha256": "e7801cefea8c2ccb01039d2c194098d902a891528f694d9e6d27ae70dcb2a113",
+              "dtype": "torch.float32",
+              "shape": [
+                10
+              ]
+            },
+            "encoder.weight": {
+              "array_content_sha256": "384be0fc03cc4ba03354876466c8fcf02beeecc0797344d23dce95f8b8207216",
+              "dtype": "torch.float32",
+              "shape": [
+                10,
+                5
+              ]
+            },
+            "pre_bias": {
+              "array_content_sha256": "921ee54f2c6bf19bbf6f54fc4aa90d12f1b057030de1f21d2a5339e9dc8530a7",
+              "dtype": "torch.float32",
+              "shape": [
+                5
+              ]
+            }
+          },
+          "state_sha256": "1bae751fcd707d4fbf2bc5787f022b3fefafddb23fc5b3f1935545323f0c8ad8"
+        }
+      },
+      "common_pre_bias_sha256": "921ee54f2c6bf19bbf6f54fc4aa90d12f1b057030de1f21d2a5339e9dc8530a7",
+      "disjoint_parameter_storage": true,
+      "exact_parameter_equality": true,
+      "frozen_cpu_float32": true,
+      "initialization_seed": 250829,
+      "site": "model.layers.11"
+    },
+    {
+      "arms": {
+        "Q2-B": {
+          "parameters": {
+            "decoder.weight": {
+              "array_content_sha256": "3d85abce63376299ed7552937f70366e076146edd89bd32090ad6532bb38d4db",
+              "dtype": "torch.float32",
+              "shape": [
+                5,
+                10
+              ]
+            },
+            "encoder.bias": {
+              "array_content_sha256": "e7801cefea8c2ccb01039d2c194098d902a891528f694d9e6d27ae70dcb2a113",
+              "dtype": "torch.float32",
+              "shape": [
+                10
+              ]
+            },
+            "encoder.weight": {
+              "array_content_sha256": "312c95c37b172a0f59b453158e5ca9df551a628eb5d02aa131af0ab80fdc0045",
+              "dtype": "torch.float32",
+              "shape": [
+                10,
+                5
+              ]
+            },
+            "pre_bias": {
+              "array_content_sha256": "921ee54f2c6bf19bbf6f54fc4aa90d12f1b057030de1f21d2a5339e9dc8530a7",
+              "dtype": "torch.float32",
+              "shape": [
+                5
+              ]
+            }
+          },
+          "state_sha256": "711a67c2a54ccac9f97c6223d824754679dfe9e6ba36767c693a40f46b7bb086"
+        },
+        "Q2-N": {
+          "parameters": {
+            "decoder.weight": {
+              "array_content_sha256": "3d85abce63376299ed7552937f70366e076146edd89bd32090ad6532bb38d4db",
+              "dtype": "torch.float32",
+              "shape": [
+                5,
+                10
+              ]
+            },
+            "encoder.bias": {
+              "array_content_sha256": "e7801cefea8c2ccb01039d2c194098d902a891528f694d9e6d27ae70dcb2a113",
+              "dtype": "torch.float32",
+              "shape": [
+                10
+              ]
+            },
+            "encoder.weight": {
+              "array_content_sha256": "312c95c37b172a0f59b453158e5ca9df551a628eb5d02aa131af0ab80fdc0045",
+              "dtype": "torch.float32",
+              "shape": [
+                10,
+                5
+              ]
+            },
+            "pre_bias": {
+              "array_content_sha256": "921ee54f2c6bf19bbf6f54fc4aa90d12f1b057030de1f21d2a5339e9dc8530a7",
+              "dtype": "torch.float32",
+              "shape": [
+                5
+              ]
+            }
+          },
+          "state_sha256": "711a67c2a54ccac9f97c6223d824754679dfe9e6ba36767c693a40f46b7bb086"
+        }
+      },
+      "common_pre_bias_sha256": "921ee54f2c6bf19bbf6f54fc4aa90d12f1b057030de1f21d2a5339e9dc8530a7",
+      "disjoint_parameter_storage": true,
+      "exact_parameter_equality": true,
+      "frozen_cpu_float32": true,
+      "initialization_seed": 260829,
+      "site": "model.layers.11"
+    },
+    {
+      "arms": {
+        "Q2-B": {
+          "parameters": {
+            "decoder.weight": {
+              "array_content_sha256": "80c13fb90b788c2a581f14e4e5a0b617e5130d5ab83fc156fc41ec25e7219ab1",
+              "dtype": "torch.float32",
+              "shape": [
+                5,
+                10
+              ]
+            },
+            "encoder.bias": {
+              "array_content_sha256": "e7801cefea8c2ccb01039d2c194098d902a891528f694d9e6d27ae70dcb2a113",
+              "dtype": "torch.float32",
+              "shape": [
+                10
+              ]
+            },
+            "encoder.weight": {
+              "array_content_sha256": "0fe5a171158f77349493c7afe598379a4201e54dc337d3985b5975337e770550",
+              "dtype": "torch.float32",
+              "shape": [
+                10,
+                5
+              ]
+            },
+            "pre_bias": {
+              "array_content_sha256": "25816904669fe70ea87f15ed61e52930cfd2985e86b965cb115d77ed843f004b",
+              "dtype": "torch.float32",
+              "shape": [
+                5
+              ]
+            }
+          },
+          "state_sha256": "27f8a1c198e34a148fbda5ebc1667f632eb0a388cb657780706cf456893ea1c9"
+        },
+        "Q2-N": {
+          "parameters": {
+            "decoder.weight": {
+              "array_content_sha256": "80c13fb90b788c2a581f14e4e5a0b617e5130d5ab83fc156fc41ec25e7219ab1",
+              "dtype": "torch.float32",
+              "shape": [
+                5,
+                10
+              ]
+            },
+            "encoder.bias": {
+              "array_content_sha256": "e7801cefea8c2ccb01039d2c194098d902a891528f694d9e6d27ae70dcb2a113",
+              "dtype": "torch.float32",
+              "shape": [
+                10
+              ]
+            },
+            "encoder.weight": {
+              "array_content_sha256": "0fe5a171158f77349493c7afe598379a4201e54dc337d3985b5975337e770550",
+              "dtype": "torch.float32",
+              "shape": [
+                10,
+                5
+              ]
+            },
+            "pre_bias": {
+              "array_content_sha256": "25816904669fe70ea87f15ed61e52930cfd2985e86b965cb115d77ed843f004b",
+              "dtype": "torch.float32",
+              "shape": [
+                5
+              ]
+            }
+          },
+          "state_sha256": "27f8a1c198e34a148fbda5ebc1667f632eb0a388cb657780706cf456893ea1c9"
+        }
+      },
+      "common_pre_bias_sha256": "25816904669fe70ea87f15ed61e52930cfd2985e86b965cb115d77ed843f004b",
+      "disjoint_parameter_storage": true,
+      "exact_parameter_equality": true,
+      "frozen_cpu_float32": true,
+      "initialization_seed": 1707,
+      "site": "model.norm"
+    },
+    {
+      "arms": {
+        "Q2-B": {
+          "parameters": {
+            "decoder.weight": {
+              "array_content_sha256": "51a7c6914528186862ddf79e60dae5e76bfc98edbbd038a5de870b69cd95076b",
+              "dtype": "torch.float32",
+              "shape": [
+                5,
+                10
+              ]
+            },
+            "encoder.bias": {
+              "array_content_sha256": "e7801cefea8c2ccb01039d2c194098d902a891528f694d9e6d27ae70dcb2a113",
+              "dtype": "torch.float32",
+              "shape": [
+                10
+              ]
+            },
+            "encoder.weight": {
+              "array_content_sha256": "384be0fc03cc4ba03354876466c8fcf02beeecc0797344d23dce95f8b8207216",
+              "dtype": "torch.float32",
+              "shape": [
+                10,
+                5
+              ]
+            },
+            "pre_bias": {
+              "array_content_sha256": "25816904669fe70ea87f15ed61e52930cfd2985e86b965cb115d77ed843f004b",
+              "dtype": "torch.float32",
+              "shape": [
+                5
+              ]
+            }
+          },
+          "state_sha256": "8e22c904a0c5bbdb13d43b7be5263bd9338403e97d6dc3666811cf0ca4fe123b"
+        },
+        "Q2-N": {
+          "parameters": {
+            "decoder.weight": {
+              "array_content_sha256": "51a7c6914528186862ddf79e60dae5e76bfc98edbbd038a5de870b69cd95076b",
+              "dtype": "torch.float32",
+              "shape": [
+                5,
+                10
+              ]
+            },
+            "encoder.bias": {
+              "array_content_sha256": "e7801cefea8c2ccb01039d2c194098d902a891528f694d9e6d27ae70dcb2a113",
+              "dtype": "torch.float32",
+              "shape": [
+                10
+              ]
+            },
+            "encoder.weight": {
+              "array_content_sha256": "384be0fc03cc4ba03354876466c8fcf02beeecc0797344d23dce95f8b8207216",
+              "dtype": "torch.float32",
+              "shape": [
+                10,
+                5
+              ]
+            },
+            "pre_bias": {
+              "array_content_sha256": "25816904669fe70ea87f15ed61e52930cfd2985e86b965cb115d77ed843f004b",
+              "dtype": "torch.float32",
+              "shape": [
+                5
+              ]
+            }
+          },
+          "state_sha256": "8e22c904a0c5bbdb13d43b7be5263bd9338403e97d6dc3666811cf0ca4fe123b"
+        }
+      },
+      "common_pre_bias_sha256": "25816904669fe70ea87f15ed61e52930cfd2985e86b965cb115d77ed843f004b",
+      "disjoint_parameter_storage": true,
+      "exact_parameter_equality": true,
+      "frozen_cpu_float32": true,
+      "initialization_seed": 250829,
+      "site": "model.norm"
+    },
+    {
+      "arms": {
+        "Q2-B": {
+          "parameters": {
+            "decoder.weight": {
+              "array_content_sha256": "3d85abce63376299ed7552937f70366e076146edd89bd32090ad6532bb38d4db",
+              "dtype": "torch.float32",
+              "shape": [
+                5,
+                10
+              ]
+            },
+            "encoder.bias": {
+              "array_content_sha256": "e7801cefea8c2ccb01039d2c194098d902a891528f694d9e6d27ae70dcb2a113",
+              "dtype": "torch.float32",
+              "shape": [
+                10
+              ]
+            },
+            "encoder.weight": {
+              "array_content_sha256": "312c95c37b172a0f59b453158e5ca9df551a628eb5d02aa131af0ab80fdc0045",
+              "dtype": "torch.float32",
+              "shape": [
+                10,
+                5
+              ]
+            },
+            "pre_bias": {
+              "array_content_sha256": "25816904669fe70ea87f15ed61e52930cfd2985e86b965cb115d77ed843f004b",
+              "dtype": "torch.float32",
+              "shape": [
+                5
+              ]
+            }
+          },
+          "state_sha256": "a3d2964a2cd8df704db97354d4a3c23ce94ef2c0bfad8e7c81053eea11807f21"
+        },
+        "Q2-N": {
+          "parameters": {
+            "decoder.weight": {
+              "array_content_sha256": "3d85abce63376299ed7552937f70366e076146edd89bd32090ad6532bb38d4db",
+              "dtype": "torch.float32",
+              "shape": [
+                5,
+                10
+              ]
+            },
+            "encoder.bias": {
+              "array_content_sha256": "e7801cefea8c2ccb01039d2c194098d902a891528f694d9e6d27ae70dcb2a113",
+              "dtype": "torch.float32",
+              "shape": [
+                10
+              ]
+            },
+            "encoder.weight": {
+              "array_content_sha256": "312c95c37b172a0f59b453158e5ca9df551a628eb5d02aa131af0ab80fdc0045",
+              "dtype": "torch.float32",
+              "shape": [
+                10,
+                5
+              ]
+            },
+            "pre_bias": {
+              "array_content_sha256": "25816904669fe70ea87f15ed61e52930cfd2985e86b965cb115d77ed843f004b",
+              "dtype": "torch.float32",
+              "shape": [
+                5
+              ]
+            }
+          },
+          "state_sha256": "a3d2964a2cd8df704db97354d4a3c23ce94ef2c0bfad8e7c81053eea11807f21"
+        }
+      },
+      "common_pre_bias_sha256": "25816904669fe70ea87f15ed61e52930cfd2985e86b965cb115d77ed843f004b",
+      "disjoint_parameter_storage": true,
+      "exact_parameter_equality": true,
+      "frozen_cpu_float32": true,
+      "initialization_seed": 260829,
+      "site": "model.norm"
+    }
+  ],
+  "schema": "sch.vpd-sae-paired-initialization-benchmark.v1",
+  "source": {
+    "binding_path": "C:\\projects\\VPD\\artifacts\\vpd_sae_paired_activation_binding_v1\\report.json",
+    "report_id": "5a5beb7fd739c413aeba58d299e5ab413ff36d6bf3e382f258618d0eb56a0ff4",
+    "sha256": "39d920a11f223d78b4e54d5f28d59df0a4175955892ccf03ad96835e4e2463a7"
+  },
+  "status": "tiny_initialization_contract_verified"
+}

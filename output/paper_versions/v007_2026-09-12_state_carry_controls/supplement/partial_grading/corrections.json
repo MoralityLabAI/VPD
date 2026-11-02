@@ -1,0 +1,344 @@
+[
+  {
+    "id": "intellect3_logic/00000/bdbead385328",
+    "arm": "routed_final",
+    "action": "[\n    ['T', 'C', 'X', 'X', 'X'],\n    ['X', 'X', 'X', 'X', 'X'],\n    ['T', 'X', 'X', 'X', 'T'],\n    ['X', 'C', 'X', 'X', 'X'],\n    ['X', 'X', 'X', 'T', 'C']\n]<|im_end|>",
+    "source_call_id": "intellect3_logic/00000/bdbead385328::logic_skill",
+    "helper_applied": false,
+    "helper_seconds": 9.700001101009548e-06,
+    "changed_grid": false
+  },
+  {
+    "id": "intellect3_logic/00000/bdbead385328",
+    "arm": "plain_candidate_routed_repair",
+    "action": "[\n    ['T', 'C', 'X', 'X', 'X'],\n    ['X', 'X', 'X', 'X', 'X'],\n    ['T', 'X', 'X', 'X', 'T'],\n    ['X', 'C', 'X', 'X', 'X'],\n    ['X', 'X', 'X', 'T', 'C']\n]<|im_end|>",
+    "source_call_id": "intellect3_logic/00000/bdbead385328::logic_skill",
+    "helper_applied": false,
+    "helper_seconds": 5.40000110049732e-06,
+    "changed_grid": false
+  },
+  {
+    "id": "intellect3_logic/00001/231c5a3d7b40",
+    "arm": "routed_final",
+    "action": "[\n    ['X', 'C', 'X', 'T', 'X'],\n    ['X', 'T', 'X', 'X', 'T'],\n    ['X', 'X', 'C', 'X', 'X'],\n    ['X', 'X', 'X', 'X', 'T']\n]<|im_end|>",
+    "source_call_id": "intellect3_logic/00001/231c5a3d7b40::logic_skill",
+    "helper_applied": false,
+    "helper_seconds": 3.5999983083456755e-06,
+    "changed_grid": false
+  },
+  {
+    "id": "intellect3_logic/00001/231c5a3d7b40",
+    "arm": "plain_candidate_routed_repair",
+    "action": "[\n    ['X', 'C', 'X', 'T', 'X'],\n    ['X', 'T', 'X', 'X', 'T'],\n    ['X', 'X', 'C', 'X', 'X'],\n    ['X', 'X', 'X', 'X', 'T']\n]<|im_end|>",
+    "source_call_id": "intellect3_logic/00001/231c5a3d7b40::logic_skill",
+    "helper_applied": false,
+    "helper_seconds": 2.8999966161791235e-06,
+    "changed_grid": false
+  },
+  {
+    "id": "intellect3_logic/00002/a7761c19c1a6",
+    "arm": "routed_final",
+    "action": "[[\"X\",\"T\",\"C\",\"X\",\"T\"],[\"X\",\"X\",\"X\",\"X\",\"C\"],[\"T\",\"C\",\"X\",\"X\",\"T\"],[\"X\",\"X\",\"X\",\"X\",\"C\"],[\"X\",\"T\",\"C\",\"X\",\"X\"]]",
+    "source_call_id": "intellect3_logic/00002/a7761c19c1a6::logic_skill_trm",
+    "helper_applied": true,
+    "helper_seconds": 0.013169800000468967,
+    "changed_grid": true
+  },
+  {
+    "id": "intellect3_logic/00002/a7761c19c1a6",
+    "arm": "plain_candidate_routed_repair",
+    "action": "[[\"X\",\"T\",\"C\",\"X\",\"T\"],[\"X\",\"X\",\"X\",\"X\",\"C\"],[\"T\",\"C\",\"X\",\"X\",\"T\"],[\"X\",\"X\",\"X\",\"X\",\"C\"],[\"X\",\"T\",\"C\",\"X\",\"X\"]]",
+    "source_call_id": "intellect3_logic/00002/a7761c19c1a6::logic_skill",
+    "helper_applied": true,
+    "helper_seconds": 0.011466899999504676,
+    "changed_grid": true
+  },
+  {
+    "id": "intellect3_logic/00003/7cdca13d558d",
+    "arm": "routed_final",
+    "action": "[[\"X\",\"C\",\"X\",\"T\",\"C\"],[\"X\",\"T\",\"X\",\"X\",\"X\"],[\"C\",\"T\",\"C\",\"X\",\"X\"],[\"T\",\"X\",\"X\",\"X\",\"X\"]]",
+    "source_call_id": "intellect3_logic/00003/7cdca13d558d::logic_skill_trm",
+    "helper_applied": true,
+    "helper_seconds": 0.00705759999982547,
+    "changed_grid": true
+  },
+  {
+    "id": "intellect3_logic/00003/7cdca13d558d",
+    "arm": "plain_candidate_routed_repair",
+    "action": "[[\"X\",\"C\",\"X\",\"T\",\"C\"],[\"X\",\"T\",\"X\",\"X\",\"X\"],[\"C\",\"T\",\"C\",\"X\",\"X\"],[\"T\",\"X\",\"X\",\"X\",\"X\"]]",
+    "source_call_id": "intellect3_logic/00003/7cdca13d558d::logic_skill",
+    "helper_applied": true,
+    "helper_seconds": 0.0070432999964396,
+    "changed_grid": true
+  },
+  {
+    "id": "intellect3_logic/00004/aa759306b4b0",
+    "arm": "routed_final",
+    "action": "[[\"X\",\"X\",\"T\",\"C\",\"X\"],[\"X\",\"X\",\"X\",\"T\",\"X\"],[\"T\",\"C\",\"X\",\"C\",\"X\"],[\"X\",\"X\",\"X\",\"X\",\"X\"],[\"C\",\"T\",\"T\",\"C\",\"X\"]]",
+    "source_call_id": "intellect3_logic/00004/aa759306b4b0::logic_skill_trm",
+    "helper_applied": true,
+    "helper_seconds": 0.009808999999222578,
+    "changed_grid": true
+  },
+  {
+    "id": "intellect3_logic/00004/aa759306b4b0",
+    "arm": "plain_candidate_routed_repair",
+    "action": "[[\"X\",\"C\",\"T\",\"X\",\"X\"],[\"X\",\"X\",\"X\",\"T\",\"X\"],[\"T\",\"C\",\"X\",\"C\",\"X\"],[\"X\",\"X\",\"X\",\"X\",\"X\"],[\"C\",\"T\",\"T\",\"C\",\"X\"]]",
+    "source_call_id": "intellect3_logic/00004/aa759306b4b0::logic_skill",
+    "helper_applied": true,
+    "helper_seconds": 0.006616399998165434,
+    "changed_grid": true
+  },
+  {
+    "id": "intellect3_logic/00005/e9a2239c4d19",
+    "arm": "routed_final",
+    "action": "[\n    ['T', 'C', 'X', 'X', 'T'],\n    ['X', 'T', 'X', 'X', 'T'],\n    ['X', 'X', 'X', 'X', 'X'],\n    ['X', 'X', 'X', 'X', 'X'],\n    ['T', 'X', 'X', 'X', 'X']\n]<|im_end|>",
+    "source_call_id": "intellect3_logic/00005/e9a2239c4d19::logic_skill",
+    "helper_applied": false,
+    "helper_seconds": 4.0000013541430235e-06,
+    "changed_grid": false
+  },
+  {
+    "id": "intellect3_logic/00005/e9a2239c4d19",
+    "arm": "plain_candidate_routed_repair",
+    "action": "[\n    ['T', 'C', 'X', 'X', 'T'],\n    ['X', 'T', 'X', 'X', 'T'],\n    ['X', 'X', 'X', 'X', 'X'],\n    ['X', 'X', 'X', 'X', 'X'],\n    ['T', 'X', 'X', 'X', 'X']\n]<|im_end|>",
+    "source_call_id": "intellect3_logic/00005/e9a2239c4d19::logic_skill",
+    "helper_applied": false,
+    "helper_seconds": 3.6000019463244826e-06,
+    "changed_grid": false
+  },
+  {
+    "id": "intellect3_logic/00006/0f4d98b38e47",
+    "arm": "routed_final",
+    "action": "[\n    ['X', 'T', 'X', 'X', 'X'],\n    ['X', 'X', 'T', 'X', 'X'],\n    ['X', 'C', 'X', 'T', 'X'],\n    ['X', 'X', 'X', 'X', 'X'],\n    ['X', 'X', 'T', 'T', 'C']\n]<|im_end|>",
+    "source_call_id": "intellect3_logic/00006/0f4d98b38e47::logic_skill",
+    "helper_applied": false,
+    "helper_seconds": 4.300000000512227e-06,
+    "changed_grid": false
+  },
+  {
+    "id": "intellect3_logic/00006/0f4d98b38e47",
+    "arm": "plain_candidate_routed_repair",
+    "action": "[\n    ['X', 'T', 'X', 'X', 'X'],\n    ['X', 'X', 'T', 'X', 'X'],\n    ['X', 'C', 'X', 'T', 'X'],\n    ['X', 'X', 'X', 'X', 'X'],\n    ['X', 'X', 'T', 'T', 'C']\n]<|im_end|>",
+    "source_call_id": "intellect3_logic/00006/0f4d98b38e47::logic_skill",
+    "helper_applied": false,
+    "helper_seconds": 1.7999991541728377e-06,
+    "changed_grid": false
+  },
+  {
+    "id": "intellect3_logic/00007/cbb292744b18",
+    "arm": "routed_final",
+    "action": "[\n    ['T', 'C', 'X', 'X', 'T'],\n    ['X', 'X', 'T', 'C', 'X'],\n    ['X', 'X', 'X', 'X', 'X'],\n    ['X', 'X', 'X', 'X', 'X'],\n    ['T', 'X', 'T', 'C', 'C']\n]<|im_end|>",
+    "source_call_id": "intellect3_logic/00007/cbb292744b18::logic_skill",
+    "helper_applied": false,
+    "helper_seconds": 2.2999993234407157e-06,
+    "changed_grid": false
+  },
+  {
+    "id": "intellect3_logic/00007/cbb292744b18",
+    "arm": "plain_candidate_routed_repair",
+    "action": "[\n    ['T', 'C', 'X', 'X', 'T'],\n    ['X', 'X', 'T', 'C', 'X'],\n    ['X', 'X', 'X', 'X', 'X'],\n    ['X', 'X', 'X', 'X', 'X'],\n    ['T', 'X', 'T', 'C', 'C']\n]<|im_end|>",
+    "source_call_id": "intellect3_logic/00007/cbb292744b18::logic_skill",
+    "helper_applied": false,
+    "helper_seconds": 1.6999983927235007e-06,
+    "changed_grid": false
+  },
+  {
+    "id": "intellect3_logic/00008/c1e3ebd48c25",
+    "arm": "routed_final",
+    "action": "[[\"T\",\"C\",\"X\",\"T\",\"C\"],[\"X\",\"X\",\"T\",\"X\",\"X\"],[\"C\",\"T\",\"C\",\"X\",\"X\"],[\"X\",\"X\",\"X\",\"X\",\"X\"]]",
+    "source_call_id": "intellect3_logic/00008/c1e3ebd48c25::logic_skill_trm",
+    "helper_applied": true,
+    "helper_seconds": 0.003287299998191884,
+    "changed_grid": true
+  },
+  {
+    "id": "intellect3_logic/00008/c1e3ebd48c25",
+    "arm": "plain_candidate_routed_repair",
+    "action": "[[\"T\",\"C\",\"X\",\"T\",\"C\"],[\"X\",\"X\",\"T\",\"X\",\"X\"],[\"C\",\"T\",\"C\",\"X\",\"X\"],[\"X\",\"X\",\"X\",\"X\",\"X\"]]",
+    "source_call_id": "intellect3_logic/00008/c1e3ebd48c25::logic_skill",
+    "helper_applied": true,
+    "helper_seconds": 0.007401499999104999,
+    "changed_grid": true
+  },
+  {
+    "id": "intellect3_logic/00009/2ff6080e31f2",
+    "arm": "routed_final",
+    "action": "[\n    ['T', 'C', 'X', 'X', 'X'],\n    ['X', 'X', 'X', 'X', 'T'],\n    ['T', 'T', 'X', 'X', 'X'],\n    ['X', 'T', 'X', 'X', 'X']\n]<|im_end|>",
+    "source_call_id": "intellect3_logic/00009/2ff6080e31f2::logic_skill",
+    "helper_applied": false,
+    "helper_seconds": 6.099999154685065e-06,
+    "changed_grid": false
+  },
+  {
+    "id": "intellect3_logic/00009/2ff6080e31f2",
+    "arm": "plain_candidate_routed_repair",
+    "action": "[\n    ['T', 'C', 'X', 'X', 'X'],\n    ['X', 'X', 'X', 'X', 'T'],\n    ['T', 'T', 'X', 'X', 'X'],\n    ['X', 'T', 'X', 'X', 'X']\n]<|im_end|>",
+    "source_call_id": "intellect3_logic/00009/2ff6080e31f2::logic_skill",
+    "helper_applied": false,
+    "helper_seconds": 3.999997716164216e-06,
+    "changed_grid": false
+  },
+  {
+    "id": "intellect3_logic/00010/505c0899d3e8",
+    "arm": "routed_final",
+    "action": "[\n    ['X', 'C', 'X', 'X', 'X'],\n    ['X', 'X', 'T', 'C', 'X'],\n    ['X', 'T', 'X', 'X', 'X'],\n    ['X', 'C', 'T', 'X', 'T']\n]<|im_end|>",
+    "source_call_id": "intellect3_logic/00010/505c0899d3e8::logic_skill",
+    "helper_applied": false,
+    "helper_seconds": 3.4000004234258085e-06,
+    "changed_grid": false
+  },
+  {
+    "id": "intellect3_logic/00010/505c0899d3e8",
+    "arm": "plain_candidate_routed_repair",
+    "action": "[\n    ['X', 'C', 'X', 'X', 'X'],\n    ['X', 'X', 'T', 'C', 'X'],\n    ['X', 'T', 'X', 'X', 'X'],\n    ['X', 'C', 'T', 'X', 'T']\n]<|im_end|>",
+    "source_call_id": "intellect3_logic/00010/505c0899d3e8::logic_skill",
+    "helper_applied": false,
+    "helper_seconds": 2.9000002541579306e-06,
+    "changed_grid": false
+  },
+  {
+    "id": "intellect3_logic/00011/74efdbcfc428",
+    "arm": "routed_final",
+    "action": "[\n    ['T', 'C', 'X', 'X', 'X'],\n    ['X', 'X', 'T', 'C', 'X'],\n    ['X', 'X', 'T', 'X', 'X'],\n    ['X', 'C', 'X', 'T', 'X'],\n    ['T', 'X', 'X', 'X', 'X']\n]<|im_end|>",
+    "source_call_id": "intellect3_logic/00011/74efdbcfc428::logic_skill",
+    "helper_applied": false,
+    "helper_seconds": 4.499997885432094e-06,
+    "changed_grid": false
+  },
+  {
+    "id": "intellect3_logic/00011/74efdbcfc428",
+    "arm": "plain_candidate_routed_repair",
+    "action": "[\n    ['T', 'C', 'X', 'X', 'X'],\n    ['X', 'X', 'T', 'C', 'X'],\n    ['X', 'X', 'T', 'X', 'X'],\n    ['X', 'C', 'X', 'T', 'X'],\n    ['T', 'X', 'X', 'X', 'X']\n]<|im_end|>",
+    "source_call_id": "intellect3_logic/00011/74efdbcfc428::logic_skill",
+    "helper_applied": false,
+    "helper_seconds": 2.8000031306874007e-06,
+    "changed_grid": false
+  },
+  {
+    "id": "intellect3_logic/00012/9984133e2eed",
+    "arm": "routed_final",
+    "action": "[[\"C\",\"X\",\"X\",\"C\",\"T\"],[\"T\",\"X\",\"X\",\"X\",\"X\"],[\"X\",\"C\",\"T\",\"C\",\"T\"],[\"X\",\"X\",\"X\",\"X\",\"T\"],[\"X\",\"X\",\"X\",\"X\",\"C\"]]",
+    "source_call_id": "intellect3_logic/00012/9984133e2eed::logic_skill_trm",
+    "helper_applied": true,
+    "helper_seconds": 0.008541100000002189,
+    "changed_grid": true
+  },
+  {
+    "id": "intellect3_logic/00012/9984133e2eed",
+    "arm": "plain_candidate_routed_repair",
+    "action": "[[\"C\",\"X\",\"X\",\"C\",\"T\"],[\"T\",\"X\",\"X\",\"X\",\"X\"],[\"X\",\"C\",\"T\",\"X\",\"T\"],[\"X\",\"X\",\"X\",\"X\",\"T\"],[\"X\",\"X\",\"X\",\"C\",\"X\"]]",
+    "source_call_id": "intellect3_logic/00012/9984133e2eed::logic_skill",
+    "helper_applied": true,
+    "helper_seconds": 0.0070548000003327616,
+    "changed_grid": true
+  },
+  {
+    "id": "intellect3_logic/00013/4745c6ef07f9",
+    "arm": "routed_final",
+    "action": "[[\"X\",\"X\",\"X\",\"X\",\"X\"],[\"X\",\"C\",\"T\",\"T\",\"C\"],[\"X\",\"X\",\"X\",\"X\",\"T\"],[\"X\",\"C\",\"T\",\"X\",\"C\"]]",
+    "source_call_id": "intellect3_logic/00013/4745c6ef07f9::logic_skill_trm",
+    "helper_applied": true,
+    "helper_seconds": 0.003211899998859735,
+    "changed_grid": true
+  },
+  {
+    "id": "intellect3_logic/00013/4745c6ef07f9",
+    "arm": "plain_candidate_routed_repair",
+    "action": "[[\"X\",\"X\",\"X\",\"X\",\"X\"],[\"X\",\"C\",\"T\",\"T\",\"C\"],[\"X\",\"X\",\"X\",\"X\",\"T\"],[\"X\",\"C\",\"T\",\"X\",\"C\"]]",
+    "source_call_id": "intellect3_logic/00013/4745c6ef07f9::logic_skill",
+    "helper_applied": true,
+    "helper_seconds": 0.003108500000962522,
+    "changed_grid": true
+  },
+  {
+    "id": "intellect3_logic/00014/6a6e7cd7f1ee",
+    "arm": "routed_final",
+    "action": "[\n    ['C', 'X', 'X', 'X', 'T'],\n    ['X', 'X', 'X', 'X', 'T'],\n    ['T', 'X', 'X', 'T', 'C'],\n    ['X', 'C', 'T', 'X', 'X'],\n    ['X', 'X', 'X', 'X', 'T']\n]<|im_end|>",
+    "source_call_id": "intellect3_logic/00014/6a6e7cd7f1ee::logic_skill",
+    "helper_applied": false,
+    "helper_seconds": 3.0999981390777975e-06,
+    "changed_grid": false
+  },
+  {
+    "id": "intellect3_logic/00014/6a6e7cd7f1ee",
+    "arm": "plain_candidate_routed_repair",
+    "action": "[\n    ['C', 'X', 'X', 'X', 'T'],\n    ['X', 'X', 'X', 'X', 'T'],\n    ['T', 'X', 'X', 'T', 'C'],\n    ['X', 'C', 'T', 'X', 'X'],\n    ['X', 'X', 'X', 'X', 'T']\n]<|im_end|>",
+    "source_call_id": "intellect3_logic/00014/6a6e7cd7f1ee::logic_skill",
+    "helper_applied": false,
+    "helper_seconds": 5.399997462518513e-06,
+    "changed_grid": false
+  },
+  {
+    "id": "intellect3_logic/00015/de083a354ea8",
+    "arm": "routed_final",
+    "action": "[\n    ['X', 'X', 'X'],\n    ['X', 'X', 'X'],\n    ['X', 'T', 'X'],\n    ['X', 'X', 'T'],\n    ['X', 'T', 'X']\n]<|im_end|>",
+    "source_call_id": "intellect3_logic/00015/de083a354ea8::logic_skill",
+    "helper_applied": false,
+    "helper_seconds": 7.599999662488699e-06,
+    "changed_grid": false
+  },
+  {
+    "id": "intellect3_logic/00015/de083a354ea8",
+    "arm": "plain_candidate_routed_repair",
+    "action": "[\n    ['X', 'X', 'X'],\n    ['X', 'X', 'X'],\n    ['X', 'T', 'X'],\n    ['X', 'X', 'T'],\n    ['X', 'T', 'X']\n]<|im_end|>",
+    "source_call_id": "intellect3_logic/00015/de083a354ea8::logic_skill",
+    "helper_applied": false,
+    "helper_seconds": 2.9999973776284605e-06,
+    "changed_grid": false
+  },
+  {
+    "id": "intellect3_logic/00016/ec874fb6cb23",
+    "arm": "routed_final",
+    "action": "[\n    ['X', 'C', 'X', 'X', 'X'],\n    ['X', 'T', 'X', 'T', 'T'],\n    ['X', 'X', 'X', 'X', 'X'],\n    ['X', 'C', 'X', 'X', 'T']\n]<|im_end|>",
+    "source_call_id": "intellect3_logic/00016/ec874fb6cb23::logic_skill",
+    "helper_applied": false,
+    "helper_seconds": 8.000002708286047e-06,
+    "changed_grid": false
+  },
+  {
+    "id": "intellect3_logic/00016/ec874fb6cb23",
+    "arm": "plain_candidate_routed_repair",
+    "action": "[\n    ['X', 'C', 'X', 'X', 'X'],\n    ['X', 'T', 'X', 'T', 'T'],\n    ['X', 'X', 'X', 'X', 'X'],\n    ['X', 'C', 'X', 'X', 'T']\n]<|im_end|>",
+    "source_call_id": "intellect3_logic/00016/ec874fb6cb23::logic_skill",
+    "helper_applied": false,
+    "helper_seconds": 4.7000030463095754e-06,
+    "changed_grid": false
+  },
+  {
+    "id": "intellect3_logic/00017/ac1b02824334",
+    "arm": "routed_final",
+    "action": "[\n    ['T', 'C', 'X', 'T', 'X'],\n    ['X', 'X', 'X', 'X', 'X'],\n    ['X', 'X', 'C', 'X', 'X'],\n    ['X', 'X', 'X', 'X', 'T']\n]<|im_end|>",
+    "source_call_id": "intellect3_logic/00017/ac1b02824334::logic_skill",
+    "helper_applied": false,
+    "helper_seconds": 2.1999985619913787e-06,
+    "changed_grid": false
+  },
+  {
+    "id": "intellect3_logic/00017/ac1b02824334",
+    "arm": "plain_candidate_routed_repair",
+    "action": "[\n    ['T', 'C', 'X', 'T', 'X'],\n    ['X', 'X', 'X', 'X', 'X'],\n    ['X', 'X', 'C', 'X', 'X'],\n    ['X', 'X', 'X', 'X', 'T']\n]<|im_end|>",
+    "source_call_id": "intellect3_logic/00017/ac1b02824334::logic_skill",
+    "helper_applied": false,
+    "helper_seconds": 1.2999989849049598e-06,
+    "changed_grid": false
+  },
+  {
+    "id": "intellect3_logic/00018/9c9ea221e83e",
+    "arm": "routed_final",
+    "action": "[\n    ['T', 'C', 'X', 'X', 'X'],\n    ['X', 'X', 'X', 'T', 'C'],\n    ['T', 'X', 'X', 'X', 'X'],\n    ['X', 'C', 'T', 'X', 'X'],\n    ['X', 'X', 'X', 'X', 'C']\n]<|im_end|>",
+    "source_call_id": "intellect3_logic/00018/9c9ea221e83e::logic_skill",
+    "helper_applied": false,
+    "helper_seconds": 2.6000016077887267e-06,
+    "changed_grid": false
+  },
+  {
+    "id": "intellect3_logic/00018/9c9ea221e83e",
+    "arm": "plain_candidate_routed_repair",
+    "action": "[\n    ['T', 'C', 'X', 'X', 'X'],\n    ['X', 'X', 'X', 'T', 'C'],\n    ['T', 'X', 'X', 'X', 'X'],\n    ['X', 'C', 'T', 'X', 'X'],\n    ['X', 'X', 'X', 'X', 'C']\n]<|im_end|>",
+    "source_call_id": "intellect3_logic/00018/9c9ea221e83e::logic_skill",
+    "helper_applied": false,
+    "helper_seconds": 2.5999979698099196e-06,
+    "changed_grid": false
+  }
+]

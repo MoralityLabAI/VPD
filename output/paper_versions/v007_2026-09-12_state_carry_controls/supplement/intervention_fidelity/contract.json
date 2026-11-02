@@ -1,0 +1,23 @@
+{
+  "question": "How faithfully does each frozen SAE reconstruct the changes caused by a shared parameter intervention?",
+  "created_utc": "2026-09-09T13:53:21.162660+00:00",
+  "source_code_sha256": "5e1bf590b51d10d2e76e36f1f87a73bfdf273a1ed732e5d251be8624a7185a42",
+  "transfer_manifest_sha256": "4f648af8bdf780c50a79de13816e76106730e621ce4e782f861099278e53da20",
+  "fit_manifest_sha256": "7c5205eeb3c1e7c025ac1aababc6e0526bbe82048f633a52e73bfefa07c8a546",
+  "formula": "F_delta = 1 - sum ||delta_h - delta_reconstruction||^2 / sum ||delta_h||^2",
+  "reference": "Predicting zero intervention change",
+  "pooling": "Sum energies and inner products over all 80 held-out token positions in each stratum; do not average token ratios",
+  "strata": [
+    "perturbed physical matrix",
+    "capture site",
+    "capture invocation",
+    "signed intervention condition",
+    "dictionary optimizer"
+  ],
+  "precision": "Archived BF16-exact hidden states and archived float32 nonlinear feature encodings; float64 decoding and metrics",
+  "primary_filter": "None; report all nonzero signals. Exact zero signal gives null fidelity and cosine.",
+  "resolution_sensitivity": "Also report coordinate-restricted metrics where absolute actual change exceeds one larger adjacent baseline BF16 step. This is a descriptive sensitivity, not a validated noise floor.",
+  "inference": "Post-hoc descriptive analysis on the existing ten-input/eight-task cohort and one paired SAE seed; no independent samples from repeated conditions",
+  "new_model_execution": false,
+  "new_dictionary_training": false
+}

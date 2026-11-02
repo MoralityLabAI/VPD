@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://small-control-harness.local/schemas/decision_receipt.schema.json",
+  "title": "DecisionReceipt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "receipt_id",
+    "contract_id",
+    "proposal_id",
+    "decision",
+    "reason_codes",
+    "checks",
+    "budget_before",
+    "budget_after",
+    "executed",
+    "created_at"
+  ],
+  "properties": {
+    "version": {"const": "sch.decision-receipt.v1"},
+    "receipt_id": {"type": "string", "minLength": 8},
+    "contract_id": {"type": "string", "minLength": 8},
+    "proposal_id": {"type": "string", "minLength": 8},
+    "grant_id": {"type": ["string", "null"]},
+    "decision": {"enum": ["allow", "deny"]},
+    "reason_codes": {
+      "type": "array",
+      "items": {"type": "string"},
+      "uniqueItems": true
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": {"type": "boolean"}
+    },
+    "budget_before": {"type": "object"},
+    "budget_after": {"type": "object"},
+    "executed": {"type": "boolean"},
+    "tool_result_hash": {"type": ["string", "null"]},
+    "state_before_hash": {"type": ["string", "null"]},
+    "state_after_hash": {"type": ["string", "null"]},
+    "created_at": {"type": "string", "format": "date-time"},
+    "metadata": {"type": "object"}
+  }
+}

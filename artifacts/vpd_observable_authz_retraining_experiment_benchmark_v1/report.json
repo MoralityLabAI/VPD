@@ -1,0 +1,62 @@
+{
+  "benchmark_id": "c0c88eeb6cdce5fc00564a38712d6e4ac1f771d59df216985d18fd8d497611a3",
+  "controls": {
+    "all_namespace_types_are_pairwise_disjoint": true,
+    "benchmark_imports_no_model_frameworks": true,
+    "candidate_removal_rejected": true,
+    "clean_spec_validates": true,
+    "condition_namespace_overlap_rejected": true,
+    "conflicting_visible_label_enablement_rejected": true,
+    "eight_activation_categories_frozen": true,
+    "executed_action_invariant_broadening_rejected": true,
+    "four_candidate_variants_frozen": true,
+    "fresh_pack_training_and_inference_absent": true,
+    "hidden_label_enablement_rejected": true,
+    "invalid_category_propose_target_rejected": true,
+    "missing_partition_category_rejected": true,
+    "model_load_boundary_broadening_rejected": true,
+    "pair_namespace_overlap_rejected": true,
+    "partition_use_substitution_rejected": true,
+    "planned_shape_is_840_pairs_1680_rows": true,
+    "premature_generation_authority_rejected": true,
+    "premature_pack_presence_rejected": true,
+    "prior_split_not_misrepresented_as_condition_disjoint": true,
+    "second_primary_candidate_rejected": true,
+    "seven_disjoint_roles_frozen": true,
+    "template_namespace_overlap_rejected": true,
+    "v7_validator_reconstruction_provenance_explicit": true,
+    "valid_maps_only_to_propose": true
+  },
+  "schema": "sch.vpd-observable-authz-category-retraining-experiment-benchmark.v1",
+  "scientific_boundary": {
+    "candidate_training_authorized": false,
+    "design_only": true,
+    "empirical_inputs_created": false,
+    "execution_authorized": false,
+    "fresh_pack_present": false,
+    "gpu_or_external_job_launched": false,
+    "model_framework_imported": false,
+    "model_inference_performed": false,
+    "model_or_adapter_loaded": false,
+    "paid_compute_authorized": false,
+    "real_actions_performed": false,
+    "sae_training_authorized": false,
+    "training_performed": false,
+    "weights_or_dictionaries_mutated": false
+  },
+  "source": {
+    "benchmark_sha256": "a3927bcb096e1d1e6796a96ccefb32278ea2cf54769f0acd065aac1954bf5681",
+    "derivation_sha256": "20bf3f74a4a2bee01766c87a0096423e2cfbc14448bebfaf83cc8ba55e5ae987",
+    "experiment_spec_id": "0c2f14cad8a05efeddda7a2e3428f2d323f49ee1a48f173dfc778a71f855dd86"
+  },
+  "status": "pass",
+  "summary": {
+    "activation_categories": 8,
+    "candidate_variants": 4,
+    "controls": 25,
+    "partitions": 7,
+    "passed": 25,
+    "planned_pairs": 840,
+    "planned_rows": 1680
+  }
+}

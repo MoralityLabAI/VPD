@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://small-control-harness.local/schemas/authorization_grant.schema.json",
+  "title": "AuthorizationGrant",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "grant_id",
+    "contract_id",
+    "issuer",
+    "subject",
+    "audience",
+    "allowed_actions",
+    "limits",
+    "issued_at",
+    "expires_at",
+    "nonce",
+    "one_shot",
+    "signature"
+  ],
+  "properties": {
+    "version": {"const": "sch.authorization-grant.v1"},
+    "grant_id": {"type": "string", "minLength": 8},
+    "contract_id": {"type": "string", "minLength": 8},
+    "issuer": {"type": "string", "minLength": 1},
+    "subject": {"type": "string", "minLength": 1},
+    "audience": {"type": "string", "minLength": 1},
+    "allowed_actions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["tool", "verb"],
+        "properties": {
+          "tool": {"type": "string", "minLength": 1},
+          "verb": {"type": "string", "minLength": 1},
+          "constraints": {"type": "object"}
+        }
+      }
+    },
+    "limits": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["max_calls"],
+      "properties": {
+        "max_calls": {"type": "integer", "minimum": 0},
+        "max_notional": {"type": "number", "minimum": 0},
+        "max_fee": {"type": "number", "minimum": 0},
+        "max_compute_seconds": {"type": "number", "minimum": 0}
+      }
+    },
+    "issued_at": {"type": "string", "format": "date-time"},
+    "expires_at": {"type": "string", "format": "date-time"},
+    "nonce": {"type": "string", "minLength": 8},
+    "one_shot": {"type": "boolean"},
+    "parent_grant_id": {"type": ["string", "null"]},
+    "signature": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["alg", "key_id", "value"],
+      "properties": {
+        "alg": {"enum": ["HS256"]},
+        "key_id": {"type": "string", "minLength": 1},
+        "value": {"type": "string", "pattern": "^[A-Fa-f0-9]{64}$"}
+      }
+    },
+    "metadata": {"type": "object"}
+  }
+}

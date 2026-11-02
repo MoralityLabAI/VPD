@@ -1,0 +1,1813 @@
+{
+  "archives": [
+    {
+      "path": "C:\\projects\\VPD\\artifacts\\nanbeige_reasoning\\q4_reasoning_pilot_v1\\q4_reasoning_saes",
+      "sites": [
+        {
+          "common_family_comparisons": [
+            {
+              "common_family_labels": [
+                {
+                  "descriptive_training_minus_evaluation_ev": [
+                    0.1147020517047006,
+                    0.2533902205514488
+                  ],
+                  "evaluation_ev": [
+                    0.8742055361470255,
+                    0.7385094542843154
+                  ],
+                  "evaluation_examples": 6,
+                  "family": "arc_grid",
+                  "training_ev": [
+                    0.988907587851726,
+                    0.9918996748357641
+                  ],
+                  "training_examples": 4
+                },
+                {
+                  "descriptive_training_minus_evaluation_ev": [
+                    0.44375612517289664,
+                    0.6075876359668273
+                  ],
+                  "evaluation_ev": [
+                    0.5500438918054207,
+                    0.3861366331798127
+                  ],
+                  "evaluation_examples": 2,
+                  "family": "math",
+                  "training_ev": [
+                    0.9938000169783173,
+                    0.99372426914664
+                  ],
+                  "training_examples": 2
+                }
+              ],
+              "evaluation_only_families": [
+                "campsite",
+                "dyck_language"
+              ],
+              "phase": "prompt",
+              "training_only_families": [
+                "futoshiki",
+                "goods_exchange"
+              ]
+            },
+            {
+              "common_family_labels": [
+                {
+                  "descriptive_training_minus_evaluation_ev": [
+                    0.8344005722654398,
+                    0.8823323235944353
+                  ],
+                  "evaluation_ev": [
+                    0.14080633642099605,
+                    0.0944627977474668
+                  ],
+                  "evaluation_examples": 6,
+                  "family": "arc_grid",
+                  "training_ev": [
+                    0.9752069086864359,
+                    0.976795121341902
+                  ],
+                  "training_examples": 4
+                },
+                {
+                  "descriptive_training_minus_evaluation_ev": [
+                    1.0110539115179489,
+                    1.000967200550491
+                  ],
+                  "evaluation_ev": [
+                    -0.02744613321359024,
+                    -0.02427909330735556
+                  ],
+                  "evaluation_examples": 2,
+                  "family": "math",
+                  "training_ev": [
+                    0.9836077783043586,
+                    0.9766881072431355
+                  ],
+                  "training_examples": 2
+                }
+              ],
+              "evaluation_only_families": [
+                "campsite",
+                "dyck_language"
+              ],
+              "phase": "generated",
+              "training_only_families": [
+                "futoshiki",
+                "goods_exchange"
+              ]
+            }
+          ],
+          "evaluation": {
+            "mixed_phase_ev": [
+              0.29613771936927424,
+              0.25113989340072873
+            ],
+            "phases": [
+              {
+                "family_reconstruction_quality": [
+                  {
+                    "examples": 6,
+                    "family": "arc_grid",
+                    "per_pass_ev": [
+                      0.8742055361470255,
+                      0.7385094542843154
+                    ],
+                    "rows_per_pass": 48
+                  },
+                  {
+                    "examples": 1,
+                    "family": "campsite",
+                    "per_pass_ev": [
+                      0.3186510069834365,
+                      0.24014279647248982
+                    ],
+                    "rows_per_pass": 8
+                  },
+                  {
+                    "examples": 1,
+                    "family": "dyck_language",
+                    "per_pass_ev": [
+                      0.028323539583817503,
+                      0.03591005544191328
+                    ],
+                    "rows_per_pass": 8
+                  },
+                  {
+                    "examples": 2,
+                    "family": "math",
+                    "per_pass_ev": [
+                      0.5500438918054207,
+                      0.3861366331798127
+                    ],
+                    "rows_per_pass": 16
+                  }
+                ],
+                "phase": "prompt",
+                "pooled_ev": [
+                  0.6783973168001145,
+                  0.5718685929754808
+                ],
+                "quality_decision": {
+                  "clustering_admission": false,
+                  "failed_families": [
+                    "dyck_language"
+                  ],
+                  "families": [
+                    {
+                      "examples": 6,
+                      "family": "arc_grid",
+                      "reason": "both_pass_threshold",
+                      "status": "pass"
+                    },
+                    {
+                      "examples": 1,
+                      "family": "campsite",
+                      "reason": "both_pass_threshold",
+                      "status": "pass"
+                    },
+                    {
+                      "examples": 1,
+                      "family": "dyck_language",
+                      "reason": "both_pass_threshold",
+                      "status": "fail"
+                    },
+                    {
+                      "examples": 2,
+                      "family": "math",
+                      "reason": "both_pass_threshold",
+                      "status": "pass"
+                    }
+                  ],
+                  "pooled_status": "pass",
+                  "quality_prerequisite_pass": false,
+                  "threshold": 0.2,
+                  "unevaluable_families": []
+                },
+                "rows_per_pass": 80
+              },
+              {
+                "family_reconstruction_quality": [
+                  {
+                    "examples": 6,
+                    "family": "arc_grid",
+                    "per_pass_ev": [
+                      0.14080633642099605,
+                      0.0944627977474668
+                    ],
+                    "rows_per_pass": 144
+                  },
+                  {
+                    "examples": 1,
+                    "family": "campsite",
+                    "per_pass_ev": [
+                      -0.08402262693061124,
+                      -0.08305701325942083
+                    ],
+                    "rows_per_pass": 24
+                  },
+                  {
+                    "examples": 1,
+                    "family": "dyck_language",
+                    "per_pass_ev": [
+                      -0.08395855111365624,
+                      -0.1016663115803973
+                    ],
+                    "rows_per_pass": 24
+                  },
+                  {
+                    "examples": 2,
+                    "family": "math",
+                    "per_pass_ev": [
+                      -0.02744613321359024,
+                      -0.02427909330735556
+                    ],
+                    "rows_per_pass": 48
+                  }
+                ],
+                "phase": "generated",
+                "pooled_ev": [
+                  0.11964662265219417,
+                  0.09401548405728033
+                ],
+                "quality_decision": {
+                  "clustering_admission": false,
+                  "failed_families": [
+                    "arc_grid",
+                    "campsite",
+                    "dyck_language",
+                    "math"
+                  ],
+                  "families": [
+                    {
+                      "examples": 6,
+                      "family": "arc_grid",
+                      "reason": "both_pass_threshold",
+                      "status": "fail"
+                    },
+                    {
+                      "examples": 1,
+                      "family": "campsite",
+                      "reason": "both_pass_threshold",
+                      "status": "fail"
+                    },
+                    {
+                      "examples": 1,
+                      "family": "dyck_language",
+                      "reason": "both_pass_threshold",
+                      "status": "fail"
+                    },
+                    {
+                      "examples": 2,
+                      "family": "math",
+                      "reason": "both_pass_threshold",
+                      "status": "fail"
+                    }
+                  ],
+                  "pooled_status": "fail",
+                  "quality_prerequisite_pass": false,
+                  "threshold": 0.2,
+                  "unevaluable_families": []
+                },
+                "rows_per_pass": 240
+              }
+            ],
+            "site": "model.layers.11"
+          },
+          "site": "model.layers.11",
+          "training": {
+            "mixed_training_ev": [
+              0.9831895221008142,
+              0.9840141471628122
+            ],
+            "phases": [
+              {
+                "family_reconstruction_quality": [
+                  {
+                    "examples": 4,
+                    "family": "arc_grid",
+                    "per_pass_ev": [
+                      0.988907587851726,
+                      0.9918996748357641
+                    ],
+                    "rows_per_pass": 32
+                  },
+                  {
+                    "examples": 1,
+                    "family": "futoshiki",
+                    "per_pass_ev": [
+                      0.9956545844818726,
+                      0.9931109820568018
+                    ],
+                    "rows_per_pass": 8
+                  },
+                  {
+                    "examples": 1,
+                    "family": "goods_exchange",
+                    "per_pass_ev": [
+                      0.9916345826179521,
+                      0.9965482989461352
+                    ],
+                    "rows_per_pass": 8
+                  },
+                  {
+                    "examples": 2,
+                    "family": "math",
+                    "per_pass_ev": [
+                      0.9938000169783173,
+                      0.99372426914664
+                    ],
+                    "rows_per_pass": 16
+                  }
+                ],
+                "phase": "prompt",
+                "pooled_ev": [
+                  0.9926776753344893,
+                  0.9938438481908335
+                ],
+                "quality_decision": {
+                  "clustering_admission": false,
+                  "failed_families": [],
+                  "families": [
+                    {
+                      "examples": 4,
+                      "family": "arc_grid",
+                      "reason": "both_pass_threshold",
+                      "status": "pass"
+                    },
+                    {
+                      "examples": 1,
+                      "family": "futoshiki",
+                      "reason": "both_pass_threshold",
+                      "status": "pass"
+                    },
+                    {
+                      "examples": 1,
+                      "family": "goods_exchange",
+                      "reason": "both_pass_threshold",
+                      "status": "pass"
+                    },
+                    {
+                      "examples": 2,
+                      "family": "math",
+                      "reason": "both_pass_threshold",
+                      "status": "pass"
+                    }
+                  ],
+                  "pooled_status": "pass",
+                  "quality_prerequisite_pass": true,
+                  "threshold": 0.2,
+                  "unevaluable_families": []
+                },
+                "rows_per_pass": 64
+              },
+              {
+                "family_reconstruction_quality": [
+                  {
+                    "examples": 4,
+                    "family": "arc_grid",
+                    "per_pass_ev": [
+                      0.9752069086864359,
+                      0.976795121341902
+                    ],
+                    "rows_per_pass": 96
+                  },
+                  {
+                    "examples": 1,
+                    "family": "futoshiki",
+                    "per_pass_ev": [
+                      0.9553011638755955,
+                      0.9778673162833663
+                    ],
+                    "rows_per_pass": 24
+                  },
+                  {
+                    "examples": 1,
+                    "family": "goods_exchange",
+                    "per_pass_ev": [
+                      0.9951977195672813,
+                      0.9919300712172577
+                    ],
+                    "rows_per_pass": 24
+                  },
+                  {
+                    "examples": 2,
+                    "family": "math",
+                    "per_pass_ev": [
+                      0.9836077783043586,
+                      0.9766881072431355
+                    ],
+                    "rows_per_pass": 48
+                  }
+                ],
+                "phase": "generated",
+                "pooled_ev": [
+                  0.9789305218684008,
+                  0.9800967113324726
+                ],
+                "quality_decision": {
+                  "clustering_admission": false,
+                  "failed_families": [],
+                  "families": [
+                    {
+                      "examples": 4,
+                      "family": "arc_grid",
+                      "reason": "both_pass_threshold",
+                      "status": "pass"
+                    },
+                    {
+                      "examples": 1,
+                      "family": "futoshiki",
+                      "reason": "both_pass_threshold",
+                      "status": "pass"
+                    },
+                    {
+                      "examples": 1,
+                      "family": "goods_exchange",
+                      "reason": "both_pass_threshold",
+                      "status": "pass"
+                    },
+                    {
+                      "examples": 2,
+                      "family": "math",
+                      "reason": "both_pass_threshold",
+                      "status": "pass"
+                    }
+                  ],
+                  "pooled_status": "pass",
+                  "quality_prerequisite_pass": true,
+                  "threshold": 0.2,
+                  "unevaluable_families": []
+                },
+                "rows_per_pass": 192
+              }
+            ],
+            "site": "model.layers.11"
+          }
+        },
+        {
+          "common_family_comparisons": [
+            {
+              "common_family_labels": [
+                {
+                  "descriptive_training_minus_evaluation_ev": [
+                    0.06480070995021026,
+                    0.2795046221403288
+                  ],
+                  "evaluation_ev": [
+                    0.7420535978442924,
+                    0.7109832443225674
+                  ],
+                  "evaluation_examples": 6,
+                  "family": "arc_grid",
+                  "training_ev": [
+                    0.8068543077945026,
+                    0.9904878664628962
+                  ],
+                  "training_examples": 4
+                },
+                {
+                  "descriptive_training_minus_evaluation_ev": [
+                    0.309148016167336,
+                    0.5708601565343377
+                  ],
+                  "evaluation_ev": [
+                    0.318835848747535,
+                    0.41422492417957835
+                  ],
+                  "evaluation_examples": 2,
+                  "family": "math",
+                  "training_ev": [
+                    0.627983864914871,
+                    0.9850850807139161
+                  ],
+                  "training_examples": 2
+                }
+              ],
+              "evaluation_only_families": [
+                "campsite",
+                "dyck_language"
+              ],
+              "phase": "prompt",
+              "training_only_families": [
+                "futoshiki",
+                "goods_exchange"
+              ]
+            },
+            {
+              "common_family_labels": [
+                {
+                  "descriptive_training_minus_evaluation_ev": [
+                    0.6728223340985281,
+                    0.6728666821227857
+                  ],
+                  "evaluation_ev": [
+                    0.13863458664847084,
+                    0.32035117110471023
+                  ],
+                  "evaluation_examples": 6,
+                  "family": "arc_grid",
+                  "training_ev": [
+                    0.8114569207469989,
+                    0.9932178532274959
+                  ],
+                  "training_examples": 4
+                },
+                {
+                  "descriptive_training_minus_evaluation_ev": [
+                    0.9046653541876122,
+                    0.8283622336874042
+                  ],
+                  "evaluation_ev": [
+                    -0.046888783594126515,
+                    0.16754049459138198
+                  ],
+                  "evaluation_examples": 2,
+                  "family": "math",
+                  "training_ev": [
+                    0.8577765705934857,
+                    0.9959027282787862
+                  ],
+                  "training_examples": 2
+                }
+              ],
+              "evaluation_only_families": [
+                "campsite",
+                "dyck_language"
+              ],
+              "phase": "generated",
+              "training_only_families": [
+                "futoshiki",
+                "goods_exchange"
+              ]
+            }
+          ],
+          "evaluation": {
+            "mixed_phase_ev": [
+              0.24962772126672272,
+              0.46479569261562614
+            ],
+            "phases": [
+              {
+                "family_reconstruction_quality": [
+                  {
+                    "examples": 6,
+                    "family": "arc_grid",
+                    "per_pass_ev": [
+                      0.7420535978442924,
+                      0.7109832443225674
+                    ],
+                    "rows_per_pass": 48
+                  },
+                  {
+                    "examples": 1,
+                    "family": "campsite",
+                    "per_pass_ev": [
+                      0.2573957465838882,
+                      0.4453020918310501
+                    ],
+                    "rows_per_pass": 8
+                  },
+                  {
+                    "examples": 1,
+                    "family": "dyck_language",
+                    "per_pass_ev": [
+                      0.0314645572349882,
+                      0.3683415576235647
+                    ],
+                    "rows_per_pass": 8
+                  },
+                  {
+                    "examples": 2,
+                    "family": "math",
+                    "per_pass_ev": [
+                      0.318835848747535,
+                      0.41422492417957835
+                    ],
+                    "rows_per_pass": 16
+                  }
+                ],
+                "phase": "prompt",
+                "pooled_ev": [
+                  0.5888957350037504,
+                  0.6215639027889047
+                ],
+                "quality_decision": {
+                  "clustering_admission": false,
+                  "failed_families": [
+                    "dyck_language"
+                  ],
+                  "families": [
+                    {
+                      "examples": 6,
+                      "family": "arc_grid",
+                      "reason": "both_pass_threshold",
+                      "status": "pass"
+                    },
+                    {
+                      "examples": 1,
+                      "family": "campsite",
+                      "reason": "both_pass_threshold",
+                      "status": "pass"
+                    },
+                    {
+                      "examples": 1,
+                      "family": "dyck_language",
+                      "reason": "both_pass_threshold",
+                      "status": "fail"
+                    },
+                    {
+                      "examples": 2,
+                      "family": "math",
+                      "reason": "both_pass_threshold",
+                      "status": "pass"
+                    }
+                  ],
+                  "pooled_status": "pass",
+                  "quality_prerequisite_pass": false,
+                  "threshold": 0.2,
+                  "unevaluable_families": []
+                },
+                "rows_per_pass": 80
+              },
+              {
+                "family_reconstruction_quality": [
+                  {
+                    "examples": 6,
+                    "family": "arc_grid",
+                    "per_pass_ev": [
+                      0.13863458664847084,
+                      0.32035117110471023
+                    ],
+                    "rows_per_pass": 144
+                  },
+                  {
+                    "examples": 1,
+                    "family": "campsite",
+                    "per_pass_ev": [
+                      -0.13646309363316855,
+                      0.1186047375415149
+                    ],
+                    "rows_per_pass": 24
+                  },
+                  {
+                    "examples": 1,
+                    "family": "dyck_language",
+                    "per_pass_ev": [
+                      -0.14018881858177545,
+                      0.04104361684759095
+                    ],
+                    "rows_per_pass": 24
+                  },
+                  {
+                    "examples": 2,
+                    "family": "math",
+                    "per_pass_ev": [
+                      -0.046888783594126515,
+                      0.16754049459138198
+                    ],
+                    "rows_per_pass": 48
+                  }
+                ],
+                "phase": "generated",
+                "pooled_ev": [
+                  0.11486928271647867,
+                  0.2933524186930683
+                ],
+                "quality_decision": {
+                  "clustering_admission": false,
+                  "failed_families": [
+                    "arc_grid",
+                    "campsite",
+                    "dyck_language",
+                    "math"
+                  ],
+                  "families": [
+                    {
+                      "examples": 6,
+                      "family": "arc_grid",
+                      "reason": "both_pass_threshold",
+                      "status": "fail"
+                    },
+                    {
+                      "examples": 1,
+                      "family": "campsite",
+                      "reason": "both_pass_threshold",
+                      "status": "fail"
+                    },
+                    {
+                      "examples": 1,
+                      "family": "dyck_language",
+                      "reason": "both_pass_threshold",
+                      "status": "fail"
+                    },
+                    {
+                      "examples": 2,
+                      "family": "math",
+                      "reason": "both_pass_threshold",
+                      "status": "fail"
+                    }
+                  ],
+                  "pooled_status": "fail",
+                  "quality_prerequisite_pass": false,
+                  "threshold": 0.2,
+                  "unevaluable_families": []
+                },
+                "rows_per_pass": 240
+              }
+            ],
+            "site": "model.norm"
+          },
+          "site": "model.norm",
+          "training": {
+            "mixed_training_ev": [
+              0.843801376883627,
+              0.9938567249447409
+            ],
+            "phases": [
+              {
+                "family_reconstruction_quality": [
+                  {
+                    "examples": 4,
+                    "family": "arc_grid",
+                    "per_pass_ev": [
+                      0.8068543077945026,
+                      0.9904878664628962
+                    ],
+                    "rows_per_pass": 32
+                  },
+                  {
+                    "examples": 1,
+                    "family": "futoshiki",
+                    "per_pass_ev": [
+                      0.6453047127242721,
+                      0.9893240043201789
+                    ],
+                    "rows_per_pass": 8
+                  },
+                  {
+                    "examples": 1,
+                    "family": "goods_exchange",
+                    "per_pass_ev": [
+                      0.7002758048262951,
+                      0.9940497523840531
+                    ],
+                    "rows_per_pass": 8
+                  },
+                  {
+                    "examples": 2,
+                    "family": "math",
+                    "per_pass_ev": [
+                      0.627983864914871,
+                      0.9850850807139161
+                    ],
+                    "rows_per_pass": 16
+                  }
+                ],
+                "phase": "prompt",
+                "pooled_ev": [
+                  0.7668313400988855,
+                  0.9902266032421903
+                ],
+                "quality_decision": {
+                  "clustering_admission": false,
+                  "failed_families": [],
+                  "families": [
+                    {
+                      "examples": 4,
+                      "family": "arc_grid",
+                      "reason": "both_pass_threshold",
+                      "status": "pass"
+                    },
+                    {
+                      "examples": 1,
+                      "family": "futoshiki",
+                      "reason": "both_pass_threshold",
+                      "status": "pass"
+                    },
+                    {
+                      "examples": 1,
+                      "family": "goods_exchange",
+                      "reason": "both_pass_threshold",
+                      "status": "pass"
+                    },
+                    {
+                      "examples": 2,
+                      "family": "math",
+                      "reason": "both_pass_threshold",
+                      "status": "pass"
+                    }
+                  ],
+                  "pooled_status": "pass",
+                  "quality_prerequisite_pass": true,
+                  "threshold": 0.2,
+                  "unevaluable_families": []
+                },
+                "rows_per_pass": 64
+              },
+              {
+                "family_reconstruction_quality": [
+                  {
+                    "examples": 4,
+                    "family": "arc_grid",
+                    "per_pass_ev": [
+                      0.8114569207469989,
+                      0.9932178532274959
+                    ],
+                    "rows_per_pass": 96
+                  },
+                  {
+                    "examples": 1,
+                    "family": "futoshiki",
+                    "per_pass_ev": [
+                      0.8192998926858208,
+                      0.9869113014479001
+                    ],
+                    "rows_per_pass": 24
+                  },
+                  {
+                    "examples": 1,
+                    "family": "goods_exchange",
+                    "per_pass_ev": [
+                      0.833533305913932,
+                      0.9961460103360908
+                    ],
+                    "rows_per_pass": 24
+                  },
+                  {
+                    "examples": 2,
+                    "family": "math",
+                    "per_pass_ev": [
+                      0.8577765705934857,
+                      0.9959027282787862
+                    ],
+                    "rows_per_pass": 48
+                  }
+                ],
+                "phase": "generated",
+                "pooled_ev": [
+                  0.8440375200508364,
+                  0.9941101179724358
+                ],
+                "quality_decision": {
+                  "clustering_admission": false,
+                  "failed_families": [],
+                  "families": [
+                    {
+                      "examples": 4,
+                      "family": "arc_grid",
+                      "reason": "both_pass_threshold",
+                      "status": "pass"
+                    },
+                    {
+                      "examples": 1,
+                      "family": "futoshiki",
+                      "reason": "both_pass_threshold",
+                      "status": "pass"
+                    },
+                    {
+                      "examples": 1,
+                      "family": "goods_exchange",
+                      "reason": "both_pass_threshold",
+                      "status": "pass"
+                    },
+                    {
+                      "examples": 2,
+                      "family": "math",
+                      "reason": "both_pass_threshold",
+                      "status": "pass"
+                    }
+                  ],
+                  "pooled_status": "pass",
+                  "quality_prerequisite_pass": true,
+                  "threshold": 0.2,
+                  "unevaluable_families": []
+                },
+                "rows_per_pass": 192
+              }
+            ],
+            "site": "model.norm"
+          }
+        }
+      ]
+    },
+    {
+      "path": "C:\\projects\\VPD\\artifacts\\nanbeige_reasoning\\q4_reasoning_pilot_8192_v1\\q4_reasoning_saes",
+      "sites": [
+        {
+          "common_family_comparisons": [
+            {
+              "common_family_labels": [
+                {
+                  "descriptive_training_minus_evaluation_ev": [
+                    0.11314933412612227,
+                    0.23425628183931912
+                  ],
+                  "evaluation_ev": [
+                    0.8701647896177419,
+                    0.7486873119675899
+                  ],
+                  "evaluation_examples": 6,
+                  "family": "arc_grid",
+                  "training_ev": [
+                    0.9833141237438642,
+                    0.982943593806909
+                  ],
+                  "training_examples": 4
+                },
+                {
+                  "descriptive_training_minus_evaluation_ev": [
+                    0.42845300358372107,
+                    0.6031973028708416
+                  ],
+                  "evaluation_ev": [
+                    0.5603984704269076,
+                    0.3843717384948593
+                  ],
+                  "evaluation_examples": 2,
+                  "family": "math",
+                  "training_ev": [
+                    0.9888514740106287,
+                    0.9875690413657009
+                  ],
+                  "training_examples": 2
+                }
+              ],
+              "evaluation_only_families": [
+                "campsite",
+                "dyck_language"
+              ],
+              "phase": "prompt",
+              "training_only_families": [
+                "futoshiki",
+                "goods_exchange"
+              ]
+            },
+            {
+              "common_family_labels": [
+                {
+                  "descriptive_training_minus_evaluation_ev": [
+                    0.8124562078594109,
+                    0.8498573540510213
+                  ],
+                  "evaluation_ev": [
+                    0.153444871079484,
+                    0.1327835292611752
+                  ],
+                  "evaluation_examples": 6,
+                  "family": "arc_grid",
+                  "training_ev": [
+                    0.9659010789388949,
+                    0.9826408833121965
+                  ],
+                  "training_examples": 4
+                },
+                {
+                  "descriptive_training_minus_evaluation_ev": [
+                    1.0134723158136585,
+                    0.9966600406238071
+                  ],
+                  "evaluation_ev": [
+                    -0.01550186934979636,
+                    0.0012404764127205148
+                  ],
+                  "evaluation_examples": 2,
+                  "family": "math",
+                  "training_ev": [
+                    0.9979704464638621,
+                    0.9979005170365276
+                  ],
+                  "training_examples": 2
+                }
+              ],
+              "evaluation_only_families": [
+                "campsite",
+                "dyck_language"
+              ],
+              "phase": "generated",
+              "training_only_families": [
+                "futoshiki",
+                "goods_exchange"
+              ]
+            }
+          ],
+          "evaluation": {
+            "mixed_phase_ev": [
+              0.2965142746934686,
+              0.2629355289077634
+            ],
+            "phases": [
+              {
+                "family_reconstruction_quality": [
+                  {
+                    "examples": 6,
+                    "family": "arc_grid",
+                    "per_pass_ev": [
+                      0.8701647896177419,
+                      0.7486873119675899
+                    ],
+                    "rows_per_pass": 48
+                  },
+                  {
+                    "examples": 1,
+                    "family": "campsite",
+                    "per_pass_ev": [
+                      0.34341091735191365,
+                      0.2429002929405346
+                    ],
+                    "rows_per_pass": 8
+                  },
+                  {
+                    "examples": 1,
+                    "family": "dyck_language",
+                    "per_pass_ev": [
+                      0.039649299811941874,
+                      0.008315586468366831
+                    ],
+                    "rows_per_pass": 8
+                  },
+                  {
+                    "examples": 2,
+                    "family": "math",
+                    "per_pass_ev": [
+                      0.5603984704269076,
+                      0.3843717384948593
+                    ],
+                    "rows_per_pass": 16
+                  }
+                ],
+                "phase": "prompt",
+                "pooled_ev": [
+                  0.681880410674766,
+                  0.5738354395061065
+                ],
+                "quality_decision": {
+                  "clustering_admission": false,
+                  "failed_families": [
+                    "dyck_language"
+                  ],
+                  "families": [
+                    {
+                      "examples": 6,
+                      "family": "arc_grid",
+                      "reason": "both_pass_threshold",
+                      "status": "pass"
+                    },
+                    {
+                      "examples": 1,
+                      "family": "campsite",
+                      "reason": "both_pass_threshold",
+                      "status": "pass"
+                    },
+                    {
+                      "examples": 1,
+                      "family": "dyck_language",
+                      "reason": "both_pass_threshold",
+                      "status": "fail"
+                    },
+                    {
+                      "examples": 2,
+                      "family": "math",
+                      "reason": "both_pass_threshold",
+                      "status": "pass"
+                    }
+                  ],
+                  "pooled_status": "pass",
+                  "quality_prerequisite_pass": false,
+                  "threshold": 0.2,
+                  "unevaluable_families": []
+                },
+                "rows_per_pass": 80
+              },
+              {
+                "family_reconstruction_quality": [
+                  {
+                    "examples": 6,
+                    "family": "arc_grid",
+                    "per_pass_ev": [
+                      0.153444871079484,
+                      0.1327835292611752
+                    ],
+                    "rows_per_pass": 144
+                  },
+                  {
+                    "examples": 1,
+                    "family": "campsite",
+                    "per_pass_ev": [
+                      -0.09962612098290036,
+                      -0.09759222313614613
+                    ],
+                    "rows_per_pass": 24
+                  },
+                  {
+                    "examples": 1,
+                    "family": "dyck_language",
+                    "per_pass_ev": [
+                      -0.1070676468802918,
+                      -0.07093358621896284
+                    ],
+                    "rows_per_pass": 24
+                  },
+                  {
+                    "examples": 2,
+                    "family": "math",
+                    "per_pass_ev": [
+                      -0.01550186934979636,
+                      0.0012404764127205148
+                    ],
+                    "rows_per_pass": 48
+                  }
+                ],
+                "phase": "generated",
+                "pooled_ev": [
+                  0.1226687975870342,
+                  0.12008333248504943
+                ],
+                "quality_decision": {
+                  "clustering_admission": false,
+                  "failed_families": [
+                    "arc_grid",
+                    "campsite",
+                    "dyck_language",
+                    "math"
+                  ],
+                  "families": [
+                    {
+                      "examples": 6,
+                      "family": "arc_grid",
+                      "reason": "both_pass_threshold",
+                      "status": "fail"
+                    },
+                    {
+                      "examples": 1,
+                      "family": "campsite",
+                      "reason": "both_pass_threshold",
+                      "status": "fail"
+                    },
+                    {
+                      "examples": 1,
+                      "family": "dyck_language",
+                      "reason": "both_pass_threshold",
+                      "status": "fail"
+                    },
+                    {
+                      "examples": 2,
+                      "family": "math",
+                      "reason": "both_pass_threshold",
+                      "status": "fail"
+                    }
+                  ],
+                  "pooled_status": "fail",
+                  "quality_prerequisite_pass": false,
+                  "threshold": 0.2,
+                  "unevaluable_families": []
+                },
+                "rows_per_pass": 240
+              }
+            ],
+            "site": "model.layers.11"
+          },
+          "site": "model.layers.11",
+          "training": {
+            "mixed_training_ev": [
+              0.984461370257389,
+              0.9896783113992278
+            ],
+            "phases": [
+              {
+                "family_reconstruction_quality": [
+                  {
+                    "examples": 4,
+                    "family": "arc_grid",
+                    "per_pass_ev": [
+                      0.9833141237438642,
+                      0.982943593806909
+                    ],
+                    "rows_per_pass": 32
+                  },
+                  {
+                    "examples": 1,
+                    "family": "futoshiki",
+                    "per_pass_ev": [
+                      0.9969700882839596,
+                      0.997204939378669
+                    ],
+                    "rows_per_pass": 8
+                  },
+                  {
+                    "examples": 1,
+                    "family": "goods_exchange",
+                    "per_pass_ev": [
+                      0.9924321389470597,
+                      0.9969510165809126
+                    ],
+                    "rows_per_pass": 8
+                  },
+                  {
+                    "examples": 2,
+                    "family": "math",
+                    "per_pass_ev": [
+                      0.9888514740106287,
+                      0.9875690413657009
+                    ],
+                    "rows_per_pass": 16
+                  }
+                ],
+                "phase": "prompt",
+                "pooled_ev": [
+                  0.9894691704855243,
+                  0.9891300514487026
+                ],
+                "quality_decision": {
+                  "clustering_admission": false,
+                  "failed_families": [],
+                  "families": [
+                    {
+                      "examples": 4,
+                      "family": "arc_grid",
+                      "reason": "both_pass_threshold",
+                      "status": "pass"
+                    },
+                    {
+                      "examples": 1,
+                      "family": "futoshiki",
+                      "reason": "both_pass_threshold",
+                      "status": "pass"
+                    },
+                    {
+                      "examples": 1,
+                      "family": "goods_exchange",
+                      "reason": "both_pass_threshold",
+                      "status": "pass"
+                    },
+                    {
+                      "examples": 2,
+                      "family": "math",
+                      "reason": "both_pass_threshold",
+                      "status": "pass"
+                    }
+                  ],
+                  "pooled_status": "pass",
+                  "quality_prerequisite_pass": true,
+                  "threshold": 0.2,
+                  "unevaluable_families": []
+                },
+                "rows_per_pass": 64
+              },
+              {
+                "family_reconstruction_quality": [
+                  {
+                    "examples": 4,
+                    "family": "arc_grid",
+                    "per_pass_ev": [
+                      0.9659010789388949,
+                      0.9826408833121965
+                    ],
+                    "rows_per_pass": 96
+                  },
+                  {
+                    "examples": 1,
+                    "family": "futoshiki",
+                    "per_pass_ev": [
+                      0.9930218969528742,
+                      0.9939248451111803
+                    ],
+                    "rows_per_pass": 24
+                  },
+                  {
+                    "examples": 1,
+                    "family": "goods_exchange",
+                    "per_pass_ev": [
+                      0.9878555456605088,
+                      0.9843072188517574
+                    ],
+                    "rows_per_pass": 24
+                  },
+                  {
+                    "examples": 2,
+                    "family": "math",
+                    "per_pass_ev": [
+                      0.9979704464638621,
+                      0.9979005170365276
+                    ],
+                    "rows_per_pass": 48
+                  }
+                ],
+                "phase": "generated",
+                "pooled_ev": [
+                  0.9814893284584452,
+                  0.9888904712756409
+                ],
+                "quality_decision": {
+                  "clustering_admission": false,
+                  "failed_families": [],
+                  "families": [
+                    {
+                      "examples": 4,
+                      "family": "arc_grid",
+                      "reason": "both_pass_threshold",
+                      "status": "pass"
+                    },
+                    {
+                      "examples": 1,
+                      "family": "futoshiki",
+                      "reason": "both_pass_threshold",
+                      "status": "pass"
+                    },
+                    {
+                      "examples": 1,
+                      "family": "goods_exchange",
+                      "reason": "both_pass_threshold",
+                      "status": "pass"
+                    },
+                    {
+                      "examples": 2,
+                      "family": "math",
+                      "reason": "both_pass_threshold",
+                      "status": "pass"
+                    }
+                  ],
+                  "pooled_status": "pass",
+                  "quality_prerequisite_pass": true,
+                  "threshold": 0.2,
+                  "unevaluable_families": []
+                },
+                "rows_per_pass": 192
+              }
+            ],
+            "site": "model.layers.11"
+          }
+        },
+        {
+          "common_family_comparisons": [
+            {
+              "common_family_labels": [
+                {
+                  "descriptive_training_minus_evaluation_ev": [
+                    0.065709659994301,
+                    0.2703958154111036
+                  ],
+                  "evaluation_ev": [
+                    0.7821380641524509,
+                    0.7197140794932291
+                  ],
+                  "evaluation_examples": 6,
+                  "family": "arc_grid",
+                  "training_ev": [
+                    0.8478477241467519,
+                    0.9901098949043327
+                  ],
+                  "training_examples": 4
+                },
+                {
+                  "descriptive_training_minus_evaluation_ev": [
+                    0.3527760293878627,
+                    0.5504928371863184
+                  ],
+                  "evaluation_ev": [
+                    0.3748016749196591,
+                    0.44102235632232223
+                  ],
+                  "evaluation_examples": 2,
+                  "family": "math",
+                  "training_ev": [
+                    0.7275777043075218,
+                    0.9915151935086406
+                  ],
+                  "training_examples": 2
+                }
+              ],
+              "evaluation_only_families": [
+                "campsite",
+                "dyck_language"
+              ],
+              "phase": "prompt",
+              "training_only_families": [
+                "futoshiki",
+                "goods_exchange"
+              ]
+            },
+            {
+              "common_family_labels": [
+                {
+                  "descriptive_training_minus_evaluation_ev": [
+                    0.6943856984749711,
+                    0.64630340911506
+                  ],
+                  "evaluation_ev": [
+                    0.22234855491214456,
+                    0.3408832077961542
+                  ],
+                  "evaluation_examples": 6,
+                  "family": "arc_grid",
+                  "training_ev": [
+                    0.9167342533871157,
+                    0.9871866169112142
+                  ],
+                  "training_examples": 4
+                },
+                {
+                  "descriptive_training_minus_evaluation_ev": [
+                    0.8983196191089654,
+                    0.789671049074073
+                  ],
+                  "evaluation_ev": [
+                    0.020101902252692372,
+                    0.20285303784223074
+                  ],
+                  "evaluation_examples": 2,
+                  "family": "math",
+                  "training_ev": [
+                    0.9184215213616578,
+                    0.9925240869163038
+                  ],
+                  "training_examples": 2
+                }
+              ],
+              "evaluation_only_families": [
+                "campsite",
+                "dyck_language"
+              ],
+              "phase": "generated",
+              "training_only_families": [
+                "futoshiki",
+                "goods_exchange"
+              ]
+            }
+          ],
+          "evaluation": {
+            "mixed_phase_ev": [
+              0.2922872700558219,
+              0.427979820423841
+            ],
+            "phases": [
+              {
+                "family_reconstruction_quality": [
+                  {
+                    "examples": 6,
+                    "family": "arc_grid",
+                    "per_pass_ev": [
+                      0.7821380641524509,
+                      0.7197140794932291
+                    ],
+                    "rows_per_pass": 48
+                  },
+                  {
+                    "examples": 1,
+                    "family": "campsite",
+                    "per_pass_ev": [
+                      0.2880918410016343,
+                      0.44399569117919957
+                    ],
+                    "rows_per_pass": 8
+                  },
+                  {
+                    "examples": 1,
+                    "family": "dyck_language",
+                    "per_pass_ev": [
+                      0.03119049209008995,
+                      0.34209023459144927
+                    ],
+                    "rows_per_pass": 8
+                  },
+                  {
+                    "examples": 2,
+                    "family": "math",
+                    "per_pass_ev": [
+                      0.3748016749196591,
+                      0.44102235632232223
+                    ],
+                    "rows_per_pass": 16
+                  }
+                ],
+                "phase": "prompt",
+                "pooled_ev": [
+                  0.6209096540504375,
+                  0.6293429513073355
+                ],
+                "quality_decision": {
+                  "clustering_admission": false,
+                  "failed_families": [
+                    "dyck_language"
+                  ],
+                  "families": [
+                    {
+                      "examples": 6,
+                      "family": "arc_grid",
+                      "reason": "both_pass_threshold",
+                      "status": "pass"
+                    },
+                    {
+                      "examples": 1,
+                      "family": "campsite",
+                      "reason": "both_pass_threshold",
+                      "status": "pass"
+                    },
+                    {
+                      "examples": 1,
+                      "family": "dyck_language",
+                      "reason": "both_pass_threshold",
+                      "status": "fail"
+                    },
+                    {
+                      "examples": 2,
+                      "family": "math",
+                      "reason": "both_pass_threshold",
+                      "status": "pass"
+                    }
+                  ],
+                  "pooled_status": "pass",
+                  "quality_prerequisite_pass": false,
+                  "threshold": 0.2,
+                  "unevaluable_families": []
+                },
+                "rows_per_pass": 80
+              },
+              {
+                "family_reconstruction_quality": [
+                  {
+                    "examples": 6,
+                    "family": "arc_grid",
+                    "per_pass_ev": [
+                      0.22234855491214456,
+                      0.3408832077961542
+                    ],
+                    "rows_per_pass": 144
+                  },
+                  {
+                    "examples": 1,
+                    "family": "campsite",
+                    "per_pass_ev": [
+                      -0.06512903257667091,
+                      0.1768482952045971
+                    ],
+                    "rows_per_pass": 24
+                  },
+                  {
+                    "examples": 1,
+                    "family": "dyck_language",
+                    "per_pass_ev": [
+                      -0.11155363586165712,
+                      0.1157197952036435
+                    ],
+                    "rows_per_pass": 24
+                  },
+                  {
+                    "examples": 2,
+                    "family": "math",
+                    "per_pass_ev": [
+                      0.020101902252692372,
+                      0.20285303784223074
+                    ],
+                    "rows_per_pass": 48
+                  }
+                ],
+                "phase": "generated",
+                "pooled_ev": [
+                  0.17503683308111118,
+                  0.3091975631920021
+                ],
+                "quality_decision": {
+                  "clustering_admission": false,
+                  "failed_families": [
+                    "campsite",
+                    "dyck_language",
+                    "math"
+                  ],
+                  "families": [
+                    {
+                      "examples": 6,
+                      "family": "arc_grid",
+                      "reason": "both_pass_threshold",
+                      "status": "pass"
+                    },
+                    {
+                      "examples": 1,
+                      "family": "campsite",
+                      "reason": "both_pass_threshold",
+                      "status": "fail"
+                    },
+                    {
+                      "examples": 1,
+                      "family": "dyck_language",
+                      "reason": "both_pass_threshold",
+                      "status": "fail"
+                    },
+                    {
+                      "examples": 2,
+                      "family": "math",
+                      "reason": "both_pass_threshold",
+                      "status": "fail"
+                    }
+                  ],
+                  "pooled_status": "fail",
+                  "quality_prerequisite_pass": false,
+                  "threshold": 0.2,
+                  "unevaluable_families": []
+                },
+                "rows_per_pass": 240
+              }
+            ],
+            "site": "model.norm"
+          },
+          "site": "model.norm",
+          "training": {
+            "mixed_training_ev": [
+              0.9138484469727063,
+              0.9885378996212609
+            ],
+            "phases": [
+              {
+                "family_reconstruction_quality": [
+                  {
+                    "examples": 4,
+                    "family": "arc_grid",
+                    "per_pass_ev": [
+                      0.8478477241467519,
+                      0.9901098949043327
+                    ],
+                    "rows_per_pass": 32
+                  },
+                  {
+                    "examples": 1,
+                    "family": "futoshiki",
+                    "per_pass_ev": [
+                      0.7448450317855729,
+                      0.9934472076417736
+                    ],
+                    "rows_per_pass": 8
+                  },
+                  {
+                    "examples": 1,
+                    "family": "goods_exchange",
+                    "per_pass_ev": [
+                      0.7676594984878753,
+                      0.9949337379441111
+                    ],
+                    "rows_per_pass": 8
+                  },
+                  {
+                    "examples": 2,
+                    "family": "math",
+                    "per_pass_ev": [
+                      0.7275777043075218,
+                      0.9915151935086406
+                    ],
+                    "rows_per_pass": 16
+                  }
+                ],
+                "phase": "prompt",
+                "pooled_ev": [
+                  0.823428920487079,
+                  0.9921417811208337
+                ],
+                "quality_decision": {
+                  "clustering_admission": false,
+                  "failed_families": [],
+                  "families": [
+                    {
+                      "examples": 4,
+                      "family": "arc_grid",
+                      "reason": "both_pass_threshold",
+                      "status": "pass"
+                    },
+                    {
+                      "examples": 1,
+                      "family": "futoshiki",
+                      "reason": "both_pass_threshold",
+                      "status": "pass"
+                    },
+                    {
+                      "examples": 1,
+                      "family": "goods_exchange",
+                      "reason": "both_pass_threshold",
+                      "status": "pass"
+                    },
+                    {
+                      "examples": 2,
+                      "family": "math",
+                      "reason": "both_pass_threshold",
+                      "status": "pass"
+                    }
+                  ],
+                  "pooled_status": "pass",
+                  "quality_prerequisite_pass": true,
+                  "threshold": 0.2,
+                  "unevaluable_families": []
+                },
+                "rows_per_pass": 64
+              },
+              {
+                "family_reconstruction_quality": [
+                  {
+                    "examples": 4,
+                    "family": "arc_grid",
+                    "per_pass_ev": [
+                      0.9167342533871157,
+                      0.9871866169112142
+                    ],
+                    "rows_per_pass": 96
+                  },
+                  {
+                    "examples": 1,
+                    "family": "futoshiki",
+                    "per_pass_ev": [
+                      0.8651485568964326,
+                      0.9354517128434454
+                    ],
+                    "rows_per_pass": 24
+                  },
+                  {
+                    "examples": 1,
+                    "family": "goods_exchange",
+                    "per_pass_ev": [
+                      0.941181358304979,
+                      0.9912907314503053
+                    ],
+                    "rows_per_pass": 24
+                  },
+                  {
+                    "examples": 2,
+                    "family": "math",
+                    "per_pass_ev": [
+                      0.9184215213616578,
+                      0.9925240869163038
+                    ],
+                    "rows_per_pass": 48
+                  }
+                ],
+                "phase": "generated",
+                "pooled_ev": [
+                  0.9220728477881153,
+                  0.9862621020587187
+                ],
+                "quality_decision": {
+                  "clustering_admission": false,
+                  "failed_families": [],
+                  "families": [
+                    {
+                      "examples": 4,
+                      "family": "arc_grid",
+                      "reason": "both_pass_threshold",
+                      "status": "pass"
+                    },
+                    {
+                      "examples": 1,
+                      "family": "futoshiki",
+                      "reason": "both_pass_threshold",
+                      "status": "pass"
+                    },
+                    {
+                      "examples": 1,
+                      "family": "goods_exchange",
+                      "reason": "both_pass_threshold",
+                      "status": "pass"
+                    },
+                    {
+                      "examples": 2,
+                      "family": "math",
+                      "reason": "both_pass_threshold",
+                      "status": "pass"
+                    }
+                  ],
+                  "pooled_status": "pass",
+                  "quality_prerequisite_pass": true,
+                  "threshold": 0.2,
+                  "unevaluable_families": []
+                },
+                "rows_per_pass": 192
+              }
+            ],
+            "site": "model.norm"
+          }
+        }
+      ]
+    }
+  ],
+  "boundary": {
+    "encoder_recomputed": false,
+    "model_inference_performed": false,
+    "operative_admissions": 0,
+    "training_performed": false
+  },
+  "interpretation": "Training/evaluation EV uses each subset's own variance; gaps are descriptive, not a paired causal or identically distributed test.",
+  "limitations": [
+    "Train and evaluation have different family mixes; ARC/math labels are shared but examples differ.",
+    "High training quality does not prove memorization as a mechanism or rule out optimization improvements.",
+    "Only eight training examples and ten evaluation examples; same seed across archives.",
+    "Training quality cannot qualify held-out feature compartments."
+  ],
+  "provenance": {
+    "phase_audit_sha256": "6ef8aab76c1d7f524530a27b0a416afe6a1dc1843a49d6a2a142f26dd102c95e",
+    "runner_sha256": "ef3cc8ab2f1fb65d4b59c14a90a090c36210c79928a71c6b4877a91eb3e74959"
+  },
+  "report_id": "96b978e2fd4f7a7d1736695a427ac37c41cd123d4173116896deed479648aaf3",
+  "schema": "sch.vpd-q4-sae-training-phase-quality.v1",
+  "source": {
+    "path": "C:\\projects\\VPD\\artifacts\\vpd_q4_sae_phase_quality_v1\\report.json",
+    "report_id": "6a0ed1c025177bcf5dca22c46fe00a06aa0effe0ec6fcc138541556211a3cd04",
+    "sha256": "85c3c2d40191e2af9d229261c359d0a49d75990641ec62f8fba9bafd25c5e835"
+  }
+}

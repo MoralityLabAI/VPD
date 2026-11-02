@@ -1,0 +1,13 @@
+{
+  "status": "partial_grades_independently_verified",
+  "rows": 96,
+  "official_and_literal_checks": 192,
+  "new_model_calls": 0,
+  "rule": "Independent bit-mask tent/tree matching plus grid, counts and adjacency checks; existing published answer extraction.",
+  "grading_sha256": "7d5ba765f9937006d6bc992465a9c635ac0beb8cdf207c459bc3c2499de82cc1",
+  "validator_sha256": "355383b9f89c2bf44044aa51ac835aaf3afff4634e70964e49214e002d4727e2",
+  "rule_implementation_sha256": "fe3f6ba2cb1a0cb358a97b4906610c579adcc6edc95e80cda4d20f3a53732728",
+  "files": {
+    "rows.json": "d9e14b92c0523e775a849a406d1eec8497e9d3e6ca36aa89e27187ce336027a2"
+  }
+}

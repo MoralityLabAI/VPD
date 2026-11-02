@@ -1,0 +1,50 @@
+{
+  "benchmark_id": "d33457b5799f93c3c8b319eff3de67a81e290be76e552c4b98044ba03e53205b",
+  "design": {
+    "authenticated_extraction_chained": true,
+    "canonical_inventory_chained": true,
+    "categories": [
+      "invalid_authority",
+      "valid_authority"
+    ],
+    "central_difference_epsilon": 0.05,
+    "fake_peft_bridge_chained": true,
+    "per_example_effects_retained": true
+  },
+  "results": {
+    "callback_failure_rejected": true,
+    "callback_failure_restored": true,
+    "capture_receipt_address_valid": true,
+    "category_frobenius_errors": {
+      "invalid_authority": 1.7574498701716444e-06,
+      "valid_authority": 2.4950435955466146e-06
+    },
+    "category_row_counts": [
+      3,
+      2
+    ],
+    "empty_category_rejected": true,
+    "invalid_epsilon_rejected": true,
+    "lane_shape_mismatch_rejected": true,
+    "lane_shape_mismatch_restored": true,
+    "maximum_category_frobenius_error": 2.4950435955466146e-06,
+    "nonfinite_capture_rejected": true,
+    "restored_after_success": true
+  },
+  "schema": "sch.vpd-canonical-category-effect-capture-benchmark.v1",
+  "scientific_boundary": {
+    "execution_authorized": false,
+    "fake_peft_objects_only": true,
+    "model_inference_performed": false,
+    "model_loaded": false,
+    "real_adapter_accessed": false,
+    "real_effect_archive_emitted": false,
+    "synthetic_batches_only": true,
+    "torch_or_peft_imported": false
+  },
+  "source": {
+    "kernel_sha256": "ff763b352091eb1db2373dc39d7c2836ac367643a4982e995abfe5b07aae3844",
+    "runner_sha256": "ed48fdec73e54f2e2dcf10ff5f209d4fd32af1a5f4f8ff3e055933c89b2359bd"
+  },
+  "status": "pass"
+}

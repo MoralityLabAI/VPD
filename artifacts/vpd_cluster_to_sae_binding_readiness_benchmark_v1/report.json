@@ -1,0 +1,78 @@
+{
+  "benchmark_id": "987909d0fef72a41a3a50775c2330402632bb89458c5c6ba4b917634a9f0eda1",
+  "controls": {
+    "all_readiness_paths_remain_non_authorizing": true,
+    "completed_worksheet_still_awaits_signed_authorization": true,
+    "existing_output_root_rejected": true,
+    "malformed_digest_rejected": true,
+    "missing_binding_rejected": true,
+    "nested_output_root_rejected": true,
+    "noncanonical_output_root_rejected": true,
+    "nonpositive_wall_time_rejected": true,
+    "output_parent_itself_rejected": true,
+    "outside_output_root_rejected": true,
+    "readiness_imports_no_model_frameworks": true,
+    "relative_adapter_path_rejected": true,
+    "synthetic_complete_bindings_pass_syntax_and_isolation": true,
+    "template_join_has_no_fabricated_authority_inputs": true,
+    "template_lists_exactly_ten_missing_bindings": true,
+    "unknown_binding_rejected": true,
+    "unsupported_device_rejected": true
+  },
+  "results": {
+    "synthetic_completed_audit": {
+      "adapter_content_opened": false,
+      "adapter_path_canonical": true,
+      "authorization_receipt_present": false,
+      "binding_fields": [
+        "model_id",
+        "model_revision",
+        "model_files_manifest_sha256",
+        "adapter_path",
+        "adapter_weights_sha256",
+        "adapter_config_sha256",
+        "device",
+        "wall_time_ceiling_seconds",
+        "cost_ceiling_usd",
+        "output_root"
+      ],
+      "bindings_complete": true,
+      "device_syntax_valid": true,
+      "execution_authorized": false,
+      "model_content_opened": false,
+      "model_framework_imported": false,
+      "output_path_reparse_point_free": true,
+      "output_root": "C:\\projects\\VPD\\artifacts\\vpd_cluster_to_sae_empirical_capture_runs\\synthetic-readiness-fixture-do-not-create",
+      "output_root_direct_child": true,
+      "output_root_nonexistent": true,
+      "output_root_parent": "C:\\projects\\VPD\\artifacts\\vpd_cluster_to_sae_empirical_capture_runs",
+      "preflight_id": "6c8be5cacafd85a86e9b279942b99c38305297536df20a12e49dfce58a0f7cdc",
+      "sae_training_authorized": false,
+      "schema": "sch.vpd-cluster-to-sae-completed-binding-audit.v1",
+      "status": "pass_identity_syntax_and_output_isolation_only"
+    },
+    "synthetic_completed_readiness_id": "541029af99792914e07c768debddc3260a6e3ad630e222ac723294b17b3685a5",
+    "template_readiness_id": "77e2c766499f22d401ffa60166b31dbc8fe4d0ecaefa349ab3b636202fef1472"
+  },
+  "schema": "sch.vpd-cluster-to-sae-binding-readiness-benchmark.v1",
+  "scientific_boundary": {
+    "authorization_receipt_present": false,
+    "execution_authorized": false,
+    "model_framework_imported": false,
+    "model_inference_performed": false,
+    "model_or_adapter_content_opened": false,
+    "release_authorized": false,
+    "sae_training_authorized": false,
+    "synthetic_bindings_only": true,
+    "weights_loaded_or_mutated": false
+  },
+  "source": {
+    "benchmark_sha256": "37fc4f5b7f3dccbe9dc2de924d7859219cfa4c5f91dcbb43ad98b9ff35331799",
+    "readiness_builder_sha256": "fa65a58ab1e664a363b62d57d58ec60ed9e0357b5b707220646cbd8f6a4d8a20"
+  },
+  "status": "pass",
+  "summary": {
+    "controls": 17,
+    "passed": 17
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "benchmark_id": "98c5613d4fe7615ca217d51e80460811e1901d05d177d7839a4aaf8d6f8d79b2",
+  "controls": {
+    "admission_imports_no_model_frameworks": true,
+    "all_admission_paths_remain_nonexecuting": true,
+    "base_model_mutation_broadening_rejected": true,
+    "compute_binds_one_exact_job_device_samples_resources_and_output": true,
+    "consumed_compute_nonce_rejected": true,
+    "consumed_release_nonce_rejected": true,
+    "disabled_release_authority_rejected": true,
+    "dry_run_admission_is_content_addressed": true,
+    "dry_run_never_reserves_or_attaches_or_invokes": true,
+    "expired_release_rejected": true,
+    "invalid_compute_signature_rejected": true,
+    "invalid_release_signature_rejected": true,
+    "real_release_rejects_synthetic_blueprint": true,
+    "release_binds_exact_blueprint_plan_materialization_and_global_split": true,
+    "revoked_release_rejected": true,
+    "signed_synthetic_compute_verifies_without_authority": true,
+    "signed_synthetic_release_verifies_without_authority": true,
+    "wrong_compute_device_rejected": true,
+    "wrong_compute_job_rejected": true,
+    "wrong_compute_output_rejected": true,
+    "wrong_compute_release_rejected": true,
+    "wrong_compute_steps_rejected": true,
+    "wrong_release_blueprint_rejected": true,
+    "wrong_release_evidence_rejected": true
+  },
+  "design": {
+    "compute_binds_exactly_one_job": true,
+    "dry_run_cli_implemented": true,
+    "durable_nonce_consumption_implemented": false,
+    "ed25519_release_and_compute_receipts": true,
+    "output_reservation_implemented": false,
+    "production_trainer_invocation_implemented": false,
+    "release_binds_complete_blueprint": true
+  },
+  "results": {
+    "compute_authorization_receipt_id": "e330da9050d1de28938e24e471bbf6cc7a675ac5295e09e7f77e683548c90745",
+    "dry_run_admission_id": "1fec09f42c958cad7c7bf2deba8b1b244c2bb2f3a9af2ec80ab0eecd689a16bf",
+    "execution_blueprint_id": "07122590aae37e4e07dec2077830954e5eeb56ec269c77382f227fb33e233215",
+    "execution_job_id": "703e053e9397e3d51f98363b7c8d7dc5df63ce0cc02110c6e8dd98118401ac5e",
+    "scientific_release_receipt_id": "58af22bbecca28a436cdd88726fb87b1c2b6e2f2f70353c3f16102c4d771d9ff"
+  },
+  "schema": "sch.vpd-cluster-aware-sae-admission-benchmark.v1",
+  "scientific_boundary": {
+    "empirical_blueprint_present": false,
+    "execution_authorized": false,
+    "model_framework_imported": false,
+    "model_inference_performed": false,
+    "model_loaded": false,
+    "persistent_output_created": false,
+    "private_key_persisted": false,
+    "sae_training_authorized": false,
+    "synthetic_keys_and_receipts_only": true,
+    "trainer_callback_invoked": false,
+    "weights_loaded_or_mutated": false
+  },
+  "source": {
+    "admission_verifier_sha256": "8604cc82392d8b38acd5de13290dc0e0939673349b24e36940503b4f069b13c2",
+    "benchmark_sha256": "f8904650471b2b9295439d52bfb040011b5b609d0d043293cb25930690e8bcdd",
+    "execution_blueprint_id": "07122590aae37e4e07dec2077830954e5eeb56ec269c77382f227fb33e233215",
+    "runtime_worker_sha256": "afade79132182f4af63f24d857aa66f27dfa68246d75ef12938054ea6f867e59"
+  },
+  "status": "pass",
+  "summary": {
+    "controls": 24,
+    "passed": 24
+  }
+}

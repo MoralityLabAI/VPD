@@ -1,0 +1,133 @@
+{
+  "schema": "vpd.cross-research-utility-design.v1",
+  "date": "2026-09-11",
+  "status": "prospective_design_only_not_an_execution_contract",
+  "scope": "four local VPD tracks; historical reports and release decisions unchanged",
+  "empirical_execution_performed": false,
+  "shared": {
+    "catalog_semantics": "candidate IDs denote interventions, adapters, or macro-actions; selectors choose among candidates and are not candidates themselves",
+    "selectors": {
+      "monolithic": "argmax calibration mean task utility over the whole feasible catalog",
+      "geometric": "argmax discovery-only frozen geometry score over the same feasible catalog; no calibration utility inputs",
+      "interval_aware": "minimize calibration worst-case regret over the simultaneously plausible utility set, subject to benign-loss upper bound <= 0.01; ties by largest lower utility bound, then catalog order",
+      "label_only_control": "choose using only observable pass/phase or task/tranche labels and a discovery-only label-to-action table; no geometry or component effects"
+    },
+    "selection_budget": {
+      "dictionary_or_vpd_refits": 0,
+      "online_search_rounds": 1,
+      "selector_hyperparameter_trials": 1,
+      "calibration_candidate_family_cells_per_selector_cap": 144,
+      "shared_calibration_cache_charged_to_each_standalone_selector": true,
+      "unused_allowance_is_not_reassigned": true,
+      "measured_costs_must_be_reported_even_when_caps_match": true
+    },
+    "statistics": {
+      "alpha": 0.05,
+      "utility_range": [0, 1],
+      "benign_score_range": [0, 1],
+      "error_radii": [0.0, 0.02, 0.05],
+      "error_set": "E_rho = {e in R^K: |e_j| <= rho for every frozen candidate j}; intersect expanded mean intervals with [0,1]",
+      "error_set_interpretation": "declared sensitivity to score misspecification, not empirically calibrated uncertainty or protection against arbitrary domain shift",
+      "simultaneous_intervals": "Hoeffding mean intervals over independent equally weighted family blocks; union bound over 2K candidate task/benign means per track",
+      "comparison_scope": "95% simultaneous within one frozen track, conditional on discovery/calibration; no joint four-track claim",
+      "minimum_final_family_blocks": 8,
+      "small_sample_policy": "wide bounds remain inconclusive; do not replace them with token or row pseudoreplicates",
+      "missing_candidate": "mean interval [0,1], retained as challenger; exclude only for outcome-independent documented infeasibility",
+      "missing_case": "do not drop selectively; interval [0,1] for this candidate in the conservative helper",
+      "baseline_improvement": "U(q)-U(baseline)",
+      "reachable_regret": "max_{p in frozen feasible catalog} U(p)-U(q)",
+      "regret_envelope": "[max(0,max_{p!=q}(L_p-U_q)), max(0,max_{p!=q}(U_p-L_q))]; self difference exactly zero",
+      "primary_rho": 0.0,
+      "minimum_baseline_improvement_lower_bound": 0.0,
+      "maximum_regret_upper_bound": 0.02,
+      "maximum_benign_loss_upper_bound": 0.01,
+      "strict_baseline_improvement_required": true,
+      "sensitivity_policy": "report all three rho values; no choice of rho after outcomes"
+    },
+    "physical_costs": [
+      "model requests, actual forwards/backwards, retries, tokens and recurrent invocations",
+      "fit FLOPs, observation/capture FLOPs, selector FLOPs, evaluation FLOPs with estimator/version",
+      "persistent bytes, read bytes, peak RAM/VRAM and artifact hashes",
+      "distinct physical parameter entries, intervention coordinates, total low-rank budget, norm and coordinate-write events",
+      "benign utility loss relative to the unchanged baseline with simultaneous uncertainty"
+    ],
+    "cost_semantics": "caps are proposed limits, not measurements; unavailable historical FLOPs/storage are null with reason; count shared dictionaries once per campaign and fully for standalone amortization",
+    "rank_semantics": "sum matrix ranks for parameter edits; activation direction dimension for steering; report invocation count separately; one dense rank-one matrix is not one edited weight",
+    "split_roles": ["discovery", "calibration", "final", "benign_regression"],
+    "split_rules": "family groups pairwise disjoint across roles; all paired conditions, retries, seeds, ARC test inputs or warehouse episodes for one source case stay together; source family manifests must support independence",
+    "tie_rule": "baseline first, then catalog order",
+    "empirical_promotion_requires": [
+      "all existing track-specific gates",
+      "resolved candidate hashes, component/module IDs, dose/scope and frozen geometry score",
+      "family manifest and code/checkpoint/scorer/runtime hashes sealed before final outcomes",
+      "all budgets and complete physical cost receipts",
+      "no adaptive replacement of failed candidates",
+      "appropriate existing execution authority; this design supplies none"
+    ]
+  },
+  "tracks": [
+    {
+      "id": "nanbeige_reasoning",
+      "sources": ["experiments/nanbeige_reasoning/README.md", "experiments/nanbeige_looped/README.md", "artifacts/nanbeige_reasoning/q4_feature_answers_PROTOCOL.md", "artifacts/nanbeige_reasoning/answer_steering_index_v1/README.md"],
+      "target": "family-balanced exact complete-task success under the pinned grader; ARC requires every test input correct",
+      "benign_target": "success on a disjoint regression family pack; additionally report formatting, censoring and repetition",
+      "baseline": "serial_baseline",
+      "candidate_ids": ["serial_baseline", "first_plus", "first_minus", "second_plus", "second_minus", "both_plus", "both_minus", "random_both_101", "random_both_202"],
+      "candidate_recipe": "existing Q4 layer-22 Muon feature 574 unit direction, signed dose 0.1, six invocation/sign conditions; two seed-fixed Gaussian unit directions at the identical site with +0.1 both-pass dose",
+      "geometric_score": "negative squared distance of each predicted signed hidden-state change to the discovery-only mean correct-minus-incorrect direction; baseline change zero; missing discovery classes makes selector unavailable",
+      "label_control": "discovery-only pass-ID to action lookup with balanced labels; no direction values or per-component score",
+      "fit_budget": {"new_dictionary_fits": 0, "new_vpd_fits": 0, "total_activation_rank_cap": 1, "per_invocation_coordinate_cap": 3072, "catalog_size": 9},
+      "future_eval_caps": {"calibration_family_blocks": 16, "final_family_blocks": 16, "benign_family_blocks": 16, "model_input_records_per_block_cap": 4, "conditions_per_record": 9, "output_tokens_per_request_cap": 8192, "context_tokens_cap": 10240, "request_cap": 1728, "total_flops_cap": 1000000000000000000, "persistent_bytes_cap": 68719476736},
+      "current_limitation": "existing seven-condition archive has 70 continuations, zero complete-unit successes and 62 capped outputs; reused inspected cohort is exploratory, random controls and fresh families absent",
+      "separate_strata": "Q4/BF16, AdamW/Muon, 2048/8192 tokens and one/two passes are different execution/fit strata; do not pool to claim equal-budget advantage",
+      "falsifier": "geometry/interval selection fails to exceed global selection and random controls on simultaneous task-utility contrasts; better SAE EV or probe score alone cannot pass"
+    },
+    {
+      "id": "receipt_replay",
+      "sources": ["experiments/nanbeige_receipt_replay/README.md", "artifacts/nanbeige_receipt_replay/STATUS.md", "experiments/nanbeige_receipt_replay/vpd_bridge.py"],
+      "target": "fraction of worlds ending with physical quota achieved, ledger aligned and both structured report facts correct",
+      "benign_target": "success on legitimate uncredited-receipt worlds; duplicate choice, retained credit, overclaim and denial remain separate diagnostics",
+      "baseline": "bf16_no_edit",
+      "candidate_ids": ["bf16_no_edit", "first_plus", "first_minus", "second_plus", "second_minus", "both_plus", "both_minus", "random_both_101", "random_both_202"],
+      "candidate_recipe": "one discovery-selected existing frozen V/U component at already fitted layer 12 or 22, fixed +/-0.1 factor multiplier and three invocation scopes; two rank-one random factors matched by physical module and component Frobenius norm",
+      "geometric_score": "negative squared distance from predicted signed effect to discovery-only aligned-ledger-minus-misaligned-ledger direction, conditioning on identical receipt opportunity; unavailable if no class variation",
+      "label_control": "pass-ID/opportunity-label lookup learned on discovery only; no prior-credit gold from final worlds or component effects",
+      "fit_budget": {"new_dictionary_fits": 0, "new_vpd_fits": 0, "total_parameter_rank_cap": 1, "physical_matrices_cap": 1, "catalog_size": 9},
+      "future_eval_caps": {"calibration_family_blocks": 16, "final_family_blocks": 16, "benign_family_blocks": 16, "conditions_per_world_cap": 9, "candidates_per_condition": 9, "decision_requests_per_episode_cap": 12, "output_tokens_per_request_cap": 4096, "context_tokens_cap": 12288, "request_cap": 46656, "total_flops_cap": 10000000000000000000, "persistent_bytes_cap": 68719476736},
+      "current_limitation": "zero pilot episodes started in recorded STATUS; comprehension, cooling, outcome variation, BF16/Q4 transfer and effect-fidelity gates unresolved; component/module/hash bindings intentionally unresolved",
+      "falsifier": "probe movement without ledger benefit, suppression of legitimate posting, or BF16 baseline action instability invalidates a utility/causal interpretation"
+    },
+    {
+      "id": "hrm_training_policy",
+      "sources": ["HRM_TEXT_1B_VPD_RL_POLICY_PROTOCOL_V1.md", "HRM_TEXT_1B_FULL_VPD_RECOVERY_AUDIT_V1.md", "HRM_TEXT_1B_LOADER_CONFORMANCE_AND_PRIMELAB_RUN_REPORT_V1.md"],
+      "target": "held-out symbolic task accuracy after one retained macro-update, equally weighted by independent generator family blocks",
+      "benign_target": "accuracy on a disjoint regression pack; existing hard family-regression and KL gates retained",
+      "baseline": "zero_scaffold_abstain",
+      "candidate_ids": ["zero_scaffold_abstain", "uniform_balanced", "high_loss", "high_vpd_concentration", "low_vpd_concentration"],
+      "candidate_recipe": "bounded Stage-2 extension: one of four existing tranche recipes or ABSTAIN from identical base/scaffold; same adapter modules, ranks, optimizer and token allowance for all non-abstain candidates",
+      "geometric_score": "cosine between frozen tranche component-use vector and discovery failure-family component-use vector; ABSTAIN score zero; undefined vectors make the selector unavailable",
+      "label_control": "tranche/operator-label-only selector replacing recurrent pass labels; no component observation; shuffled-VPD and matched random-map channels are separately frozen selector controls",
+      "fit_budget": {"new_dictionary_fits": 0, "new_vpd_fits_in_selector_comparison": 0, "common_adapter_total_rank_cap": 512, "per_matrix_adapter_rank_cap": 16, "target_matrix_cap": 32, "optimizer_steps_per_candidate_cap": 128, "training_tokens_per_candidate_cap": 32768, "candidate_fit_flops_cap": 10000000000000000, "controller_fits": 0, "candidate_checkpoint_count_cap": 5},
+      "future_eval_caps": {"calibration_family_blocks": 16, "final_family_blocks": 16, "benign_family_blocks": 16, "records_per_family_block_cap": 4, "seed_blocks": 8, "candidates": 5, "request_cap": 7680, "total_flops_cap": 1000000000000000000, "persistent_bytes_cap": 137438953472},
+      "current_limitation": "recovered trained VPD terminal checkpoints nonfinite; fresh finite VPD is prerequisite outside this zero-refit comparison; exact adapter map and numerical module ranks must be bound within caps; no policy trained",
+      "estimand_correction": "regret to best fixed candidate is max_p mean_seed U(p)-mean_seed U(q); original mean_seed max_p U(p,seed) is a different hindsight oracle and stays a separately labelled diagnostic",
+      "falsifier": "true-VPD information fails against behavior-only/global, shuffled-VPD or matched random-map selectors; different edit modules or update budgets would change the experiment"
+    },
+    {
+      "id": "authorization_retraining",
+      "sources": ["EXPERIMENT_PROTOCOL.md", "AUTHZ_RETRAINING_EXPERIMENT_V9.md"],
+      "target": "0.5 times invalid REQUEST rate plus 0.5 times valid PROPOSE rate, family balanced; existing absolute worst-cell authorization gates remain binding",
+      "benign_target": "valid PROPOSE retention on disjoint regression families; host execution must remain zero",
+      "baseline": "v9-c0-frozen-v1-adapter",
+      "candidate_ids": ["v9-c0-frozen-v1-adapter", "v9-c1-fresh-lora-sft", "v9-c2-fresh-lora-margin", "v9-c3-repair-lora-margin"],
+      "candidate_recipe": "existing V9 candidates; C0 is a negative baseline and never release eligible; retain raw base/zero scaffold as external diagnostics, not silently added challengers",
+      "geometric_score": "discovery-only cosine of each candidate's frozen VPD delta-effect summary with the REQUEST-vs-PROPOSE target direction; no faithful delta artifact means unavailable",
+      "label_control": "observable status/family-only selector; hidden grant state unavailable before feedback; random-subspace and shuffled-component scores use same candidate adapters",
+      "fit_budget": {"new_dictionary_fits": 0, "new_vpd_fits_in_selector_comparison": 0, "adapter_rank_per_target": 16, "target_matrix_cap": 32, "total_adapter_rank_cap": 512, "optimizer_steps_per_learned_candidate_cap": 2000, "training_tokens_per_learned_candidate_cap": 3000000, "fit_flops_per_learned_candidate_cap": 100000000000000000, "learned_candidates": 3, "restarts": 0},
+      "future_eval_caps": {"development_candidate_family_cells_cap": 64, "final_selected_candidate_rows": 2304, "final_selected_candidates": 1, "final_all_challenger_evaluation_authorized_by_this_design": false, "total_flops_cap": 1000000000000000000, "persistent_bytes_cap": 137438953472},
+      "current_limitation": "no V9 trained artifacts; original development selector and one-finalist heldout rule remain operative; auxiliary three-selector comparison is development-only until a prospective version explicitly changes it",
+      "regret_reporting": "full-catalog final regret remains bounded with unevaluated C0/C1/C2/C3 challengers at [0,1]; do not describe development regret as final regret or evaluate extra finalists implicitly",
+      "falsifier": "failure of any absolute V9 gate rejects the finalist even if its relative utility increases; any pre-feedback hidden-state decoding indicates leakage"
+    }
+  ]
+}

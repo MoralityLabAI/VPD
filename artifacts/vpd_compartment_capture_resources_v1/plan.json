@@ -1,0 +1,152 @@
+{
+  "capture": {
+    "activation_rows": 805376,
+    "array_bytes_all_layers": 6597640192,
+    "array_bytes_per_layer": 6597640192,
+    "bytes_per_row": 8192,
+    "bytes_per_value": 2,
+    "dtype": "float16",
+    "episodes": 6292,
+    "layer_count": 1,
+    "layer_indices": [
+      35
+    ],
+    "roles": {
+      "calibration": {
+        "activation_rows": 604032,
+        "array_bytes_all_layers": 4948230144,
+        "array_bytes_per_layer": 4948230144,
+        "episodes": 4719,
+        "final_shard_rows": 1920,
+        "shards_per_layer": 148
+      },
+      "sae_training": {
+        "activation_rows": 805376,
+        "array_bytes_all_layers": 6597640192,
+        "array_bytes_per_layer": 6597640192,
+        "episodes": 6292,
+        "final_shard_rows": 2560,
+        "shards_per_layer": 197
+      }
+    }
+  },
+  "compartments": {
+    "shared_cross_category": {
+      "activation_rows": 585728,
+      "balance_rule": "equal_rows_per_activation_category",
+      "episodes": 4576,
+      "fp16_capture_bytes_per_layer": 4798283776,
+      "fp32_training_bytes": 9596567552
+    },
+    "specific": {
+      "missing_or_untrusted_authority": {
+        "activation_rows": 292864,
+        "episodes": 2288,
+        "fp16_capture_bytes_per_layer": 2399141888,
+        "fp32_training_bytes": 4798283776
+      },
+      "other_invalid": {
+        "activation_rows": 73216,
+        "episodes": 572,
+        "fp16_capture_bytes_per_layer": 599785472,
+        "fp32_training_bytes": 1199570944
+      },
+      "replayed": {
+        "activation_rows": 73216,
+        "episodes": 572,
+        "fp16_capture_bytes_per_layer": 599785472,
+        "fp32_training_bytes": 1199570944
+      },
+      "revoked": {
+        "activation_rows": 73216,
+        "episodes": 572,
+        "fp16_capture_bytes_per_layer": 599785472,
+        "fp32_training_bytes": 1199570944
+      },
+      "scope_invalid": {
+        "activation_rows": 73216,
+        "episodes": 572,
+        "fp16_capture_bytes_per_layer": 599785472,
+        "fp32_training_bytes": 1199570944
+      },
+      "signature_invalid": {
+        "activation_rows": 73216,
+        "episodes": 572,
+        "fp16_capture_bytes_per_layer": 599785472,
+        "fp32_training_bytes": 1199570944
+      },
+      "time_inactive": {
+        "activation_rows": 73216,
+        "episodes": 572,
+        "fp16_capture_bytes_per_layer": 599785472,
+        "fp32_training_bytes": 1199570944
+      },
+      "valid_authority": {
+        "activation_rows": 73216,
+        "episodes": 572,
+        "fp16_capture_bytes_per_layer": 599785472,
+        "fp32_training_bytes": 1199570944
+      }
+    }
+  },
+  "invariants": {
+    "capture_episode_and_row_counts_are_split_role_specific": true,
+    "full_activation_concatenation_during_training_forbidden": true,
+    "metadata_rows_align_one_to_one_with_activation_rows": true,
+    "monolithic_npz_capture_forbidden": true,
+    "resource_plan_does_not_authorize_model_capture_or_training": true,
+    "shard_row_ranges_exact_contiguous_partition": true
+  },
+  "profile": {
+    "activation_rows_per_episode": 128,
+    "dictionary_features": 8192,
+    "expansion": 2,
+    "hidden_size": 4096,
+    "id": "bounded_context_pilot",
+    "top_k": 16
+  },
+  "resource_plan_id": "c99dd5c6e06bc5408aedc8df468d2b5d98a5825b73ca8e52fe6969b3b13d6ee0",
+  "schema": "sch.vpd-compartment-capture-resource-plan.v1",
+  "scientific_boundary": {
+    "model_inference_performed": false,
+    "storage_feasibility_is_not_sae_trainability": true,
+    "weights_loaded_or_mutated": false
+  },
+  "sharding": {
+    "activation_write_mode": "bounded_row_buffer",
+    "final_shard_rows": 2560,
+    "format": "npy_v1_deterministic_row_shards",
+    "maximum_allowed_shard_bytes": 67108864,
+    "maximum_full_shard_bytes": 33554432,
+    "metadata_write_mode": "streaming_jsonl",
+    "rows_per_full_shard": 4096,
+    "shards_per_layer": 197,
+    "training_read_mode": "memory_mapped_shards_no_full_concatenation"
+  },
+  "source": {
+    "capacity_plan_id": "809deb31cba4642ee38cbaf2f7417120610b4fc9cfe6c37d0ed6cbaa885efb7d",
+    "capacity_plan_sha256": "3746589ad195625d91b505cb58eb371b464e2c36ed6319ffbaa4b70c5d45d0bf",
+    "implementation": {
+      "capture_semantic_verifier": {
+        "path": "experiments/authz_mechinterp/verify_activation_capture_semantics.py",
+        "sha256": "a6f0673bdee84eef901be4f62a2bd59f1fc81ed3b93a2ad2aacb405110a73917"
+      },
+      "capture_worker": {
+        "path": "experiments/authz_mechinterp/capture_activations.py",
+        "sha256": "e3877bf68d38a0dcb946897a1fb84797d02ef486610c5deb856e7f20b25f90be"
+      },
+      "sae_trainer": {
+        "path": "experiments/authz_mechinterp/train_sae.py",
+        "sha256": "9658bf82158f6b52b1b8b3cb3f07efea32c6a2c990a7b8c9dc2ad91e15b0e913"
+      },
+      "shard_artifact": {
+        "path": "experiments/authz_mechinterp/activation_shards.py",
+        "sha256": "f3e9c303ad27d8ccf0d7c02c0305d62c0fa1764431f291432065ab624de47f65"
+      }
+    },
+    "pack_id": "ad753063ac5f83bd7197fbb1d17c4bd7bdced1d3a5140a7d765ab0f8e90f3a11",
+    "planner_sha256": "c3591a76a003810f190fcf1dcab870ba0766c15b5dc9f8de7b63a63e49cdb0c1",
+    "split_id": "a5aa3370406876c1c48ed702b431a64cb6a68c8376ab28b0aad1d852c22dd8dc"
+  },
+  "status": "sharded_capture_and_streaming_training_required"
+}

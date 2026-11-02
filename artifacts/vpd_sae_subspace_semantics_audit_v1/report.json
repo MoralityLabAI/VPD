@@ -1,0 +1,135 @@
+{
+  "gram_vs_direct_svd": [
+    {
+      "draw": 0,
+      "maximum_absolute_similarity_error": 7.7021722333370235e-16,
+      "rows": 24,
+      "subset_size": 16,
+      "width": 48
+    },
+    {
+      "draw": 1,
+      "maximum_absolute_similarity_error": 2.636779683484747e-16,
+      "rows": 24,
+      "subset_size": 16,
+      "width": 48
+    },
+    {
+      "draw": 2,
+      "maximum_absolute_similarity_error": 1.3183898417423734e-16,
+      "rows": 24,
+      "subset_size": 16,
+      "width": 48
+    },
+    {
+      "draw": 3,
+      "maximum_absolute_similarity_error": 6.245004513516506e-17,
+      "rows": 24,
+      "subset_size": 16,
+      "width": 48
+    },
+    {
+      "draw": 0,
+      "maximum_absolute_similarity_error": 2.7755575615628914e-16,
+      "rows": 48,
+      "subset_size": 32,
+      "width": 24
+    },
+    {
+      "draw": 1,
+      "maximum_absolute_similarity_error": 2.220446049250313e-16,
+      "rows": 48,
+      "subset_size": 32,
+      "width": 24
+    },
+    {
+      "draw": 2,
+      "maximum_absolute_similarity_error": 1.249000902703301e-16,
+      "rows": 48,
+      "subset_size": 32,
+      "width": 24
+    },
+    {
+      "draw": 3,
+      "maximum_absolute_similarity_error": 7.771561172376096e-16,
+      "rows": 48,
+      "subset_size": 32,
+      "width": 24
+    }
+  ],
+  "interpretation": {
+    "empirical_reports_modified": false,
+    "empirical_weights_loaded": false,
+    "execution_authorized": false,
+    "near_degenerate_rank_cutoffs_not_covered_by_random_reference_checks": true,
+    "new_training_performed": false,
+    "orthonormal_nnls_is_only_a_counterexample_not_an_empirical_encoder": true,
+    "span_overlap_does_not_establish_nonnegative_reconstruction": true,
+    "span_overlap_does_not_establish_sparse_feature_identity": true
+  },
+  "provenance": {
+    "kind": "newly_constructed_synthetic_controls",
+    "source_files": [
+      {
+        "path": "C:\\projects\\VPD\\experiments\\authz_mechinterp\\audit_sae_subspace_semantics_v1.py",
+        "sha256": "cf783b47772f9bd4ba7e45d5f2182acf5e8cf6e8e8eadabce9238874aa744a81"
+      },
+      {
+        "path": "C:\\projects\\VPD\\experiments\\authz_mechinterp\\benchmark_nanbeige_layer21_sae_category_subspace_stability_v1.py",
+        "sha256": "46ac49e320f7d424c71c80d548db0317bbfe48ff24d28fbe27ced808f97609a1"
+      },
+      {
+        "path": "C:\\projects\\VPD\\experiments\\authz_mechinterp\\benchmark_nanbeige_q4_sae_pass_category_subspace_transfer_v1.py",
+        "sha256": "c0e26eee5c88777256ed4a5eafbf24419e2ad7d2b0a5ce146452660c764f9422"
+      },
+      {
+        "path": "C:\\projects\\VPD\\experiments\\authz_mechinterp\\evaluate_sae_feature_replica_matching_v2.py",
+        "sha256": "0442110df181df8ca5be2a94300e56e93bce14546845c0be80045377c0005ac7"
+      }
+    ]
+  },
+  "report_id": "86250e0b0c660afa739b0e2771d36dcbc526543aea9e42a8c4e8e4caddf29916",
+  "scenarios": [
+    {
+      "name": "positive_permutation",
+      "nonnegative_reconstruction_of_positive_source_atoms": {
+        "mean_positive_coefficients": 1.0,
+        "relative_squared_error": 0.0
+      },
+      "signed_least_squares_relative_error": 0.0,
+      "signed_mutual_matches_at_0_8": 4,
+      "span_similarity": 1.0
+    },
+    {
+      "name": "sign_reversal",
+      "nonnegative_reconstruction_of_positive_source_atoms": {
+        "mean_positive_coefficients": 0.0,
+        "relative_squared_error": 1.0
+      },
+      "signed_least_squares_relative_error": 0.0,
+      "signed_mutual_matches_at_0_8": 0,
+      "span_similarity": 1.0
+    },
+    {
+      "name": "orthogonal_feature_mixing",
+      "nonnegative_reconstruction_of_positive_source_atoms": {
+        "mean_positive_coefficients": 2.5,
+        "relative_squared_error": 0.375
+      },
+      "signed_least_squares_relative_error": 0.0,
+      "signed_mutual_matches_at_0_8": 0,
+      "span_similarity": 0.9999999999999999
+    },
+    {
+      "name": "unrelated_span",
+      "nonnegative_reconstruction_of_positive_source_atoms": {
+        "mean_positive_coefficients": 0.0,
+        "relative_squared_error": 1.0
+      },
+      "signed_least_squares_relative_error": 1.0,
+      "signed_mutual_matches_at_0_8": 0,
+      "span_similarity": 0.0
+    }
+  ],
+  "schema": "sch.vpd-sae-subspace-semantics-audit.v1"
+}

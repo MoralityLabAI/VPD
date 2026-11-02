@@ -1,0 +1,137 @@
+{
+  "boundary": {
+    "additional_eligible_packs": 0,
+    "capture_or_training_performed": false,
+    "paid_compute_launched": false,
+    "recovery_code_executed": false,
+    "recovery_files_modified": false
+  },
+  "excluded_directories": [
+    "!**/.git/**",
+    "!**/.venv/**",
+    "!**/node_modules/**",
+    "!**/__pycache__/**"
+  ],
+  "filename_patterns": [
+    "captures.jsonl",
+    "calibration_tokens.jsonl",
+    "sae_quality.json",
+    "manifest.json",
+    "*capture*manifest*.json",
+    "*activation*manifest*.json",
+    "baseline_*.npz",
+    "activation_*.npz"
+  ],
+  "ignore_rules_disabled": true,
+  "limitations": [
+    "No full-disk search, Git-object inspection, archive extraction or deleted-file recovery was performed.",
+    "Timeout/failed roots are incomplete searches; zero output is not evidence of absence.",
+    "Filename matches are leads, not eligible captures. Nonstandard filenames and excluded trees may contain other data.",
+    "An earlier broad rg scan of Spiral_target/projects and Remote_clones was interrupted without results and is not counted as a complete search."
+  ],
+  "observed_utc": "2026-09-12T04:04:03.950857+00:00",
+  "report_id": "aa9b4165adc1ee975ae0669608390d301d71357d5e97a7df378af577606fcf1b",
+  "roots": [
+    {
+      "match_count": 50,
+      "matching_filenames": [
+        "E:/Recovered_C_projects/Spiral_target/projects/SmallControlHarness\\.codex-staging\\h3-metric-observations-smoke\\manifest.json",
+        "E:/Recovered_C_projects/Spiral_target/projects/SmallControlHarness\\.codex-staging\\h4-metric-observations-smoke-v2\\manifest.json",
+        "E:/Recovered_C_projects/Spiral_target/projects/SmallControlHarness\\Control-Harness-migration-study\\reports\\oracle_control\\qwen15_4b_q2_red_v1\\manifest.json",
+        "E:/Recovered_C_projects/Spiral_target/projects/SmallControlHarness\\Control-Harness-migration-study\\results\\mesh_escape_pit\\typed_v2\\manifest.json",
+        "E:/Recovered_C_projects/Spiral_target/projects/SmallControlHarness\\Control-Harness-migration-study\\results\\mesh_escape_pit\\verifiers_v1\\manifest.json",
+        "E:/Recovered_C_projects/Spiral_target/projects/SmallControlHarness\\Control-Harness-migration-study\\results\\storyworld_constitution_hrm\\bluebeam_bridge_v1\\manifest.json",
+        "E:/Recovered_C_projects/Spiral_target/projects/SmallControlHarness\\Control-Harness-migration-study\\results\\storyworld_constitution_hrm\\v0\\manifest.json",
+        "E:/Recovered_C_projects/Spiral_target/projects/SmallControlHarness\\Control-Harness-migration-study\\results\\storyworld_constitution_hrm\\v1\\embeddings_hash\\manifest.json",
+        "E:/Recovered_C_projects/Spiral_target/projects/SmallControlHarness\\Control-Harness-migration-study\\results\\storyworld_constitution_hrm\\v1\\manifest.json",
+        "E:/Recovered_C_projects/Spiral_target/projects/SmallControlHarness\\Control-Harness-migration-study\\results\\storyworld_constitution_hrm\\v2_frozen_text\\manifest.json",
+        "E:/Recovered_C_projects/Spiral_target/projects/SmallControlHarness\\Control-Harness-migration-study\\results\\storyworld_constitution_hrm\\v3_text_derivative\\embeddings_distilgpt2\\manifest.json",
+        "E:/Recovered_C_projects/Spiral_target/projects/SmallControlHarness\\Control-Harness-migration-study\\results\\storyworld_constitution_hrm\\v3_text_derivative\\embeddings_distilgpt2_pca64\\manifest.json",
+        "E:/Recovered_C_projects/Spiral_target/projects/SmallControlHarness\\Control-Harness-migration-study\\results\\storyworld_constitution_hrm\\v3_text_derivative\\embeddings_distilgpt2_pca64_l2\\manifest.json",
+        "E:/Recovered_C_projects/Spiral_target/projects/SmallControlHarness\\Control-Harness-migration-study\\results\\storyworld_constitution_hrm\\v3_text_derivative\\embeddings_distilgpt2_smoke_v3_cpu\\manifest.json",
+        "E:/Recovered_C_projects/Spiral_target/projects/SmallControlHarness\\Control-Harness-migration-study\\results\\storyworld_constitution_hrm\\v3_text_derivative\\manifest.json",
+        "E:/Recovered_C_projects/Spiral_target/projects/SmallControlHarness\\Control-Harness-public\\reports\\evals\\action_grounded_evidence_contract_v1\\application_run_20260911\\manifest.json",
+        "E:/Recovered_C_projects/Spiral_target/projects/SmallControlHarness\\Control-Harness-public\\reports\\evals\\bitagent_actor_calibration_v1\\positive-control\\manifest.json",
+        "E:/Recovered_C_projects/Spiral_target/projects/SmallControlHarness\\Control-Harness-public\\reports\\evals\\control_mesh_h3_rate_distortion_v1\\metric-observations\\manifest.json",
+        "E:/Recovered_C_projects/Spiral_target/projects/SmallControlHarness\\Control-Harness-public\\reports\\evals\\control_mesh_h4_adaptive_cutset_v1\\metric-observations\\manifest.json",
+        "E:/Recovered_C_projects/Spiral_target/projects/SmallControlHarness\\Control-Harness-public\\reports\\evals\\control_mesh_h6_module_observability_v1\\metric-observations\\manifest.json",
+        "E:/Recovered_C_projects/Spiral_target/projects/SmallControlHarness\\Control-Harness-public\\reports\\evals\\vcc_e1_learned_q4_confirmatory_v1\\raw\\manifest.json",
+        "E:/Recovered_C_projects/Spiral_target/projects/SmallControlHarness\\Control-Harness-public\\reports\\evals\\vcc_e1_learned_q4_holdout_v1\\raw\\manifest.json",
+        "E:/Recovered_C_projects/Spiral_target/projects/SmallControlHarness\\Control-Harness-public\\reports\\evals\\vcc_e1_learned_q4_metric_robustness_v1\\observations\\manifest.json",
+        "E:/Recovered_C_projects/Spiral_target/projects/SmallControlHarness\\Control-Harness-public\\reports\\evals\\vcc_metric_robustness_v1\\observations\\manifest.json",
+        "E:/Recovered_C_projects/Spiral_target/projects/SmallControlHarness\\Control-Harness-public\\reports\\evals\\vcc_q2_q4_promotion_v1\\evidence\\manifest.json",
+        "E:/Recovered_C_projects/Spiral_target/projects/SmallControlHarness\\Control-Harness-public\\reports\\evals\\vcc_q2_q4_runs_v1\\confirmatory\\manifest.json",
+        "E:/Recovered_C_projects/Spiral_target/projects/SmallControlHarness\\Control-Harness-public\\reports\\evals\\vcc_q2_q4_runs_v1\\development\\manifest.json",
+        "E:/Recovered_C_projects/Spiral_target/projects/SmallControlHarness\\Control-Harness-public\\reports\\evals\\vcc_q2_q4_runs_v1\\heldout\\manifest.json",
+        "E:/Recovered_C_projects/Spiral_target/projects/SmallControlHarness\\Control-Harness-public\\reports\\oracle_control\\qwen15_4b_q2_red_v1\\manifest.json",
+        "E:/Recovered_C_projects/Spiral_target/projects/SmallControlHarness\\Control-Harness-public\\results\\mesh_escape_pit\\control_mesh_h3_rate_distortion\\manifest.json",
+        "E:/Recovered_C_projects/Spiral_target/projects/SmallControlHarness\\Control-Harness-public\\results\\mesh_escape_pit\\control_mesh_h6_module_observability\\manifest.json",
+        "E:/Recovered_C_projects/Spiral_target/projects/SmallControlHarness\\Control-Harness-public\\results\\mesh_escape_pit\\typed_v2\\manifest.json",
+        "E:/Recovered_C_projects/Spiral_target/projects/SmallControlHarness\\Control-Harness-public\\results\\mesh_escape_pit\\verifiers_v1\\manifest.json",
+        "E:/Recovered_C_projects/Spiral_target/projects/SmallControlHarness\\Control-Harness-public\\results\\storyworld_constitution_hrm\\bluebeam_bridge_v1\\manifest.json",
+        "E:/Recovered_C_projects/Spiral_target/projects/SmallControlHarness\\Control-Harness-public\\results\\storyworld_constitution_hrm\\v0\\manifest.json",
+        "E:/Recovered_C_projects/Spiral_target/projects/SmallControlHarness\\Control-Harness-public\\results\\storyworld_constitution_hrm\\v1\\embeddings_hash\\manifest.json",
+        "E:/Recovered_C_projects/Spiral_target/projects/SmallControlHarness\\Control-Harness-public\\results\\storyworld_constitution_hrm\\v1\\manifest.json",
+        "E:/Recovered_C_projects/Spiral_target/projects/SmallControlHarness\\Control-Harness-public\\results\\storyworld_constitution_hrm\\v3_text_derivative\\embeddings_distilgpt2\\manifest.json",
+        "E:/Recovered_C_projects/Spiral_target/projects/SmallControlHarness\\Control-Harness-public\\results\\storyworld_constitution_hrm\\v3_text_derivative\\embeddings_distilgpt2_pca64\\manifest.json",
+        "E:/Recovered_C_projects/Spiral_target/projects/SmallControlHarness\\Control-Harness-public\\results\\storyworld_constitution_hrm\\v3_text_derivative\\embeddings_distilgpt2_pca64_l2\\manifest.json",
+        "E:/Recovered_C_projects/Spiral_target/projects/SmallControlHarness\\Control-Harness-public\\results\\storyworld_constitution_hrm\\v3_text_derivative\\embeddings_distilgpt2_smoke_v3_cpu\\manifest.json",
+        "E:/Recovered_C_projects/Spiral_target/projects/SmallControlHarness\\Control-Harness-public\\results\\storyworld_constitution_hrm\\v3_text_derivative\\manifest.json",
+        "E:/Recovered_C_projects/Spiral_target/projects/SmallControlHarness\\bitagent_small_control_authz\\artifacts\\demo\\contrasts\\manifest.json",
+        "E:/Recovered_C_projects/Spiral_target/projects/SmallControlHarness\\bitagent_small_control_authz_bonsai8b\\artifacts\\bonsai8b_authz_v1\\contrasts\\manifest.json",
+        "E:/Recovered_C_projects/Spiral_target/projects/SmallControlHarness\\bitagent_small_control_authz_bonsai8b\\artifacts\\bonsai8b_authz_v2_calibration\\contrasts\\manifest.json",
+        "E:/Recovered_C_projects/Spiral_target/projects/SmallControlHarness\\bitagent_small_control_authz_bonsai8b\\artifacts\\bonsai8b_authz_v2_confirm\\contrasts\\manifest.json",
+        "E:/Recovered_C_projects/Spiral_target/projects/SmallControlHarness\\bitagent_small_control_authz_bonsai8b\\artifacts\\bonsai8b_authz_v8\\vpd_sae_clusters\\manifest.json",
+        "E:/Recovered_C_projects/Spiral_target/projects/SmallControlHarness\\bitagent_small_control_authz_bonsai8b\\artifacts\\demo\\contrasts\\manifest.json",
+        "E:/Recovered_C_projects/Spiral_target/projects/SmallControlHarness\\storyworld-whitebox-control-starter\\storyworld-whitebox-control-starter\\data\\redteam_trajectories\\manifest.json",
+        "E:/Recovered_C_projects/Spiral_target/projects/SmallControlHarness\\storyworld-whitebox-control-starter\\storyworld-whitebox-control-starter\\reports\\oracle_control\\qwen15_4b_q2_red_v1\\manifest.json"
+      ],
+      "returncode": null,
+      "root": "E:/Recovered_C_projects/Spiral_target/projects/SmallControlHarness",
+      "scope": "filename patterns only; no array integrity, model identity, precision, freshness or Q2 eligibility certified",
+      "status": "timed_out_partial",
+      "timeout_seconds": 25
+    },
+    {
+      "match_count": 0,
+      "matching_filenames": [],
+      "returncode": 1,
+      "root": "E:/Recovered_C_projects/Spiral_target/projects/HRM-re",
+      "scope": "filename patterns only; no array integrity, model identity, precision, freshness or Q2 eligibility certified",
+      "status": "complete",
+      "timeout_seconds": 25
+    },
+    {
+      "match_count": 2,
+      "matching_filenames": [
+        "E:/Recovered_C_projects/Spiral_target/projects/trm_observability_harness\\data\\constitutional_compare\\moral_quandaries_same_endpoint_smoke\\manifest.json",
+        "E:/Recovered_C_projects/Spiral_target/projects/trm_observability_harness\\data\\qwen27b_intellect3_logic_flow_policy_decomp\\manifest.json"
+      ],
+      "returncode": 0,
+      "root": "E:/Recovered_C_projects/Spiral_target/projects/trm_observability_harness",
+      "scope": "filename patterns only; no array integrity, model identity, precision, freshness or Q2 eligibility certified",
+      "status": "complete",
+      "timeout_seconds": 25
+    },
+    {
+      "match_count": 0,
+      "matching_filenames": [],
+      "returncode": 1,
+      "root": "E:/Recovered_C_projects/Git_reconstructed/HRM-re",
+      "scope": "filename patterns only; no array integrity, model identity, precision, freshness or Q2 eligibility certified",
+      "status": "complete",
+      "timeout_seconds": 25
+    },
+    {
+      "match_count": 0,
+      "matching_filenames": [],
+      "returncode": 1,
+      "root": "E:/Recovered_C_projects/Git_reconstructed_loose/HRM-re_union",
+      "scope": "filename patterns only; no array integrity, model identity, precision, freshness or Q2 eligibility certified",
+      "status": "complete",
+      "timeout_seconds": 25
+    }
+  ],
+  "runner_sha256": "bcc4192c0714b6e21621357ae3d89e717d8f6bec180c4ef9c2ed35ae8e2661cc",
+  "schema": "sch.vpd-q2-recovery-capture-filename-search.v1"
+}

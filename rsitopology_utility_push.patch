@@ -1,0 +1,592 @@
+diff --git a/README.md b/README.md
+index da10af6..0000000 100644
+--- a/README.md
++++ b/README.md
+@@ -38,6 +38,13 @@ VPD protocol v0.2 preregisters two non-interchangeable estimands: direction
+ value within one site and site-selection value across identity-matched sites.
+ Neither may be pooled across identity strata or with the other contrast.
+ 
++The prospective utility-aware selection follow-up freezes geometric, global-
++utility, and interval-aware selectors over one equal-budget candidate catalog.
++It reports improvement over the unchanged baseline separately from regret to
++the best reachable candidate, retains unmeasured challengers, and charges model
++calls, FLOPs, storage, edited coordinates, and benign loss separately. See
++[the research note](reports/vpd_utility_aware_selection_followup_20260911.md)
++and `protocols/vpd_utility_aware_selection_v0_1.json`.
++
+ ## Gödel globe receipt viewer
+ 
+ [`godel-globe/index.html`](godel-globe/index.html) is a zero-build, direct-file
+diff --git a/protocols/vpd_utility_aware_selection_v0_1.json b/protocols/vpd_utility_aware_selection_v0_1.json
+new file mode 100644
+index 0000000..0000000
+--- /dev/null
++++ b/protocols/vpd_utility_aware_selection_v0_1.json
+@@ -0,0 +1,122 @@
++{
++  "protocol_id": "vpd_utility_aware_selection_v0_1",
++  "schema_version": "0.1.0",
++  "status": "prospective_archive_only_no_model_execution",
++  "registration_timing": "Seal the candidate catalog, case-family roles, selector inputs, geometry scores, budget ledger, random seeds, thresholds, and hashes before final outcomes are generated or revealed.",
++  "evidence_boundary": {
++    "separate_dictionary_equal_rank_checks": 36,
++    "separate_dictionary_admissions": 0,
++    "shared_axis_uses_existing_packs_for_fit": true,
++    "third_domain_transfer_established": false,
++    "semantic_attribution_established": false,
++    "loader_conformance_is_scientific_validation": false,
++    "current_architecture": "shared monolithic representation; no separate-dictionary or universal-axis admission"
++  },
++  "catalog": {
++    "maximum_candidates": 9,
++    "required_baseline": "unchanged_no_edit",
++    "candidate_definition": "A sealed intervention recipe with site, direction or subspace, sign, dose, rank, edited-coordinate accounting, fit lineage, and identity certificate.",
++    "equal_budget_fields": [
++      "total_rank",
++      "fit_model_call_cap",
++      "fit_flop_cap",
++      "fit_storage_byte_cap",
++      "maximum_edited_coordinates"
++    ],
++    "unmeasured_candidate_policy": "Retain as a challenger with task and benign mean intervals [0,1] unless outcome-independent infeasibility was sealed before reveal.",
++    "failed_fit_policy": "Charge the fit and retain the registered slot as unmeasured; do not replace it after outcomes."
++  },
++  "selectors": {
++    "global_utility": {
++      "rule": "Choose the candidate with largest calibration mean downstream utility; ties prefer the unchanged baseline then frozen catalog order.",
++      "geometry_inputs": false
++    },
++    "geometric": {
++      "rule": "Choose the largest discovery-only frozen geometry score; ties prefer the unchanged baseline then frozen catalog order.",
++      "outcome_inputs": false
++    },
++    "interval_aware": {
++      "rule": "Among candidates whose simultaneous benign-loss upper bound is at most 0.01, minimize the simultaneous task-regret upper bound; ties prefer the largest task-utility lower bound, then unchanged baseline and catalog order.",
++      "maximum_benign_loss_upper_bound": 0.01
++    }
++  },
++  "outcomes": {
++    "downstream_utility": "Preregistered bounded task utility in [0,1], aggregated once per independent final case-family block.",
++    "baseline_improvement": "mean_utility(selected)-mean_utility(unchanged_no_edit)",
++    "best_reachable_regret": "max mean_utility(challenger)-mean_utility(selected) over every sealed, outcome-independently feasible catalog candidate",
++    "benign_loss": "mean_benign(unchanged_no_edit)-mean_benign(selected)",
++    "identity_stratification": "Report direction-value and site-selection estimands separately within the existing registered identity strata."
++  },
++  "case_blocks": {
++    "independence_unit": "case family or run replicate, never token, activation row, prompt variant, retry, or member of a matched contrast",
++    "roles": ["discovery", "calibration", "final", "benign_regression"],
++    "pairwise_disjoint_roles": true,
++    "minimum_final_blocks": 8,
++    "grouping_rule": "All descendants, matched arms, retries, seeds sharing an originating case, and near-duplicate templates stay in one block and one role."
++  },
++  "uncertainty": {
++    "coverage": 0.95,
++    "method": "Distribution-free Hoeffding mean intervals with a union bound over all candidate task and benign means in one frozen comparison.",
++    "conditional_scope": "Conditional on frozen fitted candidates and selector registration; no joint claim across unrelated studies.",
++    "declared_error_set": "E_rho={e in R^K: abs(e_j)<=rho for every candidate j}",
++    "error_radii": [0.0, 0.02, 0.05],
++    "interpretation": "The error set is score-misspecification sensitivity, not empirically calibrated transfer uncertainty.",
++    "improvement_interval": "[L_q-U_0,U_q-L_0]",
++    "regret_interval": "[max(0,max_p(L_p-U_q)),max(0,max_p(U_p-L_q))] over p != q",
++    "missing_case_policy": "Any missing declared block makes that candidate mean interval [0,1].",
++    "small_sample_policy": "Wide bounds are inconclusive; do not substitute token or row pseudoreplicates or continue sampling a revealed final set."
++  },
++  "physical_cost_ledger": {
++    "report_separately": [
++      "model requests, forwards, backwards, recurrent invocations, retries, and generated tokens",
++      "fit, capture, selector, and evaluation FLOPs with estimator and version",
++      "persistent bytes, read bytes, artifact hashes, peak RAM, and peak VRAM",
++      "total rank, distinct physical parameter entries, activation coordinates, coordinate-write events, and edit norm",
++      "benign utility loss with simultaneous uncertainty"
++    ],
++    "rank_semantics": "A dense rank-one matrix edit changes many physical scalar entries; a one-dimensional activation direction may write every hidden coordinate and may recur at many tokens or invocations.",
++    "unknown_cost_policy": "Use null with a reason, never zero. Shared fit cost is reported once for the campaign and fully for a standalone selector deployment.",
++    "cost_penalty": "No post-outcome scalar conversion of calls, FLOPs, bytes, or benign loss into task utility. Use constraints and a utility-resource Pareto table."
++  },
++  "controls": {
++    "held_out_family": "Required and disjoint from discovery and calibration.",
++    "random_subspace": "At least two preseeded directions or subspaces matched on site, total rank, norm, fit exposure, edited coordinates, and evaluation budget.",
++    "label_only": "Use only registered case/pass/site labels and a discovery-only lookup; no activation geometry, component effects, or final labels.",
++    "unchanged_baseline": "Evaluated on the identical case blocks and scorer."
++  },
++  "admission": {
++    "requirements": [
++      "simultaneous baseline-improvement lower bound strictly greater than zero",
++      "simultaneous regret upper bound at most 0.02",
++      "simultaneous benign-loss upper bound at most 0.01",
++      "geometric and interval-aware selection beat matched random and label-only controls under the registered contrast",
++      "all existing identity, support, rank, norm, utility, and execution gates pass",
++      "complete physical cost ledger and no adaptive candidate replacement"
++    ],
++    "otherwise": "Retain the unchanged baseline and the existing shared-monolithic interpretation."
++  },
++  "falsifiers": [
++    "A matched random or label-only control has a strictly positive simultaneous advantage over the claimed selector.",
++    "The selected candidate improves on baseline but its challenger-regret upper bound exceeds 0.02.",
++    "Any final family contributes to fitting, thresholding, catalog construction, geometry scoring, or selector choice.",
++    "Budgets differ or an unmeasured challenger is silently removed.",
++    "Reconstruction, occupancy, axis alignment, loader conformance, or probe score is presented as downstream utility.",
++    "Existing-pack shared-axis fit is presented as third-domain transfer or semantic attribution."
++  ],
++  "execution_authorized": false,
++  "model_inference_performed_by_protocol": false
++}
+diff --git a/reports/vpd_utility_aware_selection_followup_20260911.md b/reports/vpd_utility_aware_selection_followup_20260911.md
+new file mode 100644
+index 0000000..0000000
+--- /dev/null
++++ b/reports/vpd_utility_aware_selection_followup_20260911.md
+@@ -0,0 +1,69 @@
++# Utility-aware VPD selection follow-up
++
++Date: 2026-09-11. Status: prospective archive-only design. No model was loaded, no inference was run, no VPD or dictionary was fitted, and no edit was applied for this follow-up.
++
++## Evidence carried forward
++
++The activation-category/SAE review does not support spending capacity on separate dictionaries. Equal-total-rank pass routing earned zero admissions in 36 archive/site/rank checks: the monolithic arm won 35 and one comparison was inconclusive. A bisector fitted from the same existing packs can describe their shared geometry, but it is not transfer to a new domain and does not identify feature semantics. Loader or callback conformance establishes engineering compatibility only.
++
++The operative starting point is therefore one shared representation and a finite intervention catalog. The scientific question is whether a frozen selection rule chooses a downstream-useful candidate under equal rank and fit budget, not whether geometry looks structured.
++
++## Frozen selection comparison
++
++Three selectors act on the same sealed catalog:
++
++| Selector | Information used | Rule |
++| --- | --- | --- |
++| Global utility | Calibration task outcomes | Largest mean calibration utility |
++| Geometric | Discovery-only geometry | Largest frozen geometry score |
++| Interval-aware | Calibration utility and uncertainty | Smallest worst-case regret among candidates satisfying the benign-loss bound |
++
++Catalog entries are interventions, not selectors. Every entry records the exact site, direction/subspace, sign, dose, total rank, edited-coordinate accounting, fit lineage, identity certificate, and physical-cost caps. Include the unchanged baseline, the preregistered geometric candidates, at least two matched random subspaces, and a pass/site-label-only control. A failed or missing registered candidate remains an unmeasured challenger unless an outcome-independent constraint made it infeasible before reveal.
++
++The comparison matches total rank, fit model-call allowance, fit FLOP cap, fit-storage cap, edited-coordinate cap, calibration cases, and final cases. Unused allowance cannot finance extra search. Actual resource use remains visible even when caps match.
++
++## Utility and missed challengers
++
++For candidate `q`, report downstream improvement over the unchanged baseline and regret to the best reachable candidate as different estimands. If simultaneous candidate-mean intervals are `[L_p,U_p]`, use:
++
++`improvement(q) in [L_q-U_0, U_q-L_0]`
++
++`regret(q) in [max(0,max_(p!=q)(L_p-U_q)), max(0,max_(p!=q)(U_p-L_q))]`.
++
++Name every possible missed challenger and the candidates attaining each regret bound. Improvement can be positive while regret remains large. An unmeasured challenger retains `[0,1]`, usually preventing a strong regret claim; this is the intended penalty for incomplete comparison.
++
++The offline calculator uses a conservative Hoeffding/union-bound interval over all task and benign candidate means. The independent unit is a complete case family or run replicate. Tokens, activation rows, prompt variants, matched arms, and retries are not independent observations. Report the primary result at score-error radius zero and sensitivity radii 0.02 and 0.05 under the declared box error set. These radii test score misspecification; they do not establish robustness to a new domain.
++
++Direction value and site-selection value remain separate estimands within the existing identity strata. Do not pool across contrast types or identity levels. Held-out-family, matched-random, label-only, and unchanged controls are all required.
++
++## Physical access costs
++
++Record five ledgers separately:
++
++1. Model requests, forward/backward calls, recurrent invocations, retries, and generated tokens.
++2. Fit, capture, selector, and evaluation FLOPs, including the estimator and version.
++3. Persistent/read bytes, hashes, and peak RAM/VRAM.
++4. Total rank, distinct physical parameter entries, activation coordinates, repeated writes, and edit norm.
++5. Benign utility loss relative to the unchanged baseline with simultaneous uncertainty.
++
++A rank-one dense parameter update is not one edited scalar. A one-dimensional activation direction may write every hidden coordinate and may be applied at many tokens or recurrent passes. Unknown historical cost is `null` with a reason, never zero. Utility and resources stay separate rather than using a fitted post-outcome exchange rate.
++
++## Decision rule and falsifiers
++
++A result is eligible only if its simultaneous improvement lower bound is positive, regret upper bound is at most 0.02, benign-loss upper bound is at most 0.01, matched controls lose under the registered contrast, and all earlier identity/support/rank/norm/execution gates pass. Otherwise retain the unchanged baseline and current shared-monolithic interpretation.
++
++The claim is falsified or unsupported if random/label-only controls match the proposed advantage, final families influence selection, budgets differ, missing challengers disappear, or geometry/reconstruction/probe metrics substitute for task utility. No result from these existing packs alone may be promoted to semantic attribution or third-domain transfer.
++
++The machine-readable design is `protocols/vpd_utility_aware_selection_v0_1.json`. `rsi_topology.utility_selection` provides offline arithmetic for frozen block tables; it does not select a live edit or authorize execution.
+diff --git a/rsi_topology/utility_selection.py b/rsi_topology/utility_selection.py
+new file mode 100644
+index 0000000..0000000
+--- /dev/null
++++ b/rsi_topology/utility_selection.py
+@@ -0,0 +1,198 @@
++"""Offline uncertainty and regret for a frozen finite VPD candidate catalog."""
++
++from __future__ import annotations
++
++import math
++from collections.abc import Mapping, Sequence
++from typing import Any
++
++
++def _mean_interval(
++    values: Sequence[float | None] | None, n: int, radius: float, rho: float
++) -> dict[str, Any]:
++    if values is None:
++        return {"mean": None, "interval": [0.0, 1.0], "missing_blocks": n}
++    if len(values) != n:
++        raise ValueError("every score column must match the declared block IDs")
++    for value in values:
++        if value is not None and (
++            isinstance(value, bool)
++            or not isinstance(value, (int, float))
++            or not math.isfinite(value)
++            or not 0 <= value <= 1
++        ):
++            raise ValueError("scores must be finite numbers in [0,1] or None")
++    missing = sum(value is None for value in values)
++    if missing:
++        return {"mean": None, "interval": [0.0, 1.0], "missing_blocks": missing}
++    score = math.fsum(values) / n
++    return {
++        "mean": score,
++        "interval": [max(0.0, score - radius - rho), min(1.0, score + radius + rho)],
++        "missing_blocks": 0,
++    }
++
++
++def _difference(left: Sequence[float], right: Sequence[float], *, same: bool = False) -> list[float]:
++    if same:
++        return [0.0, 0.0]
++    return [left[0] - right[1], left[1] - right[0]]
++
++
++def evaluate_selection(
++    *,
++    block_ids: Sequence[str],
++    utility: Mapping[str, Sequence[float | None] | None],
++    benign: Mapping[str, Sequence[float | None] | None],
++    selected: str,
++    baseline: str,
++    alpha: float = 0.05,
++    error_radius: float = 0.0,
++) -> dict[str, Any]:
++    """Evaluate one already-frozen choice while retaining every challenger."""
++    if not block_ids or any(not isinstance(item, str) or not item for item in block_ids):
++        raise ValueError("nonempty string family-block IDs required")
++    if len(set(block_ids)) != len(block_ids):
++        raise ValueError("duplicate family blocks are not independent observations")
++    if not utility or list(utility) != list(benign):
++        raise ValueError("task and benign tables must retain the same ordered catalog")
++    if selected not in utility or baseline not in utility:
++        raise ValueError("selected and baseline candidates must be in the catalog")
++    if not math.isfinite(alpha) or not 0 < alpha < 1:
++        raise ValueError("alpha must be in (0,1)")
++    if not math.isfinite(error_radius) or not 0 <= error_radius <= 1:
++        raise ValueError("error radius must be finite and in [0,1]")
++
++    n, k = len(block_ids), len(utility)
++    radius = math.sqrt(math.log(4 * k / alpha) / (2 * n))
++    intervals = {
++        name: {
++            "utility": _mean_interval(utility[name], n, radius, error_radius),
++            "benign": _mean_interval(benign[name], n, radius, error_radius),
++        }
++        for name in utility
++    }
++    chosen = intervals[selected]
++    unchanged = intervals[baseline]
++    challengers = []
++    for name, row in intervals.items():
++        if name == selected:
++            continue
++        challengers.append(
++            {
++                "id": name,
++                "advantage_interval": _difference(
++                    row["utility"]["interval"], chosen["utility"]["interval"]
++                ),
++            }
++        )
++    regret_lower = max([0.0] + [row["advantage_interval"][0] for row in challengers])
++    regret_upper = max([0.0] + [row["advantage_interval"][1] for row in challengers])
++    means = {name: row["utility"]["mean"] for name, row in intervals.items()}
++    measured = {name: value for name, value in means.items() if value is not None}
++    all_measured = len(measured) == k
++    return {
++        "scope": "conditional_within_comparison_not_empirical_admission",
++        "selected": selected,
++        "baseline": baseline,
++        "catalog": list(utility),
++        "independent_family_blocks_assumed": n,
++        "alpha": alpha,
++        "simultaneous_mean_count": 2 * k,
++        "hoeffding_radius": radius,
++        "error_radius": error_radius,
++        "intervals": intervals,
++        "baseline_improvement": {
++            "point": (
++                None
++                if means[selected] is None or means[baseline] is None
++                else means[selected] - means[baseline]
++            ),
++            "interval": _difference(
++                chosen["utility"]["interval"],
++                unchanged["utility"]["interval"],
++                same=selected == baseline,
++            ),
++        },
++        "regret": {
++            "point": max(measured.values()) - means[selected] if all_measured else None,
++            "interval": [regret_lower, regret_upper],
++            "observed_best_candidate": max(measured, key=measured.get) if measured else None,
++            "possible_missed_challengers": [
++                row["id"] for row in challengers if row["advantage_interval"][1] > 0
++            ],
++            "lower_bound_attainers": (
++                [row["id"] for row in challengers if row["advantage_interval"][0] == regret_lower]
++                if regret_lower > 0
++                else [selected]
++            ),
++            "upper_bound_attainers": (
++                [row["id"] for row in challengers if row["advantage_interval"][1] == regret_upper]
++                if regret_upper > 0
++                else [selected]
++            ),
++        },
++        "benign_loss": {
++            "interval": _difference(
++                unchanged["benign"]["interval"],
++                chosen["benign"]["interval"],
++                same=selected == baseline,
++            )
++        },
++    }
++
++
++def compare_calibration_selectors(
++    *,
++    block_ids: Sequence[str],
++    utility: Mapping[str, Sequence[float | None] | None],
++    benign: Mapping[str, Sequence[float | None] | None],
++    geometry_scores: Mapping[str, float],
++    baseline: str,
++    maximum_benign_loss: float = 0.01,
++    alpha: float = 0.05,
++) -> dict[str, Any]:
++    """Choose three selectors on calibration data; final evaluation is separate."""
++    catalog = list(utility)
++    if list(benign) != catalog or list(geometry_scores) != catalog:
++        raise ValueError("all selector inputs must use the same ordered catalog")
++    if baseline not in catalog:
++        raise ValueError("baseline must be in the catalog")
++    if not math.isfinite(maximum_benign_loss) or maximum_benign_loss < 0:
++        raise ValueError("maximum benign loss must be finite and nonnegative")
++    if any(
++        isinstance(score, bool) or not isinstance(score, (int, float)) or not math.isfinite(score)
++        for score in geometry_scores.values()
++    ):
++        raise ValueError("geometry scores must be finite numbers")
++
++    reports = {
++        name: evaluate_selection(
++            block_ids=block_ids,
++            utility=utility,
++            benign=benign,
++            selected=name,
++            baseline=baseline,
++            alpha=alpha,
++        )
++        for name in catalog
++    }
++    means = {name: reports[name]["intervals"][name]["utility"]["mean"] for name in catalog}
++    if any(value is None for value in means.values()):
++        global_choice = baseline
++    else:
++        global_choice = max(catalog, key=lambda name: (means[name], name == baseline, -catalog.index(name)))
++    geometric_choice = max(
++        catalog,
++        key=lambda name: (geometry_scores[name], name == baseline, -catalog.index(name)),
++    )
++    eligible = [
++        name
++        for name in catalog
++        if reports[name]["benign_loss"]["interval"][1] <= maximum_benign_loss
++    ]
++    if eligible:
++        interval_choice = min(
++            eligible,
++            key=lambda name: (
++                reports[name]["regret"]["interval"][1],
++                -reports[name]["intervals"][name]["utility"]["interval"][0],
++                name != baseline,
++                catalog.index(name),
++            ),
++        )
++    else:
++        interval_choice = baseline
++    return {
++        "catalog": catalog,
++        "selected": {
++            "global_utility": global_choice,
++            "geometric": geometric_choice,
++            "interval_aware": interval_choice,
++        },
++        "candidate_reports": reports,
++        "final_outcomes_used": False,
++    }
++
++
++def validate_equal_fit_budgets(candidates: Sequence[Mapping[str, Any]]) -> dict[str, Any]:
++    """Fail closed unless the fields that define rank and fit opportunity match."""
++    required = (
++        "candidate_id",
++        "total_rank",
++        "fit_model_call_cap",
++        "fit_flop_cap",
++        "fit_storage_byte_cap",
++        "maximum_edited_coordinates",
++    )
++    if not candidates:
++        raise ValueError("at least one candidate is required")
++    ids = []
++    vectors = []
++    for candidate in candidates:
++        missing = [field for field in required if field not in candidate]
++        if missing:
++            raise ValueError(f"candidate missing budget fields: {missing}")
++        candidate_id = candidate["candidate_id"]
++        if not isinstance(candidate_id, str) or not candidate_id:
++            raise ValueError("candidate_id must be a nonempty string")
++        ids.append(candidate_id)
++        vector = []
++        for field in required[1:]:
++            value = candidate[field]
++            if isinstance(value, bool) or not isinstance(value, (int, float)) or value < 0:
++                raise ValueError(f"{field} must be a nonnegative number")
++            vector.append(value)
++        vectors.append(tuple(vector))
++    if len(set(ids)) != len(ids):
++        raise ValueError("candidate IDs must be unique")
++    if len(set(vectors)) != 1:
++        raise ValueError("candidate rank or fit budgets differ")
++    return {"status": "pass", "candidate_count": len(ids), "budget_vector": list(vectors[0])}
+diff --git a/tests/test_utility_selection.py b/tests/test_utility_selection.py
+new file mode 100644
+index 0000000..0000000
+--- /dev/null
++++ b/tests/test_utility_selection.py
+@@ -0,0 +1,121 @@
++from __future__ import annotations
++
++import pytest
++
++from rsi_topology.utility_selection import (
++    compare_calibration_selectors,
++    evaluate_selection,
++    validate_equal_fit_budgets,
++)
++
++
++def columns(values, n=10000):
++    return {name: None if value is None else [value] * n for name, value in values.items()}
++
++
++def test_improvement_and_regret_are_distinct():
++    utility = columns({"baseline": 0.2, "selected": 0.5, "missed": 0.9})
++    result = evaluate_selection(
++        block_ids=[str(i) for i in range(10000)],
++        utility=utility,
++        benign=columns({"baseline": 0.9, "selected": 0.9, "missed": 0.9}),
++        selected="selected",
++        baseline="baseline",
++    )
++    assert result["baseline_improvement"]["interval"][0] > 0
++    assert result["regret"]["point"] == pytest.approx(0.4)
++    assert result["regret"]["interval"][0] > 0.3
++    assert result["regret"]["upper_bound_attainers"] == ["missed"]
++
++
++def test_missing_challenger_remains_in_envelope():
++    result = evaluate_selection(
++        block_ids=[str(i) for i in range(10000)],
++        utility=columns({"baseline": 0.3, "selected": 0.6, "unmeasured": None}),
++        benign=columns({"baseline": 0.9, "selected": 0.9, "unmeasured": None}),
++        selected="selected",
++        baseline="baseline",
++    )
++    assert result["intervals"]["unmeasured"]["utility"]["interval"] == [0, 1]
++    assert result["regret"]["point"] is None
++    assert "unmeasured" in result["regret"]["possible_missed_challengers"]
++
++
++def test_error_radius_widens_challenger_envelope_and_self_cancels():
++    clean = evaluate_selection(
++        block_ids=[str(i) for i in range(10000)],
++        utility=columns({"baseline": 0.4, "selected": 0.6}),
++        benign=columns({"baseline": 0.9, "selected": 0.9}),
++        selected="selected",
++        baseline="baseline",
++    )
++    stressed = evaluate_selection(
++        block_ids=[str(i) for i in range(10000)],
++        utility=columns({"baseline": 0.4, "selected": 0.6}),
++        benign=columns({"baseline": 0.9, "selected": 0.9}),
++        selected="selected",
++        baseline="baseline",
++        error_radius=0.05,
++    )
++    assert stressed["regret"]["interval"][1] >= clean["regret"]["interval"][1]
++    baseline = evaluate_selection(
++        block_ids=["a", "b"],
++        utility={"baseline": [0.4, 0.5]},
++        benign={"baseline": [0.9, 0.9]},
++        selected="baseline",
++        baseline="baseline",
++        error_radius=0.05,
++    )
++    assert baseline["baseline_improvement"]["interval"] == [0, 0]
++    assert baseline["regret"]["interval"] == [0, 0]
++    assert baseline["benign_loss"]["interval"] == [0, 0]
++
++
++def test_three_selectors_share_catalog_but_can_choose_differently():
++    n = 10000
++    result = compare_calibration_selectors(
++        block_ids=[str(i) for i in range(n)],
++        utility=columns({"baseline": 0.4, "geometry": 0.6, "high_utility": 0.8}, n),
++        benign=columns({"baseline": 0.9, "geometry": 0.9, "high_utility": 0.5}, n),
++        geometry_scores={"baseline": 0.0, "geometry": 1.0, "high_utility": 0.2},
++        baseline="baseline",
++    )
++    assert result["selected"]["global_utility"] == "high_utility"
++    assert result["selected"]["geometric"] == "geometry"
++    assert result["selected"]["interval_aware"] == "baseline"
++    assert result["final_outcomes_used"] is False
++
++
++def test_missing_case_fails_closed_and_bad_values_are_rejected():
++    result = evaluate_selection(
++        block_ids=["a", "b"],
++        utility={"baseline": [0.5, 0.5], "candidate": [0.8, None]},
++        benign={"baseline": [0.9, 0.9], "candidate": [0.9, 0.9]},
++        selected="candidate",
++        baseline="baseline",
++    )
++    assert result["intervals"]["candidate"]["utility"]["interval"] == [0, 1]
++    with pytest.raises(ValueError, match="scores"):
++        evaluate_selection(
++            block_ids=["a"], utility={"baseline": [True]}, benign={"baseline": [1.0]},
++            selected="baseline", baseline="baseline",
++        )
++
++
++def test_equal_fit_budget_validator():
++    candidates = [
++        {
++            "candidate_id": name,
++            "total_rank": 64,
++            "fit_model_call_cap": 128,
++            "fit_flop_cap": 10**12,
++            "fit_storage_byte_cap": 10**9,
++            "maximum_edited_coordinates": 64,
++        }
++        for name in ("baseline", "geometric", "random")
++    ]
++    assert validate_equal_fit_budgets(candidates)["status"] == "pass"
++    candidates[2]["total_rank"] = 32
++    with pytest.raises(ValueError, match="budgets differ"):
++        validate_equal_fit_budgets(candidates)
++
++
++def test_duplicate_blocks_and_catalog_mismatch_are_rejected():
++    with pytest.raises(ValueError, match="duplicate"):
++        evaluate_selection(
++            block_ids=["x", "x"], utility={"baseline": [1, 1]},
++            benign={"baseline": [1, 1]}, selected="baseline", baseline="baseline",
++        )
++    with pytest.raises(ValueError, match="ordered catalog"):
++        evaluate_selection(
++            block_ids=["x"], utility={"baseline": [1], "candidate": [0]},
++            benign={"baseline": [1]}, selected="baseline", baseline="baseline",
++        )

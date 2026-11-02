@@ -1,0 +1,30 @@
+{
+  "status": "experiment_and_analysis_complete",
+  "native_conditions": 450,
+  "inputs": 10,
+  "task_groups": 8,
+  "native_model_closed": true,
+  "gpu_inference": false,
+  "source_manifest_sha256": "30df0f28705d99eabc4740d54a987170a511801b34922ed93d8eefa19b5f2364",
+  "state_validation_sha256": "b267126e2297d9eff653178fcff8037af1a932d51f3358b925c42cf81547bd3c",
+  "metric_validation_sha256": "f43eda21eed8fc1637a8e2af1bbae51c94232daafebdba51633453ac6c31103d",
+  "report_manifest_sha256": "2ca5203d293973663f64edf45d402726c387e2396db6818f067d365655a8f4ce",
+  "tests_passed": 5,
+  "plotted_figure_visually_reviewed": true,
+  "figure_sha256": "443f6f7f6268939c766155921309d8d3c039d37444b8322ec23f3f0cd00eb768",
+  "figure_review": "All four panels, sign legend, linear and symmetric-log axes, labels and extrema are legible and unclipped.",
+  "findings": {
+    "local_failure_without_state_carry": true,
+    "muon_propagated_reset_positive_carry_negative": 6,
+    "support_control_example": {
+      "history": "one_pass",
+      "layer": 22,
+      "dose": -1.0,
+      "full_fidelity": -52.3672505033968,
+      "frozen_support_fidelity": -0.000542629109896442
+    }
+  },
+  "trained_architecture_causality_established": false,
+  "full_benchmark_completed": false,
+  "prior_v006_unchanged": true
+}

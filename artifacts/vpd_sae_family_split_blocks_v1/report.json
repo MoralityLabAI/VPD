@@ -1,0 +1,129 @@
+{
+  "boundary": {
+    "fresh_pack_created": false,
+    "launch_authorized": false,
+    "model_inference_performed": false,
+    "new_families_admitted": 0,
+    "recovery_code_executed": false,
+    "training_performed": false
+  },
+  "development_evidence": {
+    "dyck_language": {
+      "family": "dyck_language",
+      "id": "intellect3_logic/05645/a9b60f7bd14a",
+      "prompt_sha256": "a9b60f7bd14aa7229d5417c31c9c64460f8172963ff9f951be807400e6d6a22c",
+      "source_revision": "a9eb9183224cec63fe9a71e7a3a80cff14868624",
+      "split": "dev"
+    },
+    "dyck_language_errors": {
+      "family": "dyck_language_errors",
+      "id": "intellect3_logic/06128/236238adf018",
+      "prompt_sha256": "236238adf0184418229a93d8927b6c15c7dd13979e0cc2441a2e7abb02f79e23",
+      "source_revision": "a9eb9183224cec63fe9a71e7a3a80cff14868624",
+      "split": "dev"
+    },
+    "word_sorting": {
+      "family": "word_sorting",
+      "id": "intellect3_logic/07442/3af82de403ea",
+      "prompt_sha256": "3af82de403ea9e942cbe144f1611611d461f9fc9af65f2724109fb13a9eae8d8",
+      "source_revision": "a9eb9183224cec63fe9a71e7a3a80cff14868624",
+      "split": "dev"
+    },
+    "word_sorting_mistake": {
+      "family": "word_sorting_mistake",
+      "id": "intellect3_logic/08260/4e9078710573",
+      "prompt_sha256": "4e907871057394c798f7c729fb9711ddb55f799f527b706936f48f482deafe88",
+      "source_revision": "a9eb9183224cec63fe9a71e7a3a80cff14868624",
+      "split": "dev"
+    }
+  },
+  "eligible_label_to_split_block": {
+    "arc_grid": "unreviewed:arc_grid",
+    "arrow_maze": "unreviewed:arrow_maze",
+    "boolean_expressions": "unreviewed:boolean_expressions",
+    "buggy_tables": "unreviewed:buggy_tables",
+    "calcudoko": "unreviewed:calcudoko",
+    "cipher": "unreviewed:cipher",
+    "dyck_language": "reviewed:bracket_matching",
+    "dyck_language_errors": "reviewed:bracket_matching",
+    "futoshiki": "unreviewed:futoshiki",
+    "goods_exchange": "unreviewed:goods_exchange",
+    "kukurasu": "unreviewed:kukurasu",
+    "math": "unreviewed:math",
+    "math_path": "unreviewed:math_path",
+    "mathador": "unreviewed:mathador",
+    "minesweeper": "unreviewed:minesweeper",
+    "norinori": "unreviewed:norinori",
+    "number_wall": "unreviewed:number_wall",
+    "numbrix": "unreviewed:numbrix",
+    "object_counting": "unreviewed:object_counting",
+    "object_properties": "unreviewed:object_properties",
+    "space_reasoning_tree": "unreviewed:space_reasoning_tree",
+    "sudoku": "unreviewed:sudoku",
+    "survo": "unreviewed:survo",
+    "time_sequence": "unreviewed:time_sequence",
+    "web_of_lies": "unreviewed:web_of_lies",
+    "word_sorting": "reviewed:lexical_ordering",
+    "word_sorting_mistake": "reviewed:lexical_ordering",
+    "wordscapes": "unreviewed:wordscapes",
+    "zebra_puzzle": "unreviewed:zebra_puzzle"
+  },
+  "eligible_labels": 29,
+  "limitations": [
+    "Co-assignment is a conservative design judgment based on public development task semantics, not proof of identical mechanisms or statistical dependence.",
+    "Singleton blocks are unreviewed; the block count is an upper bound under these rules, not a count of admitted independent families.",
+    "No final-evaluation prompts or graders were selected for semantic review; metadata inventory reads the existing corpus.",
+    "N-Queens has nine board sizes across all three difficulties, so the single-difficulty shortfall does not rule out four sizes across difficulties. Freshness and near-duplicates remain unverified.",
+    "The role checker is a reusable component, not integrated into the sealed protocol or existing row planner."
+  ],
+  "nqueens": {
+    "distinct_board_sizes_all_difficulties": 9,
+    "distinct_problems_per_difficulty": {
+      "expert": 3,
+      "hard": 3,
+      "medium": 3
+    },
+    "four_distinct_examples_at_one_declared_difficulty_possible": false,
+    "interpretation": "Reviewed generate method randomizes only board size; reference search is deterministic. Seeds and difficulty labels are not additional public constraints.",
+    "public_board_sizes_by_difficulty": {
+      "expert": [
+        18,
+        19,
+        20
+      ],
+      "hard": [
+        14,
+        15,
+        16
+      ],
+      "medium": [
+        10,
+        11,
+        12
+      ]
+    },
+    "source_sha256": "83dfb8ba2381961e7c38b0f10434155ac049cc52f6a43cf94c3cde1552096174"
+  },
+  "nqueens_source_path": "E:\\Recovered_C_projects\\Remote_clones\\prime_intellect_research_environments\\environments\\reasoning\\prolog\\prolog\\generators\\nqueens.py",
+  "remaining_unreviewed_singleton_blocks": 25,
+  "report_id": "081799e63214bc743f92be8c90b7aaee8d02d82f5fbc9a9d0c4a56c3b4379621",
+  "reviewed_blocks": {
+    "bracket_matching": [
+      "dyck_language",
+      "dyck_language_errors"
+    ],
+    "lexical_ordering": [
+      "word_sorting",
+      "word_sorting_mistake"
+    ]
+  },
+  "runner_sha256": "40dc7e3f52c2072fca6f60beff539fe7b948a02c4e676f86da52edbcb1744022",
+  "schema": "sch.vpd-sae-family-split-block-review.v1",
+  "source": {
+    "manifest_sha256": "0c74669d4abd65defe4b445467c805e053361e186a2c2d5c741fca2d040f36fc",
+    "path": "C:\\projects\\VPD\\artifacts\\nanbeige_reasoning\\dataset_v1",
+    "questions_sha256": "53d1b14e549e1f68be0fbe3f434339ac69682486ccf19e9d564b000ee7c51291"
+  },
+  "source_inventory_report_id": "6510d89f24e688233fba991c991d306259f5df1f0d56230904a682082c4a5dcc",
+  "split_blocks_after_two_conservative_merges": 27
+}

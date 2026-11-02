@@ -1,0 +1,26 @@
+{
+  "status": "all_final_pages_visually_reviewed",
+  "pages": 15,
+  "pdf_sha256": "7f9b7049213bb9c5169088c57a4ef442be6591d0c6b1f9b93ad04ee4fd906279",
+  "method": "All 15 pages inspected in contact sheets; new comparison and gate tables additionally inspected at full rendered size.",
+  "findings": "No clipping, overlap or missing visible glyphs; equations, charts, tables, page numbers and section transitions checked.",
+  "render_note": "Poppler emitted Symbol/ArialUnicode fallback warnings; rendered mathematical figures and text inspected.",
+  "images": {
+    "1": "ed605ee2f4ca606b78ce7db9884d1f217674ae0fccfd3dad2cc98e0a308508f9",
+    "2": "6b1bfcc1b15b91bb6875242912d9dea5f64f432ac9185abf1313c19f0b05fcf2",
+    "3": "90fe5781ee2a4eb29525c96cfa3df74b57a6f852cbe1e5b7e484bc4f5d96c896",
+    "4": "e7b3f5991164b77edd1ebcbae5f21f46b31cd5caab2ad8d2f06fbec1d0ae29c2",
+    "5": "326348e305f7ce13ced8447360d8edd9e53d242f448d49f96466f4a5b382bd39",
+    "6": "0ecc0058fa385b8cef6bacbc1f9e8f51cae21efd031216ac350e74037249d84d",
+    "7": "521cc478ebe71c0a999566bbec401bfcedfe627be4c6bcc695ebcc2ac792fc4c",
+    "8": "842d546a2db1d0f6e7c32369660e5540a00504333845cd86170747e3ee7fa816",
+    "9": "39c0e4603ccc8c809d955dd6d0d7f4c38e190e8518ef8b8aa33ba7e10ff031e5",
+    "10": "671750c21eeebd8f11d6a8a618605af223a84fdfb1cae211ff15c7f1e8bb8d76",
+    "11": "39e2f840a997ddc2ed7ce5ff7ea39c0c77ce1da7bc2b4fabfb5a6c55ceceb284",
+    "12": "2cc9adf8456238e8ef4d180c4d2032d052e5b1f9d057136e17ba8782ba2c3053",
+    "13": "19be78e77923e50ca051edc8af443386a1dce023e8131bd6189e2dc55049b288",
+    "14": "5667a0843ba7bf57315ce181c4dccd4fd75e819667cca7efbaf5ae26c64477c3",
+    "15": "c8ce5cf0743a93cfb802743185511ef864ebf66c26634aea219d3524ddad322f"
+  },
+  "timestamp": "2026-09-13T00:04:54.379767+00:00"
+}

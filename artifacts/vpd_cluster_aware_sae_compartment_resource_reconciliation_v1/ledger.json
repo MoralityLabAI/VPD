@@ -1,0 +1,2627 @@
+{
+  "category_specific_resource_accounts": [
+    {
+      "activation_category": "missing_or_untrusted_authority",
+      "resources": {
+        "batch_sizes": [
+          128
+        ],
+        "data_selection_seeds": [
+          1707
+        ],
+        "dictionary_feature_widths": [
+          4096
+        ],
+        "episode_contract_entries": 16,
+        "initialization_seeds": [
+          17,
+          29
+        ],
+        "jobs": 4,
+        "pair_contract_entries": 16,
+        "planned_activation_rows": 2048,
+        "planned_steps": 8000,
+        "unique_output_directories": 4
+      },
+      "shared_fallback_accounted_separately": true,
+      "specific_compartment_ids": [
+        "vpd-sae-compartment-831f475557bd7f757fa2cd866a119415f066cb0da05a4f1af97b8f88313b2457",
+        "vpd-sae-compartment-d17460c16b97106f98af68cc2b84ec986db69a64cf6d21846a14e9c26cff83cd"
+      ]
+    },
+    {
+      "activation_category": "other_invalid",
+      "resources": {
+        "batch_sizes": [
+          128
+        ],
+        "data_selection_seeds": [
+          1707
+        ],
+        "dictionary_feature_widths": [
+          4096
+        ],
+        "episode_contract_entries": 16,
+        "initialization_seeds": [
+          17,
+          29
+        ],
+        "jobs": 4,
+        "pair_contract_entries": 16,
+        "planned_activation_rows": 2048,
+        "planned_steps": 8000,
+        "unique_output_directories": 4
+      },
+      "shared_fallback_accounted_separately": true,
+      "specific_compartment_ids": [
+        "vpd-sae-compartment-10d982cd345e13c10a0e02186fe84ea861874dd9b5b43809868b226bfc3b59a7",
+        "vpd-sae-compartment-feb1f43ec79931b97245795212d31cd491a26827d48d84e567d07f57e0d575b1"
+      ]
+    },
+    {
+      "activation_category": "replayed",
+      "resources": {
+        "batch_sizes": [
+          128
+        ],
+        "data_selection_seeds": [
+          1707
+        ],
+        "dictionary_feature_widths": [
+          4096
+        ],
+        "episode_contract_entries": 16,
+        "initialization_seeds": [
+          17,
+          29
+        ],
+        "jobs": 4,
+        "pair_contract_entries": 16,
+        "planned_activation_rows": 2048,
+        "planned_steps": 8000,
+        "unique_output_directories": 4
+      },
+      "shared_fallback_accounted_separately": true,
+      "specific_compartment_ids": [
+        "vpd-sae-compartment-55e20520628848a5b85958e097dac1ddefe17d0f25ef26a1460a28b27c69b369",
+        "vpd-sae-compartment-acbdb1d468f28dd71490de0c1d94a61f5a71eb7bdaed4d676253dcf037a9450a"
+      ]
+    },
+    {
+      "activation_category": "revoked",
+      "resources": {
+        "batch_sizes": [
+          128
+        ],
+        "data_selection_seeds": [
+          1707
+        ],
+        "dictionary_feature_widths": [
+          4096
+        ],
+        "episode_contract_entries": 16,
+        "initialization_seeds": [
+          17,
+          29
+        ],
+        "jobs": 4,
+        "pair_contract_entries": 16,
+        "planned_activation_rows": 2048,
+        "planned_steps": 8000,
+        "unique_output_directories": 4
+      },
+      "shared_fallback_accounted_separately": true,
+      "specific_compartment_ids": [
+        "vpd-sae-compartment-8377dd927480a9e26d08f5a851be5d89681a6ad83b8524d82d2b3d422cea3501",
+        "vpd-sae-compartment-b710a95f078953f6a73f95e55decf3b4e257e1100177aad354b594cce0bf6136"
+      ]
+    },
+    {
+      "activation_category": "scope_invalid",
+      "resources": {
+        "batch_sizes": [
+          128
+        ],
+        "data_selection_seeds": [
+          1707
+        ],
+        "dictionary_feature_widths": [
+          4096
+        ],
+        "episode_contract_entries": 16,
+        "initialization_seeds": [
+          17,
+          29
+        ],
+        "jobs": 4,
+        "pair_contract_entries": 16,
+        "planned_activation_rows": 2048,
+        "planned_steps": 8000,
+        "unique_output_directories": 4
+      },
+      "shared_fallback_accounted_separately": true,
+      "specific_compartment_ids": [
+        "vpd-sae-compartment-213ef2079c10e199965d5b7a049675120d484072032d74a87a09263919c0baed",
+        "vpd-sae-compartment-a3efad1ab8a962dfbc3ad789065de50f45eef05d506d6aff1b1b54b9d43851a9"
+      ]
+    },
+    {
+      "activation_category": "signature_invalid",
+      "resources": {
+        "batch_sizes": [
+          128
+        ],
+        "data_selection_seeds": [
+          1707
+        ],
+        "dictionary_feature_widths": [
+          4096
+        ],
+        "episode_contract_entries": 16,
+        "initialization_seeds": [
+          17,
+          29
+        ],
+        "jobs": 4,
+        "pair_contract_entries": 16,
+        "planned_activation_rows": 2048,
+        "planned_steps": 8000,
+        "unique_output_directories": 4
+      },
+      "shared_fallback_accounted_separately": true,
+      "specific_compartment_ids": [
+        "vpd-sae-compartment-15923e0a988e425624002b51fa9482efcc3146abb4f57691f5a25733b76efa7e",
+        "vpd-sae-compartment-8a7364e626e39e2b2f5d29801def919224f9eaaeea62be2723a4a97ef6ab108d"
+      ]
+    },
+    {
+      "activation_category": "time_inactive",
+      "resources": {
+        "batch_sizes": [
+          128
+        ],
+        "data_selection_seeds": [
+          1707
+        ],
+        "dictionary_feature_widths": [
+          4096
+        ],
+        "episode_contract_entries": 16,
+        "initialization_seeds": [
+          17,
+          29
+        ],
+        "jobs": 4,
+        "pair_contract_entries": 16,
+        "planned_activation_rows": 2048,
+        "planned_steps": 8000,
+        "unique_output_directories": 4
+      },
+      "shared_fallback_accounted_separately": true,
+      "specific_compartment_ids": [
+        "vpd-sae-compartment-95d80cbe9259bd905f009d3031062be1a250862be19860379503e077f55a6de1",
+        "vpd-sae-compartment-ef0432a24007c189056df4176599f211610a95a30a37e3fe5e338f88675331f6"
+      ]
+    },
+    {
+      "activation_category": "valid_authority",
+      "resources": {
+        "batch_sizes": [
+          128
+        ],
+        "data_selection_seeds": [
+          1707
+        ],
+        "dictionary_feature_widths": [
+          4096
+        ],
+        "episode_contract_entries": 16,
+        "initialization_seeds": [
+          17,
+          29
+        ],
+        "jobs": 4,
+        "pair_contract_entries": 16,
+        "planned_activation_rows": 2048,
+        "planned_steps": 8000,
+        "unique_output_directories": 4
+      },
+      "shared_fallback_accounted_separately": true,
+      "specific_compartment_ids": [
+        "vpd-sae-compartment-027c99d6175beb0988e88312e9ab698b3a4cd2691a5b53b39d6efec19fc3c5aa",
+        "vpd-sae-compartment-94181dcc49793146a9bc52d8badb5df817b24fe542e8fdc654af1e1484744817"
+      ]
+    }
+  ],
+  "compartment_resource_accounts": [
+    {
+      "activation_categories": [
+        "missing_or_untrusted_authority",
+        "other_invalid",
+        "replayed",
+        "revoked",
+        "scope_invalid",
+        "signature_invalid",
+        "time_inactive",
+        "valid_authority"
+      ],
+      "cluster_ids": [
+        null
+      ],
+      "compartment_id": "shared_cross_category",
+      "compartment_kind": "shared_fallback",
+      "resources": {
+        "batch_sizes": [
+          128
+        ],
+        "data_selection_seeds": [
+          1707
+        ],
+        "dictionary_feature_widths": [
+          8192
+        ],
+        "episode_contract_entries": 32,
+        "initialization_seeds": [
+          17,
+          29
+        ],
+        "jobs": 2,
+        "pair_contract_entries": 4,
+        "planned_activation_rows": 4096,
+        "planned_steps": 4000,
+        "unique_output_directories": 2
+      }
+    },
+    {
+      "activation_categories": [
+        "valid_authority"
+      ],
+      "cluster_ids": [
+        "vpd-cluster-5b673bbf11c63f28773550a2a5434fdffe522c9a4e029bc1463293ccf8cbba54"
+      ],
+      "compartment_id": "vpd-sae-compartment-027c99d6175beb0988e88312e9ab698b3a4cd2691a5b53b39d6efec19fc3c5aa",
+      "compartment_kind": "specific_cluster",
+      "resources": {
+        "batch_sizes": [
+          128
+        ],
+        "data_selection_seeds": [
+          1707
+        ],
+        "dictionary_feature_widths": [
+          4096
+        ],
+        "episode_contract_entries": 8,
+        "initialization_seeds": [
+          17,
+          29
+        ],
+        "jobs": 2,
+        "pair_contract_entries": 8,
+        "planned_activation_rows": 1024,
+        "planned_steps": 4000,
+        "unique_output_directories": 2
+      }
+    },
+    {
+      "activation_categories": [
+        "other_invalid"
+      ],
+      "cluster_ids": [
+        "vpd-cluster-6f562ac72e57615c92660ee39cae9413df0717f56b10431e5931915543325809"
+      ],
+      "compartment_id": "vpd-sae-compartment-10d982cd345e13c10a0e02186fe84ea861874dd9b5b43809868b226bfc3b59a7",
+      "compartment_kind": "specific_cluster",
+      "resources": {
+        "batch_sizes": [
+          128
+        ],
+        "data_selection_seeds": [
+          1707
+        ],
+        "dictionary_feature_widths": [
+          4096
+        ],
+        "episode_contract_entries": 8,
+        "initialization_seeds": [
+          17,
+          29
+        ],
+        "jobs": 2,
+        "pair_contract_entries": 8,
+        "planned_activation_rows": 1024,
+        "planned_steps": 4000,
+        "unique_output_directories": 2
+      }
+    },
+    {
+      "activation_categories": [
+        "signature_invalid"
+      ],
+      "cluster_ids": [
+        "vpd-cluster-6f562ac72e57615c92660ee39cae9413df0717f56b10431e5931915543325809"
+      ],
+      "compartment_id": "vpd-sae-compartment-15923e0a988e425624002b51fa9482efcc3146abb4f57691f5a25733b76efa7e",
+      "compartment_kind": "specific_cluster",
+      "resources": {
+        "batch_sizes": [
+          128
+        ],
+        "data_selection_seeds": [
+          1707
+        ],
+        "dictionary_feature_widths": [
+          4096
+        ],
+        "episode_contract_entries": 8,
+        "initialization_seeds": [
+          17,
+          29
+        ],
+        "jobs": 2,
+        "pair_contract_entries": 8,
+        "planned_activation_rows": 1024,
+        "planned_steps": 4000,
+        "unique_output_directories": 2
+      }
+    },
+    {
+      "activation_categories": [
+        "scope_invalid"
+      ],
+      "cluster_ids": [
+        "vpd-cluster-5b673bbf11c63f28773550a2a5434fdffe522c9a4e029bc1463293ccf8cbba54"
+      ],
+      "compartment_id": "vpd-sae-compartment-213ef2079c10e199965d5b7a049675120d484072032d74a87a09263919c0baed",
+      "compartment_kind": "specific_cluster",
+      "resources": {
+        "batch_sizes": [
+          128
+        ],
+        "data_selection_seeds": [
+          1707
+        ],
+        "dictionary_feature_widths": [
+          4096
+        ],
+        "episode_contract_entries": 8,
+        "initialization_seeds": [
+          17,
+          29
+        ],
+        "jobs": 2,
+        "pair_contract_entries": 8,
+        "planned_activation_rows": 1024,
+        "planned_steps": 4000,
+        "unique_output_directories": 2
+      }
+    },
+    {
+      "activation_categories": [
+        "replayed"
+      ],
+      "cluster_ids": [
+        "vpd-cluster-6f562ac72e57615c92660ee39cae9413df0717f56b10431e5931915543325809"
+      ],
+      "compartment_id": "vpd-sae-compartment-55e20520628848a5b85958e097dac1ddefe17d0f25ef26a1460a28b27c69b369",
+      "compartment_kind": "specific_cluster",
+      "resources": {
+        "batch_sizes": [
+          128
+        ],
+        "data_selection_seeds": [
+          1707
+        ],
+        "dictionary_feature_widths": [
+          4096
+        ],
+        "episode_contract_entries": 8,
+        "initialization_seeds": [
+          17,
+          29
+        ],
+        "jobs": 2,
+        "pair_contract_entries": 8,
+        "planned_activation_rows": 1024,
+        "planned_steps": 4000,
+        "unique_output_directories": 2
+      }
+    },
+    {
+      "activation_categories": [
+        "missing_or_untrusted_authority"
+      ],
+      "cluster_ids": [
+        "vpd-cluster-6f562ac72e57615c92660ee39cae9413df0717f56b10431e5931915543325809"
+      ],
+      "compartment_id": "vpd-sae-compartment-831f475557bd7f757fa2cd866a119415f066cb0da05a4f1af97b8f88313b2457",
+      "compartment_kind": "specific_cluster",
+      "resources": {
+        "batch_sizes": [
+          128
+        ],
+        "data_selection_seeds": [
+          1707
+        ],
+        "dictionary_feature_widths": [
+          4096
+        ],
+        "episode_contract_entries": 8,
+        "initialization_seeds": [
+          17,
+          29
+        ],
+        "jobs": 2,
+        "pair_contract_entries": 8,
+        "planned_activation_rows": 1024,
+        "planned_steps": 4000,
+        "unique_output_directories": 2
+      }
+    },
+    {
+      "activation_categories": [
+        "revoked"
+      ],
+      "cluster_ids": [
+        "vpd-cluster-6f562ac72e57615c92660ee39cae9413df0717f56b10431e5931915543325809"
+      ],
+      "compartment_id": "vpd-sae-compartment-8377dd927480a9e26d08f5a851be5d89681a6ad83b8524d82d2b3d422cea3501",
+      "compartment_kind": "specific_cluster",
+      "resources": {
+        "batch_sizes": [
+          128
+        ],
+        "data_selection_seeds": [
+          1707
+        ],
+        "dictionary_feature_widths": [
+          4096
+        ],
+        "episode_contract_entries": 8,
+        "initialization_seeds": [
+          17,
+          29
+        ],
+        "jobs": 2,
+        "pair_contract_entries": 8,
+        "planned_activation_rows": 1024,
+        "planned_steps": 4000,
+        "unique_output_directories": 2
+      }
+    },
+    {
+      "activation_categories": [
+        "signature_invalid"
+      ],
+      "cluster_ids": [
+        "vpd-cluster-5b673bbf11c63f28773550a2a5434fdffe522c9a4e029bc1463293ccf8cbba54"
+      ],
+      "compartment_id": "vpd-sae-compartment-8a7364e626e39e2b2f5d29801def919224f9eaaeea62be2723a4a97ef6ab108d",
+      "compartment_kind": "specific_cluster",
+      "resources": {
+        "batch_sizes": [
+          128
+        ],
+        "data_selection_seeds": [
+          1707
+        ],
+        "dictionary_feature_widths": [
+          4096
+        ],
+        "episode_contract_entries": 8,
+        "initialization_seeds": [
+          17,
+          29
+        ],
+        "jobs": 2,
+        "pair_contract_entries": 8,
+        "planned_activation_rows": 1024,
+        "planned_steps": 4000,
+        "unique_output_directories": 2
+      }
+    },
+    {
+      "activation_categories": [
+        "valid_authority"
+      ],
+      "cluster_ids": [
+        "vpd-cluster-6f562ac72e57615c92660ee39cae9413df0717f56b10431e5931915543325809"
+      ],
+      "compartment_id": "vpd-sae-compartment-94181dcc49793146a9bc52d8badb5df817b24fe542e8fdc654af1e1484744817",
+      "compartment_kind": "specific_cluster",
+      "resources": {
+        "batch_sizes": [
+          128
+        ],
+        "data_selection_seeds": [
+          1707
+        ],
+        "dictionary_feature_widths": [
+          4096
+        ],
+        "episode_contract_entries": 8,
+        "initialization_seeds": [
+          17,
+          29
+        ],
+        "jobs": 2,
+        "pair_contract_entries": 8,
+        "planned_activation_rows": 1024,
+        "planned_steps": 4000,
+        "unique_output_directories": 2
+      }
+    },
+    {
+      "activation_categories": [
+        "time_inactive"
+      ],
+      "cluster_ids": [
+        "vpd-cluster-5b673bbf11c63f28773550a2a5434fdffe522c9a4e029bc1463293ccf8cbba54"
+      ],
+      "compartment_id": "vpd-sae-compartment-95d80cbe9259bd905f009d3031062be1a250862be19860379503e077f55a6de1",
+      "compartment_kind": "specific_cluster",
+      "resources": {
+        "batch_sizes": [
+          128
+        ],
+        "data_selection_seeds": [
+          1707
+        ],
+        "dictionary_feature_widths": [
+          4096
+        ],
+        "episode_contract_entries": 8,
+        "initialization_seeds": [
+          17,
+          29
+        ],
+        "jobs": 2,
+        "pair_contract_entries": 8,
+        "planned_activation_rows": 1024,
+        "planned_steps": 4000,
+        "unique_output_directories": 2
+      }
+    },
+    {
+      "activation_categories": [
+        "scope_invalid"
+      ],
+      "cluster_ids": [
+        "vpd-cluster-6f562ac72e57615c92660ee39cae9413df0717f56b10431e5931915543325809"
+      ],
+      "compartment_id": "vpd-sae-compartment-a3efad1ab8a962dfbc3ad789065de50f45eef05d506d6aff1b1b54b9d43851a9",
+      "compartment_kind": "specific_cluster",
+      "resources": {
+        "batch_sizes": [
+          128
+        ],
+        "data_selection_seeds": [
+          1707
+        ],
+        "dictionary_feature_widths": [
+          4096
+        ],
+        "episode_contract_entries": 8,
+        "initialization_seeds": [
+          17,
+          29
+        ],
+        "jobs": 2,
+        "pair_contract_entries": 8,
+        "planned_activation_rows": 1024,
+        "planned_steps": 4000,
+        "unique_output_directories": 2
+      }
+    },
+    {
+      "activation_categories": [
+        "replayed"
+      ],
+      "cluster_ids": [
+        "vpd-cluster-5b673bbf11c63f28773550a2a5434fdffe522c9a4e029bc1463293ccf8cbba54"
+      ],
+      "compartment_id": "vpd-sae-compartment-acbdb1d468f28dd71490de0c1d94a61f5a71eb7bdaed4d676253dcf037a9450a",
+      "compartment_kind": "specific_cluster",
+      "resources": {
+        "batch_sizes": [
+          128
+        ],
+        "data_selection_seeds": [
+          1707
+        ],
+        "dictionary_feature_widths": [
+          4096
+        ],
+        "episode_contract_entries": 8,
+        "initialization_seeds": [
+          17,
+          29
+        ],
+        "jobs": 2,
+        "pair_contract_entries": 8,
+        "planned_activation_rows": 1024,
+        "planned_steps": 4000,
+        "unique_output_directories": 2
+      }
+    },
+    {
+      "activation_categories": [
+        "revoked"
+      ],
+      "cluster_ids": [
+        "vpd-cluster-5b673bbf11c63f28773550a2a5434fdffe522c9a4e029bc1463293ccf8cbba54"
+      ],
+      "compartment_id": "vpd-sae-compartment-b710a95f078953f6a73f95e55decf3b4e257e1100177aad354b594cce0bf6136",
+      "compartment_kind": "specific_cluster",
+      "resources": {
+        "batch_sizes": [
+          128
+        ],
+        "data_selection_seeds": [
+          1707
+        ],
+        "dictionary_feature_widths": [
+          4096
+        ],
+        "episode_contract_entries": 8,
+        "initialization_seeds": [
+          17,
+          29
+        ],
+        "jobs": 2,
+        "pair_contract_entries": 8,
+        "planned_activation_rows": 1024,
+        "planned_steps": 4000,
+        "unique_output_directories": 2
+      }
+    },
+    {
+      "activation_categories": [
+        "missing_or_untrusted_authority"
+      ],
+      "cluster_ids": [
+        "vpd-cluster-5b673bbf11c63f28773550a2a5434fdffe522c9a4e029bc1463293ccf8cbba54"
+      ],
+      "compartment_id": "vpd-sae-compartment-d17460c16b97106f98af68cc2b84ec986db69a64cf6d21846a14e9c26cff83cd",
+      "compartment_kind": "specific_cluster",
+      "resources": {
+        "batch_sizes": [
+          128
+        ],
+        "data_selection_seeds": [
+          1707
+        ],
+        "dictionary_feature_widths": [
+          4096
+        ],
+        "episode_contract_entries": 8,
+        "initialization_seeds": [
+          17,
+          29
+        ],
+        "jobs": 2,
+        "pair_contract_entries": 8,
+        "planned_activation_rows": 1024,
+        "planned_steps": 4000,
+        "unique_output_directories": 2
+      }
+    },
+    {
+      "activation_categories": [
+        "time_inactive"
+      ],
+      "cluster_ids": [
+        "vpd-cluster-6f562ac72e57615c92660ee39cae9413df0717f56b10431e5931915543325809"
+      ],
+      "compartment_id": "vpd-sae-compartment-ef0432a24007c189056df4176599f211610a95a30a37e3fe5e338f88675331f6",
+      "compartment_kind": "specific_cluster",
+      "resources": {
+        "batch_sizes": [
+          128
+        ],
+        "data_selection_seeds": [
+          1707
+        ],
+        "dictionary_feature_widths": [
+          4096
+        ],
+        "episode_contract_entries": 8,
+        "initialization_seeds": [
+          17,
+          29
+        ],
+        "jobs": 2,
+        "pair_contract_entries": 8,
+        "planned_activation_rows": 1024,
+        "planned_steps": 4000,
+        "unique_output_directories": 2
+      }
+    },
+    {
+      "activation_categories": [
+        "other_invalid"
+      ],
+      "cluster_ids": [
+        "vpd-cluster-5b673bbf11c63f28773550a2a5434fdffe522c9a4e029bc1463293ccf8cbba54"
+      ],
+      "compartment_id": "vpd-sae-compartment-feb1f43ec79931b97245795212d31cd491a26827d48d84e567d07f57e0d575b1",
+      "compartment_kind": "specific_cluster",
+      "resources": {
+        "batch_sizes": [
+          128
+        ],
+        "data_selection_seeds": [
+          1707
+        ],
+        "dictionary_feature_widths": [
+          4096
+        ],
+        "episode_contract_entries": 8,
+        "initialization_seeds": [
+          17,
+          29
+        ],
+        "jobs": 2,
+        "pair_contract_entries": 8,
+        "planned_activation_rows": 1024,
+        "planned_steps": 4000,
+        "unique_output_directories": 2
+      }
+    }
+  ],
+  "global_planned_resources": {
+    "batch_sizes": [
+      128
+    ],
+    "data_selection_seeds": [
+      1707
+    ],
+    "dictionary_feature_widths": [
+      4096,
+      8192
+    ],
+    "episode_contract_entries": 160,
+    "initialization_seeds": [
+      17,
+      29
+    ],
+    "jobs": 34,
+    "pair_contract_entries": 132,
+    "planned_activation_rows": 20480,
+    "planned_steps": 68000,
+    "unique_output_directories": 34
+  },
+  "job_resource_rows": [
+    {
+      "activation_categories": [
+        "missing_or_untrusted_authority",
+        "other_invalid",
+        "replayed",
+        "revoked",
+        "scope_invalid",
+        "signature_invalid",
+        "time_inactive",
+        "valid_authority"
+      ],
+      "activation_key": "layer_35__proposal_start",
+      "batch_size": 128,
+      "cluster_id": null,
+      "compartment_id": "shared_cross_category",
+      "compartment_kind": "shared_fallback",
+      "data_selection_seed": 1707,
+      "dictionary_features": 8192,
+      "episode_count": 16,
+      "exact_sample_contract_sha256": "cc4cbcab81771521ac30adefafa6a4bf2d42fada7570c4ef01b6dfea33a8f409",
+      "execution_job_id": "703e053e9397e3d51f98363b7c8d7dc5df63ce0cc02110c6e8dd98118401ac5e",
+      "hidden_size": 4096,
+      "initialization_seed": 17,
+      "job_index": 0,
+      "output_dir": "dictionaries/cluster-aware/shared_cross_category/seed-17",
+      "pair_count": 2,
+      "planned_activation_rows": 2048,
+      "planned_activation_rows_per_episode": 128,
+      "planned_steps": 2000,
+      "profile_id": "bounded_context_pilot",
+      "source_training_job_id": "bd1967eee0db09ecfa995ab4e0418f96ef961a2c9fb0aea69723f5b229e2bf97"
+    },
+    {
+      "activation_categories": [
+        "missing_or_untrusted_authority",
+        "other_invalid",
+        "replayed",
+        "revoked",
+        "scope_invalid",
+        "signature_invalid",
+        "time_inactive",
+        "valid_authority"
+      ],
+      "activation_key": "layer_35__proposal_start",
+      "batch_size": 128,
+      "cluster_id": null,
+      "compartment_id": "shared_cross_category",
+      "compartment_kind": "shared_fallback",
+      "data_selection_seed": 1707,
+      "dictionary_features": 8192,
+      "episode_count": 16,
+      "exact_sample_contract_sha256": "cc4cbcab81771521ac30adefafa6a4bf2d42fada7570c4ef01b6dfea33a8f409",
+      "execution_job_id": "4495d20a204253cbfc3eb3a002145868b507ac3df4aa7dbd8aa039b691f571fa",
+      "hidden_size": 4096,
+      "initialization_seed": 29,
+      "job_index": 1,
+      "output_dir": "dictionaries/cluster-aware/shared_cross_category/seed-29",
+      "pair_count": 2,
+      "planned_activation_rows": 2048,
+      "planned_activation_rows_per_episode": 128,
+      "planned_steps": 2000,
+      "profile_id": "bounded_context_pilot",
+      "source_training_job_id": "dbb786f8abea744ebe54faf37d501799e7d3b4efd12d4e54d84f6f4c84c342f9"
+    },
+    {
+      "activation_categories": [
+        "valid_authority"
+      ],
+      "activation_key": "layer_35__proposal_start",
+      "batch_size": 128,
+      "cluster_id": "vpd-cluster-5b673bbf11c63f28773550a2a5434fdffe522c9a4e029bc1463293ccf8cbba54",
+      "compartment_id": "vpd-sae-compartment-027c99d6175beb0988e88312e9ab698b3a4cd2691a5b53b39d6efec19fc3c5aa",
+      "compartment_kind": "specific_cluster",
+      "data_selection_seed": 1707,
+      "dictionary_features": 4096,
+      "episode_count": 4,
+      "exact_sample_contract_sha256": "fd1c12f6e0c5fc2cbb0b810a3db3c2acdb5b43be547dbb08cefce2a303efe0dd",
+      "execution_job_id": "3922c70dba0f61431ae6280c3f13bf0b74209bcc2646201db620582ff4cf81ce",
+      "hidden_size": 4096,
+      "initialization_seed": 17,
+      "job_index": 2,
+      "output_dir": "dictionaries/cluster-aware/vpd-sae-compartment-027c99d6175beb0988e88312e9ab698b3a4cd2691a5b53b39d6efec19fc3c5aa/seed-17",
+      "pair_count": 4,
+      "planned_activation_rows": 512,
+      "planned_activation_rows_per_episode": 128,
+      "planned_steps": 2000,
+      "profile_id": "bounded_context_pilot",
+      "source_training_job_id": "2db550e8174ad9fd3df8c0bc01053c2d4cc52cd7cce4bc77a8bc427899323dce"
+    },
+    {
+      "activation_categories": [
+        "valid_authority"
+      ],
+      "activation_key": "layer_35__proposal_start",
+      "batch_size": 128,
+      "cluster_id": "vpd-cluster-5b673bbf11c63f28773550a2a5434fdffe522c9a4e029bc1463293ccf8cbba54",
+      "compartment_id": "vpd-sae-compartment-027c99d6175beb0988e88312e9ab698b3a4cd2691a5b53b39d6efec19fc3c5aa",
+      "compartment_kind": "specific_cluster",
+      "data_selection_seed": 1707,
+      "dictionary_features": 4096,
+      "episode_count": 4,
+      "exact_sample_contract_sha256": "fd1c12f6e0c5fc2cbb0b810a3db3c2acdb5b43be547dbb08cefce2a303efe0dd",
+      "execution_job_id": "a9c9c3023f0b60c3735b7b043e64124f75ac165e3ee61bad40018c90377746db",
+      "hidden_size": 4096,
+      "initialization_seed": 29,
+      "job_index": 3,
+      "output_dir": "dictionaries/cluster-aware/vpd-sae-compartment-027c99d6175beb0988e88312e9ab698b3a4cd2691a5b53b39d6efec19fc3c5aa/seed-29",
+      "pair_count": 4,
+      "planned_activation_rows": 512,
+      "planned_activation_rows_per_episode": 128,
+      "planned_steps": 2000,
+      "profile_id": "bounded_context_pilot",
+      "source_training_job_id": "825099c6117c294db520f263ca6c1fdfd3ba739b2656bd14d7d3610e4dc4c899"
+    },
+    {
+      "activation_categories": [
+        "other_invalid"
+      ],
+      "activation_key": "layer_35__proposal_start",
+      "batch_size": 128,
+      "cluster_id": "vpd-cluster-6f562ac72e57615c92660ee39cae9413df0717f56b10431e5931915543325809",
+      "compartment_id": "vpd-sae-compartment-10d982cd345e13c10a0e02186fe84ea861874dd9b5b43809868b226bfc3b59a7",
+      "compartment_kind": "specific_cluster",
+      "data_selection_seed": 1707,
+      "dictionary_features": 4096,
+      "episode_count": 4,
+      "exact_sample_contract_sha256": "801920f3c9c39fe68417be628a5c9719e6a17fe648663bc432ffba7fefae1a26",
+      "execution_job_id": "89cf78b8cb213b5f36452fefa7f28108e9d243150fedf8ef1f9894f77418bf43",
+      "hidden_size": 4096,
+      "initialization_seed": 17,
+      "job_index": 4,
+      "output_dir": "dictionaries/cluster-aware/vpd-sae-compartment-10d982cd345e13c10a0e02186fe84ea861874dd9b5b43809868b226bfc3b59a7/seed-17",
+      "pair_count": 4,
+      "planned_activation_rows": 512,
+      "planned_activation_rows_per_episode": 128,
+      "planned_steps": 2000,
+      "profile_id": "bounded_context_pilot",
+      "source_training_job_id": "5b421833fdf1f2ab9bd02f335ae6e7c5fe0c1de8a2afb3a588e4a07291428374"
+    },
+    {
+      "activation_categories": [
+        "other_invalid"
+      ],
+      "activation_key": "layer_35__proposal_start",
+      "batch_size": 128,
+      "cluster_id": "vpd-cluster-6f562ac72e57615c92660ee39cae9413df0717f56b10431e5931915543325809",
+      "compartment_id": "vpd-sae-compartment-10d982cd345e13c10a0e02186fe84ea861874dd9b5b43809868b226bfc3b59a7",
+      "compartment_kind": "specific_cluster",
+      "data_selection_seed": 1707,
+      "dictionary_features": 4096,
+      "episode_count": 4,
+      "exact_sample_contract_sha256": "801920f3c9c39fe68417be628a5c9719e6a17fe648663bc432ffba7fefae1a26",
+      "execution_job_id": "c60e1889b1de2a709672d1e441a63949ab39dbb8375023818f407fe01c33bd04",
+      "hidden_size": 4096,
+      "initialization_seed": 29,
+      "job_index": 5,
+      "output_dir": "dictionaries/cluster-aware/vpd-sae-compartment-10d982cd345e13c10a0e02186fe84ea861874dd9b5b43809868b226bfc3b59a7/seed-29",
+      "pair_count": 4,
+      "planned_activation_rows": 512,
+      "planned_activation_rows_per_episode": 128,
+      "planned_steps": 2000,
+      "profile_id": "bounded_context_pilot",
+      "source_training_job_id": "852a7fbfe6c02174584ab1355673b98eb765011657250766994eef810ec7fc8d"
+    },
+    {
+      "activation_categories": [
+        "signature_invalid"
+      ],
+      "activation_key": "layer_35__proposal_start",
+      "batch_size": 128,
+      "cluster_id": "vpd-cluster-6f562ac72e57615c92660ee39cae9413df0717f56b10431e5931915543325809",
+      "compartment_id": "vpd-sae-compartment-15923e0a988e425624002b51fa9482efcc3146abb4f57691f5a25733b76efa7e",
+      "compartment_kind": "specific_cluster",
+      "data_selection_seed": 1707,
+      "dictionary_features": 4096,
+      "episode_count": 4,
+      "exact_sample_contract_sha256": "f3edb016598b5841fe782ebb32b6618fa3613f87a586cfb4581ae0ae9510c75e",
+      "execution_job_id": "68b42a94d4c6258893695a8b7ec5862fbc8eb6631a4ba214f3f656e04af0ee47",
+      "hidden_size": 4096,
+      "initialization_seed": 17,
+      "job_index": 6,
+      "output_dir": "dictionaries/cluster-aware/vpd-sae-compartment-15923e0a988e425624002b51fa9482efcc3146abb4f57691f5a25733b76efa7e/seed-17",
+      "pair_count": 4,
+      "planned_activation_rows": 512,
+      "planned_activation_rows_per_episode": 128,
+      "planned_steps": 2000,
+      "profile_id": "bounded_context_pilot",
+      "source_training_job_id": "eb7ab6418665d08d459654c552b68b7a7c731a3a022bf43df7ee1d85b59b80ec"
+    },
+    {
+      "activation_categories": [
+        "signature_invalid"
+      ],
+      "activation_key": "layer_35__proposal_start",
+      "batch_size": 128,
+      "cluster_id": "vpd-cluster-6f562ac72e57615c92660ee39cae9413df0717f56b10431e5931915543325809",
+      "compartment_id": "vpd-sae-compartment-15923e0a988e425624002b51fa9482efcc3146abb4f57691f5a25733b76efa7e",
+      "compartment_kind": "specific_cluster",
+      "data_selection_seed": 1707,
+      "dictionary_features": 4096,
+      "episode_count": 4,
+      "exact_sample_contract_sha256": "f3edb016598b5841fe782ebb32b6618fa3613f87a586cfb4581ae0ae9510c75e",
+      "execution_job_id": "207d2972692c47cf185905e0995e5f30140613df83dd0e023df76525e7bcfa58",
+      "hidden_size": 4096,
+      "initialization_seed": 29,
+      "job_index": 7,
+      "output_dir": "dictionaries/cluster-aware/vpd-sae-compartment-15923e0a988e425624002b51fa9482efcc3146abb4f57691f5a25733b76efa7e/seed-29",
+      "pair_count": 4,
+      "planned_activation_rows": 512,
+      "planned_activation_rows_per_episode": 128,
+      "planned_steps": 2000,
+      "profile_id": "bounded_context_pilot",
+      "source_training_job_id": "6bd8c18c273f983f669fe6e69df0c65e17103830e1adbe826e0ee1cbc92ff26d"
+    },
+    {
+      "activation_categories": [
+        "scope_invalid"
+      ],
+      "activation_key": "layer_35__proposal_start",
+      "batch_size": 128,
+      "cluster_id": "vpd-cluster-5b673bbf11c63f28773550a2a5434fdffe522c9a4e029bc1463293ccf8cbba54",
+      "compartment_id": "vpd-sae-compartment-213ef2079c10e199965d5b7a049675120d484072032d74a87a09263919c0baed",
+      "compartment_kind": "specific_cluster",
+      "data_selection_seed": 1707,
+      "dictionary_features": 4096,
+      "episode_count": 4,
+      "exact_sample_contract_sha256": "86d872b9ac9749c41696f7a9df3c8a2b535e4dff6f7261f7d3ed0dee6be9baa6",
+      "execution_job_id": "623711c9128f9dd8e01628984afb76f4399b25dd825283b33e1992b6b028811d",
+      "hidden_size": 4096,
+      "initialization_seed": 17,
+      "job_index": 8,
+      "output_dir": "dictionaries/cluster-aware/vpd-sae-compartment-213ef2079c10e199965d5b7a049675120d484072032d74a87a09263919c0baed/seed-17",
+      "pair_count": 4,
+      "planned_activation_rows": 512,
+      "planned_activation_rows_per_episode": 128,
+      "planned_steps": 2000,
+      "profile_id": "bounded_context_pilot",
+      "source_training_job_id": "a2cfdc1bf834dbb3dbc7b73da7ab6230bff3471ac6c081af5c080743235bef5e"
+    },
+    {
+      "activation_categories": [
+        "scope_invalid"
+      ],
+      "activation_key": "layer_35__proposal_start",
+      "batch_size": 128,
+      "cluster_id": "vpd-cluster-5b673bbf11c63f28773550a2a5434fdffe522c9a4e029bc1463293ccf8cbba54",
+      "compartment_id": "vpd-sae-compartment-213ef2079c10e199965d5b7a049675120d484072032d74a87a09263919c0baed",
+      "compartment_kind": "specific_cluster",
+      "data_selection_seed": 1707,
+      "dictionary_features": 4096,
+      "episode_count": 4,
+      "exact_sample_contract_sha256": "86d872b9ac9749c41696f7a9df3c8a2b535e4dff6f7261f7d3ed0dee6be9baa6",
+      "execution_job_id": "0d0a731d0fcfcf65b093907d2d7c33c10360e73ed5c5d13e662cfdebf76e6e94",
+      "hidden_size": 4096,
+      "initialization_seed": 29,
+      "job_index": 9,
+      "output_dir": "dictionaries/cluster-aware/vpd-sae-compartment-213ef2079c10e199965d5b7a049675120d484072032d74a87a09263919c0baed/seed-29",
+      "pair_count": 4,
+      "planned_activation_rows": 512,
+      "planned_activation_rows_per_episode": 128,
+      "planned_steps": 2000,
+      "profile_id": "bounded_context_pilot",
+      "source_training_job_id": "9f34e5a136e77e0e9b3356aa02b202e7d80efd0ce44c3fe5c5eb033a22f7556d"
+    },
+    {
+      "activation_categories": [
+        "replayed"
+      ],
+      "activation_key": "layer_35__proposal_start",
+      "batch_size": 128,
+      "cluster_id": "vpd-cluster-6f562ac72e57615c92660ee39cae9413df0717f56b10431e5931915543325809",
+      "compartment_id": "vpd-sae-compartment-55e20520628848a5b85958e097dac1ddefe17d0f25ef26a1460a28b27c69b369",
+      "compartment_kind": "specific_cluster",
+      "data_selection_seed": 1707,
+      "dictionary_features": 4096,
+      "episode_count": 4,
+      "exact_sample_contract_sha256": "f011fb6ad801fb42a35c631998f0bfd763512abfa5c3672877cb3e8bc6b23a34",
+      "execution_job_id": "3ef9340134da2b69c5ed24c4dcae039698b6bb0a579cf7a579af8fdeea48586c",
+      "hidden_size": 4096,
+      "initialization_seed": 17,
+      "job_index": 10,
+      "output_dir": "dictionaries/cluster-aware/vpd-sae-compartment-55e20520628848a5b85958e097dac1ddefe17d0f25ef26a1460a28b27c69b369/seed-17",
+      "pair_count": 4,
+      "planned_activation_rows": 512,
+      "planned_activation_rows_per_episode": 128,
+      "planned_steps": 2000,
+      "profile_id": "bounded_context_pilot",
+      "source_training_job_id": "1fe47c59e9823c2248df0cfe93ea4c46911e2281027829907613037b209faa8b"
+    },
+    {
+      "activation_categories": [
+        "replayed"
+      ],
+      "activation_key": "layer_35__proposal_start",
+      "batch_size": 128,
+      "cluster_id": "vpd-cluster-6f562ac72e57615c92660ee39cae9413df0717f56b10431e5931915543325809",
+      "compartment_id": "vpd-sae-compartment-55e20520628848a5b85958e097dac1ddefe17d0f25ef26a1460a28b27c69b369",
+      "compartment_kind": "specific_cluster",
+      "data_selection_seed": 1707,
+      "dictionary_features": 4096,
+      "episode_count": 4,
+      "exact_sample_contract_sha256": "f011fb6ad801fb42a35c631998f0bfd763512abfa5c3672877cb3e8bc6b23a34",
+      "execution_job_id": "8782e245a92b155dc6c669b53104ad70c66961d5e668475033dff47dd56335b0",
+      "hidden_size": 4096,
+      "initialization_seed": 29,
+      "job_index": 11,
+      "output_dir": "dictionaries/cluster-aware/vpd-sae-compartment-55e20520628848a5b85958e097dac1ddefe17d0f25ef26a1460a28b27c69b369/seed-29",
+      "pair_count": 4,
+      "planned_activation_rows": 512,
+      "planned_activation_rows_per_episode": 128,
+      "planned_steps": 2000,
+      "profile_id": "bounded_context_pilot",
+      "source_training_job_id": "fd0db9d8accbd08fb4382b321f333c6bc3e4fe82768c3304a8a91e6a0c3f52f4"
+    },
+    {
+      "activation_categories": [
+        "missing_or_untrusted_authority"
+      ],
+      "activation_key": "layer_35__proposal_start",
+      "batch_size": 128,
+      "cluster_id": "vpd-cluster-6f562ac72e57615c92660ee39cae9413df0717f56b10431e5931915543325809",
+      "compartment_id": "vpd-sae-compartment-831f475557bd7f757fa2cd866a119415f066cb0da05a4f1af97b8f88313b2457",
+      "compartment_kind": "specific_cluster",
+      "data_selection_seed": 1707,
+      "dictionary_features": 4096,
+      "episode_count": 4,
+      "exact_sample_contract_sha256": "4bc92506046abe938e42e599401307453d60ba9412e1342979f8368af9b9867a",
+      "execution_job_id": "3019ee2ae97ee1e6838d50951ec56b817b3c211dea73de7538f9d5c9f274a46a",
+      "hidden_size": 4096,
+      "initialization_seed": 17,
+      "job_index": 12,
+      "output_dir": "dictionaries/cluster-aware/vpd-sae-compartment-831f475557bd7f757fa2cd866a119415f066cb0da05a4f1af97b8f88313b2457/seed-17",
+      "pair_count": 4,
+      "planned_activation_rows": 512,
+      "planned_activation_rows_per_episode": 128,
+      "planned_steps": 2000,
+      "profile_id": "bounded_context_pilot",
+      "source_training_job_id": "59ac7152ed56e294d8e6cbb46b36b975f8914383edb9780f437dd975ef9a2be9"
+    },
+    {
+      "activation_categories": [
+        "missing_or_untrusted_authority"
+      ],
+      "activation_key": "layer_35__proposal_start",
+      "batch_size": 128,
+      "cluster_id": "vpd-cluster-6f562ac72e57615c92660ee39cae9413df0717f56b10431e5931915543325809",
+      "compartment_id": "vpd-sae-compartment-831f475557bd7f757fa2cd866a119415f066cb0da05a4f1af97b8f88313b2457",
+      "compartment_kind": "specific_cluster",
+      "data_selection_seed": 1707,
+      "dictionary_features": 4096,
+      "episode_count": 4,
+      "exact_sample_contract_sha256": "4bc92506046abe938e42e599401307453d60ba9412e1342979f8368af9b9867a",
+      "execution_job_id": "99e7b46fe5977b80881dd4211ad631a88c7142becd1ab70e083b6744331fd7b4",
+      "hidden_size": 4096,
+      "initialization_seed": 29,
+      "job_index": 13,
+      "output_dir": "dictionaries/cluster-aware/vpd-sae-compartment-831f475557bd7f757fa2cd866a119415f066cb0da05a4f1af97b8f88313b2457/seed-29",
+      "pair_count": 4,
+      "planned_activation_rows": 512,
+      "planned_activation_rows_per_episode": 128,
+      "planned_steps": 2000,
+      "profile_id": "bounded_context_pilot",
+      "source_training_job_id": "a03fcc66133d5adbcfd7157ab3b23a13d3cfaa246da2e3c96b00437a0e06b091"
+    },
+    {
+      "activation_categories": [
+        "revoked"
+      ],
+      "activation_key": "layer_35__proposal_start",
+      "batch_size": 128,
+      "cluster_id": "vpd-cluster-6f562ac72e57615c92660ee39cae9413df0717f56b10431e5931915543325809",
+      "compartment_id": "vpd-sae-compartment-8377dd927480a9e26d08f5a851be5d89681a6ad83b8524d82d2b3d422cea3501",
+      "compartment_kind": "specific_cluster",
+      "data_selection_seed": 1707,
+      "dictionary_features": 4096,
+      "episode_count": 4,
+      "exact_sample_contract_sha256": "af72e80597649440a22b66472625b31a92103ca3472b9acd4ddcab551f8a24cd",
+      "execution_job_id": "e081eba439c0b05924d6704982e543fab87b398113a7f4d1a55f3e184da195aa",
+      "hidden_size": 4096,
+      "initialization_seed": 17,
+      "job_index": 14,
+      "output_dir": "dictionaries/cluster-aware/vpd-sae-compartment-8377dd927480a9e26d08f5a851be5d89681a6ad83b8524d82d2b3d422cea3501/seed-17",
+      "pair_count": 4,
+      "planned_activation_rows": 512,
+      "planned_activation_rows_per_episode": 128,
+      "planned_steps": 2000,
+      "profile_id": "bounded_context_pilot",
+      "source_training_job_id": "3b44e93ccd97171c13a76e2a56ce6d8a1a5e07467295ac6895741c75ea1bac94"
+    },
+    {
+      "activation_categories": [
+        "revoked"
+      ],
+      "activation_key": "layer_35__proposal_start",
+      "batch_size": 128,
+      "cluster_id": "vpd-cluster-6f562ac72e57615c92660ee39cae9413df0717f56b10431e5931915543325809",
+      "compartment_id": "vpd-sae-compartment-8377dd927480a9e26d08f5a851be5d89681a6ad83b8524d82d2b3d422cea3501",
+      "compartment_kind": "specific_cluster",
+      "data_selection_seed": 1707,
+      "dictionary_features": 4096,
+      "episode_count": 4,
+      "exact_sample_contract_sha256": "af72e80597649440a22b66472625b31a92103ca3472b9acd4ddcab551f8a24cd",
+      "execution_job_id": "f8fb787a97e2eb96320082c8dc45e4030c41f69b453bdfbeb01ade841217c398",
+      "hidden_size": 4096,
+      "initialization_seed": 29,
+      "job_index": 15,
+      "output_dir": "dictionaries/cluster-aware/vpd-sae-compartment-8377dd927480a9e26d08f5a851be5d89681a6ad83b8524d82d2b3d422cea3501/seed-29",
+      "pair_count": 4,
+      "planned_activation_rows": 512,
+      "planned_activation_rows_per_episode": 128,
+      "planned_steps": 2000,
+      "profile_id": "bounded_context_pilot",
+      "source_training_job_id": "3ea3ba1d97a28d67f47a5b76f09b942685ae33baf928d491bad0d60a53e039f4"
+    },
+    {
+      "activation_categories": [
+        "signature_invalid"
+      ],
+      "activation_key": "layer_35__proposal_start",
+      "batch_size": 128,
+      "cluster_id": "vpd-cluster-5b673bbf11c63f28773550a2a5434fdffe522c9a4e029bc1463293ccf8cbba54",
+      "compartment_id": "vpd-sae-compartment-8a7364e626e39e2b2f5d29801def919224f9eaaeea62be2723a4a97ef6ab108d",
+      "compartment_kind": "specific_cluster",
+      "data_selection_seed": 1707,
+      "dictionary_features": 4096,
+      "episode_count": 4,
+      "exact_sample_contract_sha256": "8dd337efdf5c0fb9a401ad70a7d5793331d9d4ce5075592658013f45e90388c7",
+      "execution_job_id": "36c46f422c8c0925074a87f42c66aa8b46b8fab08df45029869980c226bccf7f",
+      "hidden_size": 4096,
+      "initialization_seed": 17,
+      "job_index": 16,
+      "output_dir": "dictionaries/cluster-aware/vpd-sae-compartment-8a7364e626e39e2b2f5d29801def919224f9eaaeea62be2723a4a97ef6ab108d/seed-17",
+      "pair_count": 4,
+      "planned_activation_rows": 512,
+      "planned_activation_rows_per_episode": 128,
+      "planned_steps": 2000,
+      "profile_id": "bounded_context_pilot",
+      "source_training_job_id": "3272916b1c1d930808728c6a3287ffede91810ab6871d4534b72344cc2a63727"
+    },
+    {
+      "activation_categories": [
+        "signature_invalid"
+      ],
+      "activation_key": "layer_35__proposal_start",
+      "batch_size": 128,
+      "cluster_id": "vpd-cluster-5b673bbf11c63f28773550a2a5434fdffe522c9a4e029bc1463293ccf8cbba54",
+      "compartment_id": "vpd-sae-compartment-8a7364e626e39e2b2f5d29801def919224f9eaaeea62be2723a4a97ef6ab108d",
+      "compartment_kind": "specific_cluster",
+      "data_selection_seed": 1707,
+      "dictionary_features": 4096,
+      "episode_count": 4,
+      "exact_sample_contract_sha256": "8dd337efdf5c0fb9a401ad70a7d5793331d9d4ce5075592658013f45e90388c7",
+      "execution_job_id": "b85ca4ab5b21af47051c3fb93af14ef005f440c55f08ba300a3571e1d2c4a4f9",
+      "hidden_size": 4096,
+      "initialization_seed": 29,
+      "job_index": 17,
+      "output_dir": "dictionaries/cluster-aware/vpd-sae-compartment-8a7364e626e39e2b2f5d29801def919224f9eaaeea62be2723a4a97ef6ab108d/seed-29",
+      "pair_count": 4,
+      "planned_activation_rows": 512,
+      "planned_activation_rows_per_episode": 128,
+      "planned_steps": 2000,
+      "profile_id": "bounded_context_pilot",
+      "source_training_job_id": "d9a2ba53d769e937289a2a4e63a5ef6754085d2d3d894ae98efb6ae444d9ee6b"
+    },
+    {
+      "activation_categories": [
+        "valid_authority"
+      ],
+      "activation_key": "layer_35__proposal_start",
+      "batch_size": 128,
+      "cluster_id": "vpd-cluster-6f562ac72e57615c92660ee39cae9413df0717f56b10431e5931915543325809",
+      "compartment_id": "vpd-sae-compartment-94181dcc49793146a9bc52d8badb5df817b24fe542e8fdc654af1e1484744817",
+      "compartment_kind": "specific_cluster",
+      "data_selection_seed": 1707,
+      "dictionary_features": 4096,
+      "episode_count": 4,
+      "exact_sample_contract_sha256": "5036ddbcbacc1fef3f96a0a8d7a853b70bd6e676a390b39ea695fc182a49d051",
+      "execution_job_id": "d58a7fe3940a96902e9ea97e435b32cb49842caacebf6747d56457fc3daaeae4",
+      "hidden_size": 4096,
+      "initialization_seed": 17,
+      "job_index": 18,
+      "output_dir": "dictionaries/cluster-aware/vpd-sae-compartment-94181dcc49793146a9bc52d8badb5df817b24fe542e8fdc654af1e1484744817/seed-17",
+      "pair_count": 4,
+      "planned_activation_rows": 512,
+      "planned_activation_rows_per_episode": 128,
+      "planned_steps": 2000,
+      "profile_id": "bounded_context_pilot",
+      "source_training_job_id": "875088063026d4986980adc5fed2451c922b337a74d0dc271aa74d952e646175"
+    },
+    {
+      "activation_categories": [
+        "valid_authority"
+      ],
+      "activation_key": "layer_35__proposal_start",
+      "batch_size": 128,
+      "cluster_id": "vpd-cluster-6f562ac72e57615c92660ee39cae9413df0717f56b10431e5931915543325809",
+      "compartment_id": "vpd-sae-compartment-94181dcc49793146a9bc52d8badb5df817b24fe542e8fdc654af1e1484744817",
+      "compartment_kind": "specific_cluster",
+      "data_selection_seed": 1707,
+      "dictionary_features": 4096,
+      "episode_count": 4,
+      "exact_sample_contract_sha256": "5036ddbcbacc1fef3f96a0a8d7a853b70bd6e676a390b39ea695fc182a49d051",
+      "execution_job_id": "f559b860b857f642c722000fa17e36697ff784f079b872fc508f7a312f33d675",
+      "hidden_size": 4096,
+      "initialization_seed": 29,
+      "job_index": 19,
+      "output_dir": "dictionaries/cluster-aware/vpd-sae-compartment-94181dcc49793146a9bc52d8badb5df817b24fe542e8fdc654af1e1484744817/seed-29",
+      "pair_count": 4,
+      "planned_activation_rows": 512,
+      "planned_activation_rows_per_episode": 128,
+      "planned_steps": 2000,
+      "profile_id": "bounded_context_pilot",
+      "source_training_job_id": "6464d115084c56b9c99f24450002299a6c8f2a3db4e287ac76c76c967c6b0a77"
+    },
+    {
+      "activation_categories": [
+        "time_inactive"
+      ],
+      "activation_key": "layer_35__proposal_start",
+      "batch_size": 128,
+      "cluster_id": "vpd-cluster-5b673bbf11c63f28773550a2a5434fdffe522c9a4e029bc1463293ccf8cbba54",
+      "compartment_id": "vpd-sae-compartment-95d80cbe9259bd905f009d3031062be1a250862be19860379503e077f55a6de1",
+      "compartment_kind": "specific_cluster",
+      "data_selection_seed": 1707,
+      "dictionary_features": 4096,
+      "episode_count": 4,
+      "exact_sample_contract_sha256": "f511ca3329d81cff1e43cb216cb3e54f5c375702eb7baedd6535ed447f7c1879",
+      "execution_job_id": "7cf7cb864109302ca1f5b46f982229fd90955e433f963e49fb6f7d0738548e5a",
+      "hidden_size": 4096,
+      "initialization_seed": 17,
+      "job_index": 20,
+      "output_dir": "dictionaries/cluster-aware/vpd-sae-compartment-95d80cbe9259bd905f009d3031062be1a250862be19860379503e077f55a6de1/seed-17",
+      "pair_count": 4,
+      "planned_activation_rows": 512,
+      "planned_activation_rows_per_episode": 128,
+      "planned_steps": 2000,
+      "profile_id": "bounded_context_pilot",
+      "source_training_job_id": "84fd1cc71bfa44e706d9c380261ca62fc02664dd2e1ca5fbb8548900618ef338"
+    },
+    {
+      "activation_categories": [
+        "time_inactive"
+      ],
+      "activation_key": "layer_35__proposal_start",
+      "batch_size": 128,
+      "cluster_id": "vpd-cluster-5b673bbf11c63f28773550a2a5434fdffe522c9a4e029bc1463293ccf8cbba54",
+      "compartment_id": "vpd-sae-compartment-95d80cbe9259bd905f009d3031062be1a250862be19860379503e077f55a6de1",
+      "compartment_kind": "specific_cluster",
+      "data_selection_seed": 1707,
+      "dictionary_features": 4096,
+      "episode_count": 4,
+      "exact_sample_contract_sha256": "f511ca3329d81cff1e43cb216cb3e54f5c375702eb7baedd6535ed447f7c1879",
+      "execution_job_id": "6191d9f035607d57e50b0c7e606e235e0e63dfce75792ebf2c7834b3622aea52",
+      "hidden_size": 4096,
+      "initialization_seed": 29,
+      "job_index": 21,
+      "output_dir": "dictionaries/cluster-aware/vpd-sae-compartment-95d80cbe9259bd905f009d3031062be1a250862be19860379503e077f55a6de1/seed-29",
+      "pair_count": 4,
+      "planned_activation_rows": 512,
+      "planned_activation_rows_per_episode": 128,
+      "planned_steps": 2000,
+      "profile_id": "bounded_context_pilot",
+      "source_training_job_id": "b3755a866b75f3fb61805a4c0d71e4ef5b7c97247eed16f4ae999b90d283a318"
+    },
+    {
+      "activation_categories": [
+        "scope_invalid"
+      ],
+      "activation_key": "layer_35__proposal_start",
+      "batch_size": 128,
+      "cluster_id": "vpd-cluster-6f562ac72e57615c92660ee39cae9413df0717f56b10431e5931915543325809",
+      "compartment_id": "vpd-sae-compartment-a3efad1ab8a962dfbc3ad789065de50f45eef05d506d6aff1b1b54b9d43851a9",
+      "compartment_kind": "specific_cluster",
+      "data_selection_seed": 1707,
+      "dictionary_features": 4096,
+      "episode_count": 4,
+      "exact_sample_contract_sha256": "45a1006b5c6aa4ed2444d6fe4a1dee1506bd62bce3993b5c93b7c68273e2333d",
+      "execution_job_id": "1dec2be8d006b07a0cfb81192bb31ba1499513a409a672f078f53873137b956f",
+      "hidden_size": 4096,
+      "initialization_seed": 17,
+      "job_index": 22,
+      "output_dir": "dictionaries/cluster-aware/vpd-sae-compartment-a3efad1ab8a962dfbc3ad789065de50f45eef05d506d6aff1b1b54b9d43851a9/seed-17",
+      "pair_count": 4,
+      "planned_activation_rows": 512,
+      "planned_activation_rows_per_episode": 128,
+      "planned_steps": 2000,
+      "profile_id": "bounded_context_pilot",
+      "source_training_job_id": "88b0f771b9f02c094d6b8d0ed0a1b5fd3f2f173dca7e7748f51d1f8a25ade723"
+    },
+    {
+      "activation_categories": [
+        "scope_invalid"
+      ],
+      "activation_key": "layer_35__proposal_start",
+      "batch_size": 128,
+      "cluster_id": "vpd-cluster-6f562ac72e57615c92660ee39cae9413df0717f56b10431e5931915543325809",
+      "compartment_id": "vpd-sae-compartment-a3efad1ab8a962dfbc3ad789065de50f45eef05d506d6aff1b1b54b9d43851a9",
+      "compartment_kind": "specific_cluster",
+      "data_selection_seed": 1707,
+      "dictionary_features": 4096,
+      "episode_count": 4,
+      "exact_sample_contract_sha256": "45a1006b5c6aa4ed2444d6fe4a1dee1506bd62bce3993b5c93b7c68273e2333d",
+      "execution_job_id": "762a24f5cbd101d9b1ada8be47c5fba651112f07d4a1848be05fefe389addbbf",
+      "hidden_size": 4096,
+      "initialization_seed": 29,
+      "job_index": 23,
+      "output_dir": "dictionaries/cluster-aware/vpd-sae-compartment-a3efad1ab8a962dfbc3ad789065de50f45eef05d506d6aff1b1b54b9d43851a9/seed-29",
+      "pair_count": 4,
+      "planned_activation_rows": 512,
+      "planned_activation_rows_per_episode": 128,
+      "planned_steps": 2000,
+      "profile_id": "bounded_context_pilot",
+      "source_training_job_id": "b63bbdb6ab69604419b7aa3ef16fa2ef748d6d290a534e8a5c4a447488e4e363"
+    },
+    {
+      "activation_categories": [
+        "replayed"
+      ],
+      "activation_key": "layer_35__proposal_start",
+      "batch_size": 128,
+      "cluster_id": "vpd-cluster-5b673bbf11c63f28773550a2a5434fdffe522c9a4e029bc1463293ccf8cbba54",
+      "compartment_id": "vpd-sae-compartment-acbdb1d468f28dd71490de0c1d94a61f5a71eb7bdaed4d676253dcf037a9450a",
+      "compartment_kind": "specific_cluster",
+      "data_selection_seed": 1707,
+      "dictionary_features": 4096,
+      "episode_count": 4,
+      "exact_sample_contract_sha256": "2842d5d0048967e6c339d5fc1f6ec93a2b158551ce5b19981e9568eb33a7b203",
+      "execution_job_id": "2ef89124e5f4c7e4c3cb788adb464e9e9a39b5d673b0db5097418af99935b797",
+      "hidden_size": 4096,
+      "initialization_seed": 17,
+      "job_index": 24,
+      "output_dir": "dictionaries/cluster-aware/vpd-sae-compartment-acbdb1d468f28dd71490de0c1d94a61f5a71eb7bdaed4d676253dcf037a9450a/seed-17",
+      "pair_count": 4,
+      "planned_activation_rows": 512,
+      "planned_activation_rows_per_episode": 128,
+      "planned_steps": 2000,
+      "profile_id": "bounded_context_pilot",
+      "source_training_job_id": "14d87d145453c74b10dc35996e1b5020efc15d17a45b3f678d0c72622836798f"
+    },
+    {
+      "activation_categories": [
+        "replayed"
+      ],
+      "activation_key": "layer_35__proposal_start",
+      "batch_size": 128,
+      "cluster_id": "vpd-cluster-5b673bbf11c63f28773550a2a5434fdffe522c9a4e029bc1463293ccf8cbba54",
+      "compartment_id": "vpd-sae-compartment-acbdb1d468f28dd71490de0c1d94a61f5a71eb7bdaed4d676253dcf037a9450a",
+      "compartment_kind": "specific_cluster",
+      "data_selection_seed": 1707,
+      "dictionary_features": 4096,
+      "episode_count": 4,
+      "exact_sample_contract_sha256": "2842d5d0048967e6c339d5fc1f6ec93a2b158551ce5b19981e9568eb33a7b203",
+      "execution_job_id": "9a386736316297b18a0d3bab7d05f022e72688f9acf0ea52ebf373cc1291be8f",
+      "hidden_size": 4096,
+      "initialization_seed": 29,
+      "job_index": 25,
+      "output_dir": "dictionaries/cluster-aware/vpd-sae-compartment-acbdb1d468f28dd71490de0c1d94a61f5a71eb7bdaed4d676253dcf037a9450a/seed-29",
+      "pair_count": 4,
+      "planned_activation_rows": 512,
+      "planned_activation_rows_per_episode": 128,
+      "planned_steps": 2000,
+      "profile_id": "bounded_context_pilot",
+      "source_training_job_id": "8e11b6509e95018e10d838f7be9087932044b92da6dee811cb53c048fb347ae4"
+    },
+    {
+      "activation_categories": [
+        "revoked"
+      ],
+      "activation_key": "layer_35__proposal_start",
+      "batch_size": 128,
+      "cluster_id": "vpd-cluster-5b673bbf11c63f28773550a2a5434fdffe522c9a4e029bc1463293ccf8cbba54",
+      "compartment_id": "vpd-sae-compartment-b710a95f078953f6a73f95e55decf3b4e257e1100177aad354b594cce0bf6136",
+      "compartment_kind": "specific_cluster",
+      "data_selection_seed": 1707,
+      "dictionary_features": 4096,
+      "episode_count": 4,
+      "exact_sample_contract_sha256": "5f102777a6175d85e61e35181e7a6cf1a30f811694b36ee921e89ea13c15b30b",
+      "execution_job_id": "c4df0ff3551ce90e3bce696642dcb073a87562a5aee225b162c111ea754a0059",
+      "hidden_size": 4096,
+      "initialization_seed": 17,
+      "job_index": 26,
+      "output_dir": "dictionaries/cluster-aware/vpd-sae-compartment-b710a95f078953f6a73f95e55decf3b4e257e1100177aad354b594cce0bf6136/seed-17",
+      "pair_count": 4,
+      "planned_activation_rows": 512,
+      "planned_activation_rows_per_episode": 128,
+      "planned_steps": 2000,
+      "profile_id": "bounded_context_pilot",
+      "source_training_job_id": "7a96cf37c7a0951fcd6c99ede6931f6a4dfee6472afdfd467fd9ea7cd701535f"
+    },
+    {
+      "activation_categories": [
+        "revoked"
+      ],
+      "activation_key": "layer_35__proposal_start",
+      "batch_size": 128,
+      "cluster_id": "vpd-cluster-5b673bbf11c63f28773550a2a5434fdffe522c9a4e029bc1463293ccf8cbba54",
+      "compartment_id": "vpd-sae-compartment-b710a95f078953f6a73f95e55decf3b4e257e1100177aad354b594cce0bf6136",
+      "compartment_kind": "specific_cluster",
+      "data_selection_seed": 1707,
+      "dictionary_features": 4096,
+      "episode_count": 4,
+      "exact_sample_contract_sha256": "5f102777a6175d85e61e35181e7a6cf1a30f811694b36ee921e89ea13c15b30b",
+      "execution_job_id": "635c804ff862473691060a2cc5afe33355b633b121306e1c71bcba7780bb1d18",
+      "hidden_size": 4096,
+      "initialization_seed": 29,
+      "job_index": 27,
+      "output_dir": "dictionaries/cluster-aware/vpd-sae-compartment-b710a95f078953f6a73f95e55decf3b4e257e1100177aad354b594cce0bf6136/seed-29",
+      "pair_count": 4,
+      "planned_activation_rows": 512,
+      "planned_activation_rows_per_episode": 128,
+      "planned_steps": 2000,
+      "profile_id": "bounded_context_pilot",
+      "source_training_job_id": "18b32bdad0b5547c1f45545a5f11280d61f50352bc18982025b06044ea360fce"
+    },
+    {
+      "activation_categories": [
+        "missing_or_untrusted_authority"
+      ],
+      "activation_key": "layer_35__proposal_start",
+      "batch_size": 128,
+      "cluster_id": "vpd-cluster-5b673bbf11c63f28773550a2a5434fdffe522c9a4e029bc1463293ccf8cbba54",
+      "compartment_id": "vpd-sae-compartment-d17460c16b97106f98af68cc2b84ec986db69a64cf6d21846a14e9c26cff83cd",
+      "compartment_kind": "specific_cluster",
+      "data_selection_seed": 1707,
+      "dictionary_features": 4096,
+      "episode_count": 4,
+      "exact_sample_contract_sha256": "3175c69fa99441668d194f0020aca4496cf5850b256f491440e1660c7131c69f",
+      "execution_job_id": "d85c21c0128f45e0d7944824dbbd5008fabcf136c11ff93a180ea3ad2871e75c",
+      "hidden_size": 4096,
+      "initialization_seed": 17,
+      "job_index": 28,
+      "output_dir": "dictionaries/cluster-aware/vpd-sae-compartment-d17460c16b97106f98af68cc2b84ec986db69a64cf6d21846a14e9c26cff83cd/seed-17",
+      "pair_count": 4,
+      "planned_activation_rows": 512,
+      "planned_activation_rows_per_episode": 128,
+      "planned_steps": 2000,
+      "profile_id": "bounded_context_pilot",
+      "source_training_job_id": "733b1f0908f027519df6b69920445c11fffdf7e9540dae9f43669bc8f565fced"
+    },
+    {
+      "activation_categories": [
+        "missing_or_untrusted_authority"
+      ],
+      "activation_key": "layer_35__proposal_start",
+      "batch_size": 128,
+      "cluster_id": "vpd-cluster-5b673bbf11c63f28773550a2a5434fdffe522c9a4e029bc1463293ccf8cbba54",
+      "compartment_id": "vpd-sae-compartment-d17460c16b97106f98af68cc2b84ec986db69a64cf6d21846a14e9c26cff83cd",
+      "compartment_kind": "specific_cluster",
+      "data_selection_seed": 1707,
+      "dictionary_features": 4096,
+      "episode_count": 4,
+      "exact_sample_contract_sha256": "3175c69fa99441668d194f0020aca4496cf5850b256f491440e1660c7131c69f",
+      "execution_job_id": "a236b552f5d5f0a631f4740bd3620c117bfb4dc2b8f33846e53c07283b668b73",
+      "hidden_size": 4096,
+      "initialization_seed": 29,
+      "job_index": 29,
+      "output_dir": "dictionaries/cluster-aware/vpd-sae-compartment-d17460c16b97106f98af68cc2b84ec986db69a64cf6d21846a14e9c26cff83cd/seed-29",
+      "pair_count": 4,
+      "planned_activation_rows": 512,
+      "planned_activation_rows_per_episode": 128,
+      "planned_steps": 2000,
+      "profile_id": "bounded_context_pilot",
+      "source_training_job_id": "e51db47bf757487ad5c41bed449a827370df4483a5a02f8002424af16f1f46f2"
+    },
+    {
+      "activation_categories": [
+        "time_inactive"
+      ],
+      "activation_key": "layer_35__proposal_start",
+      "batch_size": 128,
+      "cluster_id": "vpd-cluster-6f562ac72e57615c92660ee39cae9413df0717f56b10431e5931915543325809",
+      "compartment_id": "vpd-sae-compartment-ef0432a24007c189056df4176599f211610a95a30a37e3fe5e338f88675331f6",
+      "compartment_kind": "specific_cluster",
+      "data_selection_seed": 1707,
+      "dictionary_features": 4096,
+      "episode_count": 4,
+      "exact_sample_contract_sha256": "a4a2c72f7a9d3cfa0c72061a4b4b09791fac4dfeb7ae7158dadf4ba082103af5",
+      "execution_job_id": "237339bebf60100224ffd46b1cfa5cc5c01e1d0a8f71884314065c96bcb32aec",
+      "hidden_size": 4096,
+      "initialization_seed": 17,
+      "job_index": 30,
+      "output_dir": "dictionaries/cluster-aware/vpd-sae-compartment-ef0432a24007c189056df4176599f211610a95a30a37e3fe5e338f88675331f6/seed-17",
+      "pair_count": 4,
+      "planned_activation_rows": 512,
+      "planned_activation_rows_per_episode": 128,
+      "planned_steps": 2000,
+      "profile_id": "bounded_context_pilot",
+      "source_training_job_id": "4f02e7a89aaf6aae32202e70ffb78d2bd901a3ef987c6cae2c2354a6394802e5"
+    },
+    {
+      "activation_categories": [
+        "time_inactive"
+      ],
+      "activation_key": "layer_35__proposal_start",
+      "batch_size": 128,
+      "cluster_id": "vpd-cluster-6f562ac72e57615c92660ee39cae9413df0717f56b10431e5931915543325809",
+      "compartment_id": "vpd-sae-compartment-ef0432a24007c189056df4176599f211610a95a30a37e3fe5e338f88675331f6",
+      "compartment_kind": "specific_cluster",
+      "data_selection_seed": 1707,
+      "dictionary_features": 4096,
+      "episode_count": 4,
+      "exact_sample_contract_sha256": "a4a2c72f7a9d3cfa0c72061a4b4b09791fac4dfeb7ae7158dadf4ba082103af5",
+      "execution_job_id": "6ea1c32f505de59618b8274ce58d4ad52cb3788b50a8fa908776cb5c17028ac2",
+      "hidden_size": 4096,
+      "initialization_seed": 29,
+      "job_index": 31,
+      "output_dir": "dictionaries/cluster-aware/vpd-sae-compartment-ef0432a24007c189056df4176599f211610a95a30a37e3fe5e338f88675331f6/seed-29",
+      "pair_count": 4,
+      "planned_activation_rows": 512,
+      "planned_activation_rows_per_episode": 128,
+      "planned_steps": 2000,
+      "profile_id": "bounded_context_pilot",
+      "source_training_job_id": "ff6d746896a482729c726489f545bc9f69ada1aae81b7f97a8f9b09e0e0bd0c5"
+    },
+    {
+      "activation_categories": [
+        "other_invalid"
+      ],
+      "activation_key": "layer_35__proposal_start",
+      "batch_size": 128,
+      "cluster_id": "vpd-cluster-5b673bbf11c63f28773550a2a5434fdffe522c9a4e029bc1463293ccf8cbba54",
+      "compartment_id": "vpd-sae-compartment-feb1f43ec79931b97245795212d31cd491a26827d48d84e567d07f57e0d575b1",
+      "compartment_kind": "specific_cluster",
+      "data_selection_seed": 1707,
+      "dictionary_features": 4096,
+      "episode_count": 4,
+      "exact_sample_contract_sha256": "d5f890bf97598acd9f1d3c18a351679f59d77cb1ee47ad9df69ff7f1983a57d5",
+      "execution_job_id": "5ffc09fc88487e29fa445d6fd6c34faca982fd70cbeb9393535f1d2c5469aca2",
+      "hidden_size": 4096,
+      "initialization_seed": 17,
+      "job_index": 32,
+      "output_dir": "dictionaries/cluster-aware/vpd-sae-compartment-feb1f43ec79931b97245795212d31cd491a26827d48d84e567d07f57e0d575b1/seed-17",
+      "pair_count": 4,
+      "planned_activation_rows": 512,
+      "planned_activation_rows_per_episode": 128,
+      "planned_steps": 2000,
+      "profile_id": "bounded_context_pilot",
+      "source_training_job_id": "5ca21e6afa799de48914a4a1b238334be7f6ee4f9e6a1fa52cdf0346d7833d62"
+    },
+    {
+      "activation_categories": [
+        "other_invalid"
+      ],
+      "activation_key": "layer_35__proposal_start",
+      "batch_size": 128,
+      "cluster_id": "vpd-cluster-5b673bbf11c63f28773550a2a5434fdffe522c9a4e029bc1463293ccf8cbba54",
+      "compartment_id": "vpd-sae-compartment-feb1f43ec79931b97245795212d31cd491a26827d48d84e567d07f57e0d575b1",
+      "compartment_kind": "specific_cluster",
+      "data_selection_seed": 1707,
+      "dictionary_features": 4096,
+      "episode_count": 4,
+      "exact_sample_contract_sha256": "d5f890bf97598acd9f1d3c18a351679f59d77cb1ee47ad9df69ff7f1983a57d5",
+      "execution_job_id": "4897f644f0860a83e6d2d4448bfc60b7bedae70684115d7cbe39f66a974a175e",
+      "hidden_size": 4096,
+      "initialization_seed": 29,
+      "job_index": 33,
+      "output_dir": "dictionaries/cluster-aware/vpd-sae-compartment-feb1f43ec79931b97245795212d31cd491a26827d48d84e567d07f57e0d575b1/seed-29",
+      "pair_count": 4,
+      "planned_activation_rows": 512,
+      "planned_activation_rows_per_episode": 128,
+      "planned_steps": 2000,
+      "profile_id": "bounded_context_pilot",
+      "source_training_job_id": "2f76c7ed5383fe5fe5a58389fc0d8e98cc081a9fa6e66b8e9a869e8587365069"
+    }
+  ],
+  "resource_reconciliation_id": "c9759d5e1f89cd3f2e6d3a9fa264e27f0ae7e1eee933c3413de5ac3de54bf0ff",
+  "schema": "sch.vpd-cluster-aware-sae-compartment-resource-reconciliation.v1",
+  "scientific_boundary": {
+    "execution_authorized": false,
+    "model_framework_imported": false,
+    "model_inference_performed": false,
+    "model_loaded": false,
+    "persistent_dictionary_output_created": false,
+    "production_campaign_executed": false,
+    "raw_campaign_receipts_recovered": false,
+    "resource_accounting_is_empirical_evidence": false,
+    "retry_authorized": false,
+    "sae_training_authorized": false,
+    "synthetic_reconstruction_only": true,
+    "training_performed": false,
+    "weights_loaded_or_mutated": false
+  },
+  "shared_fallback_resource_account": {
+    "activation_categories": [
+      "missing_or_untrusted_authority",
+      "other_invalid",
+      "replayed",
+      "revoked",
+      "scope_invalid",
+      "signature_invalid",
+      "time_inactive",
+      "valid_authority"
+    ],
+    "compartment_ids": [
+      "shared_cross_category"
+    ],
+    "never_double_counted_into_category_totals": true,
+    "resources": {
+      "batch_sizes": [
+        128
+      ],
+      "data_selection_seeds": [
+        1707
+      ],
+      "dictionary_feature_widths": [
+        8192
+      ],
+      "episode_contract_entries": 32,
+      "initialization_seeds": [
+        17,
+        29
+      ],
+      "jobs": 2,
+      "pair_contract_entries": 4,
+      "planned_activation_rows": 4096,
+      "planned_steps": 4000,
+      "unique_output_directories": 2
+    }
+  },
+  "source": {
+    "campaign_benchmark_id": "34204198cc2cd605e74fff0f24da7b5d09337613f16da74872f354c53f8b32f5",
+    "campaign_benchmark_path": "artifacts/vpd_cluster_aware_sae_inert_campaign_benchmark_v1/report.json",
+    "campaign_benchmark_sha256": "5a57299a1b912257c174d0daafddf5b89fba9a179de2249a6408bad693ae05a9",
+    "cluster_aware_sae_plan_id": "b2c43a7771509372f5a595041ac606ad5929c4ce5df2c8b95de2b4e7a4bb17af",
+    "execution_blueprint_id": "07122590aae37e4e07dec2077830954e5eeb56ec269c77382f227fb33e233215",
+    "global_pair_split_id": "5620b6c1ad610d312ea18abe922774e6535d3feb48a30b8579fcc433ca6fb457",
+    "materialization_id": "7de298a878bd5c7688dcd4b76000f03ea1ab91cc8ae40648e2fa5c5ea571fd6b",
+    "raw_campaign_receipts_present": false,
+    "reconstructed_from_verified_summary": true
+  },
+  "status": "complete_reconstructed_nonexecuting_compartment_resource_and_failure_reconciliation",
+  "success_reconciliation": {
+    "fresh_authorization_requirements": {
+      "applies_to_every_future_real_job": true,
+      "empirical_cluster_aware_blueprint_required": true,
+      "explicit_user_authorization_required": true,
+      "fresh_active_scientific_release_receipt_required": true,
+      "fresh_exact_job_compute_receipt_required": true,
+      "fresh_nonce_and_output_reservation_required": true,
+      "synthetic_campaign_receipt_transfers_no_authority": true
+    },
+    "job_states": [
+      {
+        "callback_charged": true,
+        "compartment_id": "shared_cross_category",
+        "dictionary_output_written": false,
+        "execution_job_id": "703e053e9397e3d51f98363b7c8d7dc5df63ce0cc02110c6e8dd98118401ac5e",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 0,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_completed_no_training",
+        "training_performed": false
+      },
+      {
+        "callback_charged": true,
+        "compartment_id": "shared_cross_category",
+        "dictionary_output_written": false,
+        "execution_job_id": "4495d20a204253cbfc3eb3a002145868b507ac3df4aa7dbd8aa039b691f571fa",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 1,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_completed_no_training",
+        "training_performed": false
+      },
+      {
+        "callback_charged": true,
+        "compartment_id": "vpd-sae-compartment-027c99d6175beb0988e88312e9ab698b3a4cd2691a5b53b39d6efec19fc3c5aa",
+        "dictionary_output_written": false,
+        "execution_job_id": "3922c70dba0f61431ae6280c3f13bf0b74209bcc2646201db620582ff4cf81ce",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 2,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_completed_no_training",
+        "training_performed": false
+      },
+      {
+        "callback_charged": true,
+        "compartment_id": "vpd-sae-compartment-027c99d6175beb0988e88312e9ab698b3a4cd2691a5b53b39d6efec19fc3c5aa",
+        "dictionary_output_written": false,
+        "execution_job_id": "a9c9c3023f0b60c3735b7b043e64124f75ac165e3ee61bad40018c90377746db",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 3,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_completed_no_training",
+        "training_performed": false
+      },
+      {
+        "callback_charged": true,
+        "compartment_id": "vpd-sae-compartment-10d982cd345e13c10a0e02186fe84ea861874dd9b5b43809868b226bfc3b59a7",
+        "dictionary_output_written": false,
+        "execution_job_id": "89cf78b8cb213b5f36452fefa7f28108e9d243150fedf8ef1f9894f77418bf43",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 4,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_completed_no_training",
+        "training_performed": false
+      },
+      {
+        "callback_charged": true,
+        "compartment_id": "vpd-sae-compartment-10d982cd345e13c10a0e02186fe84ea861874dd9b5b43809868b226bfc3b59a7",
+        "dictionary_output_written": false,
+        "execution_job_id": "c60e1889b1de2a709672d1e441a63949ab39dbb8375023818f407fe01c33bd04",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 5,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_completed_no_training",
+        "training_performed": false
+      },
+      {
+        "callback_charged": true,
+        "compartment_id": "vpd-sae-compartment-15923e0a988e425624002b51fa9482efcc3146abb4f57691f5a25733b76efa7e",
+        "dictionary_output_written": false,
+        "execution_job_id": "68b42a94d4c6258893695a8b7ec5862fbc8eb6631a4ba214f3f656e04af0ee47",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 6,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_completed_no_training",
+        "training_performed": false
+      },
+      {
+        "callback_charged": true,
+        "compartment_id": "vpd-sae-compartment-15923e0a988e425624002b51fa9482efcc3146abb4f57691f5a25733b76efa7e",
+        "dictionary_output_written": false,
+        "execution_job_id": "207d2972692c47cf185905e0995e5f30140613df83dd0e023df76525e7bcfa58",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 7,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_completed_no_training",
+        "training_performed": false
+      },
+      {
+        "callback_charged": true,
+        "compartment_id": "vpd-sae-compartment-213ef2079c10e199965d5b7a049675120d484072032d74a87a09263919c0baed",
+        "dictionary_output_written": false,
+        "execution_job_id": "623711c9128f9dd8e01628984afb76f4399b25dd825283b33e1992b6b028811d",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 8,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_completed_no_training",
+        "training_performed": false
+      },
+      {
+        "callback_charged": true,
+        "compartment_id": "vpd-sae-compartment-213ef2079c10e199965d5b7a049675120d484072032d74a87a09263919c0baed",
+        "dictionary_output_written": false,
+        "execution_job_id": "0d0a731d0fcfcf65b093907d2d7c33c10360e73ed5c5d13e662cfdebf76e6e94",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 9,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_completed_no_training",
+        "training_performed": false
+      },
+      {
+        "callback_charged": true,
+        "compartment_id": "vpd-sae-compartment-55e20520628848a5b85958e097dac1ddefe17d0f25ef26a1460a28b27c69b369",
+        "dictionary_output_written": false,
+        "execution_job_id": "3ef9340134da2b69c5ed24c4dcae039698b6bb0a579cf7a579af8fdeea48586c",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 10,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_completed_no_training",
+        "training_performed": false
+      },
+      {
+        "callback_charged": true,
+        "compartment_id": "vpd-sae-compartment-55e20520628848a5b85958e097dac1ddefe17d0f25ef26a1460a28b27c69b369",
+        "dictionary_output_written": false,
+        "execution_job_id": "8782e245a92b155dc6c669b53104ad70c66961d5e668475033dff47dd56335b0",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 11,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_completed_no_training",
+        "training_performed": false
+      },
+      {
+        "callback_charged": true,
+        "compartment_id": "vpd-sae-compartment-831f475557bd7f757fa2cd866a119415f066cb0da05a4f1af97b8f88313b2457",
+        "dictionary_output_written": false,
+        "execution_job_id": "3019ee2ae97ee1e6838d50951ec56b817b3c211dea73de7538f9d5c9f274a46a",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 12,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_completed_no_training",
+        "training_performed": false
+      },
+      {
+        "callback_charged": true,
+        "compartment_id": "vpd-sae-compartment-831f475557bd7f757fa2cd866a119415f066cb0da05a4f1af97b8f88313b2457",
+        "dictionary_output_written": false,
+        "execution_job_id": "99e7b46fe5977b80881dd4211ad631a88c7142becd1ab70e083b6744331fd7b4",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 13,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_completed_no_training",
+        "training_performed": false
+      },
+      {
+        "callback_charged": true,
+        "compartment_id": "vpd-sae-compartment-8377dd927480a9e26d08f5a851be5d89681a6ad83b8524d82d2b3d422cea3501",
+        "dictionary_output_written": false,
+        "execution_job_id": "e081eba439c0b05924d6704982e543fab87b398113a7f4d1a55f3e184da195aa",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 14,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_completed_no_training",
+        "training_performed": false
+      },
+      {
+        "callback_charged": true,
+        "compartment_id": "vpd-sae-compartment-8377dd927480a9e26d08f5a851be5d89681a6ad83b8524d82d2b3d422cea3501",
+        "dictionary_output_written": false,
+        "execution_job_id": "f8fb787a97e2eb96320082c8dc45e4030c41f69b453bdfbeb01ade841217c398",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 15,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_completed_no_training",
+        "training_performed": false
+      },
+      {
+        "callback_charged": true,
+        "compartment_id": "vpd-sae-compartment-8a7364e626e39e2b2f5d29801def919224f9eaaeea62be2723a4a97ef6ab108d",
+        "dictionary_output_written": false,
+        "execution_job_id": "36c46f422c8c0925074a87f42c66aa8b46b8fab08df45029869980c226bccf7f",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 16,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_completed_no_training",
+        "training_performed": false
+      },
+      {
+        "callback_charged": true,
+        "compartment_id": "vpd-sae-compartment-8a7364e626e39e2b2f5d29801def919224f9eaaeea62be2723a4a97ef6ab108d",
+        "dictionary_output_written": false,
+        "execution_job_id": "b85ca4ab5b21af47051c3fb93af14ef005f440c55f08ba300a3571e1d2c4a4f9",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 17,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_completed_no_training",
+        "training_performed": false
+      },
+      {
+        "callback_charged": true,
+        "compartment_id": "vpd-sae-compartment-94181dcc49793146a9bc52d8badb5df817b24fe542e8fdc654af1e1484744817",
+        "dictionary_output_written": false,
+        "execution_job_id": "d58a7fe3940a96902e9ea97e435b32cb49842caacebf6747d56457fc3daaeae4",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 18,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_completed_no_training",
+        "training_performed": false
+      },
+      {
+        "callback_charged": true,
+        "compartment_id": "vpd-sae-compartment-94181dcc49793146a9bc52d8badb5df817b24fe542e8fdc654af1e1484744817",
+        "dictionary_output_written": false,
+        "execution_job_id": "f559b860b857f642c722000fa17e36697ff784f079b872fc508f7a312f33d675",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 19,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_completed_no_training",
+        "training_performed": false
+      },
+      {
+        "callback_charged": true,
+        "compartment_id": "vpd-sae-compartment-95d80cbe9259bd905f009d3031062be1a250862be19860379503e077f55a6de1",
+        "dictionary_output_written": false,
+        "execution_job_id": "7cf7cb864109302ca1f5b46f982229fd90955e433f963e49fb6f7d0738548e5a",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 20,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_completed_no_training",
+        "training_performed": false
+      },
+      {
+        "callback_charged": true,
+        "compartment_id": "vpd-sae-compartment-95d80cbe9259bd905f009d3031062be1a250862be19860379503e077f55a6de1",
+        "dictionary_output_written": false,
+        "execution_job_id": "6191d9f035607d57e50b0c7e606e235e0e63dfce75792ebf2c7834b3622aea52",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 21,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_completed_no_training",
+        "training_performed": false
+      },
+      {
+        "callback_charged": true,
+        "compartment_id": "vpd-sae-compartment-a3efad1ab8a962dfbc3ad789065de50f45eef05d506d6aff1b1b54b9d43851a9",
+        "dictionary_output_written": false,
+        "execution_job_id": "1dec2be8d006b07a0cfb81192bb31ba1499513a409a672f078f53873137b956f",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 22,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_completed_no_training",
+        "training_performed": false
+      },
+      {
+        "callback_charged": true,
+        "compartment_id": "vpd-sae-compartment-a3efad1ab8a962dfbc3ad789065de50f45eef05d506d6aff1b1b54b9d43851a9",
+        "dictionary_output_written": false,
+        "execution_job_id": "762a24f5cbd101d9b1ada8be47c5fba651112f07d4a1848be05fefe389addbbf",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 23,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_completed_no_training",
+        "training_performed": false
+      },
+      {
+        "callback_charged": true,
+        "compartment_id": "vpd-sae-compartment-acbdb1d468f28dd71490de0c1d94a61f5a71eb7bdaed4d676253dcf037a9450a",
+        "dictionary_output_written": false,
+        "execution_job_id": "2ef89124e5f4c7e4c3cb788adb464e9e9a39b5d673b0db5097418af99935b797",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 24,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_completed_no_training",
+        "training_performed": false
+      },
+      {
+        "callback_charged": true,
+        "compartment_id": "vpd-sae-compartment-acbdb1d468f28dd71490de0c1d94a61f5a71eb7bdaed4d676253dcf037a9450a",
+        "dictionary_output_written": false,
+        "execution_job_id": "9a386736316297b18a0d3bab7d05f022e72688f9acf0ea52ebf373cc1291be8f",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 25,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_completed_no_training",
+        "training_performed": false
+      },
+      {
+        "callback_charged": true,
+        "compartment_id": "vpd-sae-compartment-b710a95f078953f6a73f95e55decf3b4e257e1100177aad354b594cce0bf6136",
+        "dictionary_output_written": false,
+        "execution_job_id": "c4df0ff3551ce90e3bce696642dcb073a87562a5aee225b162c111ea754a0059",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 26,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_completed_no_training",
+        "training_performed": false
+      },
+      {
+        "callback_charged": true,
+        "compartment_id": "vpd-sae-compartment-b710a95f078953f6a73f95e55decf3b4e257e1100177aad354b594cce0bf6136",
+        "dictionary_output_written": false,
+        "execution_job_id": "635c804ff862473691060a2cc5afe33355b633b121306e1c71bcba7780bb1d18",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 27,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_completed_no_training",
+        "training_performed": false
+      },
+      {
+        "callback_charged": true,
+        "compartment_id": "vpd-sae-compartment-d17460c16b97106f98af68cc2b84ec986db69a64cf6d21846a14e9c26cff83cd",
+        "dictionary_output_written": false,
+        "execution_job_id": "d85c21c0128f45e0d7944824dbbd5008fabcf136c11ff93a180ea3ad2871e75c",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 28,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_completed_no_training",
+        "training_performed": false
+      },
+      {
+        "callback_charged": true,
+        "compartment_id": "vpd-sae-compartment-d17460c16b97106f98af68cc2b84ec986db69a64cf6d21846a14e9c26cff83cd",
+        "dictionary_output_written": false,
+        "execution_job_id": "a236b552f5d5f0a631f4740bd3620c117bfb4dc2b8f33846e53c07283b668b73",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 29,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_completed_no_training",
+        "training_performed": false
+      },
+      {
+        "callback_charged": true,
+        "compartment_id": "vpd-sae-compartment-ef0432a24007c189056df4176599f211610a95a30a37e3fe5e338f88675331f6",
+        "dictionary_output_written": false,
+        "execution_job_id": "237339bebf60100224ffd46b1cfa5cc5c01e1d0a8f71884314065c96bcb32aec",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 30,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_completed_no_training",
+        "training_performed": false
+      },
+      {
+        "callback_charged": true,
+        "compartment_id": "vpd-sae-compartment-ef0432a24007c189056df4176599f211610a95a30a37e3fe5e338f88675331f6",
+        "dictionary_output_written": false,
+        "execution_job_id": "6ea1c32f505de59618b8274ce58d4ad52cb3788b50a8fa908776cb5c17028ac2",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 31,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_completed_no_training",
+        "training_performed": false
+      },
+      {
+        "callback_charged": true,
+        "compartment_id": "vpd-sae-compartment-feb1f43ec79931b97245795212d31cd491a26827d48d84e567d07f57e0d575b1",
+        "dictionary_output_written": false,
+        "execution_job_id": "5ffc09fc88487e29fa445d6fd6c34faca982fd70cbeb9393535f1d2c5469aca2",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 32,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_completed_no_training",
+        "training_performed": false
+      },
+      {
+        "callback_charged": true,
+        "compartment_id": "vpd-sae-compartment-feb1f43ec79931b97245795212d31cd491a26827d48d84e567d07f57e0d575b1",
+        "dictionary_output_written": false,
+        "execution_job_id": "4897f644f0860a83e6d2d4448bfc60b7bedae70684115d7cbe39f66a974a175e",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 33,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_completed_no_training",
+        "training_performed": false
+      }
+    ],
+    "planned_resources_by_state": {
+      "synthetic_completed_no_training": {
+        "batch_sizes": [
+          128
+        ],
+        "data_selection_seeds": [
+          1707
+        ],
+        "dictionary_feature_widths": [
+          4096,
+          8192
+        ],
+        "episode_contract_entries": 160,
+        "initialization_seeds": [
+          17,
+          29
+        ],
+        "jobs": 34,
+        "pair_contract_entries": 132,
+        "planned_activation_rows": 20480,
+        "planned_steps": 68000,
+        "unique_output_directories": 34
+      }
+    },
+    "reconstruction_basis": "verified_campaign_benchmark_summary_and_pinned_job_order",
+    "source_raw_campaign_receipt_present": false,
+    "source_synthetic_campaign_id": "6a3d31be599e689636e3cde67715f9ab6a6971a7c704e7a7e438b27bcc386343",
+    "summary": {
+      "activation_rows_consumed_observed": 0,
+      "charged_callbacks": 34,
+      "completed_callbacks": 34,
+      "dictionary_outputs_observed": 0,
+      "failed_callbacks": 0,
+      "jobs": 34,
+      "same_campaign_retry_authorized": false,
+      "training_steps_observed": 0,
+      "uninvoked_callbacks": 0
+    }
+  },
+  "summary": {
+    "activation_categories": 8,
+    "compartments": 17,
+    "execution_jobs": 34,
+    "resource_values_are_planned_not_observed_training_consumption": true,
+    "shared_fallback_compartments": 1,
+    "shared_fallback_double_counted": false,
+    "specific_compartments": 16,
+    "unique_output_directories": 34
+  },
+  "terminal_failure_reconciliation": {
+    "fresh_authorization_requirements": {
+      "applies_to_every_future_real_job": true,
+      "empirical_cluster_aware_blueprint_required": true,
+      "explicit_user_authorization_required": true,
+      "fresh_active_scientific_release_receipt_required": true,
+      "fresh_exact_job_compute_receipt_required": true,
+      "fresh_nonce_and_output_reservation_required": true,
+      "synthetic_campaign_receipt_transfers_no_authority": true
+    },
+    "job_states": [
+      {
+        "callback_charged": true,
+        "compartment_id": "shared_cross_category",
+        "dictionary_output_written": false,
+        "execution_job_id": "703e053e9397e3d51f98363b7c8d7dc5df63ce0cc02110c6e8dd98118401ac5e",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 0,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_completed_no_training",
+        "training_performed": false
+      },
+      {
+        "callback_charged": true,
+        "compartment_id": "shared_cross_category",
+        "dictionary_output_written": false,
+        "execution_job_id": "4495d20a204253cbfc3eb3a002145868b507ac3df4aa7dbd8aa039b691f571fa",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 1,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_completed_no_training",
+        "training_performed": false
+      },
+      {
+        "callback_charged": true,
+        "compartment_id": "vpd-sae-compartment-027c99d6175beb0988e88312e9ab698b3a4cd2691a5b53b39d6efec19fc3c5aa",
+        "dictionary_output_written": false,
+        "execution_job_id": "3922c70dba0f61431ae6280c3f13bf0b74209bcc2646201db620582ff4cf81ce",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 2,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_completed_no_training",
+        "training_performed": false
+      },
+      {
+        "callback_charged": true,
+        "compartment_id": "vpd-sae-compartment-027c99d6175beb0988e88312e9ab698b3a4cd2691a5b53b39d6efec19fc3c5aa",
+        "dictionary_output_written": false,
+        "execution_job_id": "a9c9c3023f0b60c3735b7b043e64124f75ac165e3ee61bad40018c90377746db",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 3,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_completed_no_training",
+        "training_performed": false
+      },
+      {
+        "callback_charged": true,
+        "compartment_id": "vpd-sae-compartment-10d982cd345e13c10a0e02186fe84ea861874dd9b5b43809868b226bfc3b59a7",
+        "dictionary_output_written": false,
+        "execution_job_id": "89cf78b8cb213b5f36452fefa7f28108e9d243150fedf8ef1f9894f77418bf43",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 4,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_completed_no_training",
+        "training_performed": false
+      },
+      {
+        "callback_charged": true,
+        "compartment_id": "vpd-sae-compartment-10d982cd345e13c10a0e02186fe84ea861874dd9b5b43809868b226bfc3b59a7",
+        "dictionary_output_written": false,
+        "execution_job_id": "c60e1889b1de2a709672d1e441a63949ab39dbb8375023818f407fe01c33bd04",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 5,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_completed_no_training",
+        "training_performed": false
+      },
+      {
+        "callback_charged": true,
+        "compartment_id": "vpd-sae-compartment-15923e0a988e425624002b51fa9482efcc3146abb4f57691f5a25733b76efa7e",
+        "dictionary_output_written": false,
+        "execution_job_id": "68b42a94d4c6258893695a8b7ec5862fbc8eb6631a4ba214f3f656e04af0ee47",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 6,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_completed_no_training",
+        "training_performed": false
+      },
+      {
+        "callback_charged": true,
+        "compartment_id": "vpd-sae-compartment-15923e0a988e425624002b51fa9482efcc3146abb4f57691f5a25733b76efa7e",
+        "dictionary_output_written": false,
+        "execution_job_id": "207d2972692c47cf185905e0995e5f30140613df83dd0e023df76525e7bcfa58",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 7,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_failed_charged_terminal",
+        "training_performed": false
+      },
+      {
+        "callback_charged": false,
+        "compartment_id": "vpd-sae-compartment-213ef2079c10e199965d5b7a049675120d484072032d74a87a09263919c0baed",
+        "dictionary_output_written": false,
+        "execution_job_id": "623711c9128f9dd8e01628984afb76f4399b25dd825283b33e1992b6b028811d",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 8,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_uninvoked_after_terminal_failure",
+        "training_performed": false
+      },
+      {
+        "callback_charged": false,
+        "compartment_id": "vpd-sae-compartment-213ef2079c10e199965d5b7a049675120d484072032d74a87a09263919c0baed",
+        "dictionary_output_written": false,
+        "execution_job_id": "0d0a731d0fcfcf65b093907d2d7c33c10360e73ed5c5d13e662cfdebf76e6e94",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 9,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_uninvoked_after_terminal_failure",
+        "training_performed": false
+      },
+      {
+        "callback_charged": false,
+        "compartment_id": "vpd-sae-compartment-55e20520628848a5b85958e097dac1ddefe17d0f25ef26a1460a28b27c69b369",
+        "dictionary_output_written": false,
+        "execution_job_id": "3ef9340134da2b69c5ed24c4dcae039698b6bb0a579cf7a579af8fdeea48586c",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 10,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_uninvoked_after_terminal_failure",
+        "training_performed": false
+      },
+      {
+        "callback_charged": false,
+        "compartment_id": "vpd-sae-compartment-55e20520628848a5b85958e097dac1ddefe17d0f25ef26a1460a28b27c69b369",
+        "dictionary_output_written": false,
+        "execution_job_id": "8782e245a92b155dc6c669b53104ad70c66961d5e668475033dff47dd56335b0",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 11,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_uninvoked_after_terminal_failure",
+        "training_performed": false
+      },
+      {
+        "callback_charged": false,
+        "compartment_id": "vpd-sae-compartment-831f475557bd7f757fa2cd866a119415f066cb0da05a4f1af97b8f88313b2457",
+        "dictionary_output_written": false,
+        "execution_job_id": "3019ee2ae97ee1e6838d50951ec56b817b3c211dea73de7538f9d5c9f274a46a",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 12,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_uninvoked_after_terminal_failure",
+        "training_performed": false
+      },
+      {
+        "callback_charged": false,
+        "compartment_id": "vpd-sae-compartment-831f475557bd7f757fa2cd866a119415f066cb0da05a4f1af97b8f88313b2457",
+        "dictionary_output_written": false,
+        "execution_job_id": "99e7b46fe5977b80881dd4211ad631a88c7142becd1ab70e083b6744331fd7b4",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 13,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_uninvoked_after_terminal_failure",
+        "training_performed": false
+      },
+      {
+        "callback_charged": false,
+        "compartment_id": "vpd-sae-compartment-8377dd927480a9e26d08f5a851be5d89681a6ad83b8524d82d2b3d422cea3501",
+        "dictionary_output_written": false,
+        "execution_job_id": "e081eba439c0b05924d6704982e543fab87b398113a7f4d1a55f3e184da195aa",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 14,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_uninvoked_after_terminal_failure",
+        "training_performed": false
+      },
+      {
+        "callback_charged": false,
+        "compartment_id": "vpd-sae-compartment-8377dd927480a9e26d08f5a851be5d89681a6ad83b8524d82d2b3d422cea3501",
+        "dictionary_output_written": false,
+        "execution_job_id": "f8fb787a97e2eb96320082c8dc45e4030c41f69b453bdfbeb01ade841217c398",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 15,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_uninvoked_after_terminal_failure",
+        "training_performed": false
+      },
+      {
+        "callback_charged": false,
+        "compartment_id": "vpd-sae-compartment-8a7364e626e39e2b2f5d29801def919224f9eaaeea62be2723a4a97ef6ab108d",
+        "dictionary_output_written": false,
+        "execution_job_id": "36c46f422c8c0925074a87f42c66aa8b46b8fab08df45029869980c226bccf7f",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 16,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_uninvoked_after_terminal_failure",
+        "training_performed": false
+      },
+      {
+        "callback_charged": false,
+        "compartment_id": "vpd-sae-compartment-8a7364e626e39e2b2f5d29801def919224f9eaaeea62be2723a4a97ef6ab108d",
+        "dictionary_output_written": false,
+        "execution_job_id": "b85ca4ab5b21af47051c3fb93af14ef005f440c55f08ba300a3571e1d2c4a4f9",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 17,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_uninvoked_after_terminal_failure",
+        "training_performed": false
+      },
+      {
+        "callback_charged": false,
+        "compartment_id": "vpd-sae-compartment-94181dcc49793146a9bc52d8badb5df817b24fe542e8fdc654af1e1484744817",
+        "dictionary_output_written": false,
+        "execution_job_id": "d58a7fe3940a96902e9ea97e435b32cb49842caacebf6747d56457fc3daaeae4",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 18,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_uninvoked_after_terminal_failure",
+        "training_performed": false
+      },
+      {
+        "callback_charged": false,
+        "compartment_id": "vpd-sae-compartment-94181dcc49793146a9bc52d8badb5df817b24fe542e8fdc654af1e1484744817",
+        "dictionary_output_written": false,
+        "execution_job_id": "f559b860b857f642c722000fa17e36697ff784f079b872fc508f7a312f33d675",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 19,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_uninvoked_after_terminal_failure",
+        "training_performed": false
+      },
+      {
+        "callback_charged": false,
+        "compartment_id": "vpd-sae-compartment-95d80cbe9259bd905f009d3031062be1a250862be19860379503e077f55a6de1",
+        "dictionary_output_written": false,
+        "execution_job_id": "7cf7cb864109302ca1f5b46f982229fd90955e433f963e49fb6f7d0738548e5a",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 20,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_uninvoked_after_terminal_failure",
+        "training_performed": false
+      },
+      {
+        "callback_charged": false,
+        "compartment_id": "vpd-sae-compartment-95d80cbe9259bd905f009d3031062be1a250862be19860379503e077f55a6de1",
+        "dictionary_output_written": false,
+        "execution_job_id": "6191d9f035607d57e50b0c7e606e235e0e63dfce75792ebf2c7834b3622aea52",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 21,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_uninvoked_after_terminal_failure",
+        "training_performed": false
+      },
+      {
+        "callback_charged": false,
+        "compartment_id": "vpd-sae-compartment-a3efad1ab8a962dfbc3ad789065de50f45eef05d506d6aff1b1b54b9d43851a9",
+        "dictionary_output_written": false,
+        "execution_job_id": "1dec2be8d006b07a0cfb81192bb31ba1499513a409a672f078f53873137b956f",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 22,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_uninvoked_after_terminal_failure",
+        "training_performed": false
+      },
+      {
+        "callback_charged": false,
+        "compartment_id": "vpd-sae-compartment-a3efad1ab8a962dfbc3ad789065de50f45eef05d506d6aff1b1b54b9d43851a9",
+        "dictionary_output_written": false,
+        "execution_job_id": "762a24f5cbd101d9b1ada8be47c5fba651112f07d4a1848be05fefe389addbbf",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 23,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_uninvoked_after_terminal_failure",
+        "training_performed": false
+      },
+      {
+        "callback_charged": false,
+        "compartment_id": "vpd-sae-compartment-acbdb1d468f28dd71490de0c1d94a61f5a71eb7bdaed4d676253dcf037a9450a",
+        "dictionary_output_written": false,
+        "execution_job_id": "2ef89124e5f4c7e4c3cb788adb464e9e9a39b5d673b0db5097418af99935b797",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 24,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_uninvoked_after_terminal_failure",
+        "training_performed": false
+      },
+      {
+        "callback_charged": false,
+        "compartment_id": "vpd-sae-compartment-acbdb1d468f28dd71490de0c1d94a61f5a71eb7bdaed4d676253dcf037a9450a",
+        "dictionary_output_written": false,
+        "execution_job_id": "9a386736316297b18a0d3bab7d05f022e72688f9acf0ea52ebf373cc1291be8f",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 25,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_uninvoked_after_terminal_failure",
+        "training_performed": false
+      },
+      {
+        "callback_charged": false,
+        "compartment_id": "vpd-sae-compartment-b710a95f078953f6a73f95e55decf3b4e257e1100177aad354b594cce0bf6136",
+        "dictionary_output_written": false,
+        "execution_job_id": "c4df0ff3551ce90e3bce696642dcb073a87562a5aee225b162c111ea754a0059",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 26,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_uninvoked_after_terminal_failure",
+        "training_performed": false
+      },
+      {
+        "callback_charged": false,
+        "compartment_id": "vpd-sae-compartment-b710a95f078953f6a73f95e55decf3b4e257e1100177aad354b594cce0bf6136",
+        "dictionary_output_written": false,
+        "execution_job_id": "635c804ff862473691060a2cc5afe33355b633b121306e1c71bcba7780bb1d18",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 27,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_uninvoked_after_terminal_failure",
+        "training_performed": false
+      },
+      {
+        "callback_charged": false,
+        "compartment_id": "vpd-sae-compartment-d17460c16b97106f98af68cc2b84ec986db69a64cf6d21846a14e9c26cff83cd",
+        "dictionary_output_written": false,
+        "execution_job_id": "d85c21c0128f45e0d7944824dbbd5008fabcf136c11ff93a180ea3ad2871e75c",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 28,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_uninvoked_after_terminal_failure",
+        "training_performed": false
+      },
+      {
+        "callback_charged": false,
+        "compartment_id": "vpd-sae-compartment-d17460c16b97106f98af68cc2b84ec986db69a64cf6d21846a14e9c26cff83cd",
+        "dictionary_output_written": false,
+        "execution_job_id": "a236b552f5d5f0a631f4740bd3620c117bfb4dc2b8f33846e53c07283b668b73",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 29,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_uninvoked_after_terminal_failure",
+        "training_performed": false
+      },
+      {
+        "callback_charged": false,
+        "compartment_id": "vpd-sae-compartment-ef0432a24007c189056df4176599f211610a95a30a37e3fe5e338f88675331f6",
+        "dictionary_output_written": false,
+        "execution_job_id": "237339bebf60100224ffd46b1cfa5cc5c01e1d0a8f71884314065c96bcb32aec",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 30,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_uninvoked_after_terminal_failure",
+        "training_performed": false
+      },
+      {
+        "callback_charged": false,
+        "compartment_id": "vpd-sae-compartment-ef0432a24007c189056df4176599f211610a95a30a37e3fe5e338f88675331f6",
+        "dictionary_output_written": false,
+        "execution_job_id": "6ea1c32f505de59618b8274ce58d4ad52cb3788b50a8fa908776cb5c17028ac2",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 31,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_uninvoked_after_terminal_failure",
+        "training_performed": false
+      },
+      {
+        "callback_charged": false,
+        "compartment_id": "vpd-sae-compartment-feb1f43ec79931b97245795212d31cd491a26827d48d84e567d07f57e0d575b1",
+        "dictionary_output_written": false,
+        "execution_job_id": "5ffc09fc88487e29fa445d6fd6c34faca982fd70cbeb9393535f1d2c5469aca2",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 32,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_uninvoked_after_terminal_failure",
+        "training_performed": false
+      },
+      {
+        "callback_charged": false,
+        "compartment_id": "vpd-sae-compartment-feb1f43ec79931b97245795212d31cd491a26827d48d84e567d07f57e0d575b1",
+        "dictionary_output_written": false,
+        "execution_job_id": "4897f644f0860a83e6d2d4448bfc60b7bedae70684115d7cbe39f66a974a175e",
+        "fresh_authorization_required_for_any_real_execution": true,
+        "job_index": 33,
+        "same_campaign_retry_authorized": false,
+        "state": "synthetic_uninvoked_after_terminal_failure",
+        "training_performed": false
+      }
+    ],
+    "planned_resources_by_state": {
+      "synthetic_completed_no_training": {
+        "batch_sizes": [
+          128
+        ],
+        "data_selection_seeds": [
+          1707
+        ],
+        "dictionary_feature_widths": [
+          4096,
+          8192
+        ],
+        "episode_contract_entries": 52,
+        "initialization_seeds": [
+          17,
+          29
+        ],
+        "jobs": 7,
+        "pair_contract_entries": 24,
+        "planned_activation_rows": 6656,
+        "planned_steps": 14000,
+        "unique_output_directories": 7
+      },
+      "synthetic_failed_charged_terminal": {
+        "batch_sizes": [
+          128
+        ],
+        "data_selection_seeds": [
+          1707
+        ],
+        "dictionary_feature_widths": [
+          4096
+        ],
+        "episode_contract_entries": 4,
+        "initialization_seeds": [
+          29
+        ],
+        "jobs": 1,
+        "pair_contract_entries": 4,
+        "planned_activation_rows": 512,
+        "planned_steps": 2000,
+        "unique_output_directories": 1
+      },
+      "synthetic_uninvoked_after_terminal_failure": {
+        "batch_sizes": [
+          128
+        ],
+        "data_selection_seeds": [
+          1707
+        ],
+        "dictionary_feature_widths": [
+          4096
+        ],
+        "episode_contract_entries": 104,
+        "initialization_seeds": [
+          17,
+          29
+        ],
+        "jobs": 26,
+        "pair_contract_entries": 104,
+        "planned_activation_rows": 13312,
+        "planned_steps": 52000,
+        "unique_output_directories": 26
+      }
+    },
+    "reconstruction_basis": "verified_campaign_benchmark_summary_and_pinned_job_order",
+    "source_raw_campaign_receipt_present": false,
+    "source_synthetic_campaign_id": "35019b605b1d1eb634052a94e982fc91bf69fbfd6a8064028377c7e10637d6c2",
+    "summary": {
+      "activation_rows_consumed_observed": 0,
+      "charged_callbacks": 8,
+      "completed_callbacks": 7,
+      "dictionary_outputs_observed": 0,
+      "failed_callbacks": 1,
+      "jobs": 34,
+      "same_campaign_retry_authorized": false,
+      "training_steps_observed": 0,
+      "uninvoked_callbacks": 26
+    }
+  }
+}

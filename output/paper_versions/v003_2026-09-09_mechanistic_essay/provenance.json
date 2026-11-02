@@ -1,0 +1,35 @@
+{
+  "version": "v003_2026-09-09_mechanistic_essay",
+  "pages": 8,
+  "note": "Interpretive mechanistic manuscript: shared parameter operations, pass-conditioned roles, measurement quality, and semantic causal tests. Earlier versions remain the technical companion.",
+  "files": {
+    "PAPER.md": {
+      "sha256": "cba5622001590f2c979b9d52cdaef7d4e139889cf96c156f191641e0f946c140"
+    },
+    "paper.pdf": {
+      "sha256": "b07d222950298d108c3ac93ce2eadb3fb4beb8be2ffdf786102a4b1d37856c09"
+    },
+    "render_paper.py": {
+      "sha256": "95961983d6dc38f6397d02f929cd6046ce75bdec86c11a21e0350aab2f23e0fc"
+    },
+    "paper.receipt.json": {
+      "sha256": "1200a8d8274995d175261b2475a0d5256150251a96ca642f03c4815ba1bdd60d"
+    },
+    "visual_review.json": {
+      "sha256": "e2a21b5bdbff941f3c7fc5efd2503bed7d65ca86083912abc0e91169ecc2b21d"
+    }
+  },
+  "created_utc": "2026-09-09T10:47:34.959077+00:00",
+  "title": "Shared Weights, Different Roles: Mechanistic Interpretation Across Transformer Passes",
+  "derived_from": "v002_2026-09-09_with_campsite",
+  "new_experiments": false,
+  "previous_version_files_verified_unchanged": [
+    "output\\paper_versions\\v001_2026-09-08_before_campsite\\paper.pdf",
+    "output\\paper_versions\\v001_2026-09-08_before_campsite\\PAPER.md",
+    "output\\paper_versions\\v001_2026-09-08_before_campsite\\render_receipt.json",
+    "output\\paper_versions\\v002_2026-09-09_with_campsite\\paper.pdf",
+    "output\\paper_versions\\v002_2026-09-09_with_campsite\\PAPER.md",
+    "output\\paper_versions\\v002_2026-09-09_with_campsite\\render_receipt.json"
+  ],
+  "source_word_count": 3784
+}

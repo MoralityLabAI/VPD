@@ -1,196 +1,198 @@
-# Parameter Decomposition
+# MoralityLabAI VPD
 
-Training tools for parameter decomposition on neural networks. For a compact implementation of
-the core method, see [`nano_param_decomp/`](nano_param_decomp/).
+MoralityLabAI's VPD and sparse-autoencoder research workspace, including Nanbeige
+pass-resolved experiments, receipt-replay evaluation, authorization controls and
+HRM experiments. This repository is a fork of
+[Goodfire's parameter decomposition project](https://github.com/goodfire-ai/param-decomp).
+The original upstream project is preserved in [`upstream/goodfire/`](upstream/goodfire/).
 
-## Research guidance
+- [Latest paper: v008, with monitorability Future Work](output/paper_versions/v008_2026-09-12_monitorability_future_work/paper.pdf)
+- [Paper source](output/paper_versions/v008_2026-09-12_monitorability_future_work/PAPER.md)
+  and [version history](output/paper_versions/README.md)
+- [Mechanistic dataset index v2](artifacts/nanbeige_reasoning/dataset_index_v2/README.md)
+- [Nanbeige experiments](experiments/nanbeige_reasoning/README.md)
+  and [receipt-replay harness](experiments/nanbeige_receipt_replay/README.md)
+- [Repository layout, upstream provenance and data availability](REPOSITORY.md)
 
-Read the [parameter-decomposition handbook](docs/handbook.md) for the
-science, evidence standards, and failure modes. The
-[parameter-decomposition skill](docs/skill.md) is the experiment-driving
-guide for target implementation, sweep design, convergence, selection, and analysis.
+The completed state-carry study comprises 450 conditions on ten existing inputs.
+The full model/skill benchmark and the ledger behavioral study are incomplete;
+the paper does not claim recovered chain-of-thought monitorability. Raw model
+weights and activation archives are local data dependencies, not included in Git.
 
-## References
+## BitAgent Run Contracts + Small Control Harness Authorization Lab
 
-- **Tiny Qwen3.5 MoE:** the current canonical decomposition run is
-  [p-63932d23](https://wandb.ai/goodfire/param-decomp/runs/p-63932d23), targeting
-  [t-82543a24](https://wandb.ai/goodfire/param-decomp/runs/t-82543a24)
-  (four layers, width 512, 42 experts, top-8 routing). For a fresh run on main, use
-  [the maintained config](param_decomp/param_decomp/experiments/lm/configs/pile_qwen3_5_moe-4L.yaml);
-  its comments identify differences from that run.
-- **SPD paper (June 2025):** https://arxiv.org/abs/2506.20790. [SPD Code Release](https://github.com/goodfire-ai/param-decomp/releases/tag/v1).
+Research follow-up: [utility-aware selection across VPD tracks](VPD_CROSS_RESEARCH_UTILITY_ADDENDUM_V1.md) defines prospective candidate catalogs, fit/access budgets, task utility and challenger-regret comparisons for Nanbeige, Receipt Replay, HRM policy and authorization retraining.
 
-## Install
+This starter repository adds explicit run contracts, host-issued authorization grants, deterministic action gating, replay and revocation state, execution receipts, and a paired VPD/SAE experiment to BitAgent and the Small Control Harness.
 
-The library is the `param_decomp/` project, with its own lock. Create its environment
-(`param_decomp/.venv`) from the repository root:
+The core boundary is simple:
 
-```bash
-uv sync --project param_decomp --frozen --no-dev                    # CPU
-uv sync --project param_decomp --frozen --no-dev --extra cuda       # NVIDIA driver r525-r579
-uv sync --project param_decomp --frozen --no-dev --extra cuda13     # NVIDIA driver r580+
+```text
+user confirmation UI
+        |
+        v
+HostAuthorizationService  -- signs --> AuthorizationGrant
+        |                                    |
+        |                                    v
+BitAgent model -- proposes --> ActionProposal --> ContractGate
+                                                  |
+                                      allow/deny DecisionReceipt
+                                                  |
+                                    host executor or simulated ledger
 ```
 
-**Blackwell GPUs require `--extra cuda13` and driver r580 or newer.** The CUDA-12 lock
-contains cuBLAS older than 13.2, which can silently corrupt execution on Blackwell rather
-than merely failing. Use `--extra cuda` only for Ampere, Ada, or Hopper hosts whose driver
-cannot load the CUDA-13 wheels.
+The acting model can describe a grant, request one, and reference its identifier. It cannot mint a trusted grant, change its scope, validate a hidden signature key, or commit an action. The host owns those powers.
 
-For development setup, see [Contributing](#contributing).
+## What is included
 
-## Run Experiments
+- Language-neutral JSON Schemas for `RunContract`, `AuthorizationGrant`, `ActionProposal`, and `DecisionReceipt`.
+- A dependency-light Python reference gate with exact scope checks, resource accounting, HMAC-signed local grants, expiry, revocation, one-shot replay protection, invariant hooks, and hashed receipts.
+- A simulated TradeLayer ledger for safe experiments.
+- A TypeScript BitAgent overlay that compiles strategy intents, issues grants from a host-only service, and calls the Small Control Harness gate.
+- A paired counterfactual authorization dataset with model-visible and host-hidden factors crossed independently.
+- Activation capture, top-k SAE training, feature scoring, held-out prompt-family checks, paired permutation tests, VPD artifact contracts, SAE/VPD joining, and causal steering scripts.
+- A base-model versus BitAgent-adapter comparison using a fixed SAE dictionary.
+- A paste-ready Codex integration prompt and Windows overlay installer.
 
-A run is one self-contained YAML configuration. Start from a shipped config, make a copy
-for the experiment, and run it inside the GPU allocation supplied by your compute system:
+## Repository layout
 
-```bash
-uv run --project param_decomp python -m param_decomp.experiments.lm.run <config.yaml> \
-  --data-root <data-root> --local-device-count <devices-per-process>
+```text
+schemas/                         shared boundary schemas
+small_control_harness/           Python gate, lifecycle, ledger, service
+bitagent_ts/src/control/         TypeScript integration overlay
+experiments/authz_mechinterp/    dataset, capture, SAE, VPD, intervention
+scripts/                         demo and overlay helpers
+tests/                           deterministic unit tests
+artifacts/demo/                  generated dry-run receipts
 ```
 
-The `runtime.mesh` axes' product must equal the allocation's total GPU count.
-Process-local allocation size is a launch argument, not a logical mesh axis. The
-command does not submit a job or choose a cluster. For example, the current JAX reference config
-[`param_decomp/experiments/lm/configs/pile_llama_simple_mlp-4L.yaml`](param_decomp/param_decomp/experiments/lm/configs/pile_llama_simple_mlp-4L.yaml)
-sets `mesh: {replicate: 1, fsdp: 32, tp: 1}`, and therefore needs 32 GPUs.
+## Core quick start
 
-### Maintained LM configs
-
-- Maintain **one LM decomposition config per model** in
-  [`param_decomp/experiments/lm/configs/`](param_decomp/param_decomp/experiments/lm/configs/), not one
-  per experiment, optimizer, layer selection, topology, or test.
-- Configs on `main` must stay runnable with the documented data, weights, and hardware;
-  schema changes must update affected configs in the same PR.
-- Link the latest **human-selected canonical decomposition run**, if one exists, in a
-  comment at the top of each config. Only humans designate canonical runs, and rarely.
-- A maintained config is the team's **current best guess for that model**, not a frozen
-  copy of its canonical run. Update it when justified, even before a new run completes
-  or becomes canonical. Comment beside each departure from the linked run, explaining
-  what differs and why, with evidence where available (e.g. a new eval absent from that
-  run, or a new initialization supported by a linked report on another model).
-  Updating the config does **not** change which run is canonical.
-- Keep one-off configs outside the repo and stored runs' pinned configs immutable.
-
-### Datasets
-
-- LM training reads staged, pre-tokenized Parquet shards; it does not tokenize or
-  stream source text at runtime.
-- Set named train/eval refs in `data.train` and `data.eval`; each resolves to
-  `<data-root>/datasets/<name>/`. See the [config/data guide](param_decomp/param_decomp/experiments/CLAUDE.md#lm-data).
-- Match the dataset tokenizer and row width to the target; use the
-  [maintained configs](param_decomp/param_decomp/experiments/lm/configs/) for model-specific choices.
-- Maintained Llama 3.1 and dense Qwen3 configs require stored document IDs; Pile 4L
-  and hybrid Qwen retain token-only rows. For Llama preparation, see the
-  [prestager](param_decomp/param_decomp/experiments/lm/llama3/prestage_tokenized.py).
-- Dense Qwen3 data uses text + `<|endoftext|>` (151643), no BOS. Token-only Qwen3
-  data is unsupported.
-- Every dataset PD reads is row-shuffled (`row_shuffle.json`); new runs refuse any other.
-  The maintained configs name `_rowshuf0` FineWeb and Pile sets; new datasets come from
-  `prestage_tokenized` (`tokenize` then `finish`).
-
-### Pretrained target weights
-
-For `target.spec.kind: pretrained` (and `pretrained_qwen35_moe`, the Qwen3.5-MoE toys),
-`run_path` names a W&B pretrain run such as
-`goodfire/spd/runs/t-9d2b8f02`; it is never a filesystem path. On first use, the library
-fetches `model_config.yaml` and `model_step_<N>.safetensors` into
-`<data-root>/pretrain_cache/<project>-<run-id>/`. Later runs read that cache without
-network access. `python -m param_decomp.pretrain.train` writes the same layout directly
-when training a target locally.
-
-TMS and ResidualMLP run the same way — in-process module mains, on CPU:
-`uv run --project param_decomp python -m param_decomp.experiments.tms.run <config.yaml> --data-root <data-root>`
-(likewise `...experiments.resid_mlp.run`). The shipped toy configs log to W&B by default,
-so authenticate with `wandb login` or set `WANDB_API_KEY` before running them. For local-only
-tests, copy the config and set `wandb: null`; the run still writes `metrics.jsonl` under
-`<data-root>/runs/<run-id>/`. See [the experiments guide](param_decomp/param_decomp/experiments/CLAUDE.md)
-for the complete LM config schema.
-
-## Metrics
-
-W&B logging defaults to the existing metric names. New runs can opt into two-level
-names with `wandb.metric_schema: grouped`. See [W&B metric names](docs/wandb-metrics.md).
-
-Training losses are configured in `pd.loss_metrics` as a list of `{type: "<ClassName>",
-...}` entries; eval metrics in `eval.metrics`. Both are validated by the torch-free pydantic
-schema in core (`param_decomp.core.configs`) and computed by the JAX trainer
-(`param_decomp/core/losses.py`, `param_decomp/core/slow_eval.py`).
-
-Fresh and persistent training PGD require `source_shape: bc` or `bsc`, giving each
-batch row independent adversarial state. Fresh evaluation PGD uses separate config
-types requiring `source_shape: c` and `init: random`; the `PGDReconLoss` YAML tag is
-shared, with its schema selected by the containing training or evaluation list.
-Changing an older `sc` training config to `bsc` changes its adversary and multiplies
-source and optimizer-buffer storage by the global batch size. Stored-run pins
-require their original revision; checkpoints are not automatically converted.
-
-The [analytical MFU calculator](param_decomp/param_decomp/experiments/lm/model_flops.py) estimates useful FLOPs from an LM
-decomposition config and reports MFU with and without optimizer work from measured
-step time, without loading weights or compiling the training step.
-
-The `param_decomp/` project builds the `param-decomp` library. It declares no console
-scripts: every runnable surface is a module main, so the library never submits a job or
-chooses a machine for you.
-
-## Contributing
-
-The repository is one directory per project, each with its own `pyproject.toml`; there is
-no workspace. The library (`param_decomp/`) has its own lock and depends on
-`param_decomp_formats/`, the readers of its outputs, by path. Run `make install-dev` at the
-repository root to sync the library's environment with development tools and install the
-pre-commit hooks. Run commands from the repository root with
-`uv run --project param_decomp`, or activate `param_decomp/.venv`. The Makefile's targets
-run each tool in that environment.
-
-### Checks
-
-Use the narrowest useful check while iterating:
+Python 3.11 or newer is recommended.
 
 ```bash
-make check     # ruff format/lint + basedpyright
-make type      # basedpyright only
-make format    # ruff lint + format
-make lint      # what CI enforces: ruff without fixes, basedpyright
-make test      # testmon-selected tests, excluding slow
-make test-all  # all tests
+python -m venv .venv
+. .venv/bin/activate
+pip install -e ".[test]"
+python -m unittest discover -s tests -v
 ```
 
-CI runs `make test-all`'s selection, every test including those marked `slow`, on every
-pull request and push to `main`, sharded across parallel jobs. The shards are an exact
-partition of the suite pinned by `param_decomp/param_decomp/tests/infra/test_ci_shards.py`; a new test
-directory must be placed in one.
+On PowerShell:
 
-Do not use Python `|=`. Use
-`dict_safe_update_` for dictionary composition so duplicate keys fail; use explicit
-`.update()` for intentional replacement or set unions, and assignment for bitwise operations.
+```powershell
+py -3.11 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -e ".[test]"
+python -m unittest discover -s tests -v
+```
 
-Never bypass pre-commit hooks. Add files explicitly rather than with `git add .`.
+Generate paired episodes and run them through the deterministic gate:
 
-### Code style and architecture
+```bash
+python -m small_control_harness.episodes \
+  --output artifacts/authz_mechinterp/episodes.jsonl \
+  --count-per-condition 8
 
-- `param_decomp/` is the public library. It must not know where it runs: no scheduler,
-  submission, code-shipping, cluster path, mount, partition, or team namespace. Paths are
-  explicit required inputs, and configs identify external resources by portable names.
-- Training uses the JAX single-pool engine. The retired Torch implementation is only a
-  semantic oracle at git tag `torch-oracle`; `nano_param_decomp/` is a standalone Torch
-  reference and is not imported by either package.
-- Keep the functional core pure and put I/O at entry points. Encode invariants in types when
-  possible and assert the rest. Fail closed rather than adding fallbacks, compatibility shims,
-  or degraded modes.
-- Dispatch on a tag or kind is an exhaustive `match` with every arm written out — no `case _`
-  catch-alls. Where basedpyright proves the match exhaustive, that proof is the fail-closed
-  mechanism (a trailing `case _: raise` is dead code and is rejected); where it cannot, the last
-  arm raises.
-- Operations are locally truthful: each is correct given only what its input types promise, and
-  the types carry those guarantees across seams. An operation whose correctness rests on an
-  informal bound elsewhere in the program (a value "known" to be in range because something
-  upstream clips it) is a defect — encode the bound in the type at the seam (a bounded type, a
-  discriminated union) or make the operation correct for every value its input type admits.
-- No code is written for a test's convenience. A test that needs a known state computes its
-  expectation from real, in-domain inputs; production code never gains an out-of-range knob,
-  debug flag, or special arm so a test can reach a state.
-- Import public names from the modules that define them; package-level re-exports are
-  exceptional. Update the nearest guide when changing a documented structure or interface.
+python -m experiments.authz_mechinterp.run_gate_dataset \
+  --input artifacts/authz_mechinterp/episodes.jsonl \
+  --output artifacts/authz_mechinterp/gated_episodes.jsonl
 
-For local architecture and interfaces, read the nearest module's `README.md` or
-`CLAUDE.md`.
+python -m experiments.authz_mechinterp.prepare_vpd_dataset \
+  --input artifacts/authz_mechinterp/gated_episodes.jsonl \
+  --output artifacts/authz_mechinterp/vpd_dataset.jsonl
+
+python -m experiments.authz_mechinterp.build_contrast_manifest \
+  --input artifacts/authz_mechinterp/gated_episodes.jsonl \
+  --output-dir artifacts/authz_mechinterp/contrasts
+```
+
+The gate dry run performs no network call and touches no real wallet.
+
+## Optional local gate service
+
+```bash
+pip install -e ".[service]"
+SCH_LOCAL_HMAC_KEY=local-development-key \
+  uvicorn small_control_harness.service:app --host 127.0.0.1 --port 8765
+```
+
+The TypeScript `ContractGateClient` calls `POST /v1/contracts/evaluate`. The HMAC path exists for local integration tests. A deployed version should use a platform-backed asymmetric signer or key service.
+
+## Mechinterp pilot
+
+Install the research extras:
+
+```bash
+pip install -e ".[mechinterp]"
+```
+
+Capture the same episodes from the base checkpoint and the BitAgent post-trained checkpoint. Use separate output directories while keeping row order fixed:
+
+```bash
+python -m experiments.authz_mechinterp.capture_activations \
+  --input artifacts/authz_mechinterp/gated_episodes.jsonl \
+  --output-dir artifacts/authz_mechinterp/capture_base \
+  --model Qwen/Qwen2.5-Coder-1.5B-Instruct \
+  --model-variant base \
+  --layers 0,0.5,0.75,0.875
+
+python -m experiments.authz_mechinterp.capture_activations \
+  --input artifacts/authz_mechinterp/gated_episodes.jsonl \
+  --output-dir artifacts/authz_mechinterp/capture_bitagent \
+  --model Qwen/Qwen2.5-Coder-1.5B-Instruct \
+  --adapter /path/to/bitagent-peft-adapter \
+  --model-variant bitagent \
+  --layers 0,0.5,0.75,0.875
+```
+
+Train one SAE per selected layer and anchor on the base capture. The example key below should be replaced with a key listed in `capture_manifest.json`:
+
+```bash
+python -m experiments.authz_mechinterp.train_sae \
+  --activations artifacts/authz_mechinterp/capture_base/activations.npz \
+  --key layer_12__proposal_start \
+  --output-dir artifacts/authz_mechinterp/sae/layer_12_proposal \
+  --expansion 8 --top-k 32 --steps 2000
+```
+
+Score a causal contrast on the BitAgent capture with the fixed base SAE:
+
+```bash
+python -m experiments.authz_mechinterp.score_sae_features \
+  --activations artifacts/authz_mechinterp/capture_bitagent/activations.npz \
+  --metadata artifacts/authz_mechinterp/capture_bitagent/metadata.jsonl \
+  --sae-checkpoint artifacts/authz_mechinterp/sae/layer_12_proposal/sae_checkpoint.pt \
+  --phase pre_gate \
+  --subset-conditions valid_visible,scope_overflow \
+  --labels scope_match \
+  --output artifacts/authz_mechinterp/sae/scope_features.jsonl
+```
+
+Compare post-training feature reweighting directly:
+
+```bash
+python -m experiments.authz_mechinterp.compare_model_variants \
+  --base-activations artifacts/authz_mechinterp/capture_base/activations.npz \
+  --base-metadata artifacts/authz_mechinterp/capture_base/metadata.jsonl \
+  --adapter-activations artifacts/authz_mechinterp/capture_bitagent/activations.npz \
+  --adapter-metadata artifacts/authz_mechinterp/capture_bitagent/metadata.jsonl \
+  --sae-checkpoint artifacts/authz_mechinterp/sae/layer_12_proposal/sae_checkpoint.pt \
+  --output artifacts/authz_mechinterp/sae/adapter_feature_deltas.jsonl
+```
+
+The VPD stage uses the existing external VPD runner. Its required interchange format is specified in `VPD_ADAPTER.md` and `config/vpd_manifest.yaml`. The included mock artifact only validates plumbing and supports no scientific claim.
+
+## Scientific separation
+
+The experiment isolates two different objects:
+
+1. **Learned authorization cognition.** Pre-gate activations may encode approval language, trusted provenance, revocation, and exact scope. Comparing base and BitAgent checkpoints identifies what post-training changed.
+2. **Harness authority.** Hidden grant validity, replay state, budgets, and the final commit boundary live outside the model. Matched pre-gate prompts should contain no information about hidden state. The gate still enforces it exactly.
+
+A useful feature becomes a mechanism candidate only after it survives paired controls, length and position residualization, held-out prompt families, max-stat permutation screening, SAE steering, and a signed VPD parameter intervention on the same behavioral endpoint.
+
+## Current validation status
+
+The deterministic core, schemas, paired episode generator, and integration utilities are runnable locally. The included unit suite covers valid execution, missing grants, forged signatures, expiry, scope overflow, replay, revocation, missing simulation receipts, lifecycle transitions, and schema validation.
+
+The deep-learning pass still requires a local model checkpoint, the BitAgent adapter checkpoint, and the external VPD repository. Its scripts compile here, while no SAE or VPD result is claimed by this starter package.

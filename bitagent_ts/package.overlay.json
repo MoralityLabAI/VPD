@@ -1,0 +1,14 @@
+{
+  "name": "bitagent-control-overlay",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "tsx --test test/control.test.ts",
+    "typecheck": "tsc --noEmit -p tsconfig.overlay.json"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0"
+  }
+}

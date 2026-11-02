@@ -1,0 +1,139 @@
+{
+  "schema": "sch.vpd-cheap-executor-cross-artifact-runs.v1",
+  "date": "2026-09-01",
+  "project_root": "C:\\projects\\VPD",
+  "authority": "local_model_free_nonexecuting_only",
+  "current_result": {
+    "status": "v1_structural_graph_preserved_semantic_mismatch_audited_corrected_successor_required",
+    "nodes": 20,
+    "edges": 37,
+    "execution_identity_bindings": 10,
+    "graph_contract_id": "a01ac25024b52e64c9b23ad1e3f3203b17403a8164becac168bd1fda7a4d754e",
+    "builder_sha256": "e1b6e8435f8a779571f77d978ec217fd967536cc2d1175e2bbc4bb5889bf3f10",
+    "contract_file_sha256": "45fc17c7d522b8659b4a2c7628780974edd9d86469cc32c44aa954b7d63a8e27",
+    "graph_benchmark_id": "178c9cd1124a4b93c36b1c40746a1776ea09ef820e56f8ad2aa7f0fab3c354fb",
+    "graph_benchmark_controls_passed": 34,
+    "protocol_v46_sha256": "02d046536a330c56da723080738277ba22c786bdb3737c6c30bde82aac6dd0a1",
+    "runbook_v38_id": "ab7b2c5658ef05d4ab9ea25b7f14f577c60b6c740a31d227fc45080a69ca5c33",
+    "focused_tests_passed": 6,
+    "semantic_dispatch_coverage_audit_id": "bd3cc043f7b658029fd20c99492c43edbace23550a7e237d36d692e46297eaa7",
+    "semantic_dispatch_coverage_benchmark_id": "adc1d00bf3be2ab9d790252534bc084add403842b26ae9002e2d6216f0095732",
+    "semantic_dispatch_coverage_controls_passed": 23,
+    "schema_and_id_matching_nodes": 12,
+    "dispatch_ready_nodes_under_v1_graph": 4,
+    "exact_implemented_field_edges": 9,
+    "mismatched_edges": 28,
+    "protocol_v47_sha256": "a7bd3d23ad2ecce3b5933dae59b70a7de72212fec103228a149931048b6dc15c",
+    "runbook_v39_id": "0533d2b242ccb8a566a8dee69146728214584abed4ff6f46a4251529d41fb68c",
+    "semantic_dispatch_allowed": false,
+    "empirical_graph_supplied": false,
+    "synthetic_graph_persisted": false,
+    "execution_authorized": false,
+    "sae_training_authorized": false
+  },
+  "runs": [
+    {
+      "id": "C0",
+      "status": "completed_locally_replay_allowed",
+      "purpose": "Reproduce the sealed 20-node, 37-edge, 10-binding graph contract.",
+      "commands": [
+        ".\\.venv\\Scripts\\python.exe -m py_compile experiments/authz_mechinterp/verify_cluster_aware_sae_cross_artifact_graph_v1.py",
+        ".\\.venv\\Scripts\\python.exe -m experiments.authz_mechinterp.verify_cluster_aware_sae_cross_artifact_graph_v1 --verify-contract artifacts/vpd_cluster_aware_sae_cross_artifact_graph_contract_v1/contract.json"
+      ],
+      "expected_graph_contract_id": "a01ac25024b52e64c9b23ad1e3f3203b17403a8164becac168bd1fda7a4d754e"
+    },
+    {
+      "id": "C1",
+      "status": "completed_locally_34_of_34_replay_allowed",
+      "purpose": "Implement and run a deterministic temporary synthetic graph benchmark with adversarial tampering controls.",
+      "source_path": "experiments/authz_mechinterp/benchmark_vpd_cluster_aware_sae_cross_artifact_graph_v1.py",
+      "artifact_path": "artifacts/vpd_cluster_aware_sae_cross_artifact_graph_benchmark_v1/report.json",
+      "required_controls": [
+        "clean_20_node_37_edge_10_binding_graph_passes",
+        "contract_and_report_reproduce",
+        "missing_duplicate_unknown_node_rejected",
+        "file_hash_content_id_schema_and_content_tamper_rejected",
+        "readdressed_edge_substitution_rejected",
+        "budget_policy_substitution_rejected",
+        "preflight_binding_mismatch_and_missing_binding_rejected",
+        "absolute_traversal_escape_missing_and_symlink_paths_rejected",
+        "mixed_synthetic_empirical_and_kind_mismatch_rejected",
+        "authority_nonce_reservation_execution_and_training_remain_false",
+        "temporary_graph_removed"
+      ]
+    },
+    {
+      "id": "C2",
+      "status": "completed_locally_6_of_6_combined_with_lineage",
+      "purpose": "Run only focused graph-contract tests.",
+      "command": ".\\.venv\\Scripts\\python.exe -m pytest -q tests/test_vpd_cluster_aware_sae_cross_artifact_graph_v1.py tests/test_vpd_cluster_aware_sae_cross_artifact_graph_lineage_v38.py"
+    },
+    {
+      "id": "C3",
+      "status": "completed_locally_replay_allowed",
+      "purpose": "Protocol V46 and Runbook V38 seal the graph contract and benchmark with immutable V45/V37 predecessors and focused lineage tests.",
+      "protocol_v46_sha256": "02d046536a330c56da723080738277ba22c786bdb3737c6c30bde82aac6dd0a1",
+      "runbook_v38_id": "ab7b2c5658ef05d4ab9ea25b7f14f577c60b6c740a31d227fc45080a69ca5c33"
+    },
+    {
+      "id": "C4",
+      "status": "completed_locally_fail_closed_semantic_mismatch_audit",
+      "purpose": "Audit V1 graph nodes and edges against actual semantic verifier interfaces; dispatcher correctly withheld.",
+      "semantic_dispatch_coverage_audit_id": "bd3cc043f7b658029fd20c99492c43edbace23550a7e237d36d692e46297eaa7",
+      "semantic_dispatch_coverage_benchmark_id": "adc1d00bf3be2ab9d790252534bc084add403842b26ae9002e2d6216f0095732",
+      "controls_passed": 23,
+      "schema_and_id_matching_nodes": 12,
+      "dispatch_ready_nodes_under_v1_graph": 4,
+      "exact_implemented_field_edges": 9,
+      "mismatched_edges": 28,
+      "semantic_dispatch_allowed": false
+    },
+    {
+      "id": "C4A",
+      "status": "next_safe_local_implementation",
+      "purpose": "Build a corrected semantic graph successor from implemented guarded V3 capture, routing, embedded plan/split, blueprint-bound budget V2, signed receipts, and combined transition representations."
+    },
+    {
+      "id": "C5",
+      "status": "blocked_separate_authorization_required",
+      "purpose": "Empirical capture, routing/materialization, SAE training, and V9 retraining."
+    }
+  ],
+  "stop_rules": [
+    "first_nonzero_exit",
+    "identifier_or_hash_mismatch",
+    "network_or_package_request",
+    "model_framework_import",
+    "model_or_adapter_access",
+    "inference_or_gpu_work",
+    "weight_or_dictionary_write",
+    "fabricated_empirical_input",
+    "missing_real_authority"
+  ],
+  "receipt_fields": [
+    "command",
+    "exit_code",
+    "observed_artifact_id",
+    "observed_file_sha256",
+    "files_created_or_changed",
+    "pass_count",
+    "elapsed_seconds",
+    "temporary_directory_remaining",
+    "scientific_boundary",
+    "first_stop_reason"
+  ],
+  "scientific_boundary": {
+    "v7_release_decision": "reject_base_and_adapter",
+    "v7_trained_weights": false,
+    "v6_valid": false,
+    "model_loaded": false,
+    "adapter_loaded": false,
+    "inference_performed": false,
+    "gpu_or_paid_job_launched": false,
+    "weights_mutated": false,
+    "dictionary_output_created": false,
+    "real_action_executed": false,
+    "execution_authorized": false,
+    "sae_training_authorized": false
+  }
+}

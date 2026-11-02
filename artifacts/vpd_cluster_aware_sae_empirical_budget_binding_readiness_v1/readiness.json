@@ -1,0 +1,761 @@
+{
+  "binding_contract": {
+    "all_fifty_bindings_required_for_syntax_completion": true,
+    "budget_proposal_and_admission_must_bind_the_pinned_policy": true,
+    "content_ids_and_file_digests_must_be_authenticated_separately": true,
+    "execution_blueprint_must_bind_empirical_routing_and_global_split": true,
+    "nonce_output_worker_and_runtime_claims_must_be_fresh_and_single_use": true,
+    "null_empty_placeholder_or_uniform_digest_rejected": true,
+    "release_and_compute_receipts_must_bind_the_exact_blueprint": true,
+    "syntax_completion_transfers_execution_authority": false
+  },
+  "binding_readiness_id": "08bdaaf4733afeae33d847e25bba0ea5657a2723ed49b58137f64c9904084c7a",
+  "binding_rows": [
+    {
+      "completion_evidence": "exact configured model identifier",
+      "content_opened_by_this_check": false,
+      "cross_artifact_binding_verified_by_this_check": false,
+      "field": "model_id",
+      "kind": "nonempty_string",
+      "phase": "capture_execution_identity",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "immutable revision or commit identifier",
+      "content_opened_by_this_check": false,
+      "cross_artifact_binding_verified_by_this_check": false,
+      "field": "model_revision",
+      "kind": "nonempty_string",
+      "phase": "capture_execution_identity",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "digest of a separately produced model-files manifest",
+      "content_opened_by_this_check": false,
+      "cross_artifact_binding_verified_by_this_check": false,
+      "field": "model_files_manifest_sha256",
+      "kind": "sha256",
+      "phase": "capture_execution_identity",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "canonical absolute adapter path",
+      "content_opened_by_this_check": false,
+      "cross_artifact_binding_verified_by_this_check": false,
+      "field": "adapter_path",
+      "kind": "canonical_absolute_path",
+      "phase": "capture_execution_identity",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "adapter weight-file digest",
+      "content_opened_by_this_check": false,
+      "cross_artifact_binding_verified_by_this_check": false,
+      "field": "adapter_weights_sha256",
+      "kind": "sha256",
+      "phase": "capture_execution_identity",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "adapter configuration digest",
+      "content_opened_by_this_check": false,
+      "cross_artifact_binding_verified_by_this_check": false,
+      "field": "adapter_config_sha256",
+      "kind": "sha256",
+      "phase": "capture_execution_identity",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "literal cpu, cuda, or cuda:N device",
+      "content_opened_by_this_check": false,
+      "cross_artifact_binding_verified_by_this_check": false,
+      "field": "device",
+      "kind": "cpu_or_cuda_device",
+      "phase": "capture_execution_identity",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "explicit operator ceiling later bounded by signed authority",
+      "content_opened_by_this_check": false,
+      "cross_artifact_binding_verified_by_this_check": false,
+      "field": "wall_time_ceiling_seconds",
+      "kind": "positive_integer",
+      "phase": "capture_execution_identity",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "explicit operator ceiling later bounded by signed authority",
+      "content_opened_by_this_check": false,
+      "cross_artifact_binding_verified_by_this_check": false,
+      "field": "cost_ceiling_usd",
+      "kind": "positive_finite_number",
+      "phase": "capture_execution_identity",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "nonexistent direct child of the dedicated empirical-capture parent",
+      "content_opened_by_this_check": false,
+      "cross_artifact_binding_verified_by_this_check": false,
+      "field": "output_root",
+      "kind": "canonical_absolute_new_direct_child",
+      "phase": "capture_execution_identity",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "authenticated content ID or file digest for empirical_preflight_v2; placeholder digests forbidden",
+      "content_opened_by_this_check": false,
+      "cross_artifact_binding_verified_by_this_check": false,
+      "field": "empirical_preflight_v2_id",
+      "kind": "sha256",
+      "phase": "empirical_capture",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "authenticated content ID or file digest for empirical_preflight_v2; placeholder digests forbidden",
+      "content_opened_by_this_check": false,
+      "cross_artifact_binding_verified_by_this_check": false,
+      "field": "empirical_preflight_v2_sha256",
+      "kind": "sha256",
+      "phase": "empirical_capture",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "authenticated content ID or file digest for capture_authorization_receipt; placeholder digests forbidden",
+      "content_opened_by_this_check": false,
+      "cross_artifact_binding_verified_by_this_check": false,
+      "field": "capture_authorization_receipt_id",
+      "kind": "sha256",
+      "phase": "empirical_capture",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "authenticated content ID or file digest for capture_authorization_receipt; placeholder digests forbidden",
+      "content_opened_by_this_check": false,
+      "cross_artifact_binding_verified_by_this_check": false,
+      "field": "capture_authorization_receipt_sha256",
+      "kind": "sha256",
+      "phase": "empirical_capture",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "authenticated content ID or file digest for capture_authority_registry; placeholder digests forbidden",
+      "content_opened_by_this_check": false,
+      "cross_artifact_binding_verified_by_this_check": false,
+      "field": "capture_authority_registry_id",
+      "kind": "sha256",
+      "phase": "empirical_capture",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "authenticated content ID or file digest for capture_authority_registry; placeholder digests forbidden",
+      "content_opened_by_this_check": false,
+      "cross_artifact_binding_verified_by_this_check": false,
+      "field": "capture_authority_registry_sha256",
+      "kind": "sha256",
+      "phase": "empirical_capture",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "authenticated content ID or file digest for empirical_capture_manifest; placeholder digests forbidden",
+      "content_opened_by_this_check": false,
+      "cross_artifact_binding_verified_by_this_check": false,
+      "field": "empirical_capture_manifest_id",
+      "kind": "sha256",
+      "phase": "empirical_capture",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "authenticated content ID or file digest for empirical_capture_manifest; placeholder digests forbidden",
+      "content_opened_by_this_check": false,
+      "cross_artifact_binding_verified_by_this_check": false,
+      "field": "empirical_capture_manifest_sha256",
+      "kind": "sha256",
+      "phase": "empirical_capture",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "authenticated content ID or file digest for empirical_routing_bundle; placeholder digests forbidden",
+      "content_opened_by_this_check": false,
+      "cross_artifact_binding_verified_by_this_check": false,
+      "field": "empirical_routing_bundle_id",
+      "kind": "sha256",
+      "phase": "routing_and_partition",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "authenticated content ID or file digest for empirical_routing_bundle; placeholder digests forbidden",
+      "content_opened_by_this_check": false,
+      "cross_artifact_binding_verified_by_this_check": false,
+      "field": "empirical_routing_bundle_sha256",
+      "kind": "sha256",
+      "phase": "routing_and_partition",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "authenticated content ID or file digest for routing_stability_manifest; placeholder digests forbidden",
+      "content_opened_by_this_check": false,
+      "cross_artifact_binding_verified_by_this_check": false,
+      "field": "routing_stability_manifest_id",
+      "kind": "sha256",
+      "phase": "routing_and_partition",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "authenticated content ID or file digest for routing_stability_manifest; placeholder digests forbidden",
+      "content_opened_by_this_check": false,
+      "cross_artifact_binding_verified_by_this_check": false,
+      "field": "routing_stability_manifest_sha256",
+      "kind": "sha256",
+      "phase": "routing_and_partition",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "authenticated content ID or file digest for global_pair_split; placeholder digests forbidden",
+      "content_opened_by_this_check": false,
+      "cross_artifact_binding_verified_by_this_check": false,
+      "field": "global_pair_split_id",
+      "kind": "sha256",
+      "phase": "routing_and_partition",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "authenticated content ID or file digest for global_pair_split; placeholder digests forbidden",
+      "content_opened_by_this_check": false,
+      "cross_artifact_binding_verified_by_this_check": false,
+      "field": "global_pair_split_sha256",
+      "kind": "sha256",
+      "phase": "routing_and_partition",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "authenticated content ID or file digest for cluster_aware_sae_plan; placeholder digests forbidden",
+      "content_opened_by_this_check": false,
+      "cross_artifact_binding_verified_by_this_check": false,
+      "field": "cluster_aware_sae_plan_id",
+      "kind": "sha256",
+      "phase": "routing_and_partition",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "authenticated content ID or file digest for cluster_aware_sae_plan; placeholder digests forbidden",
+      "content_opened_by_this_check": false,
+      "cross_artifact_binding_verified_by_this_check": false,
+      "field": "cluster_aware_sae_plan_sha256",
+      "kind": "sha256",
+      "phase": "routing_and_partition",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "authenticated content ID or file digest for materialization; placeholder digests forbidden",
+      "content_opened_by_this_check": false,
+      "cross_artifact_binding_verified_by_this_check": false,
+      "field": "materialization_id",
+      "kind": "sha256",
+      "phase": "routing_and_partition",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "authenticated content ID or file digest for materialization; placeholder digests forbidden",
+      "content_opened_by_this_check": false,
+      "cross_artifact_binding_verified_by_this_check": false,
+      "field": "materialization_sha256",
+      "kind": "sha256",
+      "phase": "routing_and_partition",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "authenticated content ID or file digest for execution_blueprint; placeholder digests forbidden",
+      "content_opened_by_this_check": false,
+      "cross_artifact_binding_verified_by_this_check": false,
+      "field": "execution_blueprint_id",
+      "kind": "sha256",
+      "phase": "execution_blueprint_and_budget",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "authenticated content ID or file digest for execution_blueprint; placeholder digests forbidden",
+      "content_opened_by_this_check": false,
+      "cross_artifact_binding_verified_by_this_check": false,
+      "field": "execution_blueprint_sha256",
+      "kind": "sha256",
+      "phase": "execution_blueprint_and_budget",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "authenticated content ID or file digest for budget_proposal; placeholder digests forbidden",
+      "content_opened_by_this_check": false,
+      "cross_artifact_binding_verified_by_this_check": false,
+      "field": "budget_proposal_id",
+      "kind": "sha256",
+      "phase": "execution_blueprint_and_budget",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "authenticated content ID or file digest for budget_proposal; placeholder digests forbidden",
+      "content_opened_by_this_check": false,
+      "cross_artifact_binding_verified_by_this_check": false,
+      "field": "budget_proposal_sha256",
+      "kind": "sha256",
+      "phase": "execution_blueprint_and_budget",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "authenticated content ID or file digest for budget_admission; placeholder digests forbidden",
+      "content_opened_by_this_check": false,
+      "cross_artifact_binding_verified_by_this_check": false,
+      "field": "budget_admission_id",
+      "kind": "sha256",
+      "phase": "execution_blueprint_and_budget",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "authenticated content ID or file digest for budget_admission; placeholder digests forbidden",
+      "content_opened_by_this_check": false,
+      "cross_artifact_binding_verified_by_this_check": false,
+      "field": "budget_admission_sha256",
+      "kind": "sha256",
+      "phase": "execution_blueprint_and_budget",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "authenticated content ID or file digest for scientific_release_receipt; placeholder digests forbidden",
+      "content_opened_by_this_check": false,
+      "cross_artifact_binding_verified_by_this_check": false,
+      "field": "scientific_release_receipt_id",
+      "kind": "sha256",
+      "phase": "signed_release_and_compute_authority",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "authenticated content ID or file digest for scientific_release_receipt; placeholder digests forbidden",
+      "content_opened_by_this_check": false,
+      "cross_artifact_binding_verified_by_this_check": false,
+      "field": "scientific_release_receipt_sha256",
+      "kind": "sha256",
+      "phase": "signed_release_and_compute_authority",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "authenticated content ID or file digest for release_authority_registry; placeholder digests forbidden",
+      "content_opened_by_this_check": false,
+      "cross_artifact_binding_verified_by_this_check": false,
+      "field": "release_authority_registry_id",
+      "kind": "sha256",
+      "phase": "signed_release_and_compute_authority",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "authenticated content ID or file digest for release_authority_registry; placeholder digests forbidden",
+      "content_opened_by_this_check": false,
+      "cross_artifact_binding_verified_by_this_check": false,
+      "field": "release_authority_registry_sha256",
+      "kind": "sha256",
+      "phase": "signed_release_and_compute_authority",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "authenticated content ID or file digest for compute_authorization_manifest; placeholder digests forbidden",
+      "content_opened_by_this_check": false,
+      "cross_artifact_binding_verified_by_this_check": false,
+      "field": "compute_authorization_manifest_id",
+      "kind": "sha256",
+      "phase": "signed_release_and_compute_authority",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "authenticated content ID or file digest for compute_authorization_manifest; placeholder digests forbidden",
+      "content_opened_by_this_check": false,
+      "cross_artifact_binding_verified_by_this_check": false,
+      "field": "compute_authorization_manifest_sha256",
+      "kind": "sha256",
+      "phase": "signed_release_and_compute_authority",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "authenticated content ID or file digest for compute_authority_registry; placeholder digests forbidden",
+      "content_opened_by_this_check": false,
+      "cross_artifact_binding_verified_by_this_check": false,
+      "field": "compute_authority_registry_id",
+      "kind": "sha256",
+      "phase": "signed_release_and_compute_authority",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "authenticated content ID or file digest for compute_authority_registry; placeholder digests forbidden",
+      "content_opened_by_this_check": false,
+      "cross_artifact_binding_verified_by_this_check": false,
+      "field": "compute_authority_registry_sha256",
+      "kind": "sha256",
+      "phase": "signed_release_and_compute_authority",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "authenticated content ID or file digest for nonce_consumption_manifest; placeholder digests forbidden",
+      "content_opened_by_this_check": false,
+      "cross_artifact_binding_verified_by_this_check": false,
+      "field": "nonce_consumption_manifest_id",
+      "kind": "sha256",
+      "phase": "durable_runtime_transition",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "authenticated content ID or file digest for nonce_consumption_manifest; placeholder digests forbidden",
+      "content_opened_by_this_check": false,
+      "cross_artifact_binding_verified_by_this_check": false,
+      "field": "nonce_consumption_manifest_sha256",
+      "kind": "sha256",
+      "phase": "durable_runtime_transition",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "authenticated content ID or file digest for output_reservation_manifest; placeholder digests forbidden",
+      "content_opened_by_this_check": false,
+      "cross_artifact_binding_verified_by_this_check": false,
+      "field": "output_reservation_manifest_id",
+      "kind": "sha256",
+      "phase": "durable_runtime_transition",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "authenticated content ID or file digest for output_reservation_manifest; placeholder digests forbidden",
+      "content_opened_by_this_check": false,
+      "cross_artifact_binding_verified_by_this_check": false,
+      "field": "output_reservation_manifest_sha256",
+      "kind": "sha256",
+      "phase": "durable_runtime_transition",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "authenticated content ID or file digest for worker_ledger_claim; placeholder digests forbidden",
+      "content_opened_by_this_check": false,
+      "cross_artifact_binding_verified_by_this_check": false,
+      "field": "worker_ledger_claim_id",
+      "kind": "sha256",
+      "phase": "durable_runtime_transition",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "authenticated content ID or file digest for worker_ledger_claim; placeholder digests forbidden",
+      "content_opened_by_this_check": false,
+      "cross_artifact_binding_verified_by_this_check": false,
+      "field": "worker_ledger_claim_sha256",
+      "kind": "sha256",
+      "phase": "durable_runtime_transition",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "authenticated content ID or file digest for runtime_attachment_claim; placeholder digests forbidden",
+      "content_opened_by_this_check": false,
+      "cross_artifact_binding_verified_by_this_check": false,
+      "field": "runtime_attachment_claim_id",
+      "kind": "sha256",
+      "phase": "durable_runtime_transition",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "authenticated content ID or file digest for runtime_attachment_claim; placeholder digests forbidden",
+      "content_opened_by_this_check": false,
+      "cross_artifact_binding_verified_by_this_check": false,
+      "field": "runtime_attachment_claim_sha256",
+      "kind": "sha256",
+      "phase": "durable_runtime_transition",
+      "status": "missing",
+      "value": null
+    }
+  ],
+  "completed_syntax_audit": null,
+  "phase_summaries": [
+    {
+      "authority_granted": false,
+      "content_verified": false,
+      "missing_bindings": [
+        "model_id",
+        "model_revision",
+        "model_files_manifest_sha256",
+        "adapter_path",
+        "adapter_weights_sha256",
+        "adapter_config_sha256",
+        "device",
+        "wall_time_ceiling_seconds",
+        "cost_ceiling_usd",
+        "output_root"
+      ],
+      "phase": "capture_execution_identity",
+      "required_bindings": 10,
+      "supplied_bindings": 0,
+      "syntax_complete": false
+    },
+    {
+      "authority_granted": false,
+      "content_verified": false,
+      "missing_bindings": [
+        "empirical_preflight_v2_id",
+        "empirical_preflight_v2_sha256",
+        "capture_authorization_receipt_id",
+        "capture_authorization_receipt_sha256",
+        "capture_authority_registry_id",
+        "capture_authority_registry_sha256",
+        "empirical_capture_manifest_id",
+        "empirical_capture_manifest_sha256"
+      ],
+      "phase": "empirical_capture",
+      "required_bindings": 8,
+      "supplied_bindings": 0,
+      "syntax_complete": false
+    },
+    {
+      "authority_granted": false,
+      "content_verified": false,
+      "missing_bindings": [
+        "empirical_routing_bundle_id",
+        "empirical_routing_bundle_sha256",
+        "routing_stability_manifest_id",
+        "routing_stability_manifest_sha256",
+        "global_pair_split_id",
+        "global_pair_split_sha256",
+        "cluster_aware_sae_plan_id",
+        "cluster_aware_sae_plan_sha256",
+        "materialization_id",
+        "materialization_sha256"
+      ],
+      "phase": "routing_and_partition",
+      "required_bindings": 10,
+      "supplied_bindings": 0,
+      "syntax_complete": false
+    },
+    {
+      "authority_granted": false,
+      "content_verified": false,
+      "missing_bindings": [
+        "execution_blueprint_id",
+        "execution_blueprint_sha256",
+        "budget_proposal_id",
+        "budget_proposal_sha256",
+        "budget_admission_id",
+        "budget_admission_sha256"
+      ],
+      "phase": "execution_blueprint_and_budget",
+      "required_bindings": 6,
+      "supplied_bindings": 0,
+      "syntax_complete": false
+    },
+    {
+      "authority_granted": false,
+      "content_verified": false,
+      "missing_bindings": [
+        "scientific_release_receipt_id",
+        "scientific_release_receipt_sha256",
+        "release_authority_registry_id",
+        "release_authority_registry_sha256",
+        "compute_authorization_manifest_id",
+        "compute_authorization_manifest_sha256",
+        "compute_authority_registry_id",
+        "compute_authority_registry_sha256"
+      ],
+      "phase": "signed_release_and_compute_authority",
+      "required_bindings": 8,
+      "supplied_bindings": 0,
+      "syntax_complete": false
+    },
+    {
+      "authority_granted": false,
+      "content_verified": false,
+      "missing_bindings": [
+        "nonce_consumption_manifest_id",
+        "nonce_consumption_manifest_sha256",
+        "output_reservation_manifest_id",
+        "output_reservation_manifest_sha256",
+        "worker_ledger_claim_id",
+        "worker_ledger_claim_sha256",
+        "runtime_attachment_claim_id",
+        "runtime_attachment_claim_sha256"
+      ],
+      "phase": "durable_runtime_transition",
+      "required_bindings": 8,
+      "supplied_bindings": 0,
+      "syntax_complete": false
+    }
+  ],
+  "schema": "sch.vpd-cluster-aware-sae-empirical-budget-binding-readiness.v1",
+  "scientific_boundary": {
+    "artifact_graph_content_opened": false,
+    "budget_binding_verified": false,
+    "durable_runtime_transition_present": false,
+    "empirical_capture_present": false,
+    "empirical_execution_blueprint_present": false,
+    "empirical_routing_bundle_present": false,
+    "execution_authorized": false,
+    "model_framework_imported": false,
+    "model_inference_performed": false,
+    "model_loaded": false,
+    "model_or_adapter_content_opened": false,
+    "paid_compute_authorized": false,
+    "real_actions_authorized": false,
+    "real_signed_receipts_present": false,
+    "sae_training_authorized": false,
+    "synthetic_complete_fixture_persisted": false,
+    "weights_loaded_or_mutated": false,
+    "worksheet_only": true
+  },
+  "source": {
+    "budget_policy": {
+      "budget_policy_id": "5e9f4fc0841d0e71a2eef6f9ac91f5e27d0702c0e0aadfa5a6f511dad50719f2",
+      "path": "artifacts/vpd_cluster_aware_sae_budget_admission_policy_v1/policy.json",
+      "sha256": "1846d857c2d415cbc337e155996e653ff8ba123319fcb0c79e418ae7d576dbaf",
+      "verification": {
+        "activation_categories": 8,
+        "budget_policy_id": "5e9f4fc0841d0e71a2eef6f9ac91f5e27d0702c0e0aadfa5a6f511dad50719f2",
+        "execution_authorized": false,
+        "jobs_ceiling": 34,
+        "planned_activation_rows_ceiling": 20480,
+        "planned_steps_ceiling": 68000,
+        "sae_training_authorized": false,
+        "schema": "sch.vpd-cluster-aware-sae-budget-admission-policy-verification.v1",
+        "shared_fallback_charged_to_categories": false,
+        "shared_fallback_compartments": 1,
+        "specific_compartments": 16,
+        "status": "pass"
+      }
+    },
+    "builder_sha256": "9c20e7ee1ba8062711e3b4482a327b925ec4015d96151ff8bf93a6e375083911",
+    "capture_binding_readiness_template": {
+      "path": "artifacts/vpd_cluster_to_sae_binding_readiness_v1/readiness.json",
+      "readiness_id": "77e2c766499f22d401ffa60166b31dbc8fe4d0ecaefa349ab3b636202fef1472",
+      "sha256": "017376ea7aa5a3768c6229d7819116b4f66d659aacea54114fb81a6bdb41701e",
+      "verification": {
+        "execution_authorized": false,
+        "missing_bindings": 10,
+        "model_or_adapter_content_opened": false,
+        "output_isolation_verified": false,
+        "readiness_id": "77e2c766499f22d401ffa60166b31dbc8fe4d0ecaefa349ab3b636202fef1472",
+        "required_bindings": 10,
+        "sae_training_authorized": false,
+        "schema": "sch.vpd-cluster-to-sae-binding-readiness-verification.v1",
+        "status": "pass"
+      }
+    }
+  },
+  "status": "blocked_missing_empirical_blueprint_budget_and_authority_bindings",
+  "stop_conditions": [
+    "any_of_fifty_bindings_is_missing_or_placeholder",
+    "any_content_id_or_file_digest_is_not_independently_authenticated",
+    "empirical_capture_routing_split_plan_materialization_or_blueprint_binding_differs",
+    "budget_proposal_or_admission_does_not_bind_the_pinned_policy_and_exact_blueprint",
+    "signed_release_or_compute_authority_is_absent_invalid_inactive_revoked_consumed_or_scope_mismatched",
+    "nonce_output_worker_or_runtime_claim_is_absent_reused_colliding_or_not_durable",
+    "worksheet_syntax_completion_is_treated_as_empirical_evidence_or_execution_authority"
+  ],
+  "summary": {
+    "artifact_graph_bindings": 40,
+    "budget_binding_verified": false,
+    "capture_execution_identity_bindings": 10,
+    "capture_output_isolation_verified": false,
+    "cross_artifact_content_verified": false,
+    "durable_runtime_transition_verified": false,
+    "missing_bindings": [
+      "model_id",
+      "model_revision",
+      "model_files_manifest_sha256",
+      "adapter_path",
+      "adapter_weights_sha256",
+      "adapter_config_sha256",
+      "device",
+      "wall_time_ceiling_seconds",
+      "cost_ceiling_usd",
+      "output_root",
+      "empirical_preflight_v2_id",
+      "empirical_preflight_v2_sha256",
+      "capture_authorization_receipt_id",
+      "capture_authorization_receipt_sha256",
+      "capture_authority_registry_id",
+      "capture_authority_registry_sha256",
+      "empirical_capture_manifest_id",
+      "empirical_capture_manifest_sha256",
+      "empirical_routing_bundle_id",
+      "empirical_routing_bundle_sha256",
+      "routing_stability_manifest_id",
+      "routing_stability_manifest_sha256",
+      "global_pair_split_id",
+      "global_pair_split_sha256",
+      "cluster_aware_sae_plan_id",
+      "cluster_aware_sae_plan_sha256",
+      "materialization_id",
+      "materialization_sha256",
+      "execution_blueprint_id",
+      "execution_blueprint_sha256",
+      "budget_proposal_id",
+      "budget_proposal_sha256",
+      "budget_admission_id",
+      "budget_admission_sha256",
+      "scientific_release_receipt_id",
+      "scientific_release_receipt_sha256",
+      "release_authority_registry_id",
+      "release_authority_registry_sha256",
+      "compute_authorization_manifest_id",
+      "compute_authorization_manifest_sha256",
+      "compute_authority_registry_id",
+      "compute_authority_registry_sha256",
+      "nonce_consumption_manifest_id",
+      "nonce_consumption_manifest_sha256",
+      "output_reservation_manifest_id",
+      "output_reservation_manifest_sha256",
+      "worker_ledger_claim_id",
+      "worker_ledger_claim_sha256",
+      "runtime_attachment_claim_id",
+      "runtime_attachment_claim_sha256"
+    ],
+    "required_bindings": 50,
+    "signed_authority_verified": false,
+    "supplied_bindings": 0,
+    "syntax_complete": false
+  }
+}

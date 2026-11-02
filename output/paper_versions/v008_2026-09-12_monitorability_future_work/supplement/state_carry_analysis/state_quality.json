@@ -1,0 +1,200 @@
+[
+  {
+    "site": "model.layers.21",
+    "optimizer": "adamw",
+    "history": "one_pass",
+    "inputs": 10,
+    "state_error_energy": 1747671.3738818625,
+    "state_energy": 147394109.00313473,
+    "centered_state_energy": 2600633.7606931357,
+    "explained_variance": 0.3279825093803046,
+    "relative_rmse": 0.10889045770354445
+  },
+  {
+    "site": "model.layers.21",
+    "optimizer": "adamw",
+    "history": "carry",
+    "inputs": 10,
+    "state_error_energy": 215893.09439716983,
+    "state_energy": 1312562.642412325,
+    "centered_state_energy": 287777.8714087208,
+    "explained_variance": 0.24979258015796335,
+    "relative_rmse": 0.4055639608671838
+  },
+  {
+    "site": "model.layers.21",
+    "optimizer": "adamw",
+    "history": "reset",
+    "inputs": 10,
+    "state_error_energy": 1747671.3738818625,
+    "state_energy": 147394109.00313473,
+    "centered_state_energy": 2600633.7606931357,
+    "explained_variance": 0.3279825093803046,
+    "relative_rmse": 0.10889045770354445
+  },
+  {
+    "site": "model.layers.21",
+    "optimizer": "muon_hybrid",
+    "history": "one_pass",
+    "inputs": 10,
+    "state_error_energy": 358932.5603398664,
+    "state_energy": 147394109.00313473,
+    "centered_state_energy": 2600633.7606931357,
+    "explained_variance": 0.8619826575487501,
+    "relative_rmse": 0.049347637448966315
+  },
+  {
+    "site": "model.layers.21",
+    "optimizer": "muon_hybrid",
+    "history": "carry",
+    "inputs": 10,
+    "state_error_energy": 145751.32837733364,
+    "state_energy": 1312562.642412325,
+    "centered_state_energy": 287777.8714087208,
+    "explained_variance": 0.4935283673346511,
+    "relative_rmse": 0.333231648134204
+  },
+  {
+    "site": "model.layers.21",
+    "optimizer": "muon_hybrid",
+    "history": "reset",
+    "inputs": 10,
+    "state_error_energy": 358932.5603398664,
+    "state_energy": 147394109.00313473,
+    "centered_state_energy": 2600633.7606931357,
+    "explained_variance": 0.8619826575487501,
+    "relative_rmse": 0.049347637448966315
+  },
+  {
+    "site": "model.layers.11",
+    "optimizer": "adamw",
+    "history": "one_pass",
+    "inputs": 10,
+    "state_error_energy": 7532.711179639764,
+    "state_energy": 162345.292305985,
+    "centered_state_energy": 23246.74133622679,
+    "explained_variance": 0.6759670067003718,
+    "relative_rmse": 0.21540501403280332
+  },
+  {
+    "site": "model.layers.11",
+    "optimizer": "adamw",
+    "history": "carry",
+    "inputs": 10,
+    "state_error_energy": 7007.8159383669245,
+    "state_energy": 148047.30965690082,
+    "centered_state_energy": 11914.8205863597,
+    "explained_variance": 0.4118404144171841,
+    "relative_rmse": 0.21756602813958834
+  },
+  {
+    "site": "model.layers.11",
+    "optimizer": "adamw",
+    "history": "reset",
+    "inputs": 10,
+    "state_error_energy": 7532.711179639764,
+    "state_energy": 162345.292305985,
+    "centered_state_energy": 23246.74133622679,
+    "explained_variance": 0.6759670067003718,
+    "relative_rmse": 0.21540501403280332
+  },
+  {
+    "site": "model.layers.11",
+    "optimizer": "muon_hybrid",
+    "history": "one_pass",
+    "inputs": 10,
+    "state_error_energy": 7351.62211283646,
+    "state_energy": 162345.292305985,
+    "centered_state_energy": 23246.74133622679,
+    "explained_variance": 0.6837568755763637,
+    "relative_rmse": 0.21280005602931848
+  },
+  {
+    "site": "model.layers.11",
+    "optimizer": "muon_hybrid",
+    "history": "carry",
+    "inputs": 10,
+    "state_error_energy": 6295.218245836927,
+    "state_energy": 148047.30965690082,
+    "centered_state_energy": 11914.8205863597,
+    "explained_variance": 0.4716480873372272,
+    "relative_rmse": 0.2062078222297023
+  },
+  {
+    "site": "model.layers.11",
+    "optimizer": "muon_hybrid",
+    "history": "reset",
+    "inputs": 10,
+    "state_error_energy": 7351.62211283646,
+    "state_energy": 162345.292305985,
+    "centered_state_energy": 23246.74133622679,
+    "explained_variance": 0.6837568755763637,
+    "relative_rmse": 0.21280005602931848
+  },
+  {
+    "site": "model.norm",
+    "optimizer": "adamw",
+    "history": "one_pass",
+    "inputs": 10,
+    "state_error_energy": 493.8623274076308,
+    "state_energy": 4920.30909128508,
+    "centered_state_energy": 954.6404068104478,
+    "explained_variance": 0.48267187950101975,
+    "relative_rmse": 0.3168157447219654
+  },
+  {
+    "site": "model.norm",
+    "optimizer": "adamw",
+    "history": "carry",
+    "inputs": 10,
+    "state_error_energy": 29552.896317973384,
+    "state_energy": 262489.4361738598,
+    "centered_state_energy": 47853.43809382445,
+    "explained_variance": 0.38242898535252323,
+    "relative_rmse": 0.3355398531004046
+  },
+  {
+    "site": "model.norm",
+    "optimizer": "adamw",
+    "history": "reset",
+    "inputs": 10,
+    "state_error_energy": 493.8623274076308,
+    "state_energy": 4920.30909128508,
+    "centered_state_energy": 954.6404068104478,
+    "explained_variance": 0.48267187950101975,
+    "relative_rmse": 0.3168157447219654
+  },
+  {
+    "site": "model.norm",
+    "optimizer": "muon_hybrid",
+    "history": "one_pass",
+    "inputs": 10,
+    "state_error_energy": 500.4959283601672,
+    "state_energy": 4920.30909128508,
+    "centered_state_energy": 954.6404068104478,
+    "explained_variance": 0.4757230840119414,
+    "relative_rmse": 0.3189363953536828
+  },
+  {
+    "site": "model.norm",
+    "optimizer": "muon_hybrid",
+    "history": "carry",
+    "inputs": 10,
+    "state_error_energy": 30440.022954560507,
+    "state_energy": 262489.4361738598,
+    "centered_state_energy": 47853.43809382445,
+    "explained_variance": 0.3638905757434212,
+    "relative_rmse": 0.3405387776321236
+  },
+  {
+    "site": "model.norm",
+    "optimizer": "muon_hybrid",
+    "history": "reset",
+    "inputs": 10,
+    "state_error_energy": 500.4959283601672,
+    "state_energy": 4920.30909128508,
+    "centered_state_energy": 954.6404068104478,
+    "explained_variance": 0.4757230840119414,
+    "relative_rmse": 0.3189363953536828
+  }
+]

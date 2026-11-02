@@ -1,0 +1,364 @@
+{
+  "design": {
+    "cosine_threshold_sweep": [
+      0.5,
+      0.7,
+      0.8,
+      0.9
+    ],
+    "maximum_monte_carlo_p_value": 0.05,
+    "minimum_bidirectional_category_coverage": 0.1,
+    "minimum_profile_qualified_features_per_pass": 16,
+    "permutation_preserves_target_pass_assignment_counts": true,
+    "primary_diagnostic_cosine_threshold": 0.8,
+    "target_label_permutation_replicates": 4096,
+    "thresholds_are_diagnostic_and_posthoc_for_existing_sources": true
+  },
+  "matcher": {
+    "benchmark_id": "832e6481040319877140d1b1a7f33f1b7a933f6345a96b27af469704c38e47f5",
+    "benchmark_path": "C:/projects/VPD/artifacts/vpd_sae_feature_replica_matching_benchmark_v2/report.json",
+    "benchmark_sha256": "cb94778b3869072fc820858050ffaadd7bed0aca3a39495ff9e69fcae5d60b7e",
+    "matching_pool": "training_assigned_pass_selective_features_only",
+    "minimum_profile_cosine": 0.8,
+    "mutual_nearest_neighbor": true,
+    "one_to_one": true,
+    "signed_decoder_cosine": true,
+    "version": "v2"
+  },
+  "provenance": {
+    "runner_sha256": "290a4547198de6a90103137c44fbc08ef0700db1c0782f5f0742f43f0df487cc"
+  },
+  "report_id": "d50277d33e5613f56bd0a79414838fb32f1c899546e467d35c101b4931388e7a",
+  "schema": "sch.vpd-nanbeige-q4-sae-pass-feature-replica-matching.v2",
+  "scientific_boundary": {
+    "cosine_and_coverage_thresholds_are_posthoc_for_these_sources": true,
+    "decoder_and_profile_matching_is_not_semantic_interpretation": true,
+    "execution_authorized": false,
+    "fresh_seed_family_disjoint_replication_required": true,
+    "full_dictionary_replication_not_claimed": true,
+    "matching_pool_is_training_assigned_only": true,
+    "model_weights_loaded": false,
+    "new_model_inference_performed": false,
+    "new_sae_training_performed": false,
+    "paid_compute_authorized": false,
+    "sae_decoder_weights_loaded_for_read_only_analysis": true,
+    "sae_training_authorized": false,
+    "same_seed_and_training_ids_limit_independence": true,
+    "weights_mutated": false
+  },
+  "sites": [
+    {
+      "operative_fresh_seed_stratum_replication_admission": "fail",
+      "provisional_same_seed_v2_stratum_replication_support": "fail",
+      "quality_qualified_in_both_archives": true,
+      "selective_feature_counts": {
+        "2048": {
+          "pass_0": 102,
+          "pass_1": 120
+        },
+        "8192": {
+          "pass_0": 104,
+          "pass_1": 112
+        }
+      },
+      "site": "model.layers.11",
+      "threshold_sweep": [
+        {
+          "bidirectional_category_coverage": {
+            "pass_0": 0.3173076923076923,
+            "pass_1": 0.25
+          },
+          "minimum_signed_decoder_cosine": 0.5,
+          "mutual_one_to_one_matches": 63,
+          "opposite_category_matches": 0,
+          "profile_qualified_same_category_matches": {
+            "pass_0": 33,
+            "pass_1": 30
+          },
+          "profile_rejected_matches": 0,
+          "same_category_matches": {
+            "pass_0": 33,
+            "pass_1": 30
+          },
+          "target_label_permutation_p_value": 0.000244081034903588
+        },
+        {
+          "bidirectional_category_coverage": {
+            "pass_0": 0.25961538461538464,
+            "pass_1": 0.11666666666666667
+          },
+          "minimum_signed_decoder_cosine": 0.7,
+          "mutual_one_to_one_matches": 41,
+          "opposite_category_matches": 0,
+          "profile_qualified_same_category_matches": {
+            "pass_0": 27,
+            "pass_1": 14
+          },
+          "profile_rejected_matches": 0,
+          "same_category_matches": {
+            "pass_0": 27,
+            "pass_1": 14
+          },
+          "target_label_permutation_p_value": 0.000244081034903588
+        },
+        {
+          "bidirectional_category_coverage": {
+            "pass_0": 0.18269230769230768,
+            "pass_1": 0.08333333333333333
+          },
+          "minimum_signed_decoder_cosine": 0.8,
+          "mutual_one_to_one_matches": 29,
+          "opposite_category_matches": 0,
+          "profile_qualified_same_category_matches": {
+            "pass_0": 19,
+            "pass_1": 10
+          },
+          "profile_rejected_matches": 0,
+          "same_category_matches": {
+            "pass_0": 19,
+            "pass_1": 10
+          },
+          "target_label_permutation_p_value": 0.000244081034903588
+        },
+        {
+          "bidirectional_category_coverage": {
+            "pass_0": 0.0673076923076923,
+            "pass_1": 0.025
+          },
+          "minimum_signed_decoder_cosine": 0.9,
+          "mutual_one_to_one_matches": 10,
+          "opposite_category_matches": 0,
+          "profile_qualified_same_category_matches": {
+            "pass_0": 7,
+            "pass_1": 3
+          },
+          "profile_rejected_matches": 0,
+          "same_category_matches": {
+            "pass_0": 7,
+            "pass_1": 3
+          },
+          "target_label_permutation_p_value": 0.000732243104710764
+        }
+      ]
+    },
+    {
+      "operative_fresh_seed_stratum_replication_admission": "fail",
+      "provisional_same_seed_v2_stratum_replication_support": "fail",
+      "quality_qualified_in_both_archives": false,
+      "selective_feature_counts": {
+        "2048": {
+          "pass_0": 129,
+          "pass_1": 187
+        },
+        "8192": {
+          "pass_0": 151,
+          "pass_1": 179
+        }
+      },
+      "site": "model.layers.21",
+      "threshold_sweep": [
+        {
+          "bidirectional_category_coverage": {
+            "pass_0": 0.47019867549668876,
+            "pass_1": 0.47593582887700536
+          },
+          "minimum_signed_decoder_cosine": 0.5,
+          "mutual_one_to_one_matches": 160,
+          "opposite_category_matches": 0,
+          "profile_qualified_same_category_matches": {
+            "pass_0": 71,
+            "pass_1": 89
+          },
+          "profile_rejected_matches": 0,
+          "same_category_matches": {
+            "pass_0": 71,
+            "pass_1": 89
+          },
+          "target_label_permutation_p_value": 0.000244081034903588
+        },
+        {
+          "bidirectional_category_coverage": {
+            "pass_0": 0.39072847682119205,
+            "pass_1": 0.28342245989304815
+          },
+          "minimum_signed_decoder_cosine": 0.7,
+          "mutual_one_to_one_matches": 112,
+          "opposite_category_matches": 0,
+          "profile_qualified_same_category_matches": {
+            "pass_0": 59,
+            "pass_1": 53
+          },
+          "profile_rejected_matches": 0,
+          "same_category_matches": {
+            "pass_0": 59,
+            "pass_1": 53
+          },
+          "target_label_permutation_p_value": 0.000244081034903588
+        },
+        {
+          "bidirectional_category_coverage": {
+            "pass_0": 0.2847682119205298,
+            "pass_1": 0.10160427807486631
+          },
+          "minimum_signed_decoder_cosine": 0.8,
+          "mutual_one_to_one_matches": 62,
+          "opposite_category_matches": 0,
+          "profile_qualified_same_category_matches": {
+            "pass_0": 43,
+            "pass_1": 19
+          },
+          "profile_rejected_matches": 0,
+          "same_category_matches": {
+            "pass_0": 43,
+            "pass_1": 19
+          },
+          "target_label_permutation_p_value": 0.000244081034903588
+        },
+        {
+          "bidirectional_category_coverage": {
+            "pass_0": 0.1456953642384106,
+            "pass_1": 0.0
+          },
+          "minimum_signed_decoder_cosine": 0.9,
+          "mutual_one_to_one_matches": 22,
+          "opposite_category_matches": 0,
+          "profile_qualified_same_category_matches": {
+            "pass_0": 22,
+            "pass_1": 0
+          },
+          "profile_rejected_matches": 0,
+          "same_category_matches": {
+            "pass_0": 22,
+            "pass_1": 0
+          },
+          "target_label_permutation_p_value": 0.000244081034903588
+        }
+      ]
+    },
+    {
+      "operative_fresh_seed_stratum_replication_admission": "fail",
+      "provisional_same_seed_v2_stratum_replication_support": "pass",
+      "quality_qualified_in_both_archives": true,
+      "selective_feature_counts": {
+        "2048": {
+          "pass_0": 51,
+          "pass_1": 223
+        },
+        "8192": {
+          "pass_0": 78,
+          "pass_1": 236
+        }
+      },
+      "site": "model.norm",
+      "threshold_sweep": [
+        {
+          "bidirectional_category_coverage": {
+            "pass_0": 0.41025641025641024,
+            "pass_1": 0.4491525423728814
+          },
+          "minimum_signed_decoder_cosine": 0.5,
+          "mutual_one_to_one_matches": 139,
+          "opposite_category_matches": 1,
+          "profile_qualified_same_category_matches": {
+            "pass_0": 32,
+            "pass_1": 106
+          },
+          "profile_rejected_matches": 1,
+          "same_category_matches": {
+            "pass_0": 32,
+            "pass_1": 106
+          },
+          "target_label_permutation_p_value": 0.000244081034903588
+        },
+        {
+          "bidirectional_category_coverage": {
+            "pass_0": 0.3333333333333333,
+            "pass_1": 0.2288135593220339
+          },
+          "minimum_signed_decoder_cosine": 0.7,
+          "mutual_one_to_one_matches": 80,
+          "opposite_category_matches": 0,
+          "profile_qualified_same_category_matches": {
+            "pass_0": 26,
+            "pass_1": 54
+          },
+          "profile_rejected_matches": 0,
+          "same_category_matches": {
+            "pass_0": 26,
+            "pass_1": 54
+          },
+          "target_label_permutation_p_value": 0.000244081034903588
+        },
+        {
+          "bidirectional_category_coverage": {
+            "pass_0": 0.32051282051282054,
+            "pass_1": 0.11864406779661017
+          },
+          "minimum_signed_decoder_cosine": 0.8,
+          "mutual_one_to_one_matches": 53,
+          "opposite_category_matches": 0,
+          "profile_qualified_same_category_matches": {
+            "pass_0": 25,
+            "pass_1": 28
+          },
+          "profile_rejected_matches": 0,
+          "same_category_matches": {
+            "pass_0": 25,
+            "pass_1": 28
+          },
+          "target_label_permutation_p_value": 0.000244081034903588
+        },
+        {
+          "bidirectional_category_coverage": {
+            "pass_0": 0.2564102564102564,
+            "pass_1": 0.00423728813559322
+          },
+          "minimum_signed_decoder_cosine": 0.9,
+          "mutual_one_to_one_matches": 21,
+          "opposite_category_matches": 0,
+          "profile_qualified_same_category_matches": {
+            "pass_0": 20,
+            "pass_1": 1
+          },
+          "profile_rejected_matches": 0,
+          "same_category_matches": {
+            "pass_0": 20,
+            "pass_1": 1
+          },
+          "target_label_permutation_p_value": 0.000244081034903588
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "budget": 2048,
+      "report_id": "71785175dbbf90e4c62e8598df881712194c7598e8710f0923c0a2746b2c7c3d",
+      "report_path": "C:/projects/VPD/artifacts/vpd_nanbeige_q4_sae_pass_selectivity_2048_v1/report.json",
+      "report_sha256": "e577d255b61ef283e20d54f15193b793cee188c6a14ace549e4cc247ec6b283c",
+      "sae_manifest_sha256": "6fc6377d128459f711953d1667a32b8ebdf10c36cd6e6047888b21b447e3bc92",
+      "sae_path": "C:/projects/VPD/artifacts/nanbeige_reasoning/q4_reasoning_pilot_v1/q4_reasoning_saes"
+    },
+    {
+      "budget": 8192,
+      "report_id": "508871d6b702af2edb42e60b6609b5e7d26e535fb2ee1be261a5dc179fef6c41",
+      "report_path": "C:/projects/VPD/artifacts/vpd_nanbeige_q4_sae_pass_selectivity_8192_v1/report.json",
+      "report_sha256": "f87368d7ac359ba10d6be355db12a71d9aa6a119fc801efe720f135bde73b951",
+      "sae_manifest_sha256": "8cea34fb5c46b826059d5684c18c5694e38cf1aabf03eb51a152c8a1f785d6e9",
+      "sae_path": "C:/projects/VPD/artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes"
+    }
+  ],
+  "status": "pass",
+  "summary": {
+    "operative_fresh_seed_stratum_replication_admissions": 0,
+    "provisional_same_seed_v2_stratum_replication_sites": [
+      "model.norm"
+    ],
+    "provisional_same_seed_v2_stratum_replication_supports": 1,
+    "quality_qualified_sites": [
+      "model.layers.11",
+      "model.norm"
+    ],
+    "site_checks": 3
+  }
+}

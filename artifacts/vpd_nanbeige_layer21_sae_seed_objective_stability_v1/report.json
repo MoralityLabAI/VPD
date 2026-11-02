@@ -1,0 +1,358 @@
+{
+  "conditions": [
+    {
+      "arm": "raw_mse",
+      "dictionary_sha256": "ddeb0129644b4dc615d3cdf95b44d2a996568164347c8f0986c3b7f77313d1ec",
+      "id": "42_raw_mse",
+      "manifest_sha256": "315100c3331f52e183c7217b4b130ef17cfbe1a97306170dfedbf4b8763ecfa3",
+      "minimum_held_out_explained_variance": -2.640685404100565,
+      "quality_qualified": false,
+      "seed": 42,
+      "selective_counts": {
+        "pass_0": 31,
+        "pass_1": 34
+      }
+    },
+    {
+      "arm": "inverse_variance_mse",
+      "dictionary_sha256": "d33124fef2fa66a39e48956ba5390043d8c7ffaec450a4fa8175ce081ac7f4c1",
+      "id": "42_inverse_variance_mse",
+      "manifest_sha256": "55a75537152f601f816822d9998173b549039c7862b5d3ebc445201e6b419fd6",
+      "minimum_held_out_explained_variance": -2.938755409650544,
+      "quality_qualified": false,
+      "seed": 42,
+      "selective_counts": {
+        "pass_0": 28,
+        "pass_1": 39
+      }
+    },
+    {
+      "arm": "raw_mse",
+      "dictionary_sha256": "b7114a7283e5260af2ab9abd3e00155fe1ec8de792b16bf4d0501ccad09730a8",
+      "id": "43_raw_mse",
+      "manifest_sha256": "b3ab08317660a37e311ec4a0f96c1ea05ee10ce8186a69a24f9f79de40862631",
+      "minimum_held_out_explained_variance": -2.52893898924127,
+      "quality_qualified": false,
+      "seed": 43,
+      "selective_counts": {
+        "pass_0": 25,
+        "pass_1": 38
+      }
+    },
+    {
+      "arm": "inverse_variance_mse",
+      "dictionary_sha256": "26d7df9377fbd804eb099efa95ebfd97478410ccd846f736b6d3baa7a53647a2",
+      "id": "43_inverse_variance_mse",
+      "manifest_sha256": "e6bf0ce50f19dd8bb99fed664b785e1de1a67a06c345c0bc976e4acd6b8e42a5",
+      "minimum_held_out_explained_variance": -3.048868844877777,
+      "quality_qualified": false,
+      "seed": 43,
+      "selective_counts": {
+        "pass_0": 25,
+        "pass_1": 33
+      }
+    },
+    {
+      "arm": "raw_mse",
+      "dictionary_sha256": "03a2ca66d2575cc7e1b9861004e6aaf97297c54c8bce476e1cc8e86adbfcaf30",
+      "id": "44_raw_mse",
+      "manifest_sha256": "3478105dbe20f1601e0ec6ccab5d4ace925f7aed6a878cf1e4d4ceb5192d2beb",
+      "minimum_held_out_explained_variance": -2.7166350067703604,
+      "quality_qualified": false,
+      "seed": 44,
+      "selective_counts": {
+        "pass_0": 28,
+        "pass_1": 28
+      }
+    },
+    {
+      "arm": "inverse_variance_mse",
+      "dictionary_sha256": "ca300cc152b9d9570dd5f07200705f1f8b0a8bdc497b021365fdbae9a522f320",
+      "id": "44_inverse_variance_mse",
+      "manifest_sha256": "93a934f3868b01260085f63d963bce8f241e0d8d9dafc91f2b6f04c04954a2ce",
+      "minimum_held_out_explained_variance": -3.0865612384009404,
+      "quality_qualified": false,
+      "seed": 44,
+      "selective_counts": {
+        "pass_0": 29,
+        "pass_1": 29
+      }
+    }
+  ],
+  "design": {
+    "all_thresholds_posthoc_for_existing_sources": true,
+    "cross_seed_same_objective_pairs": 6,
+    "matching_pool": "training_assigned_pass_selective_features_only",
+    "minimum_bidirectional_category_coverage": 0.1,
+    "minimum_features_per_pass": 16,
+    "minimum_held_out_explained_variance": 0.2,
+    "minimum_profile_cosine": 0.8,
+    "minimum_signed_decoder_cosine": 0.8,
+    "objectives": [
+      "raw_mse",
+      "inverse_variance_mse"
+    ],
+    "same_seed_cross_objective_pairs": 3,
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "target_label_permutation_replicates": 4096
+  },
+  "pairs": [
+    {
+      "bidirectional_category_coverage": {
+        "pass_0": 0.0,
+        "pass_1": 0.0
+      },
+      "comparison_class": "cross_seed_same_objective",
+      "diagnostic_stratum_stability_without_quality_gate": "fail",
+      "left": "42_raw_mse",
+      "minimum_signed_decoder_cosine": 0.8,
+      "mutual_one_to_one_matches": 0,
+      "operative_stratum_replication_admission": "fail",
+      "opposite_category_matches": 0,
+      "profile_qualified_same_category_matches": {
+        "pass_0": 0,
+        "pass_1": 0
+      },
+      "quality_qualified_pair": false,
+      "right": "43_raw_mse",
+      "same_category_matches": {
+        "pass_0": 0,
+        "pass_1": 0
+      },
+      "target_label_permutation_p_value": 1.0
+    },
+    {
+      "bidirectional_category_coverage": {
+        "pass_0": 0.0,
+        "pass_1": 0.0
+      },
+      "comparison_class": "cross_seed_same_objective",
+      "diagnostic_stratum_stability_without_quality_gate": "fail",
+      "left": "42_raw_mse",
+      "minimum_signed_decoder_cosine": 0.8,
+      "mutual_one_to_one_matches": 0,
+      "operative_stratum_replication_admission": "fail",
+      "opposite_category_matches": 0,
+      "profile_qualified_same_category_matches": {
+        "pass_0": 0,
+        "pass_1": 0
+      },
+      "quality_qualified_pair": false,
+      "right": "44_raw_mse",
+      "same_category_matches": {
+        "pass_0": 0,
+        "pass_1": 0
+      },
+      "target_label_permutation_p_value": 1.0
+    },
+    {
+      "bidirectional_category_coverage": {
+        "pass_0": 0.0,
+        "pass_1": 0.0
+      },
+      "comparison_class": "cross_seed_same_objective",
+      "diagnostic_stratum_stability_without_quality_gate": "fail",
+      "left": "43_raw_mse",
+      "minimum_signed_decoder_cosine": 0.8,
+      "mutual_one_to_one_matches": 0,
+      "operative_stratum_replication_admission": "fail",
+      "opposite_category_matches": 0,
+      "profile_qualified_same_category_matches": {
+        "pass_0": 0,
+        "pass_1": 0
+      },
+      "quality_qualified_pair": false,
+      "right": "44_raw_mse",
+      "same_category_matches": {
+        "pass_0": 0,
+        "pass_1": 0
+      },
+      "target_label_permutation_p_value": 1.0
+    },
+    {
+      "bidirectional_category_coverage": {
+        "pass_0": 0.0,
+        "pass_1": 0.0
+      },
+      "comparison_class": "cross_seed_same_objective",
+      "diagnostic_stratum_stability_without_quality_gate": "fail",
+      "left": "42_inverse_variance_mse",
+      "minimum_signed_decoder_cosine": 0.8,
+      "mutual_one_to_one_matches": 0,
+      "operative_stratum_replication_admission": "fail",
+      "opposite_category_matches": 0,
+      "profile_qualified_same_category_matches": {
+        "pass_0": 0,
+        "pass_1": 0
+      },
+      "quality_qualified_pair": false,
+      "right": "43_inverse_variance_mse",
+      "same_category_matches": {
+        "pass_0": 0,
+        "pass_1": 0
+      },
+      "target_label_permutation_p_value": 1.0
+    },
+    {
+      "bidirectional_category_coverage": {
+        "pass_0": 0.0,
+        "pass_1": 0.0
+      },
+      "comparison_class": "cross_seed_same_objective",
+      "diagnostic_stratum_stability_without_quality_gate": "fail",
+      "left": "42_inverse_variance_mse",
+      "minimum_signed_decoder_cosine": 0.8,
+      "mutual_one_to_one_matches": 0,
+      "operative_stratum_replication_admission": "fail",
+      "opposite_category_matches": 0,
+      "profile_qualified_same_category_matches": {
+        "pass_0": 0,
+        "pass_1": 0
+      },
+      "quality_qualified_pair": false,
+      "right": "44_inverse_variance_mse",
+      "same_category_matches": {
+        "pass_0": 0,
+        "pass_1": 0
+      },
+      "target_label_permutation_p_value": 1.0
+    },
+    {
+      "bidirectional_category_coverage": {
+        "pass_0": 0.0,
+        "pass_1": 0.0
+      },
+      "comparison_class": "cross_seed_same_objective",
+      "diagnostic_stratum_stability_without_quality_gate": "fail",
+      "left": "43_inverse_variance_mse",
+      "minimum_signed_decoder_cosine": 0.8,
+      "mutual_one_to_one_matches": 0,
+      "operative_stratum_replication_admission": "fail",
+      "opposite_category_matches": 0,
+      "profile_qualified_same_category_matches": {
+        "pass_0": 0,
+        "pass_1": 0
+      },
+      "quality_qualified_pair": false,
+      "right": "44_inverse_variance_mse",
+      "same_category_matches": {
+        "pass_0": 0,
+        "pass_1": 0
+      },
+      "target_label_permutation_p_value": 1.0
+    },
+    {
+      "bidirectional_category_coverage": {
+        "pass_0": 0.7741935483870968,
+        "pass_1": 0.8461538461538461
+      },
+      "comparison_class": "same_seed_cross_objective",
+      "diagnostic_stratum_stability_without_quality_gate": "pass",
+      "left": "42_raw_mse",
+      "minimum_signed_decoder_cosine": 0.8,
+      "mutual_one_to_one_matches": 57,
+      "operative_stratum_replication_admission": "fail",
+      "opposite_category_matches": 0,
+      "profile_qualified_same_category_matches": {
+        "pass_0": 24,
+        "pass_1": 33
+      },
+      "quality_qualified_pair": false,
+      "right": "42_inverse_variance_mse",
+      "same_category_matches": {
+        "pass_0": 24,
+        "pass_1": 33
+      },
+      "target_label_permutation_p_value": 0.000244081034903588
+    },
+    {
+      "bidirectional_category_coverage": {
+        "pass_0": 0.68,
+        "pass_1": 0.8157894736842105
+      },
+      "comparison_class": "same_seed_cross_objective",
+      "diagnostic_stratum_stability_without_quality_gate": "pass",
+      "left": "43_raw_mse",
+      "minimum_signed_decoder_cosine": 0.8,
+      "mutual_one_to_one_matches": 48,
+      "operative_stratum_replication_admission": "fail",
+      "opposite_category_matches": 0,
+      "profile_qualified_same_category_matches": {
+        "pass_0": 17,
+        "pass_1": 31
+      },
+      "quality_qualified_pair": false,
+      "right": "43_inverse_variance_mse",
+      "same_category_matches": {
+        "pass_0": 17,
+        "pass_1": 31
+      },
+      "target_label_permutation_p_value": 0.000244081034903588
+    },
+    {
+      "bidirectional_category_coverage": {
+        "pass_0": 0.6896551724137931,
+        "pass_1": 0.9655172413793104
+      },
+      "comparison_class": "same_seed_cross_objective",
+      "diagnostic_stratum_stability_without_quality_gate": "pass",
+      "left": "44_raw_mse",
+      "minimum_signed_decoder_cosine": 0.8,
+      "mutual_one_to_one_matches": 48,
+      "operative_stratum_replication_admission": "fail",
+      "opposite_category_matches": 0,
+      "profile_qualified_same_category_matches": {
+        "pass_0": 20,
+        "pass_1": 28
+      },
+      "quality_qualified_pair": false,
+      "right": "44_inverse_variance_mse",
+      "same_category_matches": {
+        "pass_0": 20,
+        "pass_1": 28
+      },
+      "target_label_permutation_p_value": 0.000244081034903588
+    }
+  ],
+  "provenance": {
+    "runner_sha256": "16edc6f5567ba373085c1809cf09beb93b51dd195b571273154722313c40aee6"
+  },
+  "report_id": "1d2e0ac58f55e8c5525c52920303fd36fdd4b4ea4ffb67bcf7d87dc63c1d1d14",
+  "schema": "sch.vpd-nanbeige-layer21-sae-seed-objective-stability.v1",
+  "scientific_boundary": {
+    "all_conditions_fail_reconstruction_quality": true,
+    "diagnostic_matching_cannot_override_quality_gate": true,
+    "does_not_test_layer11_or_final_norm": true,
+    "execution_authorized": false,
+    "layer21_only": true,
+    "model_weights_loaded": false,
+    "new_model_inference_performed": false,
+    "new_sae_training_performed": false,
+    "not_a_quality_qualified_fresh_seed_replication": true,
+    "paid_compute_authorized": false,
+    "sae_decoder_weights_loaded_for_read_only_analysis": true,
+    "weights_mutated": false
+  },
+  "source": {
+    "contract_sha256": "79efe3112556e3ac825723744f441c1d7d0eb1a1cb18d7747628db382b5a1c5b",
+    "exploratory_posthoc": true,
+    "manifest_sha256": "e432470314d941386de48f6f697acf218eab65d471e3322dceb8af0f87493ab6",
+    "path": "C:/projects/VPD/artifacts/nanbeige_reasoning/sae_loss_balance_control_v1",
+    "site": "model.layers.21",
+    "summary_sha256": "3f82e57470708ac136ed86d580f9cc766af8a174762eab22736d47907ae87b19"
+  },
+  "status": "pass",
+  "summary": {
+    "conditions": 6,
+    "cross_seed_diagnostic_supports_without_quality_gate": 0,
+    "cross_seed_pair_checks": 6,
+    "operative_stratum_replication_admissions": 0,
+    "quality_qualified_conditions": 0,
+    "same_seed_cross_objective_diagnostic_supports_without_quality_gate": 3,
+    "same_seed_cross_objective_pair_checks": 3
+  }
+}

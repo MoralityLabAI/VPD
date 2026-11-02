@@ -1,0 +1,824 @@
+{
+  "authority": {
+    "capture_performed": false,
+    "execution_authorized": false,
+    "training_performed": false
+  },
+  "design": {
+    "excess_effect_grid_in_family_sd": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0,
+      1.5,
+      2.0
+    ],
+    "family_counts": [
+      4,
+      8,
+      10,
+      12
+    ],
+    "family_unit": "equal_weight_mean_of_paired_example_effects",
+    "margin_in_original_units": null,
+    "mde_is_coarse_grid_sensitivity_not_exact_estimate": true,
+    "one_sided_alpha": 0.002777777777777778,
+    "planned_comparisons": 18,
+    "seed": 260920,
+    "simulations_per_cell": 512
+  },
+  "limitations": [
+    "Synthetic location-family assumptions, not empirical power or measured family variance.",
+    "Sign-flip validity needs independent symmetric family errors conditional on frozen fits and controls.",
+    "Does not simulate training-label permutation, feature reassignment, all-pair success, or quality gate failures.",
+    "Heavy tails are sensitivity cases; independence and symmetry remain unverified on model data.",
+    "Intervals quantify Monte Carlo sampling uncertainty, not uncertainty in the model assumptions."
+  ],
+  "provenance": {
+    "kind": "new_synthetic_design_analysis",
+    "runner_sha256": "990439fdc9dd9e18e51a6ec5cd1e288a7d0cf9ff6cade73663fac0ed46f3742a"
+  },
+  "report_id": "650e0ee6b2a76b7a15a5388f1e89c44ef62bf9b69d39334dadfcf42f8953a5aa",
+  "results": [
+    {
+      "distribution": "gaussian",
+      "estimated_rejection_probability": 0.0,
+      "excess_over_useful_margin_in_family_sd": 0.0,
+      "families": 4,
+      "minimum_exact_p": 0.0625,
+      "monte_carlo_wilson_95_interval": [
+        0.0,
+        0.007446975722882739
+      ],
+      "rejections": 0,
+      "simulations": 512
+    },
+    {
+      "distribution": "gaussian",
+      "estimated_rejection_probability": 0.0,
+      "excess_over_useful_margin_in_family_sd": 0.25,
+      "families": 4,
+      "minimum_exact_p": 0.0625,
+      "monte_carlo_wilson_95_interval": [
+        0.0,
+        0.007446975722882739
+      ],
+      "rejections": 0,
+      "simulations": 512
+    },
+    {
+      "distribution": "gaussian",
+      "estimated_rejection_probability": 0.0,
+      "excess_over_useful_margin_in_family_sd": 0.5,
+      "families": 4,
+      "minimum_exact_p": 0.0625,
+      "monte_carlo_wilson_95_interval": [
+        0.0,
+        0.007446975722882739
+      ],
+      "rejections": 0,
+      "simulations": 512
+    },
+    {
+      "distribution": "gaussian",
+      "estimated_rejection_probability": 0.0,
+      "excess_over_useful_margin_in_family_sd": 0.75,
+      "families": 4,
+      "minimum_exact_p": 0.0625,
+      "monte_carlo_wilson_95_interval": [
+        0.0,
+        0.007446975722882739
+      ],
+      "rejections": 0,
+      "simulations": 512
+    },
+    {
+      "distribution": "gaussian",
+      "estimated_rejection_probability": 0.0,
+      "excess_over_useful_margin_in_family_sd": 1.0,
+      "families": 4,
+      "minimum_exact_p": 0.0625,
+      "monte_carlo_wilson_95_interval": [
+        0.0,
+        0.007446975722882739
+      ],
+      "rejections": 0,
+      "simulations": 512
+    },
+    {
+      "distribution": "gaussian",
+      "estimated_rejection_probability": 0.0,
+      "excess_over_useful_margin_in_family_sd": 1.5,
+      "families": 4,
+      "minimum_exact_p": 0.0625,
+      "monte_carlo_wilson_95_interval": [
+        0.0,
+        0.007446975722882739
+      ],
+      "rejections": 0,
+      "simulations": 512
+    },
+    {
+      "distribution": "gaussian",
+      "estimated_rejection_probability": 0.0,
+      "excess_over_useful_margin_in_family_sd": 2.0,
+      "families": 4,
+      "minimum_exact_p": 0.0625,
+      "monte_carlo_wilson_95_interval": [
+        0.0,
+        0.007446975722882739
+      ],
+      "rejections": 0,
+      "simulations": 512
+    },
+    {
+      "distribution": "student_t_3_unit_variance",
+      "estimated_rejection_probability": 0.0,
+      "excess_over_useful_margin_in_family_sd": 0.0,
+      "families": 4,
+      "minimum_exact_p": 0.0625,
+      "monte_carlo_wilson_95_interval": [
+        0.0,
+        0.007446975722882739
+      ],
+      "rejections": 0,
+      "simulations": 512
+    },
+    {
+      "distribution": "student_t_3_unit_variance",
+      "estimated_rejection_probability": 0.0,
+      "excess_over_useful_margin_in_family_sd": 0.25,
+      "families": 4,
+      "minimum_exact_p": 0.0625,
+      "monte_carlo_wilson_95_interval": [
+        0.0,
+        0.007446975722882739
+      ],
+      "rejections": 0,
+      "simulations": 512
+    },
+    {
+      "distribution": "student_t_3_unit_variance",
+      "estimated_rejection_probability": 0.0,
+      "excess_over_useful_margin_in_family_sd": 0.5,
+      "families": 4,
+      "minimum_exact_p": 0.0625,
+      "monte_carlo_wilson_95_interval": [
+        0.0,
+        0.007446975722882739
+      ],
+      "rejections": 0,
+      "simulations": 512
+    },
+    {
+      "distribution": "student_t_3_unit_variance",
+      "estimated_rejection_probability": 0.0,
+      "excess_over_useful_margin_in_family_sd": 0.75,
+      "families": 4,
+      "minimum_exact_p": 0.0625,
+      "monte_carlo_wilson_95_interval": [
+        0.0,
+        0.007446975722882739
+      ],
+      "rejections": 0,
+      "simulations": 512
+    },
+    {
+      "distribution": "student_t_3_unit_variance",
+      "estimated_rejection_probability": 0.0,
+      "excess_over_useful_margin_in_family_sd": 1.0,
+      "families": 4,
+      "minimum_exact_p": 0.0625,
+      "monte_carlo_wilson_95_interval": [
+        0.0,
+        0.007446975722882739
+      ],
+      "rejections": 0,
+      "simulations": 512
+    },
+    {
+      "distribution": "student_t_3_unit_variance",
+      "estimated_rejection_probability": 0.0,
+      "excess_over_useful_margin_in_family_sd": 1.5,
+      "families": 4,
+      "minimum_exact_p": 0.0625,
+      "monte_carlo_wilson_95_interval": [
+        0.0,
+        0.007446975722882739
+      ],
+      "rejections": 0,
+      "simulations": 512
+    },
+    {
+      "distribution": "student_t_3_unit_variance",
+      "estimated_rejection_probability": 0.0,
+      "excess_over_useful_margin_in_family_sd": 2.0,
+      "families": 4,
+      "minimum_exact_p": 0.0625,
+      "monte_carlo_wilson_95_interval": [
+        0.0,
+        0.007446975722882739
+      ],
+      "rejections": 0,
+      "simulations": 512
+    },
+    {
+      "distribution": "gaussian",
+      "estimated_rejection_probability": 0.0,
+      "excess_over_useful_margin_in_family_sd": 0.0,
+      "families": 8,
+      "minimum_exact_p": 0.00390625,
+      "monte_carlo_wilson_95_interval": [
+        0.0,
+        0.007446975722882739
+      ],
+      "rejections": 0,
+      "simulations": 512
+    },
+    {
+      "distribution": "gaussian",
+      "estimated_rejection_probability": 0.0,
+      "excess_over_useful_margin_in_family_sd": 0.25,
+      "families": 8,
+      "minimum_exact_p": 0.00390625,
+      "monte_carlo_wilson_95_interval": [
+        0.0,
+        0.007446975722882739
+      ],
+      "rejections": 0,
+      "simulations": 512
+    },
+    {
+      "distribution": "gaussian",
+      "estimated_rejection_probability": 0.0,
+      "excess_over_useful_margin_in_family_sd": 0.5,
+      "families": 8,
+      "minimum_exact_p": 0.00390625,
+      "monte_carlo_wilson_95_interval": [
+        0.0,
+        0.007446975722882739
+      ],
+      "rejections": 0,
+      "simulations": 512
+    },
+    {
+      "distribution": "gaussian",
+      "estimated_rejection_probability": 0.0,
+      "excess_over_useful_margin_in_family_sd": 0.75,
+      "families": 8,
+      "minimum_exact_p": 0.00390625,
+      "monte_carlo_wilson_95_interval": [
+        0.0,
+        0.007446975722882739
+      ],
+      "rejections": 0,
+      "simulations": 512
+    },
+    {
+      "distribution": "gaussian",
+      "estimated_rejection_probability": 0.0,
+      "excess_over_useful_margin_in_family_sd": 1.0,
+      "families": 8,
+      "minimum_exact_p": 0.00390625,
+      "monte_carlo_wilson_95_interval": [
+        0.0,
+        0.007446975722882739
+      ],
+      "rejections": 0,
+      "simulations": 512
+    },
+    {
+      "distribution": "gaussian",
+      "estimated_rejection_probability": 0.0,
+      "excess_over_useful_margin_in_family_sd": 1.5,
+      "families": 8,
+      "minimum_exact_p": 0.00390625,
+      "monte_carlo_wilson_95_interval": [
+        0.0,
+        0.007446975722882739
+      ],
+      "rejections": 0,
+      "simulations": 512
+    },
+    {
+      "distribution": "gaussian",
+      "estimated_rejection_probability": 0.0,
+      "excess_over_useful_margin_in_family_sd": 2.0,
+      "families": 8,
+      "minimum_exact_p": 0.00390625,
+      "monte_carlo_wilson_95_interval": [
+        0.0,
+        0.007446975722882739
+      ],
+      "rejections": 0,
+      "simulations": 512
+    },
+    {
+      "distribution": "student_t_3_unit_variance",
+      "estimated_rejection_probability": 0.0,
+      "excess_over_useful_margin_in_family_sd": 0.0,
+      "families": 8,
+      "minimum_exact_p": 0.00390625,
+      "monte_carlo_wilson_95_interval": [
+        0.0,
+        0.007446975722882739
+      ],
+      "rejections": 0,
+      "simulations": 512
+    },
+    {
+      "distribution": "student_t_3_unit_variance",
+      "estimated_rejection_probability": 0.0,
+      "excess_over_useful_margin_in_family_sd": 0.25,
+      "families": 8,
+      "minimum_exact_p": 0.00390625,
+      "monte_carlo_wilson_95_interval": [
+        0.0,
+        0.007446975722882739
+      ],
+      "rejections": 0,
+      "simulations": 512
+    },
+    {
+      "distribution": "student_t_3_unit_variance",
+      "estimated_rejection_probability": 0.0,
+      "excess_over_useful_margin_in_family_sd": 0.5,
+      "families": 8,
+      "minimum_exact_p": 0.00390625,
+      "monte_carlo_wilson_95_interval": [
+        0.0,
+        0.007446975722882739
+      ],
+      "rejections": 0,
+      "simulations": 512
+    },
+    {
+      "distribution": "student_t_3_unit_variance",
+      "estimated_rejection_probability": 0.0,
+      "excess_over_useful_margin_in_family_sd": 0.75,
+      "families": 8,
+      "minimum_exact_p": 0.00390625,
+      "monte_carlo_wilson_95_interval": [
+        0.0,
+        0.007446975722882739
+      ],
+      "rejections": 0,
+      "simulations": 512
+    },
+    {
+      "distribution": "student_t_3_unit_variance",
+      "estimated_rejection_probability": 0.0,
+      "excess_over_useful_margin_in_family_sd": 1.0,
+      "families": 8,
+      "minimum_exact_p": 0.00390625,
+      "monte_carlo_wilson_95_interval": [
+        0.0,
+        0.007446975722882739
+      ],
+      "rejections": 0,
+      "simulations": 512
+    },
+    {
+      "distribution": "student_t_3_unit_variance",
+      "estimated_rejection_probability": 0.0,
+      "excess_over_useful_margin_in_family_sd": 1.5,
+      "families": 8,
+      "minimum_exact_p": 0.00390625,
+      "monte_carlo_wilson_95_interval": [
+        0.0,
+        0.007446975722882739
+      ],
+      "rejections": 0,
+      "simulations": 512
+    },
+    {
+      "distribution": "student_t_3_unit_variance",
+      "estimated_rejection_probability": 0.0,
+      "excess_over_useful_margin_in_family_sd": 2.0,
+      "families": 8,
+      "minimum_exact_p": 0.00390625,
+      "monte_carlo_wilson_95_interval": [
+        0.0,
+        0.007446975722882739
+      ],
+      "rejections": 0,
+      "simulations": 512
+    },
+    {
+      "distribution": "gaussian",
+      "estimated_rejection_probability": 0.00390625,
+      "excess_over_useful_margin_in_family_sd": 0.0,
+      "families": 10,
+      "minimum_exact_p": 0.0009765625,
+      "monte_carlo_wilson_95_interval": [
+        0.0010718890803936704,
+        0.014129407144654047
+      ],
+      "rejections": 2,
+      "simulations": 512
+    },
+    {
+      "distribution": "gaussian",
+      "estimated_rejection_probability": 0.01953125,
+      "excess_over_useful_margin_in_family_sd": 0.25,
+      "families": 10,
+      "minimum_exact_p": 0.0009765625,
+      "monte_carlo_wilson_95_interval": [
+        0.010642921854633284,
+        0.03557565637907435
+      ],
+      "rejections": 10,
+      "simulations": 512
+    },
+    {
+      "distribution": "gaussian",
+      "estimated_rejection_probability": 0.048828125,
+      "excess_over_useful_margin_in_family_sd": 0.5,
+      "families": 10,
+      "minimum_exact_p": 0.0009765625,
+      "monte_carlo_wilson_95_interval": [
+        0.033289430544156826,
+        0.07108655145578816
+      ],
+      "rejections": 25,
+      "simulations": 512
+    },
+    {
+      "distribution": "gaussian",
+      "estimated_rejection_probability": 0.158203125,
+      "excess_over_useful_margin_in_family_sd": 0.75,
+      "families": 10,
+      "minimum_exact_p": 0.0009765625,
+      "monte_carlo_wilson_95_interval": [
+        0.12915371515338725,
+        0.19234324090717714
+      ],
+      "rejections": 81,
+      "simulations": 512
+    },
+    {
+      "distribution": "gaussian",
+      "estimated_rejection_probability": 0.30078125,
+      "excess_over_useful_margin_in_family_sd": 1.0,
+      "families": 10,
+      "minimum_exact_p": 0.0009765625,
+      "monte_carlo_wilson_95_interval": [
+        0.2626619417224134,
+        0.34186771266717264
+      ],
+      "rejections": 154,
+      "simulations": 512
+    },
+    {
+      "distribution": "gaussian",
+      "estimated_rejection_probability": 0.71875,
+      "excess_over_useful_margin_in_family_sd": 1.5,
+      "families": 10,
+      "minimum_exact_p": 0.0009765625,
+      "monte_carlo_wilson_95_interval": [
+        0.6782873773691931,
+        0.7559545707520456
+      ],
+      "rejections": 368,
+      "simulations": 512
+    },
+    {
+      "distribution": "gaussian",
+      "estimated_rejection_probability": 0.95703125,
+      "excess_over_useful_margin_in_family_sd": 2.0,
+      "families": 10,
+      "minimum_exact_p": 0.0009765625,
+      "monte_carlo_wilson_95_interval": [
+        0.9358001975831783,
+        0.9714553011701242
+      ],
+      "rejections": 490,
+      "simulations": 512
+    },
+    {
+      "distribution": "student_t_3_unit_variance",
+      "estimated_rejection_probability": 0.0,
+      "excess_over_useful_margin_in_family_sd": 0.0,
+      "families": 10,
+      "minimum_exact_p": 0.0009765625,
+      "monte_carlo_wilson_95_interval": [
+        0.0,
+        0.007446975722882739
+      ],
+      "rejections": 0,
+      "simulations": 512
+    },
+    {
+      "distribution": "student_t_3_unit_variance",
+      "estimated_rejection_probability": 0.0234375,
+      "excess_over_useful_margin_in_family_sd": 0.25,
+      "families": 10,
+      "minimum_exact_p": 0.0009765625,
+      "monte_carlo_wilson_95_interval": [
+        0.013457118668315029,
+        0.040515780067557586
+      ],
+      "rejections": 12,
+      "simulations": 512
+    },
+    {
+      "distribution": "student_t_3_unit_variance",
+      "estimated_rejection_probability": 0.11328125,
+      "excess_over_useful_margin_in_family_sd": 0.5,
+      "families": 10,
+      "minimum_exact_p": 0.0009765625,
+      "monte_carlo_wilson_95_interval": [
+        0.08865964270012361,
+        0.14366262758554352
+      ],
+      "rejections": 58,
+      "simulations": 512
+    },
+    {
+      "distribution": "student_t_3_unit_variance",
+      "estimated_rejection_probability": 0.302734375,
+      "excess_over_useful_margin_in_family_sd": 0.75,
+      "families": 10,
+      "minimum_exact_p": 0.0009765625,
+      "monte_carlo_wilson_95_interval": [
+        0.2645283218401122,
+        0.3438784928005564
+      ],
+      "rejections": 155,
+      "simulations": 512
+    },
+    {
+      "distribution": "student_t_3_unit_variance",
+      "estimated_rejection_probability": 0.515625,
+      "excess_over_useful_margin_in_family_sd": 1.0,
+      "families": 10,
+      "minimum_exact_p": 0.0009765625,
+      "monte_carlo_wilson_95_interval": [
+        0.4723816267229168,
+        0.5586356552857431
+      ],
+      "rejections": 264,
+      "simulations": 512
+    },
+    {
+      "distribution": "student_t_3_unit_variance",
+      "estimated_rejection_probability": 0.806640625,
+      "excess_over_useful_margin_in_family_sd": 1.5,
+      "families": 10,
+      "minimum_exact_p": 0.0009765625,
+      "monte_carlo_wilson_95_interval": [
+        0.7701996390145233,
+        0.8385145204054275
+      ],
+      "rejections": 413,
+      "simulations": 512
+    },
+    {
+      "distribution": "student_t_3_unit_variance",
+      "estimated_rejection_probability": 0.904296875,
+      "excess_over_useful_margin_in_family_sd": 2.0,
+      "families": 10,
+      "minimum_exact_p": 0.0009765625,
+      "monte_carlo_wilson_95_interval": [
+        0.8757213408880494,
+        0.9268508310860258
+      ],
+      "rejections": 463,
+      "simulations": 512
+    },
+    {
+      "distribution": "gaussian",
+      "estimated_rejection_probability": 0.001953125,
+      "excess_over_useful_margin_in_family_sd": 0.0,
+      "families": 12,
+      "minimum_exact_p": 0.000244140625,
+      "monte_carlo_wilson_95_interval": [
+        0.00034485776154337486,
+        0.010979278212421853
+      ],
+      "rejections": 1,
+      "simulations": 512
+    },
+    {
+      "distribution": "gaussian",
+      "estimated_rejection_probability": 0.013671875,
+      "excess_over_useful_margin_in_family_sd": 0.25,
+      "families": 12,
+      "minimum_exact_p": 0.000244140625,
+      "monte_carlo_wilson_95_interval": [
+        0.006638096992250363,
+        0.0279490004882098
+      ],
+      "rejections": 7,
+      "simulations": 512
+    },
+    {
+      "distribution": "gaussian",
+      "estimated_rejection_probability": 0.095703125,
+      "excess_over_useful_margin_in_family_sd": 0.5,
+      "families": 12,
+      "minimum_exact_p": 0.000244140625,
+      "monte_carlo_wilson_95_interval": [
+        0.0731491689139741,
+        0.12427865911195063
+      ],
+      "rejections": 49,
+      "simulations": 512
+    },
+    {
+      "distribution": "gaussian",
+      "estimated_rejection_probability": 0.2578125,
+      "excess_over_useful_margin_in_family_sd": 0.75,
+      "families": 12,
+      "minimum_exact_p": 0.000244140625,
+      "monte_carlo_wilson_95_interval": [
+        0.2218245837223504,
+        0.2974075451434209
+      ],
+      "rejections": 132,
+      "simulations": 512
+    },
+    {
+      "distribution": "gaussian",
+      "estimated_rejection_probability": 0.56640625,
+      "excess_over_useful_margin_in_family_sd": 1.0,
+      "families": 12,
+      "minimum_exact_p": 0.000244140625,
+      "monte_carlo_wilson_95_interval": [
+        0.5231431740585111,
+        0.6086802744782935
+      ],
+      "rejections": 290,
+      "simulations": 512
+    },
+    {
+      "distribution": "gaussian",
+      "estimated_rejection_probability": 0.9296875,
+      "excess_over_useful_margin_in_family_sd": 1.5,
+      "families": 12,
+      "minimum_exact_p": 0.000244140625,
+      "monte_carlo_wilson_95_interval": [
+        0.9041932796740074,
+        0.9487819755641401
+      ],
+      "rejections": 476,
+      "simulations": 512
+    },
+    {
+      "distribution": "gaussian",
+      "estimated_rejection_probability": 0.990234375,
+      "excess_over_useful_margin_in_family_sd": 2.0,
+      "families": 12,
+      "minimum_exact_p": 0.000244140625,
+      "monte_carlo_wilson_95_interval": [
+        0.977345524728445,
+        0.9958216982932597
+      ],
+      "rejections": 507,
+      "simulations": 512
+    },
+    {
+      "distribution": "student_t_3_unit_variance",
+      "estimated_rejection_probability": 0.0,
+      "excess_over_useful_margin_in_family_sd": 0.0,
+      "families": 12,
+      "minimum_exact_p": 0.000244140625,
+      "monte_carlo_wilson_95_interval": [
+        0.0,
+        0.007446975722882739
+      ],
+      "rejections": 0,
+      "simulations": 512
+    },
+    {
+      "distribution": "student_t_3_unit_variance",
+      "estimated_rejection_probability": 0.05078125,
+      "excess_over_useful_margin_in_family_sd": 0.25,
+      "families": 12,
+      "minimum_exact_p": 0.000244140625,
+      "monte_carlo_wilson_95_interval": [
+        0.03488718106757214,
+        0.07336596118345534
+      ],
+      "rejections": 26,
+      "simulations": 512
+    },
+    {
+      "distribution": "student_t_3_unit_variance",
+      "estimated_rejection_probability": 0.21484375,
+      "excess_over_useful_margin_in_family_sd": 0.5,
+      "families": 12,
+      "minimum_exact_p": 0.000244140625,
+      "monte_carlo_wilson_95_interval": [
+        0.18146083224296278,
+        0.25247377109899377
+      ],
+      "rejections": 110,
+      "simulations": 512
+    },
+    {
+      "distribution": "student_t_3_unit_variance",
+      "estimated_rejection_probability": 0.515625,
+      "excess_over_useful_margin_in_family_sd": 0.75,
+      "families": 12,
+      "minimum_exact_p": 0.000244140625,
+      "monte_carlo_wilson_95_interval": [
+        0.4723816267229168,
+        0.5586356552857431
+      ],
+      "rejections": 264,
+      "simulations": 512
+    },
+    {
+      "distribution": "student_t_3_unit_variance",
+      "estimated_rejection_probability": 0.744140625,
+      "excess_over_useful_margin_in_family_sd": 1.0,
+      "families": 12,
+      "minimum_exact_p": 0.000244140625,
+      "monte_carlo_wilson_95_interval": [
+        0.7046240394693286,
+        0.7800209919159826
+      ],
+      "rejections": 381,
+      "simulations": 512
+    },
+    {
+      "distribution": "student_t_3_unit_variance",
+      "estimated_rejection_probability": 0.923828125,
+      "excess_over_useful_margin_in_family_sd": 1.5,
+      "families": 12,
+      "minimum_exact_p": 0.000244140625,
+      "monte_carlo_wilson_95_interval": [
+        0.8975633728664396,
+        0.9437804016184606
+      ],
+      "rejections": 473,
+      "simulations": 512
+    },
+    {
+      "distribution": "student_t_3_unit_variance",
+      "estimated_rejection_probability": 0.96484375,
+      "excess_over_useful_margin_in_family_sd": 2.0,
+      "families": 12,
+      "minimum_exact_p": 0.000244140625,
+      "monte_carlo_wilson_95_interval": [
+        0.9451159458429383,
+        0.9776481939146942
+      ],
+      "rejections": 494,
+      "simulations": 512
+    }
+  ],
+  "schema": "sch.vpd-sae-family-test-power.v1",
+  "sensitivity": [
+    {
+      "distribution": "gaussian",
+      "families": 4,
+      "smallest_tested_effect_with_mc_lower_bound_at_least_0_8": null,
+      "smallest_tested_effect_with_point_power_at_least_0_8": null
+    },
+    {
+      "distribution": "student_t_3_unit_variance",
+      "families": 4,
+      "smallest_tested_effect_with_mc_lower_bound_at_least_0_8": null,
+      "smallest_tested_effect_with_point_power_at_least_0_8": null
+    },
+    {
+      "distribution": "gaussian",
+      "families": 8,
+      "smallest_tested_effect_with_mc_lower_bound_at_least_0_8": null,
+      "smallest_tested_effect_with_point_power_at_least_0_8": null
+    },
+    {
+      "distribution": "student_t_3_unit_variance",
+      "families": 8,
+      "smallest_tested_effect_with_mc_lower_bound_at_least_0_8": null,
+      "smallest_tested_effect_with_point_power_at_least_0_8": null
+    },
+    {
+      "distribution": "gaussian",
+      "families": 10,
+      "smallest_tested_effect_with_mc_lower_bound_at_least_0_8": 2.0,
+      "smallest_tested_effect_with_point_power_at_least_0_8": 2.0
+    },
+    {
+      "distribution": "student_t_3_unit_variance",
+      "families": 10,
+      "smallest_tested_effect_with_mc_lower_bound_at_least_0_8": 2.0,
+      "smallest_tested_effect_with_point_power_at_least_0_8": 1.5
+    },
+    {
+      "distribution": "gaussian",
+      "families": 12,
+      "smallest_tested_effect_with_mc_lower_bound_at_least_0_8": 1.5,
+      "smallest_tested_effect_with_point_power_at_least_0_8": 1.5
+    },
+    {
+      "distribution": "student_t_3_unit_variance",
+      "families": 12,
+      "smallest_tested_effect_with_mc_lower_bound_at_least_0_8": 1.5,
+      "smallest_tested_effect_with_point_power_at_least_0_8": 1.5
+    }
+  ]
+}

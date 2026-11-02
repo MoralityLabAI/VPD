@@ -1,0 +1,25 @@
+{
+  "status": "completed",
+  "model_archive_records": 450,
+  "per_input_rows": 5040,
+  "new_model_inference": false,
+  "source_manifest_sha256": "30df0f28705d99eabc4740d54a987170a511801b34922ed93d8eefa19b5f2364",
+  "files": {
+    "contrasts.json": "498ae1bc521d17fdaf322d12e5637688806450aef211908384bacc30e43d3a0c",
+    "crossed_per_input.json": "7fb88a449338d6d966f8c0c4f537793f9e1e3e4a6025e1f045084d5a51d6af3f",
+    "crossed_pooled.json": "039a7b68503df3365dffc392877b1fd495007b253fbc92d2d3b3e84eeb5461e0",
+    "dictionary_sources.json": "9f9154317ce259299cc02780b18d5cc513cb9e4e90b92fc7731e3dd0708a6f14",
+    "encodings_model.layers.11_adamw.npz": "7ab2cf87e6ad70700324d19023bf6b3f540a6d7782b706f796678f966f849ad0",
+    "encodings_model.layers.11_muon_hybrid.npz": "dce45347eefe4bb2875d469e9af367ac085eb785c8378f261b11bfd3609d83a7",
+    "encodings_model.layers.21_adamw.npz": "669866a3088174de4ee87bb13e30e84023371c6a025e0cf4e54772dd309a513a",
+    "encodings_model.layers.21_muon_hybrid.npz": "9e6f7b1e3a179aaff4632ca2db3c2e52a250b4499aa5c6e67a9a2e4824ed12bb",
+    "encodings_model.norm_adamw.npz": "18d91d9db37af76c4cb4cfc6959dfe70a0a014d3f7afc1c43a7c12cf2c233fa5",
+    "encodings_model.norm_muon_hybrid.npz": "6104871a5e2327dc95403cba98e299fd2633baf253e2f13ef2760898ff0c231e",
+    "logit_effects.json": "da8e2c6bc79e2315304a5985bd9e0e9cfcdfdeb612fb8b66273c8d957df9a97d",
+    "per_input.json": "940670e1402bc9c40717f73ecd7940123e8da7feafe6dd9d5fce7d22815ea627",
+    "pooled.json": "80a682d9579625020746d324fb03193b31db5e0c61d8e17a7f40d51bbbd266c7",
+    "protocol.json": "814d83d2b5ff331a8fadb00af31b6cdb59cf508bea8dc64b9914db280b91a6b2",
+    "RESULTS.md": "e44cc4eef8a127a248732d99619fd9ae6a656f4ef0d563bf309cbb51e035a7e2",
+    "state_quality.json": "cb42289dc5f6477bef4b39b1cf6e1ed1151b61299591dd233244f5159e503db4"
+  }
+}

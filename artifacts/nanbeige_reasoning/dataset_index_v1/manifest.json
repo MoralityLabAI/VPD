@@ -1,0 +1,34 @@
+{
+  "status": "local_mechinterp_dataset_index_verified",
+  "schema": "nanbeige.dataset_index.v1",
+  "examples": 18,
+  "splits": {
+    "train": 8,
+    "eval": 10
+  },
+  "lanes": {
+    "arc_agi_1": 5,
+    "arc_agi_2": 5,
+    "intellect3_logic": 4,
+    "intellect3_math": 4
+  },
+  "assets": 442,
+  "referenced_bytes": 1861125321,
+  "counts": {
+    "activation_archives": 18,
+    "paired_trajectories": 36,
+    "sae_feature_archives": 162,
+    "vpd_coordinate_archives": 72,
+    "frozen_sae_vpd_effect_archives": 120
+  },
+  "path_root": "project root, three parent directories above this index directory",
+  "index_sha256": "8224c85885c412b07edf6e96db5560b4ec0a9fbaaefbc598cdacdf13071e75fa",
+  "assets_sha256": "7ef16880378a0cf83d81d8001cccdce38c7e524ae8c7dafd4a8c23b5730153a9",
+  "builder_sha256": "211c103659f5d996b1562544d534c87cf3f0a8132e2a4772dcc6b15cd1fcb8d2",
+  "limitations": [
+    "Indexes existing measurements; does not rerun their numerical verifiers or model inference.",
+    "Initial and extended token-budget variants must not be joined by row index.",
+    "A common question ID is not proof of matching token positions or activation precision.",
+    "Local unpublished index; no additional redistribution rights are granted."
+  ]
+}

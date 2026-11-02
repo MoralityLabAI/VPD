@@ -1,0 +1,56 @@
+{
+  "benchmark_id": "91186f71a7b57364b1ecfd1fbe879eee811c7504db2605f505e2cc0338b14511",
+  "negative_controls": {
+    "action_boundary_rejected": true,
+    "adapter_tamper_rejected": true,
+    "category_omission_rejected": true,
+    "mutable_model_revision_rejected": true,
+    "raw_rank_component_rejected": true,
+    "readdressed_plan_tamper_rejected": true,
+    "synthetic_provenance_mismatch_rejected": true,
+    "weight_persistence_authorization_rejected": true,
+    "wrong_job_authorization_rejected": true
+  },
+  "scenario": {
+    "activation_categories": 8,
+    "components": 2,
+    "maximum_forward_passes": 32,
+    "plan_reproduced": true,
+    "plan_verification": {
+      "capture_job_plan_id": "94d054495f03685693a4c781c353742449d66f029f79fb688687a9588282a47d",
+      "components": 2,
+      "execution_authorized": false,
+      "maximum_forward_passes": 32,
+      "rows": 16,
+      "schema": "sch.vpd-canonical-category-capture-job-plan-verification.v1",
+      "status": "pass"
+    },
+    "rows": 16,
+    "synthetic_authorization_verification": {
+      "authorized_action": "canonical_category_effect_capture",
+      "capture_authorization_id": "ce0c295b92943ba63c1afed699b5e6df6dad49f590727b37f4247b2b7b70c280",
+      "capture_authorization_sha256": "d50d6af0faae35cebe74a7d8ce5206fc5d85899e92858bfa7ba6ab432f430f81",
+      "capture_job_plan_id": "94d054495f03685693a4c781c353742449d66f029f79fb688687a9588282a47d",
+      "maximum_forward_passes": 32,
+      "real_actions_authorized": false,
+      "schema": "sch.vpd-explicit-canonical-capture-authorization-verification.v1",
+      "status": "pass"
+    }
+  },
+  "schema": "sch.vpd-canonical-category-capture-job-plan-benchmark.v1",
+  "scientific_boundary": {
+    "effect_capture_performed": false,
+    "execution_authorized": false,
+    "model_inference_performed": false,
+    "model_loaded": false,
+    "synthetic_authorization_is_not_user_authorization": true,
+    "synthetic_benchmark_only": true,
+    "torch_transformers_or_peft_imported": false,
+    "weights_mutated": false
+  },
+  "source": {
+    "planner_sha256": "fb0b32df99022fe4a5d411e243cd14c39365a618318a062b916c11e57f2249e7",
+    "synthetic_inventory_id": "867b3c254cf8b9b65009754c723df8780b13b447c1c9d48767f83a3e27d26fc7"
+  },
+  "status": "pass"
+}

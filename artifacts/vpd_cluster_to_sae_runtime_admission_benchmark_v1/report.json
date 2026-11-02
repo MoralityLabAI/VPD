@@ -1,0 +1,39 @@
+{
+  "benchmark_id": "32e17a9ba015320b44cf5ae4b9a88e56aa8eabde42e45e5e67635cbe2c366a66",
+  "controls": {
+    "admission_join_does_not_start_capture": true,
+    "all_paths_remain_non_authorizing": true,
+    "atomic_reservation_creates_empty_root_without_capture": true,
+    "consumed_nonce_rejected_at_join": true,
+    "content_mutation_rejected_at_join": true,
+    "double_reservation_rejected_fail_closed": true,
+    "expired_receipt_rejected_at_join": true,
+    "four_proofs_join_same_preflight": true,
+    "outside_reservation_rejected": true,
+    "reservation_helper_does_not_overwrite_or_resume": true,
+    "synthetic_authorization_blocks_reservation": true,
+    "wrong_preflight_receipt_rejected_at_join": true
+  },
+  "schema": "sch.vpd-cluster-to-sae-runtime-admission-benchmark.v1",
+  "scientific_boundary": {
+    "capture_started": false,
+    "execution_authorized": false,
+    "model_inference_performed": false,
+    "model_loaded": false,
+    "persistent_output_root_created": false,
+    "real_authorization_receipt_present": false,
+    "real_model_or_adapter_content_opened": false,
+    "sae_training_authorized": false,
+    "synthetic_temporary_inputs_only": true,
+    "weights_mutated": false
+  },
+  "source": {
+    "benchmark_sha256": "171da5ac2be6d3342aaaef2d20b89e816c5f3b5a2ba87a4f9ef625e8f3823953",
+    "runtime_admission_builder_sha256": "458d8ec8e07fcb3e3494cf6338642785b678568eefd550e7e188e1debd21c218"
+  },
+  "status": "pass",
+  "summary": {
+    "controls": 12,
+    "passed": 12
+  }
+}

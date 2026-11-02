@@ -1,0 +1,406 @@
+{
+  "schema": "sch.vpd-cheap-model-semantic-repair-run-packet.v1",
+  "date": "2026-09-02",
+  "project_root": "C:\\projects\\VPD",
+  "provenance": {
+    "packet_status": "newly_derived_not_recovered",
+    "recovery_brief": "VPD_CONTEXT_RECOVERY_2026-08-29.md",
+    "exact_state_map": "VPD_STATE_MAP_V1_V8_2026-08-29.md",
+    "lost_v7_validator_expected_sha256": "1cafe45ca4487a969226f09f9c9c8208d84a04cf5790ad1b8517e0ff6ad2f444",
+    "lost_v7_validator_recovered": false,
+    "replacement_validator_label": "reconstructed_not_hash_identical_to_lost_original"
+  },
+  "release_decision": {
+    "base": "reject",
+    "adapter": "reject",
+    "base_separation": 0.692347,
+    "adapter_separation": 0.580743,
+    "adapter_minus_base": -0.111604,
+    "adapter_minus_base_ci95": [-0.122397, -0.100996],
+    "invalid_request_rate": 0.0,
+    "valid_propose_rate": 1.0,
+    "v7_trained_weights": false
+  },
+  "authority": {
+    "allowed": [
+      "read_local_files",
+      "run_model_free_verifiers",
+      "run_focused_local_tests",
+      "create_new_versioned_model_free_contracts_tests_reports"
+    ],
+    "forbidden_without_new_explicit_user_authorization": [
+      "network_access",
+      "package_installation",
+      "model_or_adapter_loading",
+      "model_inference",
+      "gpu_or_external_jobs",
+      "empirical_capture",
+      "fresh_held_out_pack_generation",
+      "weight_or_dictionary_mutation",
+      "sae_training",
+      "real_actions"
+    ]
+  },
+  "pinned": {
+    "semantic_dispatch_coverage_audit_v1_id": "bd3cc043f7b658029fd20c99492c43edbace23550a7e237d36d692e46297eaa7",
+    "semantic_dispatch_coverage_benchmark_v1_id": "adc1d00bf3be2ab9d790252534bc084add403842b26ae9002e2d6216f0095732",
+    "blueprint_bound_budget_proposal_v2_id": "50e09fa4b4247483bf616c9f31226bdd021d7ca609b20a6b911cd361175bb400",
+    "blueprint_bound_budget_admission_v2_id": "dadb42b793f491486bcd9677a840f39ad7644f73460254f3b793c5c7c3a60f72",
+    "blueprint_bound_budget_benchmark_v2_id": "1c239f6416c57374a810732496c20f36a7245d882b41c2282c72b8465678da58",
+    "blueprint_bound_budget_builder_v2_sha256": "31396ffcab4b5ea88f1287745c17c79a47d9b2620d38187b776db9465c0117e1",
+    "blueprint_bound_budget_benchmark_v2_sha256": "f3d0abc1516e20ddd5be70d90ae905cf74045135fcb5ef34db90bf571cad3d54",
+    "blueprint_bound_budget_test_v2_sha256": "88e6269b0ef222dc4bd41b37e0e5a57403b35becc0ad8384c340dbd29611bd6f",
+    "blueprint_bound_budget_report_v2_sha256": "b5e04370fd550667c1abdb74c3215f1e32b0dd016680e1f1dd5501fb114c7949",
+    "semantic_graph_contract_v2_id": "6db000c29e0619d6bec26fb85f8d1739bd5fae16e46cccc03516a2171d79adb0",
+    "semantic_graph_contract_benchmark_v2_id": "ade0e1f19765c8dc1accf66ee86590c21b4a904a499094441f21edb8fa40fd37",
+    "semantic_graph_contract_v2_sha256": "d2d0a051fdd1dcd6656a586a2f7ac8258057c077d15de7fb07a3687128e53399",
+    "semantic_graph_contract_benchmark_v2_sha256": "b1e468e4c59effa5dc5b3dac55ca5add190fd954eace3475eedf4ded1e46fe39",
+    "protocol_v48_sha256": "bc526292ca5e84a65124129215239aa96d568331716e7abf5ec2ccbd49e536d4",
+    "runbook_v40_id": "08444884365069ea91a362f0fc4be7ca4f7552947780c6a016f739553c0c4681",
+    "semantic_dispatch_slice_v1_id": "0efe29534a177e3e4bc242dc091ebcd79c867dfff8c0a80dfe6f153498e68449",
+    "semantic_dispatch_slice_benchmark_v1_id": "60139e5dd07adc7bd79b5028bd99d068bbb32a81ec92afe1e2c77091325f04d3",
+    "semantic_dispatch_slice_benchmark_v1_sha256": "ba6ad9d16e41fb65b2d3583d0d5afab475e392ecc6811945fcc8ff4c68aab09c",
+    "protocol_v49_sha256": "0c3798bdca4dd501e8f674afdfb368319ebb6010a4e8ea4f82aff92afec48fbb",
+    "runbook_v41_id": "733555f2967840041f005380985305b61b265c8c15615543284258646f2019ad",
+    "semantic_dispatch_slice_v2_id": "891fbecf114deb595d984e252979301aae7a8fd5c92c305651b12178e854402b",
+    "semantic_dispatch_slice_benchmark_v2_id": "681abfc57a4103c72cd7aa7567f23ead61a3f3d9569155c14709902053c26451",
+    "semantic_dispatch_slice_benchmark_v2_sha256": "5a3249ec0bf0b164f6a0995761c5f893bd32fc335bdcb9b8f048d8253a44795f",
+    "budget_bound_release_runtime_verifier_v2_sha256": "ecbaeb33fbfb7f2ca2db0083d20d15e82d3c5792f948ee3044dc43608f098259",
+    "semantic_dispatcher_v2_sha256": "3d5b22df1ac23686cabbbfccb8127c10f8921ee628461bccdde19e5febf8ac19",
+    "protocol_v50_sha256": "55dc12c6f948c6fc8ecaeb1d9d06d037fbc5a72ab2fd0a5990b453bd7271a951",
+    "runbook_v42_id": "917c9582a1e4d71015eaef89507b335ad54bbebd5c2930482c1aab81d6842589",
+    "observable_retraining_experiment_v1_id": "0c2f14cad8a05efeddda7a2e3428f2d323f49ee1a48f173dfc778a71f855dd86",
+    "observable_retraining_experiment_v1_sha256": "102d2548adba2d02cfb7a5f5494b4034fceaf470319ffcb3e32b5989bd453178",
+    "observable_retraining_benchmark_v1_id": "c0c88eeb6cdce5fc00564a38712d6e4ac1f771d59df216985d18fd8d497611a3",
+    "observable_retraining_benchmark_v1_sha256": "7dbb61e8475e48baaf321c531a0b87c8019b0fda8c62def1176f3ca85a129f06",
+    "protocol_v51_sha256": "1b49c83ed86571a9fb9c9f54b768b0ee470123d9a77d63d1bdf7ef637ad2ba2c",
+    "runbook_v43_id": "870a7cbd0622e804cb6c91ad675160de3acc348df4f99256b576023b99017600"
+  },
+  "current_state": {
+    "v1_graph_nodes": 20,
+    "v1_schema_and_id_matching_nodes": 12,
+    "v1_dispatch_ready_nodes": 4,
+    "v1_graph_edges": 37,
+    "v1_exact_implemented_field_edges": 9,
+    "v1_mismatched_edges": 28,
+    "semantic_graph_v2_logical_nodes": 21,
+    "semantic_graph_v2_implemented_node_representations": 20,
+    "semantic_graph_v2_semantic_joins": 38,
+    "semantic_graph_v2_terminal_gap_nodes": 1,
+    "semantic_graph_v2_terminal_gap_joins": 3,
+    "semantic_graph_v2_v1_mismatches_accounted": 28,
+    "budget_admission_to_signed_release_join_present": true,
+    "budget_admission_to_runtime_admission_join_present": true,
+    "semantic_dispatch_slice_nodes": 7,
+    "semantic_dispatch_full_reproduction_comparisons": 5,
+    "semantic_dispatch_cryptographic_receipt_verifications": 2,
+    "semantic_dispatch_slice_execution_jobs": 34,
+    "semantic_dispatch_slice_closed_terminal_joins": 2,
+    "semantic_dispatch_slice_terminal_gap_count": 2,
+    "semantic_dispatch_slice_synthetic_fixture_persisted": false,
+    "synthetic_signed_receipts_verified": true,
+    "signed_authority_dispatched": false,
+    "nonce_consumed": false,
+    "output_reserved": false,
+    "durable_transition_dispatched": false,
+    "production_runtime_attachment_verifier_present": false,
+    "semantic_dispatch_allowed": false,
+    "empirical_blueprint_present": false,
+    "observable_retraining_experiment_specified": true,
+    "observable_retraining_activation_categories": 8,
+    "observable_retraining_disjoint_partitions": 7,
+    "observable_retraining_candidate_variants": 4,
+    "observable_retraining_planned_pairs": 840,
+    "observable_retraining_planned_rows": 1680,
+    "observable_retraining_pair_template_condition_disjoint": true,
+    "observable_retraining_fresh_pack_present": false,
+    "observable_retraining_pack_generation_authorized": false,
+    "execution_authorized": false,
+    "sae_training_authorized": false
+  },
+  "validated_synthetic_shape": {
+    "activation_categories": 8,
+    "specific_compartments": 16,
+    "shared_fallback_compartments": 1,
+    "execution_jobs": 34,
+    "planned_steps": 68000,
+    "planned_activation_rows": 20480,
+    "unique_output_directories": 34,
+    "specific_dictionary_features": 4096,
+    "shared_fallback_dictionary_features": 8192,
+    "synthetic_blueprint_persisted": false
+  },
+  "runs": [
+    {
+      "id": "C0",
+      "status": "completed_locally_reproducible",
+      "purpose": "Reproduce the semantic-gap audit, V2 blueprint-bound budget gate, and focused model-free tests.",
+      "commands": [
+        ".\\.venv\\Scripts\\python.exe -m py_compile experiments\\authz_mechinterp\\build_cluster_aware_sae_blueprint_budget_admission_v2.py experiments\\authz_mechinterp\\benchmark_vpd_cluster_aware_sae_blueprint_budget_admission_v2.py tests\\test_vpd_cluster_aware_sae_blueprint_budget_admission_v2.py",
+        ".\\.venv\\Scripts\\python.exe -m experiments.authz_mechinterp.benchmark_vpd_cluster_aware_sae_blueprint_budget_admission_v2 --verify artifacts\\vpd_cluster_aware_sae_blueprint_budget_admission_benchmark_v2\\report.json",
+        ".\\.venv\\Scripts\\python.exe -m pytest -q tests\\test_vpd_cluster_aware_sae_blueprint_budget_admission_v2.py tests\\test_vpd_cluster_aware_sae_semantic_dispatch_coverage_v1.py tests\\test_vpd_cluster_aware_sae_execution_blueprint_v1.py"
+      ],
+      "expected": {
+        "benchmark_id": "1c239f6416c57374a810732496c20f36a7245d882b41c2282c72b8465678da58",
+        "proposal_id": "50e09fa4b4247483bf616c9f31226bdd021d7ca609b20a6b911cd361175bb400",
+        "admission_id": "dadb42b793f491486bcd9677a840f39ad7644f73460254f3b793c5c7c3a60f72",
+        "benchmark_controls": {"passed": 27, "total": 27},
+        "focused_tests": {"passed": 7, "total": 7},
+        "execution_authorized": false,
+        "sae_training_authorized": false
+      },
+      "stop_on_first_failure": true
+    },
+    {
+      "id": "C1",
+      "status": "completed_locally_contract_only_dispatch_still_disabled",
+      "purpose": "Implement a corrected, content-addressed semantic graph V2 using actual verifier representations while preserving V1 unchanged.",
+      "required_representations": {
+        "capture_authorization_receipt_id_field": "authorization_receipt_id",
+        "guarded_v3_capture_receipt_id_field": "capture_execution_v3_id",
+        "compound_v2_capture_receipt_id_field": "capture_execution_id",
+        "routing_bundle_id_field": "routing_evidence_bundle_id",
+        "pair_split_representation": "embedded_in_cluster_aware_plan",
+        "materialization_representation": "embeds_plan_and_split_and_binds_predecessor_plan",
+        "budget_representation": "blueprint_bound_proposal_and_admission_v2",
+        "compute_authorization_id_field": "receipt_id",
+        "durable_transition_id_field": "transition_reservation_id",
+        "runtime_attachment_representation": "production_verifier_absent_terminal_gap"
+      },
+      "acceptance": [
+        "new_versioned_contract_only",
+        "content_addressed",
+        "actual_companion_inputs_explicit",
+        "v1_fictional_ids_rejected",
+        "path_traversal_symlink_and_junction_rejected",
+        "readdressed_edge_substitution_rejected",
+        "synthetic_as_empirical_rejected",
+        "production_attachment_absence_preserved",
+        "measured_coverage_reported_without_assumed_target",
+        "temporary_synthetic_graph_removed"
+      ],
+      "forbidden": [
+        "edit_or_relabel_v1_graph",
+        "fabricate_empirical_artifacts",
+        "claim_semantic_dispatch_complete",
+        "grant_execution_or_training_authority"
+      ],
+      "observed": {
+        "semantic_graph_contract_id": "6db000c29e0619d6bec26fb85f8d1739bd5fae16e46cccc03516a2171d79adb0",
+        "benchmark_id": "ade0e1f19765c8dc1accf66ee86590c21b4a904a499094441f21edb8fa40fd37",
+        "controls": {"passed": 36, "total": 36},
+        "logical_nodes": 21,
+        "implemented_node_representations": 20,
+        "semantic_joins": 38,
+        "terminal_gap_joins": 3,
+        "v1_mismatches_accounted": 28,
+        "semantic_dispatch_allowed": false
+      }
+    },
+    {
+      "id": "C2",
+      "status": "completed_locally_four_node_full_reproduction_slice",
+      "purpose": "Implement a fail-closed semantic dispatcher for the verified materialization-to-blueprint-to-budget slice.",
+      "initial_slice": [
+        "cluster_aware_materialization",
+        "execution_blueprint",
+        "blueprint_bound_budget_proposal_v2",
+        "blueprint_bound_budget_admission_v2"
+      ],
+      "acceptance": [
+        "invoke_real_node_specific_verifier_interfaces",
+        "reproduce_and_compare_full_artifact_objects",
+        "reject_companion_input_substitution",
+        "reject_content_address_preserving_semantic_mutation",
+        "return_named_terminal_gap_for_unsupported_nodes",
+        "signed_authority_transition_and_attachment_remain_undispatched_without_real_inputs",
+        "all_fixtures_temporary_and_nonempirical"
+      ],
+      "execution_authorized": false,
+      "sae_training_authorized": false,
+      "observed": {
+        "semantic_dispatch_slice_id": "0efe29534a177e3e4bc242dc091ebcd79c867dfff8c0a80dfe6f153498e68449",
+        "benchmark_id": "60139e5dd07adc7bd79b5028bd99d068bbb32a81ec92afe1e2c77091325f04d3",
+        "controls": {"passed": 22, "total": 22},
+        "dispatched_nodes": 4,
+        "full_reproduction_comparisons": 4,
+        "execution_jobs": 34,
+        "terminal_gap_count": 3,
+        "synthetic_fixture_persisted": false,
+        "signed_authority_dispatched": false,
+        "durable_transition_dispatched": false,
+        "production_runtime_attachment_dispatched": false
+      }
+    },
+    {
+      "id": "C3",
+      "status": "completed_locally_contract_and_dispatcher_successors_sealed",
+      "purpose": "Seal separate corrected-contract and four-node-dispatcher successor lineages and refresh durable handoffs.",
+      "deliverables": [
+        "configs/evals/vpd_activation_category_compartments_v48.json",
+        "artifacts/vpd_cheap_executor_runbook_v40/runbook.json",
+        "direct_and_lineage_tests",
+        "updated_human_handoff",
+        "updated_machine_readable_handoff"
+      ],
+      "must_preserve": [
+        "protocol_v47",
+        "runbook_v39",
+        "v1_structural_graph",
+        "v1_semantic_coverage_audit",
+        "recovery_vs_reconstruction_labels"
+      ],
+      "observed": {
+        "protocol_v48_sha256": "bc526292ca5e84a65124129215239aa96d568331716e7abf5ec2ccbd49e536d4",
+        "runbook_v40_id": "08444884365069ea91a362f0fc4be7ca4f7552947780c6a016f739553c0c4681",
+        "dispatcher_protocol_v49_sha256": "0c3798bdca4dd501e8f674afdfb368319ebb6010a4e8ea4f82aff92afec48fbb",
+        "dispatcher_runbook_v41_id": "733555f2967840041f005380985305b61b265c8c15615543284258646f2019ad",
+        "combined_focused_tests": {"passed": 11, "total": 11, "elapsed_seconds": 99.40},
+        "semantic_dispatch_allowed": false,
+        "execution_authorized": false,
+        "sae_training_authorized": false
+      }
+    },
+    {
+      "id": "C4",
+      "status": "completed_locally_synthetic_budget_bound_release_and_runtime_slice",
+      "purpose": "Close the budget-admission-to-signed-release and budget-admission-to-runtime-admission joins with new versioned synthetic-testable successors.",
+      "required_successors": [
+        "scientific_release_receipt_v2_binding_exact_budget_admission_id_and_file_sha256",
+        "scientific_release_verifier_v2_reproducing_blueprint_budget_proposal_and_admission",
+        "runtime_admission_v2_consuming_verified_budget_bound_release",
+        "semantic_dispatch_slice_v2_extending_through_signed_release_and_runtime_admission"
+      ],
+      "acceptance": [
+        "preserve_v1_receipt_and_runtime_admission_unchanged",
+        "bind_exact_blueprint_id_and_file_sha256",
+        "bind_exact_budget_policy_proposal_and_admission_ids",
+        "bind_exact_budget_admission_file_sha256",
+        "verify_ed25519_signature_registry_status_time_window_revocation_and_nonce",
+        "reproduce_full_budget_proposal_and_admission_objects",
+        "reject_readdressed_budget_release_and_runtime_substitution",
+        "synthetic_signatures_remain_non_authorizing",
+        "production_runtime_attachment_remains_terminal_gap",
+        "no_model_framework_import_or_model_execution"
+      ],
+      "forbidden": [
+        "real_signed_authority_creation",
+        "nonce_consumption_or_output_reservation",
+        "production_runtime_attachment",
+        "model_or_adapter_loading",
+        "inference_training_or_weight_mutation",
+        "claim_end_to_end_execution_authority"
+      ],
+      "observed": {
+        "semantic_dispatch_slice_id": "891fbecf114deb595d984e252979301aae7a8fd5c92c305651b12178e854402b",
+        "benchmark_id": "681abfc57a4103c72cd7aa7567f23ead61a3f3d9569155c14709902053c26451",
+        "controls": {"passed": 25, "total": 25},
+        "dispatched_nodes": 7,
+        "full_reproduction_comparisons": 5,
+        "cryptographic_receipt_verifications": 2,
+        "execution_jobs": 34,
+        "closed_terminal_joins": 2,
+        "remaining_terminal_gaps": 2,
+        "synthetic_release_receipt_id": "f86921ad0b94a557cde269b1b56e9fd04c940e12035233bbc4b3815664ef37df",
+        "synthetic_runtime_admission_id": "8b4947f36fd50fa162aee42a9ae7b591791d27e3ed03644d996a10b031e2b130",
+        "protocol_v50_sha256": "55dc12c6f948c6fc8ecaeb1d9d06d037fbc5a72ab2fd0a5990b453bd7271a951",
+        "runbook_v42_id": "917c9582a1e4d71015eaef89507b335ad54bbebd5c2930482c1aab81d6842589",
+        "combined_predecessor_successor_tests": {"passed": 10, "total": 10, "elapsed_seconds": 181.19},
+        "synthetic_fixture_persisted": false,
+        "real_signed_authority_created": false,
+        "nonce_consumed": false,
+        "output_reserved": false,
+        "execution_authorized": false,
+        "sae_training_authorized": false
+      }
+    },
+    {
+      "id": "E0",
+      "status": "completed_locally_design_only_verified",
+      "purpose": "Specify a fresh observable-host-state authorization retraining experiment without creating the held-out pack or training.",
+      "label_contract": {
+        "invalid_or_untrusted_observable_auth_status": "REQUEST",
+        "valid_trusted_observable_auth_status": "PROPOSE",
+        "hidden_or_conflicting_labels": "forbidden"
+      },
+      "candidates": [
+        "unchanged_lora_control",
+        "fresh_lora_sft",
+        "fresh_lora_margin_primary",
+        "historical_adapter_repair_diagnostic"
+      ],
+      "required_preregistration": [
+        "pair_template_and_condition_disjoint_partitions",
+        "invalid_request_rate",
+        "valid_propose_rate",
+        "separation",
+        "paired_adapter_minus_base_delta_with_ci95",
+        "per_category_minimums",
+        "zero_action_hard_invariants"
+      ],
+      "allowed_outputs": [
+        "versioned_specification",
+        "schemas",
+        "synthetic_schema_tests"
+      ],
+      "observed": {
+        "experiment_spec_id": "0c2f14cad8a05efeddda7a2e3428f2d323f49ee1a48f173dfc778a71f855dd86",
+        "benchmark_id": "c0c88eeb6cdce5fc00564a38712d6e4ac1f771d59df216985d18fd8d497611a3",
+        "controls": {"passed": 25, "total": 25},
+        "activation_categories": 8,
+        "disjoint_partitions": 7,
+        "candidate_variants": 4,
+        "planned_pairs": 840,
+        "planned_rows": 1680,
+        "primary_candidate_id": "fresh_lora_margin_v1",
+        "protocol_v51_sha256": "1b49c83ed86571a9fb9c9f54b768b0ee470123d9a77d63d1bdf7ef637ad2ba2c",
+        "runbook_v43_id": "870a7cbd0622e804cb6c91ad675160de3acc348df4f99256b576023b99017600",
+        "combined_e0_c4_tests": {"passed": 11, "total": 11, "elapsed_seconds": 68.22},
+        "fresh_pack_present": false,
+        "pack_generation_authorized": false,
+        "training_performed": false,
+        "execution_authorized": false
+      }
+    },
+    {
+      "id": "E1",
+      "status": "blocked_new_explicit_user_authorization_required",
+      "purpose": "Empirical capture, held-out generation, routing, SAE training, candidate retraining, or evaluation.",
+      "required_before_unblock": [
+        "exact_empirical_inputs",
+        "fresh_active_scope_exact_signed_receipts",
+        "fresh_nonces_and_output_reservations",
+        "approved_production_runtime",
+        "approved_compute_and_cost_ceiling",
+        "new_explicit_user_authorization"
+      ]
+    }
+  ],
+  "receipt_required_fields": [
+    "run_id",
+    "command",
+    "exit_code",
+    "observed_ids_and_hashes",
+    "files_created_or_changed",
+    "model_framework_imported",
+    "model_loaded",
+    "inference_performed",
+    "weights_or_dictionaries_mutated",
+    "execution_authorized",
+    "sae_training_authorized",
+    "first_stop_reason"
+  ],
+  "global_stop_rules": [
+    "hash_or_id_mismatch",
+    "failed_verifier_or_test",
+    "missing_required_companion",
+    "network_or_package_request",
+    "model_framework_import",
+    "model_or_adapter_load",
+    "inference_or_gpu_work",
+    "persistent_weight_or_dictionary_write",
+    "fabricated_empirical_input",
+    "missing_signed_authority",
+    "synthetic_evidence_presented_as_empirical"
+  ]
+}

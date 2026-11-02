@@ -1,0 +1,14 @@
+{
+  "status": "pdf_draft_rendered_text_checks_passed",
+  "pages": 29,
+  "tables": 20,
+  "headings_checked": 29,
+  "table_cells_checked": 452,
+  "source_sha256": "92c96e772d8ebab4504beff4bb3a9b9d1fba84f0849231895f4230b3f8a5a272",
+  "pdf_sha256": "2a2e5445b97829021656d85c6276eba22f62a4230f58ff62e25e79055e10d348",
+  "builder_sha256": "9d2301aeb7611c89fd43f28382fe8cfb49a7d8426c7eb5766b2fa42b618a31db",
+  "created_utc": "2026-09-09T10:22:35.540530+00:00",
+  "visual_review_required": false,
+  "visual_review_receipt": "artifacts\\nanbeige_reasoning\\logic-prime-20260909T042949Z-897\\pdf_visual_review.json",
+  "visual_review_receipt_sha256": "c9eccb443f02c9b691fac799ccf0335682252a80855a4e71453ff52187ce6ac1"
+}

@@ -1,0 +1,431 @@
+{
+  "candidate_policy": {
+    "candidate_identity": "category_aware_bundle_manifest_sha256",
+    "candidate_must_be_frozen_before_audit": true,
+    "next_candidate_requires_new_bundle_manifest": true,
+    "next_candidate_requires_new_pack_version_and_seed": true,
+    "same_pack_failure_may_tune_candidate": false,
+    "shared_to_specific_promotion_on_audit": false,
+    "specific_failure_rejects_entire_candidate": true
+  },
+  "guarded_execution": {
+    "base_capture_jobs": 2,
+    "calibration_quality_jobs": 1,
+    "dictionary_bundle_admission_jobs": 1,
+    "direct_execution_of_predecessor_blueprint_prohibited": true,
+    "explicit_compute_authorization_exact_job_scope_required": true,
+    "guarded_job_count": 22,
+    "guarded_jobs": [
+      {
+        "depends_on_training_release_job_id": "bd59d498038c016631831a994285b41be41539a7619421270f51c35f7e17a1fe",
+        "predecessor_job_id": "59a3070ddbbf570d7316a4b605265428f66351b6b5ce6d94af87482df0232c07",
+        "required_explicit_compute_authorization": "training_release/explicit_compute_authorization.json",
+        "required_training_release_receipt": "training_release/training_release_receipt_v2.json",
+        "role": "sae_training",
+        "source_job_id": "31c11db5170b324dce8991993013adf755c3e5272ae7bb0be23fbb236f3d2657",
+        "stage": "base_activation_capture"
+      },
+      {
+        "depends_on_training_release_job_id": "bd59d498038c016631831a994285b41be41539a7619421270f51c35f7e17a1fe",
+        "predecessor_job_id": "36e615bc7e68431fc989ca1b4868ea586b3de9deef2446b39aa56620d4dd07d4",
+        "required_explicit_compute_authorization": "training_release/explicit_compute_authorization.json",
+        "required_training_release_receipt": "training_release/training_release_receipt_v2.json",
+        "role": "calibration",
+        "source_job_id": "536eba8671c1e4ec4ac44829c63b0e01be5acd3d3fb15711e413c0e16e7562f0",
+        "stage": "base_activation_capture"
+      },
+      {
+        "compartment": "missing_or_untrusted_authority",
+        "depends_on_training_release_job_id": "bd59d498038c016631831a994285b41be41539a7619421270f51c35f7e17a1fe",
+        "initialization_seed": 17,
+        "predecessor_job_id": "209301519ffa068b3093385e7dec4ba1e8915efa67c1a79a94c266e54f78029e",
+        "required_dictionary_manifest_schema": "sch.vpd-fixed-sae-dictionary-manifest.v2",
+        "required_explicit_compute_authorization": "training_release/explicit_compute_authorization.json",
+        "required_training_release_receipt": "training_release/training_release_receipt_v2.json",
+        "source_job_id": "5b6de0976b4f3bab4564cbc2d1e2560d4d271fe0055d617ed7ef5a0ce93a895e",
+        "stage": "compartment_sae_training"
+      },
+      {
+        "compartment": "missing_or_untrusted_authority",
+        "depends_on_training_release_job_id": "bd59d498038c016631831a994285b41be41539a7619421270f51c35f7e17a1fe",
+        "initialization_seed": 29,
+        "predecessor_job_id": "20048b966b9e92a4b471d22bcaae8cdabd7656c2bfe8c16da56f260a57a7288f",
+        "required_dictionary_manifest_schema": "sch.vpd-fixed-sae-dictionary-manifest.v2",
+        "required_explicit_compute_authorization": "training_release/explicit_compute_authorization.json",
+        "required_training_release_receipt": "training_release/training_release_receipt_v2.json",
+        "source_job_id": "59af2a883487254aabc18cb27c66451509df0d4b696db85da15b9c83a01b565a",
+        "stage": "compartment_sae_training"
+      },
+      {
+        "compartment": "other_invalid",
+        "depends_on_training_release_job_id": "bd59d498038c016631831a994285b41be41539a7619421270f51c35f7e17a1fe",
+        "initialization_seed": 17,
+        "predecessor_job_id": "d5cacb3a8dfb95a1f8c333525cce5295d504a7a4605ce1b19a9b4f3cf065927a",
+        "required_dictionary_manifest_schema": "sch.vpd-fixed-sae-dictionary-manifest.v2",
+        "required_explicit_compute_authorization": "training_release/explicit_compute_authorization.json",
+        "required_training_release_receipt": "training_release/training_release_receipt_v2.json",
+        "source_job_id": "64d2d1d8e6f4250a6b602330a9863661af6800d53a3aa014ced285cbd12f8541",
+        "stage": "compartment_sae_training"
+      },
+      {
+        "compartment": "other_invalid",
+        "depends_on_training_release_job_id": "bd59d498038c016631831a994285b41be41539a7619421270f51c35f7e17a1fe",
+        "initialization_seed": 29,
+        "predecessor_job_id": "339804733eb6966b54371cea99961f5017c446e7a6accf0efe37a86e84fee0d3",
+        "required_dictionary_manifest_schema": "sch.vpd-fixed-sae-dictionary-manifest.v2",
+        "required_explicit_compute_authorization": "training_release/explicit_compute_authorization.json",
+        "required_training_release_receipt": "training_release/training_release_receipt_v2.json",
+        "source_job_id": "a8eb883b60259b584a3ebd8a60e33b100028f81548051704d41bd1da0320888e",
+        "stage": "compartment_sae_training"
+      },
+      {
+        "compartment": "replayed",
+        "depends_on_training_release_job_id": "bd59d498038c016631831a994285b41be41539a7619421270f51c35f7e17a1fe",
+        "initialization_seed": 17,
+        "predecessor_job_id": "b7a992917e6ae4f62acc8134eb6218ce6fb344be6be54ed664f49377ec5dfbf9",
+        "required_dictionary_manifest_schema": "sch.vpd-fixed-sae-dictionary-manifest.v2",
+        "required_explicit_compute_authorization": "training_release/explicit_compute_authorization.json",
+        "required_training_release_receipt": "training_release/training_release_receipt_v2.json",
+        "source_job_id": "249bd52ff2ebe92c4585d8f819f74b5d86802a7954371b30cd340396f3eab7c0",
+        "stage": "compartment_sae_training"
+      },
+      {
+        "compartment": "replayed",
+        "depends_on_training_release_job_id": "bd59d498038c016631831a994285b41be41539a7619421270f51c35f7e17a1fe",
+        "initialization_seed": 29,
+        "predecessor_job_id": "648882ddb5a8fdc71ec8ccd4877d73d66fced7e9d01a7008b63469899643ee7d",
+        "required_dictionary_manifest_schema": "sch.vpd-fixed-sae-dictionary-manifest.v2",
+        "required_explicit_compute_authorization": "training_release/explicit_compute_authorization.json",
+        "required_training_release_receipt": "training_release/training_release_receipt_v2.json",
+        "source_job_id": "53c39a6d441dbecd1ad189edb5162fc74a6472fadc6eee21d92e885009a6b1a2",
+        "stage": "compartment_sae_training"
+      },
+      {
+        "compartment": "revoked",
+        "depends_on_training_release_job_id": "bd59d498038c016631831a994285b41be41539a7619421270f51c35f7e17a1fe",
+        "initialization_seed": 17,
+        "predecessor_job_id": "e334babbdc4feb96e1e1c16b763719f992b9abcf27d552e84c250b6331c14c07",
+        "required_dictionary_manifest_schema": "sch.vpd-fixed-sae-dictionary-manifest.v2",
+        "required_explicit_compute_authorization": "training_release/explicit_compute_authorization.json",
+        "required_training_release_receipt": "training_release/training_release_receipt_v2.json",
+        "source_job_id": "fa5686c9c2001c993febd154956525618b07cebe498e63c99049fe126dcd11a5",
+        "stage": "compartment_sae_training"
+      },
+      {
+        "compartment": "revoked",
+        "depends_on_training_release_job_id": "bd59d498038c016631831a994285b41be41539a7619421270f51c35f7e17a1fe",
+        "initialization_seed": 29,
+        "predecessor_job_id": "0cb1ca8a62a1f8abde864a48f26bffdb883fbcf7f78d7b77f4d4b3f8079f9d3f",
+        "required_dictionary_manifest_schema": "sch.vpd-fixed-sae-dictionary-manifest.v2",
+        "required_explicit_compute_authorization": "training_release/explicit_compute_authorization.json",
+        "required_training_release_receipt": "training_release/training_release_receipt_v2.json",
+        "source_job_id": "9f6007765fa233c23d99966ac495a9b6877dfaf5f61a7b83d61a6e3bb9c8693d",
+        "stage": "compartment_sae_training"
+      },
+      {
+        "compartment": "scope_invalid",
+        "depends_on_training_release_job_id": "bd59d498038c016631831a994285b41be41539a7619421270f51c35f7e17a1fe",
+        "initialization_seed": 17,
+        "predecessor_job_id": "d8d3f189a852997da1357d4579b47766ee773b24fe961f4dfc7e8a837fe716e8",
+        "required_dictionary_manifest_schema": "sch.vpd-fixed-sae-dictionary-manifest.v2",
+        "required_explicit_compute_authorization": "training_release/explicit_compute_authorization.json",
+        "required_training_release_receipt": "training_release/training_release_receipt_v2.json",
+        "source_job_id": "0c97bbb1c8ee1207f0d686423c62b77a2a5928519bf5ae23d3f6ea091cd806a5",
+        "stage": "compartment_sae_training"
+      },
+      {
+        "compartment": "scope_invalid",
+        "depends_on_training_release_job_id": "bd59d498038c016631831a994285b41be41539a7619421270f51c35f7e17a1fe",
+        "initialization_seed": 29,
+        "predecessor_job_id": "cc556ddee83ba92be3d3d21f1df7e82beea0869054526c6248554ba28354b269",
+        "required_dictionary_manifest_schema": "sch.vpd-fixed-sae-dictionary-manifest.v2",
+        "required_explicit_compute_authorization": "training_release/explicit_compute_authorization.json",
+        "required_training_release_receipt": "training_release/training_release_receipt_v2.json",
+        "source_job_id": "8622cd6ed8baa0e972b56b90d3d732ba0185fcf3562df43c1bf44d72b8937cba",
+        "stage": "compartment_sae_training"
+      },
+      {
+        "compartment": "shared_cross_category",
+        "depends_on_training_release_job_id": "bd59d498038c016631831a994285b41be41539a7619421270f51c35f7e17a1fe",
+        "initialization_seed": 17,
+        "predecessor_job_id": "a8237d7f4843f57f6a7b1935deb082e89df28760964515ce4fb577efedc22393",
+        "required_dictionary_manifest_schema": "sch.vpd-fixed-sae-dictionary-manifest.v2",
+        "required_explicit_compute_authorization": "training_release/explicit_compute_authorization.json",
+        "required_training_release_receipt": "training_release/training_release_receipt_v2.json",
+        "source_job_id": "205eb32979d4d8e89c89706f5f049ebb648463fc789310c7db5394b4772ab234",
+        "stage": "compartment_sae_training"
+      },
+      {
+        "compartment": "shared_cross_category",
+        "depends_on_training_release_job_id": "bd59d498038c016631831a994285b41be41539a7619421270f51c35f7e17a1fe",
+        "initialization_seed": 29,
+        "predecessor_job_id": "d0ab2f2fd3de06e2d08e4ee3c6507ffb59c8132b2b281ad9e823a5cd1bb690c7",
+        "required_dictionary_manifest_schema": "sch.vpd-fixed-sae-dictionary-manifest.v2",
+        "required_explicit_compute_authorization": "training_release/explicit_compute_authorization.json",
+        "required_training_release_receipt": "training_release/training_release_receipt_v2.json",
+        "source_job_id": "efd041217447a849af8d2de3f6d2da7d6b8c059b316ee73504165e07cc42765d",
+        "stage": "compartment_sae_training"
+      },
+      {
+        "compartment": "signature_invalid",
+        "depends_on_training_release_job_id": "bd59d498038c016631831a994285b41be41539a7619421270f51c35f7e17a1fe",
+        "initialization_seed": 17,
+        "predecessor_job_id": "9a70e267d6d470efed05de1b57bf0471e67632a71edc77bff100ef9bdc92480a",
+        "required_dictionary_manifest_schema": "sch.vpd-fixed-sae-dictionary-manifest.v2",
+        "required_explicit_compute_authorization": "training_release/explicit_compute_authorization.json",
+        "required_training_release_receipt": "training_release/training_release_receipt_v2.json",
+        "source_job_id": "b67b3dc6fcf48ea778950ea67b1534ab86dbb1219e0c78d7421977cd97c1879c",
+        "stage": "compartment_sae_training"
+      },
+      {
+        "compartment": "signature_invalid",
+        "depends_on_training_release_job_id": "bd59d498038c016631831a994285b41be41539a7619421270f51c35f7e17a1fe",
+        "initialization_seed": 29,
+        "predecessor_job_id": "0baebcb707b8ef352b513405ae5ec87cc247e75e839374ab4a98f0f3cefd64f1",
+        "required_dictionary_manifest_schema": "sch.vpd-fixed-sae-dictionary-manifest.v2",
+        "required_explicit_compute_authorization": "training_release/explicit_compute_authorization.json",
+        "required_training_release_receipt": "training_release/training_release_receipt_v2.json",
+        "source_job_id": "8a5459b32e78a7842fb230768d0d7ff180de8fd7f39da597f0f72cb366476fa4",
+        "stage": "compartment_sae_training"
+      },
+      {
+        "compartment": "time_inactive",
+        "depends_on_training_release_job_id": "bd59d498038c016631831a994285b41be41539a7619421270f51c35f7e17a1fe",
+        "initialization_seed": 17,
+        "predecessor_job_id": "a6db5758b86939b3be66113f44e95c706a98038d7071fe16a2e0e8333d1b8446",
+        "required_dictionary_manifest_schema": "sch.vpd-fixed-sae-dictionary-manifest.v2",
+        "required_explicit_compute_authorization": "training_release/explicit_compute_authorization.json",
+        "required_training_release_receipt": "training_release/training_release_receipt_v2.json",
+        "source_job_id": "cd14c9d3751d01a1447b0638fcd73d88a3fed65bf7bd7412df1cf9936419bad1",
+        "stage": "compartment_sae_training"
+      },
+      {
+        "compartment": "time_inactive",
+        "depends_on_training_release_job_id": "bd59d498038c016631831a994285b41be41539a7619421270f51c35f7e17a1fe",
+        "initialization_seed": 29,
+        "predecessor_job_id": "a92419fb48a5b7d23662754f735afc2f6ca85695f1869eaa396def76635d69ae",
+        "required_dictionary_manifest_schema": "sch.vpd-fixed-sae-dictionary-manifest.v2",
+        "required_explicit_compute_authorization": "training_release/explicit_compute_authorization.json",
+        "required_training_release_receipt": "training_release/training_release_receipt_v2.json",
+        "source_job_id": "8e99a25f8875218df7195f0842bd92db183d47aaa76326d0dae48a1d6e2adc18",
+        "stage": "compartment_sae_training"
+      },
+      {
+        "compartment": "valid_authority",
+        "depends_on_training_release_job_id": "bd59d498038c016631831a994285b41be41539a7619421270f51c35f7e17a1fe",
+        "initialization_seed": 17,
+        "predecessor_job_id": "0a9e59b1bf6ffece5f7ba4526168ef1ab621ab8021f4d740a361fdaedf16fa14",
+        "required_dictionary_manifest_schema": "sch.vpd-fixed-sae-dictionary-manifest.v2",
+        "required_explicit_compute_authorization": "training_release/explicit_compute_authorization.json",
+        "required_training_release_receipt": "training_release/training_release_receipt_v2.json",
+        "source_job_id": "f34f5b737dbbb363d137515139bf062381a85d925692542f5f1a49692256ca17",
+        "stage": "compartment_sae_training"
+      },
+      {
+        "compartment": "valid_authority",
+        "depends_on_training_release_job_id": "bd59d498038c016631831a994285b41be41539a7619421270f51c35f7e17a1fe",
+        "initialization_seed": 29,
+        "predecessor_job_id": "d1cf73a7aa09fe248cb57e7d38b284ffb56173c36b1b521dbc01f1301c73d9c7",
+        "required_dictionary_manifest_schema": "sch.vpd-fixed-sae-dictionary-manifest.v2",
+        "required_explicit_compute_authorization": "training_release/explicit_compute_authorization.json",
+        "required_training_release_receipt": "training_release/training_release_receipt_v2.json",
+        "source_job_id": "6de61ec0f8a1e4178970671f2a5c3818f5db253474eeebdd5b57a5c7b5c4364b",
+        "stage": "compartment_sae_training"
+      },
+      {
+        "depends_on_training_release_job_id": "bd59d498038c016631831a994285b41be41539a7619421270f51c35f7e17a1fe",
+        "predecessor_job_id": "578b1d7d01ee976395de067c75edde147d02d47d3f5d5be92edc265b87ad1f48",
+        "required_explicit_compute_authorization": "training_release/explicit_compute_authorization.json",
+        "required_training_release_receipt": "training_release/training_release_receipt_v2.json",
+        "source_job_id": "95144d47def75a6cac2121c84cdc45c6f81608dbd6e7e7adf0c539faad3491c9",
+        "stage": "dictionary_bundle_admission"
+      },
+      {
+        "depends_on_training_release_job_id": "bd59d498038c016631831a994285b41be41539a7619421270f51c35f7e17a1fe",
+        "predecessor_job_id": "91a4d2abf0742815d9bb5b76411b7f4e54f538b3f32e8c8b33236397492fa15f",
+        "required_explicit_compute_authorization": "training_release/explicit_compute_authorization.json",
+        "required_training_release_receipt": "training_release/training_release_receipt_v2.json",
+        "source_job_id": "4e6699a0d913164f28d738f52fb5e775634dea5cd196b6a751ab27ddd11af106",
+        "stage": "calibration_quality"
+      }
+    ],
+    "mode": "scientific_release_plus_external_explicit_compute_authorization",
+    "release_receipt_alone_cannot_start_any_job": true,
+    "sae_training_jobs": 18
+  },
+  "invariants": {
+    "all_22_jobs_require_release_and_compute_authorization": true,
+    "batch_size_and_learning_rate_bound_for_all_dictionaries": true,
+    "every_blueprint_job_guarded": true,
+    "exact_sample_contract_required_for_all_dictionaries": true,
+    "final_evaluation_not_consumed": true,
+    "fresh_heldout_pack_bound": true,
+    "manifest_v2_required_for_all_dictionaries": true,
+    "partition_audit_pass_required_before_base_capture": true,
+    "partition_audit_pass_required_before_category_specific_sae_training": true,
+    "partition_audit_pass_required_before_shared_sae_training": true,
+    "receipt_content_addressed_and_reproducible": true,
+    "repository_does_not_generate_compute_authorization": true,
+    "v3_training_blueprint_preserved_as_predecessor_evidence": true,
+    "v4_training_blueprint_required": true
+  },
+  "release_gate_plan_id": "5d821b591fa46ee306d335efc9df10e5a0db3a301482d13d54caeaa0d42e575c",
+  "release_job": {
+    "arguments": [
+      "-m",
+      "experiments.authz_mechinterp.admit_compartment_sae_training_release_v2",
+      "--release-gate-plan",
+      "artifacts/vpd_compartment_sae_training_release_gate_v2/plan.json",
+      "--training-plan",
+      "artifacts/vpd_compartment_sae_training_plan_v4/plan.json",
+      "--protocol",
+      "configs/evals/vpd_activation_category_compartments_v9.json",
+      "--bundle-dir",
+      "${FROZEN_CATEGORY_BUNDLE_DIR}",
+      "--hierarchy-plan",
+      "${COMPONENT_INVENTORY}",
+      "--discovery-effects",
+      "${DISCOVERY_EFFECTS}",
+      "--discovery-merge-manifest",
+      "${DISCOVERY_MERGE_MANIFEST}",
+      "--audit-merge-dir",
+      "${PARTITION_AUDIT_MERGE_DIR}",
+      "--partition-audit-pack",
+      "artifacts/vpd_partition_audit_pack_v1",
+      "--partition-audit-gate",
+      "artifacts/vpd_partition_audit_gate_v2/plan.json",
+      "--partition-audit-report",
+      "${PARTITION_AUDIT_REPORT}",
+      "--output",
+      "training_release/training_release_receipt_v2.json"
+    ],
+    "compute_authorized": false,
+    "execution_authorized": false,
+    "explicit_compute_authorization_output": "training_release/explicit_compute_authorization.json",
+    "job_id": "bd59d498038c016631831a994285b41be41539a7619421270f51c35f7e17a1fe",
+    "output": "training_release/training_release_receipt_v2.json",
+    "repository_generates_explicit_compute_authorization": false,
+    "required_output_schema": "sch.vpd-compartment-sae-training-release-receipt.v2",
+    "required_output_status": "pass_scientific_release_prerequisite_compute_not_authorized_v2",
+    "runtime_placeholders": [
+      "FROZEN_CATEGORY_BUNDLE_DIR",
+      "COMPONENT_INVENTORY",
+      "DISCOVERY_EFFECTS",
+      "DISCOVERY_MERGE_MANIFEST",
+      "PARTITION_AUDIT_MERGE_DIR",
+      "PARTITION_AUDIT_REPORT"
+    ],
+    "schema": "sch.vpd-compartment-sae-training-release-job.v2"
+  },
+  "required_receipt_joins": [
+    "training_blueprint_id_and_sha256",
+    "protocol_sha256",
+    "category_bundle_manifest_sha256_and_exact_component_census",
+    "partition_audit_id_and_report_sha256",
+    "fresh_partition_audit_pack_id_and_manifest_sha256",
+    "partition_audit_gate_plan_id_and_sha256",
+    "bundle_audit_category_names",
+    "bundle_audit_component_id_set_sha256",
+    "audit_measurement_model_revision_adapter_and_effect_space"
+  ],
+  "schema": "sch.vpd-compartment-sae-training-release-gate-plan.v2",
+  "scientific_boundary": {
+    "compute_authorized": false,
+    "execution_authorized": false,
+    "explicit_compute_authorization_present": false,
+    "model_inference_performed": false,
+    "partition_audit_report_present": false,
+    "sae_training_performed": false,
+    "training_release_receipt_present": false,
+    "v7_negative_release_decision_unchanged": true,
+    "weights_loaded_or_mutated": false
+  },
+  "source": {
+    "execution_blueprint": {
+      "execution_blueprint_id": "33bc09fac66fcec62bc0374c39d7ad4209a5d17eafd9b1003b4353073687e40e",
+      "path": "artifacts/vpd_compartment_sae_training_execution_blueprint_v2/blueprint.json",
+      "sha256": "167bd226158f47279fecd6c15364f63cd422e3ca7f73f12c9d4c7e4c4b650793"
+    },
+    "fresh_partition_audit_pack": {
+      "manifest_sha256": "2b41930f7a7910d2e6e5376b064347691f4ee42f84caed21b6a0f8123e2ad748",
+      "pack_id": "e65c78bb07fcf25c5a008d94a8f447b1b75f01cb8734632e7e2e567c81ca2f23",
+      "path": "artifacts/vpd_partition_audit_pack_v1"
+    },
+    "implementation": {
+      "path": "experiments/authz_mechinterp/admit_compartment_sae_training_release_v2.py",
+      "sha256": "6200f58d2f7577e512a783d2dce23c27761df320cdd62e243a04fda7bdc9631c"
+    },
+    "partition_audit_gate": {
+      "gate_plan_id": "1341c8f6371fab72cd9e8f8be92b1e740ae47f08c71a77a8bab39b04fe2a119b",
+      "path": "artifacts/vpd_partition_audit_gate_v2/plan.json",
+      "sha256": "4d8ffc1e1c8fa807400085ff30c7f22732082241a70cadeb0160203527ffb9d2"
+    },
+    "planner_sha256": "e78fce3793e8853221d9c369c6830616c9184c6f5361ec55dce896d4ed67f82c",
+    "predecessor_protocol_v6": {
+      "path": "configs/evals/vpd_activation_category_compartments_v6.json",
+      "schema": "sch.vpd-activation-category-protocol.v6",
+      "sha256": "c5d9a47f651fcf654a9b33780c0c556e681a80cf4379a1684c65dba985e2b84a"
+    },
+    "predecessor_release_gate_v1": {
+      "path": "artifacts/vpd_compartment_sae_training_release_gate_v1/plan.json",
+      "preserved_unmodified": true,
+      "release_gate_plan_id": "7109adb38749c4c0e91154df0fddfe5fb79c625972f3ff89eca06ffda39596b9",
+      "sha256": "1ac02aa361dcfe40c4cb0925d127249d1e14ece47e4b0918b6fe57771d8a0d85",
+      "verification": {
+        "execution_authorized": false,
+        "guarded_jobs": 22,
+        "release_gate_plan_id": "7109adb38749c4c0e91154df0fddfe5fb79c625972f3ff89eca06ffda39596b9",
+        "schema": "sch.vpd-compartment-sae-training-release-gate-plan-verification.v1",
+        "status": "pass",
+        "training_jobs": 18
+      }
+    },
+    "protocol": {
+      "path": "configs/evals/vpd_activation_category_compartments_v6.json",
+      "schema": "sch.vpd-activation-category-protocol.v6",
+      "sha256": "c5d9a47f651fcf654a9b33780c0c556e681a80cf4379a1684c65dba985e2b84a"
+    },
+    "research_protocol_v8": {
+      "path": "configs/evals/vpd_activation_category_compartments_v8.json",
+      "sha256": "b66111e7d5e7001ddef5dadefd97eaa0f6ef3bdd658699d6ad3add72e68fab49",
+      "verification": {
+        "execution_authorized": false,
+        "execution_benchmark_id": "08255dba491199e4963080c8e059c8ebd0fdddaffb3e4fbd70c781a8685b2ff4",
+        "execution_blueprint_id": "33bc09fac66fcec62bc0374c39d7ad4209a5d17eafd9b1003b4353073687e40e",
+        "predecessor_sha256": "3e584f718df415cf4307511da5a04ea1ccc425695dc2a5bfb0360ce9617c94f7",
+        "protocol_sha256": "b66111e7d5e7001ddef5dadefd97eaa0f6ef3bdd658699d6ad3add72e68fab49",
+        "schema": "sch.vpd-activation-category-protocol-verification.v8",
+        "status": "pass",
+        "training_jobs": 18
+      }
+    },
+    "training_blueprint": {
+      "path": "artifacts/vpd_compartment_sae_training_plan_v4/plan.json",
+      "schema": "sch.vpd-compartment-sae-training-plan.v2",
+      "sha256": "f90dc761017b15369fbc31bf8d9efdee4f4d8f6e9c7fce585e8ecc5e94b5975c",
+      "training_plan_id": "a7a050abead2d60a63e16a6d07126609ac38c034f18ad3e37f98cd7c9f4d8c2b",
+      "verification": {
+        "capture_jobs": 2,
+        "execution_authorized": false,
+        "guarded_jobs": 22,
+        "schema": "sch.vpd-compartment-sae-training-plan-verification.v2",
+        "status": "pass",
+        "training_jobs": 18,
+        "training_plan_id": "a7a050abead2d60a63e16a6d07126609ac38c034f18ad3e37f98cd7c9f4d8c2b",
+        "training_plan_sha256": "f90dc761017b15369fbc31bf8d9efdee4f4d8f6e9c7fce585e8ecc5e94b5975c"
+      }
+    }
+  },
+  "stage_order": [
+    "freeze_versioned_category_aware_candidate",
+    "capture_and_merge_fresh_signed_partition_audit_effects",
+    "reproduce_zero_failure_partition_audit",
+    "emit_training_release_receipt_v2_compute_not_authorized",
+    "obtain_external_explicit_compute_authorization",
+    "capture_base_prompt_activations_v2",
+    "train_compartment_sae_replicas_manifest_v2",
+    "admit_dictionary_bundle_v2",
+    "run_calibration_quality_gate_v2"
+  ],
+  "status": "locally_verified_blocked_until_bundle_audit_compute_authorization_v2"
+}

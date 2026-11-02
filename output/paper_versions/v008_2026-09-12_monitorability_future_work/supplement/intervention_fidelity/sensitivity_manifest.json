@@ -1,0 +1,13 @@
+{
+  "status": "layer22_second_pass_sensitivity_complete",
+  "source_code_sha256": "030f63f9403f0691492618ea10ee31aea12f37a264bf0f2dc62b1f2832fe74f3",
+  "parent_manifest_sha256": "a7b1efbec3b5bc411c2ae3a15f07d9900f943c4c89125fb580a7a5789bf1aab9",
+  "encoding_checks": 280,
+  "max_absolute_encoding_difference": 0.000198764893355019,
+  "source_files": "Validated against parent sources.json; all shared inputs and dictionaries unchanged",
+  "scope": "Post-hoc numerical precision sensitivity and descriptive partition by top-k support change, not a causal support intervention",
+  "files": {
+    "per_input.json": "f6da16abeb37baaadff6bfeb40d2c315549d559a9add55edc9a201d6bef89ec8",
+    "pooled.json": "67f941be1a658c75943626fa65c50d34373e6b9bb6f20c152b4d26249be2243c"
+  }
+}

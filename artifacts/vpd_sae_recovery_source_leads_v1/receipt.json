@@ -1,0 +1,129 @@
+{
+  "schema": "sch.vpd-sae-recovery-source-leads.v1",
+  "date": "2026-09-11",
+  "scope": "Bounded read-only search of named project/recovery directories; not an exhaustive disk or corpus search.",
+  "recovered_clone": "E:\\Recovered_C_projects\\Remote_clones\\prime_intellect_research_environments",
+  "observed_head": "a4c70f7444c6d35ee211bea9dfca82a6c45ad24e",
+  "head_limit": "HEAD read with a command-local safe.directory setting; working-tree file hashes below, not an assertion of clean checkout or historical source identity.",
+  "generator_file_probes": [
+    {
+      "path": "E:\\Recovered_C_projects\\Remote_clones\\prime_intellect_research_environments\\environments\\reasoning\\prolog\\prolog\\generators\\__init__.py",
+      "bytes": 1176,
+      "nonzero_bytes": 1176,
+      "sha256": "312eceff0ebd90c0383bc2e2dedb527651040b6991066da1fdbe999d0bf6c1b3"
+    },
+    {
+      "path": "E:\\Recovered_C_projects\\Remote_clones\\prime_intellect_research_environments\\environments\\reasoning\\prolog\\prolog\\generators\\base.py",
+      "bytes": 1830,
+      "nonzero_bytes": 1830,
+      "sha256": "6257dca4bab8914c31621fddfa160c05bd89cef4a71df07cd0835f51bbd9cbd4"
+    },
+    {
+      "path": "E:\\Recovered_C_projects\\Remote_clones\\prime_intellect_research_environments\\environments\\reasoning\\prolog\\prolog\\generators\\bin_packing.py",
+      "bytes": 3431,
+      "nonzero_bytes": 3431,
+      "sha256": "6e4c6aa6c468da1c73e7115bf86e763799a0169277b242b93c1688a4e11c1add"
+    },
+    {
+      "path": "E:\\Recovered_C_projects\\Remote_clones\\prime_intellect_research_environments\\environments\\reasoning\\prolog\\prolog\\generators\\cryptarithm.py",
+      "bytes": 6659,
+      "nonzero_bytes": 6659,
+      "sha256": "9d5a476efdcfffa96582576373065d52fc882515af21b85400235961708fcb52"
+    },
+    {
+      "path": "E:\\Recovered_C_projects\\Remote_clones\\prime_intellect_research_environments\\environments\\reasoning\\prolog\\prolog\\generators\\graph_coloring.py",
+      "bytes": 5113,
+      "nonzero_bytes": 5113,
+      "sha256": "fe3c56631a14e2ded2cc360f79f9bdc77460bfb0e18cc0636418e0a5e23eaed2"
+    },
+    {
+      "path": "E:\\Recovered_C_projects\\Remote_clones\\prime_intellect_research_environments\\environments\\reasoning\\prolog\\prolog\\generators\\hamiltonian.py",
+      "bytes": 3007,
+      "nonzero_bytes": 3007,
+      "sha256": "dca2eb321116260b0b29a2de8a73cdd5745eaddc5674692ea1b90397eee04de8"
+    },
+    {
+      "path": "E:\\Recovered_C_projects\\Remote_clones\\prime_intellect_research_environments\\environments\\reasoning\\prolog\\prolog\\generators\\nonogram.py",
+      "bytes": 3369,
+      "nonzero_bytes": 3369,
+      "sha256": "817998a6dc21c16ed68fc14d767d9e7ed9cb8fc3005b10812a6dd79bb6129e52"
+    },
+    {
+      "path": "E:\\Recovered_C_projects\\Remote_clones\\prime_intellect_research_environments\\environments\\reasoning\\prolog\\prolog\\generators\\nqueens.py",
+      "bytes": 2795,
+      "nonzero_bytes": 2795,
+      "sha256": "83dfb8ba2381961e7c38b0f10434155ac049cc52f6a43cf94c3cde1552096174"
+    },
+    {
+      "path": "E:\\Recovered_C_projects\\Remote_clones\\prime_intellect_research_environments\\environments\\reasoning\\prolog\\prolog\\generators\\scheduling.py",
+      "bytes": 6231,
+      "nonzero_bytes": 6231,
+      "sha256": "4b29f3b42259a94a4d666ee6a2a7904b1e87f87de1d24446b612a879abb5214b"
+    },
+    {
+      "path": "E:\\Recovered_C_projects\\Remote_clones\\prime_intellect_research_environments\\environments\\reasoning\\prolog\\prolog\\generators\\sudoku.py",
+      "bytes": 5558,
+      "nonzero_bytes": 5558,
+      "sha256": "04a289c350edddac164d9925e37292b10756daf31eac2a6fa4e710090186d600"
+    },
+    {
+      "path": "E:\\Recovered_C_projects\\Remote_clones\\prime_intellect_research_environments\\environments\\reasoning\\prolog\\prolog\\generators\\zebra.py",
+      "bytes": 11406,
+      "nonzero_bytes": 11406,
+      "sha256": "056bf9073ae63c49687ba3d31654effca326b24e92273c3e1c63ed0f7fa17e14"
+    }
+  ],
+  "zero_filled_probes": [
+    {
+      "path": "E:\\Recovered_C_projects\\Spiral_target\\projects\\prime_intellect_research_environments\\AGENTS.md",
+      "bytes": 1602,
+      "nonzero_bytes": 0,
+      "sha256": "62bbce9c0ef175e1d9eec9af8b87015648b4112fbaffea63cb99ee7a2c87837c"
+    },
+    {
+      "path": "E:\\Recovered_C_projects\\Spiral_target\\projects\\prime_intellect_research_environments\\environments\\logic_env\\README.md",
+      "bytes": 2191,
+      "nonzero_bytes": 0,
+      "sha256": "89fda0e8ecf8fa054c50157b9dbce0702f78b85dc9977466773aeab2a83efa49"
+    }
+  ],
+  "documentation_probes": [
+    {
+      "path": "E:\\Recovered_C_projects\\Remote_clones\\prime_intellect_research_environments\\environments\\reasoning\\prolog\\README.md",
+      "sha256": "4a545a681d398b835d2fabb605ceb8b0f42245ff74abfba9679c7b9fb10fca76"
+    },
+    {
+      "path": "E:\\Recovered_C_projects\\Remote_clones\\prime_intellect_research_environments\\environments\\reasoning\\i3_logic\\README.md",
+      "sha256": "e1fddbc2e98ba3ffc77a5645aa1fcbe31c25dc8c27edd167ad121e5ddb5416da"
+    }
+  ],
+  "same_source_not_additional_family_supply": "Recovered i3_logic documentation names the INTELLECT-3-RL logic subset already represented by the local audited corpus.",
+  "nominal_additional_procedural_task_types": [
+    "graph_coloring",
+    "nqueens",
+    "cryptarithm",
+    "scheduling",
+    "nonogram",
+    "bin_packing",
+    "hamiltonian"
+  ],
+  "overlap_not_counted_as_new": [
+    {
+      "candidate": "sudoku",
+      "existing": "sudoku"
+    },
+    {
+      "candidate": "zebra",
+      "existing": "zebra_puzzle"
+    }
+  ],
+  "interpretation": "Seven nominal task types absent from current eligible label list are source leads only. No independence, generator correctness, prompt adaptation, freshness, or taskset compatibility has been established.",
+  "boundary": {
+    "generators_executed": false,
+    "code_imported": false,
+    "pods_or_containers_started": false,
+    "network_downloads": false,
+    "weights_changed": false,
+    "additional_families_admitted": 0
+  }
+}

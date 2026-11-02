@@ -1,0 +1,350 @@
+{
+  "design": {
+    "comparison": "equal_rank_training_assigned_pass_decoder_row_subspaces",
+    "label_permutation_replicates": 255,
+    "label_permutation_seed": 260917,
+    "maximum_familywise_p_value": 0.05,
+    "multiple_comparison_control": "bonferroni_across_three_sites_at_primary_rank_only",
+    "posthoc_existing_source_analysis": true,
+    "primary_subspace_rank_per_category": 16,
+    "reported_rank_sensitivity": [
+      4,
+      8,
+      16,
+      32
+    ],
+    "sensitivity_ranks_do_not_supply_alternate_admission_tests": true
+  },
+  "provenance": {
+    "runner_sha256": "c0e26eee5c88777256ed4a5eafbf24419e2ad7d2b0a5ce146452660c764f9422"
+  },
+  "report_id": "7c54cabb868bd93a9f4e0f18d7ec13f533cceaca5a0a1e8e7ebdbdb1a5e8aaa0",
+  "schema": "sch.vpd-nanbeige-q4-sae-pass-category-subspace-transfer.v1",
+  "scientific_boundary": {
+    "execution_authorized": false,
+    "fresh_seed_family_disjoint_replication_required": true,
+    "model_weights_loaded": false,
+    "new_model_inference_performed": false,
+    "new_sae_training_performed": false,
+    "paid_compute_authorized": false,
+    "primary_rank_and_site_multiplicity_control_are_weight_bearing": true,
+    "rank_sensitivity_is_not_an_admission_search": true,
+    "sae_decoder_weights_loaded_for_read_only_analysis": true,
+    "sae_training_authorized": false,
+    "same_seed_and_example_ids_limit_independence": true,
+    "subspace_similarity_is_not_feature_identity": true,
+    "subspace_similarity_is_not_semantic_interpretation": true,
+    "training_assigned_selective_feature_rows_only": true,
+    "weights_mutated": false
+  },
+  "sites": [
+    {
+      "all_reported_ranks_same_minus_opposite_positive": true,
+      "bonferroni_site_familywise_alpha": 0.016666666666666666,
+      "diagnostic_same_seed_category_subspace_transfer_support": "pass",
+      "operative_fresh_seed_category_subspace_replication_admission": "fail",
+      "primary_rank": 16,
+      "provisional_same_seed_quality_qualified_subspace_support": "pass",
+      "quality_qualified_in_both_archives": true,
+      "rank_sensitivity": [
+        {
+          "label_permutation_95th_percentile": 0.2729348322675923,
+          "label_permutation_mean": 0.23075224516837767,
+          "label_permutation_p_value": 0.00390625,
+          "mean_opposite_category_subspace_similarity": 0.08123303946469877,
+          "mean_same_category_subspace_similarity": 0.3760853508249741,
+          "opposite_category_subspace_similarity": {
+            "left_pass_0_right_pass_1": 0.08433247801543652,
+            "left_pass_1_right_pass_0": 0.07813360091396103
+          },
+          "same_category_subspace_similarity": {
+            "pass_0": 0.41162749437158513,
+            "pass_1": 0.340543207278363
+          },
+          "same_minus_opposite": 0.2948523113602753,
+          "subspace_rank_per_category": 4
+        },
+        {
+          "label_permutation_95th_percentile": 0.22071926097963432,
+          "label_permutation_mean": 0.19457732863467925,
+          "label_permutation_p_value": 0.00390625,
+          "mean_opposite_category_subspace_similarity": 0.06782433336257773,
+          "mean_same_category_subspace_similarity": 0.3437523281798446,
+          "opposite_category_subspace_similarity": {
+            "left_pass_0_right_pass_1": 0.07249843467225532,
+            "left_pass_1_right_pass_0": 0.06315023205290016
+          },
+          "same_category_subspace_similarity": {
+            "pass_0": 0.40218293616242096,
+            "pass_1": 0.28532172019726826
+          },
+          "same_minus_opposite": 0.2759279948172668,
+          "subspace_rank_per_category": 8
+        },
+        {
+          "label_permutation_95th_percentile": 0.18326756488759594,
+          "label_permutation_mean": 0.16414338547654345,
+          "label_permutation_p_value": 0.00390625,
+          "mean_opposite_category_subspace_similarity": 0.05637930259670937,
+          "mean_same_category_subspace_similarity": 0.29349026223495117,
+          "opposite_category_subspace_similarity": {
+            "left_pass_0_right_pass_1": 0.05604948495378227,
+            "left_pass_1_right_pass_0": 0.05670912023963647
+          },
+          "same_category_subspace_similarity": {
+            "pass_0": 0.33845640909742214,
+            "pass_1": 0.2485241153724802
+          },
+          "same_minus_opposite": 0.2371109596382418,
+          "subspace_rank_per_category": 16
+        },
+        {
+          "label_permutation_95th_percentile": 0.16321213306396049,
+          "label_permutation_mean": 0.14771012155177912,
+          "label_permutation_p_value": 0.00390625,
+          "mean_opposite_category_subspace_similarity": 0.052489061465131194,
+          "mean_same_category_subspace_similarity": 0.24855994583654079,
+          "opposite_category_subspace_similarity": {
+            "left_pass_0_right_pass_1": 0.051047817210301855,
+            "left_pass_1_right_pass_0": 0.05393030571996053
+          },
+          "same_category_subspace_similarity": {
+            "pass_0": 0.2559823387712737,
+            "pass_1": 0.24113755290180788
+          },
+          "same_minus_opposite": 0.1960708843714096,
+          "subspace_rank_per_category": 32
+        }
+      ],
+      "selective_feature_counts": {
+        "2048": {
+          "pass_0": 102,
+          "pass_1": 120
+        },
+        "8192": {
+          "pass_0": 104,
+          "pass_1": 112
+        }
+      },
+      "site": "model.layers.11"
+    },
+    {
+      "all_reported_ranks_same_minus_opposite_positive": true,
+      "bonferroni_site_familywise_alpha": 0.016666666666666666,
+      "diagnostic_same_seed_category_subspace_transfer_support": "pass",
+      "operative_fresh_seed_category_subspace_replication_admission": "fail",
+      "primary_rank": 16,
+      "provisional_same_seed_quality_qualified_subspace_support": "fail",
+      "quality_qualified_in_both_archives": false,
+      "rank_sensitivity": [
+        {
+          "label_permutation_95th_percentile": 0.2430699518567322,
+          "label_permutation_mean": 0.22672676935460176,
+          "label_permutation_p_value": 0.00390625,
+          "mean_opposite_category_subspace_similarity": 0.20179089621828444,
+          "mean_same_category_subspace_similarity": 0.2582588132760447,
+          "opposite_category_subspace_similarity": {
+            "left_pass_0_right_pass_1": 0.194827649237518,
+            "left_pass_1_right_pass_0": 0.20875414319905086
+          },
+          "same_category_subspace_similarity": {
+            "pass_0": 0.2180132638168955,
+            "pass_1": 0.2985043627351939
+          },
+          "same_minus_opposite": 0.056467917057760275,
+          "subspace_rank_per_category": 4
+        },
+        {
+          "label_permutation_95th_percentile": 0.14705699420256327,
+          "label_permutation_mean": 0.13795341915900428,
+          "label_permutation_p_value": 0.00390625,
+          "mean_opposite_category_subspace_similarity": 0.1083933943764386,
+          "mean_same_category_subspace_similarity": 0.17214918346429114,
+          "opposite_category_subspace_similarity": {
+            "left_pass_0_right_pass_1": 0.10574893317004723,
+            "left_pass_1_right_pass_0": 0.11103785558282998
+          },
+          "same_category_subspace_similarity": {
+            "pass_0": 0.15282060870886868,
+            "pass_1": 0.19147775821971358
+          },
+          "same_minus_opposite": 0.06375578908785254,
+          "subspace_rank_per_category": 8
+        },
+        {
+          "label_permutation_95th_percentile": 0.11897111881984167,
+          "label_permutation_mean": 0.10868589265013415,
+          "label_permutation_p_value": 0.00390625,
+          "mean_opposite_category_subspace_similarity": 0.06306522030421982,
+          "mean_same_category_subspace_similarity": 0.17365820893277115,
+          "opposite_category_subspace_similarity": {
+            "left_pass_0_right_pass_1": 0.06150291756376891,
+            "left_pass_1_right_pass_0": 0.06462752304467073
+          },
+          "same_category_subspace_similarity": {
+            "pass_0": 0.1737562815109861,
+            "pass_1": 0.1735601363545562
+          },
+          "same_minus_opposite": 0.11059298862855133,
+          "subspace_rank_per_category": 16
+        },
+        {
+          "label_permutation_95th_percentile": 0.142684398379725,
+          "label_permutation_mean": 0.12846994536006773,
+          "label_permutation_p_value": 0.00390625,
+          "mean_opposite_category_subspace_similarity": 0.045146677412782235,
+          "mean_same_category_subspace_similarity": 0.23358348487726713,
+          "opposite_category_subspace_similarity": {
+            "left_pass_0_right_pass_1": 0.04301658083781279,
+            "left_pass_1_right_pass_0": 0.04727677398775168
+          },
+          "same_category_subspace_similarity": {
+            "pass_0": 0.24812755657756153,
+            "pass_1": 0.21903941317697273
+          },
+          "same_minus_opposite": 0.18843680746448488,
+          "subspace_rank_per_category": 32
+        }
+      ],
+      "selective_feature_counts": {
+        "2048": {
+          "pass_0": 129,
+          "pass_1": 187
+        },
+        "8192": {
+          "pass_0": 151,
+          "pass_1": 179
+        }
+      },
+      "site": "model.layers.21"
+    },
+    {
+      "all_reported_ranks_same_minus_opposite_positive": true,
+      "bonferroni_site_familywise_alpha": 0.016666666666666666,
+      "diagnostic_same_seed_category_subspace_transfer_support": "pass",
+      "operative_fresh_seed_category_subspace_replication_admission": "fail",
+      "primary_rank": 16,
+      "provisional_same_seed_quality_qualified_subspace_support": "pass",
+      "quality_qualified_in_both_archives": true,
+      "rank_sensitivity": [
+        {
+          "label_permutation_95th_percentile": 0.3219852475126549,
+          "label_permutation_mean": 0.2998492176907036,
+          "label_permutation_p_value": 0.00390625,
+          "mean_opposite_category_subspace_similarity": 0.038285227296160386,
+          "mean_same_category_subspace_similarity": 0.4040147887930072,
+          "opposite_category_subspace_similarity": {
+            "left_pass_0_right_pass_1": 0.0297272499029048,
+            "left_pass_1_right_pass_0": 0.04684320468941597
+          },
+          "same_category_subspace_similarity": {
+            "pass_0": 0.20914578306321063,
+            "pass_1": 0.5988837945228037
+          },
+          "same_minus_opposite": 0.36572956149684677,
+          "subspace_rank_per_category": 4
+        },
+        {
+          "label_permutation_95th_percentile": 0.26812456040914007,
+          "label_permutation_mean": 0.24459586701228067,
+          "label_permutation_p_value": 0.00390625,
+          "mean_opposite_category_subspace_similarity": 0.03504714676310565,
+          "mean_same_category_subspace_similarity": 0.35865212317777473,
+          "opposite_category_subspace_similarity": {
+            "left_pass_0_right_pass_1": 0.03317432703616233,
+            "left_pass_1_right_pass_0": 0.03691996649004897
+          },
+          "same_category_subspace_similarity": {
+            "pass_0": 0.20277913811536216,
+            "pass_1": 0.5145251082401873
+          },
+          "same_minus_opposite": 0.32360497641466907,
+          "subspace_rank_per_category": 8
+        },
+        {
+          "label_permutation_95th_percentile": 0.20350328374701998,
+          "label_permutation_mean": 0.1869541386776536,
+          "label_permutation_p_value": 0.00390625,
+          "mean_opposite_category_subspace_similarity": 0.03137210453568461,
+          "mean_same_category_subspace_similarity": 0.27360370954646585,
+          "opposite_category_subspace_similarity": {
+            "left_pass_0_right_pass_1": 0.02546459618066776,
+            "left_pass_1_right_pass_0": 0.03727961289070146
+          },
+          "same_category_subspace_similarity": {
+            "pass_0": 0.17951385337124004,
+            "pass_1": 0.36769356572169165
+          },
+          "same_minus_opposite": 0.24223160501078123,
+          "subspace_rank_per_category": 16
+        },
+        {
+          "label_permutation_95th_percentile": 0.2140691478204072,
+          "label_permutation_mean": 0.188100441684152,
+          "label_permutation_p_value": 0.00390625,
+          "mean_opposite_category_subspace_similarity": 0.033773833848341976,
+          "mean_same_category_subspace_similarity": 0.35389268779893657,
+          "opposite_category_subspace_similarity": {
+            "left_pass_0_right_pass_1": 0.03174472033655129,
+            "left_pass_1_right_pass_0": 0.03580294736013266
+          },
+          "same_category_subspace_similarity": {
+            "pass_0": 0.3954280454236948,
+            "pass_1": 0.31235733017417827
+          },
+          "same_minus_opposite": 0.3201188539505946,
+          "subspace_rank_per_category": 32
+        }
+      ],
+      "selective_feature_counts": {
+        "2048": {
+          "pass_0": 51,
+          "pass_1": 223
+        },
+        "8192": {
+          "pass_0": 78,
+          "pass_1": 236
+        }
+      },
+      "site": "model.norm"
+    }
+  ],
+  "sources": [
+    {
+      "budget": 2048,
+      "report_id": "71785175dbbf90e4c62e8598df881712194c7598e8710f0923c0a2746b2c7c3d",
+      "report_path": "C:/projects/VPD/artifacts/vpd_nanbeige_q4_sae_pass_selectivity_2048_v1/report.json",
+      "report_sha256": "e577d255b61ef283e20d54f15193b793cee188c6a14ace549e4cc247ec6b283c",
+      "sae_manifest_sha256": "6fc6377d128459f711953d1667a32b8ebdf10c36cd6e6047888b21b447e3bc92",
+      "sae_path": "C:/projects/VPD/artifacts/nanbeige_reasoning/q4_reasoning_pilot_v1/q4_reasoning_saes"
+    },
+    {
+      "budget": 8192,
+      "report_id": "508871d6b702af2edb42e60b6609b5e7d26e535fb2ee1be261a5dc179fef6c41",
+      "report_path": "C:/projects/VPD/artifacts/vpd_nanbeige_q4_sae_pass_selectivity_8192_v1/report.json",
+      "report_sha256": "f87368d7ac359ba10d6be355db12a71d9aa6a119fc801efe720f135bde73b951",
+      "sae_manifest_sha256": "8cea34fb5c46b826059d5684c18c5694e38cf1aabf03eb51a152c8a1f785d6e9",
+      "sae_path": "C:/projects/VPD/artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes"
+    }
+  ],
+  "status": "pass",
+  "summary": {
+    "diagnostic_same_seed_category_subspace_transfer_sites": [
+      "model.layers.11",
+      "model.layers.21",
+      "model.norm"
+    ],
+    "diagnostic_same_seed_category_subspace_transfer_supports": 3,
+    "operative_fresh_seed_category_subspace_replication_admissions": 0,
+    "provisional_same_seed_quality_qualified_subspace_sites": [
+      "model.layers.11",
+      "model.norm"
+    ],
+    "provisional_same_seed_quality_qualified_subspace_supports": 2,
+    "quality_qualified_sites": [
+      "model.layers.11",
+      "model.norm"
+    ],
+    "site_checks": 3
+  }
+}

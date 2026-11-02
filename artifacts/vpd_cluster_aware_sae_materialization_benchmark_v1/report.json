@@ -1,0 +1,101 @@
+{
+  "benchmark_id": "a8dfb72bd021847f2511258c1d66f08d8bf7ce9c8e1a822f41d4b1af437d3601",
+  "controls": {
+    "all_eighty_training_episodes_routed_once": true,
+    "exact_eight_categories_bound": true,
+    "manifest_only_no_training_authority": true,
+    "materialization_tamper_rejected": true,
+    "materialization_verifies": true,
+    "missing_category_rejected": true,
+    "model_frameworks_absent_before_and_after": true,
+    "predecessor_plan_tamper_rejected": true,
+    "role_adapter_substitution_rejected": true,
+    "routing_file_tamper_rejected": true,
+    "shared_pair_safe_global_split": true,
+    "sixteen_specific_clusters_and_shared_fallback": true,
+    "synthetic_evidence_as_empirical_rejected": true,
+    "three_guarded_v3_role_captures_bound": true,
+    "twenty_four_adapter_receipts_bound": true,
+    "twenty_four_router_receipts_bound": true,
+    "two_seed_jobs_per_compartment": true,
+    "v3_identity_is_router_source_for_every_role_category": true
+  },
+  "design": {
+    "adapter_receipts": 24,
+    "categories": [
+      "missing_or_untrusted_authority",
+      "other_invalid",
+      "replayed",
+      "revoked",
+      "scope_invalid",
+      "signature_invalid",
+      "time_inactive",
+      "valid_authority"
+    ],
+    "guarded_v3_capture_receipts": 3,
+    "independent_stability_receipts": 8,
+    "manifest_only": true,
+    "roles": [
+      "discovery",
+      "cluster_validation",
+      "sae_training"
+    ],
+    "routing_receipts": 24,
+    "synthetic_fixture_only": true
+  },
+  "results": {
+    "cluster_aware_sae_plan_id": "83bdf5104f29d842baf5c906dd34fa268d90e4c7ab1ac835b617ef8daad39a85",
+    "global_pair_split_id": "5620b6c1ad610d312ea18abe922774e6535d3feb48a30b8579fcc433ca6fb457",
+    "materialization_id": "bc34e7b50065bb9e4187c1d5c7d8ca0383489f3c6460e8c2278e12bdb1dcad39",
+    "routing_evidence_bundle_id": "8e145ac64f81b78bb5bfea3c0300191955e98132f453e0d2f7d81b279391989d",
+    "summary": {
+      "categories": 8,
+      "cross_compartment_pair_overlap_managed_by_global_split": true,
+      "global_pair_split_consistent": true,
+      "primary_compartment_episode_sets_disjoint": true,
+      "primary_compartment_pair_sets_disjoint": false,
+      "routed_training_episodes": 80,
+      "routed_training_pairs": 10,
+      "shared_compartments": 1,
+      "specific_compartments": 16,
+      "training_jobs": 34
+    },
+    "verification": {
+      "categories": 8,
+      "cluster_aware_sae_plan_id": "83bdf5104f29d842baf5c906dd34fa268d90e4c7ab1ac835b617ef8daad39a85",
+      "compartments": 17,
+      "empirical_plan": false,
+      "execution_authorized": false,
+      "materialization_id": "bc34e7b50065bb9e4187c1d5c7d8ca0383489f3c6460e8c2278e12bdb1dcad39",
+      "routing_evidence_bundle_id": "8e145ac64f81b78bb5bfea3c0300191955e98132f453e0d2f7d81b279391989d",
+      "sae_training_authorized": false,
+      "schema": "sch.vpd-cluster-aware-sae-plan-materialization-verification.v1",
+      "shared_pair_safe": true,
+      "status": "pass",
+      "training_jobs": 34
+    }
+  },
+  "schema": "sch.vpd-cluster-aware-sae-plan-materialization-benchmark.v1",
+  "scientific_boundary": {
+    "empirical_plan_produced": false,
+    "execution_authorized": false,
+    "model_inference_performed": false,
+    "model_loaded": false,
+    "persistent_empirical_bundle_produced": false,
+    "sae_training_authorized": false,
+    "synthetic_guarded_v3_captures_only": true,
+    "weights_loaded_or_mutated": false
+  },
+  "source": {
+    "benchmark_sha256": "b72eff61cb2c768167ba53d0bfce552b310612d6d027225965216b4d5b405e3f",
+    "capture_router_adapter_v2_sha256": "c098b1b0f29b8b74173144b1afec7523611203fdce74312d8357f84d818fbed2",
+    "materializer_sha256": "109244e44d1c5f7bcbf151602be3974b316446649d2f86a56d81634660387a7f",
+    "planner_v2_sha256": "b7fce50af30687d0fe4d7b75f589e1acc61863bddc73c7517caf91b1ad8d17a3",
+    "predecessor_plan_sha256": "f90dc761017b15369fbc31bf8d9efdee4f4d8f6e9c7fce585e8ecc5e94b5975c"
+  },
+  "status": "pass",
+  "summary": {
+    "controls": 18,
+    "passed": 18
+  }
+}

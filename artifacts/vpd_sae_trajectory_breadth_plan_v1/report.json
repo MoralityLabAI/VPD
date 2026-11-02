@@ -1,0 +1,4571 @@
+{
+  "boundary": {
+    "activation_arrays_loaded": false,
+    "freshness_verified": false,
+    "initialization_equality_verified": false,
+    "launch_authorized": false,
+    "training_performed": false
+  },
+  "candidate": "Q2-v1",
+  "metadata_content_sha256": "4dbde2021af768455ec5a18339c07419ebb3824e4a346b94c4b6d75faa8c7278",
+  "plan": {
+    "alignment_requirement": "Use each roster unchanged at all sites and on both aligned passes; future array checks still required.",
+    "arms": {
+      "Q2-B": {
+        "family_counts_per_pass": {
+          "synthetic-family-00": 32,
+          "synthetic-family-01": 32,
+          "synthetic-family-02": 32,
+          "synthetic-family-03": 32,
+          "synthetic-family-04": 32,
+          "synthetic-family-05": 32,
+          "synthetic-family-06": 32,
+          "synthetic-family-07": 32,
+          "synthetic-family-08": 32,
+          "synthetic-family-09": 32
+        },
+        "phase_counts_per_pass": {
+          "generated": 240,
+          "prompt": 80
+        },
+        "roster": [
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-0",
+            "phase": "prompt",
+            "position": 92,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-0",
+            "phase": "prompt",
+            "position": 99,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-0",
+            "phase": "generated",
+            "position": 108,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-0",
+            "phase": "generated",
+            "position": 115,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-0",
+            "phase": "generated",
+            "position": 124,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-0",
+            "phase": "generated",
+            "position": 131,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-0",
+            "phase": "generated",
+            "position": 156,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-0",
+            "phase": "generated",
+            "position": 163,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-1",
+            "phase": "prompt",
+            "position": 93,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-1",
+            "phase": "prompt",
+            "position": 100,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-1",
+            "phase": "generated",
+            "position": 111,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-1",
+            "phase": "generated",
+            "position": 118,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-1",
+            "phase": "generated",
+            "position": 129,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-1",
+            "phase": "generated",
+            "position": 136,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-1",
+            "phase": "generated",
+            "position": 165,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-1",
+            "phase": "generated",
+            "position": 172,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-2",
+            "phase": "prompt",
+            "position": 94,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-2",
+            "phase": "prompt",
+            "position": 101,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-2",
+            "phase": "generated",
+            "position": 114,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-2",
+            "phase": "generated",
+            "position": 121,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-2",
+            "phase": "generated",
+            "position": 134,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-2",
+            "phase": "generated",
+            "position": 141,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-2",
+            "phase": "generated",
+            "position": 174,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-2",
+            "phase": "generated",
+            "position": 181,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-3",
+            "phase": "prompt",
+            "position": 95,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-3",
+            "phase": "prompt",
+            "position": 102,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-3",
+            "phase": "generated",
+            "position": 117,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-3",
+            "phase": "generated",
+            "position": 124,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-3",
+            "phase": "generated",
+            "position": 139,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-3",
+            "phase": "generated",
+            "position": 146,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-3",
+            "phase": "generated",
+            "position": 183,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-3",
+            "phase": "generated",
+            "position": 190,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-0",
+            "phase": "prompt",
+            "position": 92,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-0",
+            "phase": "prompt",
+            "position": 99,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-0",
+            "phase": "generated",
+            "position": 108,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-0",
+            "phase": "generated",
+            "position": 115,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-0",
+            "phase": "generated",
+            "position": 124,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-0",
+            "phase": "generated",
+            "position": 131,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-0",
+            "phase": "generated",
+            "position": 156,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-0",
+            "phase": "generated",
+            "position": 163,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-1",
+            "phase": "prompt",
+            "position": 93,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-1",
+            "phase": "prompt",
+            "position": 100,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-1",
+            "phase": "generated",
+            "position": 111,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-1",
+            "phase": "generated",
+            "position": 118,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-1",
+            "phase": "generated",
+            "position": 129,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-1",
+            "phase": "generated",
+            "position": 136,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-1",
+            "phase": "generated",
+            "position": 165,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-1",
+            "phase": "generated",
+            "position": 172,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-2",
+            "phase": "prompt",
+            "position": 94,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-2",
+            "phase": "prompt",
+            "position": 101,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-2",
+            "phase": "generated",
+            "position": 114,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-2",
+            "phase": "generated",
+            "position": 121,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-2",
+            "phase": "generated",
+            "position": 134,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-2",
+            "phase": "generated",
+            "position": 141,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-2",
+            "phase": "generated",
+            "position": 174,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-2",
+            "phase": "generated",
+            "position": 181,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-3",
+            "phase": "prompt",
+            "position": 95,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-3",
+            "phase": "prompt",
+            "position": 102,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-3",
+            "phase": "generated",
+            "position": 117,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-3",
+            "phase": "generated",
+            "position": 124,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-3",
+            "phase": "generated",
+            "position": 139,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-3",
+            "phase": "generated",
+            "position": 146,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-3",
+            "phase": "generated",
+            "position": 183,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-3",
+            "phase": "generated",
+            "position": 190,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-0",
+            "phase": "prompt",
+            "position": 92,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-0",
+            "phase": "prompt",
+            "position": 99,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-0",
+            "phase": "generated",
+            "position": 108,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-0",
+            "phase": "generated",
+            "position": 115,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-0",
+            "phase": "generated",
+            "position": 124,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-0",
+            "phase": "generated",
+            "position": 131,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-0",
+            "phase": "generated",
+            "position": 156,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-0",
+            "phase": "generated",
+            "position": 163,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-1",
+            "phase": "prompt",
+            "position": 93,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-1",
+            "phase": "prompt",
+            "position": 100,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-1",
+            "phase": "generated",
+            "position": 111,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-1",
+            "phase": "generated",
+            "position": 118,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-1",
+            "phase": "generated",
+            "position": 129,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-1",
+            "phase": "generated",
+            "position": 136,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-1",
+            "phase": "generated",
+            "position": 165,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-1",
+            "phase": "generated",
+            "position": 172,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-2",
+            "phase": "prompt",
+            "position": 94,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-2",
+            "phase": "prompt",
+            "position": 101,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-2",
+            "phase": "generated",
+            "position": 114,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-2",
+            "phase": "generated",
+            "position": 121,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-2",
+            "phase": "generated",
+            "position": 134,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-2",
+            "phase": "generated",
+            "position": 141,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-2",
+            "phase": "generated",
+            "position": 174,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-2",
+            "phase": "generated",
+            "position": 181,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-3",
+            "phase": "prompt",
+            "position": 95,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-3",
+            "phase": "prompt",
+            "position": 102,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-3",
+            "phase": "generated",
+            "position": 117,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-3",
+            "phase": "generated",
+            "position": 124,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-3",
+            "phase": "generated",
+            "position": 139,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-3",
+            "phase": "generated",
+            "position": 146,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-3",
+            "phase": "generated",
+            "position": 183,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-3",
+            "phase": "generated",
+            "position": 190,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-0",
+            "phase": "prompt",
+            "position": 92,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-0",
+            "phase": "prompt",
+            "position": 99,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-0",
+            "phase": "generated",
+            "position": 108,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-0",
+            "phase": "generated",
+            "position": 115,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-0",
+            "phase": "generated",
+            "position": 124,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-0",
+            "phase": "generated",
+            "position": 131,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-0",
+            "phase": "generated",
+            "position": 156,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-0",
+            "phase": "generated",
+            "position": 163,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-1",
+            "phase": "prompt",
+            "position": 93,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-1",
+            "phase": "prompt",
+            "position": 100,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-1",
+            "phase": "generated",
+            "position": 111,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-1",
+            "phase": "generated",
+            "position": 118,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-1",
+            "phase": "generated",
+            "position": 129,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-1",
+            "phase": "generated",
+            "position": 136,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-1",
+            "phase": "generated",
+            "position": 165,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-1",
+            "phase": "generated",
+            "position": 172,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-2",
+            "phase": "prompt",
+            "position": 94,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-2",
+            "phase": "prompt",
+            "position": 101,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-2",
+            "phase": "generated",
+            "position": 114,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-2",
+            "phase": "generated",
+            "position": 121,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-2",
+            "phase": "generated",
+            "position": 134,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-2",
+            "phase": "generated",
+            "position": 141,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-2",
+            "phase": "generated",
+            "position": 174,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-2",
+            "phase": "generated",
+            "position": 181,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-3",
+            "phase": "prompt",
+            "position": 95,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-3",
+            "phase": "prompt",
+            "position": 102,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-3",
+            "phase": "generated",
+            "position": 117,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-3",
+            "phase": "generated",
+            "position": 124,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-3",
+            "phase": "generated",
+            "position": 139,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-3",
+            "phase": "generated",
+            "position": 146,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-3",
+            "phase": "generated",
+            "position": 183,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-3",
+            "phase": "generated",
+            "position": 190,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-0",
+            "phase": "prompt",
+            "position": 92,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-0",
+            "phase": "prompt",
+            "position": 99,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-0",
+            "phase": "generated",
+            "position": 108,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-0",
+            "phase": "generated",
+            "position": 115,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-0",
+            "phase": "generated",
+            "position": 124,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-0",
+            "phase": "generated",
+            "position": 131,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-0",
+            "phase": "generated",
+            "position": 156,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-0",
+            "phase": "generated",
+            "position": 163,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-1",
+            "phase": "prompt",
+            "position": 93,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-1",
+            "phase": "prompt",
+            "position": 100,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-1",
+            "phase": "generated",
+            "position": 111,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-1",
+            "phase": "generated",
+            "position": 118,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-1",
+            "phase": "generated",
+            "position": 129,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-1",
+            "phase": "generated",
+            "position": 136,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-1",
+            "phase": "generated",
+            "position": 165,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-1",
+            "phase": "generated",
+            "position": 172,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-2",
+            "phase": "prompt",
+            "position": 94,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-2",
+            "phase": "prompt",
+            "position": 101,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-2",
+            "phase": "generated",
+            "position": 114,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-2",
+            "phase": "generated",
+            "position": 121,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-2",
+            "phase": "generated",
+            "position": 134,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-2",
+            "phase": "generated",
+            "position": 141,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-2",
+            "phase": "generated",
+            "position": 174,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-2",
+            "phase": "generated",
+            "position": 181,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-3",
+            "phase": "prompt",
+            "position": 95,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-3",
+            "phase": "prompt",
+            "position": 102,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-3",
+            "phase": "generated",
+            "position": 117,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-3",
+            "phase": "generated",
+            "position": 124,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-3",
+            "phase": "generated",
+            "position": 139,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-3",
+            "phase": "generated",
+            "position": 146,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-3",
+            "phase": "generated",
+            "position": 183,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-3",
+            "phase": "generated",
+            "position": 190,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-0",
+            "phase": "prompt",
+            "position": 92,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-0",
+            "phase": "prompt",
+            "position": 99,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-0",
+            "phase": "generated",
+            "position": 108,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-0",
+            "phase": "generated",
+            "position": 115,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-0",
+            "phase": "generated",
+            "position": 124,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-0",
+            "phase": "generated",
+            "position": 131,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-0",
+            "phase": "generated",
+            "position": 156,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-0",
+            "phase": "generated",
+            "position": 163,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-1",
+            "phase": "prompt",
+            "position": 93,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-1",
+            "phase": "prompt",
+            "position": 100,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-1",
+            "phase": "generated",
+            "position": 111,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-1",
+            "phase": "generated",
+            "position": 118,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-1",
+            "phase": "generated",
+            "position": 129,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-1",
+            "phase": "generated",
+            "position": 136,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-1",
+            "phase": "generated",
+            "position": 165,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-1",
+            "phase": "generated",
+            "position": 172,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-2",
+            "phase": "prompt",
+            "position": 94,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-2",
+            "phase": "prompt",
+            "position": 101,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-2",
+            "phase": "generated",
+            "position": 114,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-2",
+            "phase": "generated",
+            "position": 121,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-2",
+            "phase": "generated",
+            "position": 134,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-2",
+            "phase": "generated",
+            "position": 141,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-2",
+            "phase": "generated",
+            "position": 174,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-2",
+            "phase": "generated",
+            "position": 181,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-3",
+            "phase": "prompt",
+            "position": 95,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-3",
+            "phase": "prompt",
+            "position": 102,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-3",
+            "phase": "generated",
+            "position": 117,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-3",
+            "phase": "generated",
+            "position": 124,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-3",
+            "phase": "generated",
+            "position": 139,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-3",
+            "phase": "generated",
+            "position": 146,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-3",
+            "phase": "generated",
+            "position": 183,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-3",
+            "phase": "generated",
+            "position": 190,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-0",
+            "phase": "prompt",
+            "position": 92,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-0",
+            "phase": "prompt",
+            "position": 99,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-0",
+            "phase": "generated",
+            "position": 108,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-0",
+            "phase": "generated",
+            "position": 115,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-0",
+            "phase": "generated",
+            "position": 124,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-0",
+            "phase": "generated",
+            "position": 131,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-0",
+            "phase": "generated",
+            "position": 156,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-0",
+            "phase": "generated",
+            "position": 163,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-1",
+            "phase": "prompt",
+            "position": 93,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-1",
+            "phase": "prompt",
+            "position": 100,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-1",
+            "phase": "generated",
+            "position": 111,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-1",
+            "phase": "generated",
+            "position": 118,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-1",
+            "phase": "generated",
+            "position": 129,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-1",
+            "phase": "generated",
+            "position": 136,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-1",
+            "phase": "generated",
+            "position": 165,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-1",
+            "phase": "generated",
+            "position": 172,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-2",
+            "phase": "prompt",
+            "position": 94,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-2",
+            "phase": "prompt",
+            "position": 101,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-2",
+            "phase": "generated",
+            "position": 114,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-2",
+            "phase": "generated",
+            "position": 121,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-2",
+            "phase": "generated",
+            "position": 134,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-2",
+            "phase": "generated",
+            "position": 141,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-2",
+            "phase": "generated",
+            "position": 174,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-2",
+            "phase": "generated",
+            "position": 181,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-3",
+            "phase": "prompt",
+            "position": 95,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-3",
+            "phase": "prompt",
+            "position": 102,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-3",
+            "phase": "generated",
+            "position": 117,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-3",
+            "phase": "generated",
+            "position": 124,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-3",
+            "phase": "generated",
+            "position": 139,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-3",
+            "phase": "generated",
+            "position": 146,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-3",
+            "phase": "generated",
+            "position": 183,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-3",
+            "phase": "generated",
+            "position": 190,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-0",
+            "phase": "prompt",
+            "position": 92,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-0",
+            "phase": "prompt",
+            "position": 99,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-0",
+            "phase": "generated",
+            "position": 108,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-0",
+            "phase": "generated",
+            "position": 115,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-0",
+            "phase": "generated",
+            "position": 124,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-0",
+            "phase": "generated",
+            "position": 131,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-0",
+            "phase": "generated",
+            "position": 156,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-0",
+            "phase": "generated",
+            "position": 163,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-1",
+            "phase": "prompt",
+            "position": 93,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-1",
+            "phase": "prompt",
+            "position": 100,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-1",
+            "phase": "generated",
+            "position": 111,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-1",
+            "phase": "generated",
+            "position": 118,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-1",
+            "phase": "generated",
+            "position": 129,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-1",
+            "phase": "generated",
+            "position": 136,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-1",
+            "phase": "generated",
+            "position": 165,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-1",
+            "phase": "generated",
+            "position": 172,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-2",
+            "phase": "prompt",
+            "position": 94,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-2",
+            "phase": "prompt",
+            "position": 101,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-2",
+            "phase": "generated",
+            "position": 114,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-2",
+            "phase": "generated",
+            "position": 121,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-2",
+            "phase": "generated",
+            "position": 134,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-2",
+            "phase": "generated",
+            "position": 141,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-2",
+            "phase": "generated",
+            "position": 174,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-2",
+            "phase": "generated",
+            "position": 181,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-3",
+            "phase": "prompt",
+            "position": 95,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-3",
+            "phase": "prompt",
+            "position": 102,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-3",
+            "phase": "generated",
+            "position": 117,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-3",
+            "phase": "generated",
+            "position": 124,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-3",
+            "phase": "generated",
+            "position": 139,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-3",
+            "phase": "generated",
+            "position": 146,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-3",
+            "phase": "generated",
+            "position": 183,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-3",
+            "phase": "generated",
+            "position": 190,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-0",
+            "phase": "prompt",
+            "position": 92,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-0",
+            "phase": "prompt",
+            "position": 99,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-0",
+            "phase": "generated",
+            "position": 108,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-0",
+            "phase": "generated",
+            "position": 115,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-0",
+            "phase": "generated",
+            "position": 124,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-0",
+            "phase": "generated",
+            "position": 131,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-0",
+            "phase": "generated",
+            "position": 156,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-0",
+            "phase": "generated",
+            "position": 163,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-1",
+            "phase": "prompt",
+            "position": 93,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-1",
+            "phase": "prompt",
+            "position": 100,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-1",
+            "phase": "generated",
+            "position": 111,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-1",
+            "phase": "generated",
+            "position": 118,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-1",
+            "phase": "generated",
+            "position": 129,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-1",
+            "phase": "generated",
+            "position": 136,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-1",
+            "phase": "generated",
+            "position": 165,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-1",
+            "phase": "generated",
+            "position": 172,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-2",
+            "phase": "prompt",
+            "position": 94,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-2",
+            "phase": "prompt",
+            "position": 101,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-2",
+            "phase": "generated",
+            "position": 114,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-2",
+            "phase": "generated",
+            "position": 121,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-2",
+            "phase": "generated",
+            "position": 134,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-2",
+            "phase": "generated",
+            "position": 141,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-2",
+            "phase": "generated",
+            "position": 174,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-2",
+            "phase": "generated",
+            "position": 181,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-3",
+            "phase": "prompt",
+            "position": 95,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-3",
+            "phase": "prompt",
+            "position": 102,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-3",
+            "phase": "generated",
+            "position": 117,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-3",
+            "phase": "generated",
+            "position": 124,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-3",
+            "phase": "generated",
+            "position": 139,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-3",
+            "phase": "generated",
+            "position": 146,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-3",
+            "phase": "generated",
+            "position": 183,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-3",
+            "phase": "generated",
+            "position": 190,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-0",
+            "phase": "prompt",
+            "position": 92,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-0",
+            "phase": "prompt",
+            "position": 99,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-0",
+            "phase": "generated",
+            "position": 108,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-0",
+            "phase": "generated",
+            "position": 115,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-0",
+            "phase": "generated",
+            "position": 124,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-0",
+            "phase": "generated",
+            "position": 131,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-0",
+            "phase": "generated",
+            "position": 156,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-0",
+            "phase": "generated",
+            "position": 163,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-1",
+            "phase": "prompt",
+            "position": 93,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-1",
+            "phase": "prompt",
+            "position": 100,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-1",
+            "phase": "generated",
+            "position": 111,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-1",
+            "phase": "generated",
+            "position": 118,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-1",
+            "phase": "generated",
+            "position": 129,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-1",
+            "phase": "generated",
+            "position": 136,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-1",
+            "phase": "generated",
+            "position": 165,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-1",
+            "phase": "generated",
+            "position": 172,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-2",
+            "phase": "prompt",
+            "position": 94,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-2",
+            "phase": "prompt",
+            "position": 101,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-2",
+            "phase": "generated",
+            "position": 114,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-2",
+            "phase": "generated",
+            "position": 121,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-2",
+            "phase": "generated",
+            "position": 134,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-2",
+            "phase": "generated",
+            "position": 141,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-2",
+            "phase": "generated",
+            "position": 174,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-2",
+            "phase": "generated",
+            "position": 181,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-3",
+            "phase": "prompt",
+            "position": 95,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-3",
+            "phase": "prompt",
+            "position": 102,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-3",
+            "phase": "generated",
+            "position": 117,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-3",
+            "phase": "generated",
+            "position": 124,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-3",
+            "phase": "generated",
+            "position": 139,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-3",
+            "phase": "generated",
+            "position": 146,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-3",
+            "phase": "generated",
+            "position": 183,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-3",
+            "phase": "generated",
+            "position": 190,
+            "region": "late"
+          }
+        ],
+        "roster_sha256": "cf73f6a03f47cfd5b58c6a5323e30a86580854e274efa298e4486052f6682338",
+        "rows_per_pass": 320,
+        "trajectory_count": 40
+      },
+      "Q2-N": {
+        "family_counts_per_pass": {
+          "synthetic-family-00": 32,
+          "synthetic-family-01": 32,
+          "synthetic-family-02": 32,
+          "synthetic-family-03": 32,
+          "synthetic-family-04": 32,
+          "synthetic-family-05": 32,
+          "synthetic-family-06": 32,
+          "synthetic-family-07": 32,
+          "synthetic-family-08": 32,
+          "synthetic-family-09": 32
+        },
+        "phase_counts_per_pass": {
+          "generated": 240,
+          "prompt": 80
+        },
+        "roster": [
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-0",
+            "phase": "prompt",
+            "position": 92,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-0",
+            "phase": "prompt",
+            "position": 93,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-0",
+            "phase": "prompt",
+            "position": 94,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-0",
+            "phase": "prompt",
+            "position": 95,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-0",
+            "phase": "prompt",
+            "position": 96,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-0",
+            "phase": "prompt",
+            "position": 97,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-0",
+            "phase": "prompt",
+            "position": 98,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-0",
+            "phase": "prompt",
+            "position": 99,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-0",
+            "phase": "generated",
+            "position": 108,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-0",
+            "phase": "generated",
+            "position": 109,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-0",
+            "phase": "generated",
+            "position": 110,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-0",
+            "phase": "generated",
+            "position": 111,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-0",
+            "phase": "generated",
+            "position": 112,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-0",
+            "phase": "generated",
+            "position": 113,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-0",
+            "phase": "generated",
+            "position": 114,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-0",
+            "phase": "generated",
+            "position": 115,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-0",
+            "phase": "generated",
+            "position": 124,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-0",
+            "phase": "generated",
+            "position": 125,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-0",
+            "phase": "generated",
+            "position": 126,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-0",
+            "phase": "generated",
+            "position": 127,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-0",
+            "phase": "generated",
+            "position": 128,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-0",
+            "phase": "generated",
+            "position": 129,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-0",
+            "phase": "generated",
+            "position": 130,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-0",
+            "phase": "generated",
+            "position": 131,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-0",
+            "phase": "generated",
+            "position": 156,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-0",
+            "phase": "generated",
+            "position": 157,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-0",
+            "phase": "generated",
+            "position": 158,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-0",
+            "phase": "generated",
+            "position": 159,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-0",
+            "phase": "generated",
+            "position": 160,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-0",
+            "phase": "generated",
+            "position": 161,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-0",
+            "phase": "generated",
+            "position": 162,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-00",
+            "id": "synthetic-family-00/example-0",
+            "phase": "generated",
+            "position": 163,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-2",
+            "phase": "prompt",
+            "position": 94,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-2",
+            "phase": "prompt",
+            "position": 95,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-2",
+            "phase": "prompt",
+            "position": 96,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-2",
+            "phase": "prompt",
+            "position": 97,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-2",
+            "phase": "prompt",
+            "position": 98,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-2",
+            "phase": "prompt",
+            "position": 99,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-2",
+            "phase": "prompt",
+            "position": 100,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-2",
+            "phase": "prompt",
+            "position": 101,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-2",
+            "phase": "generated",
+            "position": 114,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-2",
+            "phase": "generated",
+            "position": 115,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-2",
+            "phase": "generated",
+            "position": 116,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-2",
+            "phase": "generated",
+            "position": 117,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-2",
+            "phase": "generated",
+            "position": 118,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-2",
+            "phase": "generated",
+            "position": 119,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-2",
+            "phase": "generated",
+            "position": 120,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-2",
+            "phase": "generated",
+            "position": 121,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-2",
+            "phase": "generated",
+            "position": 134,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-2",
+            "phase": "generated",
+            "position": 135,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-2",
+            "phase": "generated",
+            "position": 136,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-2",
+            "phase": "generated",
+            "position": 137,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-2",
+            "phase": "generated",
+            "position": 138,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-2",
+            "phase": "generated",
+            "position": 139,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-2",
+            "phase": "generated",
+            "position": 140,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-2",
+            "phase": "generated",
+            "position": 141,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-2",
+            "phase": "generated",
+            "position": 174,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-2",
+            "phase": "generated",
+            "position": 175,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-2",
+            "phase": "generated",
+            "position": 176,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-2",
+            "phase": "generated",
+            "position": 177,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-2",
+            "phase": "generated",
+            "position": 178,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-2",
+            "phase": "generated",
+            "position": 179,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-2",
+            "phase": "generated",
+            "position": 180,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-01",
+            "id": "synthetic-family-01/example-2",
+            "phase": "generated",
+            "position": 181,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-2",
+            "phase": "prompt",
+            "position": 94,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-2",
+            "phase": "prompt",
+            "position": 95,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-2",
+            "phase": "prompt",
+            "position": 96,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-2",
+            "phase": "prompt",
+            "position": 97,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-2",
+            "phase": "prompt",
+            "position": 98,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-2",
+            "phase": "prompt",
+            "position": 99,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-2",
+            "phase": "prompt",
+            "position": 100,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-2",
+            "phase": "prompt",
+            "position": 101,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-2",
+            "phase": "generated",
+            "position": 114,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-2",
+            "phase": "generated",
+            "position": 115,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-2",
+            "phase": "generated",
+            "position": 116,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-2",
+            "phase": "generated",
+            "position": 117,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-2",
+            "phase": "generated",
+            "position": 118,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-2",
+            "phase": "generated",
+            "position": 119,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-2",
+            "phase": "generated",
+            "position": 120,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-2",
+            "phase": "generated",
+            "position": 121,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-2",
+            "phase": "generated",
+            "position": 134,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-2",
+            "phase": "generated",
+            "position": 135,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-2",
+            "phase": "generated",
+            "position": 136,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-2",
+            "phase": "generated",
+            "position": 137,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-2",
+            "phase": "generated",
+            "position": 138,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-2",
+            "phase": "generated",
+            "position": 139,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-2",
+            "phase": "generated",
+            "position": 140,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-2",
+            "phase": "generated",
+            "position": 141,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-2",
+            "phase": "generated",
+            "position": 174,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-2",
+            "phase": "generated",
+            "position": 175,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-2",
+            "phase": "generated",
+            "position": 176,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-2",
+            "phase": "generated",
+            "position": 177,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-2",
+            "phase": "generated",
+            "position": 178,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-2",
+            "phase": "generated",
+            "position": 179,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-2",
+            "phase": "generated",
+            "position": 180,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-02",
+            "id": "synthetic-family-02/example-2",
+            "phase": "generated",
+            "position": 181,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-3",
+            "phase": "prompt",
+            "position": 95,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-3",
+            "phase": "prompt",
+            "position": 96,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-3",
+            "phase": "prompt",
+            "position": 97,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-3",
+            "phase": "prompt",
+            "position": 98,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-3",
+            "phase": "prompt",
+            "position": 99,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-3",
+            "phase": "prompt",
+            "position": 100,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-3",
+            "phase": "prompt",
+            "position": 101,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-3",
+            "phase": "prompt",
+            "position": 102,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-3",
+            "phase": "generated",
+            "position": 117,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-3",
+            "phase": "generated",
+            "position": 118,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-3",
+            "phase": "generated",
+            "position": 119,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-3",
+            "phase": "generated",
+            "position": 120,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-3",
+            "phase": "generated",
+            "position": 121,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-3",
+            "phase": "generated",
+            "position": 122,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-3",
+            "phase": "generated",
+            "position": 123,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-3",
+            "phase": "generated",
+            "position": 124,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-3",
+            "phase": "generated",
+            "position": 139,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-3",
+            "phase": "generated",
+            "position": 140,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-3",
+            "phase": "generated",
+            "position": 141,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-3",
+            "phase": "generated",
+            "position": 142,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-3",
+            "phase": "generated",
+            "position": 143,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-3",
+            "phase": "generated",
+            "position": 144,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-3",
+            "phase": "generated",
+            "position": 145,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-3",
+            "phase": "generated",
+            "position": 146,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-3",
+            "phase": "generated",
+            "position": 183,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-3",
+            "phase": "generated",
+            "position": 184,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-3",
+            "phase": "generated",
+            "position": 185,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-3",
+            "phase": "generated",
+            "position": 186,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-3",
+            "phase": "generated",
+            "position": 187,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-3",
+            "phase": "generated",
+            "position": 188,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-3",
+            "phase": "generated",
+            "position": 189,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-03",
+            "id": "synthetic-family-03/example-3",
+            "phase": "generated",
+            "position": 190,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-3",
+            "phase": "prompt",
+            "position": 95,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-3",
+            "phase": "prompt",
+            "position": 96,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-3",
+            "phase": "prompt",
+            "position": 97,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-3",
+            "phase": "prompt",
+            "position": 98,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-3",
+            "phase": "prompt",
+            "position": 99,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-3",
+            "phase": "prompt",
+            "position": 100,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-3",
+            "phase": "prompt",
+            "position": 101,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-3",
+            "phase": "prompt",
+            "position": 102,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-3",
+            "phase": "generated",
+            "position": 117,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-3",
+            "phase": "generated",
+            "position": 118,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-3",
+            "phase": "generated",
+            "position": 119,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-3",
+            "phase": "generated",
+            "position": 120,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-3",
+            "phase": "generated",
+            "position": 121,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-3",
+            "phase": "generated",
+            "position": 122,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-3",
+            "phase": "generated",
+            "position": 123,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-3",
+            "phase": "generated",
+            "position": 124,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-3",
+            "phase": "generated",
+            "position": 139,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-3",
+            "phase": "generated",
+            "position": 140,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-3",
+            "phase": "generated",
+            "position": 141,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-3",
+            "phase": "generated",
+            "position": 142,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-3",
+            "phase": "generated",
+            "position": 143,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-3",
+            "phase": "generated",
+            "position": 144,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-3",
+            "phase": "generated",
+            "position": 145,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-3",
+            "phase": "generated",
+            "position": 146,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-3",
+            "phase": "generated",
+            "position": 183,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-3",
+            "phase": "generated",
+            "position": 184,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-3",
+            "phase": "generated",
+            "position": 185,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-3",
+            "phase": "generated",
+            "position": 186,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-3",
+            "phase": "generated",
+            "position": 187,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-3",
+            "phase": "generated",
+            "position": 188,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-3",
+            "phase": "generated",
+            "position": 189,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-04",
+            "id": "synthetic-family-04/example-3",
+            "phase": "generated",
+            "position": 190,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-3",
+            "phase": "prompt",
+            "position": 95,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-3",
+            "phase": "prompt",
+            "position": 96,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-3",
+            "phase": "prompt",
+            "position": 97,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-3",
+            "phase": "prompt",
+            "position": 98,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-3",
+            "phase": "prompt",
+            "position": 99,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-3",
+            "phase": "prompt",
+            "position": 100,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-3",
+            "phase": "prompt",
+            "position": 101,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-3",
+            "phase": "prompt",
+            "position": 102,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-3",
+            "phase": "generated",
+            "position": 117,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-3",
+            "phase": "generated",
+            "position": 118,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-3",
+            "phase": "generated",
+            "position": 119,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-3",
+            "phase": "generated",
+            "position": 120,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-3",
+            "phase": "generated",
+            "position": 121,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-3",
+            "phase": "generated",
+            "position": 122,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-3",
+            "phase": "generated",
+            "position": 123,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-3",
+            "phase": "generated",
+            "position": 124,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-3",
+            "phase": "generated",
+            "position": 139,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-3",
+            "phase": "generated",
+            "position": 140,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-3",
+            "phase": "generated",
+            "position": 141,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-3",
+            "phase": "generated",
+            "position": 142,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-3",
+            "phase": "generated",
+            "position": 143,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-3",
+            "phase": "generated",
+            "position": 144,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-3",
+            "phase": "generated",
+            "position": 145,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-3",
+            "phase": "generated",
+            "position": 146,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-3",
+            "phase": "generated",
+            "position": 183,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-3",
+            "phase": "generated",
+            "position": 184,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-3",
+            "phase": "generated",
+            "position": 185,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-3",
+            "phase": "generated",
+            "position": 186,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-3",
+            "phase": "generated",
+            "position": 187,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-3",
+            "phase": "generated",
+            "position": 188,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-3",
+            "phase": "generated",
+            "position": 189,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-05",
+            "id": "synthetic-family-05/example-3",
+            "phase": "generated",
+            "position": 190,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-3",
+            "phase": "prompt",
+            "position": 95,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-3",
+            "phase": "prompt",
+            "position": 96,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-3",
+            "phase": "prompt",
+            "position": 97,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-3",
+            "phase": "prompt",
+            "position": 98,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-3",
+            "phase": "prompt",
+            "position": 99,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-3",
+            "phase": "prompt",
+            "position": 100,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-3",
+            "phase": "prompt",
+            "position": 101,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-3",
+            "phase": "prompt",
+            "position": 102,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-3",
+            "phase": "generated",
+            "position": 117,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-3",
+            "phase": "generated",
+            "position": 118,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-3",
+            "phase": "generated",
+            "position": 119,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-3",
+            "phase": "generated",
+            "position": 120,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-3",
+            "phase": "generated",
+            "position": 121,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-3",
+            "phase": "generated",
+            "position": 122,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-3",
+            "phase": "generated",
+            "position": 123,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-3",
+            "phase": "generated",
+            "position": 124,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-3",
+            "phase": "generated",
+            "position": 139,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-3",
+            "phase": "generated",
+            "position": 140,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-3",
+            "phase": "generated",
+            "position": 141,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-3",
+            "phase": "generated",
+            "position": 142,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-3",
+            "phase": "generated",
+            "position": 143,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-3",
+            "phase": "generated",
+            "position": 144,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-3",
+            "phase": "generated",
+            "position": 145,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-3",
+            "phase": "generated",
+            "position": 146,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-3",
+            "phase": "generated",
+            "position": 183,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-3",
+            "phase": "generated",
+            "position": 184,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-3",
+            "phase": "generated",
+            "position": 185,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-3",
+            "phase": "generated",
+            "position": 186,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-3",
+            "phase": "generated",
+            "position": 187,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-3",
+            "phase": "generated",
+            "position": 188,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-3",
+            "phase": "generated",
+            "position": 189,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-06",
+            "id": "synthetic-family-06/example-3",
+            "phase": "generated",
+            "position": 190,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-2",
+            "phase": "prompt",
+            "position": 94,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-2",
+            "phase": "prompt",
+            "position": 95,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-2",
+            "phase": "prompt",
+            "position": 96,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-2",
+            "phase": "prompt",
+            "position": 97,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-2",
+            "phase": "prompt",
+            "position": 98,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-2",
+            "phase": "prompt",
+            "position": 99,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-2",
+            "phase": "prompt",
+            "position": 100,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-2",
+            "phase": "prompt",
+            "position": 101,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-2",
+            "phase": "generated",
+            "position": 114,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-2",
+            "phase": "generated",
+            "position": 115,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-2",
+            "phase": "generated",
+            "position": 116,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-2",
+            "phase": "generated",
+            "position": 117,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-2",
+            "phase": "generated",
+            "position": 118,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-2",
+            "phase": "generated",
+            "position": 119,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-2",
+            "phase": "generated",
+            "position": 120,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-2",
+            "phase": "generated",
+            "position": 121,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-2",
+            "phase": "generated",
+            "position": 134,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-2",
+            "phase": "generated",
+            "position": 135,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-2",
+            "phase": "generated",
+            "position": 136,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-2",
+            "phase": "generated",
+            "position": 137,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-2",
+            "phase": "generated",
+            "position": 138,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-2",
+            "phase": "generated",
+            "position": 139,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-2",
+            "phase": "generated",
+            "position": 140,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-2",
+            "phase": "generated",
+            "position": 141,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-2",
+            "phase": "generated",
+            "position": 174,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-2",
+            "phase": "generated",
+            "position": 175,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-2",
+            "phase": "generated",
+            "position": 176,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-2",
+            "phase": "generated",
+            "position": 177,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-2",
+            "phase": "generated",
+            "position": 178,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-2",
+            "phase": "generated",
+            "position": 179,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-2",
+            "phase": "generated",
+            "position": 180,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-07",
+            "id": "synthetic-family-07/example-2",
+            "phase": "generated",
+            "position": 181,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-2",
+            "phase": "prompt",
+            "position": 94,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-2",
+            "phase": "prompt",
+            "position": 95,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-2",
+            "phase": "prompt",
+            "position": 96,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-2",
+            "phase": "prompt",
+            "position": 97,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-2",
+            "phase": "prompt",
+            "position": 98,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-2",
+            "phase": "prompt",
+            "position": 99,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-2",
+            "phase": "prompt",
+            "position": 100,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-2",
+            "phase": "prompt",
+            "position": 101,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-2",
+            "phase": "generated",
+            "position": 114,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-2",
+            "phase": "generated",
+            "position": 115,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-2",
+            "phase": "generated",
+            "position": 116,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-2",
+            "phase": "generated",
+            "position": 117,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-2",
+            "phase": "generated",
+            "position": 118,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-2",
+            "phase": "generated",
+            "position": 119,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-2",
+            "phase": "generated",
+            "position": 120,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-2",
+            "phase": "generated",
+            "position": 121,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-2",
+            "phase": "generated",
+            "position": 134,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-2",
+            "phase": "generated",
+            "position": 135,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-2",
+            "phase": "generated",
+            "position": 136,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-2",
+            "phase": "generated",
+            "position": 137,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-2",
+            "phase": "generated",
+            "position": 138,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-2",
+            "phase": "generated",
+            "position": 139,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-2",
+            "phase": "generated",
+            "position": 140,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-2",
+            "phase": "generated",
+            "position": 141,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-2",
+            "phase": "generated",
+            "position": 174,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-2",
+            "phase": "generated",
+            "position": 175,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-2",
+            "phase": "generated",
+            "position": 176,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-2",
+            "phase": "generated",
+            "position": 177,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-2",
+            "phase": "generated",
+            "position": 178,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-2",
+            "phase": "generated",
+            "position": 179,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-2",
+            "phase": "generated",
+            "position": 180,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-08",
+            "id": "synthetic-family-08/example-2",
+            "phase": "generated",
+            "position": 181,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-1",
+            "phase": "prompt",
+            "position": 93,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-1",
+            "phase": "prompt",
+            "position": 94,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-1",
+            "phase": "prompt",
+            "position": 95,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-1",
+            "phase": "prompt",
+            "position": 96,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-1",
+            "phase": "prompt",
+            "position": 97,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-1",
+            "phase": "prompt",
+            "position": 98,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-1",
+            "phase": "prompt",
+            "position": 99,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-1",
+            "phase": "prompt",
+            "position": 100,
+            "region": "prompt"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-1",
+            "phase": "generated",
+            "position": 111,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-1",
+            "phase": "generated",
+            "position": 112,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-1",
+            "phase": "generated",
+            "position": 113,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-1",
+            "phase": "generated",
+            "position": 114,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-1",
+            "phase": "generated",
+            "position": 115,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-1",
+            "phase": "generated",
+            "position": 116,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-1",
+            "phase": "generated",
+            "position": 117,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-1",
+            "phase": "generated",
+            "position": 118,
+            "region": "early"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-1",
+            "phase": "generated",
+            "position": 129,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-1",
+            "phase": "generated",
+            "position": 130,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-1",
+            "phase": "generated",
+            "position": 131,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-1",
+            "phase": "generated",
+            "position": 132,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-1",
+            "phase": "generated",
+            "position": 133,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-1",
+            "phase": "generated",
+            "position": 134,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-1",
+            "phase": "generated",
+            "position": 135,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-1",
+            "phase": "generated",
+            "position": 136,
+            "region": "middle"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-1",
+            "phase": "generated",
+            "position": 165,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-1",
+            "phase": "generated",
+            "position": 166,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-1",
+            "phase": "generated",
+            "position": 167,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-1",
+            "phase": "generated",
+            "position": 168,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-1",
+            "phase": "generated",
+            "position": 169,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-1",
+            "phase": "generated",
+            "position": 170,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-1",
+            "phase": "generated",
+            "position": 171,
+            "region": "late"
+          },
+          {
+            "family": "synthetic-family-09",
+            "id": "synthetic-family-09/example-1",
+            "phase": "generated",
+            "position": 172,
+            "region": "late"
+          }
+        ],
+        "roster_sha256": "1ace6024dc3bfaef249c315ee790b345cc6fd2d9db9537b2c8d04b39ce5bbe17",
+        "rows_per_pass": 320,
+        "trajectory_count": 10
+      }
+    },
+    "common_preprocessing_pool": {
+      "roster_sha256": "984c0c69256183f042d4d80550f4efa499cdab27a1effd2d472f6b3ae857ec31",
+      "rows_per_pass": 1280
+    },
+    "data_selection_seed": 20260911,
+    "narrow_trajectory_choices": {
+      "synthetic-family-00": "synthetic-family-00/example-0",
+      "synthetic-family-01": "synthetic-family-01/example-2",
+      "synthetic-family-02": "synthetic-family-02/example-2",
+      "synthetic-family-03": "synthetic-family-03/example-3",
+      "synthetic-family-04": "synthetic-family-04/example-3",
+      "synthetic-family-05": "synthetic-family-05/example-3",
+      "synthetic-family-06": "synthetic-family-06/example-3",
+      "synthetic-family-07": "synthetic-family-07/example-2",
+      "synthetic-family-08": "synthetic-family-08/example-2",
+      "synthetic-family-09": "synthetic-family-09/example-1"
+    },
+    "selection_rule": "Minimum SHA-256 of canonical seed/family/id object, independent of metadata order and activation values.",
+    "shared_retained_rows_per_pass": 80
+  },
+  "provenance": {
+    "runner_sha256": "edbefb46a40f696b3e01c9c2075ee486705ae3d70ba7e7a36f5b63e75e16a917",
+    "window_recipe_sha256": "83e3127a79788949b430082201f0308a62125595a5a37e44f3719fecfcc35864"
+  },
+  "report_id": "c5e71e54cad2f756757f7ac9286b0f7ce492bcdcf51bbc75936953be197e7887",
+  "schema": "sch.vpd-sae-trajectory-breadth-plan.v1",
+  "source": {
+    "fresh_pack": false,
+    "kind": "synthetic_demo"
+  }
+}

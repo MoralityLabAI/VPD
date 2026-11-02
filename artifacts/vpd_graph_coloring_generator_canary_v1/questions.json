@@ -1,0 +1,274 @@
+[
+  {
+    "constraints": {
+      "edges": [
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          12
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          11
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          4,
+          10
+        ],
+        [
+          4,
+          13
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          5,
+          10
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          6,
+          11
+        ],
+        [
+          8,
+          13
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          9,
+          11
+        ],
+        [
+          10,
+          12
+        ]
+      ],
+      "max_colors": 3,
+      "vertex_count": 13
+    },
+    "family": "graph_coloring",
+    "id": "graph-coloring-development-medium-seed-0",
+    "prompt": "Color an undirected graph with vertices 1 through 13. Use integer colors 0 through 2; adjacent vertices must have different colors. Return only a JSON array with one color per vertex, in vertex order. You may use fewer than the allowed colors; any valid coloring is accepted.\nEdges: [[1,3],[1,7],[1,12],[2,4],[2,9],[3,4],[3,11],[4,5],[4,10],[4,13],[5,6],[5,8],[5,10],[6,7],[6,8],[6,11],[8,13],[9,10],[9,11],[10,12]]",
+    "public_instance_sha256": "520369c8f7ac73d72add224c6e4df1caa324744cdf8f9a3cf57a411671d26c6b",
+    "role": "development_only",
+    "schema": "sch.vpd-graph-coloring-text-question.v1"
+  },
+  {
+    "constraints": {
+      "edges": [
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          2,
+          11
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          8,
+          9
+        ]
+      ],
+      "max_colors": 3,
+      "vertex_count": 11
+    },
+    "family": "graph_coloring",
+    "id": "graph-coloring-development-medium-seed-1",
+    "prompt": "Color an undirected graph with vertices 1 through 11. Use integer colors 0 through 2; adjacent vertices must have different colors. Return only a JSON array with one color per vertex, in vertex order. You may use fewer than the allowed colors; any valid coloring is accepted.\nEdges: [[1,3],[1,4],[1,8],[2,6],[2,9],[2,11],[3,5],[5,9],[6,7],[7,11],[8,9]]",
+    "public_instance_sha256": "56796d13fd5ef7e28f8d9118f7a1fe21e059c3d7171a22ad99888ece9d7495f9",
+    "role": "development_only",
+    "schema": "sch.vpd-graph-coloring-text-question.v1"
+  },
+  {
+    "constraints": {
+      "edges": [
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          3,
+          10
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          4,
+          8
+        ]
+      ],
+      "max_colors": 2,
+      "vertex_count": 10
+    },
+    "family": "graph_coloring",
+    "id": "graph-coloring-development-medium-seed-2",
+    "prompt": "Color an undirected graph with vertices 1 through 10. Use integer colors 0 through 1; adjacent vertices must have different colors. Return only a JSON array with one color per vertex, in vertex order. You may use fewer than the allowed colors; any valid coloring is accepted.\nEdges: [[1,3],[1,6],[1,7],[1,8],[3,10],[4,5],[4,6],[4,7],[4,8]]",
+    "public_instance_sha256": "4356ca8293002a043021254c9bbda05b1a374ae366b67522b40fe703db4fca91",
+    "role": "development_only",
+    "schema": "sch.vpd-graph-coloring-text-question.v1"
+  },
+  {
+    "constraints": {
+      "edges": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          10
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          2,
+          11
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          3,
+          10
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          5,
+          10
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          8,
+          10
+        ],
+        [
+          8,
+          11
+        ]
+      ],
+      "max_colors": 3,
+      "vertex_count": 11
+    },
+    "family": "graph_coloring",
+    "id": "graph-coloring-development-medium-seed-3",
+    "prompt": "Color an undirected graph with vertices 1 through 11. Use integer colors 0 through 2; adjacent vertices must have different colors. Return only a JSON array with one color per vertex, in vertex order. You may use fewer than the allowed colors; any valid coloring is accepted.\nEdges: [[1,2],[1,10],[2,7],[2,8],[2,11],[3,5],[3,7],[3,10],[5,6],[5,8],[5,10],[7,10],[8,10],[8,11]]",
+    "public_instance_sha256": "5365cd9773c2d26a6409d3bb6954662b0c96012d1cc2fdb2f0f4e81706626616",
+    "role": "development_only",
+    "schema": "sch.vpd-graph-coloring-text-question.v1"
+  }
+]

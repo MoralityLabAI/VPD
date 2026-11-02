@@ -1,0 +1,1700 @@
+{
+  "boundary": {
+    "fresh_holdout_used": false,
+    "model_inference_performed": false,
+    "operative_admissions": 0,
+    "paid_compute_launched": false,
+    "training_performed": false
+  },
+  "design": {
+    "conditional_null": "enumerate all error assignments within each family, holding distances and family labels fixed",
+    "family_control": "subtract each observed family mean from both example-mean distance and error",
+    "influence": "descriptive leave-one-example and leave-one-family-out pooled correlations; no selection",
+    "multiplicity": "Bonferroni across all 16 related archive/site/pass/phase checks",
+    "status": "post-hoc exploratory controls after inspecting the pooled correlations"
+  },
+  "limitations": [
+    "Conditional permutation calibration assumes within-family example exchangeability; repeated templates/content may violate it.",
+    "Post-hoc p-values are descriptive sensitivity results, not confirmatory evidence or launch/admission gates.",
+    "Only ARC (six) and math (two) have multiple evaluation examples; singleton families contribute zero centered residuals.",
+    "Family centering does not control activation magnitude, token/content similarity or other within-family confounding.",
+    "Neither a surviving nor a vanishing association identifies a causal repair or validates SAE compartments."
+  ],
+  "provenance": {
+    "coverage_runner_sha256": "61fdb8762d5d649ef430b5ee329783788dbfef6ab5c5b3975c766e1282f88f30",
+    "runner_sha256": "91af710374705fd88fd45b9cc4d9cde58d803523333cbd11ba4b860db188b292"
+  },
+  "report_id": "1cdfa34ebde98713b5a75b64c8c5ec582a975b1418d421933d7aa57828b22d1a",
+  "results": [
+    {
+      "between_family_cross_product": 1.541956462463528,
+      "bonferroni_all_16_posthoc_p": 1.0,
+      "evaluation_examples": 10,
+      "exact_within_family_permutations": 1440,
+      "examples_in_nonsingleton_families": 8,
+      "families_with_within_family_variation_possible": 2,
+      "family_centered_pearson_r": 0.8315201117384333,
+      "family_sizes": [
+        {
+          "descriptive_pearson_r": 0.4118132367017667,
+          "examples": 6,
+          "family": "arc_grid"
+        },
+        {
+          "descriptive_pearson_r": null,
+          "examples": 1,
+          "family": "campsite"
+        },
+        {
+          "descriptive_pearson_r": null,
+          "examples": 1,
+          "family": "dyck_language"
+        },
+        {
+          "descriptive_pearson_r": null,
+          "examples": 2,
+          "family": "math"
+        }
+      ],
+      "leave_one_example_out": [
+        {
+          "omitted_id": "arc_agi_1/12422b43/0",
+          "pearson_r": 0.9983102403519181
+        },
+        {
+          "omitted_id": "arc_agi_1/c074846d/0",
+          "pearson_r": 0.9983067483801422
+        },
+        {
+          "omitted_id": "arc_agi_1/c074846d/1",
+          "pearson_r": 0.998310465376272
+        },
+        {
+          "omitted_id": "arc_agi_2/3dc255db/0",
+          "pearson_r": 0.9984297210323834
+        },
+        {
+          "omitted_id": "arc_agi_2/78332cb0/0",
+          "pearson_r": 0.998370632368259
+        },
+        {
+          "omitted_id": "arc_agi_2/78332cb0/1",
+          "pearson_r": 0.9983592911691574
+        },
+        {
+          "omitted_id": "intellect3_logic/00062/72b57dbd293b",
+          "pearson_r": 0.9996303201158572
+        },
+        {
+          "omitted_id": "intellect3_logic/05869/5de8a003a86f",
+          "pearson_r": 0.998301075006377
+        },
+        {
+          "omitted_id": "intellect3_math/04162/0fae120567d0",
+          "pearson_r": 0.9984473586508916
+        },
+        {
+          "omitted_id": "intellect3_math/10603/9d30832ed4ab",
+          "pearson_r": 0.9983914212216978
+        }
+      ],
+      "leave_one_family_out": [
+        {
+          "omitted_family": "arc_grid",
+          "pearson_r": 0.9972193788334185,
+          "remaining_examples": 4
+        },
+        {
+          "omitted_family": "campsite",
+          "pearson_r": 0.9996303201158572,
+          "remaining_examples": 9
+        },
+        {
+          "omitted_family": "dyck_language",
+          "pearson_r": 0.998301075006377,
+          "remaining_examples": 9
+        },
+        {
+          "omitted_family": "math",
+          "pearson_r": 0.9984405090716302,
+          "remaining_examples": 8
+        }
+      ],
+      "pass": 0,
+      "path": "C:\\projects\\VPD\\artifacts\\nanbeige_reasoning\\q4_reasoning_pilot_v1\\q4_reasoning_saes",
+      "phase": "prompt",
+      "pooled_pearson_r": 0.9983896179699769,
+      "posthoc_conditional_upper_tail_p": 0.10902777777777778,
+      "site": "model.layers.11",
+      "total_centered_cross_product": 1.5432136073303742,
+      "within_family_cross_product": 0.0012571448668461025,
+      "within_family_fraction_of_total_cross_product": 0.0008146279043125172
+    },
+    {
+      "between_family_cross_product": 0.17957949196112663,
+      "bonferroni_all_16_posthoc_p": 0.044444444444444446,
+      "evaluation_examples": 10,
+      "exact_within_family_permutations": 1440,
+      "examples_in_nonsingleton_families": 8,
+      "families_with_within_family_variation_possible": 2,
+      "family_centered_pearson_r": 0.9565742805156233,
+      "family_sizes": [
+        {
+          "descriptive_pearson_r": 0.9590900757205519,
+          "examples": 6,
+          "family": "arc_grid"
+        },
+        {
+          "descriptive_pearson_r": null,
+          "examples": 1,
+          "family": "campsite"
+        },
+        {
+          "descriptive_pearson_r": null,
+          "examples": 1,
+          "family": "dyck_language"
+        },
+        {
+          "descriptive_pearson_r": null,
+          "examples": 2,
+          "family": "math"
+        }
+      ],
+      "leave_one_example_out": [
+        {
+          "omitted_id": "arc_agi_1/12422b43/0",
+          "pearson_r": 0.9850503256100558
+        },
+        {
+          "omitted_id": "arc_agi_1/c074846d/0",
+          "pearson_r": 0.9876962828380501
+        },
+        {
+          "omitted_id": "arc_agi_1/c074846d/1",
+          "pearson_r": 0.9907165134487724
+        },
+        {
+          "omitted_id": "arc_agi_2/3dc255db/0",
+          "pearson_r": 0.9816285946126659
+        },
+        {
+          "omitted_id": "arc_agi_2/78332cb0/0",
+          "pearson_r": 0.9845575678459749
+        },
+        {
+          "omitted_id": "arc_agi_2/78332cb0/1",
+          "pearson_r": 0.983443921158228
+        },
+        {
+          "omitted_id": "intellect3_logic/00062/72b57dbd293b",
+          "pearson_r": 0.9856670997337064
+        },
+        {
+          "omitted_id": "intellect3_logic/05869/5de8a003a86f",
+          "pearson_r": 0.9846893691776657
+        },
+        {
+          "omitted_id": "intellect3_math/04162/0fae120567d0",
+          "pearson_r": 0.9813361869187838
+        },
+        {
+          "omitted_id": "intellect3_math/10603/9d30832ed4ab",
+          "pearson_r": 0.9861372180923369
+        }
+      ],
+      "leave_one_family_out": [
+        {
+          "omitted_family": "arc_grid",
+          "pearson_r": 0.9890546036754435,
+          "remaining_examples": 4
+        },
+        {
+          "omitted_family": "campsite",
+          "pearson_r": 0.9856670997337064,
+          "remaining_examples": 9
+        },
+        {
+          "omitted_family": "dyck_language",
+          "pearson_r": 0.9846893691776657,
+          "remaining_examples": 9
+        },
+        {
+          "omitted_family": "math",
+          "pearson_r": 0.9776504127286932,
+          "remaining_examples": 8
+        }
+      ],
+      "pass": 0,
+      "path": "C:\\projects\\VPD\\artifacts\\nanbeige_reasoning\\q4_reasoning_pilot_v1\\q4_reasoning_saes",
+      "phase": "generated",
+      "pooled_pearson_r": 0.985108061285123,
+      "posthoc_conditional_upper_tail_p": 0.002777777777777778,
+      "site": "model.layers.11",
+      "total_centered_cross_product": 0.2544817920377757,
+      "within_family_cross_product": 0.07490230007664926,
+      "within_family_fraction_of_total_cross_product": 0.29433264940829496
+    },
+    {
+      "between_family_cross_product": 1.1741294396139486,
+      "bonferroni_all_16_posthoc_p": 1.0,
+      "evaluation_examples": 10,
+      "exact_within_family_permutations": 1440,
+      "examples_in_nonsingleton_families": 8,
+      "families_with_within_family_variation_possible": 2,
+      "family_centered_pearson_r": 0.9644226674207225,
+      "family_sizes": [
+        {
+          "descriptive_pearson_r": 0.6436336398776521,
+          "examples": 6,
+          "family": "arc_grid"
+        },
+        {
+          "descriptive_pearson_r": null,
+          "examples": 1,
+          "family": "campsite"
+        },
+        {
+          "descriptive_pearson_r": null,
+          "examples": 1,
+          "family": "dyck_language"
+        },
+        {
+          "descriptive_pearson_r": null,
+          "examples": 2,
+          "family": "math"
+        }
+      ],
+      "leave_one_example_out": [
+        {
+          "omitted_id": "arc_agi_1/12422b43/0",
+          "pearson_r": 0.9968222395797547
+        },
+        {
+          "omitted_id": "arc_agi_1/c074846d/0",
+          "pearson_r": 0.9970465165832834
+        },
+        {
+          "omitted_id": "arc_agi_1/c074846d/1",
+          "pearson_r": 0.9968653762773919
+        },
+        {
+          "omitted_id": "arc_agi_2/3dc255db/0",
+          "pearson_r": 0.9968264364620756
+        },
+        {
+          "omitted_id": "arc_agi_2/78332cb0/0",
+          "pearson_r": 0.996943643736079
+        },
+        {
+          "omitted_id": "arc_agi_2/78332cb0/1",
+          "pearson_r": 0.9970900265652726
+        },
+        {
+          "omitted_id": "intellect3_logic/00062/72b57dbd293b",
+          "pearson_r": 0.9971182056955358
+        },
+        {
+          "omitted_id": "intellect3_logic/05869/5de8a003a86f",
+          "pearson_r": 0.9938253576510463
+        },
+        {
+          "omitted_id": "intellect3_math/04162/0fae120567d0",
+          "pearson_r": 0.9988167582291423
+        },
+        {
+          "omitted_id": "intellect3_math/10603/9d30832ed4ab",
+          "pearson_r": 0.9971111220995343
+        }
+      ],
+      "leave_one_family_out": [
+        {
+          "omitted_family": "arc_grid",
+          "pearson_r": 0.9885572219033166,
+          "remaining_examples": 4
+        },
+        {
+          "omitted_family": "campsite",
+          "pearson_r": 0.9971182056955358,
+          "remaining_examples": 9
+        },
+        {
+          "omitted_family": "dyck_language",
+          "pearson_r": 0.9938253576510463,
+          "remaining_examples": 9
+        },
+        {
+          "omitted_family": "math",
+          "pearson_r": 0.9988540835543896,
+          "remaining_examples": 8
+        }
+      ],
+      "pass": 1,
+      "path": "C:\\projects\\VPD\\artifacts\\nanbeige_reasoning\\q4_reasoning_pilot_v1\\q4_reasoning_saes",
+      "phase": "prompt",
+      "pooled_pearson_r": 0.9969502712171561,
+      "posthoc_conditional_upper_tail_p": 0.06458333333333334,
+      "site": "model.layers.11",
+      "total_centered_cross_product": 1.20758299970027,
+      "within_family_cross_product": 0.0334535600863216,
+      "within_family_fraction_of_total_cross_product": 0.027702907456154148
+    },
+    {
+      "between_family_cross_product": 0.07652878862528736,
+      "bonferroni_all_16_posthoc_p": 0.022222222222222223,
+      "evaluation_examples": 10,
+      "exact_within_family_permutations": 1440,
+      "examples_in_nonsingleton_families": 8,
+      "families_with_within_family_variation_possible": 2,
+      "family_centered_pearson_r": 0.9920716835712701,
+      "family_sizes": [
+        {
+          "descriptive_pearson_r": 0.9808862867486782,
+          "examples": 6,
+          "family": "arc_grid"
+        },
+        {
+          "descriptive_pearson_r": null,
+          "examples": 1,
+          "family": "campsite"
+        },
+        {
+          "descriptive_pearson_r": null,
+          "examples": 1,
+          "family": "dyck_language"
+        },
+        {
+          "descriptive_pearson_r": null,
+          "examples": 2,
+          "family": "math"
+        }
+      ],
+      "leave_one_example_out": [
+        {
+          "omitted_id": "arc_agi_1/12422b43/0",
+          "pearson_r": 0.9834624753280556
+        },
+        {
+          "omitted_id": "arc_agi_1/c074846d/0",
+          "pearson_r": 0.9826418817687774
+        },
+        {
+          "omitted_id": "arc_agi_1/c074846d/1",
+          "pearson_r": 0.9842672423050944
+        },
+        {
+          "omitted_id": "arc_agi_2/3dc255db/0",
+          "pearson_r": 0.9842063609435332
+        },
+        {
+          "omitted_id": "arc_agi_2/78332cb0/0",
+          "pearson_r": 0.9842900902384712
+        },
+        {
+          "omitted_id": "arc_agi_2/78332cb0/1",
+          "pearson_r": 0.9884495143037892
+        },
+        {
+          "omitted_id": "intellect3_logic/00062/72b57dbd293b",
+          "pearson_r": 0.9931463679729465
+        },
+        {
+          "omitted_id": "intellect3_logic/05869/5de8a003a86f",
+          "pearson_r": 0.9852203533584947
+        },
+        {
+          "omitted_id": "intellect3_math/04162/0fae120567d0",
+          "pearson_r": 0.9487097491962322
+        },
+        {
+          "omitted_id": "intellect3_math/10603/9d30832ed4ab",
+          "pearson_r": 0.9847137002647597
+        }
+      ],
+      "leave_one_family_out": [
+        {
+          "omitted_family": "arc_grid",
+          "pearson_r": 0.992998320501306,
+          "remaining_examples": 4
+        },
+        {
+          "omitted_family": "campsite",
+          "pearson_r": 0.9931463679729465,
+          "remaining_examples": 9
+        },
+        {
+          "omitted_family": "dyck_language",
+          "pearson_r": 0.9852203533584947,
+          "remaining_examples": 9
+        },
+        {
+          "omitted_family": "math",
+          "pearson_r": 0.946279439380751,
+          "remaining_examples": 8
+        }
+      ],
+      "pass": 1,
+      "path": "C:\\projects\\VPD\\artifacts\\nanbeige_reasoning\\q4_reasoning_pilot_v1\\q4_reasoning_saes",
+      "phase": "generated",
+      "pooled_pearson_r": 0.9843079785522026,
+      "posthoc_conditional_upper_tail_p": 0.001388888888888889,
+      "site": "model.layers.11",
+      "total_centered_cross_product": 0.15726698385120588,
+      "within_family_cross_product": 0.08073819522591857,
+      "within_family_fraction_of_total_cross_product": 0.5133829952655984
+    },
+    {
+      "between_family_cross_product": 1.3303213981259632,
+      "bonferroni_all_16_posthoc_p": 1.0,
+      "evaluation_examples": 10,
+      "exact_within_family_permutations": 1440,
+      "examples_in_nonsingleton_families": 8,
+      "families_with_within_family_variation_possible": 2,
+      "family_centered_pearson_r": 0.558000887139521,
+      "family_sizes": [
+        {
+          "descriptive_pearson_r": 0.40873963338696967,
+          "examples": 6,
+          "family": "arc_grid"
+        },
+        {
+          "descriptive_pearson_r": null,
+          "examples": 1,
+          "family": "campsite"
+        },
+        {
+          "descriptive_pearson_r": null,
+          "examples": 1,
+          "family": "dyck_language"
+        },
+        {
+          "descriptive_pearson_r": null,
+          "examples": 2,
+          "family": "math"
+        }
+      ],
+      "leave_one_example_out": [
+        {
+          "omitted_id": "arc_agi_1/12422b43/0",
+          "pearson_r": 0.9912325096608907
+        },
+        {
+          "omitted_id": "arc_agi_1/c074846d/0",
+          "pearson_r": 0.9913820829137967
+        },
+        {
+          "omitted_id": "arc_agi_1/c074846d/1",
+          "pearson_r": 0.9911660936266227
+        },
+        {
+          "omitted_id": "arc_agi_2/3dc255db/0",
+          "pearson_r": 0.991472867879191
+        },
+        {
+          "omitted_id": "arc_agi_2/78332cb0/0",
+          "pearson_r": 0.9913330186143428
+        },
+        {
+          "omitted_id": "arc_agi_2/78332cb0/1",
+          "pearson_r": 0.9910612623201402
+        },
+        {
+          "omitted_id": "intellect3_logic/00062/72b57dbd293b",
+          "pearson_r": 0.9973634466606818
+        },
+        {
+          "omitted_id": "intellect3_logic/05869/5de8a003a86f",
+          "pearson_r": 0.9688853283467805
+        },
+        {
+          "omitted_id": "intellect3_math/04162/0fae120567d0",
+          "pearson_r": 0.9927237425367915
+        },
+        {
+          "omitted_id": "intellect3_math/10603/9d30832ed4ab",
+          "pearson_r": 0.9922275859351176
+        }
+      ],
+      "leave_one_family_out": [
+        {
+          "omitted_family": "arc_grid",
+          "pearson_r": 0.9790002568727099,
+          "remaining_examples": 4
+        },
+        {
+          "omitted_family": "campsite",
+          "pearson_r": 0.9973634466606818,
+          "remaining_examples": 9
+        },
+        {
+          "omitted_family": "dyck_language",
+          "pearson_r": 0.9688853283467805,
+          "remaining_examples": 9
+        },
+        {
+          "omitted_family": "math",
+          "pearson_r": 0.9938360228108223,
+          "remaining_examples": 8
+        }
+      ],
+      "pass": 0,
+      "path": "C:\\projects\\VPD\\artifacts\\nanbeige_reasoning\\q4_reasoning_pilot_v1\\q4_reasoning_saes",
+      "phase": "prompt",
+      "pooled_pearson_r": 0.9914516658931076,
+      "posthoc_conditional_upper_tail_p": 0.11736111111111111,
+      "site": "model.norm",
+      "total_centered_cross_product": 1.332320799378455,
+      "within_family_cross_product": 0.0019994012524918647,
+      "within_family_fraction_of_total_cross_product": 0.0015006905644831272
+    },
+    {
+      "between_family_cross_product": 0.1854040424010521,
+      "bonferroni_all_16_posthoc_p": 0.022222222222222223,
+      "evaluation_examples": 10,
+      "exact_within_family_permutations": 1440,
+      "examples_in_nonsingleton_families": 8,
+      "families_with_within_family_variation_possible": 2,
+      "family_centered_pearson_r": 0.9975819182299943,
+      "family_sizes": [
+        {
+          "descriptive_pearson_r": 0.9978622670124736,
+          "examples": 6,
+          "family": "arc_grid"
+        },
+        {
+          "descriptive_pearson_r": null,
+          "examples": 1,
+          "family": "campsite"
+        },
+        {
+          "descriptive_pearson_r": null,
+          "examples": 1,
+          "family": "dyck_language"
+        },
+        {
+          "descriptive_pearson_r": null,
+          "examples": 2,
+          "family": "math"
+        }
+      ],
+      "leave_one_example_out": [
+        {
+          "omitted_id": "arc_agi_1/12422b43/0",
+          "pearson_r": 0.9823283151490454
+        },
+        {
+          "omitted_id": "arc_agi_1/c074846d/0",
+          "pearson_r": 0.9812760777825543
+        },
+        {
+          "omitted_id": "arc_agi_1/c074846d/1",
+          "pearson_r": 0.9821381242186895
+        },
+        {
+          "omitted_id": "arc_agi_2/3dc255db/0",
+          "pearson_r": 0.9765115137554101
+        },
+        {
+          "omitted_id": "arc_agi_2/78332cb0/0",
+          "pearson_r": 0.9811371959211955
+        },
+        {
+          "omitted_id": "arc_agi_2/78332cb0/1",
+          "pearson_r": 0.9761088000481749
+        },
+        {
+          "omitted_id": "intellect3_logic/00062/72b57dbd293b",
+          "pearson_r": 0.9754028133412086
+        },
+        {
+          "omitted_id": "intellect3_logic/05869/5de8a003a86f",
+          "pearson_r": 0.9758892954296315
+        },
+        {
+          "omitted_id": "intellect3_math/04162/0fae120567d0",
+          "pearson_r": 0.9925366408452757
+        },
+        {
+          "omitted_id": "intellect3_math/10603/9d30832ed4ab",
+          "pearson_r": 0.9852766125114246
+        }
+      ],
+      "leave_one_family_out": [
+        {
+          "omitted_family": "arc_grid",
+          "pearson_r": 0.9951205093810104,
+          "remaining_examples": 4
+        },
+        {
+          "omitted_family": "campsite",
+          "pearson_r": 0.9754028133412086,
+          "remaining_examples": 9
+        },
+        {
+          "omitted_family": "dyck_language",
+          "pearson_r": 0.9758892954296315,
+          "remaining_examples": 9
+        },
+        {
+          "omitted_family": "math",
+          "pearson_r": 0.9991294267977001,
+          "remaining_examples": 8
+        }
+      ],
+      "pass": 0,
+      "path": "C:\\projects\\VPD\\artifacts\\nanbeige_reasoning\\q4_reasoning_pilot_v1\\q4_reasoning_saes",
+      "phase": "generated",
+      "pooled_pearson_r": 0.9812033118012534,
+      "posthoc_conditional_upper_tail_p": 0.001388888888888889,
+      "site": "model.norm",
+      "total_centered_cross_product": 0.27898074592740046,
+      "within_family_cross_product": 0.09357670352634845,
+      "within_family_fraction_of_total_cross_product": 0.33542351897897654
+    },
+    {
+      "between_family_cross_product": 0.24536798685023892,
+      "bonferroni_all_16_posthoc_p": 0.03333333333333333,
+      "evaluation_examples": 10,
+      "exact_within_family_permutations": 1440,
+      "examples_in_nonsingleton_families": 8,
+      "families_with_within_family_variation_possible": 2,
+      "family_centered_pearson_r": 0.991932183722721,
+      "family_sizes": [
+        {
+          "descriptive_pearson_r": 0.9815904048553884,
+          "examples": 6,
+          "family": "arc_grid"
+        },
+        {
+          "descriptive_pearson_r": null,
+          "examples": 1,
+          "family": "campsite"
+        },
+        {
+          "descriptive_pearson_r": null,
+          "examples": 1,
+          "family": "dyck_language"
+        },
+        {
+          "descriptive_pearson_r": null,
+          "examples": 2,
+          "family": "math"
+        }
+      ],
+      "leave_one_example_out": [
+        {
+          "omitted_id": "arc_agi_1/12422b43/0",
+          "pearson_r": 0.993695303425783
+        },
+        {
+          "omitted_id": "arc_agi_1/c074846d/0",
+          "pearson_r": 0.9939396323416761
+        },
+        {
+          "omitted_id": "arc_agi_1/c074846d/1",
+          "pearson_r": 0.9938280177760288
+        },
+        {
+          "omitted_id": "arc_agi_2/3dc255db/0",
+          "pearson_r": 0.9939742590572098
+        },
+        {
+          "omitted_id": "arc_agi_2/78332cb0/0",
+          "pearson_r": 0.9933219608171922
+        },
+        {
+          "omitted_id": "arc_agi_2/78332cb0/1",
+          "pearson_r": 0.9933375384407512
+        },
+        {
+          "omitted_id": "intellect3_logic/00062/72b57dbd293b",
+          "pearson_r": 0.994215027063303
+        },
+        {
+          "omitted_id": "intellect3_logic/05869/5de8a003a86f",
+          "pearson_r": 0.9951824155842879
+        },
+        {
+          "omitted_id": "intellect3_math/04162/0fae120567d0",
+          "pearson_r": 0.99847352087722
+        },
+        {
+          "omitted_id": "intellect3_math/10603/9d30832ed4ab",
+          "pearson_r": 0.9945320785943436
+        }
+      ],
+      "leave_one_family_out": [
+        {
+          "omitted_family": "arc_grid",
+          "pearson_r": 0.9889006900293765,
+          "remaining_examples": 4
+        },
+        {
+          "omitted_family": "campsite",
+          "pearson_r": 0.994215027063303,
+          "remaining_examples": 9
+        },
+        {
+          "omitted_family": "dyck_language",
+          "pearson_r": 0.9951824155842879,
+          "remaining_examples": 9
+        },
+        {
+          "omitted_family": "math",
+          "pearson_r": 0.9983301842010552,
+          "remaining_examples": 8
+        }
+      ],
+      "pass": 1,
+      "path": "C:\\projects\\VPD\\artifacts\\nanbeige_reasoning\\q4_reasoning_pilot_v1\\q4_reasoning_saes",
+      "phase": "prompt",
+      "pooled_pearson_r": 0.993949393789755,
+      "posthoc_conditional_upper_tail_p": 0.0020833333333333333,
+      "site": "model.norm",
+      "total_centered_cross_product": 0.2879941764385754,
+      "within_family_cross_product": 0.04262618958833637,
+      "within_family_fraction_of_total_cross_product": 0.14801059561503968
+    },
+    {
+      "between_family_cross_product": 0.17168082532986992,
+      "bonferroni_all_16_posthoc_p": 0.05555555555555555,
+      "evaluation_examples": 10,
+      "exact_within_family_permutations": 1440,
+      "examples_in_nonsingleton_families": 8,
+      "families_with_within_family_variation_possible": 2,
+      "family_centered_pearson_r": 0.9984418007237658,
+      "family_sizes": [
+        {
+          "descriptive_pearson_r": 0.9984645947357259,
+          "examples": 6,
+          "family": "arc_grid"
+        },
+        {
+          "descriptive_pearson_r": null,
+          "examples": 1,
+          "family": "campsite"
+        },
+        {
+          "descriptive_pearson_r": null,
+          "examples": 1,
+          "family": "dyck_language"
+        },
+        {
+          "descriptive_pearson_r": null,
+          "examples": 2,
+          "family": "math"
+        }
+      ],
+      "leave_one_example_out": [
+        {
+          "omitted_id": "arc_agi_1/12422b43/0",
+          "pearson_r": 0.9948911799190755
+        },
+        {
+          "omitted_id": "arc_agi_1/c074846d/0",
+          "pearson_r": 0.9939470499871732
+        },
+        {
+          "omitted_id": "arc_agi_1/c074846d/1",
+          "pearson_r": 0.9944260624172572
+        },
+        {
+          "omitted_id": "arc_agi_2/3dc255db/0",
+          "pearson_r": 0.993195892511454
+        },
+        {
+          "omitted_id": "arc_agi_2/78332cb0/0",
+          "pearson_r": 0.9931348579856748
+        },
+        {
+          "omitted_id": "arc_agi_2/78332cb0/1",
+          "pearson_r": 0.992486040517334
+        },
+        {
+          "omitted_id": "intellect3_logic/00062/72b57dbd293b",
+          "pearson_r": 0.9956836430200247
+        },
+        {
+          "omitted_id": "intellect3_logic/05869/5de8a003a86f",
+          "pearson_r": 0.9958595655239093
+        },
+        {
+          "omitted_id": "intellect3_math/04162/0fae120567d0",
+          "pearson_r": 0.9930263834457868
+        },
+        {
+          "omitted_id": "intellect3_math/10603/9d30832ed4ab",
+          "pearson_r": 0.9935121007854893
+        }
+      ],
+      "leave_one_family_out": [
+        {
+          "omitted_family": "arc_grid",
+          "pearson_r": 0.9918410410865717,
+          "remaining_examples": 4
+        },
+        {
+          "omitted_family": "campsite",
+          "pearson_r": 0.9956836430200247,
+          "remaining_examples": 9
+        },
+        {
+          "omitted_family": "dyck_language",
+          "pearson_r": 0.9958595655239093,
+          "remaining_examples": 9
+        },
+        {
+          "omitted_family": "math",
+          "pearson_r": 0.9919971767120835,
+          "remaining_examples": 8
+        }
+      ],
+      "pass": 1,
+      "path": "C:\\projects\\VPD\\artifacts\\nanbeige_reasoning\\q4_reasoning_pilot_v1\\q4_reasoning_saes",
+      "phase": "generated",
+      "pooled_pearson_r": 0.9940435197081523,
+      "posthoc_conditional_upper_tail_p": 0.003472222222222222,
+      "site": "model.norm",
+      "total_centered_cross_product": 0.4698711324929101,
+      "within_family_cross_product": 0.29819030716304024,
+      "within_family_fraction_of_total_cross_product": 0.6346214664880261
+    },
+    {
+      "between_family_cross_product": 1.508780966497261,
+      "bonferroni_all_16_posthoc_p": 1.0,
+      "evaluation_examples": 10,
+      "exact_within_family_permutations": 1440,
+      "examples_in_nonsingleton_families": 8,
+      "families_with_within_family_variation_possible": 2,
+      "family_centered_pearson_r": 0.8559083656826634,
+      "family_sizes": [
+        {
+          "descriptive_pearson_r": 0.4027040057847217,
+          "examples": 6,
+          "family": "arc_grid"
+        },
+        {
+          "descriptive_pearson_r": null,
+          "examples": 1,
+          "family": "campsite"
+        },
+        {
+          "descriptive_pearson_r": null,
+          "examples": 1,
+          "family": "dyck_language"
+        },
+        {
+          "descriptive_pearson_r": null,
+          "examples": 2,
+          "family": "math"
+        }
+      ],
+      "leave_one_example_out": [
+        {
+          "omitted_id": "arc_agi_1/12422b43/0",
+          "pearson_r": 0.9973591230854977
+        },
+        {
+          "omitted_id": "arc_agi_1/c074846d/0",
+          "pearson_r": 0.9973675101304794
+        },
+        {
+          "omitted_id": "arc_agi_1/c074846d/1",
+          "pearson_r": 0.997371673174428
+        },
+        {
+          "omitted_id": "arc_agi_2/3dc255db/0",
+          "pearson_r": 0.9975282099175143
+        },
+        {
+          "omitted_id": "arc_agi_2/78332cb0/0",
+          "pearson_r": 0.9974399105799368
+        },
+        {
+          "omitted_id": "arc_agi_2/78332cb0/1",
+          "pearson_r": 0.997449379161702
+        },
+        {
+          "omitted_id": "intellect3_logic/00062/72b57dbd293b",
+          "pearson_r": 0.9994423641915388
+        },
+        {
+          "omitted_id": "intellect3_logic/05869/5de8a003a86f",
+          "pearson_r": 0.9980737375582959
+        },
+        {
+          "omitted_id": "intellect3_math/04162/0fae120567d0",
+          "pearson_r": 0.997582823583254
+        },
+        {
+          "omitted_id": "intellect3_math/10603/9d30832ed4ab",
+          "pearson_r": 0.9974802792255322
+        }
+      ],
+      "leave_one_family_out": [
+        {
+          "omitted_family": "arc_grid",
+          "pearson_r": 0.9961423304895491,
+          "remaining_examples": 4
+        },
+        {
+          "omitted_family": "campsite",
+          "pearson_r": 0.9994423641915388,
+          "remaining_examples": 9
+        },
+        {
+          "omitted_family": "dyck_language",
+          "pearson_r": 0.9980737375582959,
+          "remaining_examples": 9
+        },
+        {
+          "omitted_family": "math",
+          "pearson_r": 0.9975695363842995,
+          "remaining_examples": 8
+        }
+      ],
+      "pass": 0,
+      "path": "C:\\projects\\VPD\\artifacts\\nanbeige_reasoning\\q4_reasoning_pilot_8192_v1\\q4_reasoning_saes",
+      "phase": "prompt",
+      "pooled_pearson_r": 0.997492186351171,
+      "posthoc_conditional_upper_tail_p": 0.11388888888888889,
+      "site": "model.layers.11",
+      "total_centered_cross_product": 1.5100798063580736,
+      "within_family_cross_product": 0.0012988398608129305,
+      "within_family_fraction_of_total_cross_product": 0.0008601133895998518
+    },
+    {
+      "between_family_cross_product": 0.1691988773311188,
+      "bonferroni_all_16_posthoc_p": 0.022222222222222223,
+      "evaluation_examples": 10,
+      "exact_within_family_permutations": 1440,
+      "examples_in_nonsingleton_families": 8,
+      "families_with_within_family_variation_possible": 2,
+      "family_centered_pearson_r": 0.9700525081900289,
+      "family_sizes": [
+        {
+          "descriptive_pearson_r": 0.9671125760299993,
+          "examples": 6,
+          "family": "arc_grid"
+        },
+        {
+          "descriptive_pearson_r": null,
+          "examples": 1,
+          "family": "campsite"
+        },
+        {
+          "descriptive_pearson_r": null,
+          "examples": 1,
+          "family": "dyck_language"
+        },
+        {
+          "descriptive_pearson_r": null,
+          "examples": 2,
+          "family": "math"
+        }
+      ],
+      "leave_one_example_out": [
+        {
+          "omitted_id": "arc_agi_1/12422b43/0",
+          "pearson_r": 0.9845210565620957
+        },
+        {
+          "omitted_id": "arc_agi_1/c074846d/0",
+          "pearson_r": 0.9856375037599258
+        },
+        {
+          "omitted_id": "arc_agi_1/c074846d/1",
+          "pearson_r": 0.971873277899888
+        },
+        {
+          "omitted_id": "arc_agi_2/3dc255db/0",
+          "pearson_r": 0.9847731986452082
+        },
+        {
+          "omitted_id": "arc_agi_2/78332cb0/0",
+          "pearson_r": 0.9935242626116542
+        },
+        {
+          "omitted_id": "arc_agi_2/78332cb0/1",
+          "pearson_r": 0.9838462086754769
+        },
+        {
+          "omitted_id": "intellect3_logic/00062/72b57dbd293b",
+          "pearson_r": 0.9862177960962527
+        },
+        {
+          "omitted_id": "intellect3_logic/05869/5de8a003a86f",
+          "pearson_r": 0.9810862951695575
+        },
+        {
+          "omitted_id": "intellect3_math/04162/0fae120567d0",
+          "pearson_r": 0.9814827730557193
+        },
+        {
+          "omitted_id": "intellect3_math/10603/9d30832ed4ab",
+          "pearson_r": 0.986043692809562
+        }
+      ],
+      "leave_one_family_out": [
+        {
+          "omitted_family": "arc_grid",
+          "pearson_r": 0.9964596038236152,
+          "remaining_examples": 4
+        },
+        {
+          "omitted_family": "campsite",
+          "pearson_r": 0.9862177960962527,
+          "remaining_examples": 9
+        },
+        {
+          "omitted_family": "dyck_language",
+          "pearson_r": 0.9810862951695575,
+          "remaining_examples": 9
+        },
+        {
+          "omitted_family": "math",
+          "pearson_r": 0.9832964465658042,
+          "remaining_examples": 8
+        }
+      ],
+      "pass": 0,
+      "path": "C:\\projects\\VPD\\artifacts\\nanbeige_reasoning\\q4_reasoning_pilot_8192_v1\\q4_reasoning_saes",
+      "phase": "generated",
+      "pooled_pearson_r": 0.9844969758492687,
+      "posthoc_conditional_upper_tail_p": 0.001388888888888889,
+      "site": "model.layers.11",
+      "total_centered_cross_product": 0.2541719493531626,
+      "within_family_cross_product": 0.08497307202204388,
+      "within_family_fraction_of_total_cross_product": 0.3343133348832955
+    },
+    {
+      "between_family_cross_product": 1.2171119813453946,
+      "bonferroni_all_16_posthoc_p": 0.1,
+      "evaluation_examples": 10,
+      "exact_within_family_permutations": 1440,
+      "examples_in_nonsingleton_families": 8,
+      "families_with_within_family_variation_possible": 2,
+      "family_centered_pearson_r": 0.985095245227974,
+      "family_sizes": [
+        {
+          "descriptive_pearson_r": 0.9149215753695337,
+          "examples": 6,
+          "family": "arc_grid"
+        },
+        {
+          "descriptive_pearson_r": null,
+          "examples": 1,
+          "family": "campsite"
+        },
+        {
+          "descriptive_pearson_r": null,
+          "examples": 1,
+          "family": "dyck_language"
+        },
+        {
+          "descriptive_pearson_r": null,
+          "examples": 2,
+          "family": "math"
+        }
+      ],
+      "leave_one_example_out": [
+        {
+          "omitted_id": "arc_agi_1/12422b43/0",
+          "pearson_r": 0.9972254778688132
+        },
+        {
+          "omitted_id": "arc_agi_1/c074846d/0",
+          "pearson_r": 0.9972461179459516
+        },
+        {
+          "omitted_id": "arc_agi_1/c074846d/1",
+          "pearson_r": 0.9972134929300879
+        },
+        {
+          "omitted_id": "arc_agi_2/3dc255db/0",
+          "pearson_r": 0.9972514751644436
+        },
+        {
+          "omitted_id": "arc_agi_2/78332cb0/0",
+          "pearson_r": 0.9972432655920083
+        },
+        {
+          "omitted_id": "arc_agi_2/78332cb0/1",
+          "pearson_r": 0.9972941876002164
+        },
+        {
+          "omitted_id": "intellect3_logic/00062/72b57dbd293b",
+          "pearson_r": 0.9981366927403231
+        },
+        {
+          "omitted_id": "intellect3_logic/05869/5de8a003a86f",
+          "pearson_r": 0.9943624161297907
+        },
+        {
+          "omitted_id": "intellect3_math/04162/0fae120567d0",
+          "pearson_r": 0.9990208706098087
+        },
+        {
+          "omitted_id": "intellect3_math/10603/9d30832ed4ab",
+          "pearson_r": 0.9975940124543835
+        }
+      ],
+      "leave_one_family_out": [
+        {
+          "omitted_family": "arc_grid",
+          "pearson_r": 0.988110692540198,
+          "remaining_examples": 4
+        },
+        {
+          "omitted_family": "campsite",
+          "pearson_r": 0.9981366927403231,
+          "remaining_examples": 9
+        },
+        {
+          "omitted_family": "dyck_language",
+          "pearson_r": 0.9943624161297907,
+          "remaining_examples": 9
+        },
+        {
+          "omitted_family": "math",
+          "pearson_r": 0.9991111205540115,
+          "remaining_examples": 8
+        }
+      ],
+      "pass": 1,
+      "path": "C:\\projects\\VPD\\artifacts\\nanbeige_reasoning\\q4_reasoning_pilot_8192_v1\\q4_reasoning_saes",
+      "phase": "prompt",
+      "pooled_pearson_r": 0.9973666462211571,
+      "posthoc_conditional_upper_tail_p": 0.00625,
+      "site": "model.layers.11",
+      "total_centered_cross_product": 1.2523511189009497,
+      "within_family_cross_product": 0.03523913755555489,
+      "within_family_fraction_of_total_cross_product": 0.028138384693966966
+    },
+    {
+      "between_family_cross_product": 0.030996588396347908,
+      "bonferroni_all_16_posthoc_p": 0.044444444444444446,
+      "evaluation_examples": 10,
+      "exact_within_family_permutations": 1440,
+      "examples_in_nonsingleton_families": 8,
+      "families_with_within_family_variation_possible": 2,
+      "family_centered_pearson_r": 0.9583495192443524,
+      "family_sizes": [
+        {
+          "descriptive_pearson_r": 0.9440075145408722,
+          "examples": 6,
+          "family": "arc_grid"
+        },
+        {
+          "descriptive_pearson_r": null,
+          "examples": 1,
+          "family": "campsite"
+        },
+        {
+          "descriptive_pearson_r": null,
+          "examples": 1,
+          "family": "dyck_language"
+        },
+        {
+          "descriptive_pearson_r": null,
+          "examples": 2,
+          "family": "math"
+        }
+      ],
+      "leave_one_example_out": [
+        {
+          "omitted_id": "arc_agi_1/12422b43/0",
+          "pearson_r": 0.9553817290908274
+        },
+        {
+          "omitted_id": "arc_agi_1/c074846d/0",
+          "pearson_r": 0.9514352461576759
+        },
+        {
+          "omitted_id": "arc_agi_1/c074846d/1",
+          "pearson_r": 0.9250492356396552
+        },
+        {
+          "omitted_id": "arc_agi_2/3dc255db/0",
+          "pearson_r": 0.9537697275555299
+        },
+        {
+          "omitted_id": "arc_agi_2/78332cb0/0",
+          "pearson_r": 0.9619673731755244
+        },
+        {
+          "omitted_id": "arc_agi_2/78332cb0/1",
+          "pearson_r": 0.9534095955429621
+        },
+        {
+          "omitted_id": "intellect3_logic/00062/72b57dbd293b",
+          "pearson_r": 0.9521413541717569
+        },
+        {
+          "omitted_id": "intellect3_logic/05869/5de8a003a86f",
+          "pearson_r": 0.946329429161335
+        },
+        {
+          "omitted_id": "intellect3_math/04162/0fae120567d0",
+          "pearson_r": 0.9340867535199584
+        },
+        {
+          "omitted_id": "intellect3_math/10603/9d30832ed4ab",
+          "pearson_r": 0.9543905414177953
+        }
+      ],
+      "leave_one_family_out": [
+        {
+          "omitted_family": "arc_grid",
+          "pearson_r": 0.9786058517348759,
+          "remaining_examples": 4
+        },
+        {
+          "omitted_family": "campsite",
+          "pearson_r": 0.9521413541717569,
+          "remaining_examples": 9
+        },
+        {
+          "omitted_family": "dyck_language",
+          "pearson_r": 0.946329429161335,
+          "remaining_examples": 9
+        },
+        {
+          "omitted_family": "math",
+          "pearson_r": 0.9430050808133484,
+          "remaining_examples": 8
+        }
+      ],
+      "pass": 1,
+      "path": "C:\\projects\\VPD\\artifacts\\nanbeige_reasoning\\q4_reasoning_pilot_8192_v1\\q4_reasoning_saes",
+      "phase": "generated",
+      "pooled_pearson_r": 0.949207207574743,
+      "posthoc_conditional_upper_tail_p": 0.002777777777777778,
+      "site": "model.layers.11",
+      "total_centered_cross_product": 0.12259206476677756,
+      "within_family_cross_product": 0.09159547637042963,
+      "within_family_fraction_of_total_cross_product": 0.747156649532605
+    },
+    {
+      "between_family_cross_product": 1.3759325047245092,
+      "bonferroni_all_16_posthoc_p": 1.0,
+      "evaluation_examples": 10,
+      "exact_within_family_permutations": 1440,
+      "examples_in_nonsingleton_families": 8,
+      "families_with_within_family_variation_possible": 2,
+      "family_centered_pearson_r": 0.47161247798720957,
+      "family_sizes": [
+        {
+          "descriptive_pearson_r": 0.30600425192458536,
+          "examples": 6,
+          "family": "arc_grid"
+        },
+        {
+          "descriptive_pearson_r": null,
+          "examples": 1,
+          "family": "campsite"
+        },
+        {
+          "descriptive_pearson_r": null,
+          "examples": 1,
+          "family": "dyck_language"
+        },
+        {
+          "descriptive_pearson_r": null,
+          "examples": 2,
+          "family": "math"
+        }
+      ],
+      "leave_one_example_out": [
+        {
+          "omitted_id": "arc_agi_1/12422b43/0",
+          "pearson_r": 0.9928315927838811
+        },
+        {
+          "omitted_id": "arc_agi_1/c074846d/0",
+          "pearson_r": 0.9929078886927161
+        },
+        {
+          "omitted_id": "arc_agi_1/c074846d/1",
+          "pearson_r": 0.9927727777948282
+        },
+        {
+          "omitted_id": "arc_agi_2/3dc255db/0",
+          "pearson_r": 0.9929894660043204
+        },
+        {
+          "omitted_id": "arc_agi_2/78332cb0/0",
+          "pearson_r": 0.9931705945656091
+        },
+        {
+          "omitted_id": "arc_agi_2/78332cb0/1",
+          "pearson_r": 0.9928988885956631
+        },
+        {
+          "omitted_id": "intellect3_logic/00062/72b57dbd293b",
+          "pearson_r": 0.998426795135346
+        },
+        {
+          "omitted_id": "intellect3_logic/05869/5de8a003a86f",
+          "pearson_r": 0.9769077459683128
+        },
+        {
+          "omitted_id": "intellect3_math/04162/0fae120567d0",
+          "pearson_r": 0.99339334588571
+        },
+        {
+          "omitted_id": "intellect3_math/10603/9d30832ed4ab",
+          "pearson_r": 0.9933473767830001
+        }
+      ],
+      "leave_one_family_out": [
+        {
+          "omitted_family": "arc_grid",
+          "pearson_r": 0.9844428294398859,
+          "remaining_examples": 4
+        },
+        {
+          "omitted_family": "campsite",
+          "pearson_r": 0.998426795135346,
+          "remaining_examples": 9
+        },
+        {
+          "omitted_family": "dyck_language",
+          "pearson_r": 0.9769077459683128,
+          "remaining_examples": 9
+        },
+        {
+          "omitted_family": "math",
+          "pearson_r": 0.9938349300233237,
+          "remaining_examples": 8
+        }
+      ],
+      "pass": 0,
+      "path": "C:\\projects\\VPD\\artifacts\\nanbeige_reasoning\\q4_reasoning_pilot_8192_v1\\q4_reasoning_saes",
+      "phase": "prompt",
+      "pooled_pearson_r": 0.993020865169388,
+      "posthoc_conditional_upper_tail_p": 0.15208333333333332,
+      "site": "model.norm",
+      "total_centered_cross_product": 1.377430705286493,
+      "within_family_cross_product": 0.0014982005619838701,
+      "within_family_fraction_of_total_cross_product": 0.001087677627799257
+    },
+    {
+      "between_family_cross_product": 0.14595918961618895,
+      "bonferroni_all_16_posthoc_p": 0.05555555555555555,
+      "evaluation_examples": 10,
+      "exact_within_family_permutations": 1440,
+      "examples_in_nonsingleton_families": 8,
+      "families_with_within_family_variation_possible": 2,
+      "family_centered_pearson_r": 0.9704995351762923,
+      "family_sizes": [
+        {
+          "descriptive_pearson_r": 0.9951033795636584,
+          "examples": 6,
+          "family": "arc_grid"
+        },
+        {
+          "descriptive_pearson_r": null,
+          "examples": 1,
+          "family": "campsite"
+        },
+        {
+          "descriptive_pearson_r": null,
+          "examples": 1,
+          "family": "dyck_language"
+        },
+        {
+          "descriptive_pearson_r": null,
+          "examples": 2,
+          "family": "math"
+        }
+      ],
+      "leave_one_example_out": [
+        {
+          "omitted_id": "arc_agi_1/12422b43/0",
+          "pearson_r": 0.9802881353353798
+        },
+        {
+          "omitted_id": "arc_agi_1/c074846d/0",
+          "pearson_r": 0.9810543369863347
+        },
+        {
+          "omitted_id": "arc_agi_1/c074846d/1",
+          "pearson_r": 0.9733346212108926
+        },
+        {
+          "omitted_id": "arc_agi_2/3dc255db/0",
+          "pearson_r": 0.9760099425464935
+        },
+        {
+          "omitted_id": "arc_agi_2/78332cb0/0",
+          "pearson_r": 0.9774501202864587
+        },
+        {
+          "omitted_id": "arc_agi_2/78332cb0/1",
+          "pearson_r": 0.9712962977053612
+        },
+        {
+          "omitted_id": "intellect3_logic/00062/72b57dbd293b",
+          "pearson_r": 0.9728353698484012
+        },
+        {
+          "omitted_id": "intellect3_logic/05869/5de8a003a86f",
+          "pearson_r": 0.9764991601000368
+        },
+        {
+          "omitted_id": "intellect3_math/04162/0fae120567d0",
+          "pearson_r": 0.9836544854994971
+        },
+        {
+          "omitted_id": "intellect3_math/10603/9d30832ed4ab",
+          "pearson_r": 0.9792287515919118
+        }
+      ],
+      "leave_one_family_out": [
+        {
+          "omitted_family": "arc_grid",
+          "pearson_r": 0.9452336975149421,
+          "remaining_examples": 4
+        },
+        {
+          "omitted_family": "campsite",
+          "pearson_r": 0.9728353698484012,
+          "remaining_examples": 9
+        },
+        {
+          "omitted_family": "dyck_language",
+          "pearson_r": 0.9764991601000368,
+          "remaining_examples": 9
+        },
+        {
+          "omitted_family": "math",
+          "pearson_r": 0.9850505901824705,
+          "remaining_examples": 8
+        }
+      ],
+      "pass": 0,
+      "path": "C:\\projects\\VPD\\artifacts\\nanbeige_reasoning\\q4_reasoning_pilot_8192_v1\\q4_reasoning_saes",
+      "phase": "generated",
+      "pooled_pearson_r": 0.9770750964103218,
+      "posthoc_conditional_upper_tail_p": 0.003472222222222222,
+      "site": "model.norm",
+      "total_centered_cross_product": 0.22454570084219205,
+      "within_family_cross_product": 0.0785865112260032,
+      "within_family_fraction_of_total_cross_product": 0.3499800304848982
+    },
+    {
+      "between_family_cross_product": 0.2457297959841242,
+      "bonferroni_all_16_posthoc_p": 0.022222222222222223,
+      "evaluation_examples": 10,
+      "exact_within_family_permutations": 1440,
+      "examples_in_nonsingleton_families": 8,
+      "families_with_within_family_variation_possible": 2,
+      "family_centered_pearson_r": 0.9464859184280335,
+      "family_sizes": [
+        {
+          "descriptive_pearson_r": 0.9356771079509313,
+          "examples": 6,
+          "family": "arc_grid"
+        },
+        {
+          "descriptive_pearson_r": null,
+          "examples": 1,
+          "family": "campsite"
+        },
+        {
+          "descriptive_pearson_r": null,
+          "examples": 1,
+          "family": "dyck_language"
+        },
+        {
+          "descriptive_pearson_r": null,
+          "examples": 2,
+          "family": "math"
+        }
+      ],
+      "leave_one_example_out": [
+        {
+          "omitted_id": "arc_agi_1/12422b43/0",
+          "pearson_r": 0.9934543481509952
+        },
+        {
+          "omitted_id": "arc_agi_1/c074846d/0",
+          "pearson_r": 0.9942358263736467
+        },
+        {
+          "omitted_id": "arc_agi_1/c074846d/1",
+          "pearson_r": 0.9936496557273361
+        },
+        {
+          "omitted_id": "arc_agi_2/3dc255db/0",
+          "pearson_r": 0.9931641913118279
+        },
+        {
+          "omitted_id": "arc_agi_2/78332cb0/0",
+          "pearson_r": 0.9942721763302873
+        },
+        {
+          "omitted_id": "arc_agi_2/78332cb0/1",
+          "pearson_r": 0.9933485025529485
+        },
+        {
+          "omitted_id": "intellect3_logic/00062/72b57dbd293b",
+          "pearson_r": 0.9924494558698864
+        },
+        {
+          "omitted_id": "intellect3_logic/05869/5de8a003a86f",
+          "pearson_r": 0.9917831553515489
+        },
+        {
+          "omitted_id": "intellect3_math/04162/0fae120567d0",
+          "pearson_r": 0.9883516087751909
+        },
+        {
+          "omitted_id": "intellect3_math/10603/9d30832ed4ab",
+          "pearson_r": 0.9936051394042186
+        }
+      ],
+      "leave_one_family_out": [
+        {
+          "omitted_family": "arc_grid",
+          "pearson_r": 0.9970295565350242,
+          "remaining_examples": 4
+        },
+        {
+          "omitted_family": "campsite",
+          "pearson_r": 0.9924494558698864,
+          "remaining_examples": 9
+        },
+        {
+          "omitted_family": "dyck_language",
+          "pearson_r": 0.9917831553515489,
+          "remaining_examples": 9
+        },
+        {
+          "omitted_family": "math",
+          "pearson_r": 0.9882136226458459,
+          "remaining_examples": 8
+        }
+      ],
+      "pass": 1,
+      "path": "C:\\projects\\VPD\\artifacts\\nanbeige_reasoning\\q4_reasoning_pilot_8192_v1\\q4_reasoning_saes",
+      "phase": "prompt",
+      "pooled_pearson_r": 0.9929510175103892,
+      "posthoc_conditional_upper_tail_p": 0.001388888888888889,
+      "site": "model.norm",
+      "total_centered_cross_product": 0.2788049394579719,
+      "within_family_cross_product": 0.03307514347384764,
+      "within_family_fraction_of_total_cross_product": 0.11863184181079946
+    },
+    {
+      "between_family_cross_product": 0.11660563189867726,
+      "bonferroni_all_16_posthoc_p": 0.022222222222222223,
+      "evaluation_examples": 10,
+      "exact_within_family_permutations": 1440,
+      "examples_in_nonsingleton_families": 8,
+      "families_with_within_family_variation_possible": 2,
+      "family_centered_pearson_r": 0.9957099445394119,
+      "family_sizes": [
+        {
+          "descriptive_pearson_r": 0.9963479979231914,
+          "examples": 6,
+          "family": "arc_grid"
+        },
+        {
+          "descriptive_pearson_r": null,
+          "examples": 1,
+          "family": "campsite"
+        },
+        {
+          "descriptive_pearson_r": null,
+          "examples": 1,
+          "family": "dyck_language"
+        },
+        {
+          "descriptive_pearson_r": null,
+          "examples": 2,
+          "family": "math"
+        }
+      ],
+      "leave_one_example_out": [
+        {
+          "omitted_id": "arc_agi_1/12422b43/0",
+          "pearson_r": 0.9930809989421997
+        },
+        {
+          "omitted_id": "arc_agi_1/c074846d/0",
+          "pearson_r": 0.991715137155271
+        },
+        {
+          "omitted_id": "arc_agi_1/c074846d/1",
+          "pearson_r": 0.992990662012115
+        },
+        {
+          "omitted_id": "arc_agi_2/3dc255db/0",
+          "pearson_r": 0.9923930830078005
+        },
+        {
+          "omitted_id": "arc_agi_2/78332cb0/0",
+          "pearson_r": 0.9907061638779371
+        },
+        {
+          "omitted_id": "arc_agi_2/78332cb0/1",
+          "pearson_r": 0.9947137915958907
+        },
+        {
+          "omitted_id": "intellect3_logic/00062/72b57dbd293b",
+          "pearson_r": 0.9936165723733006
+        },
+        {
+          "omitted_id": "intellect3_logic/05869/5de8a003a86f",
+          "pearson_r": 0.9902581025537202
+        },
+        {
+          "omitted_id": "intellect3_math/04162/0fae120567d0",
+          "pearson_r": 0.9956549469422089
+        },
+        {
+          "omitted_id": "intellect3_math/10603/9d30832ed4ab",
+          "pearson_r": 0.993500558839461
+        }
+      ],
+      "leave_one_family_out": [
+        {
+          "omitted_family": "arc_grid",
+          "pearson_r": 0.9846889926615482,
+          "remaining_examples": 4
+        },
+        {
+          "omitted_family": "campsite",
+          "pearson_r": 0.9936165723733006,
+          "remaining_examples": 9
+        },
+        {
+          "omitted_family": "dyck_language",
+          "pearson_r": 0.9902581025537202,
+          "remaining_examples": 9
+        },
+        {
+          "omitted_family": "math",
+          "pearson_r": 0.9965659299131202,
+          "remaining_examples": 8
+        }
+      ],
+      "pass": 1,
+      "path": "C:\\projects\\VPD\\artifacts\\nanbeige_reasoning\\q4_reasoning_pilot_8192_v1\\q4_reasoning_saes",
+      "phase": "generated",
+      "pooled_pearson_r": 0.9929444724599605,
+      "posthoc_conditional_upper_tail_p": 0.001388888888888889,
+      "site": "model.norm",
+      "total_centered_cross_product": 0.3246802560808273,
+      "within_family_cross_product": 0.20807462418214995,
+      "within_family_fraction_of_total_cross_product": 0.6408601086305382
+    }
+  ],
+  "schema": "sch.vpd-q4-sae-coverage-family-controls.v1",
+  "source": {
+    "path": "C:\\projects\\VPD\\artifacts\\vpd_q4_sae_training_coverage_v1\\report.json",
+    "report_id": "01e2949e876ad93d9c389c77cff2630ddca5395cc95e4134d0836ffb9ee3517d",
+    "sha256": "83ca7fff7562591feaf7e8fbff0f82e3afd584a1f4ca858a21b8ccb77bb61329"
+  }
+}

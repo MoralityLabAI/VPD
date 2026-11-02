@@ -1,0 +1,853 @@
+{
+  "coverage": {
+    "compartments": 9,
+    "replicas_per_compartment": 2,
+    "shared_compartments": 1,
+    "specific_compartments": 8,
+    "training_jobs": 18
+  },
+  "execution_blueprint_id": "33bc09fac66fcec62bc0374c39d7ad4209a5d17eafd9b1003b4353073687e40e",
+  "jobs": [
+    {
+      "compartment": "missing_or_untrusted_authority",
+      "initialization_seed": 17,
+      "planned_arguments_sha256": "77b75ca4fb746be48cfb9731e579ab777a685419d703ee3d97aa04eb358ad749",
+      "planned_job_id": "209301519ffa068b3093385e7dec4ba1e8915efa67c1a79a94c266e54f78029e",
+      "required_manifest_hyperparameters": {
+        "batch_size": 128,
+        "data_selection_seed": 17,
+        "initialization_seed": 17,
+        "learning_rate": 0.0003,
+        "steps": 2000
+      },
+      "required_sample_contract": {
+        "activation_category": "missing_or_untrusted_authority",
+        "pair_atomic_partition": {
+          "exact_selected_episode_partition": true,
+          "pair_sets_disjoint": true,
+          "training_episode_id_set_sha256": "8ca8014e15051bad83c4ce6fa62544f0cc2785c7e08f3d1dd37667ea67db929b",
+          "training_pair_id_set_sha256": "74569bdcd00a6090cc7e94f2a8b4797c090039e8e7c1571ac39e20f0ea041fdc",
+          "training_pairs": 514,
+          "training_rows": 263168,
+          "validation_episode_id_set_sha256": "760d92369a7a9f7758f730ca56efc694f429958f0f5e53a40a02ea25c49d30aa",
+          "validation_pair_id_set_sha256": "0843fbbf2274f2a04cc23a9d07df72611e51ed3901022bfd70f7893ce167c15b",
+          "validation_pairs": 58,
+          "validation_rows": 29696
+        },
+        "schema": "sch.vpd-compartment-sae-sample-contract.v2",
+        "selected_activation_rows": 292864,
+        "selected_activation_rows_by_category": {
+          "missing_or_untrusted_authority": 292864
+        },
+        "selected_episode_counts_by_category": {
+          "missing_or_untrusted_authority": 2288
+        },
+        "selected_episode_id_set_sha256": "9bae12ec111fd419f951c93c8c787c6123ba7306f5abe5ba0d5bb511d974a5ec",
+        "selected_episodes": 2288,
+        "selected_prompt_window_identity_sha256": "c58b896f3e5ce51a0e89f21b97772614cfac2c9599fccf8b3b910596b47376cd",
+        "selected_unique_pairs": 572,
+        "selection": "exact_observable_activation_category",
+        "shared_equal_episode_counts": null,
+        "specific_cross_compartment_rows": 0
+      }
+    },
+    {
+      "compartment": "missing_or_untrusted_authority",
+      "initialization_seed": 29,
+      "planned_arguments_sha256": "e988c57b15db12c5e62822543beeacd3ef1d2afcea0926eec48a27a107342b68",
+      "planned_job_id": "20048b966b9e92a4b471d22bcaae8cdabd7656c2bfe8c16da56f260a57a7288f",
+      "required_manifest_hyperparameters": {
+        "batch_size": 128,
+        "data_selection_seed": 17,
+        "initialization_seed": 29,
+        "learning_rate": 0.0003,
+        "steps": 2000
+      },
+      "required_sample_contract": {
+        "activation_category": "missing_or_untrusted_authority",
+        "pair_atomic_partition": {
+          "exact_selected_episode_partition": true,
+          "pair_sets_disjoint": true,
+          "training_episode_id_set_sha256": "8ca8014e15051bad83c4ce6fa62544f0cc2785c7e08f3d1dd37667ea67db929b",
+          "training_pair_id_set_sha256": "74569bdcd00a6090cc7e94f2a8b4797c090039e8e7c1571ac39e20f0ea041fdc",
+          "training_pairs": 514,
+          "training_rows": 263168,
+          "validation_episode_id_set_sha256": "760d92369a7a9f7758f730ca56efc694f429958f0f5e53a40a02ea25c49d30aa",
+          "validation_pair_id_set_sha256": "0843fbbf2274f2a04cc23a9d07df72611e51ed3901022bfd70f7893ce167c15b",
+          "validation_pairs": 58,
+          "validation_rows": 29696
+        },
+        "schema": "sch.vpd-compartment-sae-sample-contract.v2",
+        "selected_activation_rows": 292864,
+        "selected_activation_rows_by_category": {
+          "missing_or_untrusted_authority": 292864
+        },
+        "selected_episode_counts_by_category": {
+          "missing_or_untrusted_authority": 2288
+        },
+        "selected_episode_id_set_sha256": "9bae12ec111fd419f951c93c8c787c6123ba7306f5abe5ba0d5bb511d974a5ec",
+        "selected_episodes": 2288,
+        "selected_prompt_window_identity_sha256": "c58b896f3e5ce51a0e89f21b97772614cfac2c9599fccf8b3b910596b47376cd",
+        "selected_unique_pairs": 572,
+        "selection": "exact_observable_activation_category",
+        "shared_equal_episode_counts": null,
+        "specific_cross_compartment_rows": 0
+      }
+    },
+    {
+      "compartment": "other_invalid",
+      "initialization_seed": 17,
+      "planned_arguments_sha256": "ce7bf5f3ee3adfa55a8cb37f99743cfc089a7f324ce3feebbecb24207719c7c9",
+      "planned_job_id": "d5cacb3a8dfb95a1f8c333525cce5295d504a7a4605ce1b19a9b4f3cf065927a",
+      "required_manifest_hyperparameters": {
+        "batch_size": 128,
+        "data_selection_seed": 17,
+        "initialization_seed": 17,
+        "learning_rate": 0.0003,
+        "steps": 2000
+      },
+      "required_sample_contract": {
+        "activation_category": "other_invalid",
+        "pair_atomic_partition": {
+          "exact_selected_episode_partition": true,
+          "pair_sets_disjoint": true,
+          "training_episode_id_set_sha256": "bbe3af1f67cca25a83366178af1a4eb24d07850a1d582ee4df749463b1e51b38",
+          "training_pair_id_set_sha256": "74569bdcd00a6090cc7e94f2a8b4797c090039e8e7c1571ac39e20f0ea041fdc",
+          "training_pairs": 514,
+          "training_rows": 65792,
+          "validation_episode_id_set_sha256": "0ce200ecf34ca6ad2a06e1258d11db74c0b5dadacbc36dc7fc3d8c98e6c8cdce",
+          "validation_pair_id_set_sha256": "0843fbbf2274f2a04cc23a9d07df72611e51ed3901022bfd70f7893ce167c15b",
+          "validation_pairs": 58,
+          "validation_rows": 7424
+        },
+        "schema": "sch.vpd-compartment-sae-sample-contract.v2",
+        "selected_activation_rows": 73216,
+        "selected_activation_rows_by_category": {
+          "other_invalid": 73216
+        },
+        "selected_episode_counts_by_category": {
+          "other_invalid": 572
+        },
+        "selected_episode_id_set_sha256": "8348387b78694943bf5d43d21005e7f60742257522002b8c9faa706c8de818de",
+        "selected_episodes": 572,
+        "selected_prompt_window_identity_sha256": "6d40708f328c1fff6c7f7066a4a1f607f57dde91843a5f1d773d0d9f3cbf90ec",
+        "selected_unique_pairs": 572,
+        "selection": "exact_observable_activation_category",
+        "shared_equal_episode_counts": null,
+        "specific_cross_compartment_rows": 0
+      }
+    },
+    {
+      "compartment": "other_invalid",
+      "initialization_seed": 29,
+      "planned_arguments_sha256": "befae8379f6f0b012ddfb2fb86133a0517f019c4c479a29781c5a56f86c8d958",
+      "planned_job_id": "339804733eb6966b54371cea99961f5017c446e7a6accf0efe37a86e84fee0d3",
+      "required_manifest_hyperparameters": {
+        "batch_size": 128,
+        "data_selection_seed": 17,
+        "initialization_seed": 29,
+        "learning_rate": 0.0003,
+        "steps": 2000
+      },
+      "required_sample_contract": {
+        "activation_category": "other_invalid",
+        "pair_atomic_partition": {
+          "exact_selected_episode_partition": true,
+          "pair_sets_disjoint": true,
+          "training_episode_id_set_sha256": "bbe3af1f67cca25a83366178af1a4eb24d07850a1d582ee4df749463b1e51b38",
+          "training_pair_id_set_sha256": "74569bdcd00a6090cc7e94f2a8b4797c090039e8e7c1571ac39e20f0ea041fdc",
+          "training_pairs": 514,
+          "training_rows": 65792,
+          "validation_episode_id_set_sha256": "0ce200ecf34ca6ad2a06e1258d11db74c0b5dadacbc36dc7fc3d8c98e6c8cdce",
+          "validation_pair_id_set_sha256": "0843fbbf2274f2a04cc23a9d07df72611e51ed3901022bfd70f7893ce167c15b",
+          "validation_pairs": 58,
+          "validation_rows": 7424
+        },
+        "schema": "sch.vpd-compartment-sae-sample-contract.v2",
+        "selected_activation_rows": 73216,
+        "selected_activation_rows_by_category": {
+          "other_invalid": 73216
+        },
+        "selected_episode_counts_by_category": {
+          "other_invalid": 572
+        },
+        "selected_episode_id_set_sha256": "8348387b78694943bf5d43d21005e7f60742257522002b8c9faa706c8de818de",
+        "selected_episodes": 572,
+        "selected_prompt_window_identity_sha256": "6d40708f328c1fff6c7f7066a4a1f607f57dde91843a5f1d773d0d9f3cbf90ec",
+        "selected_unique_pairs": 572,
+        "selection": "exact_observable_activation_category",
+        "shared_equal_episode_counts": null,
+        "specific_cross_compartment_rows": 0
+      }
+    },
+    {
+      "compartment": "replayed",
+      "initialization_seed": 17,
+      "planned_arguments_sha256": "aa74f1699159937309b5dfa9a1496d439de863e496e535300b13d849d0757211",
+      "planned_job_id": "b7a992917e6ae4f62acc8134eb6218ce6fb344be6be54ed664f49377ec5dfbf9",
+      "required_manifest_hyperparameters": {
+        "batch_size": 128,
+        "data_selection_seed": 17,
+        "initialization_seed": 17,
+        "learning_rate": 0.0003,
+        "steps": 2000
+      },
+      "required_sample_contract": {
+        "activation_category": "replayed",
+        "pair_atomic_partition": {
+          "exact_selected_episode_partition": true,
+          "pair_sets_disjoint": true,
+          "training_episode_id_set_sha256": "95db1c8ea895a29bbfaa8a30abbaecb1920bb85e5a44230ed73660c66fc069aa",
+          "training_pair_id_set_sha256": "74569bdcd00a6090cc7e94f2a8b4797c090039e8e7c1571ac39e20f0ea041fdc",
+          "training_pairs": 514,
+          "training_rows": 65792,
+          "validation_episode_id_set_sha256": "f79b11a542048806591e281450a6fe4bb6d637e3d9b9c29ae42828ccf66376c3",
+          "validation_pair_id_set_sha256": "0843fbbf2274f2a04cc23a9d07df72611e51ed3901022bfd70f7893ce167c15b",
+          "validation_pairs": 58,
+          "validation_rows": 7424
+        },
+        "schema": "sch.vpd-compartment-sae-sample-contract.v2",
+        "selected_activation_rows": 73216,
+        "selected_activation_rows_by_category": {
+          "replayed": 73216
+        },
+        "selected_episode_counts_by_category": {
+          "replayed": 572
+        },
+        "selected_episode_id_set_sha256": "4e44178d9b0e8bf53013da01c45501a6711f27568a7be221043929a7a8315547",
+        "selected_episodes": 572,
+        "selected_prompt_window_identity_sha256": "14af0ee2ec12e2cef541fbf2926d8f7626d236326a6960390328aeaff26cdcf8",
+        "selected_unique_pairs": 572,
+        "selection": "exact_observable_activation_category",
+        "shared_equal_episode_counts": null,
+        "specific_cross_compartment_rows": 0
+      }
+    },
+    {
+      "compartment": "replayed",
+      "initialization_seed": 29,
+      "planned_arguments_sha256": "840307e7efa45e9069e15ee1d6287c50daba9ac1069fa7eb4e0dc29fa1028f0c",
+      "planned_job_id": "648882ddb5a8fdc71ec8ccd4877d73d66fced7e9d01a7008b63469899643ee7d",
+      "required_manifest_hyperparameters": {
+        "batch_size": 128,
+        "data_selection_seed": 17,
+        "initialization_seed": 29,
+        "learning_rate": 0.0003,
+        "steps": 2000
+      },
+      "required_sample_contract": {
+        "activation_category": "replayed",
+        "pair_atomic_partition": {
+          "exact_selected_episode_partition": true,
+          "pair_sets_disjoint": true,
+          "training_episode_id_set_sha256": "95db1c8ea895a29bbfaa8a30abbaecb1920bb85e5a44230ed73660c66fc069aa",
+          "training_pair_id_set_sha256": "74569bdcd00a6090cc7e94f2a8b4797c090039e8e7c1571ac39e20f0ea041fdc",
+          "training_pairs": 514,
+          "training_rows": 65792,
+          "validation_episode_id_set_sha256": "f79b11a542048806591e281450a6fe4bb6d637e3d9b9c29ae42828ccf66376c3",
+          "validation_pair_id_set_sha256": "0843fbbf2274f2a04cc23a9d07df72611e51ed3901022bfd70f7893ce167c15b",
+          "validation_pairs": 58,
+          "validation_rows": 7424
+        },
+        "schema": "sch.vpd-compartment-sae-sample-contract.v2",
+        "selected_activation_rows": 73216,
+        "selected_activation_rows_by_category": {
+          "replayed": 73216
+        },
+        "selected_episode_counts_by_category": {
+          "replayed": 572
+        },
+        "selected_episode_id_set_sha256": "4e44178d9b0e8bf53013da01c45501a6711f27568a7be221043929a7a8315547",
+        "selected_episodes": 572,
+        "selected_prompt_window_identity_sha256": "14af0ee2ec12e2cef541fbf2926d8f7626d236326a6960390328aeaff26cdcf8",
+        "selected_unique_pairs": 572,
+        "selection": "exact_observable_activation_category",
+        "shared_equal_episode_counts": null,
+        "specific_cross_compartment_rows": 0
+      }
+    },
+    {
+      "compartment": "revoked",
+      "initialization_seed": 17,
+      "planned_arguments_sha256": "878ea91963cfce53ec2cb4f0f969368d0de089d58676a20efd3aaee96f0b6688",
+      "planned_job_id": "e334babbdc4feb96e1e1c16b763719f992b9abcf27d552e84c250b6331c14c07",
+      "required_manifest_hyperparameters": {
+        "batch_size": 128,
+        "data_selection_seed": 17,
+        "initialization_seed": 17,
+        "learning_rate": 0.0003,
+        "steps": 2000
+      },
+      "required_sample_contract": {
+        "activation_category": "revoked",
+        "pair_atomic_partition": {
+          "exact_selected_episode_partition": true,
+          "pair_sets_disjoint": true,
+          "training_episode_id_set_sha256": "bc28f097264955523d2503cb9cdf7b0b014f180aa4a1c4a030958ae321a5cd72",
+          "training_pair_id_set_sha256": "74569bdcd00a6090cc7e94f2a8b4797c090039e8e7c1571ac39e20f0ea041fdc",
+          "training_pairs": 514,
+          "training_rows": 65792,
+          "validation_episode_id_set_sha256": "5bc889bb304c06bdc3176ce6fab1df16d6db8bc0b778b92711ceabc1549a10df",
+          "validation_pair_id_set_sha256": "0843fbbf2274f2a04cc23a9d07df72611e51ed3901022bfd70f7893ce167c15b",
+          "validation_pairs": 58,
+          "validation_rows": 7424
+        },
+        "schema": "sch.vpd-compartment-sae-sample-contract.v2",
+        "selected_activation_rows": 73216,
+        "selected_activation_rows_by_category": {
+          "revoked": 73216
+        },
+        "selected_episode_counts_by_category": {
+          "revoked": 572
+        },
+        "selected_episode_id_set_sha256": "bb507be91cd8e83d75db6f980b8b7f7c589afaf37fb4c9816c4bdee6c6c0967a",
+        "selected_episodes": 572,
+        "selected_prompt_window_identity_sha256": "1d7b798fb199e7ef01d10c431752347f6f6947cd42e1fcb770d29fda90c10d28",
+        "selected_unique_pairs": 572,
+        "selection": "exact_observable_activation_category",
+        "shared_equal_episode_counts": null,
+        "specific_cross_compartment_rows": 0
+      }
+    },
+    {
+      "compartment": "revoked",
+      "initialization_seed": 29,
+      "planned_arguments_sha256": "e387d9196f2560795765a169dbc5021bd9a91a8ff3ec6b1786a2f869ba93fc4f",
+      "planned_job_id": "0cb1ca8a62a1f8abde864a48f26bffdb883fbcf7f78d7b77f4d4b3f8079f9d3f",
+      "required_manifest_hyperparameters": {
+        "batch_size": 128,
+        "data_selection_seed": 17,
+        "initialization_seed": 29,
+        "learning_rate": 0.0003,
+        "steps": 2000
+      },
+      "required_sample_contract": {
+        "activation_category": "revoked",
+        "pair_atomic_partition": {
+          "exact_selected_episode_partition": true,
+          "pair_sets_disjoint": true,
+          "training_episode_id_set_sha256": "bc28f097264955523d2503cb9cdf7b0b014f180aa4a1c4a030958ae321a5cd72",
+          "training_pair_id_set_sha256": "74569bdcd00a6090cc7e94f2a8b4797c090039e8e7c1571ac39e20f0ea041fdc",
+          "training_pairs": 514,
+          "training_rows": 65792,
+          "validation_episode_id_set_sha256": "5bc889bb304c06bdc3176ce6fab1df16d6db8bc0b778b92711ceabc1549a10df",
+          "validation_pair_id_set_sha256": "0843fbbf2274f2a04cc23a9d07df72611e51ed3901022bfd70f7893ce167c15b",
+          "validation_pairs": 58,
+          "validation_rows": 7424
+        },
+        "schema": "sch.vpd-compartment-sae-sample-contract.v2",
+        "selected_activation_rows": 73216,
+        "selected_activation_rows_by_category": {
+          "revoked": 73216
+        },
+        "selected_episode_counts_by_category": {
+          "revoked": 572
+        },
+        "selected_episode_id_set_sha256": "bb507be91cd8e83d75db6f980b8b7f7c589afaf37fb4c9816c4bdee6c6c0967a",
+        "selected_episodes": 572,
+        "selected_prompt_window_identity_sha256": "1d7b798fb199e7ef01d10c431752347f6f6947cd42e1fcb770d29fda90c10d28",
+        "selected_unique_pairs": 572,
+        "selection": "exact_observable_activation_category",
+        "shared_equal_episode_counts": null,
+        "specific_cross_compartment_rows": 0
+      }
+    },
+    {
+      "compartment": "scope_invalid",
+      "initialization_seed": 17,
+      "planned_arguments_sha256": "f446108c0601db34068dc5b842ed4ba6ed088949dde7b6514b30503a0b6ee019",
+      "planned_job_id": "d8d3f189a852997da1357d4579b47766ee773b24fe961f4dfc7e8a837fe716e8",
+      "required_manifest_hyperparameters": {
+        "batch_size": 128,
+        "data_selection_seed": 17,
+        "initialization_seed": 17,
+        "learning_rate": 0.0003,
+        "steps": 2000
+      },
+      "required_sample_contract": {
+        "activation_category": "scope_invalid",
+        "pair_atomic_partition": {
+          "exact_selected_episode_partition": true,
+          "pair_sets_disjoint": true,
+          "training_episode_id_set_sha256": "2c767c3ac779be0aa40de9a860975029b47320b74450a31bf0b8006e213e08c9",
+          "training_pair_id_set_sha256": "74569bdcd00a6090cc7e94f2a8b4797c090039e8e7c1571ac39e20f0ea041fdc",
+          "training_pairs": 514,
+          "training_rows": 65792,
+          "validation_episode_id_set_sha256": "242056f47da728b7ee2bf3582f2b146b4998dd72eb4787cd76fc9dbe7e97f1ff",
+          "validation_pair_id_set_sha256": "0843fbbf2274f2a04cc23a9d07df72611e51ed3901022bfd70f7893ce167c15b",
+          "validation_pairs": 58,
+          "validation_rows": 7424
+        },
+        "schema": "sch.vpd-compartment-sae-sample-contract.v2",
+        "selected_activation_rows": 73216,
+        "selected_activation_rows_by_category": {
+          "scope_invalid": 73216
+        },
+        "selected_episode_counts_by_category": {
+          "scope_invalid": 572
+        },
+        "selected_episode_id_set_sha256": "0d531b67dafb403678f70a3d32d570e22debbd7ce7ca9beb7b1f1a75f8352b39",
+        "selected_episodes": 572,
+        "selected_prompt_window_identity_sha256": "fdf55fd74ec8b574965691ca9c34361360c3ca8dcea89f6f51250cd40402342c",
+        "selected_unique_pairs": 572,
+        "selection": "exact_observable_activation_category",
+        "shared_equal_episode_counts": null,
+        "specific_cross_compartment_rows": 0
+      }
+    },
+    {
+      "compartment": "scope_invalid",
+      "initialization_seed": 29,
+      "planned_arguments_sha256": "efa6d17beef90838fc4017e846aea8c1572461059945fd6ce2d6fa27de86a928",
+      "planned_job_id": "cc556ddee83ba92be3d3d21f1df7e82beea0869054526c6248554ba28354b269",
+      "required_manifest_hyperparameters": {
+        "batch_size": 128,
+        "data_selection_seed": 17,
+        "initialization_seed": 29,
+        "learning_rate": 0.0003,
+        "steps": 2000
+      },
+      "required_sample_contract": {
+        "activation_category": "scope_invalid",
+        "pair_atomic_partition": {
+          "exact_selected_episode_partition": true,
+          "pair_sets_disjoint": true,
+          "training_episode_id_set_sha256": "2c767c3ac779be0aa40de9a860975029b47320b74450a31bf0b8006e213e08c9",
+          "training_pair_id_set_sha256": "74569bdcd00a6090cc7e94f2a8b4797c090039e8e7c1571ac39e20f0ea041fdc",
+          "training_pairs": 514,
+          "training_rows": 65792,
+          "validation_episode_id_set_sha256": "242056f47da728b7ee2bf3582f2b146b4998dd72eb4787cd76fc9dbe7e97f1ff",
+          "validation_pair_id_set_sha256": "0843fbbf2274f2a04cc23a9d07df72611e51ed3901022bfd70f7893ce167c15b",
+          "validation_pairs": 58,
+          "validation_rows": 7424
+        },
+        "schema": "sch.vpd-compartment-sae-sample-contract.v2",
+        "selected_activation_rows": 73216,
+        "selected_activation_rows_by_category": {
+          "scope_invalid": 73216
+        },
+        "selected_episode_counts_by_category": {
+          "scope_invalid": 572
+        },
+        "selected_episode_id_set_sha256": "0d531b67dafb403678f70a3d32d570e22debbd7ce7ca9beb7b1f1a75f8352b39",
+        "selected_episodes": 572,
+        "selected_prompt_window_identity_sha256": "fdf55fd74ec8b574965691ca9c34361360c3ca8dcea89f6f51250cd40402342c",
+        "selected_unique_pairs": 572,
+        "selection": "exact_observable_activation_category",
+        "shared_equal_episode_counts": null,
+        "specific_cross_compartment_rows": 0
+      }
+    },
+    {
+      "compartment": "shared_cross_category",
+      "initialization_seed": 17,
+      "planned_arguments_sha256": "73017adca5636c1e3875f75ef6dc80aa2ca6ea5f073ca671f533044dd2aaf6dd",
+      "planned_job_id": "a8237d7f4843f57f6a7b1935deb082e89df28760964515ce4fb577efedc22393",
+      "required_manifest_hyperparameters": {
+        "batch_size": 128,
+        "data_selection_seed": 17,
+        "initialization_seed": 17,
+        "learning_rate": 0.0003,
+        "steps": 2000
+      },
+      "required_sample_contract": {
+        "activation_category": "shared_cross_category",
+        "pair_atomic_partition": {
+          "exact_selected_episode_partition": true,
+          "pair_sets_disjoint": true,
+          "training_episode_id_set_sha256": "e162740feb65d4d3b35ac8e99bac29d40da12e7bbd3faed2d70c0de236586ac4",
+          "training_pair_id_set_sha256": "74569bdcd00a6090cc7e94f2a8b4797c090039e8e7c1571ac39e20f0ea041fdc",
+          "training_pairs": 514,
+          "training_rows": 526336,
+          "validation_episode_id_set_sha256": "486a714e1ce28052ad862c7bdeaa17468fdf5e3e62c42dd7c5602c893ed5275f",
+          "validation_pair_id_set_sha256": "0843fbbf2274f2a04cc23a9d07df72611e51ed3901022bfd70f7893ce167c15b",
+          "validation_pairs": 58,
+          "validation_rows": 59392
+        },
+        "schema": "sch.vpd-compartment-sae-sample-contract.v2",
+        "selected_activation_rows": 585728,
+        "selected_activation_rows_by_category": {
+          "missing_or_untrusted_authority": 73216,
+          "other_invalid": 73216,
+          "replayed": 73216,
+          "revoked": 73216,
+          "scope_invalid": 73216,
+          "signature_invalid": 73216,
+          "time_inactive": 73216,
+          "valid_authority": 73216
+        },
+        "selected_episode_counts_by_category": {
+          "missing_or_untrusted_authority": 572,
+          "other_invalid": 572,
+          "replayed": 572,
+          "revoked": 572,
+          "scope_invalid": 572,
+          "signature_invalid": 572,
+          "time_inactive": 572,
+          "valid_authority": 572
+        },
+        "selected_episode_id_set_sha256": "923ab07f024b731eb4e9bf4cee83973cfb23616c3e917cd19242dafccde16b37",
+        "selected_episodes": 4576,
+        "selected_prompt_window_identity_sha256": "b0980cca7b84df82abe70ee391977a54219fa54be18314a2921e9178a59710df",
+        "selected_unique_pairs": 572,
+        "selection": "equal_whole_episodes_per_observed_activation_category",
+        "shared_equal_episode_counts": true,
+        "specific_cross_compartment_rows": null
+      }
+    },
+    {
+      "compartment": "shared_cross_category",
+      "initialization_seed": 29,
+      "planned_arguments_sha256": "4b50461165077eca5a0f28b6c120171dfa977cf6de44e8477761e8253cd32529",
+      "planned_job_id": "d0ab2f2fd3de06e2d08e4ee3c6507ffb59c8132b2b281ad9e823a5cd1bb690c7",
+      "required_manifest_hyperparameters": {
+        "batch_size": 128,
+        "data_selection_seed": 17,
+        "initialization_seed": 29,
+        "learning_rate": 0.0003,
+        "steps": 2000
+      },
+      "required_sample_contract": {
+        "activation_category": "shared_cross_category",
+        "pair_atomic_partition": {
+          "exact_selected_episode_partition": true,
+          "pair_sets_disjoint": true,
+          "training_episode_id_set_sha256": "e162740feb65d4d3b35ac8e99bac29d40da12e7bbd3faed2d70c0de236586ac4",
+          "training_pair_id_set_sha256": "74569bdcd00a6090cc7e94f2a8b4797c090039e8e7c1571ac39e20f0ea041fdc",
+          "training_pairs": 514,
+          "training_rows": 526336,
+          "validation_episode_id_set_sha256": "486a714e1ce28052ad862c7bdeaa17468fdf5e3e62c42dd7c5602c893ed5275f",
+          "validation_pair_id_set_sha256": "0843fbbf2274f2a04cc23a9d07df72611e51ed3901022bfd70f7893ce167c15b",
+          "validation_pairs": 58,
+          "validation_rows": 59392
+        },
+        "schema": "sch.vpd-compartment-sae-sample-contract.v2",
+        "selected_activation_rows": 585728,
+        "selected_activation_rows_by_category": {
+          "missing_or_untrusted_authority": 73216,
+          "other_invalid": 73216,
+          "replayed": 73216,
+          "revoked": 73216,
+          "scope_invalid": 73216,
+          "signature_invalid": 73216,
+          "time_inactive": 73216,
+          "valid_authority": 73216
+        },
+        "selected_episode_counts_by_category": {
+          "missing_or_untrusted_authority": 572,
+          "other_invalid": 572,
+          "replayed": 572,
+          "revoked": 572,
+          "scope_invalid": 572,
+          "signature_invalid": 572,
+          "time_inactive": 572,
+          "valid_authority": 572
+        },
+        "selected_episode_id_set_sha256": "923ab07f024b731eb4e9bf4cee83973cfb23616c3e917cd19242dafccde16b37",
+        "selected_episodes": 4576,
+        "selected_prompt_window_identity_sha256": "b0980cca7b84df82abe70ee391977a54219fa54be18314a2921e9178a59710df",
+        "selected_unique_pairs": 572,
+        "selection": "equal_whole_episodes_per_observed_activation_category",
+        "shared_equal_episode_counts": true,
+        "specific_cross_compartment_rows": null
+      }
+    },
+    {
+      "compartment": "signature_invalid",
+      "initialization_seed": 17,
+      "planned_arguments_sha256": "0625083f8eeb46b566d109adf03bab61052ac0f408f788abff62651f90ffd17c",
+      "planned_job_id": "9a70e267d6d470efed05de1b57bf0471e67632a71edc77bff100ef9bdc92480a",
+      "required_manifest_hyperparameters": {
+        "batch_size": 128,
+        "data_selection_seed": 17,
+        "initialization_seed": 17,
+        "learning_rate": 0.0003,
+        "steps": 2000
+      },
+      "required_sample_contract": {
+        "activation_category": "signature_invalid",
+        "pair_atomic_partition": {
+          "exact_selected_episode_partition": true,
+          "pair_sets_disjoint": true,
+          "training_episode_id_set_sha256": "3cb05aeacd6576c4943a6fa195aa91a2a5fca7cb9c4d91e975f6f0760375ace5",
+          "training_pair_id_set_sha256": "74569bdcd00a6090cc7e94f2a8b4797c090039e8e7c1571ac39e20f0ea041fdc",
+          "training_pairs": 514,
+          "training_rows": 65792,
+          "validation_episode_id_set_sha256": "86a722fdcf9e57b80e11c3e90c1f90230c89b1167fb36f16dbb4eda70119d889",
+          "validation_pair_id_set_sha256": "0843fbbf2274f2a04cc23a9d07df72611e51ed3901022bfd70f7893ce167c15b",
+          "validation_pairs": 58,
+          "validation_rows": 7424
+        },
+        "schema": "sch.vpd-compartment-sae-sample-contract.v2",
+        "selected_activation_rows": 73216,
+        "selected_activation_rows_by_category": {
+          "signature_invalid": 73216
+        },
+        "selected_episode_counts_by_category": {
+          "signature_invalid": 572
+        },
+        "selected_episode_id_set_sha256": "9546e7e9b2673c408c72869e9579914556c9855fe384fb03af6e3b9e07c07948",
+        "selected_episodes": 572,
+        "selected_prompt_window_identity_sha256": "3c7f676127fa735a0803f701717790ceee4cd1b5a8880d790c0487b37b024cad",
+        "selected_unique_pairs": 572,
+        "selection": "exact_observable_activation_category",
+        "shared_equal_episode_counts": null,
+        "specific_cross_compartment_rows": 0
+      }
+    },
+    {
+      "compartment": "signature_invalid",
+      "initialization_seed": 29,
+      "planned_arguments_sha256": "44c89f9f2823fd73de3f33927bfcaf9166c829a2de7e492b9b8081eb30fa0602",
+      "planned_job_id": "0baebcb707b8ef352b513405ae5ec87cc247e75e839374ab4a98f0f3cefd64f1",
+      "required_manifest_hyperparameters": {
+        "batch_size": 128,
+        "data_selection_seed": 17,
+        "initialization_seed": 29,
+        "learning_rate": 0.0003,
+        "steps": 2000
+      },
+      "required_sample_contract": {
+        "activation_category": "signature_invalid",
+        "pair_atomic_partition": {
+          "exact_selected_episode_partition": true,
+          "pair_sets_disjoint": true,
+          "training_episode_id_set_sha256": "3cb05aeacd6576c4943a6fa195aa91a2a5fca7cb9c4d91e975f6f0760375ace5",
+          "training_pair_id_set_sha256": "74569bdcd00a6090cc7e94f2a8b4797c090039e8e7c1571ac39e20f0ea041fdc",
+          "training_pairs": 514,
+          "training_rows": 65792,
+          "validation_episode_id_set_sha256": "86a722fdcf9e57b80e11c3e90c1f90230c89b1167fb36f16dbb4eda70119d889",
+          "validation_pair_id_set_sha256": "0843fbbf2274f2a04cc23a9d07df72611e51ed3901022bfd70f7893ce167c15b",
+          "validation_pairs": 58,
+          "validation_rows": 7424
+        },
+        "schema": "sch.vpd-compartment-sae-sample-contract.v2",
+        "selected_activation_rows": 73216,
+        "selected_activation_rows_by_category": {
+          "signature_invalid": 73216
+        },
+        "selected_episode_counts_by_category": {
+          "signature_invalid": 572
+        },
+        "selected_episode_id_set_sha256": "9546e7e9b2673c408c72869e9579914556c9855fe384fb03af6e3b9e07c07948",
+        "selected_episodes": 572,
+        "selected_prompt_window_identity_sha256": "3c7f676127fa735a0803f701717790ceee4cd1b5a8880d790c0487b37b024cad",
+        "selected_unique_pairs": 572,
+        "selection": "exact_observable_activation_category",
+        "shared_equal_episode_counts": null,
+        "specific_cross_compartment_rows": 0
+      }
+    },
+    {
+      "compartment": "time_inactive",
+      "initialization_seed": 17,
+      "planned_arguments_sha256": "a4770951c25862a91019efff3a5ee128bed08dd1901127bbe2e52f521c13120b",
+      "planned_job_id": "a6db5758b86939b3be66113f44e95c706a98038d7071fe16a2e0e8333d1b8446",
+      "required_manifest_hyperparameters": {
+        "batch_size": 128,
+        "data_selection_seed": 17,
+        "initialization_seed": 17,
+        "learning_rate": 0.0003,
+        "steps": 2000
+      },
+      "required_sample_contract": {
+        "activation_category": "time_inactive",
+        "pair_atomic_partition": {
+          "exact_selected_episode_partition": true,
+          "pair_sets_disjoint": true,
+          "training_episode_id_set_sha256": "1069e8964ac8f7e649965bc1f5c8b47cfa3e32251eae7c7a3bfa430d89389a18",
+          "training_pair_id_set_sha256": "74569bdcd00a6090cc7e94f2a8b4797c090039e8e7c1571ac39e20f0ea041fdc",
+          "training_pairs": 514,
+          "training_rows": 65792,
+          "validation_episode_id_set_sha256": "ced8fa709a6f62261499d07fddf283bbeefba93af37a229cf515c5917579e972",
+          "validation_pair_id_set_sha256": "0843fbbf2274f2a04cc23a9d07df72611e51ed3901022bfd70f7893ce167c15b",
+          "validation_pairs": 58,
+          "validation_rows": 7424
+        },
+        "schema": "sch.vpd-compartment-sae-sample-contract.v2",
+        "selected_activation_rows": 73216,
+        "selected_activation_rows_by_category": {
+          "time_inactive": 73216
+        },
+        "selected_episode_counts_by_category": {
+          "time_inactive": 572
+        },
+        "selected_episode_id_set_sha256": "ecf8d77024d8cd27545e926a4a3b19f567ba8e1ba000334cb271b7d23be50b69",
+        "selected_episodes": 572,
+        "selected_prompt_window_identity_sha256": "4e227085444ae85729231df03b6bd8eb284f12181d8cd9dd00354c9f16df2160",
+        "selected_unique_pairs": 572,
+        "selection": "exact_observable_activation_category",
+        "shared_equal_episode_counts": null,
+        "specific_cross_compartment_rows": 0
+      }
+    },
+    {
+      "compartment": "time_inactive",
+      "initialization_seed": 29,
+      "planned_arguments_sha256": "2cff6803a3e1fcf24ada58a455751210b55cec37aee033a59589e080d763b3d5",
+      "planned_job_id": "a92419fb48a5b7d23662754f735afc2f6ca85695f1869eaa396def76635d69ae",
+      "required_manifest_hyperparameters": {
+        "batch_size": 128,
+        "data_selection_seed": 17,
+        "initialization_seed": 29,
+        "learning_rate": 0.0003,
+        "steps": 2000
+      },
+      "required_sample_contract": {
+        "activation_category": "time_inactive",
+        "pair_atomic_partition": {
+          "exact_selected_episode_partition": true,
+          "pair_sets_disjoint": true,
+          "training_episode_id_set_sha256": "1069e8964ac8f7e649965bc1f5c8b47cfa3e32251eae7c7a3bfa430d89389a18",
+          "training_pair_id_set_sha256": "74569bdcd00a6090cc7e94f2a8b4797c090039e8e7c1571ac39e20f0ea041fdc",
+          "training_pairs": 514,
+          "training_rows": 65792,
+          "validation_episode_id_set_sha256": "ced8fa709a6f62261499d07fddf283bbeefba93af37a229cf515c5917579e972",
+          "validation_pair_id_set_sha256": "0843fbbf2274f2a04cc23a9d07df72611e51ed3901022bfd70f7893ce167c15b",
+          "validation_pairs": 58,
+          "validation_rows": 7424
+        },
+        "schema": "sch.vpd-compartment-sae-sample-contract.v2",
+        "selected_activation_rows": 73216,
+        "selected_activation_rows_by_category": {
+          "time_inactive": 73216
+        },
+        "selected_episode_counts_by_category": {
+          "time_inactive": 572
+        },
+        "selected_episode_id_set_sha256": "ecf8d77024d8cd27545e926a4a3b19f567ba8e1ba000334cb271b7d23be50b69",
+        "selected_episodes": 572,
+        "selected_prompt_window_identity_sha256": "4e227085444ae85729231df03b6bd8eb284f12181d8cd9dd00354c9f16df2160",
+        "selected_unique_pairs": 572,
+        "selection": "exact_observable_activation_category",
+        "shared_equal_episode_counts": null,
+        "specific_cross_compartment_rows": 0
+      }
+    },
+    {
+      "compartment": "valid_authority",
+      "initialization_seed": 17,
+      "planned_arguments_sha256": "0cdd8100c426847c5654cca32228f3c6fde2d8d9263a16ba574dd192f510b700",
+      "planned_job_id": "0a9e59b1bf6ffece5f7ba4526168ef1ab621ab8021f4d740a361fdaedf16fa14",
+      "required_manifest_hyperparameters": {
+        "batch_size": 128,
+        "data_selection_seed": 17,
+        "initialization_seed": 17,
+        "learning_rate": 0.0003,
+        "steps": 2000
+      },
+      "required_sample_contract": {
+        "activation_category": "valid_authority",
+        "pair_atomic_partition": {
+          "exact_selected_episode_partition": true,
+          "pair_sets_disjoint": true,
+          "training_episode_id_set_sha256": "93cf173c058f8f5641c746b60001fe93e9d59585fc2cb1f8bbb810cf41bb520a",
+          "training_pair_id_set_sha256": "74569bdcd00a6090cc7e94f2a8b4797c090039e8e7c1571ac39e20f0ea041fdc",
+          "training_pairs": 514,
+          "training_rows": 65792,
+          "validation_episode_id_set_sha256": "dd6c3726405ca93a26d48575592da9117c2adadb324030428da64a68ec5d113c",
+          "validation_pair_id_set_sha256": "0843fbbf2274f2a04cc23a9d07df72611e51ed3901022bfd70f7893ce167c15b",
+          "validation_pairs": 58,
+          "validation_rows": 7424
+        },
+        "schema": "sch.vpd-compartment-sae-sample-contract.v2",
+        "selected_activation_rows": 73216,
+        "selected_activation_rows_by_category": {
+          "valid_authority": 73216
+        },
+        "selected_episode_counts_by_category": {
+          "valid_authority": 572
+        },
+        "selected_episode_id_set_sha256": "8a32bff20d0e069b96cd689e12b9a01d38c723a84bab8ca364c24d76aeb085fc",
+        "selected_episodes": 572,
+        "selected_prompt_window_identity_sha256": "daa42030214546b59491369033023f4cfffa6e011d0b6efab4e78de67fb165af",
+        "selected_unique_pairs": 572,
+        "selection": "exact_observable_activation_category",
+        "shared_equal_episode_counts": null,
+        "specific_cross_compartment_rows": 0
+      }
+    },
+    {
+      "compartment": "valid_authority",
+      "initialization_seed": 29,
+      "planned_arguments_sha256": "f5d63a5860a631bd55f45c7c33c96c25fe955e16fdfd3a1bfb3eebe7e17d5f68",
+      "planned_job_id": "d1cf73a7aa09fe248cb57e7d38b284ffb56173c36b1b521dbc01f1301c73d9c7",
+      "required_manifest_hyperparameters": {
+        "batch_size": 128,
+        "data_selection_seed": 17,
+        "initialization_seed": 29,
+        "learning_rate": 0.0003,
+        "steps": 2000
+      },
+      "required_sample_contract": {
+        "activation_category": "valid_authority",
+        "pair_atomic_partition": {
+          "exact_selected_episode_partition": true,
+          "pair_sets_disjoint": true,
+          "training_episode_id_set_sha256": "93cf173c058f8f5641c746b60001fe93e9d59585fc2cb1f8bbb810cf41bb520a",
+          "training_pair_id_set_sha256": "74569bdcd00a6090cc7e94f2a8b4797c090039e8e7c1571ac39e20f0ea041fdc",
+          "training_pairs": 514,
+          "training_rows": 65792,
+          "validation_episode_id_set_sha256": "dd6c3726405ca93a26d48575592da9117c2adadb324030428da64a68ec5d113c",
+          "validation_pair_id_set_sha256": "0843fbbf2274f2a04cc23a9d07df72611e51ed3901022bfd70f7893ce167c15b",
+          "validation_pairs": 58,
+          "validation_rows": 7424
+        },
+        "schema": "sch.vpd-compartment-sae-sample-contract.v2",
+        "selected_activation_rows": 73216,
+        "selected_activation_rows_by_category": {
+          "valid_authority": 73216
+        },
+        "selected_episode_counts_by_category": {
+          "valid_authority": 572
+        },
+        "selected_episode_id_set_sha256": "8a32bff20d0e069b96cd689e12b9a01d38c723a84bab8ca364c24d76aeb085fc",
+        "selected_episodes": 572,
+        "selected_prompt_window_identity_sha256": "daa42030214546b59491369033023f4cfffa6e011d0b6efab4e78de67fb165af",
+        "selected_unique_pairs": 572,
+        "selection": "exact_observable_activation_category",
+        "shared_equal_episode_counts": null,
+        "specific_cross_compartment_rows": 0
+      }
+    }
+  ],
+  "predecessor_gap": {
+    "planned_but_not_manifest_bound": [
+      "batch_size",
+      "learning_rate"
+    ],
+    "schema": "sch.vpd-fixed-sae-dictionary-manifest.v1",
+    "training_plan_v3_preserved_as_predecessor_evidence": true
+  },
+  "schema": "sch.vpd-compartment-sae-training-execution-blueprint.v2",
+  "scientific_boundary": {
+    "execution_authorized": false,
+    "model_inference_performed": false,
+    "sae_training_performed": false,
+    "v7_negative_release_decision_unchanged": true,
+    "weights_loaded_or_mutated": false
+  },
+  "source": {
+    "derivation_runner_sha256": "9929275b5a61e6fe2afd56d741ac46d0b44b0a3b1f30b02d3a4be64e73fa42c6",
+    "sae_training_dataset": "artifacts/vpd_activation_category_capacity_split_v4/sae_training_episodes.jsonl",
+    "sae_training_dataset_sha256": "3673e72770c5bd1229a1455e4b5aa0e489e2f779f579fe47a42301458b7c71d4",
+    "training_plan_id": "d4ef3eca0c642d22f3df415bacb61d5a2130fed969570eb6836777589d1301dd",
+    "training_plan_sha256": "56de0620d8a6a6a93797f1a16f3379d53fe6161ff27e8689680d099ce8edb7cc"
+  },
+  "status": "design_only_not_executed",
+  "v2_admission_requirements": {
+    "all_planned_hyperparameters_manifest_bound": true,
+    "bound_hyperparameters": [
+      "batch_size",
+      "learning_rate",
+      "steps",
+      "initialization_seed",
+      "data_selection_seed"
+    ],
+    "exact_sample_contract_manifest_bound": true,
+    "predecessor_v1_manifest_admissible": false,
+    "required_dictionary_manifest_schema": "sch.vpd-fixed-sae-dictionary-manifest.v2",
+    "shared_equal_whole_episode_balance_required": true,
+    "specific_cross_compartment_rows_must_equal": 0
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "invariants": {
+    "category_bundle_assignments_checked_at_planning_and_execution": true,
+    "complete_control_pool_rederived_from_bundle_assignments": true,
+    "control_numeric_selection_recomputed_from_effects_and_dictionary": true,
+    "execution_not_authorized": true,
+    "focused_control_benchmark_reverified": true,
+    "historical_focused_runner_and_executor_unmodified": true,
+    "no_cross_compartment_parameter_control": true,
+    "predecessor_receipt_v4_reverified": true,
+    "research_protocol_v7_reverified": true,
+    "sae_training_release_gate_reverified": true,
+    "v7_protocol_predecessor_equals_release_gate_protocol": true
+  },
+  "lineage_amendment": {
+    "complete_assignment_derived_control_pool_required": true,
+    "controls_are_outside_target_packet": true,
+    "empty_same_compartment_pool_rejects_packet": true,
+    "final_evaluation_remains_untouched": true,
+    "focused_category_packet_requires_v2_planner": true,
+    "focused_category_plan_requires_v2_executor": true,
+    "generic_cross_compartment_control_pool_forbidden": true,
+    "numeric_control_selection_recomputed_before_execution": true,
+    "predecessor_packet_first_32_pool_not_used_for_selection": true,
+    "predecessor_receipt_v4_preserved": true,
+    "research_protocol_v6_preserved": true,
+    "research_protocol_v7_is_not_historical_experiment_v7": true,
+    "sae_training_release_gate_still_required": true,
+    "shared_controls_share_frozen_shared_compartment": true,
+    "specific_controls_share_frozen_activation_compartment": true
+  },
+  "pipeline_receipt_id": "aedb91d6a90700517005c517ef29acbc3f87594fe82695adeb6ae10d3af639a4",
+  "resources": {
+    "focused_control_benchmark_rejections": 6,
+    "focused_control_benchmark_scenarios": 8,
+    "guarded_sae_blueprint_jobs": 22
+  },
+  "schema": "sch.vpd-unified-compartment-pipeline-receipt.v5",
+  "scientific_boundary": {
+    "empirical_category_bundle_present": false,
+    "execution_authorized": false,
+    "focused_v2_plan_created": false,
+    "historical_v7_negative_release_decision_unchanged": true,
+    "interventions_executed": false,
+    "model_inference_performed": false,
+    "sae_training_performed": false,
+    "weights_loaded_or_mutated": false
+  },
+  "source": {
+    "focused_control_implementation": {
+      "executor_v2": {
+        "path": "experiments/authz_mechinterp/compute_focused_sae_interventions_v2.py",
+        "sha256": "d5b1f20032dbac4f87aaf277597a04d9dccbe986e4312885aa0d5dc171118223"
+      },
+      "predecessor_executor": {
+        "direct_category_plan_execution_allowed": false,
+        "path": "experiments/authz_mechinterp/compute_focused_sae_interventions.py",
+        "preserved_unmodified": true,
+        "sha256": "55159d8b7c5c0fed247171b0188148c1273e917df8df3b39de17dc852557727a"
+      },
+      "predecessor_runner": {
+        "path": "experiments/authz_mechinterp/run_focused_vpd_sae.py",
+        "preserved_unmodified": true,
+        "sha256": "306195df88ccbf1ec4c4093c22652db9f7c42da0f5921b4c533632ba780429fb",
+        "status": "historical_generic_control_predecessor"
+      },
+      "runner_v2": {
+        "path": "experiments/authz_mechinterp/run_focused_vpd_sae_v2.py",
+        "sha256": "459ba8e0d31c021b48163b2c16c11d9a3f253170e06c6ec6b81192caa2c4084e"
+      }
+    },
+    "focused_sae_compartment_control_benchmark": {
+      "path": "artifacts/vpd_focused_sae_compartment_control_benchmark_v1/report.json",
+      "sha256": "b716c819b7ba22598cf489cfc8a830a88bf8f32366657ea12a2d95e29d78b98c",
+      "verification": {
+        "benchmark_id": "57f3f9a612883b04bb9651ca8de3fee7f17a6b0996b7eb88ee7d85d22a84ed25",
+        "passed": 8,
+        "rejected_before_plan": 6,
+        "same_compartment_plans": 2,
+        "scenarios": 8,
+        "schema": "sch.vpd-focused-sae-compartment-control-benchmark-verification.v1",
+        "status": "pass"
+      }
+    },
+    "predecessor_unified_receipt_v4": {
+      "path": "artifacts/vpd_unified_compartment_pipeline_v4/receipt.json",
+      "pipeline_receipt_id": "e12976b0161b3c947006fb785c5cf598e63a6620f4cd1563b3690e2769af6f75",
+      "sha256": "75b6151a3cad95c3236d4dce4c8c7de791c5eec6889920e27db5d39dd0dfaa0b",
+      "verification": {
+        "capture_adapter_status": "implemented_locally_not_executed",
+        "execution_authorized": false,
+        "partition_audit_work_units": 16,
+        "pipeline_receipt_id": "e12976b0161b3c947006fb785c5cf598e63a6620f4cd1563b3690e2769af6f75",
+        "schema": "sch.vpd-unified-compartment-pipeline-verification.v4",
+        "status": "pass"
+      }
+    },
+    "research_protocol_v7": {
+      "path": "configs/evals/vpd_activation_category_compartments_v7.json",
+      "sha256": "3e584f718df415cf4307511da5a04ea1ccc425695dc2a5bfb0360ce9617c94f7",
+      "verification": {
+        "control_benchmark_id": "57f3f9a612883b04bb9651ca8de3fee7f17a6b0996b7eb88ee7d85d22a84ed25",
+        "execution_authorized": false,
+        "predecessor_sha256": "c5d9a47f651fcf654a9b33780c0c556e681a80cf4379a1684c65dba985e2b84a",
+        "protocol_sha256": "3e584f718df415cf4307511da5a04ea1ccc425695dc2a5bfb0360ce9617c94f7",
+        "same_compartment_control_required": true,
+        "schema": "sch.vpd-activation-category-protocol-verification.v7",
+        "status": "pass"
+      }
+    },
+    "sae_training_release_gate_v1": {
+      "path": "artifacts/vpd_compartment_sae_training_release_gate_v1/plan.json",
+      "release_gate_plan_id": "7109adb38749c4c0e91154df0fddfe5fb79c625972f3ff89eca06ffda39596b9",
+      "sha256": "1ac02aa361dcfe40c4cb0925d127249d1e14ece47e4b0918b6fe57771d8a0d85",
+      "verification": {
+        "execution_authorized": false,
+        "guarded_jobs": 22,
+        "release_gate_plan_id": "7109adb38749c4c0e91154df0fddfe5fb79c625972f3ff89eca06ffda39596b9",
+        "schema": "sch.vpd-compartment-sae-training-release-gate-plan-verification.v1",
+        "status": "pass",
+        "training_jobs": 18
+      }
+    }
+  },
+  "status": "pass_local_category_control_path_implemented_not_run"
+}

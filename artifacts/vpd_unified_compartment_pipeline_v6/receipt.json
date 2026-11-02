@@ -1,0 +1,96 @@
+{
+  "invariants": {
+    "exact_category_pair_and_prompt_window_hashes_bound": true,
+    "execution_blueprint_v2_recomputed": true,
+    "execution_contract_benchmark_reverified": true,
+    "execution_not_authorized": true,
+    "predecessor_receipt_v5_reverified": true,
+    "research_protocol_v8_reverified": true,
+    "v1_unbound_hyperparameter_gap_reproduced": true
+  },
+  "lineage_amendment": {
+    "all_18_replica_sample_contracts_recomputed_from_frozen_split": true,
+    "batch_size_and_learning_rate_manifest_binding_required": true,
+    "current_v1_release_gate_not_sufficient_by_itself": true,
+    "final_evaluation_remains_untouched": true,
+    "predecessor_receipt_v5_preserved_and_reverified": true,
+    "predecessor_v1_dictionary_manifest_empirically_inadmissible": true,
+    "research_protocol_v7_preserved": true,
+    "research_protocol_v8_is_not_historical_experiment_v8": true,
+    "shared_training_equal_whole_episode_balance_required": true,
+    "specific_training_cross_compartment_rows_equal_zero": true,
+    "training_plan_v3_preserved_as_predecessor_design": true,
+    "versioned_empirical_runner_and_admission_still_required": true
+  },
+  "pipeline_receipt_id": "f4391a7bed1c8047d2b4ea08247b667a53619586f3931802b4146dee0d34187f",
+  "resources": {
+    "compartments": 9,
+    "execution_contract_benchmark_scenarios": 8,
+    "shared_compartments": 1,
+    "specific_compartments": 8,
+    "training_jobs": 18
+  },
+  "schema": "sch.vpd-unified-compartment-pipeline-receipt.v6",
+  "scientific_boundary": {
+    "empirical_category_bundle_present": false,
+    "empirical_dictionary_manifest_v2_present": false,
+    "execution_authorized": false,
+    "historical_v7_negative_release_decision_unchanged": true,
+    "interventions_executed": false,
+    "model_inference_performed": false,
+    "sae_training_performed": false,
+    "weights_loaded_or_mutated": false
+  },
+  "source": {
+    "predecessor_unified_receipt_v5": {
+      "path": "artifacts/vpd_unified_compartment_pipeline_v5/receipt.json",
+      "pipeline_receipt_id": "aedb91d6a90700517005c517ef29acbc3f87594fe82695adeb6ae10d3af639a4",
+      "sha256": "994032901b16cdf1062b03f15183cfa6bafff333cc5a1503693854d2ed7b4a0b",
+      "verification": {
+        "execution_authorized": false,
+        "focused_control_scenarios": 8,
+        "guarded_sae_blueprint_jobs": 22,
+        "pipeline_receipt_id": "aedb91d6a90700517005c517ef29acbc3f87594fe82695adeb6ae10d3af639a4",
+        "schema": "sch.vpd-unified-compartment-pipeline-verification.v5",
+        "status": "pass"
+      }
+    },
+    "preserved_training_plan_v3": {
+      "path": "artifacts/vpd_compartment_sae_training_plan_v3/plan.json",
+      "sha256": "56de0620d8a6a6a93797f1a16f3379d53fe6161ff27e8689680d099ce8edb7cc",
+      "training_plan_id": "d4ef3eca0c642d22f3df415bacb61d5a2130fed969570eb6836777589d1301dd"
+    },
+    "research_protocol_v8": {
+      "path": "configs/evals/vpd_activation_category_compartments_v8.json",
+      "sha256": "b66111e7d5e7001ddef5dadefd97eaa0f6ef3bdd658699d6ad3add72e68fab49",
+      "verification": {
+        "execution_authorized": false,
+        "execution_benchmark_id": "08255dba491199e4963080c8e059c8ebd0fdddaffb3e4fbd70c781a8685b2ff4",
+        "execution_blueprint_id": "33bc09fac66fcec62bc0374c39d7ad4209a5d17eafd9b1003b4353073687e40e",
+        "predecessor_sha256": "3e584f718df415cf4307511da5a04ea1ccc425695dc2a5bfb0360ce9617c94f7",
+        "protocol_sha256": "b66111e7d5e7001ddef5dadefd97eaa0f6ef3bdd658699d6ad3add72e68fab49",
+        "schema": "sch.vpd-activation-category-protocol-verification.v8",
+        "status": "pass",
+        "training_jobs": 18
+      }
+    },
+    "training_execution_blueprint_v2": {
+      "execution_blueprint_id": "33bc09fac66fcec62bc0374c39d7ad4209a5d17eafd9b1003b4353073687e40e",
+      "path": "artifacts/vpd_compartment_sae_training_execution_blueprint_v2/blueprint.json",
+      "sha256": "167bd226158f47279fecd6c15364f63cd422e3ca7f73f12c9d4c7e4c4b650793"
+    },
+    "training_execution_contract_benchmark_v1": {
+      "path": "artifacts/vpd_compartment_sae_training_execution_contract_benchmark_v1/report.json",
+      "sha256": "06afd8c4e630e4e0affd9e736817684dd6bb23ae1de9e2672adbbc1d69332ed2",
+      "verification": {
+        "benchmark_id": "08255dba491199e4963080c8e059c8ebd0fdddaffb3e4fbd70c781a8685b2ff4",
+        "execution_authorized": false,
+        "predecessor_gap_reproduced": true,
+        "scenarios": 8,
+        "schema": "sch.vpd-compartment-sae-training-execution-benchmark-verification.v1",
+        "status": "pass"
+      }
+    }
+  },
+  "status": "pass_local_training_execution_design_implemented_not_run"
+}

@@ -1,0 +1,55 @@
+{
+  "benchmark_id": "525fbf3433a410ad883b438ee301285f31d704815a86f955751a9cb29b0f09f2",
+  "controls": {
+    "authorization_binds_role_dataset_and_ceiling": true,
+    "authorization_does_not_grant_dictionary_training": true,
+    "dataset_and_split_hashes_bound": true,
+    "dictionary_training_authorization_rejected": true,
+    "forward_pass_ceiling_exact": true,
+    "planner_imports_no_model_framework": true,
+    "planning_performs_no_execution": true,
+    "split_role_exactly_bound": true,
+    "split_support_tamper_rejected": true,
+    "v1_role_restriction_preserved": true,
+    "v2_sae_training_plan_reproduces": true,
+    "wrong_role_authorization_rejected": true
+  },
+  "design": {
+    "all_activation_categories": true,
+    "authorization_is_exact_job_scoped": true,
+    "canonical_components": 2,
+    "central_difference_lanes": 2,
+    "dictionary_training_authority_separate": true,
+    "exact_shared_pair_set": true,
+    "synthetic_sae_training_split": true
+  },
+  "results": {
+    "canonical_inventory_id": "867b3c254cf8b9b65009754c723df8780b13b447c1c9d48767f83a3e27d26fc7",
+    "capture_authorization_id": "a7f586dfde2e4e00c34ba8c8077182b7da1361d4bfd458dffeff2ffe56fdca7b",
+    "capture_job_plan_id": "2b85251ffe8fd689fb1cf1ab8d91dc91a8eb0f01f81cd1994f63abed590181e6",
+    "dataset_rows": 16,
+    "maximum_forward_passes": 32,
+    "split_role": "sae_training"
+  },
+  "schema": "sch.vpd-canonical-sae-training-capture-plan-benchmark.v2",
+  "scientific_boundary": {
+    "effect_capture_performed": false,
+    "empirical_plan_produced": false,
+    "execution_authorized": false,
+    "model_inference_performed": false,
+    "model_loaded": false,
+    "sae_training_authorized": false,
+    "synthetic_artifacts_only": true,
+    "weights_loaded_or_mutated": false
+  },
+  "source": {
+    "planner_v1_sha256": "fb0b32df99022fe4a5d411e243cd14c39365a618318a062b916c11e57f2249e7",
+    "planner_v2_sha256": "5ccfc18eb6bf6a2a921514b905672a197a7079af51ab344dbcb4593e3624f9da",
+    "runner_sha256": "816f2b24ff65ee2652c129600745361c1c1578bd2af091ad2951b965eebd5b31"
+  },
+  "status": "pass",
+  "summary": {
+    "controls": 12,
+    "passed": 12
+  }
+}

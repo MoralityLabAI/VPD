@@ -1,0 +1,16 @@
+{
+  "status": "saved_controls_verified",
+  "source_manifest_sha256": "30df0f28705d99eabc4740d54a987170a511801b34922ed93d8eefa19b5f2364",
+  "records": 450,
+  "reset_one_pass_pairs": 150,
+  "identity_logit_checks": 60,
+  "upstream_state_checks": 13240,
+  "matched_write_norm_checks": 420,
+  "max_reset_state_error": 0.0,
+  "max_reset_logit_error": 0.0,
+  "new_model_inference": false,
+  "implementation_sha256": "fe18ed1cb0b82d5b712ba06d4fd94a08161da76485c3503e53f11aca0c29028e",
+  "files": {
+    "parity.json": "bf124f5350df7c3645be370bada0d4fdd31401b4bc930bcbaf87b119ac2dd63b"
+  }
+}

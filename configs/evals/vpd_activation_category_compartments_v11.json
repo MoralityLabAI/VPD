@@ -1,0 +1,1030 @@
+{
+  "category_contract": {
+    "basis": "model_visible_authorization_state_not_model_outcome",
+    "categories": [
+      {
+        "id": "valid_authority",
+        "sae_protocol": "valid_authority_retention"
+      },
+      {
+        "id": "missing_or_untrusted_authority",
+        "sae_protocol": "provenance_rejection"
+      },
+      {
+        "id": "signature_invalid",
+        "sae_protocol": "cryptographic_validity_rejection"
+      },
+      {
+        "id": "time_inactive",
+        "sae_protocol": "temporal_validity_rejection"
+      },
+      {
+        "id": "revoked",
+        "sae_protocol": "revocation_state_rejection"
+      },
+      {
+        "id": "replayed",
+        "sae_protocol": "nonce_freshness_rejection"
+      },
+      {
+        "id": "scope_invalid",
+        "sae_protocol": "scope_and_resource_rejection"
+      },
+      {
+        "id": "other_invalid",
+        "sae_protocol": "conservative_request_rejection"
+      }
+    ],
+    "explicit_category_must_be_known": true,
+    "schema": "sch.vpd-activation-category-contract.v1",
+    "unknown_condition_rule": "allow_maps_to_valid_authority_else_other_invalid"
+  },
+  "component_compartments": {
+    "ambiguous_compartment": "shared_cross_category",
+    "cluster_candidate_discreteness_admission_v2": {
+      "allocation_mismatch_action": "reject_candidate_without_mutation",
+      "base_v1_bundle_must_verify_first": true,
+      "benchmark": {
+        "benchmark_id": "f08bfcc79318615af5a4135810796b93e620782956fd9e83c2eb807d8d6eda03",
+        "path": "artifacts/vpd_cluster_candidate_discreteness_admission_benchmark_v2/report.json",
+        "scenarios": 2,
+        "sha256": "572879b8c9c885d2e058e53ab5e7877e5430a272520357b2641a07f96c7216cc",
+        "verification": {
+          "benchmark_id": "f08bfcc79318615af5a4135810796b93e620782956fd9e83c2eb807d8d6eda03",
+          "execution_authorized": false,
+          "scenarios": 2,
+          "schema": "sch.vpd-cluster-candidate-discreteness-admission-benchmark-verification.v2",
+          "status": "pass"
+        }
+      },
+      "candidate_mutation_or_relabelling_prohibited": true,
+      "empirical_admission_receipt_present": false,
+      "exact_v1_v2_allocation_agreement_required": true,
+      "execution_authorized": false,
+      "independent_raw_discovery_and_cluster_validation_reconstruction": true,
+      "runner": {
+        "path": "experiments/authz_mechinterp/admit_vpd_cluster_candidate_discreteness_v2.py",
+        "sha256": "97ef50383691014371d420722fe4f04f5c3a02ae879be43e0db41aff72ba15a3"
+      },
+      "schema": "sch.vpd-cluster-candidate-discreteness-admission.v2",
+      "status": "implemented_model_free_benchmarked_not_empirically_run"
+    },
+    "cluster_rule": "deterministic_kmeans_within_compartment",
+    "packets_must_be_compartment_homogeneous": true,
+    "per_component_cross_archive_admission": {
+      "applied_after_discovery_within_split_screens": true,
+      "assignment_diagnostics_bound_into_bundle": true,
+      "calibration_point_estimate_same_specific_category_required": true,
+      "failed_specific_routes_to": "shared_cross_category",
+      "global_threshold_replication_does_not_waive_component_admission": true,
+      "independent_verifier_recomputes_every_component": true,
+      "minimum_dominant_strength_ratio": 0.5,
+      "minimum_signed_direction_cosine": 0.5,
+      "mode": "same_category_direction_magnitude_and_stratified_robustness",
+      "model_outcomes_used": false,
+      "required_for_production_category_bundle": true,
+      "same_stratified_robustness_gates_required_in_both_archives": true,
+      "schema": "sch.vpd-cross-archive-component-admission.v1"
+    },
+    "post_freeze_partition_audit": {
+      "audit_may_promote_shared_to_specific": false,
+      "audit_may_select_thresholds_clusters_or_components": false,
+      "capture_adapter": {
+        "attestation_before_signature_required": true,
+        "five_role_split_provenance_forbidden": true,
+        "fresh_pack_and_exact_work_unit_provenance_required": true,
+        "status": "implemented_locally_not_executed"
+      },
+      "dataset_and_split_role_identity_expected_to_differ": true,
+      "failure_may_not_tune_candidate_on_same_pack": true,
+      "final_evaluation_role_consumed": false,
+      "fresh_pack_id": "e65c78bb07fcf25c5a008d94a8f447b1b75f01cb8734632e7e2e567c81ca2f23",
+      "fresh_pack_path": "artifacts/vpd_partition_audit_pack_v1",
+      "gate_plan_id": "1341c8f6371fab72cd9e8f8be92b1e740ae47f08c71a77a8bab39b04fe2a119b",
+      "gate_plan_path": "artifacts/vpd_partition_audit_gate_v2/plan.json",
+      "minimum_dominant_strength_ratio": 0.5,
+      "minimum_signed_direction_cosine": 0.5,
+      "mode": "full_component_reject_only_generalization_audit",
+      "next_candidate_requires_new_pack_version_and_seed": true,
+      "packet_specific_compute_command_hash_required": true,
+      "position": "after_category_bundle_freeze_before_category_specific_sae_training",
+      "production_evaluator_required": true,
+      "required_for_category_specific_sae_training": true,
+      "same_frozen_model_revision_adapter_required": true,
+      "same_measurement_identity_fields": [
+        "model_id",
+        "revision",
+        "adapter_sha256",
+        "runner_sha256",
+        "effect_space_id",
+        "phase",
+        "estimator",
+        "perturbation_epsilon",
+        "selection_seed",
+        "generated_tokens",
+        "activation_category_contract_sha256",
+        "activation_categories",
+        "activation_category_uncertainty",
+        "activation_category_condition_robustness",
+        "activation_category_template_robustness"
+      ],
+      "same_specific_category_required": true,
+      "same_stratified_robustness_gates_required": true,
+      "schema": "sch.vpd-frozen-category-partition-audit.v1",
+      "signed_campaign_measurement_contract_required": true,
+      "signed_merge_front_end_required": true,
+      "synthetic_benchmark_id": "f817cecf0833e66b9013b311eecbcad72f8e8091d0226094bae58bfed6f16a6f",
+      "synthetic_benchmark_path": "artifacts/vpd_frozen_partition_audit_benchmark_v1/report.json",
+      "zero_specific_failures_required": true
+    },
+    "specificity_thresholds": {
+      "maximum_normalized_entropy": 0.8,
+      "minimum_dominance_margin": 0.1,
+      "minimum_dominant_share": 0.35,
+      "zero_total_effect_routes_to_shared": true
+    },
+    "threshold_calibration": {
+      "calibration_archive_may_only_select_thresholds": true,
+      "candidate_grid": {
+        "maximum_normalized_entropy": [
+          0.4,
+          0.5,
+          0.6,
+          0.7,
+          0.8
+        ],
+        "minimum_dominance_margin": [
+          0.1,
+          0.15,
+          0.2,
+          0.3,
+          0.4,
+          0.5,
+          0.6
+        ],
+        "minimum_dominant_share": [
+          0.35,
+          0.45,
+          0.55,
+          0.65,
+          0.75,
+          0.85,
+          0.95
+        ]
+      },
+      "discovery_and_calibration_template_sets_must_differ": true,
+      "discovery_archive_is_only_clustering_feature_source": true,
+      "minimum_dominant_strength_ratio": 0.5,
+      "minimum_episodes_per_category_per_archive": 8,
+      "minimum_replication_rate": 0.9,
+      "minimum_signed_direction_cosine": 0.5,
+      "minimum_stable_specific_components": 32,
+      "mode": "independent_cross_template_effect_archive_stability_selection",
+      "no_passing_candidate_rule": "reject_bundle",
+      "same_stratified_robustness_gates_required_in_both_archives": true,
+      "selection_order": [
+        "maximum_stable_specific_count",
+        "maximum_symmetric_replication_rate",
+        "maximum_exact_compartment_agreement_rate",
+        "maximum_minimum_stable_specific_decision_slack",
+        "strictest_thresholds_lexicographic"
+      ],
+      "stratified_robustness_rejected_specific_components_do_not_count_as_stable": true,
+      "verified_v3_split_role_and_template_set_hash_required": true
+    },
+    "thresholds_bound_into_packet_id": true,
+    "within_category_cluster_count_selection": {
+      "cluster_validation_archive_must_be_content_pair_and_template_disjoint_from_discovery_and_calibration": true,
+      "cluster_validation_split_role_status": "locally_validated_no_model_outcomes_not_captured",
+      "discovery_leave_one_pair_block_out_replicates": 8,
+      "discovery_projection_replicates": 8,
+      "does_not_select_empirical_bonsai_cluster_counts": true,
+      "independent_cluster_validation_archive_required_for_production_category_bundle": true,
+      "independent_cluster_validation_leave_one_pair_block_out_replicates": 8,
+      "independent_cluster_validation_projection_replicates": 8,
+      "manual_total_cluster_count_allowed_only_as_explicit_ablation": true,
+      "maximum_clusters_per_category": 4,
+      "minimum_cluster_size": 4,
+      "minimum_replicate_adjusted_rand": 0.9,
+      "minimum_replicate_silhouette": 0.15,
+      "mode": "cross_archive_projection_and_pair_block_ensemble_stability_and_silhouette",
+      "no_passing_nontrivial_candidate_rule": "one_cluster_for_category",
+      "pair_block_sampling_stability_required_for_production_category_bundle": true,
+      "required_for_production_category_bundle": true,
+      "superseded_for_next_empirical_candidate_by": "within_category_cluster_discreteness_v2",
+      "synthetic_benchmark_id": "32ced135dd8ee66af5a1fd56f592c5f407da0a7636f050c75c5a9c3febaaa996",
+      "synthetic_benchmark_path": "artifacts/vpd_activation_category_cluster_count_benchmark_v1/report.json",
+      "total_replicates": 32
+    },
+    "within_category_cluster_discreteness_v2": {
+      "benchmark": {
+        "benchmark_id": "3c72d47b3662ccc78bdf2470850f0a644e597226cde988b78335b07a72609d91",
+        "legacy_false_splits_reproduced": 2,
+        "path": "artifacts/vpd_activation_category_cluster_discreteness_benchmark_v2/report.json",
+        "scenarios": 4,
+        "sha256": "b0d6e945f0af0c8bd146cc760d54341d3bcdac68b86569a9d1a1978ba4754e52",
+        "verification": {
+          "benchmark_id": "3c72d47b3662ccc78bdf2470850f0a644e597226cde988b78335b07a72609d91",
+          "execution_authorized": false,
+          "legacy_false_splits_reproduced": 2,
+          "scenarios": 4,
+          "schema": "sch.vpd-activation-category-cluster-discreteness-verification.v2",
+          "status": "pass"
+        }
+      },
+      "continuous_direction_or_strength_geometry_routes_to": "one_cluster_for_activation_category",
+      "cross_archive_and_pair_block_stability_still_required": true,
+      "direct_v1_cluster_count_selection_for_next_candidate_prohibited": true,
+      "discrete_separated_mechanisms_remain_selectable": true,
+      "does_not_select_empirical_bonsai_cluster_counts": true,
+      "minimum_replicate_boundary_gap_ratio": 1.5,
+      "minimum_replicate_silhouette_p10": 0.05,
+      "required_for_next_empirical_category_candidate": true,
+      "schema": "sch.vpd-category-cluster-count-selection.v2",
+      "selector": {
+        "path": "experiments/authz_mechinterp/activation_category_cluster_count_selection_v2.py",
+        "sha256": "fc7d2067268671a28f4758b1da2d92249818c91235fb137339c3c472c760b581"
+      },
+      "status": "implemented_model_free_benchmarked_not_empirically_run",
+      "v1_mean_silhouette_and_ari_alone_are_insufficient": true
+    },
+    "within_category_clustering_geometry": {
+      "arbitrarily_small_background_directions_have_arbitrarily_small_weight": true,
+      "direction_weighting": "sqrt_category_strength_share",
+      "does_not_select_empirical_bonsai_cluster_count": true,
+      "minimum_worst_seed_cluster_purity": 0.98,
+      "minimum_worst_seed_pairwise_f1": 0.95,
+      "mode": "share_weighted_direction_strength_profile_kmeans",
+      "production_shaped_hidden_size": 4096,
+      "synthetic_benchmark_id": "7098172918613a6f74e1f2d4032a5d720440dc654d1465cbc73f25d416c07428",
+      "synthetic_benchmark_path": "artifacts/vpd_activation_category_clustering_geometry_benchmark_v1/report.json",
+      "weighting_principle": "one_unit_sum_squared_category_direction_weights_for_nonzero_effect_component"
+    },
+    "within_category_condition_robustness_screen": {
+      "does_not_replace_pair_block_or_independent_split_replication": true,
+      "failed_specific_routes_to": "shared_cross_category",
+      "minimum_condition_coverage": 0.75,
+      "minimum_condition_direction_cosine": 0.5,
+      "minimum_condition_relative_norm": 0.25,
+      "minimum_countsketch_dimension": 256,
+      "mode": "condition_mean_countsketch_direction_and_relative_norm_coverage",
+      "model_outcomes_used": false,
+      "required_for_production_category_bundle": true
+    },
+    "within_category_pair_block_direction_robustness_screen": {
+      "does_not_replace_condition_template_or_independent_split_replication": true,
+      "failed_specific_routes_to": "shared_cross_category",
+      "minimum_countsketch_dimension": 256,
+      "minimum_pair_block_coverage": 0.75,
+      "minimum_pair_block_direction_cosine": 0.5,
+      "minimum_pair_block_relative_norm": 0.25,
+      "mode": "pair_block_mean_countsketch_direction_and_relative_norm_coverage",
+      "model_outcomes_used": false,
+      "required_for_production_category_bundle": true,
+      "reuses_signed_uncertainty_arrays": true
+    },
+    "within_category_template_robustness_screen": {
+      "does_not_replace_pair_block_condition_or_independent_split_replication": true,
+      "failed_specific_routes_to": "shared_cross_category",
+      "minimum_countsketch_dimension": 256,
+      "minimum_template_group_coverage": 0.75,
+      "minimum_template_group_direction_cosine": 0.5,
+      "minimum_template_group_relative_norm": 0.25,
+      "mode": "template_group_mean_countsketch_direction_and_relative_norm_coverage",
+      "model_outcomes_used": false,
+      "required_for_production_category_bundle": true,
+      "same_template_group_set_required_per_category": true
+    },
+    "within_split_uncertainty_screen": {
+      "does_not_replace_independent_calibration_split": true,
+      "low_stability_specific_routes_to": "shared_cross_category",
+      "minimum_same_compartment_stability": 0.875,
+      "mode": "leave_one_pair_block_out_countsketch",
+      "required_for_production_category_bundle": true
+    }
+  },
+  "data_pack": {
+    "activation_categories": 8,
+    "all_declared_categories_in_every_role": true,
+    "assignment": "whole_template_group_to_exactly_one_role",
+    "atomic_units": [
+      "template_group",
+      "pair_id"
+    ],
+    "cluster_validation_is_semantically_disjoint_and_outcome_free": true,
+    "final_evaluation_is_semantically_and_algorithmically_held_out_not_secret": true,
+    "generation_seed": 320829,
+    "pack_id": "ad753063ac5f83bd7197fbb1d17c4bd7bdced1d3a5140a7d765ab0f8e90f3a11",
+    "pair_constant_prompt_variant_is_label_independent": true,
+    "pair_episode_and_template_group_sets_are_disjoint": true,
+    "pairs": 2288,
+    "partition_audit_pack": {
+      "identity_message_and_template_disjointness_verified": true,
+      "pack_id": "e65c78bb07fcf25c5a008d94a8f447b1b75f01cb8734632e7e2e567c81ca2f23",
+      "pairs": 256,
+      "path": "artifacts/vpd_partition_audit_pack_v1",
+      "role": "partition_audit",
+      "rows": 2816,
+      "selection_use": "none_reject_only",
+      "semantic_template_groups": 4,
+      "separate_from_five_role_capacity_pack": true
+    },
+    "path": "artifacts/vpd_activation_category_capacity_pack_v3",
+    "roles": {
+      "calibration": {
+        "optimizer_or_threshold_use": "cross_template_threshold_selection_only",
+        "pairs": 429,
+        "rows": 4719,
+        "template_groups": [
+          "access_role_assignment",
+          "api_key_rotation",
+          "payment_refund"
+        ]
+      },
+      "cluster_validation": {
+        "optimizer_or_threshold_use": "within_category_cluster_count_replication_only",
+        "pairs": 429,
+        "rows": 4719,
+        "template_groups": [
+          "dns_record_change",
+          "feature_flag_rollout",
+          "kubernetes_rollout"
+        ]
+      },
+      "discovery": {
+        "optimizer_or_threshold_use": "effect_features_and_final_cluster_assignment_only",
+        "pairs": 429,
+        "rows": 4719,
+        "template_groups": [
+          "container_registry_cleanup",
+          "database_schema_migration",
+          "incident_page_update"
+        ]
+      },
+      "final_evaluation": {
+        "optimizer_or_threshold_use": "never",
+        "pairs": 429,
+        "rows": 4719,
+        "template_groups": [
+          "invoice_approval",
+          "object_storage_lifecycle",
+          "support_ticket_escalation"
+        ]
+      },
+      "sae_training": {
+        "optimizer_or_threshold_use": "fixed_base_dictionary_learning_only",
+        "pairs": 572,
+        "rows": 6292,
+        "template_groups": [
+          "analytics_data_export",
+          "calendar_reschedule",
+          "document_retention_change",
+          "email_campaign"
+        ]
+      }
+    },
+    "rows": 25168,
+    "split_id": "a5aa3370406876c1c48ed702b431a64cb6a68c8376ab28b0aad1d852c22dd8dc",
+    "split_path": "artifacts/vpd_activation_category_capacity_split_v4/split_manifest.json",
+    "split_schema": "sch.vpd-activation-category-split-manifest.v3",
+    "split_seed": 340829,
+    "status": "capacity_ready_design_locally_validated_no_model_outcomes",
+    "template_groups": 16
+  },
+  "effect_capture": {
+    "aggregate_array": "delta_h",
+    "aggregate_rule": "category_episode_count_weighted_mean",
+    "campaign_plan": {
+      "batch_forwards_at_planned_batch_size": 28667520,
+      "compute_jobs": 48,
+      "effect_roles": [
+        "discovery",
+        "calibration",
+        "cluster_validation"
+      ],
+      "episode_forward_equivalents": 114162048,
+      "later_stage_requires_prior_passed_gate": true,
+      "merge_jobs": 3,
+      "packets_per_role": 16,
+      "path": "artifacts/vpd_effect_capture_campaign_v3/plan.json",
+      "plan_does_not_authorize_execution": true,
+      "schema": "sch.vpd-effect-capture-campaign-plan.v1",
+      "signing_jobs": 48,
+      "stage_gate_benchmark_path": "artifacts/vpd_effect_campaign_stage_gate_benchmark_v3/report.json",
+      "stage_gate_jobs": 2,
+      "stage_order": [
+        "discovery",
+        "calibration",
+        "cluster_validation"
+      ],
+      "status": "locally_verified_requires_frozen_identities_signing_registry_and_compute_authorization"
+    },
+    "capture_phase": "pre_gate",
+    "category_array": "delta_h_by_category",
+    "category_array_axes": [
+      "component",
+      "category",
+      "hidden"
+    ],
+    "episode_selection_default": "full_verified_split_role",
+    "generated_tokens": 0,
+    "partition_audit_campaign": {
+      "assigned_workers": [
+        "worker-a",
+        "worker-b",
+        "worker-c"
+      ],
+      "audit_numeric_capture_parameters_derived_from_discovery": true,
+      "capture_adapter_status": "implemented_locally_not_executed",
+      "cross_archive_measurement_identity_validation_required": true,
+      "dedicated_partition_audit_merge_required": true,
+      "episode_forward_equivalents": 22708224,
+      "execution_authorized": false,
+      "gate_plan_id": "1341c8f6371fab72cd9e8f8be92b1e740ae47f08c71a77a8bab39b04fe2a119b",
+      "gate_plan_path": "artifacts/vpd_partition_audit_gate_v2/plan.json",
+      "global_worker_or_private_key_placeholder_forbidden": true,
+      "model_free_capture_pipeline_benchmark": {
+        "benchmark_id": "9efa073d053ee89551c847f09af0b56b450f134b333a88d80ae8ed5ee5d7ec89",
+        "path": "artifacts/vpd_partition_audit_capture_pipeline_benchmark_v1/report.json",
+        "scenarios": 7,
+        "sha256": "49cd6fed449035e831baee178f3e66285e691bcdbc57c08dc5c6ea70ac0eed3d",
+        "status": "pass"
+      },
+      "model_load_dtype_evidence_boundary": "content_addressed_gate_command_and_worker_hash_not_worker_observed_field",
+      "model_load_dtype_is_not_runtime_configurable": true,
+      "packet_specific_compute_command_hash_required": true,
+      "prepared_job_groups": 16,
+      "production_evaluation_driver_required": true,
+      "receipt_level_campaign_measurement_conformance_required": true,
+      "shared_measurement_contract_id_required_across_signed_merge": true,
+      "signed_attested_receipts_required": true,
+      "verified_discovery_capture_contract": {
+        "campaign_plan_id": "ffcc7351bade510166c449099f19d43bd1a28a89e83bc85bc912f883c742b528",
+        "capture_parameters": {
+          "batch_size": 4,
+          "dtype": "float16",
+          "effect_space_id": "layer_35__proposal_start",
+          "epsilon": 0.1,
+          "estimator": "mean_central_difference_lora_rank_multiplier",
+          "expected_hidden_size": 4096,
+          "generated_tokens": 0,
+          "maximum_episodes": 0,
+          "selection_seed": 1707,
+          "uncertainty_blocks": 8,
+          "uncertainty_sketch_dimension": 256
+        },
+        "path": "artifacts/vpd_effect_capture_campaign_v4/plan.json",
+        "sha256": "250364ee83c9491df149604a4b711e438cb1e6f3dea9fa3a432330c66a169072",
+        "verification": {
+          "campaign_plan_id": "ffcc7351bade510166c449099f19d43bd1a28a89e83bc85bc912f883c742b528",
+          "components_per_role": 4032,
+          "compute_jobs": 48,
+          "execution_authorized": false,
+          "schema": "sch.vpd-effect-capture-campaign-verification.v2",
+          "status": "pass",
+          "worker_wrapper_sha256": "1cc03ee68265b52f1454f8aec93e5f236568bc99ef3f9d273e6daa7d8e5e6159"
+        }
+      },
+      "work_units": 16,
+      "worker_scoped_signing_required": true
+    },
+    "receipt_schema": "sch.vpd-effect-shard-receipt.v5",
+    "sketch_fidelity_admission": {
+      "benchmark_id": "4ed9790051cabd86dd4b2faffd68d57bfd1a8fbead2e8ea0df0b107ab29e04dd",
+      "hidden_size": 4096,
+      "operational_minimum_direction_cosine": 0.5,
+      "operational_minimum_relative_norm": 0.25,
+      "path": "artifacts/vpd_effect_sketch_fidelity_benchmark_v1/report.json",
+      "production_archives_below_selected_dimension_rejected": true,
+      "selected_countsketch_dimension": 256,
+      "status": "pass"
+    },
+    "stratified_robustness_sufficient_statistics": {
+      "category_template_cells": [
+        "template_cell_names",
+        "template_cell_category_names",
+        "template_cell_group_names",
+        "template_cell_episode_counts",
+        "delta_h_countsketch_template_cell_sums"
+      ],
+      "condition_cells": [
+        "condition_names",
+        "condition_category_names",
+        "condition_episode_counts",
+        "delta_h_countsketch_condition_sums"
+      ],
+      "countsketch_dimension": 256,
+      "full_per_episode_hidden_states_retained": false
+    },
+    "uncertainty_sufficient_statistics": {
+      "arrays": [
+        "category_uncertainty_block_counts",
+        "delta_h_countsketch_block_sums"
+      ],
+      "assignment": "stable_hash_rank_round_robin",
+      "atomic_unit": "pair_id",
+      "blocks": 8,
+      "countsketch_dimension": 256,
+      "full_per_episode_hidden_states_retained": false
+    }
+  },
+  "focused_evaluation": {
+    "final_template_groups_unseen_by_dictionary_effect_and_threshold_selection": true,
+    "input_lineage": {
+      "category_packet_without_exact_effect_lineage_rule": "reject",
+      "legacy_metadata_only_packet_empirical_category_claim_allowed": false,
+      "legacy_metadata_only_packet_status": "unattested_legacy_metadata_pilot",
+      "packet_bound_discovery_effect_archive_required": true,
+      "packet_bound_discovery_merge_manifest_required": true,
+      "schema": "sch.vpd-focused-sae-packet-effect-lineage.v1",
+      "synthetic_benchmark_id": "72a45142b1817269e4b991556585ad9e139c02290c31753edcc994d87ec783fe",
+      "synthetic_benchmark_path": "artifacts/vpd_focused_sae_input_lineage_benchmark_v1/report.json"
+    },
+    "matched_parameter_control": {
+      "bundle_assignments_reverified_before_planning_and_execution": true,
+      "complete_assignment_derived_control_pool_required": true,
+      "control_outside_target_packet_required": true,
+      "empty_same_compartment_control_pool_rule": "reject_focused_candidate_packet",
+      "execution_authorized": false,
+      "executor_v2": {
+        "path": "experiments/authz_mechinterp/compute_focused_sae_interventions_v2.py",
+        "sha256": "d5b1f20032dbac4f87aaf277597a04d9dccbe986e4312885aa0d5dc171118223"
+      },
+      "generic_cross_compartment_control_pool_forbidden": true,
+      "numeric_control_selection_recomputed_before_execution": true,
+      "policy": "complete_same_frozen_activation_compartment_out_of_packet_norm_matched_low_alignment",
+      "predecessor_executor": {
+        "direct_category_plan_execution_allowed": false,
+        "path": "experiments/authz_mechinterp/compute_focused_sae_interventions.py",
+        "preserved_unmodified": true,
+        "sha256": "55159d8b7c5c0fed247171b0188148c1273e917df8df3b39de17dc852557727a"
+      },
+      "predecessor_packet_first_32_pool_used_for_selection": false,
+      "predecessor_runner": {
+        "path": "experiments/authz_mechinterp/run_focused_vpd_sae.py",
+        "preserved_unmodified": true,
+        "sha256": "306195df88ccbf1ec4c4093c22652db9f7c42da0f5921b4c533632ba780429fb",
+        "status": "historical_generic_control_predecessor"
+      },
+      "runner_v2": {
+        "path": "experiments/authz_mechinterp/run_focused_vpd_sae_v2.py",
+        "sha256": "459ba8e0d31c021b48163b2c16c11d9a3f253170e06c6ec6b81192caa2c4084e"
+      },
+      "schema": "sch.vpd-focused-sae-control-compartment.v1",
+      "shared_target_and_control_same_compartment_required": true,
+      "specific_target_and_control_same_compartment_required": true,
+      "status": "implemented_model_free_not_run",
+      "synthetic_benchmark": {
+        "benchmark_id": "57f3f9a612883b04bb9651ca8de3fee7f17a6b0996b7eb88ee7d85d22a84ed25",
+        "path": "artifacts/vpd_focused_sae_compartment_control_benchmark_v1/report.json",
+        "scenarios": 8,
+        "sha256": "b716c819b7ba22598cf489cfc8a830a88bf8f32366657ea12a2d95e29d78b98c",
+        "status": "pass"
+      }
+    },
+    "matched_parameter_control_required": true,
+    "report_effects_by_category_and_in_aggregate": true,
+    "screening_endpoint": {
+      "heldout_intervention_endpoint": "signed_authorization_decision_margin",
+      "schema": "sch.vpd-focused-sae-screen-endpoint.v1",
+      "shared_compartment": "behavior_label",
+      "specific_compartment": "observable_activation_category_membership",
+      "specific_model_outcome_label_used_for_selection": false,
+      "synthetic_benchmark_id": "8f06090f64db0a1fadcaec50e2f14bf73eff3fe8e3e372de836dd55f8a501b12",
+      "synthetic_benchmark_path": "artifacts/vpd_compartment_sae_screening_benchmark_v2/report.json"
+    },
+    "shared_compartment_requires_multiple_categories": true,
+    "shared_interventions_cover_every_family_category_cell": true,
+    "specific_compartment_requires_target_and_cross_category_rows": true
+  },
+  "predecessor": "configs/evals/vpd_activation_category_compartments_v10.json",
+  "predecessor_sha256": "1b53f290aa05a2aefefea665202ba6c22e045c019a05b5796028e895fd062f1c",
+  "protocol_derivation": {
+    "cluster_candidate_admission_benchmark_runner_sha256": "776dd050314b6548076dadaabe0ce8c46054159dc79cee8f1c06144e72756770",
+    "cluster_candidate_admission_benchmark_verification": {
+      "benchmark_id": "f08bfcc79318615af5a4135810796b93e620782956fd9e83c2eb807d8d6eda03",
+      "execution_authorized": false,
+      "scenarios": 2,
+      "schema": "sch.vpd-cluster-candidate-discreteness-admission-benchmark-verification.v2",
+      "status": "pass"
+    },
+    "cluster_candidate_admission_runner_sha256": "97ef50383691014371d420722fe4f04f5c3a02ae879be43e0db41aff72ba15a3",
+    "cluster_discreteness_v2_benchmark_runner_sha256": "3958cfbfbfc2aecfc131497a8f383da04281db8dbe1ad9be4fba197f5fe083ac",
+    "cluster_discreteness_v2_benchmark_verification": {
+      "benchmark_id": "3c72d47b3662ccc78bdf2470850f0a644e597226cde988b78335b07a72609d91",
+      "execution_authorized": false,
+      "legacy_false_splits_reproduced": 2,
+      "scenarios": 4,
+      "schema": "sch.vpd-activation-category-cluster-discreteness-verification.v2",
+      "status": "pass"
+    },
+    "cluster_discreteness_v2_selector_sha256": "fc7d2067268671a28f4758b1da2d92249818c91235fb137339c3c472c760b581",
+    "implementation_hashes": {
+      "capture_runner_v2": "d21f507ac01c7e88b73df469107838225ba7cef6fad24211bc1c8cc75090459f",
+      "dictionary_bundle_admission_v2": "776c1d854faee05a5efcadf018685316cdf29f9ea17a972240dd4535f246bf0e",
+      "quality_runner_v2": "1a12e4686a278a75e7717a1bea5c02e3b3bb80ff594c40647c09fca3fa36b220",
+      "release_admission_v2": "6200f58d2f7577e512a783d2dce23c27761df320cdd62e243a04fda7bdc9631c",
+      "sae_training_runner_v2": "775e049d5fe66af18449b1dbb9ceda8f04d70475c98f4ef47491f02a2f9040bb"
+    },
+    "predecessor_v10_verification": {
+      "cluster_discreteness_benchmark_id": "3c72d47b3662ccc78bdf2470850f0a644e597226cde988b78335b07a72609d91",
+      "execution_authorized": false,
+      "legacy_false_splits_reproduced": 2,
+      "predecessor_sha256": "3d4397f3ef270f4d2b0bc00995034543f34a60dedfc9c9587eb06963e2b5bd9c",
+      "protocol_sha256": "1b53f290aa05a2aefefea665202ba6c22e045c019a05b5796028e895fd062f1c",
+      "schema": "sch.vpd-activation-category-protocol-verification.v10",
+      "status": "pass"
+    },
+    "predecessor_v9_verification": {
+      "execution_authorized": false,
+      "guarded_jobs": 22,
+      "predecessor_sha256": "b66111e7d5e7001ddef5dadefd97eaa0f6ef3bdd658699d6ad3add72e68fab49",
+      "protocol_sha256": "3d4397f3ef270f4d2b0bc00995034543f34a60dedfc9c9587eb06963e2b5bd9c",
+      "release_gate_plan_id": "5d821b591fa46ee306d335efc9df10e5a0db3a301482d13d54caeaa0d42e575c",
+      "schema": "sch.vpd-activation-category-protocol-verification.v9",
+      "status": "pass",
+      "training_plan_id": "a7a050abead2d60a63e16a6d07126609ac38c034f18ad3e37f98cd7c9f4d8c2b"
+    },
+    "predecessor_verification": {
+      "execution_authorized": false,
+      "execution_benchmark_id": "08255dba491199e4963080c8e059c8ebd0fdddaffb3e4fbd70c781a8685b2ff4",
+      "execution_blueprint_id": "33bc09fac66fcec62bc0374c39d7ad4209a5d17eafd9b1003b4353073687e40e",
+      "predecessor_sha256": "3e584f718df415cf4307511da5a04ea1ccc425695dc2a5bfb0360ce9617c94f7",
+      "protocol_sha256": "b66111e7d5e7001ddef5dadefd97eaa0f6ef3bdd658699d6ad3add72e68fab49",
+      "schema": "sch.vpd-activation-category-protocol-verification.v8",
+      "status": "pass",
+      "training_jobs": 18
+    },
+    "release_gate_v2_verification": {
+      "compute_authorized": false,
+      "execution_authorized": false,
+      "guarded_jobs": 22,
+      "release_gate_plan_id": "5d821b591fa46ee306d335efc9df10e5a0db3a301482d13d54caeaa0d42e575c",
+      "release_gate_plan_sha256": "b6b369258a928621516e56b92c7625b58bf73279309a41c1affc4c4ca09ec417",
+      "schema": "sch.vpd-compartment-sae-training-release-gate-verification.v2",
+      "status": "pass"
+    },
+    "research_protocol_v10_is_distinct_from_historical_experiment_labels": true,
+    "research_protocol_v11_is_distinct_from_historical_experiment_labels": true,
+    "research_protocol_v9_is_distinct_from_historical_experiment_labels": true,
+    "runtime_benchmark_v2_verification": {
+      "benchmark_id": "f044212429c08737719ffe1f64496122d20d94f2f6b4e2333c42d00d452b185c",
+      "execution_authorized": false,
+      "scenarios": 11,
+      "schema": "sch.vpd-compartment-sae-runtime-benchmark-verification.v2",
+      "status": "pass"
+    },
+    "training_plan_v4_verification": {
+      "capture_jobs": 2,
+      "execution_authorized": false,
+      "guarded_jobs": 22,
+      "schema": "sch.vpd-compartment-sae-training-plan-verification.v2",
+      "status": "pass",
+      "training_jobs": 18,
+      "training_plan_id": "a7a050abead2d60a63e16a6d07126609ac38c034f18ad3e37f98cd7c9f4d8c2b",
+      "training_plan_sha256": "f90dc761017b15369fbc31bf8d9efdee4f4d8f6e9c7fce585e8ecc5e94b5975c"
+    }
+  },
+  "sae_training": {
+    "base_model_capture_required": true,
+    "capacity_support": {
+      "capacity_candidate": {
+        "capacity_plan_id": "809deb31cba4642ee38cbaf2f7417120610b4fc9cfe6c37d0ed6cbaa885efb7d",
+        "capacity_plan_path": "artifacts/vpd_compartment_sae_capacity_v2/plan.json",
+        "capture_completed": false,
+        "empirical_trainability_claimed": false,
+        "identity_pair_and_message_overlap_with_checked_priors": 0,
+        "pack_id": "ad753063ac5f83bd7197fbb1d17c4bd7bdced1d3a5140a7d765ab0f8e90f3a11",
+        "pack_path": "artifacts/vpd_activation_category_capacity_pack_v3",
+        "pairs": 2288,
+        "rows": 25168,
+        "source_pack_split_id": "a9b7fa1fcc2bfc959b586e6f2890a3787b04abdbb7bd08c4772f75c0a23ee81e",
+        "split_id": "a5aa3370406876c1c48ed702b431a64cb6a68c8376ab28b0aad1d852c22dd8dc",
+        "split_path": "artifacts/vpd_activation_category_capacity_split_v4/split_manifest.json",
+        "split_schema": "sch.vpd-activation-category-split-manifest.v3",
+        "support_ready_profiles": [
+          "bounded_context_pilot"
+        ],
+        "training_completed": false
+      },
+      "capacity_plan_id": "f2f92a86a33ee8193bd6d8df9c3841e7710a9fe220237d5660679ecf040b0067",
+      "capture_contract": "complete_whole_episode_prompt_context_window_ending_at_proposal_start_with_zero_generated_tokens_and_profile_bound_rows_per_episode",
+      "capture_resources": {
+        "activation_rows": 805376,
+        "activation_rows_total": 1409408,
+        "capture_completed": false,
+        "fp16_bytes_per_layer": 6597640192,
+        "maximum_full_shard_bytes": 33554432,
+        "memory_mapped_training_reader_required": true,
+        "monolithic_npz_forbidden": true,
+        "pair_atomic_train_validation_split_required": true,
+        "path": "artifacts/vpd_compartment_capture_resources_v1/plan.json",
+        "resource_plan_id": "c99dd5c6e06bc5408aedc8df468d2b5d98a5825b73ca8e52fe6969b3b13d6ee0",
+        "role_resources": {
+          "calibration": {
+            "activation_rows": 604032,
+            "episodes": 4719,
+            "shards_per_layer": 148
+          },
+          "sae_training": {
+            "activation_rows": 805376,
+            "episodes": 6292,
+            "shards_per_layer": 197
+          }
+        },
+        "role_specific_episode_row_and_shard_counts_required": true,
+        "shard_rows": 4096,
+        "shards_per_layer": 197,
+        "streaming_metadata_required": true
+      },
+      "current_pack_status": "insufficient_current_pack",
+      "minimum_expected_training_firings_per_feature_under_uniform_usage": 32,
+      "minimum_training_observations_per_dictionary_feature": 8,
+      "minimum_unique_prompt_pairs_per_compartment": 32,
+      "path": "artifacts/vpd_compartment_sae_capacity_v1/plan.json",
+      "ready_profiles": 0,
+      "schema": "sch.vpd-compartment-sae-capacity-plan.v1",
+      "single_anchor_capture_may_not_train_a_category_dictionary": true,
+      "support_floor_is_not_a_trainability_or_mechanism_claim": true,
+      "training_fraction": 0.9,
+      "training_gate": "selected_profile_and_compartment_support_must_both_be_ready"
+    },
+    "capture_semantic_admission": {
+      "observable_activation_category_recomputed_from_source": true,
+      "prompt_window_coordinates_reproduced_without_model_inference": true,
+      "required_before_calibration_quality": true,
+      "required_before_dictionary_bundle_admission": true,
+      "required_before_dictionary_training": true,
+      "schema": "sch.vpd-prompt-window-capture-semantic-verification.v1",
+      "source_episode_order_and_content_address_required": true,
+      "synthetic_benchmark_id": "51ebf5afb2cf0e1cc109ed8a7672d9ff8f0adb7c65fb4e442128164fbc5f0964",
+      "synthetic_benchmark_path": "artifacts/vpd_activation_capture_semantic_benchmark_v1/report.json"
+    },
+    "execution_blueprint_v2": {
+      "batch_size_and_learning_rate_manifest_binding_required": true,
+      "blueprint": {
+        "compartments": 9,
+        "execution_blueprint_id": "33bc09fac66fcec62bc0374c39d7ad4209a5d17eafd9b1003b4353073687e40e",
+        "path": "artifacts/vpd_compartment_sae_training_execution_blueprint_v2/blueprint.json",
+        "sha256": "167bd226158f47279fecd6c15364f63cd422e3ca7f73f12c9d4c7e4c4b650793",
+        "training_jobs": 18
+      },
+      "current_v1_training_release_gate_sufficient_by_itself": false,
+      "exact_sample_contract_manifest_binding_required": true,
+      "execution_authorized": false,
+      "implementation": {
+        "blueprint_derivation": {
+          "path": "experiments/authz_mechinterp/derive_compartment_sae_training_execution_blueprint_v2.py",
+          "sha256": "9929275b5a61e6fe2afd56d741ac46d0b44b0a3b1f30b02d3a4be64e73fa42c6"
+        },
+        "synthetic_benchmark": {
+          "path": "experiments/authz_mechinterp/benchmark_compartment_sae_training_execution_contract.py",
+          "sha256": "09bea4c5439c6aeffe3007a6393a0f53f84af63878fa4a2ba3edd20f95445c3e"
+        }
+      },
+      "predecessor_v1_dictionary_manifest_admissible": false,
+      "required_dictionary_manifest_schema": "sch.vpd-fixed-sae-dictionary-manifest.v2",
+      "schema": "sch.vpd-compartment-sae-training-execution-admission.v2",
+      "shared_equal_whole_episode_balance_required": true,
+      "specific_cross_compartment_rows_must_equal": 0,
+      "status": "design_only_implemented_model_free_not_run",
+      "synthetic_benchmark": {
+        "benchmark_id": "08255dba491199e4963080c8e059c8ebd0fdddaffb3e4fbd70c781a8685b2ff4",
+        "execution_authorized": false,
+        "path": "artifacts/vpd_compartment_sae_training_execution_contract_benchmark_v1/report.json",
+        "predecessor_gap_reproduced": true,
+        "scenarios": 8,
+        "schema": "sch.vpd-compartment-sae-training-execution-benchmark-verification.v1",
+        "sha256": "06afd8c4e630e4e0affd9e736817684dd6bb23ae1de9e2672adbbc1d69332ed2",
+        "status": "pass"
+      },
+      "training_plan_v3": {
+        "path": "artifacts/vpd_compartment_sae_training_plan_v3/plan.json",
+        "preserved_as_predecessor_evidence": true,
+        "sha256": "56de0620d8a6a6a93797f1a16f3379d53fe6161ff27e8689680d099ce8edb7cc",
+        "training_plan_id": "d4ef3eca0c642d22f3df415bacb61d5a2130fed969570eb6836777589d1301dd"
+      },
+      "versioned_empirical_runner_and_admission_still_required": true
+    },
+    "execution_runtime_v2": {
+      "base_model_weights_mutable": false,
+      "bundle_admission_jobs": 1,
+      "capture_jobs": 2,
+      "execution_authorized": false,
+      "external_authorization_must_cover_exact_v2_job_ids": true,
+      "external_explicit_compute_authorization_required": true,
+      "guarded_jobs": 22,
+      "implementation": {
+        "capture_runner_v2": {
+          "path": "experiments/authz_mechinterp/run_compartment_sae_capture_job_v2.py",
+          "sha256": "d21f507ac01c7e88b73df469107838225ba7cef6fad24211bc1c8cc75090459f"
+        },
+        "dictionary_bundle_admission_v2": {
+          "path": "experiments/authz_mechinterp/admit_compartment_sae_dictionary_bundle_v2.py",
+          "sha256": "776c1d854faee05a5efcadf018685316cdf29f9ea17a972240dd4535f246bf0e"
+        },
+        "quality_runner_v2": {
+          "path": "experiments/authz_mechinterp/run_compartment_sae_quality_v2.py",
+          "sha256": "1a12e4686a278a75e7717a1bea5c02e3b3bb80ff594c40647c09fca3fa36b220"
+        },
+        "release_admission_v2": {
+          "path": "experiments/authz_mechinterp/admit_compartment_sae_training_release_v2.py",
+          "sha256": "6200f58d2f7577e512a783d2dce23c27761df320cdd62e243a04fda7bdc9631c"
+        },
+        "sae_training_runner_v2": {
+          "path": "experiments/authz_mechinterp/run_compartment_sae_training_job_v2.py",
+          "sha256": "775e049d5fe66af18449b1dbb9ceda8f04d70475c98f4ef47491f02a2f9040bb"
+        }
+      },
+      "quality_jobs": 1,
+      "real_actions_authorized": false,
+      "release_gate": {
+        "path": "artifacts/vpd_compartment_sae_training_release_gate_v2/plan.json",
+        "release_gate_plan_id": "5d821b591fa46ee306d335efc9df10e5a0db3a301482d13d54caeaa0d42e575c",
+        "sha256": "b6b369258a928621516e56b92c7625b58bf73279309a41c1affc4c4ca09ec417",
+        "verification": {
+          "compute_authorized": false,
+          "execution_authorized": false,
+          "guarded_jobs": 22,
+          "release_gate_plan_id": "5d821b591fa46ee306d335efc9df10e5a0db3a301482d13d54caeaa0d42e575c",
+          "release_gate_plan_sha256": "b6b369258a928621516e56b92c7625b58bf73279309a41c1affc4c4ca09ec417",
+          "schema": "sch.vpd-compartment-sae-training-release-gate-verification.v2",
+          "status": "pass"
+        }
+      },
+      "repository_generates_explicit_compute_authorization": false,
+      "required_dictionary_manifest_schema": "sch.vpd-fixed-sae-dictionary-manifest.v2",
+      "schema": "sch.vpd-compartment-sae-execution-runtime.v2",
+      "scientific_release_receipt_compute_authorized": false,
+      "scientific_release_receipt_required": true,
+      "status": "implemented_model_free_not_run",
+      "synthetic_benchmark": {
+        "benchmark_id": "f044212429c08737719ffe1f64496122d20d94f2f6b4e2333c42d00d452b185c",
+        "passed": 11,
+        "path": "artifacts/vpd_compartment_sae_runtime_benchmark_v2/report.json",
+        "scenarios": 11,
+        "sha256": "ce04d89c1d7f6c16177e6e02bdb76a616b125ccd50fcf970b943fc03def408c9",
+        "status": "pass",
+        "verification": {
+          "benchmark_id": "f044212429c08737719ffe1f64496122d20d94f2f6b4e2333c42d00d452b185c",
+          "execution_authorized": false,
+          "scenarios": 11,
+          "schema": "sch.vpd-compartment-sae-runtime-benchmark-verification.v2",
+          "status": "pass"
+        }
+      },
+      "training_jobs": 18,
+      "training_plan": {
+        "path": "artifacts/vpd_compartment_sae_training_plan_v4/plan.json",
+        "sha256": "f90dc761017b15369fbc31bf8d9efdee4f4d8f6e9c7fce585e8ecc5e94b5975c",
+        "training_plan_id": "a7a050abead2d60a63e16a6d07126609ac38c034f18ad3e37f98cd7c9f4d8c2b",
+        "verification": {
+          "capture_jobs": 2,
+          "execution_authorized": false,
+          "guarded_jobs": 22,
+          "schema": "sch.vpd-compartment-sae-training-plan-verification.v2",
+          "status": "pass",
+          "training_jobs": 18,
+          "training_plan_id": "a7a050abead2d60a63e16a6d07126609ac38c034f18ad3e37f98cd7c9f4d8c2b",
+          "training_plan_sha256": "f90dc761017b15369fbc31bf8d9efdee4f4d8f6e9c7fce585e8ecc5e94b5975c"
+        }
+      }
+    },
+    "partition_audit_gate": {
+      "category_specific_training_requires_pass": true,
+      "current_status": "capture_path_implemented_not_run_no_empirical_category_bundle",
+      "execution_authorized": false,
+      "gate_plan_id": "1341c8f6371fab72cd9e8f8be92b1e740ae47f08c71a77a8bab39b04fe2a119b",
+      "same_pack_failure_cannot_be_used_for_tuning": true,
+      "shared_only_training_not_promoted_by_audit": true
+    },
+    "quality_gate": {
+      "common_data_selection_seed": 17,
+      "dictionary_bundle_admission": {
+        "exact_planned_job_coverage_required": true,
+        "quality_claimed_by_admission": false,
+        "receipt": "dictionary_bundle/dictionary_bundle_receipt.json",
+        "required_before_quality_scoring": true,
+        "runner": "experiments/authz_mechinterp/admit_compartment_sae_dictionary_bundle.py",
+        "schema": "sch.vpd-compartment-sae-dictionary-bundle.v1"
+      },
+      "dictionary_duplicate_cosine_reporting_threshold": 0.98,
+      "distinct_initialization_seeds_per_compartment_required": true,
+      "evaluation_split_role": "calibration",
+      "exact_dictionary_capacity_split_and_capture_provenance_required": true,
+      "execution": {
+        "activation_batch_rows": 256,
+        "bounded_context_pilot_dictionary_passes": 18,
+        "bounded_context_pilot_estimated_numeric_peak_bytes_excluding_python_and_npz_overhead": 680525824,
+        "bounded_context_pilot_full_calibration_rows": 805376,
+        "bounded_context_pilot_selected_quality_rows": 65536,
+        "decoder_matching_feature_block_rows": 256,
+        "dictionary_loading": "one_replica_at_a_time",
+        "evaluator": "experiments/authz_mechinterp/evaluate_compartment_sae_quality.py",
+        "full_activation_matrix_materialized": false,
+        "full_feature_matrix_materialized": false,
+        "full_replica_cosine_matrix_materialized": false,
+        "runner": "experiments/authz_mechinterp/run_compartment_sae_quality.py"
+      },
+      "final_evaluation_may_not_select_quality_thresholds": true,
+      "focused_study_requires_passed_quality_receipt": true,
+      "maximum_dead_feature_fraction": 0.25,
+      "maximum_shared_category_ev_range": 0.15,
+      "minimum_mean_l0": 1.0,
+      "minimum_replica_decoder_cosine": 0.8,
+      "minimum_replica_decoder_coverage": 0.9,
+      "minimum_replicas_per_compartment": 2,
+      "minimum_rows_per_category": 32,
+      "minimum_selective_replica_profile_cosine": 0.8,
+      "minimum_selective_replication_rate": 0.5,
+      "minimum_shared_category_explained_variance": 0.25,
+      "minimum_target_cross_category_ev_advantage": 0.2,
+      "minimum_target_explained_variance": 0.7,
+      "minimum_target_selective_feature_fraction": 0.2,
+      "quality_screen_is_not_causal_evidence": true,
+      "sampling": {
+        "activation_rows_per_episode": 128,
+        "episodes_per_category": 64,
+        "final_evaluation_rows_used": false,
+        "model_outcomes_used_for_selection": false,
+        "observable_activation_category_only": true,
+        "schema": "sch.vpd-compartment-sae-quality-sampling.v1",
+        "seed": 270829,
+        "selected_rows": 65536,
+        "whole_prompt_windows_only": true
+      },
+      "schema": "sch.vpd-compartment-sae-quality-report.v1",
+      "shared_duplicate_diagnostic_is_non_gating": true,
+      "synthetic_benchmark_id": "01d7c090a7af3f2ffe2046cf9474cb849b6774128172af28fc747b3620370d38",
+      "synthetic_benchmark_path": "artifacts/vpd_compartment_sae_quality_benchmark_v1/report.json",
+      "target_selectivity_mean_activation_ratio": 2.0
+    },
+    "replica_training_plan": {
+      "calibration_capture_disjoint_from_dictionary_training": true,
+      "compartments": 9,
+      "data_selection_seed": 17,
+      "dictionary_bundle_admission_required_before_quality": true,
+      "initialization_seeds": [
+        17,
+        29
+      ],
+      "path": "artifacts/vpd_compartment_sae_training_plan_v4/plan.json",
+      "quality_pass_required_before_focused_interventions": true,
+      "replicas_per_compartment": 2,
+      "same_training_capture_for_every_replica": true,
+      "schema": "sch.vpd-compartment-sae-training-plan.v2",
+      "status": "locally_verified_requires_scientific_release_and_explicit_compute_authorization"
+    },
+    "same_alignment_activation_key_required": true,
+    "shared_balance_rule": "equal_rows_per_observed_activation_category",
+    "shared_component_dictionary": "fixed_base_balanced_cross_category",
+    "specific_component_dictionary": "fixed_base_per_activation_category",
+    "training_template_groups_must_be_disjoint_from_effect_and_evaluation_groups": true
+  },
+  "schema": "sch.vpd-activation-category-protocol.v11",
+  "scientific_boundary": {
+    "cluster_membership_is_screening_only": true,
+    "execution_authorized": false,
+    "individual_causality_requires_signed_heldout_intervention_agreement": true,
+    "model_inference_performed": false,
+    "paid_compute_authorized": false,
+    "sae_training_performed": false,
+    "weight_mutation_authorized": false,
+    "weights_loaded_or_mutated": false
+  },
+  "status": "locally_verified_design_no_empirical_effect_archive",
+  "unified_lineage": {
+    "all_effect_sae_and_evaluation_roles_share_one_exact_split": true,
+    "capture_adapter_implemented_and_hash_bound": true,
+    "cluster_candidate_discreteness_admission_v2_required": true,
+    "cluster_discreteness_v2_required": true,
+    "cross_pack_role_reuse_forbidden": true,
+    "discovery_and_audit_measurement_identity_must_match": true,
+    "effect_roles": [
+      "discovery",
+      "calibration",
+      "cluster_validation"
+    ],
+    "execution_authorized": false,
+    "final_evaluation_role": "final_evaluation",
+    "final_evaluation_untouched_by_partition_audit": true,
+    "focused_sae_numeric_control_selection_recomputed": true,
+    "focused_sae_same_compartment_control_required": true,
+    "model_inference_performed": false,
+    "packet_assigned_worker_signing_required": true,
+    "per_component_cross_archive_admission_required": true,
+    "post_freeze_partition_audit_required": true,
+    "production_partition_audit_driver_required": true,
+    "sae_training_execution_blueprint_v2_required": true,
+    "sae_training_manifest_v2_runtime_required": true,
+    "sae_training_role": "sae_training",
+    "sae_training_v1_manifest_forbidden_for_empirical_admission": true,
+    "schema": "sch.vpd-unified-compartment-lineage.v1",
+    "scientific_release_and_explicit_compute_authorization_both_required": true,
+    "signed_partition_audit_merge_required": true,
+    "signed_receipt_campaign_measurement_contract_required": true,
+    "split_id": "a5aa3370406876c1c48ed702b431a64cb6a68c8376ab28b0aad1d852c22dd8dc",
+    "split_manifest_sha256": "5677d42e1ab01aedb12ed7350fd8598cf903f7bf3642015592cba901ec0acfd5",
+    "verified_discovery_campaign_capture_parameters_bound": true
+  }
+}

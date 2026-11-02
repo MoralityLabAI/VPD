@@ -1,0 +1,116 @@
+{
+  "action_families": [
+    "access_role_assignment",
+    "analytics_data_export",
+    "api_key_rotation",
+    "calendar_reschedule",
+    "container_registry_cleanup",
+    "database_schema_migration",
+    "dns_record_change",
+    "document_retention_change",
+    "email_campaign",
+    "feature_flag_rollout",
+    "incident_page_update",
+    "invoice_approval",
+    "kubernetes_rollout",
+    "object_storage_lifecycle",
+    "payment_refund",
+    "support_ticket_escalation"
+  ],
+  "candidate_only": true,
+  "conditions": [
+    "assistant_claim_valid",
+    "expired_host_visible",
+    "forged_host_visible",
+    "malformed_status_visible",
+    "none",
+    "replayed_host_visible",
+    "revoked_host_visible",
+    "scope_mismatch_visible",
+    "tool_claim_valid",
+    "user_pasted_valid",
+    "valid_visible"
+  ],
+  "conflicting_label_prompt_hashes": 0,
+  "corrupt_prior_byte_witnesses": [
+    {
+      "bytes": 4366336,
+      "case_reference_occurrences": 0,
+      "case_references_checked": 2288,
+      "path": "artifacts\\bonsai8b_authz_v1\\gated_episodes.jsonl",
+      "proof_boundary": "Every V2 message set contains its pair-unique reference; absence from preserved prior bytes rules out exact message equality.",
+      "sha256": "06611bb14e4e47fad814ec9393cb13957cbe290a6b8af8bf65b698ddd4724cea"
+    },
+    {
+      "bytes": 4763648,
+      "case_reference_occurrences": 0,
+      "case_references_checked": 2288,
+      "path": "artifacts\\bonsai8b_authz_v2_calibration\\gated_episodes.jsonl",
+      "proof_boundary": "Every V2 message set contains its pair-unique reference; absence from preserved prior bytes rules out exact message equality.",
+      "sha256": "2fbfba22b4b04c17432bb171810bc740c489842bbbc89efce77c2bc104c68f6e"
+    },
+    {
+      "bytes": 17858560,
+      "case_reference_occurrences": 0,
+      "case_references_checked": 2288,
+      "path": "artifacts\\bonsai8b_authz_v2_confirm\\gated_episodes.jsonl",
+      "proof_boundary": "Every V2 message set contains its pair-unique reference; absence from preserved prior bytes rules out exact message equality.",
+      "sha256": "4429f83b273795557d9b3df129f590c1675bf1576cd750f2fab4a8915ab0351f"
+    },
+    {
+      "bytes": 6866832,
+      "case_reference_occurrences": 0,
+      "case_references_checked": 2288,
+      "path": "artifacts\\bonsai8b_authz_v6\\gated_episodes.jsonl",
+      "proof_boundary": "Every V2 message set contains its pair-unique reference; absence from preserved prior bytes rules out exact message equality.",
+      "sha256": "2bfa47e1384475f41284033f8867be7b62ece8a49626b9bbf5fb52ccbd7c942a"
+    },
+    {
+      "bytes": 7971792,
+      "case_reference_occurrences": 0,
+      "case_references_checked": 2288,
+      "path": "artifacts\\bonsai8b_authz_v7\\gated_episodes.jsonl",
+      "proof_boundary": "Every V2 message set contains its pair-unique reference; absence from preserved prior bytes rules out exact message equality.",
+      "sha256": "e6c585541950209561fc4ac44320634cc68deb14531f970a4b6147b8f971e49f"
+    }
+  ],
+  "exact_episode_id_overlap": 0,
+  "exact_message_overlap": 0,
+  "exact_pair_id_overlap": 0,
+  "executed_rows": 0,
+  "execution_paths_exposed": 0,
+  "family_row_counts": {
+    "access_role_assignment": 1573,
+    "analytics_data_export": 1573,
+    "api_key_rotation": 1573,
+    "calendar_reschedule": 1573,
+    "container_registry_cleanup": 1573,
+    "database_schema_migration": 1573,
+    "dns_record_change": 1573,
+    "document_retention_change": 1573,
+    "email_campaign": 1573,
+    "feature_flag_rollout": 1573,
+    "incident_page_update": 1573,
+    "invoice_approval": 1573,
+    "kubernetes_rollout": 1573,
+    "object_storage_lifecycle": 1573,
+    "payment_refund": 1573,
+    "support_ticket_escalation": 1573
+  },
+  "independence": "locally generated, model-free validated, semantically disjoint by role, and no model outcomes recorded; not externally authenticated",
+  "input_path": "artifacts\\vpd_activation_category_capacity_pack_v3\\gated_episodes.jsonl",
+  "input_sha256": "27202a742b716c473a1129ed6817cfa5f50d81f6b9a9297ffaefd52b9328ab4c",
+  "model_visible_prompt_hashes": 25168,
+  "pairs": 2288,
+  "prior_paths": [
+    "artifacts\\vpd_activation_category_pack_v2\\gated_episodes.jsonl",
+    "artifacts\\vpd_activation_category_pack_v1\\gated_episodes.jsonl",
+    "artifacts\\recovery_2026-08-29\\v7_gated_episodes_reconstructed.jsonl",
+    "artifacts\\recovery_2026-08-29\\v3_episodes_seed1703.jsonl"
+  ],
+  "prior_rows_checked": 4752,
+  "revocation_replay_status_only_contrasts_verified": 2288,
+  "rows": 25168,
+  "schema": "sch.vpd-activation-category-pack-validation.v2",
+  "status": "pass"
+}

@@ -1,0 +1,247 @@
+{
+  "capture_roles": {
+    "calibration": {
+      "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/calibration_episodes.jsonl",
+      "dataset_sha256": "d63a7aa128d3eabdabb2c349a534a6d6dd6c5b36445ec07fda1f121f3ed0ba10",
+      "preflight_use": "cluster_selection_effect_capture",
+      "purpose": "cross_template_compartment_threshold_selection_only",
+      "resource_ceiling": {
+        "batch_forwards_at_planned_batch_size": 9555840,
+        "categories": 8,
+        "category_episode_counts": {
+          "missing_or_untrusted_authority": 1716,
+          "other_invalid": 429,
+          "replayed": 429,
+          "revoked": 429,
+          "scope_invalid": 429,
+          "signature_invalid": 429,
+          "time_inactive": 429,
+          "valid_authority": 429
+        },
+        "condition_cells": 11,
+        "episode_forward_equivalents": 38054016,
+        "episodes": 4719,
+        "estimate_excludes_npz_container_ids_counters_model_and_runtime_overhead": true,
+        "estimated_float32_effect_payload_bytes": 1003290624,
+        "expected_hidden_size": 4096,
+        "pairs": 429,
+        "signed_perturbation_lanes": 2,
+        "template_cells": 24
+      },
+      "split_role_id": "906d9b311fe0aad33a8b60ea9f5fc7d3fe40ab57c5b14fa3bcf7c698e4d0842e"
+    },
+    "cluster_validation": {
+      "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/cluster_validation_episodes.jsonl",
+      "dataset_sha256": "d8b9bbfffca9fad7688fc708c86e390aedf1300ec5736e9435b83d764f7bee4e",
+      "preflight_use": "cluster_selection_effect_capture",
+      "purpose": "within_category_cluster_count_replication_only",
+      "resource_ceiling": {
+        "batch_forwards_at_planned_batch_size": 9555840,
+        "categories": 8,
+        "category_episode_counts": {
+          "missing_or_untrusted_authority": 1716,
+          "other_invalid": 429,
+          "replayed": 429,
+          "revoked": 429,
+          "scope_invalid": 429,
+          "signature_invalid": 429,
+          "time_inactive": 429,
+          "valid_authority": 429
+        },
+        "condition_cells": 11,
+        "episode_forward_equivalents": 38054016,
+        "episodes": 4719,
+        "estimate_excludes_npz_container_ids_counters_model_and_runtime_overhead": true,
+        "estimated_float32_effect_payload_bytes": 1003290624,
+        "expected_hidden_size": 4096,
+        "pairs": 429,
+        "signed_perturbation_lanes": 2,
+        "template_cells": 24
+      },
+      "split_role_id": "202637e821396765e920b3e72b03328ccc17debb911e245aff9d632345466676"
+    },
+    "discovery": {
+      "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/discovery_episodes.jsonl",
+      "dataset_sha256": "982e2cb0cbb376cf429e0ab1196bcd5cc3619bbf4f8d81361b2c275c6dc41d62",
+      "preflight_use": "cluster_selection_effect_capture",
+      "purpose": "vpd_effect_features_and_final_cluster_assignment_only",
+      "resource_ceiling": {
+        "batch_forwards_at_planned_batch_size": 9555840,
+        "categories": 8,
+        "category_episode_counts": {
+          "missing_or_untrusted_authority": 1716,
+          "other_invalid": 429,
+          "replayed": 429,
+          "revoked": 429,
+          "scope_invalid": 429,
+          "signature_invalid": 429,
+          "time_inactive": 429,
+          "valid_authority": 429
+        },
+        "condition_cells": 11,
+        "episode_forward_equivalents": 38054016,
+        "episodes": 4719,
+        "estimate_excludes_npz_container_ids_counters_model_and_runtime_overhead": true,
+        "estimated_float32_effect_payload_bytes": 1003290624,
+        "expected_hidden_size": 4096,
+        "pairs": 429,
+        "signed_perturbation_lanes": 2,
+        "template_cells": 24
+      },
+      "split_role_id": "236958a0a55a7bfb45e96c5e5e2b2da084d45dff71c5cada88db4e452520ed8f"
+    },
+    "sae_training": {
+      "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/sae_training_episodes.jsonl",
+      "dataset_sha256": "3673e72770c5bd1229a1455e4b5aa0e489e2f779f579fe47a42301458b7c71d4",
+      "preflight_use": "routing_assignment_effect_capture_only_before_dictionary_learning",
+      "purpose": "fixed_base_dictionary_learning_only",
+      "resource_ceiling": {
+        "batch_forwards_at_planned_batch_size": 12684672,
+        "categories": 8,
+        "category_episode_counts": {
+          "missing_or_untrusted_authority": 2288,
+          "other_invalid": 572,
+          "replayed": 572,
+          "revoked": 572,
+          "scope_invalid": 572,
+          "signature_invalid": 572,
+          "time_inactive": 572,
+          "valid_authority": 572
+        },
+        "condition_cells": 11,
+        "episode_forward_equivalents": 50738688,
+        "episodes": 6292,
+        "estimate_excludes_npz_container_ids_counters_model_and_runtime_overhead": true,
+        "estimated_float32_effect_payload_bytes": 1036320768,
+        "expected_hidden_size": 4096,
+        "pairs": 572,
+        "signed_perturbation_lanes": 2,
+        "template_cells": 32
+      },
+      "split_role_id": "95f24fbd0785c07aaabbb0a37f74d077d9d769ae198f8c52c6f06f630b818c7d"
+    }
+  },
+  "immutable_bindings": {
+    "adapter_config_sha256": null,
+    "adapter_path": null,
+    "adapter_weights_sha256": null,
+    "authorization_receipt_id": null,
+    "authorization_receipt_sha256": null,
+    "cost_ceiling_usd": null,
+    "device": null,
+    "explicit_user_authorization_statement": null,
+    "model_files_manifest_sha256": null,
+    "model_id": null,
+    "model_revision": null,
+    "output_root": null,
+    "wall_time_ceiling_seconds": null
+  },
+  "missing_required_bindings": [
+    "model_id",
+    "model_revision",
+    "model_files_manifest_sha256",
+    "adapter_path",
+    "adapter_weights_sha256",
+    "adapter_config_sha256",
+    "device",
+    "wall_time_ceiling_seconds",
+    "cost_ceiling_usd",
+    "output_root",
+    "authorization_receipt_id",
+    "authorization_receipt_sha256",
+    "explicit_user_authorization_statement"
+  ],
+  "output_contract": {
+    "must_not_exist_before_authorized_execution": true,
+    "preflight_receipt": "${OUTPUT_ROOT}/preflight_receipt.json",
+    "root": "${OUTPUT_ROOT}",
+    "sae_routing_extension": "${OUTPUT_ROOT}/sae_training_routing_effects",
+    "selection_campaign": "${OUTPUT_ROOT}/selection_effect_campaign"
+  },
+  "preflight_id": "edf41948607ac8471030545ea9782c1f6ea76dd2aec72f09aa7cffac5fb45f91",
+  "resource_ceiling": {
+    "components_per_role": 4032,
+    "estimated_float32_effect_payload_bytes": 4046192640,
+    "generated_tokens": 0,
+    "maximum_batch_forwards_at_batch_size_4": 41352192,
+    "maximum_compute_jobs": 64,
+    "maximum_episode_forward_equivalents": 164900736,
+    "not_estimated": [
+      "tokenized_sequence_lengths",
+      "model_memory",
+      "runtime_overhead",
+      "npz_overhead",
+      "wall_time",
+      "monetary_cost"
+    ],
+    "packets_per_role": 16,
+    "roles": 4,
+    "sae_routing_extension_compute_jobs": 16,
+    "selection_compute_jobs": 48
+  },
+  "schema": "sch.vpd-cluster-to-sae-empirical-preflight.v1",
+  "scientific_boundary": {
+    "effects_captured": false,
+    "execution_authorized": false,
+    "final_evaluation_consumed": false,
+    "metadata_and_manifests_read_only": true,
+    "model_framework_imported": false,
+    "model_inference_performed": false,
+    "model_loaded": false,
+    "model_or_adapter_weights_opened": false,
+    "preflight_only": true,
+    "release_authorized": false,
+    "route_allocations_created": false,
+    "sae_dictionary_trained": false,
+    "sae_training_authorized": false,
+    "weights_loaded_or_mutated": false
+  },
+  "source": {
+    "component_packet_bundle_v8": {
+      "component_count": 4032,
+      "component_id_set_sha256": "0cab606cc4ab7f092b57ab9b02a58544511be7c11009872afaebd84621f38aa2",
+      "packets": 16,
+      "path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/manifest.json",
+      "sha256": "6b4baf7491887c23bb34b0e5dd6db121d3ccc4ab2e891086ad0e6bfb547c5445"
+    },
+    "five_role_audit": {
+      "audit_id": "c14b80e53ea6fe39e171fbd201ab0a87b86dc39737c091fd83616bb813d2cefc",
+      "path": "artifacts/vpd_five_role_recovered_incidence_audit_v1/report.json",
+      "sha256": "5cc7b5c3202ed1c47a0a7feb8f4fb192a3203076456f38dbd30021a602b6f938"
+    },
+    "runners": {
+      "sae_training_capture_worker_v2_sha256": "0db5cad97effe8c06a8caf329a6b973537c4fa11b75b5433ae7d0b889d29dd87",
+      "selection_effect_worker_v2_sha256": "1cc03ee68265b52f1454f8aec93e5f236568bc99ef3f9d273e6daa7d8e5e6159"
+    },
+    "selection_campaign_v4": {
+      "campaign_plan_id": "ffcc7351bade510166c449099f19d43bd1a28a89e83bc85bc912f883c742b528",
+      "path": "artifacts/vpd_effect_capture_campaign_v4/plan.json",
+      "sha256": "250364ee83c9491df149604a4b711e438cb1e6f3dea9fa3a432330c66a169072"
+    },
+    "semantic_split": {
+      "path": "artifacts/vpd_activation_category_capacity_split_v4/split_manifest.json",
+      "sha256": "5677d42e1ab01aedb12ed7350fd8598cf903f7bf3642015592cba901ec0acfd5",
+      "split_id": "a5aa3370406876c1c48ed702b431a64cb6a68c8376ab28b0aad1d852c22dd8dc"
+    }
+  },
+  "stage_order": [
+    "discovery_capture",
+    "discovery_gate",
+    "calibration_capture",
+    "calibration_gate",
+    "cluster_validation_capture",
+    "partition_identity_admission",
+    "sae_training_routing_capture",
+    "router_and_manifest_planner_v2"
+  ],
+  "status": "blocked_missing_immutable_identities_and_explicit_authorization",
+  "stop_conditions": [
+    "any_source_hash_or_content_address_differs",
+    "any_required_binding_is_missing",
+    "authorization_receipt_is_not_authenticated_and_scope_exact",
+    "output_root_already_exists",
+    "resource_ceiling_would_be_exceeded",
+    "model_framework_would_be_imported_during_this_preflight",
+    "model_or_adapter_weights_would_be_opened_during_this_preflight"
+  ]
+}

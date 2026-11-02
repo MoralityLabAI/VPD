@@ -1,0 +1,36 @@
+{
+  "benchmark_id": "f3a38b715b27be5864c5080320340d526be1f77041f2b4801c946430802f672c",
+  "design": {
+    "degenerate_spectrum_module": true,
+    "distinct_spectrum_module": true,
+    "equivalent_hadamard_factor_rotation": true,
+    "raw_rank_per_module": 4,
+    "synthetic_modules": 2
+  },
+  "results": {
+    "canonical_components": 5,
+    "canonical_modules": 2,
+    "maximum_canonical_factor_frobenius_difference": 2.5133182176514963e-15,
+    "maximum_canonical_reconstruction_frobenius_difference": 1.7654357085312247e-15,
+    "maximum_raw_component_frobenius_difference": 1.7378147196982767,
+    "maximum_semantic_inventory_numeric_difference": 4.440892098500626e-16,
+    "original_inventory_verified": true,
+    "rotated_inventory_verified": true,
+    "semantic_inventory_rows_equal": true,
+    "tampered_module_artifact_rejected": true,
+    "unresolved_degenerate_blocks": 1
+  },
+  "schema": "sch.vpd-canonical-lora-component-inventory-benchmark.v1",
+  "scientific_boundary": {
+    "execution_authorized": false,
+    "model_inference_performed": false,
+    "real_adapter_loaded": false,
+    "synthetic_factor_bundles_only": true,
+    "weights_mutated": false
+  },
+  "source": {
+    "emitter_sha256": "f0428509c77c06eb173fab061c3c33b9dfac60d4f109b1459f4c89760200c37c",
+    "runner_sha256": "20e41bf82af4edd15fb73247290b3a45e215286b29892de4092be8288f247466"
+  },
+  "status": "pass"
+}

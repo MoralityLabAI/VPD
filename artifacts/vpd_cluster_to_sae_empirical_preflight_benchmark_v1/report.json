@@ -1,0 +1,84 @@
+{
+  "benchmark_id": "03f8f0e82283b82b28997403a4f68bcd84d6d9630e1a23cc825ccbb805b28e13",
+  "complete_synthetic_fixture_preflight_id": "12a1bd1e6c8289bc5c4d5d8a6f03eedb808dbd40a4ec34711d9fe12cd563a4ac",
+  "controls": {
+    "campaign_content_tamper_rejected": true,
+    "exact_four_role_dataset_hashes_and_role_ids_bound": true,
+    "final_evaluation_absent_from_capture_and_stage_order": true,
+    "full_ceiling_is_164900736_episode_forward_equivalents": true,
+    "full_ceiling_is_41352192_batch_forwards": true,
+    "invalid_digest_cost_and_unknown_binding_rejected": true,
+    "payload_ceiling_is_4046192640_bytes": true,
+    "preflight_does_not_import_model_frameworks": true,
+    "preflight_opens_no_model_or_adapter_weights": true,
+    "preflight_performs_no_inference_routing_or_training": true,
+    "selection_and_routing_extension_uses_are_separate": true,
+    "stage_order_gates_before_later_compute": true,
+    "synthetic_complete_fixture_still_does_not_authorize_execution": true,
+    "template_is_blocked_not_execution_ready": true,
+    "template_reports_all_thirteen_missing_bindings": true
+  },
+  "results": {
+    "capture_role_ids": {
+      "calibration": "906d9b311fe0aad33a8b60ea9f5fc7d3fe40ab57c5b14fa3bcf7c698e4d0842e",
+      "cluster_validation": "202637e821396765e920b3e72b03328ccc17debb911e245aff9d632345466676",
+      "discovery": "236958a0a55a7bfb45e96c5e5e2b2da084d45dff71c5cada88db4e452520ed8f",
+      "sae_training": "95f24fbd0785c07aaabbb0a37f74d077d9d769ae198f8c52c6f06f630b818c7d"
+    },
+    "missing_required_bindings": [
+      "model_id",
+      "model_revision",
+      "model_files_manifest_sha256",
+      "adapter_path",
+      "adapter_weights_sha256",
+      "adapter_config_sha256",
+      "device",
+      "wall_time_ceiling_seconds",
+      "cost_ceiling_usd",
+      "output_root",
+      "authorization_receipt_id",
+      "authorization_receipt_sha256",
+      "explicit_user_authorization_statement"
+    ],
+    "resource_ceiling": {
+      "components_per_role": 4032,
+      "estimated_float32_effect_payload_bytes": 4046192640,
+      "generated_tokens": 0,
+      "maximum_batch_forwards_at_batch_size_4": 41352192,
+      "maximum_compute_jobs": 64,
+      "maximum_episode_forward_equivalents": 164900736,
+      "not_estimated": [
+        "tokenized_sequence_lengths",
+        "model_memory",
+        "runtime_overhead",
+        "npz_overhead",
+        "wall_time",
+        "monetary_cost"
+      ],
+      "packets_per_role": 16,
+      "roles": 4,
+      "sae_routing_extension_compute_jobs": 16,
+      "selection_compute_jobs": 48
+    }
+  },
+  "schema": "sch.vpd-cluster-to-sae-empirical-preflight-benchmark.v1",
+  "scientific_boundary": {
+    "execution_authorized": false,
+    "model_inference_performed": false,
+    "model_loaded": false,
+    "release_authorized": false,
+    "sae_training_authorized": false,
+    "synthetic_complete_bindings_are_not_real_identities": true,
+    "weights_loaded_or_mutated": false
+  },
+  "source": {
+    "benchmark_sha256": "4895ab764e33e490f1b332ae47e15ea5ec8fd473b95e580d7d5cc49d1291ae5a",
+    "preflight_builder_sha256": "e83115190ed0f357a1cddaf8ffa3438bb14709e0bf3e5f7df7304cbc40913314"
+  },
+  "status": "pass",
+  "summary": {
+    "controls": 15,
+    "passed": 15
+  },
+  "template_preflight_id": "edf41948607ac8471030545ea9782c1f6ea76dd2aec72f09aa7cffac5fb45f91"
+}

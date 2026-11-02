@@ -1,0 +1,92 @@
+{
+  "design": {
+    "dictionary_reload_max_explained_variance_abs_error": 1.0629734426004234e-08,
+    "held_out_examples": 4,
+    "held_out_unit": "source_designated_eval_example",
+    "minimum_held_out_explained_variance": 0.2,
+    "purpose": "gate_prompt_phase_feature_interpretation_before_cross_phase_compartment_claims",
+    "site_must_pass_for_both_recurrent_passes": true
+  },
+  "provenance": {
+    "runner_sha256": "e1a8ac977417899236a9e9a02d4890c472f97a0cf76e7879a76a074964c6b0f6"
+  },
+  "report_id": "4a086488a7e5884e18d2f8d371b06646f03482cf3669df02187a9e1b67619d55",
+  "schema": "sch.vpd-nanbeige-prompt-frozen-sae-quality-audit.v1",
+  "scientific_boundary": {
+    "archive_existence_is_not_feature_interpretation_validity": true,
+    "cross_phase_pass_feature_strata_admitted": false,
+    "execution_authorized": false,
+    "frozen_feature_archives_exist": true,
+    "new_model_inference_performed": false,
+    "new_sae_fitted": false,
+    "paid_compute_authorized": false,
+    "prompt_phase_feature_interpretation_quality_admitted": false,
+    "sae_training_authorized": false,
+    "weights_loaded_or_mutated": false
+  },
+  "sites": [
+    {
+      "feature_interpretation_quality_gate": "fail",
+      "held_out_examples": 4,
+      "minimum_held_out_explained_variance": -0.08210552224626455,
+      "minimum_held_out_explained_variance_by_pass": {
+        "pass_0": -0.08210552224626455,
+        "pass_1": -0.07563342307314236
+      },
+      "pass_feature_strata_admission": "fail",
+      "quality_threshold": 0.2,
+      "site": "model.layers.11"
+    },
+    {
+      "feature_interpretation_quality_gate": "fail",
+      "held_out_examples": 4,
+      "minimum_held_out_explained_variance": -1.2934838949230807,
+      "minimum_held_out_explained_variance_by_pass": {
+        "pass_0": -0.0554194192970372,
+        "pass_1": -1.2934838949230807
+      },
+      "pass_feature_strata_admission": "fail",
+      "quality_threshold": 0.2,
+      "site": "model.layers.21"
+    },
+    {
+      "feature_interpretation_quality_gate": "fail",
+      "held_out_examples": 4,
+      "minimum_held_out_explained_variance": 0.07984828542967848,
+      "minimum_held_out_explained_variance_by_pass": {
+        "pass_0": 0.07984828542967848,
+        "pass_1": 0.19019248889088514
+      },
+      "pass_feature_strata_admission": "fail",
+      "quality_threshold": 0.2,
+      "site": "model.norm"
+    }
+  ],
+  "sources": {
+    "frozen_sae_transfer": {
+      "manifest_sha256": "f2a283c77d4c9c29733ec1e0db21bbc42272f797650c3dad27274b2bd102c7a9",
+      "no_new_fitting": true,
+      "path": "C:/projects/VPD/artifacts/nanbeige_reasoning/local_prompt_capture_v2/frozen_sae_transfer"
+    },
+    "original_calibration": {
+      "manifest_sha256": "6046aa35c98e0934c57e0acd6864951d4174249bfe26c22041ca37d38608857e",
+      "path": "C:/projects/VPD/artifacts/nanbeige_looped/prime-20260906T034844Z-719/retrieved/artifacts/nanbeige_looped/bf16_multipass_calibration"
+    },
+    "prompt_capture": {
+      "manifest_sha256": "523a54970058491885e696596385a9d15d26102469108813fe2a892a46485c9f",
+      "path": "C:/projects/VPD/artifacts/nanbeige_reasoning/local_prompt_capture_v2",
+      "records": 8
+    }
+  },
+  "status": "pass",
+  "summary": {
+    "feature_interpretation_quality_admissions": 0,
+    "prompt_phase_pass_feature_strata_admissions": 0,
+    "quality_rejected_sites": [
+      "model.layers.11",
+      "model.layers.21",
+      "model.norm"
+    ],
+    "site_checks": 3
+  }
+}

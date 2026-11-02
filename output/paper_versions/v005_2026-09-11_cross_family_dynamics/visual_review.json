@@ -1,0 +1,23 @@
+{
+  "status": "all_final_pages_visually_reviewed",
+  "pages": 12,
+  "pdf_sha256": "aaf2ed7cc22d8038187007337932238876cbc10a6b3b27f83f901aa85b72df15",
+  "page_png_sha256": {
+    "1": "3275c0ce37d2b85d54423ebffa7134556fd04a787a68de85066ccd2b5ab8d740",
+    "2": "3bbfd4d504021a2127380c2a0d3192b2f5e2828404a3ab83367f8c90dba42802",
+    "3": "dbe7cb395ec0a627418d60658ee12f707eccaca512a203ff0d6d13ca46bf0da8",
+    "4": "440ab7fef82922876fb463597169e535e96657152c6317ece1c9dbb74bd35e41",
+    "5": "124aed760e28080eefc35b99f012f9f25636c3854d48635fb05561642a845a40",
+    "6": "9d7c936e539237c85ab9a798e8c8e3928e91a1b4a81e551deefec668d5a8b900",
+    "7": "17a4cfd1f504654ed81f77ae1b429496831b93eaa50b15d5b9dc3f10b3cb3335",
+    "8": "9384945a439aa4272d666872e1c71791dbb911a37e29e2e0e9bcc70d9de8fd06",
+    "9": "dbe0649ab32cc801c171db06368e675b8e7a7e583fb6b2a3b5f9de5b855f25c7",
+    "10": "7882d6c4a1092a7815845f7d2bf8c650454718f3e54ff1adb1c612fe6884e22d",
+    "11": "8d36469a690b353352970e40512d8da5cdf557bd6744344acf984b2af5bb4040",
+    "12": "a363afb02b50e4f7063e3e98fdd704b5a8b3233b87810d581c20d00b3b733914"
+  },
+  "timestamp": "2026-09-12T01:14:09.442225+00:00",
+  "method": "Pages 1-9 inspected at 100 dpi and byte-matched to the final render; final pages 10-12 inspected after appendix layout edits.",
+  "findings": "Figure labels, equations, table columns, page numbers and links are legible. No clipped text, overlapping elements, missing glyphs or nearly empty ending page.",
+  "render_note": "Poppler emitted fallback-font warnings for Symbol/ArialUnicode; equations and all visible text were inspected successfully."
+}

@@ -1,0 +1,1218 @@
+{
+  "numbering": "New archival numbering for recovered verified snapshots, not a reconstructed complete revision history.",
+  "versions": [
+    {
+      "version": "v001_2026-09-08_before_campsite",
+      "pages": 28,
+      "note": "Preserved draft before the fresh Campsite comparison; archive numbering starts here, not at the first historical draft.",
+      "files": {
+        "paper.pdf": {
+          "sha256": "a22624bf5f125a855ae18d35c5ef71f40663cd62511f47837506aa365b933016",
+          "copied_from": "C:\\projects\\VPD\\artifacts\\nanbeige_reasoning\\logic-prime-20260909T042949Z-897\\paper_before_logic_comparison.pdf"
+        },
+        "PAPER.md": {
+          "sha256": "2efe21bab1572de32bd4f5c68a9e45f80b21935fd7773bdbeefe5ddff0ee2ea0",
+          "copied_from": "C:\\projects\\VPD\\artifacts\\nanbeige_reasoning\\logic-prime-20260909T042949Z-897\\PAPER_before_logic_comparison.md"
+        },
+        "render_receipt.json": {
+          "sha256": "30a0be2fe3739f36dc2cc74223ffd335735ab30cbc492e1654014a6f896062f9",
+          "copied_from": "C:\\projects\\VPD\\artifacts\\nanbeige_reasoning\\logic-prime-20260909T042949Z-897\\paper_before_logic_comparison.receipt.json"
+        }
+      }
+    },
+    {
+      "version": "v002_2026-09-09_with_campsite",
+      "pages": 29,
+      "note": "Current reviewed draft including the completed Campsite experiment.",
+      "files": {
+        "paper.pdf": {
+          "sha256": "2a2e5445b97829021656d85c6276eba22f62a4230f58ff62e25e79055e10d348",
+          "copied_from": "C:\\projects\\VPD\\output\\pdf\\nanbeige_hermes_research_draft.pdf"
+        },
+        "PAPER.md": {
+          "sha256": "92c96e772d8ebab4504beff4bb3a9b9d1fba84f0849231895f4230b3f8a5a272",
+          "copied_from": "C:\\projects\\VPD\\artifacts\\nanbeige_reasoning\\PAPER.md"
+        },
+        "render_receipt.json": {
+          "sha256": "3ebaa432ba074d1bb86e2012bb78a396733443fd5f591ce418382dcfa132a81e",
+          "copied_from": "C:\\projects\\VPD\\output\\pdf\\nanbeige_hermes_research_draft.receipt.json"
+        }
+      }
+    },
+    {
+      "version": "v003_2026-09-09_mechanistic_essay",
+      "pages": 8,
+      "note": "Interpretive mechanistic manuscript: shared parameter operations, pass-conditioned roles, measurement quality, and semantic causal tests. Earlier versions remain the technical companion.",
+      "files": {
+        "PAPER.md": {
+          "sha256": "cba5622001590f2c979b9d52cdaef7d4e139889cf96c156f191641e0f946c140"
+        },
+        "paper.pdf": {
+          "sha256": "b07d222950298d108c3ac93ce2eadb3fb4beb8be2ffdf786102a4b1d37856c09"
+        },
+        "render_paper.py": {
+          "sha256": "95961983d6dc38f6397d02f929cd6046ce75bdec86c11a21e0350aab2f23e0fc"
+        },
+        "paper.receipt.json": {
+          "sha256": "1200a8d8274995d175261b2475a0d5256150251a96ca642f03c4815ba1bdd60d"
+        },
+        "visual_review.json": {
+          "sha256": "e2a21b5bdbff941f3c7fc5efd2503bed7d65ca86083912abc0e91169ecc2b21d"
+        }
+      }
+    },
+    {
+      "version": "v004_2026-09-09_intervention_fidelity",
+      "pages": 9,
+      "note": "Intervention-change fidelity revision: new CPU analysis of saved effects, precision/support diagnostics, state-versus-change reconstruction argument, and verified literature context.",
+      "files": {
+        "content_verification.json": {
+          "sha256": "bb6264baef9c3463d98d1d5c159387e6fd72518f161cabe1f3ab9cc07c25680b"
+        },
+        "equations/accounting.png": {
+          "sha256": "0b1ac4649abd73ab58a74c5cb319bf07c234eda495db710e9e7a684a6be50e02"
+        },
+        "equations/fidelity.png": {
+          "sha256": "a0bdb462089955abd9488887073dc83660d9bc98973206f5902831423950c41d"
+        },
+        "equations/local_response.png": {
+          "sha256": "37b46e28c4472df5632a872f81544a169c1c25048ca916f052f8c203161d8a7e"
+        },
+        "literature_verification.json": {
+          "sha256": "272bc055ba9fc3ed3cf68dd1829d1c486a6a8df5abfdd809a0c22d3d867f45e3"
+        },
+        "PAPER.md": {
+          "sha256": "84e2f0c22a75dd490dcfb74ca8bcd09b9b9815e12d0664eafcab29f32d62975e"
+        },
+        "paper.pdf": {
+          "sha256": "2161f3cc417e5a5ee6e2ce6e398e56680d8f6b69cd3be1330d19f098820f4afa"
+        },
+        "paper.receipt.json": {
+          "sha256": "cf8156aa6b50c0d39f04330aa09368842f5142031e812478856473b7d1c801ce"
+        },
+        "prepare_layout.py": {
+          "sha256": "bd014fcca61b8f883ae4553f643866f22e76127dde533f16e1cf2ba447bf0362"
+        },
+        "render_paper.py": {
+          "sha256": "94007c4747dca841b424ce18882d88cd23a3e7d7de76eba1dc5c4e431be758a8"
+        },
+        "supplement/all_conditions.csv": {
+          "sha256": "9ab63eda00d1c0e7ad74f5ac8332f7d92b2def9005b34e1fae5119d8cd2d6e18"
+        },
+        "supplement/check_change_fidelity_sensitivity.py": {
+          "sha256": "030f63f9403f0691492618ea10ee31aea12f37a264bf0f2dc62b1f2832fe74f3"
+        },
+        "supplement/contract.json": {
+          "sha256": "7ebb7ac3c89b45cb39dc20c472ba941e37f517079a4a503ccc141437a04c319e"
+        },
+        "supplement/intervention_change_fidelity.py": {
+          "sha256": "5e1bf590b51d10d2e76e36f1f87a73bfdf273a1ed732e5d251be8624a7185a42"
+        },
+        "supplement/manifest.json": {
+          "sha256": "a7b1efbec3b5bc411c2ae3a15f07d9900f943c4c89125fb580a7a5789bf1aab9"
+        },
+        "supplement/paired.json": {
+          "sha256": "17aea2ef4785d44ea753476c0a1c4a722bfcc874174739cc49c2b44f5112aa2a"
+        },
+        "supplement/per_input.json": {
+          "sha256": "6b860945bf8722758c4c84d245fec48b17882ffe129d4e6b5f84fb46b3bf097b"
+        },
+        "supplement/pooled.json": {
+          "sha256": "c106408b5e73206f959531548630d87ab4ead1f501b297d650af8b94f4857de8"
+        },
+        "supplement/sensitivity_manifest.json": {
+          "sha256": "20d3e1353dc45ffa2520cb4d223c151fe7cd5747a36a5d3a52ccdae70b5a6d21"
+        },
+        "supplement/sensitivity_pooled.json": {
+          "sha256": "67f941be1a658c75943626fa65c50d34373e6b9bb6f20c152b4d26249be2243c"
+        },
+        "visual_review.json": {
+          "sha256": "22d9197d82086e1af037afaf2f3e7bdf585328796c6706d7167f321fd25b700f"
+        }
+      }
+    },
+    {
+      "version": "v005_2026-09-11_cross_family_dynamics",
+      "pages": 12,
+      "note": "Cross-family invocation geometry and loop-normalization control integrated with intervention-change fidelity; benchmark scope and incompatible execution variants explicit.",
+      "files": {
+        "build_paper_v005.py": {
+          "sha256": "1131a3bb9a25771bb4e5cfdba18ca923e9fd49d4006299f9c57bb7e4c709d807"
+        },
+        "content_verification.json": {
+          "sha256": "de22f5e874a9d05f3c5785a8b0e3db9a0e66b9867bd587966bf0e2b2ba2cf789"
+        },
+        "equations/accounting.png": {
+          "sha256": "0b1ac4649abd73ab58a74c5cb319bf07c234eda495db710e9e7a684a6be50e02"
+        },
+        "equations/fidelity.png": {
+          "sha256": "a0bdb462089955abd9488887073dc83660d9bc98973206f5902831423950c41d"
+        },
+        "equations/local_response.png": {
+          "sha256": "37b46e28c4472df5632a872f81544a169c1c25048ca916f052f8c203161d8a7e"
+        },
+        "figures/pass_alignment.png": {
+          "sha256": "baece700f09dae1af36ce1e6e4365b6228440aa48722d8a487e5ff62decc5275"
+        },
+        "goal_evidence_audit.json": {
+          "sha256": "44ef2bb0153f569441f42220186051928c2fd34a86b1dd1d8ab2b3bd48b0bb09"
+        },
+        "PAPER.md": {
+          "sha256": "38e69becac606b6ff5258f6cda68d66f7c083448d245e6c65db8f291a097abf1"
+        },
+        "paper.pdf": {
+          "sha256": "aaf2ed7cc22d8038187007337932238876cbc10a6b3b27f83f901aa85b72df15"
+        },
+        "paper.receipt.json": {
+          "sha256": "816f4a38351c2fe1e54cfd43c9009045073ba365ae2f7cf96b8c4c8610e70c40"
+        },
+        "render_paper.py": {
+          "sha256": "19022d8706783fcb69605493976f97acfdcbb532f6c8e4e2fc51c812ac566516"
+        },
+        "seal_paper_v005.py": {
+          "sha256": "11e989b07647ad333b71b4e0214dc78fc30e9c23f7530744d58a25e66e6ae4c9"
+        },
+        "supplement/boundary_geometry/grouped.csv": {
+          "sha256": "bdc734d8109d32ed289ae7add0113d37cbfc23d1ac98b7bd9716abdc17618638"
+        },
+        "supplement/boundary_geometry/grouped.json": {
+          "sha256": "5c880ee56ed58358608906e3f4e730f9303bdaaa7747c24dd64133a4bb6018c1"
+        },
+        "supplement/boundary_geometry/manifest.json": {
+          "sha256": "52d84d5f0186271a4bb6db204707de215b3a59c0d0233c99a290d87c6adeebca"
+        },
+        "supplement/boundary_geometry/per_input.csv": {
+          "sha256": "f3637662a3d6d32632f66f1f1d6229027c18309913258c61265da17f87b435a8"
+        },
+        "supplement/boundary_geometry/per_input.json": {
+          "sha256": "ae216c993843437f563cfa594565a498ec3e60a146e3c388ad1b891b091a25d4"
+        },
+        "supplement/comparator/protocol.json": {
+          "sha256": "0434972b5b9e9fdb2ed241956bcff3ce341c8709dcc25c4d23013b49261bc322"
+        },
+        "supplement/comparator/summary.json": {
+          "sha256": "1d9b0bb83f8bec3622d4fe74c94560472b58a99d4a71308bd146b5159d5e55a9"
+        },
+        "supplement/inherited_literature_verification.json": {
+          "sha256": "272bc055ba9fc3ed3cf68dd1829d1c486a6a8df5abfdd809a0c22d3d867f45e3"
+        },
+        "supplement/intervention_fidelity/all_conditions.csv": {
+          "sha256": "9ab63eda00d1c0e7ad74f5ac8332f7d92b2def9005b34e1fae5119d8cd2d6e18"
+        },
+        "supplement/intervention_fidelity/check_change_fidelity_sensitivity.py": {
+          "sha256": "030f63f9403f0691492618ea10ee31aea12f37a264bf0f2dc62b1f2832fe74f3"
+        },
+        "supplement/intervention_fidelity/contract.json": {
+          "sha256": "7ebb7ac3c89b45cb39dc20c472ba941e37f517079a4a503ccc141437a04c319e"
+        },
+        "supplement/intervention_fidelity/intervention_change_fidelity.py": {
+          "sha256": "5e1bf590b51d10d2e76e36f1f87a73bfdf273a1ed732e5d251be8624a7185a42"
+        },
+        "supplement/intervention_fidelity/manifest.json": {
+          "sha256": "a7b1efbec3b5bc411c2ae3a15f07d9900f943c4c89125fb580a7a5789bf1aab9"
+        },
+        "supplement/intervention_fidelity/paired.json": {
+          "sha256": "17aea2ef4785d44ea753476c0a1c4a722bfcc874174739cc49c2b44f5112aa2a"
+        },
+        "supplement/intervention_fidelity/per_input.json": {
+          "sha256": "6b860945bf8722758c4c84d245fec48b17882ffe129d4e6b5f84fb46b3bf097b"
+        },
+        "supplement/intervention_fidelity/pooled.json": {
+          "sha256": "c106408b5e73206f959531548630d87ab4ead1f501b297d650af8b94f4857de8"
+        },
+        "supplement/intervention_fidelity/sensitivity_manifest.json": {
+          "sha256": "20d3e1353dc45ffa2520cb4d223c151fe7cd5747a36a5d3a52ccdae70b5a6d21"
+        },
+        "supplement/intervention_fidelity/sensitivity_pooled.json": {
+          "sha256": "67f941be1a658c75943626fa65c50d34373e6b9bb6f20c152b4d26249be2243c"
+        },
+        "supplement/pass_dynamics/coverage.csv": {
+          "sha256": "0420de908f7e3b8af05c2c9fd9f01000162c043b3e00a087c4dfcf188527c728"
+        },
+        "supplement/pass_dynamics/coverage.json": {
+          "sha256": "321305c4a5c1aafeca780afb9cc0c254aa32e7e1903ab0d87e99e7ebef566fe7"
+        },
+        "supplement/pass_dynamics/goal_evidence_audit.json": {
+          "sha256": "b82d62fe1af39913dd1313b50fe1d1c94a18dca7910ca467f580e7e6df58187f"
+        },
+        "supplement/pass_dynamics/grouped_states.csv": {
+          "sha256": "2c0b2f3b95b74e8f5aa97d21be2ccdab74172985e2140a73d5c178d713236341"
+        },
+        "supplement/pass_dynamics/grouped_states.json": {
+          "sha256": "08b179fc6f4f895ec8bd3527bc4f46fcab6674ed3790e0bf7db22aae200c0b08"
+        },
+        "supplement/pass_dynamics/heldout_pass_dynamics.png": {
+          "sha256": "9f9b36c61520e6c144cb0fbd1c634d73854b74d4a3bacad1615deee348ed64ad"
+        },
+        "supplement/pass_dynamics/manifest.json": {
+          "sha256": "a3d059c993d297442856c3796cb5c905a4fe8af73c0c03c675b104369ff7d6c3"
+        },
+        "supplement/pass_dynamics/per_input_features.csv": {
+          "sha256": "a579f18e7d118a068404c4eecae23adbba535e9be83cd1f78730d438394537b9"
+        },
+        "supplement/pass_dynamics/per_input_features.json": {
+          "sha256": "1c72b1b4f7e2d2772f9ca6edb9a5c692789b758ddb1e8133d92dc06ee6e14730"
+        },
+        "supplement/pass_dynamics/per_input_states.csv": {
+          "sha256": "15004f86c48d5c8ac7653258f9cc206bac8b8bf45ddfb077acd230a2d6378340"
+        },
+        "supplement/pass_dynamics/per_input_states.json": {
+          "sha256": "c53527545864e4f4eb7398129258dd6ba1bed6f61462968c6c6b0904ed0abaf2"
+        },
+        "supplement/pass_dynamics/per_task_states.csv": {
+          "sha256": "1f5c45884872a286f1f97e302e40e5ec53d7878f0f14df87886191e5fcee126b"
+        },
+        "supplement/pass_dynamics/per_task_states.json": {
+          "sha256": "53554028a4b2994e560b1cb40ea60a0d64d0fffbbf28b6069d82044146c2c316"
+        },
+        "supplement/pass_dynamics/README.md": {
+          "sha256": "bb3a55014bfdf8d56cea8e536c0570ab3643e3b88e1f7a3700def6d0ab9e57be"
+        },
+        "supplement/pass_dynamics/source/check_pass_boundary_geometry.py": {
+          "sha256": "0cc6bc8d1b132d98f7395f0a85a7b9e4c7afb5f7770439ffad5a19ea0ebb5c02"
+        },
+        "supplement/pass_dynamics/source/finish_pass_dynamics_report.py": {
+          "sha256": "1a8655e92ed181f8531bb2f034abeb7d3cc084c81b1f0ababdb52f47f973f72a"
+        },
+        "supplement/pass_dynamics/source/summarize_pass_dynamics.py": {
+          "sha256": "0e40b4639b01e12f94d3575e7dc9ebc397c7335ba72d360482ab5bde68928ed0"
+        },
+        "supplement/pass_dynamics/source/test_pass_dynamics.py": {
+          "sha256": "f1dd401a2cbf2671f8b5ae62bb7f14ae55532468ca0bcda7f33735f5920b527a"
+        },
+        "supplement/pass_dynamics/verification.json": {
+          "sha256": "b2307e9d5d5fe053ff8935ddff31fc41aa8f4e4cb1d96dd3c97847de65cec33a"
+        },
+        "visual_review.json": {
+          "sha256": "79218cfc8b5f9c8bb56a3cc06477405e120e49a6dafac24cd75ed12eeea873c2"
+        }
+      }
+    },
+    {
+      "version": "v006_2026-09-12_experiment_closeout",
+      "pages": 15,
+      "note": "Experimental closeout: graded 45-call Nanbeige prefix with matched Qwen denominators; terminal ledger gate; preserved mechanistic results and explicit unrun stages.",
+      "files": {
+        "build_closeout_v006.py": {
+          "sha256": "e308099cbb82b8e02e68eecf1439cca8f3a499cc774a08b7beaac95fc4cf253f"
+        },
+        "closeout_verification.json": {
+          "sha256": "c4ece7932539eb3306fb7b667214bc5eda09ee9abc70d151abdfe4618347ebe1"
+        },
+        "equations/accounting.png": {
+          "sha256": "0b1ac4649abd73ab58a74c5cb319bf07c234eda495db710e9e7a684a6be50e02"
+        },
+        "equations/fidelity.png": {
+          "sha256": "a0bdb462089955abd9488887073dc83660d9bc98973206f5902831423950c41d"
+        },
+        "equations/local_response.png": {
+          "sha256": "37b46e28c4472df5632a872f81544a169c1c25048ca916f052f8c203161d8a7e"
+        },
+        "figures/pass_alignment.png": {
+          "sha256": "baece700f09dae1af36ce1e6e4365b6228440aa48722d8a487e5ff62decc5275"
+        },
+        "PAPER.md": {
+          "sha256": "adc15fd4e82cdad645b098ec00eb19156e649b55696f1b551b72146fac2e7dae"
+        },
+        "paper.pdf": {
+          "sha256": "7f9b7049213bb9c5169088c57a4ef442be6591d0c6b1f9b93ad04ee4fd906279"
+        },
+        "paper.receipt.json": {
+          "sha256": "28761d145d7745b01690039c0041169350542a29f80b5011bae82ebca9267bc7"
+        },
+        "README.md": {
+          "sha256": "7bd49fc32a53016c06009671d4ce25b2cc8654942b51279fe3f2547e56bb389f"
+        },
+        "render_paper.py": {
+          "sha256": "c1e6e9c8d4fe36b87f008c81f6bfbd1559cf3a148ce6310d000c8be68b8ccf7e"
+        },
+        "seal_closeout_v006.py": {
+          "sha256": "0574a6bfb3f3e53f3d8b5052e303f71be094373ca6dbe304efd5ae53372ee58a"
+        },
+        "supplement/boundary_geometry/grouped.csv": {
+          "sha256": "bdc734d8109d32ed289ae7add0113d37cbfc23d1ac98b7bd9716abdc17618638"
+        },
+        "supplement/boundary_geometry/grouped.json": {
+          "sha256": "5c880ee56ed58358608906e3f4e730f9303bdaaa7747c24dd64133a4bb6018c1"
+        },
+        "supplement/boundary_geometry/manifest.json": {
+          "sha256": "52d84d5f0186271a4bb6db204707de215b3a59c0d0233c99a290d87c6adeebca"
+        },
+        "supplement/boundary_geometry/per_input.csv": {
+          "sha256": "f3637662a3d6d32632f66f1f1d6229027c18309913258c61265da17f87b435a8"
+        },
+        "supplement/boundary_geometry/per_input.json": {
+          "sha256": "ae216c993843437f563cfa594565a498ec3e60a146e3c388ad1b891b091a25d4"
+        },
+        "supplement/closeout_code/compare_skill_models.py": {
+          "sha256": "5cfbe73bfd121933e7bc3cce0f46c19bcbcb179a699f78493b5aaad7c43ba42d"
+        },
+        "supplement/closeout_code/grade_logic_skill_comparison.py": {
+          "sha256": "9ac6ad58e62d1dfca99167e41ea5eb350a80cc5a76bc76094f1f6d579ccb2246"
+        },
+        "supplement/closeout_code/test_partial_skill_grading.py": {
+          "sha256": "bc7ed0aeae29d089fc9d48ba3ede4c78358f4d00eef3a0943104262becf133b2"
+        },
+        "supplement/closeout_code/verify_hermes_controller_control.py": {
+          "sha256": "fe3f6ba2cb1a0cb358a97b4906610c579adcc6edc95e80cda4d20f3a53732728"
+        },
+        "supplement/closeout_code/verify_partial_closeout.py": {
+          "sha256": "355383b9f89c2bf44044aa51ac835aaf3afff4634e70964e49214e002d4727e2"
+        },
+        "supplement/comparator/protocol.json": {
+          "sha256": "0434972b5b9e9fdb2ed241956bcff3ce341c8709dcc25c4d23013b49261bc322"
+        },
+        "supplement/comparator/summary.json": {
+          "sha256": "1d9b0bb83f8bec3622d4fe74c94560472b58a99d4a71308bd146b5159d5e55a9"
+        },
+        "supplement/independent_grading_validation/rows.json": {
+          "sha256": "d9e14b92c0523e775a849a406d1eec8497e9d3e6ca36aa89e27187ce336027a2"
+        },
+        "supplement/independent_grading_validation/verification.json": {
+          "sha256": "92210535e9423f287463aab3ab12a654882fe985af698704fb5e784d216a9a1b"
+        },
+        "supplement/inherited_literature_verification.json": {
+          "sha256": "272bc055ba9fc3ed3cf68dd1829d1c486a6a8df5abfdd809a0c22d3d867f45e3"
+        },
+        "supplement/intervention_fidelity/all_conditions.csv": {
+          "sha256": "9ab63eda00d1c0e7ad74f5ac8332f7d92b2def9005b34e1fae5119d8cd2d6e18"
+        },
+        "supplement/intervention_fidelity/check_change_fidelity_sensitivity.py": {
+          "sha256": "030f63f9403f0691492618ea10ee31aea12f37a264bf0f2dc62b1f2832fe74f3"
+        },
+        "supplement/intervention_fidelity/contract.json": {
+          "sha256": "7ebb7ac3c89b45cb39dc20c472ba941e37f517079a4a503ccc141437a04c319e"
+        },
+        "supplement/intervention_fidelity/intervention_change_fidelity.py": {
+          "sha256": "5e1bf590b51d10d2e76e36f1f87a73bfdf273a1ed732e5d251be8624a7185a42"
+        },
+        "supplement/intervention_fidelity/manifest.json": {
+          "sha256": "a7b1efbec3b5bc411c2ae3a15f07d9900f943c4c89125fb580a7a5789bf1aab9"
+        },
+        "supplement/intervention_fidelity/paired.json": {
+          "sha256": "17aea2ef4785d44ea753476c0a1c4a722bfcc874174739cc49c2b44f5112aa2a"
+        },
+        "supplement/intervention_fidelity/per_input.json": {
+          "sha256": "6b860945bf8722758c4c84d245fec48b17882ffe129d4e6b5f84fb46b3bf097b"
+        },
+        "supplement/intervention_fidelity/pooled.json": {
+          "sha256": "c106408b5e73206f959531548630d87ab4ead1f501b297d650af8b94f4857de8"
+        },
+        "supplement/intervention_fidelity/sensitivity_manifest.json": {
+          "sha256": "20d3e1353dc45ffa2520cb4d223c151fe7cd5747a36a5d3a52ccdae70b5a6d21"
+        },
+        "supplement/intervention_fidelity/sensitivity_pooled.json": {
+          "sha256": "67f941be1a658c75943626fa65c50d34373e6b9bb6f20c152b4d26249be2243c"
+        },
+        "supplement/ledger_gate/protocol.json": {
+          "sha256": "98e4944a9b964502fbd98421556eff3e1466d2e61ea0078418b95a7a46f218d5"
+        },
+        "supplement/ledger_gate/question_00.json": {
+          "sha256": "80b8670192ae56fd945089c6e6f26208b58d8a4e0edc44610dcf2471094f2d0c"
+        },
+        "supplement/ledger_gate/question_01.json": {
+          "sha256": "0a30a97f4f83944e6a2f11615f64d7a6d60c94a9e3559e3c18fc085d717d79a0"
+        },
+        "supplement/ledger_gate/question_02.json": {
+          "sha256": "cc45ada3d8004e9311bfbad389a1e333e2f0f75c17efdb15c45ca0d8a1f37625"
+        },
+        "supplement/ledger_gate/RESULTS.md": {
+          "sha256": "7121ca597952ca94b448132d8ac66e4564f5264687c65f551f55a01b417fb32f"
+        },
+        "supplement/ledger_gate/summary.json": {
+          "sha256": "e078b5244fbd0e1fa0bda282b6c91566452565cf26dcda29febd8755e912247d"
+        },
+        "supplement/ledger_gate/verification.json": {
+          "sha256": "4d1163a2ede8c0c09dbe050bf1e42e886dfab68635c78828833d88f503c166b4"
+        },
+        "supplement/partial_comparison/all_pairings.json": {
+          "sha256": "f8ddefefaedc0bb3b321a5978b5aaef1a6666d098e75cb19e782d7edb380e0ec"
+        },
+        "supplement/partial_comparison/RESULTS.md": {
+          "sha256": "38e3831cc2aed964ddb65a57e60c07b5e2331499a20c96b1137d0233745245af"
+        },
+        "supplement/partial_comparison/same_procedure_pairs.json": {
+          "sha256": "07bd7acafec30b9c27b80c82701c93bf7cdf65a34239fc7cdeb28a62e9de7576"
+        },
+        "supplement/partial_comparison/verification.json": {
+          "sha256": "251b0addbfe9ed24be15e171fee81ba18dcb249ea471d3d990146e0a85e3034e"
+        },
+        "supplement/partial_grading/corrections.json": {
+          "sha256": "a13154f799ad5b933c13dee147cfa25b8be2e167efc8ea6d573ede53ac145690"
+        },
+        "supplement/partial_grading/RESULTS.md": {
+          "sha256": "0b4b53c5dda9813acd6d1a0aa132a435fac11add819c169a5a544d466dfad6ac"
+        },
+        "supplement/partial_grading/rows.json": {
+          "sha256": "cf6be3e3728395741187e83145920dfab602cbcb8c5271fd1c4ce881e3c80e28"
+        },
+        "supplement/partial_grading/summary.json": {
+          "sha256": "1e78b4d5b76355bdcd21652cb64fe356d9352d80ea570ed591a71c60b623f6e8"
+        },
+        "supplement/partial_grading/verification.json": {
+          "sha256": "7d5ba765f9937006d6bc992465a9c635ac0beb8cdf207c459bc3c2499de82cc1"
+        },
+        "supplement/pass_dynamics/coverage.csv": {
+          "sha256": "0420de908f7e3b8af05c2c9fd9f01000162c043b3e00a087c4dfcf188527c728"
+        },
+        "supplement/pass_dynamics/coverage.json": {
+          "sha256": "321305c4a5c1aafeca780afb9cc0c254aa32e7e1903ab0d87e99e7ebef566fe7"
+        },
+        "supplement/pass_dynamics/goal_evidence_audit.json": {
+          "sha256": "b82d62fe1af39913dd1313b50fe1d1c94a18dca7910ca467f580e7e6df58187f"
+        },
+        "supplement/pass_dynamics/grouped_states.csv": {
+          "sha256": "2c0b2f3b95b74e8f5aa97d21be2ccdab74172985e2140a73d5c178d713236341"
+        },
+        "supplement/pass_dynamics/grouped_states.json": {
+          "sha256": "08b179fc6f4f895ec8bd3527bc4f46fcab6674ed3790e0bf7db22aae200c0b08"
+        },
+        "supplement/pass_dynamics/heldout_pass_dynamics.png": {
+          "sha256": "9f9b36c61520e6c144cb0fbd1c634d73854b74d4a3bacad1615deee348ed64ad"
+        },
+        "supplement/pass_dynamics/manifest.json": {
+          "sha256": "a3d059c993d297442856c3796cb5c905a4fe8af73c0c03c675b104369ff7d6c3"
+        },
+        "supplement/pass_dynamics/per_input_features.csv": {
+          "sha256": "a579f18e7d118a068404c4eecae23adbba535e9be83cd1f78730d438394537b9"
+        },
+        "supplement/pass_dynamics/per_input_features.json": {
+          "sha256": "1c72b1b4f7e2d2772f9ca6edb9a5c692789b758ddb1e8133d92dc06ee6e14730"
+        },
+        "supplement/pass_dynamics/per_input_states.csv": {
+          "sha256": "15004f86c48d5c8ac7653258f9cc206bac8b8bf45ddfb077acd230a2d6378340"
+        },
+        "supplement/pass_dynamics/per_input_states.json": {
+          "sha256": "c53527545864e4f4eb7398129258dd6ba1bed6f61462968c6c6b0904ed0abaf2"
+        },
+        "supplement/pass_dynamics/per_task_states.csv": {
+          "sha256": "1f5c45884872a286f1f97e302e40e5ec53d7878f0f14df87886191e5fcee126b"
+        },
+        "supplement/pass_dynamics/per_task_states.json": {
+          "sha256": "53554028a4b2994e560b1cb40ea60a0d64d0fffbbf28b6069d82044146c2c316"
+        },
+        "supplement/pass_dynamics/README.md": {
+          "sha256": "bb3a55014bfdf8d56cea8e536c0570ab3643e3b88e1f7a3700def6d0ab9e57be"
+        },
+        "supplement/pass_dynamics/source/check_pass_boundary_geometry.py": {
+          "sha256": "0cc6bc8d1b132d98f7395f0a85a7b9e4c7afb5f7770439ffad5a19ea0ebb5c02"
+        },
+        "supplement/pass_dynamics/source/finish_pass_dynamics_report.py": {
+          "sha256": "1a8655e92ed181f8531bb2f034abeb7d3cc084c81b1f0ababdb52f47f973f72a"
+        },
+        "supplement/pass_dynamics/source/summarize_pass_dynamics.py": {
+          "sha256": "0e40b4639b01e12f94d3575e7dc9ebc397c7335ba72d360482ab5bde68928ed0"
+        },
+        "supplement/pass_dynamics/source/test_pass_dynamics.py": {
+          "sha256": "f1dd401a2cbf2671f8b5ae62bb7f14ae55532468ca0bcda7f33735f5920b527a"
+        },
+        "supplement/pass_dynamics/verification.json": {
+          "sha256": "b2307e9d5d5fe053ff8935ddff31fc41aa8f4e4cb1d96dd3c97847de65cec33a"
+        },
+        "supplement/runtime_closeout.json": {
+          "sha256": "62221b518f006bcf93ed35f4f5a229790d04728e91e6b46a45d26f0c9499f2b5"
+        },
+        "test_receipt.json": {
+          "sha256": "41aef33b8c8c356ad35b9ee6039d4a700b92621adb4c132ebe4b1a5d4e33e20d"
+        },
+        "visual_review.json": {
+          "sha256": "472b4c09e095d0719a84f109138c0502d02a80b51bed559a71f4afff0247dad1"
+        }
+      }
+    },
+    {
+      "version": "v007_2026-09-12_state_carry_controls",
+      "pages": 18,
+      "note": "State-carry and SAE-support controls: 450 native conditions, exact reset parity, matched residual writes, offline direction crossing; no training-architecture or hidden-CoT claim.",
+      "files": {
+        "build_state_control_v007.py": {
+          "sha256": "6f71b3a7ad78d891a0dc40b338caff8042e670471c159de623101fba28bee4be"
+        },
+        "content_verification.json": {
+          "sha256": "70028211463edcb7025953f4d90bdf97ecebbf28b4c0e3e623003b03c6df6203"
+        },
+        "equations/accounting.png": {
+          "sha256": "0b1ac4649abd73ab58a74c5cb319bf07c234eda495db710e9e7a684a6be50e02"
+        },
+        "equations/fidelity.png": {
+          "sha256": "a0bdb462089955abd9488887073dc83660d9bc98973206f5902831423950c41d"
+        },
+        "equations/local_response.png": {
+          "sha256": "37b46e28c4472df5632a872f81544a169c1c25048ca916f052f8c203161d8a7e"
+        },
+        "figures/carry_reset_fidelity.png": {
+          "sha256": "443f6f7f6268939c766155921309d8d3c039d37444b8322ec23f3f0cd00eb768"
+        },
+        "figures/pass_alignment.png": {
+          "sha256": "baece700f09dae1af36ce1e6e4365b6228440aa48722d8a487e5ff62decc5275"
+        },
+        "PAPER.md": {
+          "sha256": "ec74e05784f830bd6a17f27dc3ccc83a5cb1a71ba13cd4209d948dcced3f778e"
+        },
+        "paper.pdf": {
+          "sha256": "16c25de17320e5f8a3d7a8c7869f2e0a842ca14fcae66ba82c1e862995f6f8da"
+        },
+        "paper.receipt.json": {
+          "sha256": "0393a3c4b13831bfea1f66ff55522e81641d556f139febab186e1e31a089323c"
+        },
+        "README.md": {
+          "sha256": "79684855cbc17860e56392a3175b52c3befee20c24904f9e956f6a630aa6ae67"
+        },
+        "render_paper.py": {
+          "sha256": "d730bc13d0385be61768ad81081567157a3658555161f40f5a2f0e934d75d16a"
+        },
+        "seal_state_control_v007.py": {
+          "sha256": "94fab3c08db370fff0c05a0553c1d816c53ff1f81fdfe0364b60ed301ef22c46"
+        },
+        "supplement/boundary_geometry/grouped.csv": {
+          "sha256": "bdc734d8109d32ed289ae7add0113d37cbfc23d1ac98b7bd9716abdc17618638"
+        },
+        "supplement/boundary_geometry/grouped.json": {
+          "sha256": "5c880ee56ed58358608906e3f4e730f9303bdaaa7747c24dd64133a4bb6018c1"
+        },
+        "supplement/boundary_geometry/manifest.json": {
+          "sha256": "52d84d5f0186271a4bb6db204707de215b3a59c0d0233c99a290d87c6adeebca"
+        },
+        "supplement/boundary_geometry/per_input.csv": {
+          "sha256": "f3637662a3d6d32632f66f1f1d6229027c18309913258c61265da17f87b435a8"
+        },
+        "supplement/boundary_geometry/per_input.json": {
+          "sha256": "ae216c993843437f563cfa594565a498ec3e60a146e3c388ad1b891b091a25d4"
+        },
+        "supplement/closeout_code/compare_skill_models.py": {
+          "sha256": "5cfbe73bfd121933e7bc3cce0f46c19bcbcb179a699f78493b5aaad7c43ba42d"
+        },
+        "supplement/closeout_code/grade_logic_skill_comparison.py": {
+          "sha256": "9ac6ad58e62d1dfca99167e41ea5eb350a80cc5a76bc76094f1f6d579ccb2246"
+        },
+        "supplement/closeout_code/test_partial_skill_grading.py": {
+          "sha256": "bc7ed0aeae29d089fc9d48ba3ede4c78358f4d00eef3a0943104262becf133b2"
+        },
+        "supplement/closeout_code/verify_hermes_controller_control.py": {
+          "sha256": "fe3f6ba2cb1a0cb358a97b4906610c579adcc6edc95e80cda4d20f3a53732728"
+        },
+        "supplement/closeout_code/verify_partial_closeout.py": {
+          "sha256": "355383b9f89c2bf44044aa51ac835aaf3afff4634e70964e49214e002d4727e2"
+        },
+        "supplement/comparator/protocol.json": {
+          "sha256": "0434972b5b9e9fdb2ed241956bcff3ce341c8709dcc25c4d23013b49261bc322"
+        },
+        "supplement/comparator/summary.json": {
+          "sha256": "1d9b0bb83f8bec3622d4fe74c94560472b58a99d4a71308bd146b5159d5e55a9"
+        },
+        "supplement/independent_grading_validation/rows.json": {
+          "sha256": "d9e14b92c0523e775a849a406d1eec8497e9d3e6ca36aa89e27187ce336027a2"
+        },
+        "supplement/independent_grading_validation/verification.json": {
+          "sha256": "92210535e9423f287463aab3ab12a654882fe985af698704fb5e784d216a9a1b"
+        },
+        "supplement/inherited_literature_verification.json": {
+          "sha256": "272bc055ba9fc3ed3cf68dd1829d1c486a6a8df5abfdd809a0c22d3d867f45e3"
+        },
+        "supplement/intervention_fidelity/all_conditions.csv": {
+          "sha256": "9ab63eda00d1c0e7ad74f5ac8332f7d92b2def9005b34e1fae5119d8cd2d6e18"
+        },
+        "supplement/intervention_fidelity/check_change_fidelity_sensitivity.py": {
+          "sha256": "030f63f9403f0691492618ea10ee31aea12f37a264bf0f2dc62b1f2832fe74f3"
+        },
+        "supplement/intervention_fidelity/contract.json": {
+          "sha256": "7ebb7ac3c89b45cb39dc20c472ba941e37f517079a4a503ccc141437a04c319e"
+        },
+        "supplement/intervention_fidelity/intervention_change_fidelity.py": {
+          "sha256": "5e1bf590b51d10d2e76e36f1f87a73bfdf273a1ed732e5d251be8624a7185a42"
+        },
+        "supplement/intervention_fidelity/manifest.json": {
+          "sha256": "a7b1efbec3b5bc411c2ae3a15f07d9900f943c4c89125fb580a7a5789bf1aab9"
+        },
+        "supplement/intervention_fidelity/paired.json": {
+          "sha256": "17aea2ef4785d44ea753476c0a1c4a722bfcc874174739cc49c2b44f5112aa2a"
+        },
+        "supplement/intervention_fidelity/per_input.json": {
+          "sha256": "6b860945bf8722758c4c84d245fec48b17882ffe129d4e6b5f84fb46b3bf097b"
+        },
+        "supplement/intervention_fidelity/pooled.json": {
+          "sha256": "c106408b5e73206f959531548630d87ab4ead1f501b297d650af8b94f4857de8"
+        },
+        "supplement/intervention_fidelity/sensitivity_manifest.json": {
+          "sha256": "20d3e1353dc45ffa2520cb4d223c151fe7cd5747a36a5d3a52ccdae70b5a6d21"
+        },
+        "supplement/intervention_fidelity/sensitivity_pooled.json": {
+          "sha256": "67f941be1a658c75943626fa65c50d34373e6b9bb6f20c152b4d26249be2243c"
+        },
+        "supplement/ledger_gate/protocol.json": {
+          "sha256": "98e4944a9b964502fbd98421556eff3e1466d2e61ea0078418b95a7a46f218d5"
+        },
+        "supplement/ledger_gate/question_00.json": {
+          "sha256": "80b8670192ae56fd945089c6e6f26208b58d8a4e0edc44610dcf2471094f2d0c"
+        },
+        "supplement/ledger_gate/question_01.json": {
+          "sha256": "0a30a97f4f83944e6a2f11615f64d7a6d60c94a9e3559e3c18fc085d717d79a0"
+        },
+        "supplement/ledger_gate/question_02.json": {
+          "sha256": "cc45ada3d8004e9311bfbad389a1e333e2f0f75c17efdb15c45ca0d8a1f37625"
+        },
+        "supplement/ledger_gate/RESULTS.md": {
+          "sha256": "7121ca597952ca94b448132d8ac66e4564f5264687c65f551f55a01b417fb32f"
+        },
+        "supplement/ledger_gate/summary.json": {
+          "sha256": "e078b5244fbd0e1fa0bda282b6c91566452565cf26dcda29febd8755e912247d"
+        },
+        "supplement/ledger_gate/verification.json": {
+          "sha256": "4d1163a2ede8c0c09dbe050bf1e42e886dfab68635c78828833d88f503c166b4"
+        },
+        "supplement/partial_comparison/all_pairings.json": {
+          "sha256": "f8ddefefaedc0bb3b321a5978b5aaef1a6666d098e75cb19e782d7edb380e0ec"
+        },
+        "supplement/partial_comparison/RESULTS.md": {
+          "sha256": "38e3831cc2aed964ddb65a57e60c07b5e2331499a20c96b1137d0233745245af"
+        },
+        "supplement/partial_comparison/same_procedure_pairs.json": {
+          "sha256": "07bd7acafec30b9c27b80c82701c93bf7cdf65a34239fc7cdeb28a62e9de7576"
+        },
+        "supplement/partial_comparison/verification.json": {
+          "sha256": "251b0addbfe9ed24be15e171fee81ba18dcb249ea471d3d990146e0a85e3034e"
+        },
+        "supplement/partial_grading/corrections.json": {
+          "sha256": "a13154f799ad5b933c13dee147cfa25b8be2e167efc8ea6d573ede53ac145690"
+        },
+        "supplement/partial_grading/RESULTS.md": {
+          "sha256": "0b4b53c5dda9813acd6d1a0aa132a435fac11add819c169a5a544d466dfad6ac"
+        },
+        "supplement/partial_grading/rows.json": {
+          "sha256": "cf6be3e3728395741187e83145920dfab602cbcb8c5271fd1c4ce881e3c80e28"
+        },
+        "supplement/partial_grading/summary.json": {
+          "sha256": "1e78b4d5b76355bdcd21652cb64fe356d9352d80ea570ed591a71c60b623f6e8"
+        },
+        "supplement/partial_grading/verification.json": {
+          "sha256": "7d5ba765f9937006d6bc992465a9c635ac0beb8cdf207c459bc3c2499de82cc1"
+        },
+        "supplement/pass_dynamics/coverage.csv": {
+          "sha256": "0420de908f7e3b8af05c2c9fd9f01000162c043b3e00a087c4dfcf188527c728"
+        },
+        "supplement/pass_dynamics/coverage.json": {
+          "sha256": "321305c4a5c1aafeca780afb9cc0c254aa32e7e1903ab0d87e99e7ebef566fe7"
+        },
+        "supplement/pass_dynamics/goal_evidence_audit.json": {
+          "sha256": "b82d62fe1af39913dd1313b50fe1d1c94a18dca7910ca467f580e7e6df58187f"
+        },
+        "supplement/pass_dynamics/grouped_states.csv": {
+          "sha256": "2c0b2f3b95b74e8f5aa97d21be2ccdab74172985e2140a73d5c178d713236341"
+        },
+        "supplement/pass_dynamics/grouped_states.json": {
+          "sha256": "08b179fc6f4f895ec8bd3527bc4f46fcab6674ed3790e0bf7db22aae200c0b08"
+        },
+        "supplement/pass_dynamics/heldout_pass_dynamics.png": {
+          "sha256": "9f9b36c61520e6c144cb0fbd1c634d73854b74d4a3bacad1615deee348ed64ad"
+        },
+        "supplement/pass_dynamics/manifest.json": {
+          "sha256": "a3d059c993d297442856c3796cb5c905a4fe8af73c0c03c675b104369ff7d6c3"
+        },
+        "supplement/pass_dynamics/per_input_features.csv": {
+          "sha256": "a579f18e7d118a068404c4eecae23adbba535e9be83cd1f78730d438394537b9"
+        },
+        "supplement/pass_dynamics/per_input_features.json": {
+          "sha256": "1c72b1b4f7e2d2772f9ca6edb9a5c692789b758ddb1e8133d92dc06ee6e14730"
+        },
+        "supplement/pass_dynamics/per_input_states.csv": {
+          "sha256": "15004f86c48d5c8ac7653258f9cc206bac8b8bf45ddfb077acd230a2d6378340"
+        },
+        "supplement/pass_dynamics/per_input_states.json": {
+          "sha256": "c53527545864e4f4eb7398129258dd6ba1bed6f61462968c6c6b0904ed0abaf2"
+        },
+        "supplement/pass_dynamics/per_task_states.csv": {
+          "sha256": "1f5c45884872a286f1f97e302e40e5ec53d7878f0f14df87886191e5fcee126b"
+        },
+        "supplement/pass_dynamics/per_task_states.json": {
+          "sha256": "53554028a4b2994e560b1cb40ea60a0d64d0fffbbf28b6069d82044146c2c316"
+        },
+        "supplement/pass_dynamics/README.md": {
+          "sha256": "bb3a55014bfdf8d56cea8e536c0570ab3643e3b88e1f7a3700def6d0ab9e57be"
+        },
+        "supplement/pass_dynamics/source/check_pass_boundary_geometry.py": {
+          "sha256": "0cc6bc8d1b132d98f7395f0a85a7b9e4c7afb5f7770439ffad5a19ea0ebb5c02"
+        },
+        "supplement/pass_dynamics/source/finish_pass_dynamics_report.py": {
+          "sha256": "1a8655e92ed181f8531bb2f034abeb7d3cc084c81b1f0ababdb52f47f973f72a"
+        },
+        "supplement/pass_dynamics/source/summarize_pass_dynamics.py": {
+          "sha256": "0e40b4639b01e12f94d3575e7dc9ebc397c7335ba72d360482ab5bde68928ed0"
+        },
+        "supplement/pass_dynamics/source/test_pass_dynamics.py": {
+          "sha256": "f1dd401a2cbf2671f8b5ae62bb7f14ae55532468ca0bcda7f33735f5920b527a"
+        },
+        "supplement/pass_dynamics/verification.json": {
+          "sha256": "b2307e9d5d5fe053ff8935ddff31fc41aa8f4e4cb1d96dd3c97847de65cec33a"
+        },
+        "supplement/runtime_closeout.json": {
+          "sha256": "62221b518f006bcf93ed35f4f5a229790d04728e91e6b46a45d26f0c9499f2b5"
+        },
+        "supplement/state_carry_analysis/contrasts.json": {
+          "sha256": "498ae1bc521d17fdaf322d12e5637688806450aef211908384bacc30e43d3a0c"
+        },
+        "supplement/state_carry_analysis/crossed_per_input.json": {
+          "sha256": "7fb88a449338d6d966f8c0c4f537793f9e1e3e4a6025e1f045084d5a51d6af3f"
+        },
+        "supplement/state_carry_analysis/crossed_pooled.json": {
+          "sha256": "039a7b68503df3365dffc392877b1fd495007b253fbc92d2d3b3e84eeb5461e0"
+        },
+        "supplement/state_carry_analysis/dictionary_sources.json": {
+          "sha256": "9f9154317ce259299cc02780b18d5cc513cb9e4e90b92fc7731e3dd0708a6f14"
+        },
+        "supplement/state_carry_analysis/encodings_model.layers.11_adamw.npz": {
+          "sha256": "7ab2cf87e6ad70700324d19023bf6b3f540a6d7782b706f796678f966f849ad0"
+        },
+        "supplement/state_carry_analysis/encodings_model.layers.11_muon_hybrid.npz": {
+          "sha256": "dce45347eefe4bb2875d469e9af367ac085eb785c8378f261b11bfd3609d83a7"
+        },
+        "supplement/state_carry_analysis/encodings_model.layers.21_adamw.npz": {
+          "sha256": "669866a3088174de4ee87bb13e30e84023371c6a025e0cf4e54772dd309a513a"
+        },
+        "supplement/state_carry_analysis/encodings_model.layers.21_muon_hybrid.npz": {
+          "sha256": "9e6f7b1e3a179aaff4632ca2db3c2e52a250b4499aa5c6e67a9a2e4824ed12bb"
+        },
+        "supplement/state_carry_analysis/encodings_model.norm_adamw.npz": {
+          "sha256": "18d91d9db37af76c4cb4cfc6959dfe70a0a014d3f7afc1c43a7c12cf2c233fa5"
+        },
+        "supplement/state_carry_analysis/encodings_model.norm_muon_hybrid.npz": {
+          "sha256": "6104871a5e2327dc95403cba98e299fd2633baf253e2f13ef2760898ff0c231e"
+        },
+        "supplement/state_carry_analysis/logit_effects.json": {
+          "sha256": "da8e2c6bc79e2315304a5985bd9e0e9cfcdfdeb612fb8b66273c8d957df9a97d"
+        },
+        "supplement/state_carry_analysis/manifest.json": {
+          "sha256": "41afe43d826f1c0e0bd48241eb2d2024145265673a9ec68909410ad1e796bf8d"
+        },
+        "supplement/state_carry_analysis/per_input.json": {
+          "sha256": "940670e1402bc9c40717f73ecd7940123e8da7feafe6dd9d5fce7d22815ea627"
+        },
+        "supplement/state_carry_analysis/pooled.json": {
+          "sha256": "80a682d9579625020746d324fb03193b31db5e0c61d8e17a7f40d51bbbd266c7"
+        },
+        "supplement/state_carry_analysis/protocol.json": {
+          "sha256": "814d83d2b5ff331a8fadb00af31b6cdb59cf508bea8dc64b9914db280b91a6b2"
+        },
+        "supplement/state_carry_analysis/RESULTS.md": {
+          "sha256": "e44cc4eef8a127a248732d99619fd9ae6a656f4ef0d563bf309cbb51e035a7e2"
+        },
+        "supplement/state_carry_analysis/state_quality.json": {
+          "sha256": "cb42289dc5f6477bef4b39b1cf6e1ed1151b61299591dd233244f5159e503db4"
+        },
+        "supplement/state_carry_metric_validation/verification.json": {
+          "sha256": "f43eda21eed8fc1637a8e2af1bbae51c94232daafebdba51633453ac6c31103d"
+        },
+        "supplement/state_carry_report/carry_reset_fidelity.png": {
+          "sha256": "443f6f7f6268939c766155921309d8d3c039d37444b8322ec23f3f0cd00eb768"
+        },
+        "supplement/state_carry_report/manifest.json": {
+          "sha256": "2ca5203d293973663f64edf45d402726c387e2396db6818f067d365655a8f4ce"
+        },
+        "supplement/state_carry_report/REPORT.md": {
+          "sha256": "0e06a7ba6ea0e76da18e839173d024f3123af18e73dc34aafcab21e53d5aefbe"
+        },
+        "supplement/state_carry_report/source_snapshots/analyze_recurrence_state_control.py": {
+          "sha256": "637fd159091871f8d71403470d1b8b779d3dac1eca1f3ce76766a086d63ad56b"
+        },
+        "supplement/state_carry_report/source_snapshots/llama_capture.py": {
+          "sha256": "e42716821749ebe8c227ecccff7501c12839e953fd92db5d810e6218f22bf74c"
+        },
+        "supplement/state_carry_report/source_snapshots/llama_steer.py": {
+          "sha256": "d6b384f3ef72491f833ed2088b7c9b0c6b028068a66932a59186b008b006135c"
+        },
+        "supplement/state_carry_report/source_snapshots/recurrence_state_control.py": {
+          "sha256": "a18f8aedcbd829e528b0891a9c6fbe40259947f776b97394060c1485f58556c9"
+        },
+        "supplement/state_carry_report/source_snapshots/report_recurrence_state_control.py": {
+          "sha256": "28af459b8d86d3ba2a3fb8f51891e1e3092ea3eff0d0aab577d3d619af6f269a"
+        },
+        "supplement/state_carry_report/source_snapshots/run_recurrence_state_control.py": {
+          "sha256": "b41a8cb283c2e4e01e96f32cbf46bd7573e356e212280b1c9d53be99ed1f96bb"
+        },
+        "supplement/state_carry_report/source_snapshots/test_recurrence_state_analysis.py": {
+          "sha256": "ba4bc739cc4f0af7f759bf6d32f6577e3da0c482baf91a149d1926a7b2565649"
+        },
+        "supplement/state_carry_report/source_snapshots/verify_recurrence_state_control.py": {
+          "sha256": "fe18ed1cb0b82d5b712ba06d4fd94a08161da76485c3503e53f11aca0c29028e"
+        },
+        "supplement/state_carry_run/cleanup.json": {
+          "sha256": "d890ac31c1ffd5e97fffbf345a8d07946405425412f1b61dbe3d216a2974c3a6"
+        },
+        "supplement/state_carry_run/closeout.json": {
+          "sha256": "9767cfaa58bf5cddf963400c15f7a9d525544185f92df38938b46a97987123f1"
+        },
+        "supplement/state_carry_run/manifest.json": {
+          "sha256": "30df0f28705d99eabc4740d54a987170a511801b34922ed93d8eefa19b5f2364"
+        },
+        "supplement/state_carry_run/protocol.json": {
+          "sha256": "b64c6aaefa0b6fa4f8b1d04a0fb90f2a5f8a1b9c83384eb2cd7aa4bad7110041"
+        },
+        "supplement/state_carry_run/records.json": {
+          "sha256": "dd349deaf27ddb4daa516f4a4a14288c973dac5c488cb0723c29f8760d1f88e9"
+        },
+        "supplement/state_carry_run/recurrence_state_analysis_logging_amendment.json": {
+          "sha256": "c48e0ee72245baeab4d205144bf85c4eec17aa8d919c6f4439b7ec3afce1b518"
+        },
+        "supplement/state_carry_run/recurrence_state_analysis_plan.json": {
+          "sha256": "f07cbb991dab4ee8cea99c8d5a8c6b3e5db7125e84cb7bcb8e12eb7cb7d530ed"
+        },
+        "supplement/state_carry_validation/parity.json": {
+          "sha256": "bf124f5350df7c3645be370bada0d4fdd31401b4bc930bcbaf87b119ac2dd63b"
+        },
+        "supplement/state_carry_validation/verification.json": {
+          "sha256": "b267126e2297d9eff653178fcff8037af1a932d51f3358b925c42cf81547bd3c"
+        },
+        "visual_review.json": {
+          "sha256": "ffa4547fcdd772ebc96910923f1ebfbf5def01dc80c79e4884af7e6d6a336eec"
+        }
+      }
+    },
+    {
+      "version": "v008_2026-09-12_monitorability_future_work",
+      "pages": 19,
+      "note": "Adds Section 9: future internal-monitorability study and success criteria, explicitly outside current compute budget; all existing evidence preserved.",
+      "files": {
+        "build_monitorability_future_v008.py": {
+          "sha256": "08fffaaf4b83d8167e8451d8119ed31030db268a80b13a7c9db6c9caf7b7fbd6"
+        },
+        "content_verification.json": {
+          "sha256": "3a7bed423b3849f524497d6b1614c8734308c1f0cc02c82b16a1a71dd58440b2"
+        },
+        "equations/accounting.png": {
+          "sha256": "0b1ac4649abd73ab58a74c5cb319bf07c234eda495db710e9e7a684a6be50e02"
+        },
+        "equations/fidelity.png": {
+          "sha256": "a0bdb462089955abd9488887073dc83660d9bc98973206f5902831423950c41d"
+        },
+        "equations/local_response.png": {
+          "sha256": "37b46e28c4472df5632a872f81544a169c1c25048ca916f052f8c203161d8a7e"
+        },
+        "figures/carry_reset_fidelity.png": {
+          "sha256": "443f6f7f6268939c766155921309d8d3c039d37444b8322ec23f3f0cd00eb768"
+        },
+        "figures/pass_alignment.png": {
+          "sha256": "baece700f09dae1af36ce1e6e4365b6228440aa48722d8a487e5ff62decc5275"
+        },
+        "PAPER.md": {
+          "sha256": "babfb4d3c5fb512bcdb8d39c55f6252612af1778acfc847f0792f5a24b5dde9c"
+        },
+        "paper.pdf": {
+          "sha256": "9960ee13248159fa15d4d60eed17054665f15eb04492dca2fbe16f9a39c19003"
+        },
+        "paper.receipt.json": {
+          "sha256": "8102d47cbe4978fc93335cb79565d9aab29bb748b0d29140e24fb2fc4882fbca"
+        },
+        "README.md": {
+          "sha256": "111d375b70806e1b06931e33c2d89d96adb7c8f02dd08f1829400bbb5e780631"
+        },
+        "render_paper.py": {
+          "sha256": "8760a775ee2fc48f5a4a953ed14deb3a48a6e8a1ba28867f5381be83daf2ee11"
+        },
+        "seal_monitorability_future_v008.py": {
+          "sha256": "804e62c45efd61ee298c11afe12fa24d0969fd5698708842532e45661a011c45"
+        },
+        "supplement/boundary_geometry/grouped.csv": {
+          "sha256": "bdc734d8109d32ed289ae7add0113d37cbfc23d1ac98b7bd9716abdc17618638"
+        },
+        "supplement/boundary_geometry/grouped.json": {
+          "sha256": "5c880ee56ed58358608906e3f4e730f9303bdaaa7747c24dd64133a4bb6018c1"
+        },
+        "supplement/boundary_geometry/manifest.json": {
+          "sha256": "52d84d5f0186271a4bb6db204707de215b3a59c0d0233c99a290d87c6adeebca"
+        },
+        "supplement/boundary_geometry/per_input.csv": {
+          "sha256": "f3637662a3d6d32632f66f1f1d6229027c18309913258c61265da17f87b435a8"
+        },
+        "supplement/boundary_geometry/per_input.json": {
+          "sha256": "ae216c993843437f563cfa594565a498ec3e60a146e3c388ad1b891b091a25d4"
+        },
+        "supplement/closeout_code/compare_skill_models.py": {
+          "sha256": "5cfbe73bfd121933e7bc3cce0f46c19bcbcb179a699f78493b5aaad7c43ba42d"
+        },
+        "supplement/closeout_code/grade_logic_skill_comparison.py": {
+          "sha256": "9ac6ad58e62d1dfca99167e41ea5eb350a80cc5a76bc76094f1f6d579ccb2246"
+        },
+        "supplement/closeout_code/test_partial_skill_grading.py": {
+          "sha256": "bc7ed0aeae29d089fc9d48ba3ede4c78358f4d00eef3a0943104262becf133b2"
+        },
+        "supplement/closeout_code/verify_hermes_controller_control.py": {
+          "sha256": "fe3f6ba2cb1a0cb358a97b4906610c579adcc6edc95e80cda4d20f3a53732728"
+        },
+        "supplement/closeout_code/verify_partial_closeout.py": {
+          "sha256": "355383b9f89c2bf44044aa51ac835aaf3afff4634e70964e49214e002d4727e2"
+        },
+        "supplement/comparator/protocol.json": {
+          "sha256": "0434972b5b9e9fdb2ed241956bcff3ce341c8709dcc25c4d23013b49261bc322"
+        },
+        "supplement/comparator/summary.json": {
+          "sha256": "1d9b0bb83f8bec3622d4fe74c94560472b58a99d4a71308bd146b5159d5e55a9"
+        },
+        "supplement/independent_grading_validation/rows.json": {
+          "sha256": "d9e14b92c0523e775a849a406d1eec8497e9d3e6ca36aa89e27187ce336027a2"
+        },
+        "supplement/independent_grading_validation/verification.json": {
+          "sha256": "92210535e9423f287463aab3ab12a654882fe985af698704fb5e784d216a9a1b"
+        },
+        "supplement/inherited_literature_verification.json": {
+          "sha256": "272bc055ba9fc3ed3cf68dd1829d1c486a6a8df5abfdd809a0c22d3d867f45e3"
+        },
+        "supplement/intervention_fidelity/all_conditions.csv": {
+          "sha256": "9ab63eda00d1c0e7ad74f5ac8332f7d92b2def9005b34e1fae5119d8cd2d6e18"
+        },
+        "supplement/intervention_fidelity/check_change_fidelity_sensitivity.py": {
+          "sha256": "030f63f9403f0691492618ea10ee31aea12f37a264bf0f2dc62b1f2832fe74f3"
+        },
+        "supplement/intervention_fidelity/contract.json": {
+          "sha256": "7ebb7ac3c89b45cb39dc20c472ba941e37f517079a4a503ccc141437a04c319e"
+        },
+        "supplement/intervention_fidelity/intervention_change_fidelity.py": {
+          "sha256": "5e1bf590b51d10d2e76e36f1f87a73bfdf273a1ed732e5d251be8624a7185a42"
+        },
+        "supplement/intervention_fidelity/manifest.json": {
+          "sha256": "a7b1efbec3b5bc411c2ae3a15f07d9900f943c4c89125fb580a7a5789bf1aab9"
+        },
+        "supplement/intervention_fidelity/paired.json": {
+          "sha256": "17aea2ef4785d44ea753476c0a1c4a722bfcc874174739cc49c2b44f5112aa2a"
+        },
+        "supplement/intervention_fidelity/per_input.json": {
+          "sha256": "6b860945bf8722758c4c84d245fec48b17882ffe129d4e6b5f84fb46b3bf097b"
+        },
+        "supplement/intervention_fidelity/pooled.json": {
+          "sha256": "c106408b5e73206f959531548630d87ab4ead1f501b297d650af8b94f4857de8"
+        },
+        "supplement/intervention_fidelity/sensitivity_manifest.json": {
+          "sha256": "20d3e1353dc45ffa2520cb4d223c151fe7cd5747a36a5d3a52ccdae70b5a6d21"
+        },
+        "supplement/intervention_fidelity/sensitivity_pooled.json": {
+          "sha256": "67f941be1a658c75943626fa65c50d34373e6b9bb6f20c152b4d26249be2243c"
+        },
+        "supplement/ledger_gate/protocol.json": {
+          "sha256": "98e4944a9b964502fbd98421556eff3e1466d2e61ea0078418b95a7a46f218d5"
+        },
+        "supplement/ledger_gate/question_00.json": {
+          "sha256": "80b8670192ae56fd945089c6e6f26208b58d8a4e0edc44610dcf2471094f2d0c"
+        },
+        "supplement/ledger_gate/question_01.json": {
+          "sha256": "0a30a97f4f83944e6a2f11615f64d7a6d60c94a9e3559e3c18fc085d717d79a0"
+        },
+        "supplement/ledger_gate/question_02.json": {
+          "sha256": "cc45ada3d8004e9311bfbad389a1e333e2f0f75c17efdb15c45ca0d8a1f37625"
+        },
+        "supplement/ledger_gate/RESULTS.md": {
+          "sha256": "7121ca597952ca94b448132d8ac66e4564f5264687c65f551f55a01b417fb32f"
+        },
+        "supplement/ledger_gate/summary.json": {
+          "sha256": "e078b5244fbd0e1fa0bda282b6c91566452565cf26dcda29febd8755e912247d"
+        },
+        "supplement/ledger_gate/verification.json": {
+          "sha256": "4d1163a2ede8c0c09dbe050bf1e42e886dfab68635c78828833d88f503c166b4"
+        },
+        "supplement/partial_comparison/all_pairings.json": {
+          "sha256": "f8ddefefaedc0bb3b321a5978b5aaef1a6666d098e75cb19e782d7edb380e0ec"
+        },
+        "supplement/partial_comparison/RESULTS.md": {
+          "sha256": "38e3831cc2aed964ddb65a57e60c07b5e2331499a20c96b1137d0233745245af"
+        },
+        "supplement/partial_comparison/same_procedure_pairs.json": {
+          "sha256": "07bd7acafec30b9c27b80c82701c93bf7cdf65a34239fc7cdeb28a62e9de7576"
+        },
+        "supplement/partial_comparison/verification.json": {
+          "sha256": "251b0addbfe9ed24be15e171fee81ba18dcb249ea471d3d990146e0a85e3034e"
+        },
+        "supplement/partial_grading/corrections.json": {
+          "sha256": "a13154f799ad5b933c13dee147cfa25b8be2e167efc8ea6d573ede53ac145690"
+        },
+        "supplement/partial_grading/RESULTS.md": {
+          "sha256": "0b4b53c5dda9813acd6d1a0aa132a435fac11add819c169a5a544d466dfad6ac"
+        },
+        "supplement/partial_grading/rows.json": {
+          "sha256": "cf6be3e3728395741187e83145920dfab602cbcb8c5271fd1c4ce881e3c80e28"
+        },
+        "supplement/partial_grading/summary.json": {
+          "sha256": "1e78b4d5b76355bdcd21652cb64fe356d9352d80ea570ed591a71c60b623f6e8"
+        },
+        "supplement/partial_grading/verification.json": {
+          "sha256": "7d5ba765f9937006d6bc992465a9c635ac0beb8cdf207c459bc3c2499de82cc1"
+        },
+        "supplement/pass_dynamics/coverage.csv": {
+          "sha256": "0420de908f7e3b8af05c2c9fd9f01000162c043b3e00a087c4dfcf188527c728"
+        },
+        "supplement/pass_dynamics/coverage.json": {
+          "sha256": "321305c4a5c1aafeca780afb9cc0c254aa32e7e1903ab0d87e99e7ebef566fe7"
+        },
+        "supplement/pass_dynamics/goal_evidence_audit.json": {
+          "sha256": "b82d62fe1af39913dd1313b50fe1d1c94a18dca7910ca467f580e7e6df58187f"
+        },
+        "supplement/pass_dynamics/grouped_states.csv": {
+          "sha256": "2c0b2f3b95b74e8f5aa97d21be2ccdab74172985e2140a73d5c178d713236341"
+        },
+        "supplement/pass_dynamics/grouped_states.json": {
+          "sha256": "08b179fc6f4f895ec8bd3527bc4f46fcab6674ed3790e0bf7db22aae200c0b08"
+        },
+        "supplement/pass_dynamics/heldout_pass_dynamics.png": {
+          "sha256": "9f9b36c61520e6c144cb0fbd1c634d73854b74d4a3bacad1615deee348ed64ad"
+        },
+        "supplement/pass_dynamics/manifest.json": {
+          "sha256": "a3d059c993d297442856c3796cb5c905a4fe8af73c0c03c675b104369ff7d6c3"
+        },
+        "supplement/pass_dynamics/per_input_features.csv": {
+          "sha256": "a579f18e7d118a068404c4eecae23adbba535e9be83cd1f78730d438394537b9"
+        },
+        "supplement/pass_dynamics/per_input_features.json": {
+          "sha256": "1c72b1b4f7e2d2772f9ca6edb9a5c692789b758ddb1e8133d92dc06ee6e14730"
+        },
+        "supplement/pass_dynamics/per_input_states.csv": {
+          "sha256": "15004f86c48d5c8ac7653258f9cc206bac8b8bf45ddfb077acd230a2d6378340"
+        },
+        "supplement/pass_dynamics/per_input_states.json": {
+          "sha256": "c53527545864e4f4eb7398129258dd6ba1bed6f61462968c6c6b0904ed0abaf2"
+        },
+        "supplement/pass_dynamics/per_task_states.csv": {
+          "sha256": "1f5c45884872a286f1f97e302e40e5ec53d7878f0f14df87886191e5fcee126b"
+        },
+        "supplement/pass_dynamics/per_task_states.json": {
+          "sha256": "53554028a4b2994e560b1cb40ea60a0d64d0fffbbf28b6069d82044146c2c316"
+        },
+        "supplement/pass_dynamics/README.md": {
+          "sha256": "bb3a55014bfdf8d56cea8e536c0570ab3643e3b88e1f7a3700def6d0ab9e57be"
+        },
+        "supplement/pass_dynamics/source/check_pass_boundary_geometry.py": {
+          "sha256": "0cc6bc8d1b132d98f7395f0a85a7b9e4c7afb5f7770439ffad5a19ea0ebb5c02"
+        },
+        "supplement/pass_dynamics/source/finish_pass_dynamics_report.py": {
+          "sha256": "1a8655e92ed181f8531bb2f034abeb7d3cc084c81b1f0ababdb52f47f973f72a"
+        },
+        "supplement/pass_dynamics/source/summarize_pass_dynamics.py": {
+          "sha256": "0e40b4639b01e12f94d3575e7dc9ebc397c7335ba72d360482ab5bde68928ed0"
+        },
+        "supplement/pass_dynamics/source/test_pass_dynamics.py": {
+          "sha256": "f1dd401a2cbf2671f8b5ae62bb7f14ae55532468ca0bcda7f33735f5920b527a"
+        },
+        "supplement/pass_dynamics/verification.json": {
+          "sha256": "b2307e9d5d5fe053ff8935ddff31fc41aa8f4e4cb1d96dd3c97847de65cec33a"
+        },
+        "supplement/runtime_closeout.json": {
+          "sha256": "62221b518f006bcf93ed35f4f5a229790d04728e91e6b46a45d26f0c9499f2b5"
+        },
+        "supplement/state_carry_analysis/contrasts.json": {
+          "sha256": "498ae1bc521d17fdaf322d12e5637688806450aef211908384bacc30e43d3a0c"
+        },
+        "supplement/state_carry_analysis/crossed_per_input.json": {
+          "sha256": "7fb88a449338d6d966f8c0c4f537793f9e1e3e4a6025e1f045084d5a51d6af3f"
+        },
+        "supplement/state_carry_analysis/crossed_pooled.json": {
+          "sha256": "039a7b68503df3365dffc392877b1fd495007b253fbc92d2d3b3e84eeb5461e0"
+        },
+        "supplement/state_carry_analysis/dictionary_sources.json": {
+          "sha256": "9f9154317ce259299cc02780b18d5cc513cb9e4e90b92fc7731e3dd0708a6f14"
+        },
+        "supplement/state_carry_analysis/encodings_model.layers.11_adamw.npz": {
+          "sha256": "7ab2cf87e6ad70700324d19023bf6b3f540a6d7782b706f796678f966f849ad0"
+        },
+        "supplement/state_carry_analysis/encodings_model.layers.11_muon_hybrid.npz": {
+          "sha256": "dce45347eefe4bb2875d469e9af367ac085eb785c8378f261b11bfd3609d83a7"
+        },
+        "supplement/state_carry_analysis/encodings_model.layers.21_adamw.npz": {
+          "sha256": "669866a3088174de4ee87bb13e30e84023371c6a025e0cf4e54772dd309a513a"
+        },
+        "supplement/state_carry_analysis/encodings_model.layers.21_muon_hybrid.npz": {
+          "sha256": "9e6f7b1e3a179aaff4632ca2db3c2e52a250b4499aa5c6e67a9a2e4824ed12bb"
+        },
+        "supplement/state_carry_analysis/encodings_model.norm_adamw.npz": {
+          "sha256": "18d91d9db37af76c4cb4cfc6959dfe70a0a014d3f7afc1c43a7c12cf2c233fa5"
+        },
+        "supplement/state_carry_analysis/encodings_model.norm_muon_hybrid.npz": {
+          "sha256": "6104871a5e2327dc95403cba98e299fd2633baf253e2f13ef2760898ff0c231e"
+        },
+        "supplement/state_carry_analysis/logit_effects.json": {
+          "sha256": "da8e2c6bc79e2315304a5985bd9e0e9cfcdfdeb612fb8b66273c8d957df9a97d"
+        },
+        "supplement/state_carry_analysis/manifest.json": {
+          "sha256": "41afe43d826f1c0e0bd48241eb2d2024145265673a9ec68909410ad1e796bf8d"
+        },
+        "supplement/state_carry_analysis/per_input.json": {
+          "sha256": "940670e1402bc9c40717f73ecd7940123e8da7feafe6dd9d5fce7d22815ea627"
+        },
+        "supplement/state_carry_analysis/pooled.json": {
+          "sha256": "80a682d9579625020746d324fb03193b31db5e0c61d8e17a7f40d51bbbd266c7"
+        },
+        "supplement/state_carry_analysis/protocol.json": {
+          "sha256": "814d83d2b5ff331a8fadb00af31b6cdb59cf508bea8dc64b9914db280b91a6b2"
+        },
+        "supplement/state_carry_analysis/RESULTS.md": {
+          "sha256": "e44cc4eef8a127a248732d99619fd9ae6a656f4ef0d563bf309cbb51e035a7e2"
+        },
+        "supplement/state_carry_analysis/state_quality.json": {
+          "sha256": "cb42289dc5f6477bef4b39b1cf6e1ed1151b61299591dd233244f5159e503db4"
+        },
+        "supplement/state_carry_metric_validation/verification.json": {
+          "sha256": "f43eda21eed8fc1637a8e2af1bbae51c94232daafebdba51633453ac6c31103d"
+        },
+        "supplement/state_carry_report/carry_reset_fidelity.png": {
+          "sha256": "443f6f7f6268939c766155921309d8d3c039d37444b8322ec23f3f0cd00eb768"
+        },
+        "supplement/state_carry_report/manifest.json": {
+          "sha256": "2ca5203d293973663f64edf45d402726c387e2396db6818f067d365655a8f4ce"
+        },
+        "supplement/state_carry_report/REPORT.md": {
+          "sha256": "0e06a7ba6ea0e76da18e839173d024f3123af18e73dc34aafcab21e53d5aefbe"
+        },
+        "supplement/state_carry_report/source_snapshots/analyze_recurrence_state_control.py": {
+          "sha256": "637fd159091871f8d71403470d1b8b779d3dac1eca1f3ce76766a086d63ad56b"
+        },
+        "supplement/state_carry_report/source_snapshots/llama_capture.py": {
+          "sha256": "e42716821749ebe8c227ecccff7501c12839e953fd92db5d810e6218f22bf74c"
+        },
+        "supplement/state_carry_report/source_snapshots/llama_steer.py": {
+          "sha256": "d6b384f3ef72491f833ed2088b7c9b0c6b028068a66932a59186b008b006135c"
+        },
+        "supplement/state_carry_report/source_snapshots/recurrence_state_control.py": {
+          "sha256": "a18f8aedcbd829e528b0891a9c6fbe40259947f776b97394060c1485f58556c9"
+        },
+        "supplement/state_carry_report/source_snapshots/report_recurrence_state_control.py": {
+          "sha256": "28af459b8d86d3ba2a3fb8f51891e1e3092ea3eff0d0aab577d3d619af6f269a"
+        },
+        "supplement/state_carry_report/source_snapshots/run_recurrence_state_control.py": {
+          "sha256": "b41a8cb283c2e4e01e96f32cbf46bd7573e356e212280b1c9d53be99ed1f96bb"
+        },
+        "supplement/state_carry_report/source_snapshots/test_recurrence_state_analysis.py": {
+          "sha256": "ba4bc739cc4f0af7f759bf6d32f6577e3da0c482baf91a149d1926a7b2565649"
+        },
+        "supplement/state_carry_report/source_snapshots/verify_recurrence_state_control.py": {
+          "sha256": "fe18ed1cb0b82d5b712ba06d4fd94a08161da76485c3503e53f11aca0c29028e"
+        },
+        "supplement/state_carry_run/cleanup.json": {
+          "sha256": "d890ac31c1ffd5e97fffbf345a8d07946405425412f1b61dbe3d216a2974c3a6"
+        },
+        "supplement/state_carry_run/closeout.json": {
+          "sha256": "9767cfaa58bf5cddf963400c15f7a9d525544185f92df38938b46a97987123f1"
+        },
+        "supplement/state_carry_run/manifest.json": {
+          "sha256": "30df0f28705d99eabc4740d54a987170a511801b34922ed93d8eefa19b5f2364"
+        },
+        "supplement/state_carry_run/protocol.json": {
+          "sha256": "b64c6aaefa0b6fa4f8b1d04a0fb90f2a5f8a1b9c83384eb2cd7aa4bad7110041"
+        },
+        "supplement/state_carry_run/records.json": {
+          "sha256": "dd349deaf27ddb4daa516f4a4a14288c973dac5c488cb0723c29f8760d1f88e9"
+        },
+        "supplement/state_carry_run/recurrence_state_analysis_logging_amendment.json": {
+          "sha256": "c48e0ee72245baeab4d205144bf85c4eec17aa8d919c6f4439b7ec3afce1b518"
+        },
+        "supplement/state_carry_run/recurrence_state_analysis_plan.json": {
+          "sha256": "f07cbb991dab4ee8cea99c8d5a8c6b3e5db7125e84cb7bcb8e12eb7cb7d530ed"
+        },
+        "supplement/state_carry_validation/parity.json": {
+          "sha256": "bf124f5350df7c3645be370bada0d4fdd31401b4bc930bcbaf87b119ac2dd63b"
+        },
+        "supplement/state_carry_validation/verification.json": {
+          "sha256": "b267126e2297d9eff653178fcff8037af1a932d51f3358b925c42cf81547bd3c"
+        },
+        "visual_review.json": {
+          "sha256": "9a3b279a562b6ba82835e94fa6bacbd7bedde7f7e016c6444c593849099cd75b"
+        }
+      }
+    }
+  ],
+  "current_manuscript": "v008_2026-09-12_monitorability_future_work",
+  "technical_companion": "v002_2026-09-09_with_campsite"
+}

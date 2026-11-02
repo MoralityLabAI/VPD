@@ -1,0 +1,992 @@
+{
+  "design": {
+    "all_configurations_reported_without_selection": true,
+    "maximum_exact_upper_tail_p_value": 0.05,
+    "minimum_features_per_pass": 16,
+    "minimum_held_out_explained_variance_thresholds": [
+      0.0,
+      0.1,
+      0.2,
+      0.25,
+      0.3
+    ],
+    "minimum_held_out_mass_coverage": 0.05,
+    "minimum_held_out_mass_precision": 0.75,
+    "minimum_train_example_support_thresholds": [
+      2,
+      4,
+      6
+    ],
+    "selectivity_configurations_per_site": 12,
+    "train_share_thresholds": [
+      0.8,
+      0.85,
+      0.9,
+      0.95
+    ]
+  },
+  "report_id": "20b09d4aecea3dca1555a5ac96fca4c4ff696831f28347117cb9681244163b67",
+  "schema": "sch.vpd-nanbeige-q4-sae-pass-selectivity-robustness.v1",
+  "scientific_boundary": {
+    "does_not_authorize_separate_dictionary_training": true,
+    "execution_authorized": false,
+    "feature_assignment_is_not_semantic_interpretation": true,
+    "model_weights_loaded": false,
+    "new_model_inference_performed": false,
+    "new_sae_training_performed": false,
+    "paid_compute_authorized": false,
+    "sae_weights_loaded": false,
+    "sensitivity_grid_is_not_threshold_optimization": true,
+    "stored_sparse_feature_archives_used": true
+  },
+  "sites": [
+    {
+      "held_out_explained_variance": {
+        "pass_0": 0.29651429693722264,
+        "pass_1": 0.2629356381461697
+      },
+      "minimum_held_out_explained_variance": 0.2629356381461697,
+      "quality_threshold_sensitivity": [
+        {
+          "minimum_held_out_explained_variance_threshold": 0.0,
+          "selectivity_configurations_admitted": 11
+        },
+        {
+          "minimum_held_out_explained_variance_threshold": 0.1,
+          "selectivity_configurations_admitted": 11
+        },
+        {
+          "minimum_held_out_explained_variance_threshold": 0.2,
+          "selectivity_configurations_admitted": 11
+        },
+        {
+          "minimum_held_out_explained_variance_threshold": 0.25,
+          "selectivity_configurations_admitted": 11
+        },
+        {
+          "minimum_held_out_explained_variance_threshold": 0.3,
+          "selectivity_configurations_admitted": 0
+        }
+      ],
+      "selectivity_configurations": [
+        {
+          "control_score_range": [
+            -0.38260373203321124,
+            0.38260373203321124
+          ],
+          "exact_upper_tail_p_value": 0.00390625,
+          "held_out_signed_selective_mass_score": 0.38260373203321124,
+          "minimum_train_example_support": 2,
+          "pass_0": {
+            "assigned_features": 358,
+            "held_out_directional_feature_fraction": 0.8994413407821229,
+            "held_out_mass_coverage": 0.4520686557740967,
+            "held_out_mass_precision": 0.9149499047270233
+          },
+          "pass_1": {
+            "assigned_features": 388,
+            "held_out_directional_feature_fraction": 0.8711340206185567,
+            "held_out_mass_coverage": 0.38843084919596693,
+            "held_out_mass_precision": 0.9072473327688001
+          },
+          "selectivity_gate": "pass",
+          "train_share_threshold": 0.8
+        },
+        {
+          "control_score_range": [
+            -0.27418615139660235,
+            0.27418615139660235
+          ],
+          "exact_upper_tail_p_value": 0.00390625,
+          "held_out_signed_selective_mass_score": 0.27418615139660235,
+          "minimum_train_example_support": 4,
+          "pass_0": {
+            "assigned_features": 121,
+            "held_out_directional_feature_fraction": 0.9669421487603306,
+            "held_out_mass_coverage": 0.32021063421576984,
+            "held_out_mass_precision": 0.9343898068336258
+          },
+          "pass_1": {
+            "assigned_features": 137,
+            "held_out_directional_feature_fraction": 0.9562043795620438,
+            "held_out_mass_coverage": 0.26854965748177495,
+            "held_out_mass_precision": 0.9197562689013865
+          },
+          "selectivity_gate": "pass",
+          "train_share_threshold": 0.8
+        },
+        {
+          "control_score_range": [
+            -0.1109776131131842,
+            0.1109776131131842
+          ],
+          "exact_upper_tail_p_value": 0.00390625,
+          "held_out_signed_selective_mass_score": 0.1109776131131842,
+          "minimum_train_example_support": 6,
+          "pass_0": {
+            "assigned_features": 37,
+            "held_out_directional_feature_fraction": 1.0,
+            "held_out_mass_coverage": 0.1391895664613666,
+            "held_out_mass_precision": 0.9329797972799465
+          },
+          "pass_1": {
+            "assigned_features": 26,
+            "held_out_directional_feature_fraction": 1.0,
+            "held_out_mass_coverage": 0.09598431418857022,
+            "held_out_mass_precision": 0.9275664971760531
+          },
+          "selectivity_gate": "pass",
+          "train_share_threshold": 0.8
+        },
+        {
+          "control_score_range": [
+            -0.3516644905179926,
+            0.3516644905179926
+          ],
+          "exact_upper_tail_p_value": 0.00390625,
+          "held_out_signed_selective_mass_score": 0.3516644905179926,
+          "minimum_train_example_support": 2,
+          "pass_0": {
+            "assigned_features": 324,
+            "held_out_directional_feature_fraction": 0.904320987654321,
+            "held_out_mass_coverage": 0.41699554063086414,
+            "held_out_mass_precision": 0.9238758958240009
+          },
+          "pass_1": {
+            "assigned_features": 368,
+            "held_out_directional_feature_fraction": 0.8641304347826086,
+            "held_out_mass_coverage": 0.3454846718444872,
+            "held_out_mass_precision": 0.9150765675141614
+          },
+          "selectivity_gate": "pass",
+          "train_share_threshold": 0.85
+        },
+        {
+          "control_score_range": [
+            -0.252628108578793,
+            0.252628108578793
+          ],
+          "exact_upper_tail_p_value": 0.00390625,
+          "held_out_signed_selective_mass_score": 0.252628108578793,
+          "minimum_train_example_support": 4,
+          "pass_0": {
+            "assigned_features": 115,
+            "held_out_directional_feature_fraction": 0.9652173913043478,
+            "held_out_mass_coverage": 0.30390224093821144,
+            "held_out_mass_precision": 0.938237156883025
+          },
+          "pass_1": {
+            "assigned_features": 124,
+            "held_out_directional_feature_fraction": 0.9516129032258065,
+            "held_out_mass_coverage": 0.2306686589787498,
+            "held_out_mass_precision": 0.9326810498399702
+          },
+          "selectivity_gate": "pass",
+          "train_share_threshold": 0.85
+        },
+        {
+          "control_score_range": [
+            -0.09602618475850515,
+            0.09602618475850515
+          ],
+          "exact_upper_tail_p_value": 0.00390625,
+          "held_out_signed_selective_mass_score": 0.09602618475850515,
+          "minimum_train_example_support": 6,
+          "pass_0": {
+            "assigned_features": 35,
+            "held_out_directional_feature_fraction": 1.0,
+            "held_out_mass_coverage": 0.12876406936709128,
+            "held_out_mass_precision": 0.9430096084729389
+          },
+          "pass_1": {
+            "assigned_features": 20,
+            "held_out_directional_feature_fraction": 1.0,
+            "held_out_mass_coverage": 0.06848200476771793,
+            "held_out_mass_precision": 0.9544256933699569
+          },
+          "selectivity_gate": "pass",
+          "train_share_threshold": 0.85
+        },
+        {
+          "control_score_range": [
+            -0.3191163647170483,
+            0.3191163647170483
+          ],
+          "exact_upper_tail_p_value": 0.00390625,
+          "held_out_signed_selective_mass_score": 0.3191163647170483,
+          "minimum_train_example_support": 2,
+          "pass_0": {
+            "assigned_features": 292,
+            "held_out_directional_feature_fraction": 0.9006849315068494,
+            "held_out_mass_coverage": 0.37240691615938776,
+            "held_out_mass_precision": 0.9286899980590234
+          },
+          "pass_1": {
+            "assigned_features": 343,
+            "held_out_directional_feature_fraction": 0.8542274052478134,
+            "held_out_mass_coverage": 0.31631213120227525,
+            "held_out_mass_precision": 0.9195124208625073
+          },
+          "selectivity_gate": "pass",
+          "train_share_threshold": 0.9
+        },
+        {
+          "control_score_range": [
+            -0.22856393282380402,
+            0.22856393282380402
+          ],
+          "exact_upper_tail_p_value": 0.00390625,
+          "held_out_signed_selective_mass_score": 0.22856393282380402,
+          "minimum_train_example_support": 4,
+          "pass_0": {
+            "assigned_features": 104,
+            "held_out_directional_feature_fraction": 0.9615384615384616,
+            "held_out_mass_coverage": 0.2709590760944334,
+            "held_out_mass_precision": 0.945343828652007
+          },
+          "pass_1": {
+            "assigned_features": 112,
+            "held_out_directional_feature_fraction": 0.9464285714285714,
+            "held_out_mass_coverage": 0.2096267994748644,
+            "held_out_mass_precision": 0.9371166630289566
+          },
+          "selectivity_gate": "pass",
+          "train_share_threshold": 0.9
+        },
+        {
+          "control_score_range": [
+            -0.08576776514346628,
+            0.08576776514346628
+          ],
+          "exact_upper_tail_p_value": 0.00390625,
+          "held_out_signed_selective_mass_score": 0.08576776514346628,
+          "minimum_train_example_support": 6,
+          "pass_0": {
+            "assigned_features": 31,
+            "held_out_directional_feature_fraction": 1.0,
+            "held_out_mass_coverage": 0.1163366870396805,
+            "held_out_mass_precision": 0.947598410384366
+          },
+          "pass_1": {
+            "assigned_features": 16,
+            "held_out_directional_feature_fraction": 1.0,
+            "held_out_mass_coverage": 0.057641806626087755,
+            "held_out_mass_precision": 0.9717591289231028
+          },
+          "selectivity_gate": "pass",
+          "train_share_threshold": 0.9
+        },
+        {
+          "control_score_range": [
+            -0.2816530914988048,
+            0.2816530914988048
+          ],
+          "exact_upper_tail_p_value": 0.00390625,
+          "held_out_signed_selective_mass_score": 0.2816530914988048,
+          "minimum_train_example_support": 2,
+          "pass_0": {
+            "assigned_features": 259,
+            "held_out_directional_feature_fraction": 0.8957528957528957,
+            "held_out_mass_coverage": 0.31728322728273295,
+            "held_out_mass_precision": 0.9370893264565822
+          },
+          "pass_1": {
+            "assigned_features": 323,
+            "held_out_directional_feature_fraction": 0.8452012383900929,
+            "held_out_mass_coverage": 0.2900621224920593,
+            "held_out_mass_precision": 0.9174406229784214
+          },
+          "selectivity_gate": "pass",
+          "train_share_threshold": 0.95
+        },
+        {
+          "control_score_range": [
+            -0.20115829233974042,
+            0.20115829233974042
+          ],
+          "exact_upper_tail_p_value": 0.00390625,
+          "held_out_signed_selective_mass_score": 0.20115829233974042,
+          "minimum_train_example_support": 4,
+          "pass_0": {
+            "assigned_features": 88,
+            "held_out_directional_feature_fraction": 0.9659090909090909,
+            "held_out_mass_coverage": 0.23238926363962695,
+            "held_out_mass_precision": 0.9574823857652782
+          },
+          "pass_1": {
+            "assigned_features": 104,
+            "held_out_directional_feature_fraction": 0.9423076923076923,
+            "held_out_mass_coverage": 0.18869704384342426,
+            "held_out_mass_precision": 0.9338843189897212
+          },
+          "selectivity_gate": "pass",
+          "train_share_threshold": 0.95
+        },
+        {
+          "control_score_range": [
+            -0.07687419903346232,
+            0.07687419903346232
+          ],
+          "exact_upper_tail_p_value": 0.00390625,
+          "held_out_signed_selective_mass_score": 0.07687419903346232,
+          "minimum_train_example_support": 6,
+          "pass_0": {
+            "assigned_features": 27,
+            "held_out_directional_feature_fraction": 1.0,
+            "held_out_mass_coverage": 0.10745047649335966,
+            "held_out_mass_precision": 0.9585913200819997
+          },
+          "pass_1": {
+            "assigned_features": 14,
+            "held_out_directional_feature_fraction": 1.0,
+            "held_out_mass_coverage": 0.04642890864908096,
+            "held_out_mass_precision": 0.9671444655995239
+          },
+          "selectivity_gate": "fail",
+          "train_share_threshold": 0.95
+        }
+      ],
+      "selectivity_configurations_passing": 11,
+      "site": "model.layers.11"
+    },
+    {
+      "held_out_explained_variance": {
+        "pass_0": 0.8311398107088587,
+        "pass_1": -0.1879651772380071
+      },
+      "minimum_held_out_explained_variance": -0.1879651772380071,
+      "quality_threshold_sensitivity": [
+        {
+          "minimum_held_out_explained_variance_threshold": 0.0,
+          "selectivity_configurations_admitted": 0
+        },
+        {
+          "minimum_held_out_explained_variance_threshold": 0.1,
+          "selectivity_configurations_admitted": 0
+        },
+        {
+          "minimum_held_out_explained_variance_threshold": 0.2,
+          "selectivity_configurations_admitted": 0
+        },
+        {
+          "minimum_held_out_explained_variance_threshold": 0.25,
+          "selectivity_configurations_admitted": 0
+        },
+        {
+          "minimum_held_out_explained_variance_threshold": 0.3,
+          "selectivity_configurations_admitted": 0
+        }
+      ],
+      "selectivity_configurations": [
+        {
+          "control_score_range": [
+            -0.9845527332562992,
+            0.9845527332562992
+          ],
+          "exact_upper_tail_p_value": 0.00390625,
+          "held_out_signed_selective_mass_score": 0.9845527332562992,
+          "minimum_train_example_support": 2,
+          "pass_0": {
+            "assigned_features": 313,
+            "held_out_directional_feature_fraction": 0.7412140575079872,
+            "held_out_mass_coverage": 0.9827439471600112,
+            "held_out_mass_precision": 0.9979433529717127
+          },
+          "pass_1": {
+            "assigned_features": 371,
+            "held_out_directional_feature_fraction": 0.7628032345013477,
+            "held_out_mass_coverage": 0.9895593670060564,
+            "held_out_mass_precision": 0.9986177018127844
+          },
+          "selectivity_gate": "pass",
+          "train_share_threshold": 0.8
+        },
+        {
+          "control_score_range": [
+            -0.9491492348028066,
+            0.9491492348028066
+          ],
+          "exact_upper_tail_p_value": 0.00390625,
+          "held_out_signed_selective_mass_score": 0.9491492348028066,
+          "minimum_train_example_support": 4,
+          "pass_0": {
+            "assigned_features": 152,
+            "held_out_directional_feature_fraction": 0.9144736842105263,
+            "held_out_mass_coverage": 0.9573763103262484,
+            "held_out_mass_precision": 0.9979009078463097
+          },
+          "pass_1": {
+            "assigned_features": 181,
+            "held_out_directional_feature_fraction": 0.9392265193370166,
+            "held_out_mass_coverage": 0.9441967790887429,
+            "held_out_mass_precision": 0.9990042195186222
+          },
+          "selectivity_gate": "pass",
+          "train_share_threshold": 0.8
+        },
+        {
+          "control_score_range": [
+            -0.8862629129264962,
+            0.8862629129264962
+          ],
+          "exact_upper_tail_p_value": 0.00390625,
+          "held_out_signed_selective_mass_score": 0.8862629129264962,
+          "minimum_train_example_support": 6,
+          "pass_0": {
+            "assigned_features": 97,
+            "held_out_directional_feature_fraction": 0.9896907216494846,
+            "held_out_mass_coverage": 0.9114626818797059,
+            "held_out_mass_precision": 0.998115279915309
+          },
+          "pass_1": {
+            "assigned_features": 114,
+            "held_out_directional_feature_fraction": 1.0,
+            "held_out_mass_coverage": 0.8646052090802772,
+            "held_out_mass_precision": 0.9992913041590349
+          },
+          "selectivity_gate": "pass",
+          "train_share_threshold": 0.8
+        },
+        {
+          "control_score_range": [
+            -0.9845360934321847,
+            0.9845360934321847
+          ],
+          "exact_upper_tail_p_value": 0.00390625,
+          "held_out_signed_selective_mass_score": 0.9845360934321847,
+          "minimum_train_example_support": 2,
+          "pass_0": {
+            "assigned_features": 310,
+            "held_out_directional_feature_fraction": 0.7483870967741936,
+            "held_out_mass_coverage": 0.9827439471600112,
+            "held_out_mass_precision": 0.9979433529717127
+          },
+          "pass_1": {
+            "assigned_features": 368,
+            "held_out_directional_feature_fraction": 0.7663043478260869,
+            "held_out_mass_coverage": 0.9894828296645078,
+            "held_out_mass_precision": 0.9986620564044927
+          },
+          "selectivity_gate": "pass",
+          "train_share_threshold": 0.85
+        },
+        {
+          "control_score_range": [
+            -0.9491265887665333,
+            0.9491265887665333
+          ],
+          "exact_upper_tail_p_value": 0.00390625,
+          "held_out_signed_selective_mass_score": 0.9491265887665333,
+          "minimum_train_example_support": 4,
+          "pass_0": {
+            "assigned_features": 151,
+            "held_out_directional_feature_fraction": 0.9205298013245033,
+            "held_out_mass_coverage": 0.9573763103262484,
+            "held_out_mass_precision": 0.9979009078463097
+          },
+          "pass_1": {
+            "assigned_features": 180,
+            "held_out_directional_feature_fraction": 0.9388888888888889,
+            "held_out_mass_coverage": 0.9441526519762224,
+            "held_out_mass_precision": 0.999004173024912
+          },
+          "selectivity_gate": "pass",
+          "train_share_threshold": 0.85
+        },
+        {
+          "control_score_range": [
+            -0.8862629129264962,
+            0.8862629129264962
+          ],
+          "exact_upper_tail_p_value": 0.00390625,
+          "held_out_signed_selective_mass_score": 0.8862629129264962,
+          "minimum_train_example_support": 6,
+          "pass_0": {
+            "assigned_features": 97,
+            "held_out_directional_feature_fraction": 0.9896907216494846,
+            "held_out_mass_coverage": 0.9114626818797059,
+            "held_out_mass_precision": 0.998115279915309
+          },
+          "pass_1": {
+            "assigned_features": 114,
+            "held_out_directional_feature_fraction": 1.0,
+            "held_out_mass_coverage": 0.8646052090802772,
+            "held_out_mass_precision": 0.9992913041590349
+          },
+          "selectivity_gate": "pass",
+          "train_share_threshold": 0.85
+        },
+        {
+          "control_score_range": [
+            -0.9843833918013192,
+            0.9843833918013192
+          ],
+          "exact_upper_tail_p_value": 0.00390625,
+          "held_out_signed_selective_mass_score": 0.9843833918013192,
+          "minimum_train_example_support": 2,
+          "pass_0": {
+            "assigned_features": 308,
+            "held_out_directional_feature_fraction": 0.7467532467532467,
+            "held_out_mass_coverage": 0.9826421606087866,
+            "held_out_mass_precision": 0.9979431403730318
+          },
+          "pass_1": {
+            "assigned_features": 363,
+            "held_out_directional_feature_fraction": 0.768595041322314,
+            "held_out_mass_coverage": 0.989281832133437,
+            "held_out_mass_precision": 0.9986617849313155
+          },
+          "selectivity_gate": "pass",
+          "train_share_threshold": 0.9
+        },
+        {
+          "control_score_range": [
+            -0.949110164389926,
+            0.949110164389926
+          ],
+          "exact_upper_tail_p_value": 0.00390625,
+          "held_out_signed_selective_mass_score": 0.949110164389926,
+          "minimum_train_example_support": 4,
+          "pass_0": {
+            "assigned_features": 151,
+            "held_out_directional_feature_fraction": 0.9205298013245033,
+            "held_out_mass_coverage": 0.9573763103262484,
+            "held_out_mass_precision": 0.9979009078463097
+          },
+          "pass_1": {
+            "assigned_features": 179,
+            "held_out_directional_feature_fraction": 0.9385474860335196,
+            "held_out_mass_coverage": 0.9441206481276951,
+            "held_out_mass_precision": 0.9990041393019367
+          },
+          "selectivity_gate": "pass",
+          "train_share_threshold": 0.9
+        },
+        {
+          "control_score_range": [
+            -0.8862629129264962,
+            0.8862629129264962
+          ],
+          "exact_upper_tail_p_value": 0.00390625,
+          "held_out_signed_selective_mass_score": 0.8862629129264962,
+          "minimum_train_example_support": 6,
+          "pass_0": {
+            "assigned_features": 97,
+            "held_out_directional_feature_fraction": 0.9896907216494846,
+            "held_out_mass_coverage": 0.9114626818797059,
+            "held_out_mass_precision": 0.998115279915309
+          },
+          "pass_1": {
+            "assigned_features": 114,
+            "held_out_directional_feature_fraction": 1.0,
+            "held_out_mass_coverage": 0.8646052090802772,
+            "held_out_mass_precision": 0.9992913041590349
+          },
+          "selectivity_gate": "pass",
+          "train_share_threshold": 0.9
+        },
+        {
+          "control_score_range": [
+            -0.9835869657378541,
+            0.9835869657378541
+          ],
+          "exact_upper_tail_p_value": 0.00390625,
+          "held_out_signed_selective_mass_score": 0.9835869657378541,
+          "minimum_train_example_support": 2,
+          "pass_0": {
+            "assigned_features": 305,
+            "held_out_directional_feature_fraction": 0.7475409836065574,
+            "held_out_mass_coverage": 0.9822966080826443,
+            "held_out_mass_precision": 0.9979424182992693
+          },
+          "pass_1": {
+            "assigned_features": 357,
+            "held_out_directional_feature_fraction": 0.7703081232492998,
+            "held_out_mass_coverage": 0.9879460673515691,
+            "held_out_mass_precision": 0.9987727094526224
+          },
+          "selectivity_gate": "pass",
+          "train_share_threshold": 0.95
+        },
+        {
+          "control_score_range": [
+            -0.9484427449400487,
+            0.9484427449400487
+          ],
+          "exact_upper_tail_p_value": 0.00390625,
+          "held_out_signed_selective_mass_score": 0.9484427449400487,
+          "minimum_train_example_support": 4,
+          "pass_0": {
+            "assigned_features": 150,
+            "held_out_directional_feature_fraction": 0.9266666666666666,
+            "held_out_mass_coverage": 0.9573763103262484,
+            "held_out_mass_precision": 0.9979009078463097
+          },
+          "pass_1": {
+            "assigned_features": 175,
+            "held_out_directional_feature_fraction": 0.9371428571428572,
+            "held_out_mass_coverage": 0.9427848833458272,
+            "held_out_mass_precision": 0.999040055730066
+          },
+          "selectivity_gate": "pass",
+          "train_share_threshold": 0.95
+        },
+        {
+          "control_score_range": [
+            -0.8862629129264962,
+            0.8862629129264962
+          ],
+          "exact_upper_tail_p_value": 0.00390625,
+          "held_out_signed_selective_mass_score": 0.8862629129264962,
+          "minimum_train_example_support": 6,
+          "pass_0": {
+            "assigned_features": 97,
+            "held_out_directional_feature_fraction": 0.9896907216494846,
+            "held_out_mass_coverage": 0.9114626818797059,
+            "held_out_mass_precision": 0.998115279915309
+          },
+          "pass_1": {
+            "assigned_features": 114,
+            "held_out_directional_feature_fraction": 1.0,
+            "held_out_mass_coverage": 0.8646052090802772,
+            "held_out_mass_precision": 0.9992913041590349
+          },
+          "selectivity_gate": "pass",
+          "train_share_threshold": 0.95
+        }
+      ],
+      "selectivity_configurations_passing": 12,
+      "site": "model.layers.21"
+    },
+    {
+      "held_out_explained_variance": {
+        "pass_0": 0.2922872645304503,
+        "pass_1": 0.42797987788404046
+      },
+      "minimum_held_out_explained_variance": 0.2922872645304503,
+      "quality_threshold_sensitivity": [
+        {
+          "minimum_held_out_explained_variance_threshold": 0.0,
+          "selectivity_configurations_admitted": 12
+        },
+        {
+          "minimum_held_out_explained_variance_threshold": 0.1,
+          "selectivity_configurations_admitted": 12
+        },
+        {
+          "minimum_held_out_explained_variance_threshold": 0.2,
+          "selectivity_configurations_admitted": 12
+        },
+        {
+          "minimum_held_out_explained_variance_threshold": 0.25,
+          "selectivity_configurations_admitted": 12
+        },
+        {
+          "minimum_held_out_explained_variance_threshold": 0.3,
+          "selectivity_configurations_admitted": 0
+        }
+      ],
+      "selectivity_configurations": [
+        {
+          "control_score_range": [
+            -0.9531168366269318,
+            0.9531168366269318
+          ],
+          "exact_upper_tail_p_value": 0.00390625,
+          "held_out_signed_selective_mass_score": 0.9531168366269318,
+          "minimum_train_example_support": 2,
+          "pass_0": {
+            "assigned_features": 143,
+            "held_out_directional_feature_fraction": 0.916083916083916,
+            "held_out_mass_coverage": 0.9870935942664308,
+            "held_out_mass_precision": 0.9938554060692275
+          },
+          "pass_1": {
+            "assigned_features": 538,
+            "held_out_directional_feature_fraction": 0.929368029739777,
+            "held_out_mass_coverage": 0.9260377754668268,
+            "held_out_mass_precision": 0.9980616733736707
+          },
+          "selectivity_gate": "pass",
+          "train_share_threshold": 0.8
+        },
+        {
+          "control_score_range": [
+            -0.891813468680196,
+            0.891813468680196
+          ],
+          "exact_upper_tail_p_value": 0.00390625,
+          "held_out_signed_selective_mass_score": 0.891813468680196,
+          "minimum_train_example_support": 4,
+          "pass_0": {
+            "assigned_features": 79,
+            "held_out_directional_feature_fraction": 0.9620253164556962,
+            "held_out_mass_coverage": 0.9649070602311964,
+            "held_out_mass_precision": 0.9950230952765974
+          },
+          "pass_1": {
+            "assigned_features": 238,
+            "held_out_directional_feature_fraction": 0.9873949579831933,
+            "held_out_mass_coverage": 0.8216236072619866,
+            "held_out_mass_precision": 0.9993489382700657
+          },
+          "selectivity_gate": "pass",
+          "train_share_threshold": 0.8
+        },
+        {
+          "control_score_range": [
+            -0.8071217446730171,
+            0.8071217446730171
+          ],
+          "exact_upper_tail_p_value": 0.00390625,
+          "held_out_signed_selective_mass_score": 0.8071217446730171,
+          "minimum_train_example_support": 6,
+          "pass_0": {
+            "assigned_features": 46,
+            "held_out_directional_feature_fraction": 1.0,
+            "held_out_mass_coverage": 0.9436068765260538,
+            "held_out_mass_precision": 0.9969889503759425
+          },
+          "pass_1": {
+            "assigned_features": 107,
+            "held_out_directional_feature_fraction": 1.0,
+            "held_out_mass_coverage": 0.6688248425280865,
+            "held_out_mass_precision": 0.9997762992215907
+          },
+          "selectivity_gate": "pass",
+          "train_share_threshold": 0.8
+        },
+        {
+          "control_score_range": [
+            -0.9525370411202897,
+            0.9525370411202897
+          ],
+          "exact_upper_tail_p_value": 0.00390625,
+          "held_out_signed_selective_mass_score": 0.9525370411202897,
+          "minimum_train_example_support": 2,
+          "pass_0": {
+            "assigned_features": 141,
+            "held_out_directional_feature_fraction": 0.9219858156028369,
+            "held_out_mass_coverage": 0.9868751988297682,
+            "held_out_mass_precision": 0.9938540546281163
+          },
+          "pass_1": {
+            "assigned_features": 533,
+            "held_out_directional_feature_fraction": 0.9305816135084428,
+            "held_out_mass_coverage": 0.924872812320699,
+            "held_out_mass_precision": 0.9982862804143746
+          },
+          "selectivity_gate": "pass",
+          "train_share_threshold": 0.85
+        },
+        {
+          "control_score_range": [
+            -0.8918067869550723,
+            0.8918067869550723
+          ],
+          "exact_upper_tail_p_value": 0.00390625,
+          "held_out_signed_selective_mass_score": 0.8918067869550723,
+          "minimum_train_example_support": 4,
+          "pass_0": {
+            "assigned_features": 79,
+            "held_out_directional_feature_fraction": 0.9620253164556962,
+            "held_out_mass_coverage": 0.9649070602311964,
+            "held_out_mass_precision": 0.9950230952765974
+          },
+          "pass_1": {
+            "assigned_features": 237,
+            "held_out_directional_feature_fraction": 0.9873417721518988,
+            "held_out_mass_coverage": 0.8215815370247788,
+            "held_out_mass_precision": 0.9993835091315673
+          },
+          "selectivity_gate": "pass",
+          "train_share_threshold": 0.85
+        },
+        {
+          "control_score_range": [
+            -0.8071217446730171,
+            0.8071217446730171
+          ],
+          "exact_upper_tail_p_value": 0.00390625,
+          "held_out_signed_selective_mass_score": 0.8071217446730171,
+          "minimum_train_example_support": 6,
+          "pass_0": {
+            "assigned_features": 46,
+            "held_out_directional_feature_fraction": 1.0,
+            "held_out_mass_coverage": 0.9436068765260538,
+            "held_out_mass_precision": 0.9969889503759425
+          },
+          "pass_1": {
+            "assigned_features": 107,
+            "held_out_directional_feature_fraction": 1.0,
+            "held_out_mass_coverage": 0.6688248425280865,
+            "held_out_mass_precision": 0.9997762992215907
+          },
+          "selectivity_gate": "pass",
+          "train_share_threshold": 0.85
+        },
+        {
+          "control_score_range": [
+            -0.9505017891730491,
+            0.9505017891730491
+          ],
+          "exact_upper_tail_p_value": 0.00390625,
+          "held_out_signed_selective_mass_score": 0.9505017891730491,
+          "minimum_train_example_support": 2,
+          "pass_0": {
+            "assigned_features": 140,
+            "held_out_directional_feature_fraction": 0.9214285714285714,
+            "held_out_mass_coverage": 0.9867385661359134,
+            "held_out_mass_precision": 0.9938532088363202
+          },
+          "pass_1": {
+            "assigned_features": 521,
+            "held_out_directional_feature_fraction": 0.9309021113243762,
+            "held_out_mass_coverage": 0.9201864829864901,
+            "held_out_mass_precision": 0.9990189981809782
+          },
+          "selectivity_gate": "pass",
+          "train_share_threshold": 0.9
+        },
+        {
+          "control_score_range": [
+            -0.8915832610526069,
+            0.8915832610526069
+          ],
+          "exact_upper_tail_p_value": 0.00390625,
+          "held_out_signed_selective_mass_score": 0.8915832610526069,
+          "minimum_train_example_support": 4,
+          "pass_0": {
+            "assigned_features": 78,
+            "held_out_directional_feature_fraction": 0.9615384615384616,
+            "held_out_mass_coverage": 0.9647704275373417,
+            "held_out_mass_precision": 0.9950223939459298
+          },
+          "pass_1": {
+            "assigned_features": 236,
+            "held_out_directional_feature_fraction": 0.9872881355932204,
+            "held_out_mass_coverage": 0.8212679895126825,
+            "held_out_mass_precision": 0.9993832739099735
+          },
+          "selectivity_gate": "pass",
+          "train_share_threshold": 0.9
+        },
+        {
+          "control_score_range": [
+            -0.8071217446730171,
+            0.8071217446730171
+          ],
+          "exact_upper_tail_p_value": 0.00390625,
+          "held_out_signed_selective_mass_score": 0.8071217446730171,
+          "minimum_train_example_support": 6,
+          "pass_0": {
+            "assigned_features": 46,
+            "held_out_directional_feature_fraction": 1.0,
+            "held_out_mass_coverage": 0.9436068765260538,
+            "held_out_mass_precision": 0.9969889503759425
+          },
+          "pass_1": {
+            "assigned_features": 107,
+            "held_out_directional_feature_fraction": 1.0,
+            "held_out_mass_coverage": 0.6688248425280865,
+            "held_out_mass_precision": 0.9997762992215907
+          },
+          "selectivity_gate": "pass",
+          "train_share_threshold": 0.9
+        },
+        {
+          "control_score_range": [
+            -0.9490124148967061,
+            0.9490124148967061
+          ],
+          "exact_upper_tail_p_value": 0.00390625,
+          "held_out_signed_selective_mass_score": 0.9490124148967061,
+          "minimum_train_example_support": 2,
+          "pass_0": {
+            "assigned_features": 137,
+            "held_out_directional_feature_fraction": 0.9343065693430657,
+            "held_out_mass_coverage": 0.9866970070097636,
+            "held_out_mass_precision": 0.9939436191654833
+          },
+          "pass_1": {
+            "assigned_features": 502,
+            "held_out_directional_feature_fraction": 0.9342629482071713,
+            "held_out_mass_coverage": 0.9169891801486044,
+            "held_out_mass_precision": 0.9991398504075307
+          },
+          "selectivity_gate": "pass",
+          "train_share_threshold": 0.95
+        },
+        {
+          "control_score_range": [
+            -0.8911457006765622,
+            0.8911457006765622
+          ],
+          "exact_upper_tail_p_value": 0.00390625,
+          "held_out_signed_selective_mass_score": 0.8911457006765622,
+          "minimum_train_example_support": 4,
+          "pass_0": {
+            "assigned_features": 77,
+            "held_out_directional_feature_fraction": 0.974025974025974,
+            "held_out_mass_coverage": 0.9647704275373417,
+            "held_out_mass_precision": 0.9950719806751321
+          },
+          "pass_1": {
+            "assigned_features": 234,
+            "held_out_directional_feature_fraction": 0.9871794871794872,
+            "held_out_mass_coverage": 0.8202643552285058,
+            "held_out_mass_precision": 0.9994588740684758
+          },
+          "selectivity_gate": "pass",
+          "train_share_threshold": 0.95
+        },
+        {
+          "control_score_range": [
+            -0.8071217446730171,
+            0.8071217446730171
+          ],
+          "exact_upper_tail_p_value": 0.00390625,
+          "held_out_signed_selective_mass_score": 0.8071217446730171,
+          "minimum_train_example_support": 6,
+          "pass_0": {
+            "assigned_features": 46,
+            "held_out_directional_feature_fraction": 1.0,
+            "held_out_mass_coverage": 0.9436068765260538,
+            "held_out_mass_precision": 0.9969889503759425
+          },
+          "pass_1": {
+            "assigned_features": 107,
+            "held_out_directional_feature_fraction": 1.0,
+            "held_out_mass_coverage": 0.6688248425280865,
+            "held_out_mass_precision": 0.9997762992215907
+          },
+          "selectivity_gate": "pass",
+          "train_share_threshold": 0.95
+        }
+      ],
+      "selectivity_configurations_passing": 12,
+      "site": "model.norm"
+    }
+  ],
+  "source": {
+    "capture_manifest_sha256": "6e31e77285cafcc9d2f600a3e6e59d38b5b1d5e66a895c5b89395a2cf22b5caa",
+    "manifest_sha256": "8cea34fb5c46b826059d5684c18c5694e38cf1aabf03eb51a152c8a1f785d6e9",
+    "path": "C:/projects/VPD/artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes",
+    "runner_sha256": "c3a738614a113e4831490647a7b471d4d8decad6949e3de82f3c5bc04f2bb8fc",
+    "sae_quality_sha256": "95d9a270a39904a1cee9af7feb66eca4e95c2344a77b50a77a07791d27e0f6c5",
+    "weights": "Q4_K_M"
+  },
+  "status": "pass",
+  "summary": {
+    "quality_threshold_admitted_sites": {
+      "0.0": 1,
+      "0.1": 1,
+      "0.2": 1,
+      "0.25": 1,
+      "0.3": 0
+    },
+    "selectivity_configurations_per_site": 12,
+    "sites": 3,
+    "sites_passing_all_selectivity_configurations": 2
+  }
+}

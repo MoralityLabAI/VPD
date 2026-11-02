@@ -1,0 +1,125 @@
+{
+  "design": {
+    "admission_thresholds": {
+      "maximum_exact_upper_tail_p_value": 0.05,
+      "minimum_cross_validated_phase_accuracy": 0.875,
+      "minimum_fold_direction_cosine_to_full_direction": 0.8
+    },
+    "exact_permutations": 256,
+    "fresh_untouched_holdout_still_required": true,
+    "observable_category": "activation_phase_prompt_vs_generation",
+    "pass_indices_are_blocked_within_example": true,
+    "permutation_unit": "example_block_phase_label",
+    "provisional_support_is_not_operative_admission": true,
+    "validation": "leave_one_semantic_family_out_cross_validation"
+  },
+  "provenance": {
+    "runner_sha256": "3395e31ddf36ec978d0ef409e9bb2bc33271b25fe23308f5e8c9e61026645a2e"
+  },
+  "report_id": "5db6f3229302aa3a352d8ce5ce66bfe0a16d2ae00dc7bea25b95f8a0c80c070b",
+  "schema": "sch.vpd-nanbeige-activation-phase-category-cross-validation.v1",
+  "scientific_boundary": {
+    "cross_validation_reuses_all_examples_across_folds": true,
+    "does_not_authorize_phase_compartment_sae_training": true,
+    "execution_authorized": false,
+    "new_local_analysis_of_recovered_empirical_arrays": true,
+    "new_model_inference_performed": false,
+    "no_fully_untouched_final_holdout": true,
+    "paid_compute_authorized": false,
+    "provisional_support_is_not_category_admission": true,
+    "weights_loaded_or_mutated": false
+  },
+  "sites": [
+    {
+      "exact_example_block_phase_label_permutation": {
+        "at_or_above_observed": 2,
+        "configurations": 256,
+        "control_accuracy_maximum": 1.0,
+        "control_accuracy_median": 0.5,
+        "control_accuracy_minimum": 0.0,
+        "exact_upper_tail_p_value": 0.0078125,
+        "maximum": 0.9732848354115065,
+        "median": -0.0013055823078149675,
+        "minimum": -0.9701082486091039
+      },
+      "examples": 8,
+      "leave_one_family_out_mean_normalized_phase_alignment": 0.9732848354115065,
+      "leave_one_family_out_minimum_direction_cosine_to_full_direction": 0.9998098406859846,
+      "leave_one_family_out_phase_accuracy": 1.0,
+      "operative_phase_category_admission": "fail",
+      "phase_pairs": 16,
+      "provisional_cross_validated_phase_category_support": "pass",
+      "semantic_family_folds": 4,
+      "site": "model.layers.11"
+    },
+    {
+      "exact_example_block_phase_label_permutation": {
+        "at_or_above_observed": 2,
+        "configurations": 256,
+        "control_accuracy_maximum": 0.9375,
+        "control_accuracy_median": 0.5,
+        "control_accuracy_minimum": 0.0625,
+        "exact_upper_tail_p_value": 0.0078125,
+        "maximum": 0.7244794626178165,
+        "median": 0.0035985389761013682,
+        "minimum": -0.6915891963108387
+      },
+      "examples": 8,
+      "leave_one_family_out_mean_normalized_phase_alignment": 0.7244794626178165,
+      "leave_one_family_out_minimum_direction_cosine_to_full_direction": 0.9967020026918122,
+      "leave_one_family_out_phase_accuracy": 0.9375,
+      "operative_phase_category_admission": "fail",
+      "phase_pairs": 16,
+      "provisional_cross_validated_phase_category_support": "pass",
+      "semantic_family_folds": 4,
+      "site": "model.layers.21"
+    },
+    {
+      "exact_example_block_phase_label_permutation": {
+        "at_or_above_observed": 2,
+        "configurations": 256,
+        "control_accuracy_maximum": 0.9375,
+        "control_accuracy_median": 0.5,
+        "control_accuracy_minimum": 0.0,
+        "exact_upper_tail_p_value": 0.0078125,
+        "maximum": 0.43365714159144353,
+        "median": -0.02506784378583994,
+        "minimum": -0.29560728351656773
+      },
+      "examples": 8,
+      "leave_one_family_out_mean_normalized_phase_alignment": 0.43365714159144353,
+      "leave_one_family_out_minimum_direction_cosine_to_full_direction": 0.9257355023099765,
+      "leave_one_family_out_phase_accuracy": 0.9375,
+      "operative_phase_category_admission": "fail",
+      "phase_pairs": 16,
+      "provisional_cross_validated_phase_category_support": "pass",
+      "semantic_family_folds": 4,
+      "site": "model.norm"
+    }
+  ],
+  "sources": {
+    "examples": 8,
+    "generation": {
+      "manifest_sha256": "7c5205eeb3c1e7c025ac1aababc6e0526bbe82048f633a52e73bfefa07c8a546",
+      "path": "C:/projects/VPD/artifacts/nanbeige_reasoning/prime-20260906T204058Z-561/retrieved/artifacts/nanbeige_looped/bf16_multipass_calibration"
+    },
+    "prompt": {
+      "manifest_sha256": "523a54970058491885e696596385a9d15d26102469108813fe2a892a46485c9f",
+      "path": "C:/projects/VPD/artifacts/nanbeige_reasoning/local_prompt_capture_v2"
+    },
+    "semantic_families": [
+      "arc_grid",
+      "dyck_language",
+      "futoshiki",
+      "math"
+    ]
+  },
+  "status": "pass",
+  "summary": {
+    "maximum_exact_upper_tail_p_value": 0.0078125,
+    "minimum_cross_validated_phase_accuracy": 0.9375,
+    "operative_phase_category_admissions": 0,
+    "provisional_cross_validated_phase_category_supports": 3,
+    "sites": 3
+  }
+}

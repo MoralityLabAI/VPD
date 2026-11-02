@@ -1,0 +1,43 @@
+{
+  "benchmark_id": "c61fbf5a051f39f9374d415dd31a609ad9517e1efc980762e7c92d720bf4c605",
+  "design": {
+    "canonical_inventory_chained": true,
+    "per_module_rank_and_alpha_patterns": true,
+    "synthetic_modules": 2,
+    "synthetic_plain_lora_only": true
+  },
+  "results": {
+    "canonical_inventory_verified": true,
+    "config_hash_tamper_rejected": true,
+    "extraction_verified": true,
+    "factor_arrays_extracted_exactly": true,
+    "factor_artifact_tamper_rejected": true,
+    "module_names_sorted_and_canonical": true,
+    "module_scales": [
+      2.0,
+      3.0
+    ],
+    "modules": 2,
+    "nonempty_output_rejected": true,
+    "orphan_factor_rejected": true,
+    "rank_mismatch_left_no_partial_output": true,
+    "rank_mismatch_rejected": true,
+    "unexpected_tensor_rejected": true,
+    "weights_hash_tamper_rejected": true
+  },
+  "schema": "sch.vpd-authenticated-lora-factor-bundle-extraction-benchmark.v1",
+  "scientific_boundary": {
+    "execution_authorized": false,
+    "model_inference_performed": false,
+    "model_loaded": false,
+    "real_adapter_accessed": false,
+    "synthetic_adapter_fixture_only": true,
+    "torch_or_peft_loaded": false,
+    "weights_mutated": false
+  },
+  "source": {
+    "extractor_sha256": "e93c477b46a619f396402494e1dd5c966a76e784c2c788d8a8b3a2a7251be6d3",
+    "runner_sha256": "7b51e6c3bd703c309cd4e2f294bd7a9b4abdbc8d171d0021c2de5bfe14c221d5"
+  },
+  "status": "pass"
+}

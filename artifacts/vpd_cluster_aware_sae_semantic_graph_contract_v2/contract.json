@@ -1,0 +1,961 @@
+{
+  "join_specs": [
+    {
+      "join": "capture_receipt_to_preflight_id",
+      "join_kind": "exact_field_to_content_id",
+      "semantic_evidence": "verify_authorization_receipt",
+      "source_field_path": "source.preflight_id",
+      "source_node": "capture_authorization_receipt",
+      "target_node": "empirical_preflight_v2"
+    },
+    {
+      "join": "capture_receipt_to_preflight_canonical_digest",
+      "join_kind": "exact_field_to_canonical_object_digest_not_file_hash",
+      "semantic_evidence": "verify_authorization_receipt",
+      "source_field_path": "source.preflight_sha256",
+      "source_node": "capture_authorization_receipt",
+      "target_node": "empirical_preflight_v2"
+    },
+    {
+      "join": "capture_receipt_to_registry",
+      "join_kind": "cryptographic_authority_membership_join",
+      "semantic_evidence": "verify_authorization_receipt",
+      "source_field_path": "authority_id",
+      "source_node": "capture_authorization_receipt",
+      "target_node": "capture_authority_registry"
+    },
+    {
+      "join": "v3_capture_to_predecessor_v2",
+      "join_kind": "compound_receipt_internal_predecessor",
+      "semantic_evidence": "verify_capture_execution_receipt",
+      "source_field_path": "predecessor_v2_execution",
+      "source_node": "guarded_v3_capture_receipt",
+      "target_node": "capture_execution_v2_receipt"
+    },
+    {
+      "join": "routing_bundle_to_guarded_v3_captures",
+      "join_kind": "nested_adapter_receipt_identity_join",
+      "semantic_evidence": "load_and_verify_routing_evidence_bundle",
+      "source_field_path": "categories.*.roles.*.adapter",
+      "source_node": "routing_evidence_bundle",
+      "target_node": "guarded_v3_capture_receipt"
+    },
+    {
+      "join": "routing_bundle_to_stability",
+      "join_kind": "nested_path_hash_id_and_semantic_join",
+      "semantic_evidence": "load_and_verify_routing_evidence_bundle",
+      "source_field_path": "categories.*.stability",
+      "source_node": "routing_evidence_bundle",
+      "target_node": "routing_stability_manifest"
+    },
+    {
+      "join": "materialization_to_routing_bundle_id",
+      "join_kind": "exact_field_to_content_id",
+      "semantic_evidence": "verify_materialization",
+      "source_field_path": "source.routing_evidence_bundle_id",
+      "source_node": "materialization",
+      "target_node": "routing_evidence_bundle"
+    },
+    {
+      "join": "materialization_to_routing_bundle_hash",
+      "join_kind": "exact_field_to_file_sha256",
+      "semantic_evidence": "verify_materialization",
+      "source_field_path": "source.routing_evidence_bundle_sha256",
+      "source_node": "materialization",
+      "target_node": "routing_evidence_bundle"
+    },
+    {
+      "join": "materialization_to_predecessor_plan_id",
+      "join_kind": "exact_field_to_content_id",
+      "semantic_evidence": "verify_materialization",
+      "source_field_path": "source.predecessor_training_plan_id",
+      "source_node": "materialization",
+      "target_node": "predecessor_training_plan"
+    },
+    {
+      "join": "materialization_to_predecessor_plan_hash",
+      "join_kind": "exact_field_to_file_sha256",
+      "semantic_evidence": "verify_materialization",
+      "source_field_path": "source.predecessor_training_plan_sha256",
+      "source_node": "materialization",
+      "target_node": "predecessor_training_plan"
+    },
+    {
+      "join": "materialization_to_plan",
+      "join_kind": "embedded_full_object_and_verification",
+      "semantic_evidence": "verify_materialization",
+      "source_field_path": "cluster_aware_sae_plan",
+      "source_node": "materialization",
+      "target_node": "cluster_aware_sae_plan_with_embedded_split"
+    },
+    {
+      "join": "plan_to_global_split",
+      "join_kind": "embedded_content_addressed_subdocument",
+      "semantic_evidence": "verify_cluster_aware_sae_plan_v2",
+      "source_field_path": "global_pair_split",
+      "source_node": "cluster_aware_sae_plan_with_embedded_split",
+      "target_node": "cluster_aware_sae_plan_with_embedded_split"
+    },
+    {
+      "join": "blueprint_to_materialization_id",
+      "join_kind": "exact_field_to_content_id_plus_full_reproduction",
+      "semantic_evidence": "verify_execution_blueprint",
+      "source_field_path": "source.materialization_id",
+      "source_node": "execution_blueprint",
+      "target_node": "materialization"
+    },
+    {
+      "join": "blueprint_to_plan_id",
+      "join_kind": "exact_field_to_embedded_content_id",
+      "semantic_evidence": "verify_execution_blueprint",
+      "source_field_path": "source.cluster_aware_sae_plan_id",
+      "source_node": "execution_blueprint",
+      "target_node": "cluster_aware_sae_plan_with_embedded_split"
+    },
+    {
+      "join": "blueprint_to_routing_bundle_id",
+      "join_kind": "exact_field_to_content_id",
+      "semantic_evidence": "verify_execution_blueprint",
+      "source_field_path": "source.routing_evidence_bundle_id",
+      "source_node": "execution_blueprint",
+      "target_node": "routing_evidence_bundle"
+    },
+    {
+      "join": "blueprint_to_split_id",
+      "join_kind": "exact_field_to_embedded_subdocument_id",
+      "semantic_evidence": "verify_execution_blueprint",
+      "source_field_path": "source.global_pair_split_id",
+      "source_node": "execution_blueprint",
+      "target_node": "cluster_aware_sae_plan_with_embedded_split"
+    },
+    {
+      "join": "proposal_to_policy_id",
+      "join_kind": "exact_field_to_content_id",
+      "semantic_evidence": "verify_proposal",
+      "source_field_path": "source.budget_policy_id",
+      "source_node": "blueprint_bound_budget_proposal_v2",
+      "target_node": "budget_policy"
+    },
+    {
+      "join": "proposal_to_blueprint_id",
+      "join_kind": "exact_field_to_content_id_plus_full_resource_derivation",
+      "semantic_evidence": "verify_proposal",
+      "source_field_path": "source.execution_blueprint_id",
+      "source_node": "blueprint_bound_budget_proposal_v2",
+      "target_node": "execution_blueprint"
+    },
+    {
+      "join": "proposal_to_blueprint_hash",
+      "join_kind": "exact_field_to_file_sha256",
+      "semantic_evidence": "verify_proposal",
+      "source_field_path": "source.execution_blueprint_sha256",
+      "source_node": "blueprint_bound_budget_proposal_v2",
+      "target_node": "execution_blueprint"
+    },
+    {
+      "join": "budget_admission_to_policy_id",
+      "join_kind": "exact_field_to_content_id",
+      "semantic_evidence": "verify_admission",
+      "source_field_path": "source.budget_policy_id",
+      "source_node": "blueprint_bound_budget_admission_v2",
+      "target_node": "budget_policy"
+    },
+    {
+      "join": "budget_admission_to_proposal_id",
+      "join_kind": "exact_field_to_content_id_plus_full_reproduction",
+      "semantic_evidence": "verify_admission",
+      "source_field_path": "source.proposal_id",
+      "source_node": "blueprint_bound_budget_admission_v2",
+      "target_node": "blueprint_bound_budget_proposal_v2"
+    },
+    {
+      "join": "budget_admission_to_blueprint_id",
+      "join_kind": "exact_field_to_content_id",
+      "semantic_evidence": "verify_admission",
+      "source_field_path": "source.execution_blueprint_id",
+      "source_node": "blueprint_bound_budget_admission_v2",
+      "target_node": "execution_blueprint"
+    },
+    {
+      "join": "budget_admission_to_blueprint_hash",
+      "join_kind": "exact_field_to_file_sha256",
+      "semantic_evidence": "verify_admission",
+      "source_field_path": "source.execution_blueprint_sha256",
+      "source_node": "blueprint_bound_budget_admission_v2",
+      "target_node": "execution_blueprint"
+    },
+    {
+      "join": "release_receipt_to_registry",
+      "join_kind": "cryptographic_authority_membership_join",
+      "semantic_evidence": "verify_scientific_release_receipt",
+      "source_field_path": "authority_id",
+      "source_node": "scientific_release_receipt",
+      "target_node": "release_authority_registry"
+    },
+    {
+      "join": "release_receipt_to_blueprint_id",
+      "join_kind": "exact_signed_field_and_scope_join",
+      "semantic_evidence": "verify_scientific_release_receipt",
+      "source_field_path": "source.execution_blueprint_id",
+      "source_node": "scientific_release_receipt",
+      "target_node": "execution_blueprint"
+    },
+    {
+      "join": "release_receipt_to_blueprint_hash",
+      "join_kind": "exact_signed_field_to_file_sha256",
+      "semantic_evidence": "verify_scientific_release_receipt",
+      "source_field_path": "source.execution_blueprint_sha256",
+      "source_node": "scientific_release_receipt",
+      "target_node": "execution_blueprint"
+    },
+    {
+      "join": "budget_admission_to_release_receipt",
+      "join_kind": "terminal_missing_signed_join",
+      "semantic_evidence": "no_implemented_verifier",
+      "source_field_path": null,
+      "source_node": "scientific_release_receipt",
+      "target_node": "blueprint_bound_budget_admission_v2"
+    },
+    {
+      "join": "compute_receipt_to_registry",
+      "join_kind": "cryptographic_authority_membership_join",
+      "semantic_evidence": "verify_compute_authorization_receipt",
+      "source_field_path": "authority_id",
+      "source_node": "compute_authorization_receipt",
+      "target_node": "compute_authority_registry"
+    },
+    {
+      "join": "compute_receipt_to_release_id",
+      "join_kind": "exact_signed_field_to_verified_receipt_id",
+      "semantic_evidence": "verify_compute_authorization_receipt",
+      "source_field_path": "source.scientific_release_receipt_id",
+      "source_node": "compute_authorization_receipt",
+      "target_node": "scientific_release_receipt"
+    },
+    {
+      "join": "compute_receipt_to_release_hash",
+      "join_kind": "exact_signed_field_to_canonical_object_digest",
+      "semantic_evidence": "verify_compute_authorization_receipt",
+      "source_field_path": "source.scientific_release_receipt_sha256",
+      "source_node": "compute_authorization_receipt",
+      "target_node": "scientific_release_receipt"
+    },
+    {
+      "join": "compute_receipt_to_blueprint_job",
+      "join_kind": "exact_signed_scope_to_selected_job",
+      "semantic_evidence": "verify_compute_authorization_receipt",
+      "source_field_path": "scope",
+      "source_node": "compute_authorization_receipt",
+      "target_node": "execution_blueprint"
+    },
+    {
+      "join": "runtime_admission_to_blueprint",
+      "join_kind": "full_reproduction_and_exact_job_join",
+      "semantic_evidence": "build_dry_run_admission",
+      "source_field_path": "execution_blueprint_id",
+      "source_node": "runtime_admission",
+      "target_node": "execution_blueprint"
+    },
+    {
+      "join": "runtime_admission_to_release",
+      "join_kind": "embedded_verification_result",
+      "semantic_evidence": "build_dry_run_admission",
+      "source_field_path": "scientific_release_verification",
+      "source_node": "runtime_admission",
+      "target_node": "scientific_release_receipt"
+    },
+    {
+      "join": "runtime_admission_to_compute",
+      "join_kind": "embedded_verification_result",
+      "semantic_evidence": "build_dry_run_admission",
+      "source_field_path": "compute_authorization_verification",
+      "source_node": "runtime_admission",
+      "target_node": "compute_authorization_receipt"
+    },
+    {
+      "join": "budget_admission_to_runtime_admission",
+      "join_kind": "terminal_missing_runtime_join",
+      "semantic_evidence": "no_implemented_verifier",
+      "source_field_path": null,
+      "source_node": "runtime_admission",
+      "target_node": "blueprint_bound_budget_admission_v2"
+    },
+    {
+      "join": "transition_to_runtime_admission",
+      "join_kind": "exact_content_id_and_reconstruction_join",
+      "semantic_evidence": "verify_training_transition",
+      "source_field_path": "source.admission_id",
+      "source_node": "durable_job_transition",
+      "target_node": "runtime_admission"
+    },
+    {
+      "join": "transition_combines_nonce_output_and_worker_ledger",
+      "join_kind": "single_atomic_combined_receipt",
+      "semantic_evidence": "verify_training_transition",
+      "source_field_path": "transition",
+      "source_node": "durable_job_transition",
+      "target_node": "durable_job_transition"
+    },
+    {
+      "join": "transition_to_production_attachment",
+      "join_kind": "terminal_prerequisite_gap",
+      "semantic_evidence": "no_production_runtime_attachment_verifier",
+      "source_field_path": null,
+      "source_node": "durable_job_transition",
+      "target_node": "production_runtime_attachment"
+    }
+  ],
+  "node_specs": [
+    {
+      "address_excluded_fields": [
+        "preflight_id"
+      ],
+      "callable": "verify_preflight",
+      "id_field": "preflight_id",
+      "implemented": true,
+      "module": "experiments.authz_mechinterp.build_vpd_cluster_to_sae_empirical_preflight_v2",
+      "node": "empirical_preflight_v2",
+      "phase": "empirical_capture",
+      "required_companions": [],
+      "schema": "sch.vpd-cluster-to-sae-empirical-preflight.v2",
+      "verification_mode": "standalone_path_reproduction",
+      "verifier_evidence": {
+        "callable_exists": true,
+        "module_path": "experiments/authz_mechinterp/build_vpd_cluster_to_sae_empirical_preflight_v2.py",
+        "module_sha256": "362a61efc9d809a0271fadff2102124a1d03470d2d1bac747bdf188ad3c53de7"
+      }
+    },
+    {
+      "address_excluded_fields": [
+        "registry_id"
+      ],
+      "callable": "verify_authorization_receipt",
+      "id_field": "registry_id",
+      "implemented": true,
+      "module": "experiments.authz_mechinterp.verify_vpd_cluster_to_sae_capture_authorization_v1",
+      "node": "capture_authority_registry",
+      "phase": "empirical_capture",
+      "required_companions": [
+        "capture_authorization_receipt",
+        "empirical_preflight_v2",
+        "as_of"
+      ],
+      "schema": "sch.vpd-cluster-to-sae-capture-authority-registry.v1",
+      "verification_mode": "joint_cryptographic_registry_receipt_preflight_as_of",
+      "verifier_evidence": {
+        "callable_exists": true,
+        "module_path": "experiments/authz_mechinterp/verify_vpd_cluster_to_sae_capture_authorization_v1.py",
+        "module_sha256": "0058decf145ac36b91bb4ff9182ec0faf4d5bc27164b552a6d4baa62d2b5b017"
+      }
+    },
+    {
+      "address_excluded_fields": [
+        "authorization_receipt_id",
+        "signature"
+      ],
+      "callable": "verify_authorization_receipt",
+      "id_field": "authorization_receipt_id",
+      "implemented": true,
+      "module": "experiments.authz_mechinterp.verify_vpd_cluster_to_sae_capture_authorization_v1",
+      "node": "capture_authorization_receipt",
+      "phase": "empirical_capture",
+      "required_companions": [
+        "capture_authority_registry",
+        "empirical_preflight_v2",
+        "as_of"
+      ],
+      "schema": "sch.vpd-cluster-to-sae-capture-authorization-receipt.v1",
+      "verification_mode": "joint_cryptographic_registry_receipt_preflight_as_of",
+      "verifier_evidence": {
+        "callable_exists": true,
+        "module_path": "experiments/authz_mechinterp/verify_vpd_cluster_to_sae_capture_authorization_v1.py",
+        "module_sha256": "0058decf145ac36b91bb4ff9182ec0faf4d5bc27164b552a6d4baa62d2b5b017"
+      }
+    },
+    {
+      "address_excluded_fields": [
+        "capture_execution_v3_id"
+      ],
+      "callable": "verify_capture_execution_receipt",
+      "id_field": "capture_execution_v3_id",
+      "implemented": true,
+      "module": "experiments.authz_mechinterp.run_canonical_vpd_capture_job_v3",
+      "node": "guarded_v3_capture_receipt",
+      "phase": "empirical_capture",
+      "required_companions": [
+        "capture_plan",
+        "capture_authorization",
+        "predecessor_v2_execution",
+        "guarded_job_receipt",
+        "allocation_manifest_if_empirical",
+        "reservation_receipt_if_empirical"
+      ],
+      "schema": "sch.vpd-canonical-category-capture-job-execution.v3",
+      "verification_mode": "path_plus_plan_authorization_v2_and_guard_receipt_companions",
+      "verifier_evidence": {
+        "callable_exists": true,
+        "module_path": "experiments/authz_mechinterp/run_canonical_vpd_capture_job_v3.py",
+        "module_sha256": "6b032dcae805a1f20f574b8e54bf872c65a128fd741c567d05ab9545a0b31bc2"
+      }
+    },
+    {
+      "address_excluded_fields": [
+        "capture_execution_id"
+      ],
+      "callable": "verify_capture_execution_receipt",
+      "id_field": "capture_execution_id",
+      "implemented": true,
+      "module": "experiments.authz_mechinterp.run_canonical_vpd_capture_job_v2",
+      "node": "capture_execution_v2_receipt",
+      "phase": "empirical_capture",
+      "required_companions": [
+        "capture_plan",
+        "capture_authorization",
+        "capture_manifest",
+        "effect_manifest",
+        "semantic_verification_receipt"
+      ],
+      "schema": "sch.vpd-canonical-category-capture-job-execution.v2",
+      "verification_mode": "path_plus_plan_authorization_and_capture_artifact_companions",
+      "verifier_evidence": {
+        "callable_exists": true,
+        "module_path": "experiments/authz_mechinterp/run_canonical_vpd_capture_job_v2.py",
+        "module_sha256": "0db5cad97effe8c06a8caf329a6b973537c4fa11b75b5433ae7d0b889d29dd87"
+      }
+    },
+    {
+      "address_excluded_fields": [
+        "routing_evidence_bundle_id"
+      ],
+      "callable": "load_and_verify_routing_evidence_bundle",
+      "id_field": "routing_evidence_bundle_id",
+      "implemented": true,
+      "module": "experiments.authz_mechinterp.materialize_vpd_cluster_aware_sae_plan_v1",
+      "node": "routing_evidence_bundle",
+      "phase": "routing_and_partition",
+      "required_companions": [
+        "24_capture_router_adapter_receipts",
+        "24_routing_receipts",
+        "8_routing_stability_receipts"
+      ],
+      "schema": "sch.vpd-guarded-cluster-routing-evidence-bundle.v1",
+      "verification_mode": "path_loading_adapter_routing_and_stability_receipts",
+      "verifier_evidence": {
+        "callable_exists": true,
+        "module_path": "experiments/authz_mechinterp/materialize_vpd_cluster_aware_sae_plan_v1.py",
+        "module_sha256": "109244e44d1c5f7bcbf151602be3974b316446649d2f86a56d81634660387a7f"
+      }
+    },
+    {
+      "address_excluded_fields": [
+        "routing_stability_id"
+      ],
+      "callable": "verify_routing_stability_v1",
+      "id_field": "routing_stability_id",
+      "implemented": true,
+      "module": "experiments.authz_mechinterp.route_vpd_cluster_episodes_v1",
+      "node": "routing_stability_manifest",
+      "phase": "routing_and_partition",
+      "required_companions": [],
+      "schema": "sch.vpd-cluster-routing-stability-manifest.v1",
+      "verification_mode": "standalone_document_and_joined_inside_routing_bundle",
+      "verifier_evidence": {
+        "callable_exists": true,
+        "module_path": "experiments/authz_mechinterp/route_vpd_cluster_episodes_v1.py",
+        "module_sha256": "8379997e72cd278af8b34fcedb4aad9165651583248d1f1f12e2d0e77d4b3027"
+      }
+    },
+    {
+      "address_excluded_fields": [
+        "training_plan_id"
+      ],
+      "callable": "build_materialization",
+      "id_field": "training_plan_id",
+      "implemented": true,
+      "module": "experiments.authz_mechinterp.materialize_vpd_cluster_aware_sae_plan_v1",
+      "node": "predecessor_training_plan",
+      "phase": "routing_and_partition",
+      "required_companions": [],
+      "schema": "sch.vpd-compartment-sae-training-plan.v2",
+      "verification_mode": "content_address_and_full_reproduction_companion",
+      "verifier_evidence": {
+        "callable_exists": true,
+        "module_path": "experiments/authz_mechinterp/materialize_vpd_cluster_aware_sae_plan_v1.py",
+        "module_sha256": "109244e44d1c5f7bcbf151602be3974b316446649d2f86a56d81634660387a7f"
+      }
+    },
+    {
+      "address_excluded_fields": [
+        "cluster_aware_sae_plan_id"
+      ],
+      "callable": "verify_cluster_aware_sae_plan_v2",
+      "id_field": "cluster_aware_sae_plan_id",
+      "implemented": true,
+      "module": "experiments.authz_mechinterp.plan_cluster_aware_sae_training_v2",
+      "node": "cluster_aware_sae_plan_with_embedded_split",
+      "phase": "routing_and_partition",
+      "required_companions": [
+        "embedded_global_pair_split"
+      ],
+      "schema": "sch.vpd-cluster-aware-sae-training-plan.v2",
+      "verification_mode": "standalone_document_with_embedded_global_pair_split",
+      "verifier_evidence": {
+        "callable_exists": true,
+        "module_path": "experiments/authz_mechinterp/plan_cluster_aware_sae_training_v2.py",
+        "module_sha256": "b7fce50af30687d0fe4d7b75f589e1acc61863bddc73c7517caf91b1ad8d17a3"
+      }
+    },
+    {
+      "address_excluded_fields": [
+        "materialization_id"
+      ],
+      "callable": "verify_materialization",
+      "id_field": "materialization_id",
+      "implemented": true,
+      "module": "experiments.authz_mechinterp.materialize_vpd_cluster_aware_sae_plan_v1",
+      "node": "materialization",
+      "phase": "routing_and_partition",
+      "required_companions": [
+        "routing_evidence_bundle",
+        "predecessor_training_plan"
+      ],
+      "schema": "sch.vpd-cluster-aware-sae-plan-materialization.v1",
+      "verification_mode": "path_plus_routing_bundle_and_predecessor_plan_full_reproduction",
+      "verifier_evidence": {
+        "callable_exists": true,
+        "module_path": "experiments/authz_mechinterp/materialize_vpd_cluster_aware_sae_plan_v1.py",
+        "module_sha256": "109244e44d1c5f7bcbf151602be3974b316446649d2f86a56d81634660387a7f"
+      }
+    },
+    {
+      "address_excluded_fields": [
+        "execution_blueprint_id"
+      ],
+      "callable": "verify_execution_blueprint",
+      "id_field": "execution_blueprint_id",
+      "implemented": true,
+      "module": "experiments.authz_mechinterp.build_cluster_aware_sae_execution_blueprint_v1",
+      "node": "execution_blueprint",
+      "phase": "execution_blueprint_and_budget",
+      "required_companions": [
+        "materialization"
+      ],
+      "schema": "sch.vpd-cluster-aware-sae-execution-blueprint.v1",
+      "verification_mode": "document_plus_materialization_full_reproduction",
+      "verifier_evidence": {
+        "callable_exists": true,
+        "module_path": "experiments/authz_mechinterp/build_cluster_aware_sae_execution_blueprint_v1.py",
+        "module_sha256": "478eb659651d4ef5a1060547db356ac4ec24ab73c9a5697cb7b77d105d5f0279"
+      }
+    },
+    {
+      "address_excluded_fields": [
+        "budget_policy_id"
+      ],
+      "callable": "verify_budget_policy",
+      "id_field": "budget_policy_id",
+      "implemented": true,
+      "module": "experiments.authz_mechinterp.build_cluster_aware_sae_budget_admission_policy_v1",
+      "node": "budget_policy",
+      "phase": "execution_blueprint_and_budget",
+      "required_companions": [],
+      "schema": "sch.vpd-cluster-aware-sae-budget-admission-policy.v1",
+      "verification_mode": "canonical_pinned_policy_reproduction",
+      "verifier_evidence": {
+        "callable_exists": true,
+        "module_path": "experiments/authz_mechinterp/build_cluster_aware_sae_budget_admission_policy_v1.py",
+        "module_sha256": "c2542fc2859bd01e0a8e4ce533f9257df1ecb65a5cc31db5d5879bd1b16fc8ac"
+      }
+    },
+    {
+      "address_excluded_fields": [
+        "proposal_id"
+      ],
+      "callable": "verify_proposal",
+      "id_field": "proposal_id",
+      "implemented": true,
+      "module": "experiments.authz_mechinterp.build_cluster_aware_sae_blueprint_budget_admission_v2",
+      "node": "blueprint_bound_budget_proposal_v2",
+      "phase": "execution_blueprint_and_budget",
+      "required_companions": [
+        "budget_policy",
+        "execution_blueprint"
+      ],
+      "schema": "sch.vpd-cluster-aware-sae-blueprint-bound-budget-proposal.v2",
+      "verification_mode": "path_plus_policy_and_exact_blueprint_full_reproduction",
+      "verifier_evidence": {
+        "callable_exists": true,
+        "module_path": "experiments/authz_mechinterp/build_cluster_aware_sae_blueprint_budget_admission_v2.py",
+        "module_sha256": "31396ffcab4b5ea88f1287745c17c79a47d9b2620d38187b776db9465c0117e1"
+      }
+    },
+    {
+      "address_excluded_fields": [
+        "admission_id"
+      ],
+      "callable": "verify_admission",
+      "id_field": "admission_id",
+      "implemented": true,
+      "module": "experiments.authz_mechinterp.build_cluster_aware_sae_blueprint_budget_admission_v2",
+      "node": "blueprint_bound_budget_admission_v2",
+      "phase": "execution_blueprint_and_budget",
+      "required_companions": [
+        "blueprint_bound_budget_proposal_v2",
+        "budget_policy",
+        "execution_blueprint"
+      ],
+      "schema": "sch.vpd-cluster-aware-sae-blueprint-bound-budget-admission.v2",
+      "verification_mode": "path_plus_proposal_policy_and_exact_blueprint_full_reproduction",
+      "verifier_evidence": {
+        "callable_exists": true,
+        "module_path": "experiments/authz_mechinterp/build_cluster_aware_sae_blueprint_budget_admission_v2.py",
+        "module_sha256": "31396ffcab4b5ea88f1287745c17c79a47d9b2620d38187b776db9465c0117e1"
+      }
+    },
+    {
+      "address_excluded_fields": [
+        "registry_id"
+      ],
+      "callable": "verify_scientific_release_receipt",
+      "id_field": "registry_id",
+      "implemented": true,
+      "module": "experiments.authz_mechinterp.admit_cluster_aware_sae_training_v1",
+      "node": "release_authority_registry",
+      "phase": "signed_release_and_compute_authority",
+      "required_companions": [
+        "scientific_release_receipt",
+        "execution_blueprint",
+        "as_of"
+      ],
+      "schema": "sch.vpd-cluster-aware-sae-authority-registry.v1",
+      "verification_mode": "joint_cryptographic_registry_receipt_blueprint_as_of",
+      "verifier_evidence": {
+        "callable_exists": true,
+        "module_path": "experiments/authz_mechinterp/admit_cluster_aware_sae_training_v1.py",
+        "module_sha256": "8604cc82392d8b38acd5de13290dc0e0939673349b24e36940503b4f069b13c2"
+      }
+    },
+    {
+      "address_excluded_fields": [
+        "receipt_id",
+        "signature"
+      ],
+      "callable": "verify_scientific_release_receipt",
+      "id_field": "receipt_id",
+      "implemented": true,
+      "module": "experiments.authz_mechinterp.admit_cluster_aware_sae_training_v1",
+      "node": "scientific_release_receipt",
+      "phase": "signed_release_and_compute_authority",
+      "required_companions": [
+        "release_authority_registry",
+        "execution_blueprint",
+        "as_of"
+      ],
+      "schema": "sch.vpd-cluster-aware-sae-scientific-release-receipt.v1",
+      "verification_mode": "joint_cryptographic_registry_receipt_blueprint_as_of",
+      "verifier_evidence": {
+        "callable_exists": true,
+        "module_path": "experiments/authz_mechinterp/admit_cluster_aware_sae_training_v1.py",
+        "module_sha256": "8604cc82392d8b38acd5de13290dc0e0939673349b24e36940503b4f069b13c2"
+      }
+    },
+    {
+      "address_excluded_fields": [
+        "registry_id"
+      ],
+      "callable": "verify_compute_authorization_receipt",
+      "id_field": "registry_id",
+      "implemented": true,
+      "module": "experiments.authz_mechinterp.admit_cluster_aware_sae_training_v1",
+      "node": "compute_authority_registry",
+      "phase": "signed_release_and_compute_authority",
+      "required_companions": [
+        "compute_authorization_receipt",
+        "scientific_release_verification",
+        "execution_blueprint",
+        "execution_job_id",
+        "device",
+        "as_of"
+      ],
+      "schema": "sch.vpd-cluster-aware-sae-authority-registry.v1",
+      "verification_mode": "joint_cryptographic_registry_receipt_release_blueprint_job_device_as_of",
+      "verifier_evidence": {
+        "callable_exists": true,
+        "module_path": "experiments/authz_mechinterp/admit_cluster_aware_sae_training_v1.py",
+        "module_sha256": "8604cc82392d8b38acd5de13290dc0e0939673349b24e36940503b4f069b13c2"
+      }
+    },
+    {
+      "address_excluded_fields": [
+        "receipt_id",
+        "signature"
+      ],
+      "callable": "verify_compute_authorization_receipt",
+      "id_field": "receipt_id",
+      "implemented": true,
+      "module": "experiments.authz_mechinterp.admit_cluster_aware_sae_training_v1",
+      "node": "compute_authorization_receipt",
+      "phase": "signed_release_and_compute_authority",
+      "required_companions": [
+        "compute_authority_registry",
+        "scientific_release_verification",
+        "execution_blueprint",
+        "execution_job_id",
+        "device",
+        "as_of"
+      ],
+      "schema": "sch.vpd-cluster-aware-sae-compute-authorization-receipt.v1",
+      "verification_mode": "joint_cryptographic_registry_receipt_release_blueprint_job_device_as_of",
+      "verifier_evidence": {
+        "callable_exists": true,
+        "module_path": "experiments/authz_mechinterp/admit_cluster_aware_sae_training_v1.py",
+        "module_sha256": "8604cc82392d8b38acd5de13290dc0e0939673349b24e36940503b4f069b13c2"
+      }
+    },
+    {
+      "address_excluded_fields": [
+        "admission_id"
+      ],
+      "callable": "build_dry_run_admission",
+      "id_field": "admission_id",
+      "implemented": true,
+      "module": "experiments.authz_mechinterp.admit_cluster_aware_sae_training_v1",
+      "node": "runtime_admission",
+      "phase": "durable_runtime_transition",
+      "required_companions": [
+        "execution_blueprint",
+        "scientific_release_receipt",
+        "release_authority_registry",
+        "compute_authorization_receipt",
+        "compute_authority_registry",
+        "execution_job_id",
+        "device",
+        "as_of"
+      ],
+      "schema": "sch.vpd-cluster-aware-sae-runtime-admission.v1",
+      "verification_mode": "full_reproduction_from_blueprint_release_compute_job_device_and_as_of",
+      "verifier_evidence": {
+        "callable_exists": true,
+        "module_path": "experiments/authz_mechinterp/admit_cluster_aware_sae_training_v1.py",
+        "module_sha256": "8604cc82392d8b38acd5de13290dc0e0939673349b24e36940503b4f069b13c2"
+      }
+    },
+    {
+      "address_excluded_fields": [
+        "transition_reservation_id"
+      ],
+      "callable": "verify_training_transition",
+      "id_field": "transition_reservation_id",
+      "implemented": true,
+      "module": "experiments.authz_mechinterp.reserve_cluster_aware_sae_training_transition_v1",
+      "node": "durable_job_transition",
+      "phase": "durable_runtime_transition",
+      "required_companions": [
+        "reserved_job_root",
+        "campaign_receipt",
+        "worker_ledger"
+      ],
+      "schema": "sch.vpd-cluster-aware-sae-job-transition-reservation.v1",
+      "verification_mode": "single_combined_nonce_output_worker_ledger_transition_receipt",
+      "verifier_evidence": {
+        "callable_exists": true,
+        "module_path": "experiments/authz_mechinterp/reserve_cluster_aware_sae_training_transition_v1.py",
+        "module_sha256": "3846e771e88d7aa92ff0a519095a6e671c0a7da29b2290157ff685a6ad933d94"
+      }
+    },
+    {
+      "address_excluded_fields": [],
+      "callable": null,
+      "id_field": null,
+      "implemented": false,
+      "module": null,
+      "node": "production_runtime_attachment",
+      "phase": "durable_runtime_transition",
+      "required_companions": [],
+      "schema": null,
+      "verification_mode": "terminal_prerequisite_gap_no_production_verifier",
+      "verifier_evidence": null
+    }
+  ],
+  "path_policy": {
+    "candidate_inputs_must_remain_under_dedicated_graph_root": true,
+    "candidate_inputs_must_use_safe_relative_paths": true,
+    "file_sha256_required_before_semantic_dispatch": true,
+    "path_traversal_forbidden": true,
+    "symlink_and_windows_junction_components_forbidden": true
+  },
+  "schema": "sch.vpd-cluster-aware-sae-semantic-graph-contract.v2",
+  "scientific_boundary": {
+    "contract_only": true,
+    "durable_transition_performed": false,
+    "empirical_graph_present": false,
+    "execution_authorized": false,
+    "model_framework_imported": false,
+    "model_inference_performed": false,
+    "model_loaded": false,
+    "paid_compute_authorized": false,
+    "persistent_dictionary_output_created": false,
+    "sae_training_authorized": false,
+    "semantic_dispatch_performed": false,
+    "signed_authority_verified": false,
+    "training_performed": false,
+    "v1_contract_modified": false,
+    "weights_loaded_or_mutated": false
+  },
+  "semantic_graph_contract_id": "6db000c29e0619d6bec26fb85f8d1739bd5fae16e46cccc03516a2171d79adb0",
+  "source": {
+    "blueprint_budget_benchmark_id": "1c239f6416c57374a810732496c20f36a7245d882b41c2282c72b8465678da58",
+    "blueprint_budget_benchmark_path": "artifacts/vpd_cluster_aware_sae_blueprint_budget_admission_benchmark_v2/report.json",
+    "blueprint_budget_benchmark_sha256": "b5e04370fd550667c1abdb74c3215f1e32b0dd016680e1f1dd5501fb114c7949",
+    "budget_policy_id": "5e9f4fc0841d0e71a2eef6f9ac91f5e27d0702c0e0aadfa5a6f511dad50719f2",
+    "budget_policy_path": "artifacts/vpd_cluster_aware_sae_budget_admission_policy_v1/policy.json",
+    "budget_policy_sha256": "1846d857c2d415cbc337e155996e653ff8ba123319fcb0c79e418ae7d576dbaf",
+    "builder_sha256": "e1fdbf45f722641f4e667b02488df105588bc379e2bdca4ca54b4d4e0857b753",
+    "v1_semantic_audit_id": "bd3cc043f7b658029fd20c99492c43edbace23550a7e237d36d692e46297eaa7",
+    "v1_semantic_audit_path": "artifacts/vpd_cluster_aware_sae_semantic_dispatch_coverage_audit_v1/audit.json",
+    "v1_semantic_audit_sha256": "775b3b4814dca6827a2ab3463ce6d18d3393d5dcb56d81fbff472b54c0d4ddf6"
+  },
+  "status": "corrected_interface_contract_nonexecuting_with_explicit_terminal_gaps",
+  "summary": {
+    "blueprint_budget_v2_controls_passed": 27,
+    "end_to_end_semantic_dispatch_allowed": false,
+    "implemented_node_representations": 20,
+    "logical_nodes": 21,
+    "production_runtime_attachment_verifier_present": false,
+    "semantic_joins": 38,
+    "terminal_gap_joins": 3,
+    "terminal_gap_nodes": 1,
+    "v1_mismatches_accounted": 28
+  },
+  "terminal_gaps": [
+    {
+      "gap": "budget_admission_to_signed_release",
+      "reason": "scientific release receipt V1 does not bind blueprint-bound budget admission V2",
+      "required_successor": "new signed release receipt and verifier version binding admission ID and exact file digest"
+    },
+    {
+      "gap": "budget_admission_to_runtime_admission",
+      "reason": "runtime admission V1 reproduces signed release and compute scope but does not consume budget admission V2",
+      "required_successor": "new runtime admission version reproducing blueprint-bound budget admission V2"
+    },
+    {
+      "gap": "production_runtime_attachment",
+      "reason": "only the synthetic inert attachment verifier exists",
+      "required_successor": "separately authorized production attachment implementation and semantic verifier"
+    }
+  ],
+  "v1_mismatch_corrections": [
+    {
+      "v1_edge": "admission_to_blueprint_id",
+      "v2_representation": "closed_by_blueprint_bound_budget_admission_v2"
+    },
+    {
+      "v1_edge": "capture_manifest_to_preflight_id",
+      "v2_representation": "removed_raw_manifest_edge_use_guarded_v3_compound_receipt"
+    },
+    {
+      "v1_edge": "capture_manifest_to_receipt_id",
+      "v2_representation": "removed_raw_manifest_edge_use_guarded_v3_compound_receipt"
+    },
+    {
+      "v1_edge": "capture_receipt_to_preflight_hash",
+      "v2_representation": "canonical_object_digest_not_file_sha256"
+    },
+    {
+      "v1_edge": "capture_receipt_to_registry_id",
+      "v2_representation": "cryptographic_authority_membership_join_not_source_registry_id"
+    },
+    {
+      "v1_edge": "compute_to_blueprint_id",
+      "v2_representation": "blueprint_job_binding_is_in_exact_signed_scope"
+    },
+    {
+      "v1_edge": "compute_to_registry_id",
+      "v2_representation": "cryptographic_authority_membership_join_not_source_registry_id"
+    },
+    {
+      "v1_edge": "materialization_to_plan_id",
+      "v2_representation": "materialization_embeds_and_verifies_full_plan_object"
+    },
+    {
+      "v1_edge": "materialization_to_split_id",
+      "v2_representation": "split_identity_is_verified_inside_embedded_plan"
+    },
+    {
+      "v1_edge": "nonce_to_compute_id",
+      "v2_representation": "folded_into_single_durable_job_transition"
+    },
+    {
+      "v1_edge": "plan_to_routing_id",
+      "v2_representation": "plan_is_reproduced_from_verified_bundle_category_evidence"
+    },
+    {
+      "v1_edge": "plan_to_split_id",
+      "v2_representation": "global_split_is_embedded_content_addressed_subdocument"
+    },
+    {
+      "v1_edge": "plan_to_stability_id",
+      "v2_representation": "plan_is_reproduced_from_verified_bundle_category_evidence"
+    },
+    {
+      "v1_edge": "proposal_to_blueprint_hash",
+      "v2_representation": "closed_by_blueprint_bound_budget_proposal_v2"
+    },
+    {
+      "v1_edge": "proposal_to_blueprint_id",
+      "v2_representation": "closed_by_blueprint_bound_budget_proposal_v2"
+    },
+    {
+      "v1_edge": "release_to_admission_id",
+      "v2_representation": "terminal_gap_release_receipt_does_not_bind_budget_admission_v2"
+    },
+    {
+      "v1_edge": "release_to_registry_id",
+      "v2_representation": "cryptographic_authority_membership_join_not_source_registry_id"
+    },
+    {
+      "v1_edge": "reservation_to_compute_id",
+      "v2_representation": "folded_into_single_durable_job_transition"
+    },
+    {
+      "v1_edge": "reservation_to_nonce_id",
+      "v2_representation": "folded_into_single_durable_job_transition"
+    },
+    {
+      "v1_edge": "routing_bundle_to_capture_hash",
+      "v2_representation": "nested_adapter_receipts_and_guarded_companions_verify_bytes"
+    },
+    {
+      "v1_edge": "routing_bundle_to_capture_id",
+      "v2_representation": "nested_adapter_receipts_join_guarded_v3_capture_ids"
+    },
+    {
+      "v1_edge": "runtime_to_reservation_id",
+      "v2_representation": "production_runtime_attachment_is_explicit_terminal_gap"
+    },
+    {
+      "v1_edge": "runtime_to_worker_id",
+      "v2_representation": "production_runtime_attachment_is_explicit_terminal_gap"
+    },
+    {
+      "v1_edge": "split_to_routing_id",
+      "v2_representation": "split_is_embedded_in_plan_not_independent_node"
+    },
+    {
+      "v1_edge": "split_to_stability_id",
+      "v2_representation": "split_is_embedded_in_plan_not_independent_node"
+    },
+    {
+      "v1_edge": "stability_to_routing_id",
+      "v2_representation": "stability_joins_two_role_routes_inside_bundle_verifier"
+    },
+    {
+      "v1_edge": "worker_to_compute_id",
+      "v2_representation": "folded_into_single_durable_job_transition"
+    },
+    {
+      "v1_edge": "worker_to_reservation_id",
+      "v2_representation": "folded_into_single_durable_job_transition"
+    }
+  ]
+}

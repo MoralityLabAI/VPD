@@ -1,0 +1,65 @@
+{
+  "benchmark_id": "007b1fb898ba7952c309393955e1b85bc72fbf1d7635fe784384b0bbaefa6297",
+  "design": {
+    "callback_failure_injected": true,
+    "model_execution": false,
+    "multipliers": [
+      -1.0,
+      0.0,
+      1.0,
+      2.0
+    ],
+    "probe_count": 8,
+    "target_dtype": "float32"
+  },
+  "results": {
+    "baseline_reconstruction_frobenius_error": 5.8400386726159325e-08,
+    "callback_failure_restored": true,
+    "maximum_intervention_delta_frobenius_error": 7.152557457423826e-08,
+    "maximum_relative_probe_error": 2.7443559838973272e-08,
+    "multiplier_rows": [
+      {
+        "a_factor_restored_exactly": true,
+        "b_factor_restored_exactly": true,
+        "delta_frobenius_error": 5.840038672615931e-08,
+        "multiplier": -1.0,
+        "relative_probe_error": 2.4227188134755206e-08
+      },
+      {
+        "a_factor_restored_exactly": true,
+        "b_factor_restored_exactly": true,
+        "delta_frobenius_error": 5.3312015096301825e-08,
+        "multiplier": 0.0,
+        "relative_probe_error": 2.7443559838973272e-08
+      },
+      {
+        "a_factor_restored_exactly": true,
+        "b_factor_restored_exactly": true,
+        "delta_frobenius_error": 5.840038672615931e-08,
+        "multiplier": 1.0,
+        "relative_probe_error": 2.4227188134755202e-08
+      },
+      {
+        "a_factor_restored_exactly": true,
+        "b_factor_restored_exactly": true,
+        "delta_frobenius_error": 7.152557457423826e-08,
+        "multiplier": 2.0,
+        "relative_probe_error": 2.0809011033096428e-08
+      }
+    ]
+  },
+  "schema": "sch.vpd-canonical-lora-factor-runtime-benchmark.v1",
+  "scientific_boundary": {
+    "execution_authorized": false,
+    "model_inference_performed": false,
+    "production_torch_adapter_integration_present": false,
+    "real_weights_mutated": false,
+    "synthetic_factor_bundle_only": true,
+    "torch_or_model_loaded": false
+  },
+  "source": {
+    "runner_sha256": "4a723035f4a588c4a1dd4883fa2b06e8b0bff956b4ff602f921f1aab3fa7668e",
+    "runtime_sha256": "c674a9e146cf3f1781f240124f83c40445ed649fe78c5ebf356c983e2cd285d2"
+  },
+  "status": "pass"
+}

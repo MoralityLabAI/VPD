@@ -1,0 +1,100 @@
+{
+  "benchmark_id": "8f06090f64db0a1fadcaec50e2f14bf73eff3fe8e3e372de836dd55f8a501b12",
+  "design": {
+    "categories": [
+      "replayed",
+      "valid_authority",
+      "signature_invalid",
+      "scope_invalid"
+    ],
+    "features": 4,
+    "known_behavior_outcome_feature": 1,
+    "known_category_feature": 0,
+    "paired_within_block_permutations": 127,
+    "pairs": 64,
+    "prompt_families": 8,
+    "rows": 256
+  },
+  "scenarios": [
+    {
+      "checks": {
+        "category_feature_selected": true,
+        "outcome_label_excluded": true
+      },
+      "endpoint": {
+        "activation_category_contract_sha256": "ca14b85b0e49f59fefc1d0cf9f4bfb299830b5fe06f78def884a9abfe61a1a13",
+        "endpoint_id": "fd35fa678f35dc1eadf870247f438781cab874179b4d644d589f32788ea1c234",
+        "heldout_intervention_endpoint": "signed_authorization_decision_margin",
+        "kind": "observable_activation_category_membership",
+        "model_outcome_label_used_for_selection": false,
+        "negative_rows": 192,
+        "positive_activation_category": "replayed",
+        "positive_rows": 64,
+        "rows": 256,
+        "schema": "sch.vpd-focused-sae-screen-endpoint.v1"
+      },
+      "expected_top_feature_index": 0,
+      "scenario_id": "specific_replayed_category_membership",
+      "status": "pass",
+      "top_feature_index": 0
+    },
+    {
+      "checks": {
+        "diagnostic_exposes_different_target": true,
+        "global_outcome_feature_selected": true
+      },
+      "endpoint": {
+        "activation_compartment": null,
+        "endpoint_id": "677ba5b56140e89b84048fdbc9d975c4de389e37b78c6825ba05730fc4ecba94",
+        "heldout_intervention_endpoint": "signed_authorization_decision_margin",
+        "kind": "behavior_label",
+        "label_name": "semantic_authorization",
+        "model_outcome_label_used_for_selection": true,
+        "negative_rows": 192,
+        "positive_rows": 64,
+        "rows": 256,
+        "schema": "sch.vpd-focused-sae-screen-endpoint.v1"
+      },
+      "expected_top_feature_index": 1,
+      "scenario_id": "legacy_global_outcome_leakage_diagnostic",
+      "status": "pass",
+      "top_feature_index": 1
+    },
+    {
+      "checks": {
+        "behavior_feature_selected": true,
+        "shared_behavior_endpoint_preserved": true
+      },
+      "endpoint": {
+        "activation_compartment": "shared_cross_category",
+        "endpoint_id": "14ec7ed40a515645eaae74d29cadfe5b3ba24bcbd25bcd4a692e3c1bba8c21ce",
+        "heldout_intervention_endpoint": "signed_authorization_decision_margin",
+        "kind": "behavior_label",
+        "label_name": "semantic_authorization",
+        "model_outcome_label_used_for_selection": true,
+        "negative_rows": 192,
+        "positive_rows": 64,
+        "rows": 256,
+        "schema": "sch.vpd-focused-sae-screen-endpoint.v1"
+      },
+      "expected_top_feature_index": 1,
+      "scenario_id": "shared_behavior_endpoint_preserved",
+      "status": "pass",
+      "top_feature_index": 1
+    }
+  ],
+  "schema": "sch.vpd-compartment-sae-screening-synthetic-benchmark.v1",
+  "scientific_boundary": {
+    "does_not_establish_bonsai_category_features": true,
+    "heldout_intervention_endpoint_remains_authorization_margin": true,
+    "model_inference_performed": false,
+    "synthetic_activations_only": true,
+    "weights_loaded_or_mutated": false
+  },
+  "seed": 290829,
+  "source": {
+    "benchmark_runner_sha256": "e07eafb4cbafe046ee9f5f61b0866953a03476120d88febeda11cba108bae343",
+    "focused_runner_sha256": "306195df88ccbf1ec4c4093c22652db9f7c42da0f5921b4c533632ba780429fb"
+  },
+  "status": "pass"
+}

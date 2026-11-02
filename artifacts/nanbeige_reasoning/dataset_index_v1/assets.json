@@ -1,0 +1,3096 @@
+{
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/manifest.json": {
+    "sha256": "6e31e77285cafcc9d2f600a3e6e59d38b5b1d5e66a895c5b89395a2cf22b5caa",
+    "bytes": 8668,
+    "roles": [
+      "source_manifest"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/pilot_v1/questions.jsonl": {
+    "sha256": "a156c0c3d9f757da4d62cccf85d9c03f26715ae2901fd4cc944c32661f461332",
+    "bytes": 115542,
+    "roles": [
+      "public_questions"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/pilot_v1/graders.jsonl": {
+    "sha256": "c7ff934196f950ed384de17e722f4842af147224e43fde123170ea9c322e9d09",
+    "bytes": 15999,
+    "roles": [
+      "grading_sidecar"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/pilot_v1/manifest.json": {
+    "sha256": "9d23382314f924f5e5705f4db1009c84218572f02a0ddb83e84381845282497a",
+    "bytes": 2757,
+    "roles": [
+      "cohort_selection"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/sources.lock.json": {
+    "sha256": "09291f3a7813d2b1b4ae327d78b2f82e9bc50fe183279cfde1ed9892e6b63ed4",
+    "bytes": 350962,
+    "roles": [
+      "upstream_source_lock"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/mechanistic_verification.json": {
+    "sha256": "95eba7ecbe0479d4ddea8a79874f93dff59a819eff53c78149012d5dc19bf4e6",
+    "bytes": 1865,
+    "roles": [
+      "independent_verification"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/generations.jsonl": {
+    "sha256": "5a15e6165664882e7991889d56b8ba82524a9eacb29fcfe5e725215365ab7684",
+    "bytes": 3669214,
+    "roles": [
+      "paired_trajectories"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/records.jsonl": {
+    "sha256": "cf0584e9eb94a85e3d115da2ab7bd1557403d51dfe8b6963e557297e591a88ea",
+    "bytes": 54521,
+    "roles": [
+      "capture_metadata"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/activation_0000.npz": {
+    "sha256": "02e91b9a3cedf7fcd7b685a0f0dfb8bc99c5e0aa23d42e4b806a70cfbc81aa1e",
+    "bytes": 21956461,
+    "roles": [
+      "extended_q4_activations"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/activation_0001.npz": {
+    "sha256": "c52c06341e8bcfe45687aae13fcba2e2a4146f5204fa8bd319d07984dea125c1",
+    "bytes": 21956775,
+    "roles": [
+      "extended_q4_activations"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/activation_0002.npz": {
+    "sha256": "a1d7f6a6d26a51514c55f485695a5264527f1f5cec64fce753bd003d00501abc",
+    "bytes": 21960637,
+    "roles": [
+      "extended_q4_activations"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/activation_0003.npz": {
+    "sha256": "33fe86761c0ddf2c65fd4384e535819f4332c0707f318f749a2dfd31076fc74a",
+    "bytes": 21962666,
+    "roles": [
+      "extended_q4_activations"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/activation_0004.npz": {
+    "sha256": "d5ac1d84a951d0837209b231a858d967b31cd6df9e31abe7288ab645c85c22e6",
+    "bytes": 21960955,
+    "roles": [
+      "extended_q4_activations"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/activation_0005.npz": {
+    "sha256": "75c3276a1ce4dc560840ee1b0a72711a7ad178a7844849e1b8e3cd488024f69b",
+    "bytes": 21959823,
+    "roles": [
+      "extended_q4_activations"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/activation_0006.npz": {
+    "sha256": "f936760a527e7d8dc886d47cdc6414a110cc3d10e8708ae3c64d6dd12ca0472f",
+    "bytes": 21963387,
+    "roles": [
+      "extended_q4_activations"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/activation_0007.npz": {
+    "sha256": "ad30f36c3fc7510e71170d0f1cc57a30943d27ab1824ca1e868d201b78900604",
+    "bytes": 21961229,
+    "roles": [
+      "extended_q4_activations"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/activation_0008.npz": {
+    "sha256": "2137de9bb40f9c445cc2e03b6b93c57dcc16016555860e05be68295ba8b0304e",
+    "bytes": 21960298,
+    "roles": [
+      "extended_q4_activations"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/activation_0009.npz": {
+    "sha256": "5b39144a73aa1b53ecbc6884ff8883f93b979eeb491905791dd005d5676a0a5d",
+    "bytes": 21961732,
+    "roles": [
+      "extended_q4_activations"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/activation_0010.npz": {
+    "sha256": "5cd48e543635973eaa21a1701521dd8447170b7aad6706faac09edc7dd8cd745",
+    "bytes": 21961303,
+    "roles": [
+      "extended_q4_activations"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/activation_0011.npz": {
+    "sha256": "43f3cf5d06d189c21eb7ebf42af038abd501801a9e3e18168db20a3af0c6caf9",
+    "bytes": 21960113,
+    "roles": [
+      "extended_q4_activations"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/activation_0012.npz": {
+    "sha256": "e87beea6f5d589c2043ffba31c2b361a51c577385d28857ed902d639af41dc42",
+    "bytes": 21964135,
+    "roles": [
+      "extended_q4_activations"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/activation_0013.npz": {
+    "sha256": "0ebd5ae78f7a371037f10cfa4696989321a537b0208d1864688f4d365c871234",
+    "bytes": 21964030,
+    "roles": [
+      "extended_q4_activations"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/activation_0014.npz": {
+    "sha256": "ae6087d48c5d234e4836875c26ab5ed167d54f000aa7b214f96c2f0fffb23d6d",
+    "bytes": 21960482,
+    "roles": [
+      "extended_q4_activations"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/activation_0015.npz": {
+    "sha256": "731caee721d51efa9db960babf3a928d8f75f69fd030c98b983af760bca8ed72",
+    "bytes": 21965311,
+    "roles": [
+      "extended_q4_activations"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/activation_0016.npz": {
+    "sha256": "b92e79dab39df522621da9e993abf29df374b64b97fcc1a4659c8c48342b8dc0",
+    "bytes": 21964666,
+    "roles": [
+      "extended_q4_activations"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/activation_0017.npz": {
+    "sha256": "8a374848cf6c26cfda80a04e858dc5e5559e0331397240c9e4a4a4444dab3d55",
+    "bytes": 21964380,
+    "roles": [
+      "extended_q4_activations"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/frozen_vpd_transfer/manifest.json": {
+    "sha256": "60594f6071364691c22feffe3cb3461aa0abb13332acf093c9b9c835a208d98e",
+    "bytes": 4045,
+    "roles": [
+      "source_manifest"
+    ]
+  },
+  "artifacts/nanbeige_looped/prime-20260906T034844Z-719/retrieved/artifacts/nanbeige_looped/bf16_multipass_calibration/vpd_factors.npz": {
+    "sha256": "7158180676282fb2d944558d0494690f1e6d7a888c1742844d4f5ba194d44fc0",
+    "bytes": 822670,
+    "roles": [
+      "vpd8_factors"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/frozen_vpd_transfer/summary.json": {
+    "sha256": "11c536d0d95c76ebbe71e0742dc97d762b69df158ac5c89834e7619a7438a0f7",
+    "bytes": 23146,
+    "roles": [
+      "vpd_metadata"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/frozen_vpd_transfer/layer_12_000.npz": {
+    "sha256": "c9972806049de72084fa9498c298069806e758f5304ef1284d91c1d75c9a1068",
+    "bytes": 1099173,
+    "roles": [
+      "extended_vpd8_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/frozen_vpd_transfer/layer_12_001.npz": {
+    "sha256": "f745f22f040a363860d4b14efa16ed2b0176929f20dc87f5eccf8705ff7dec85",
+    "bytes": 1099435,
+    "roles": [
+      "extended_vpd8_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/frozen_vpd_transfer/layer_12_002.npz": {
+    "sha256": "5a54ba499c597aa72ada2c64183bab81607ad5c42cde6999d3bf99b5a2eb6496",
+    "bytes": 1099674,
+    "roles": [
+      "extended_vpd8_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/frozen_vpd_transfer/layer_12_003.npz": {
+    "sha256": "10d4e062ee3e77bb246b91ad72aaa794223aecf5cf0be9c0033d0495dc4177ce",
+    "bytes": 1099368,
+    "roles": [
+      "extended_vpd8_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/frozen_vpd_transfer/layer_12_004.npz": {
+    "sha256": "c525a05652b0a4a3a25d3588c5628db82a753d63ea3a7c3f1daea36aaa3a18ff",
+    "bytes": 1099518,
+    "roles": [
+      "extended_vpd8_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/frozen_vpd_transfer/layer_12_005.npz": {
+    "sha256": "32bd4bd26e1fc59012aae2c1da7f4f50bf26dc4c07d3787fbc7f67f4b3eff40a",
+    "bytes": 1099529,
+    "roles": [
+      "extended_vpd8_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/frozen_vpd_transfer/layer_12_006.npz": {
+    "sha256": "30ac76c5014b2402c82314c20723a7fef8327b363e7a52ce9a8ca6be7778158f",
+    "bytes": 1099608,
+    "roles": [
+      "extended_vpd8_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/frozen_vpd_transfer/layer_12_007.npz": {
+    "sha256": "1defc69eaf7efe0c7608d638376f926120ba58efeb72a403cfb68869c1ed01e8",
+    "bytes": 1099751,
+    "roles": [
+      "extended_vpd8_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/frozen_vpd_transfer/layer_12_008.npz": {
+    "sha256": "b92ed02faa5507b16195be8088236c00e1c7d33454b1f375a2c59e9e19f3949f",
+    "bytes": 1099665,
+    "roles": [
+      "extended_vpd8_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/frozen_vpd_transfer/layer_12_009.npz": {
+    "sha256": "63c66f5999e8d64e93e5f65ee020c5e36c02beb4471f8243ddac4f26bd63be40",
+    "bytes": 1099718,
+    "roles": [
+      "extended_vpd8_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/frozen_vpd_transfer/layer_12_010.npz": {
+    "sha256": "f66a569a4c66985d675d52a975ad28a43a1989be3c127e7498f40fb6076a28ad",
+    "bytes": 1099306,
+    "roles": [
+      "extended_vpd8_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/frozen_vpd_transfer/layer_12_011.npz": {
+    "sha256": "75f6e8770e13c212c20db0b59e5fde4eb27bcbf1ed86975fe160cdc071a29c69",
+    "bytes": 1099478,
+    "roles": [
+      "extended_vpd8_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/frozen_vpd_transfer/layer_12_012.npz": {
+    "sha256": "838ee35353784f7078f2f7a4076fdaf7234f4ed391c866151ed506a90abdcf24",
+    "bytes": 1099162,
+    "roles": [
+      "extended_vpd8_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/frozen_vpd_transfer/layer_12_013.npz": {
+    "sha256": "6957f47a876d748f3846652696445df7cba98b8380ee84ceede2a5f6f97de438",
+    "bytes": 1099440,
+    "roles": [
+      "extended_vpd8_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/frozen_vpd_transfer/layer_12_014.npz": {
+    "sha256": "a50517687447ce521fcbee0902a3c45f599388cfedeeb9ee11d1b54b15139048",
+    "bytes": 1099250,
+    "roles": [
+      "extended_vpd8_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/frozen_vpd_transfer/layer_12_015.npz": {
+    "sha256": "b257d87e754fd995ba49095a4b0041a5e3e0b16fe33e1b5a098f83dfd69968b5",
+    "bytes": 1098864,
+    "roles": [
+      "extended_vpd8_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/frozen_vpd_transfer/layer_12_016.npz": {
+    "sha256": "608c35a9506ce49e735e77f9c44e33839a7c21136f85193c22c6f6baaf5e1f78",
+    "bytes": 1099283,
+    "roles": [
+      "extended_vpd8_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/frozen_vpd_transfer/layer_12_017.npz": {
+    "sha256": "42b11230621fb6f64b1e8be53bd865ef4b7cb8c240288975731ec7b7cfd233c3",
+    "bytes": 1099194,
+    "roles": [
+      "extended_vpd8_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/frozen_vpd_transfer/layer_22_000.npz": {
+    "sha256": "cb227bfb80c4ae4a13c467a5a4df7710fb4401d6e65218eec62087eb1fe091e1",
+    "bytes": 1099937,
+    "roles": [
+      "extended_vpd8_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/frozen_vpd_transfer/layer_22_001.npz": {
+    "sha256": "25d5efb0387da5b5779714ed76a41a98633c9f2be04b2f3b3e660b21fb4347cb",
+    "bytes": 1100023,
+    "roles": [
+      "extended_vpd8_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/frozen_vpd_transfer/layer_22_002.npz": {
+    "sha256": "e0a8d82cb37fe093a555b05b0b70f865cfe66e963f73ba293d1cfd03391d805c",
+    "bytes": 1099381,
+    "roles": [
+      "extended_vpd8_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/frozen_vpd_transfer/layer_22_003.npz": {
+    "sha256": "62e433a33cf236944cec09359029227f80d337739e56a51fbf0ae4120433674a",
+    "bytes": 1099746,
+    "roles": [
+      "extended_vpd8_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/frozen_vpd_transfer/layer_22_004.npz": {
+    "sha256": "55e269fbd347598dfc862809a3cbd31205de278f71e12f3d1a6e41c71270d402",
+    "bytes": 1099859,
+    "roles": [
+      "extended_vpd8_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/frozen_vpd_transfer/layer_22_005.npz": {
+    "sha256": "a8105d293e8304d7d9aa827ba3703c149eea297aa40fc6d5d2eabc87740bb5b9",
+    "bytes": 1100183,
+    "roles": [
+      "extended_vpd8_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/frozen_vpd_transfer/layer_22_006.npz": {
+    "sha256": "5d61daac7008bbb543b95043efee8ddb630c6435f522b7b352c6ac56b02e2d8d",
+    "bytes": 1100883,
+    "roles": [
+      "extended_vpd8_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/frozen_vpd_transfer/layer_22_007.npz": {
+    "sha256": "2981379d2d033bccce9a2be996494bc294243892e127293d96f9094585bee471",
+    "bytes": 1100145,
+    "roles": [
+      "extended_vpd8_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/frozen_vpd_transfer/layer_22_008.npz": {
+    "sha256": "49e14906c37f5daf8158c33364047dbe92a333c23b48a736b58d03737a4612d6",
+    "bytes": 1100361,
+    "roles": [
+      "extended_vpd8_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/frozen_vpd_transfer/layer_22_009.npz": {
+    "sha256": "40cc34a2193275892e05d9fd23a483171c5cd6bf30e8b7c9f8e1b04f1fdb705d",
+    "bytes": 1100572,
+    "roles": [
+      "extended_vpd8_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/frozen_vpd_transfer/layer_22_010.npz": {
+    "sha256": "8692492fc358405e8563ceffcae89c031e82c4eecc5f0e4bb706fd1da720f323",
+    "bytes": 1099790,
+    "roles": [
+      "extended_vpd8_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/frozen_vpd_transfer/layer_22_011.npz": {
+    "sha256": "96b87eec24926fe63fcb31823729c031e28514c52552af755c7f7c556cc0806d",
+    "bytes": 1099845,
+    "roles": [
+      "extended_vpd8_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/frozen_vpd_transfer/layer_22_012.npz": {
+    "sha256": "9d1524cc6020e89841481ccca22172b5f964724d52081aa6a18af98df518fc6d",
+    "bytes": 1099971,
+    "roles": [
+      "extended_vpd8_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/frozen_vpd_transfer/layer_22_013.npz": {
+    "sha256": "70af91b53dcfcd5b020b9c0f21340e593201767cfedbd6e253d310b58b5d9352",
+    "bytes": 1099504,
+    "roles": [
+      "extended_vpd8_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/frozen_vpd_transfer/layer_22_014.npz": {
+    "sha256": "c15a48381670517520149cf8095b0f87231f445c1f71bd4ce12cf6aa1ff14bf2",
+    "bytes": 1099757,
+    "roles": [
+      "extended_vpd8_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/frozen_vpd_transfer/layer_22_015.npz": {
+    "sha256": "e547c9c6eb40087990838120dd0e7a9c5a9ddd480f2d8117f3129725586c10a1",
+    "bytes": 1099203,
+    "roles": [
+      "extended_vpd8_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/frozen_vpd_transfer/layer_22_016.npz": {
+    "sha256": "cb83edf3286789294bf2f28350808b1d5ae856faff846d08ae00997e244a4759",
+    "bytes": 1099416,
+    "roles": [
+      "extended_vpd8_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_activations/frozen_vpd_transfer/layer_22_017.npz": {
+    "sha256": "4af972345602d9ec55e6441193c34e7221918caf7c86bdbcfa1365a62fa59a8c",
+    "bytes": 1099828,
+    "roles": [
+      "extended_vpd8_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/manifest.json": {
+    "sha256": "8cea34fb5c46b826059d5684c18c5694e38cf1aabf03eb51a152c8a1f785d6e9",
+    "bytes": 6583,
+    "roles": [
+      "source_manifest"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/sae_quality.json": {
+    "sha256": "95d9a270a39904a1cee9af7feb66eca4e95c2344a77b50a77a07791d27e0f6c5",
+    "bytes": 43605,
+    "roles": [
+      "sae_quality"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/sae_00.npz": {
+    "sha256": "ba6bdb135949ac7285e8dbf33cd55172e0339fca5a602e09aabe989d775d10d4",
+    "bytes": 139922813,
+    "roles": [
+      "sae_dictionary"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/features_00_000.npz": {
+    "sha256": "6bbaa4ca8a844d23ec588f3cc8c5ac48be08609ad6f04d842acc489390186816",
+    "bytes": 22404,
+    "roles": [
+      "extended_original_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/features_00_001.npz": {
+    "sha256": "cd3b2013457149a9b2ce018c1474567c2a554e2eca00171fbc57e1fd5278c91e",
+    "bytes": 22725,
+    "roles": [
+      "extended_original_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/features_00_002.npz": {
+    "sha256": "a4d9f41c252fcd04e82ec0013bc8b8c73f5002745c8ccac06c49c471455fc7b0",
+    "bytes": 28894,
+    "roles": [
+      "extended_original_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/features_00_003.npz": {
+    "sha256": "8ef642b82b7adb1b156549d6d082e3251ae7045a7b5523c6e3bd1ed8fc44f26f",
+    "bytes": 28910,
+    "roles": [
+      "extended_original_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/features_00_004.npz": {
+    "sha256": "61293c73b018d82a86445e7a7acf9c1f0b64d51cc80b0e2cc6ff4c4e95ac25f6",
+    "bytes": 28184,
+    "roles": [
+      "extended_original_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/features_00_005.npz": {
+    "sha256": "64ae9d926104974f3df60d4949d766f8703b96212faa9dd4a025dfbf290bdee8",
+    "bytes": 22365,
+    "roles": [
+      "extended_original_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/features_00_006.npz": {
+    "sha256": "0789e1b1e2237bc00ae2aefc8974302941a704cc8ddff50aa0d57f42546d818b",
+    "bytes": 23163,
+    "roles": [
+      "extended_original_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/features_00_007.npz": {
+    "sha256": "aa991a30ba59edde82c108cd92460dd19ae9fea80d568b217be867dcf7c0933b",
+    "bytes": 29707,
+    "roles": [
+      "extended_original_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/features_00_008.npz": {
+    "sha256": "899af0dfb4ee832c60cc5b6379bd3688e63c5c9593dcb4a582c1a4e119c2cf72",
+    "bytes": 29165,
+    "roles": [
+      "extended_original_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/features_00_009.npz": {
+    "sha256": "fdbcedf27c758e89e4e6dc8463ad2c05e8cf98ee6a5479861bc04657f2a4d248",
+    "bytes": 29688,
+    "roles": [
+      "extended_original_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/features_00_010.npz": {
+    "sha256": "cabc6937db2871d6a7f0bcc09697164fd9df2feb15baeaf9380256b4579c66a6",
+    "bytes": 22624,
+    "roles": [
+      "extended_original_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/features_00_011.npz": {
+    "sha256": "791c96621596564cdc75993e67642d6dc226c9e65a2d1967064149a13a2c1ae7",
+    "bytes": 21937,
+    "roles": [
+      "extended_original_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/features_00_012.npz": {
+    "sha256": "ab2c238bee41d38f89b84266c5add6a1414325df4d8d879d3ac7e8bcd12f6d3f",
+    "bytes": 29293,
+    "roles": [
+      "extended_original_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/features_00_013.npz": {
+    "sha256": "85c4b0a2e50bacfac35da03b480326276b9266937fcad11159755ce1a1d2a684",
+    "bytes": 29158,
+    "roles": [
+      "extended_original_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/features_00_014.npz": {
+    "sha256": "9215b23f9480eda02b0c897f1e002e95a9edfa658f95969ac69239fc3f841b31",
+    "bytes": 21296,
+    "roles": [
+      "extended_original_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/features_00_015.npz": {
+    "sha256": "0195bee78c698318054c8bffeb1bfa3f1afe20672255c337d818fa567b979601",
+    "bytes": 20628,
+    "roles": [
+      "extended_original_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/features_00_016.npz": {
+    "sha256": "d8d4277cb7e7369ea8542a482d8e527cf73748cdb0c02a475a1bd096f88d0590",
+    "bytes": 28697,
+    "roles": [
+      "extended_original_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/features_00_017.npz": {
+    "sha256": "fbb7091c55812af5366a3906f62e9578eb0629714e9e1a51f3747fd1571836c8",
+    "bytes": 28895,
+    "roles": [
+      "extended_original_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/sae_01.npz": {
+    "sha256": "0892cfc7b775f56ce90513102033ec2e7d40c55f487cdad8b0f387d3896280da",
+    "bytes": 140106101,
+    "roles": [
+      "sae_dictionary"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/features_01_000.npz": {
+    "sha256": "28eb49d5799d0c1e844db21d8ef5bad289dcad635fa4dcaf9ac334a9468cb794",
+    "bytes": 30237,
+    "roles": [
+      "extended_original_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/features_01_001.npz": {
+    "sha256": "196c4aaeb8df8bbe7c96d54b5e853fa2d55a5491b494c7ff6b47a83b9ff17fc8",
+    "bytes": 30235,
+    "roles": [
+      "extended_original_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/features_01_002.npz": {
+    "sha256": "44747e7d40fef06f0aad104635869251c0ffa271a1cdd43ab69960a73c3bbf1f",
+    "bytes": 30088,
+    "roles": [
+      "extended_original_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/features_01_003.npz": {
+    "sha256": "9b2d314da82ff6f081347bb5029c61c1714b974d20841b8b96b1ea654d55ea7f",
+    "bytes": 30094,
+    "roles": [
+      "extended_original_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/features_01_004.npz": {
+    "sha256": "9447e3436926203599590f943fb4f166b4e4758e15370d777c452eaf15f96a4e",
+    "bytes": 30182,
+    "roles": [
+      "extended_original_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/features_01_005.npz": {
+    "sha256": "413bc7bf9a73c88073638a05007acbbb6fa230854885393eaa0ccdd219b3baa4",
+    "bytes": 30081,
+    "roles": [
+      "extended_original_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/features_01_006.npz": {
+    "sha256": "fed57e5b977f359819beeca88f6a85d8736795e84612075d633c065398c54485",
+    "bytes": 30202,
+    "roles": [
+      "extended_original_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/features_01_007.npz": {
+    "sha256": "d4e52cac1e1239901e5b62d412c829b8d64e68d3eec0b6126216ca5d991610c8",
+    "bytes": 30035,
+    "roles": [
+      "extended_original_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/features_01_008.npz": {
+    "sha256": "404beb0c30a2ca2cd8e9fa84a82d5da5229150ab463065b02eab1e287668848f",
+    "bytes": 29921,
+    "roles": [
+      "extended_original_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/features_01_009.npz": {
+    "sha256": "86a6ddae18c9ab871f4b3bfaa37c95587cfc262d848fb3a00a8b2c394500e16c",
+    "bytes": 30043,
+    "roles": [
+      "extended_original_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/features_01_010.npz": {
+    "sha256": "a58ac53513f7acaaa98fa5dc0593300c18489d3acc2e4e4eeeec428a3dd155e0",
+    "bytes": 30048,
+    "roles": [
+      "extended_original_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/features_01_011.npz": {
+    "sha256": "04136a0d939967a0ebfc7c0123c34bb5e6a7a1d4015a8b8e429f0835ab8947b8",
+    "bytes": 30117,
+    "roles": [
+      "extended_original_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/features_01_012.npz": {
+    "sha256": "5273bbd1d2283e48000e6155b3d9d54db511a1bd6f1d25cf01660fead33f6636",
+    "bytes": 30035,
+    "roles": [
+      "extended_original_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/features_01_013.npz": {
+    "sha256": "581e340122869a411dc9153c66c9e6c9253abc470afcb8681887fa1d601e40a8",
+    "bytes": 29940,
+    "roles": [
+      "extended_original_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/features_01_014.npz": {
+    "sha256": "fb874b4da1ad5752b4887980294ce4b892346d061a0321002fbcaa3e51d52651",
+    "bytes": 30301,
+    "roles": [
+      "extended_original_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/features_01_015.npz": {
+    "sha256": "73500b6fe9f00d895c99ae7b17b1b72b807fd93e0fb294ff4ee2ff276435d908",
+    "bytes": 30084,
+    "roles": [
+      "extended_original_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/features_01_016.npz": {
+    "sha256": "4f1170558f71ffd7aa83fb889bf91dd0bfeabdbfaa0025307f60c04ac024a54c",
+    "bytes": 30034,
+    "roles": [
+      "extended_original_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/features_01_017.npz": {
+    "sha256": "93783e545dee363d045b27729fc0115b8a63629a263fdc81d00fd0ecc1b9904b",
+    "bytes": 30023,
+    "roles": [
+      "extended_original_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/sae_02.npz": {
+    "sha256": "9ef562c18850a1fb9788a32ef7a181bcbed0c4412cff9e05cae525198eba0626",
+    "bytes": 139995585,
+    "roles": [
+      "sae_dictionary"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/features_02_000.npz": {
+    "sha256": "92608f0dac5f90302e9a58b5fe0916d8a27f7a39cbe3280b345522dbfebc89a3",
+    "bytes": 27029,
+    "roles": [
+      "extended_original_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/features_02_001.npz": {
+    "sha256": "7b4a8cca32254a64d6c1377f2041b1872e2b2813c158b54709af1a2cf12f5855",
+    "bytes": 26088,
+    "roles": [
+      "extended_original_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/features_02_002.npz": {
+    "sha256": "9859763cf070f74797b5cb3e7dae9e7bf218d9887e2a00a1a253ec28d215667d",
+    "bytes": 31097,
+    "roles": [
+      "extended_original_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/features_02_003.npz": {
+    "sha256": "6a906332bc25d8f84b8a0a9fb565314088eab8411f2742ea66a942ba01658d9e",
+    "bytes": 30957,
+    "roles": [
+      "extended_original_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/features_02_004.npz": {
+    "sha256": "ef4c6189e736dd4511fee80c776f55008b29163ea3e539cebb81b84d7b5ffb25",
+    "bytes": 30308,
+    "roles": [
+      "extended_original_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/features_02_005.npz": {
+    "sha256": "619842f16578685e4cf5ab1fe5455c023a3db1c2d9035c90f998e99f7e9fa11f",
+    "bytes": 27724,
+    "roles": [
+      "extended_original_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/features_02_006.npz": {
+    "sha256": "499b6747b0cb5f84dbfe10499f381ebf81897ca88dc02a1e89ddf382479df5b4",
+    "bytes": 27396,
+    "roles": [
+      "extended_original_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/features_02_007.npz": {
+    "sha256": "f41d5aaae0de1082690cfb9f05b13b48faa5a6d4219fd278463481206d396644",
+    "bytes": 30673,
+    "roles": [
+      "extended_original_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/features_02_008.npz": {
+    "sha256": "efbe4c64febe43c80982f35c566a485130335f370d0b4e50c952b79cd883bc91",
+    "bytes": 31234,
+    "roles": [
+      "extended_original_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/features_02_009.npz": {
+    "sha256": "8ca9b23a95942831cb837873e34d349c69c44e12550c18d1a739aca939b3328c",
+    "bytes": 30953,
+    "roles": [
+      "extended_original_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/features_02_010.npz": {
+    "sha256": "fe4d3a074709c5ba1e1588a36ae5e4cb0652c31ea9a0693bcb209d0273f1aaaf",
+    "bytes": 28710,
+    "roles": [
+      "extended_original_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/features_02_011.npz": {
+    "sha256": "d14227ef25303b1c29c717ef156473d573bac50fe3c10238cb8d23dc70d84d1b",
+    "bytes": 28662,
+    "roles": [
+      "extended_original_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/features_02_012.npz": {
+    "sha256": "c2d852f2ff4059e1c6834fcf85ab873a64b09b904da689829ff7574bde749cb0",
+    "bytes": 31323,
+    "roles": [
+      "extended_original_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/features_02_013.npz": {
+    "sha256": "5004ffec681dda869ba7ee1f201f84400bf9f9ff400fc768fc5d68781b5ae457",
+    "bytes": 31305,
+    "roles": [
+      "extended_original_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/features_02_014.npz": {
+    "sha256": "665b77c0ec126e2e64d900b2e2439d8ce409c572b71de0fb51fee2b8d03b6281",
+    "bytes": 28544,
+    "roles": [
+      "extended_original_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/features_02_015.npz": {
+    "sha256": "14d79bdde23c8e43af3ffc70888a126e68cb7e477c6f56df9341745575f3c4cc",
+    "bytes": 25478,
+    "roles": [
+      "extended_original_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/features_02_016.npz": {
+    "sha256": "09374a690516ecad10e7ce8eccb42967f567a4c555e81a3f7111a21aceca07c2",
+    "bytes": 31202,
+    "roles": [
+      "extended_original_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes/features_02_017.npz": {
+    "sha256": "8feceb4abf0b460eb5402c5e36117582d95b08bd92e10d946a07a10620fcfd6d",
+    "bytes": 31325,
+    "roles": [
+      "extended_original_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/manifest.json": {
+    "sha256": "a8e0a29098bacd6564851c94b58fa13e79b6f3fd7640f0776ce4ce6afce18043",
+    "bytes": 14117,
+    "roles": [
+      "source_manifest"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_verification/complete.json": {
+    "sha256": "338631720d94cce444ca5a8617488d8411a9cbbaa36cada1b3897244ae56b355",
+    "bytes": 11660,
+    "roles": [
+      "independent_verification"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/contract.json": {
+    "sha256": "ce225173faa99b9f7cdcaa7a5f75d077003fb2858d0583d91858b13b914effb1",
+    "bytes": 4602,
+    "roles": [
+      "sae_training_contract"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/00_adamw/manifest.json": {
+    "sha256": "957bd9b94667087f517f279c90e38df7313329e4d88890fb92867e3319fd2664",
+    "bytes": 3979,
+    "roles": [
+      "sae_condition_manifest"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/00_adamw/dictionary.npz": {
+    "sha256": "c687493fae897df16986b1252025c792b8d5a17c281361b6bb641d11e498a44f",
+    "bytes": 140089897,
+    "roles": [
+      "sae_dictionary"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/00_adamw/records.json": {
+    "sha256": "0cfcddac9061a6f2178b21977f44a1c1c675ec10ee1a7391cd92ebc0478acb7c",
+    "bytes": 3459,
+    "roles": [
+      "sae_feature_metadata"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/00_adamw/features_00.npz": {
+    "sha256": "9af8f45b4a52edb5581b76e24b9d6d279205801a549b8fc8a215e30737752d25",
+    "bytes": 30209,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/00_adamw/features_01.npz": {
+    "sha256": "aa78fc9c10babcfd2ce932038cb95a9b0d71cb55f07b2440c64a68a9e93f8156",
+    "bytes": 30179,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/00_adamw/features_02.npz": {
+    "sha256": "01cbc07b91035185841f515fc85c33b9b0f7a84b3c598ee3e35df1e8a44cd1d5",
+    "bytes": 30006,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/00_adamw/features_03.npz": {
+    "sha256": "ed0a1f71d046459166a76c40ba4623699dc6d440a09e47354b09ce3ec57f83d7",
+    "bytes": 30119,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/00_adamw/features_04.npz": {
+    "sha256": "62fba916d50e00ced3a3e53cf91b20b87355010f83c3275bd3ba6b30372fd0cd",
+    "bytes": 30156,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/00_adamw/features_05.npz": {
+    "sha256": "0bfb4b610e348509d5e9423ec1a29992322d4fd005817638227ebbe02cbe3359",
+    "bytes": 30179,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/00_adamw/features_06.npz": {
+    "sha256": "9c1aa5333b76df5239311928f9f342259dd142c2003edcfb79a205241f28b153",
+    "bytes": 30159,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/00_adamw/features_07.npz": {
+    "sha256": "ac24be9261cc7de0fb14805d44ad391a34354eb57a4d4c9d805e1d13857af007",
+    "bytes": 30021,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/00_adamw/features_08.npz": {
+    "sha256": "7adcc7dca9edbcd6b2354e3bdddf9bfdb4ce6956d50ab3d93a35265f26cc8771",
+    "bytes": 29922,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/00_adamw/features_09.npz": {
+    "sha256": "d6d6d3b3731d47a9676870aaa76a74befd0e68b2349c88eea2e537e647fcf4fc",
+    "bytes": 29987,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/00_adamw/features_10.npz": {
+    "sha256": "bebbb6ead54510bc1e3748fd1740f1148453cd1565941fbf0d4f4b4d7d209969",
+    "bytes": 30038,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/00_adamw/features_11.npz": {
+    "sha256": "e006ad5be5d8443f9ee64d3000e83ac41bcdefd2a5f408c820550ebfda0d6098",
+    "bytes": 30062,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/00_adamw/features_12.npz": {
+    "sha256": "c9ce2a747d0adc5d7557568f93a885b827a4e0194fa8729128e44d5c369198be",
+    "bytes": 30056,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/00_adamw/features_13.npz": {
+    "sha256": "ecaac4dd327cb1599c84a0c1e762fdd25d8ef391fa63592d3a6e271f6a4bcca5",
+    "bytes": 29958,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/00_adamw/features_14.npz": {
+    "sha256": "08dc55e00d7af5227da3a79bab8075da627976b4673f31b6a7d7b8dc5bb1746a",
+    "bytes": 30243,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/00_adamw/features_15.npz": {
+    "sha256": "81e843a501a7fa8841fbf7a2df0af4551484becefcde3f2a6da0c0611895d5e3",
+    "bytes": 30079,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/00_adamw/features_16.npz": {
+    "sha256": "55c2ed2061bfb5b2b8787725fe9e817932a8c4444ce66161425979f4176cc9b0",
+    "bytes": 29993,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/00_adamw/features_17.npz": {
+    "sha256": "2d652e9d49f7d13553f889237adffeaf07840974f257449571424fac99e01b80",
+    "bytes": 30007,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/00_muon_hybrid/manifest.json": {
+    "sha256": "66350be3fc6ab2db73cb165c292184be68d3cf62f34d45c046cfc3c665c42f23",
+    "bytes": 4018,
+    "roles": [
+      "sae_condition_manifest"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/00_muon_hybrid/dictionary.npz": {
+    "sha256": "b0b5d451751d3be4058bf4d48f426933af239ae7102bb0d92ef38fe6c6aab66d",
+    "bytes": 139126592,
+    "roles": [
+      "sae_dictionary"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/00_muon_hybrid/records.json": {
+    "sha256": "86bab3bd559b8cfbc858c2fd090ffdaffee2684b69588bb9153911babf93d5fb",
+    "bytes": 3459,
+    "roles": [
+      "sae_feature_metadata"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/00_muon_hybrid/features_00.npz": {
+    "sha256": "da6384cb9205073b57e3f50e64a97ecc3d6ce592d6a0e3e5efcebc508e1f2935",
+    "bytes": 30687,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/00_muon_hybrid/features_01.npz": {
+    "sha256": "c3ec8441cba1d0d6ed033b33580acd775b0ef4b04fbb8e67163f4c04891d8cc8",
+    "bytes": 30545,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/00_muon_hybrid/features_02.npz": {
+    "sha256": "91bf74661479e90fac60f8faaf9519abfbabb235817ac159d0938b6f8019fe28",
+    "bytes": 30182,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/00_muon_hybrid/features_03.npz": {
+    "sha256": "0a8a788b30e4b66252d005728d350f05a8f46dee50b6779cc34a9e55d39920a9",
+    "bytes": 30104,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/00_muon_hybrid/features_04.npz": {
+    "sha256": "f3bbddbc5ea05dc81c61847ba1797280fbf8f3d67f337840acaea3e040fe802c",
+    "bytes": 30191,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/00_muon_hybrid/features_05.npz": {
+    "sha256": "f46696b63e054a997169ee4cc08390d41417e2e386c7ce0a73b5fbb4bd349a3a",
+    "bytes": 30543,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/00_muon_hybrid/features_06.npz": {
+    "sha256": "04767a01e191d74c7f8d2569fde41cb482df32f61f6cf89f336f8e91ddcfd1fa",
+    "bytes": 30573,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/00_muon_hybrid/features_07.npz": {
+    "sha256": "db3fb67fa200c795dfb8ddbb746b6281fa959de6c543f71de80ccfa7cb8b1acb",
+    "bytes": 30216,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/00_muon_hybrid/features_08.npz": {
+    "sha256": "fa9f746d94203ef1004918c755e281bdedfb9cb2c1c8d5592adef272d8df1c0d",
+    "bytes": 30191,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/00_muon_hybrid/features_09.npz": {
+    "sha256": "74d7879d0b70527b9d65723ed38a74093e6596d7a32fda72764b2df391a8bcb5",
+    "bytes": 30231,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/00_muon_hybrid/features_10.npz": {
+    "sha256": "9cc1cd8cc9b7016676317d4b02f56c17adafd6bca22aa925c2cd3f85c69dc236",
+    "bytes": 30419,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/00_muon_hybrid/features_11.npz": {
+    "sha256": "548ebf857d0758f0407b87628b3510c9b056b0396165be2c72305be1bd3231de",
+    "bytes": 30507,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/00_muon_hybrid/features_12.npz": {
+    "sha256": "6af2f0ab58549b8decb93356538e4e1c832201b0ab7dba2a0d7b672ceb6f3e46",
+    "bytes": 30141,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/00_muon_hybrid/features_13.npz": {
+    "sha256": "c06a1005c57c2f8781633eba05f9829d42998da85c8c92f5ace09bcd8c91ac5a",
+    "bytes": 30095,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/00_muon_hybrid/features_14.npz": {
+    "sha256": "5221328fdc0e8443483ae69b81afc59edb0b677ee90b813a87b971c2c4a83407",
+    "bytes": 30441,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/00_muon_hybrid/features_15.npz": {
+    "sha256": "0f32733cbe62d0d3b7f148549a730d9118bf89cddb6619c4563864a7f0d83680",
+    "bytes": 30374,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/00_muon_hybrid/features_16.npz": {
+    "sha256": "a70b7dd5c3026c0cb22b08b27a78e8b24bc0b69835c8cc97b08a87af92d7a8ac",
+    "bytes": 30159,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/00_muon_hybrid/features_17.npz": {
+    "sha256": "025eb608c65194e1cc04d552a01ef0a7b5051e58013e256ba9c713cfc24648d7",
+    "bytes": 30069,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/01_adamw/manifest.json": {
+    "sha256": "d98ff129a45d220579a501ecb08162d0f258cffc56999e57654dfc931af4afa9",
+    "bytes": 4025,
+    "roles": [
+      "sae_condition_manifest"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/01_adamw/dictionary.npz": {
+    "sha256": "7aa5e286ca0e7a7619cb458c9f30337bbf5f1108741ba7e84d6662e59ef20f6d",
+    "bytes": 139921192,
+    "roles": [
+      "sae_dictionary"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/01_adamw/records.json": {
+    "sha256": "8e07d76500b2632c1a92de503c009448a020f7878c3c0ee082f5ebd62271e083",
+    "bytes": 3459,
+    "roles": [
+      "sae_feature_metadata"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/01_adamw/features_00.npz": {
+    "sha256": "d97eddfd4a8114cfb3d1d267dc22f19270e39b664f56fac40c1f1a36d56af89e",
+    "bytes": 22103,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/01_adamw/features_01.npz": {
+    "sha256": "4320c544d1622fd4b83e11c0bea3850ebd2ff38e9a89bcea0353051b85b66a84",
+    "bytes": 22976,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/01_adamw/features_02.npz": {
+    "sha256": "281b4aa54f0ecaf3cb814447e109e1e307b67f3ee259f8bd00e35fb1cd139d7b",
+    "bytes": 28882,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/01_adamw/features_03.npz": {
+    "sha256": "389f3a23656052ad8d57df0c64345ab46c7f035d9b9b9a7ceb87d0644047bcbd",
+    "bytes": 28930,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/01_adamw/features_04.npz": {
+    "sha256": "8ca956d28c8e4466fce229acc1adc423e3264e19d089d8f905b3c21cb0182074",
+    "bytes": 28277,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/01_adamw/features_05.npz": {
+    "sha256": "2b1acfc63a5fac75902f7ce70a49981df8f4242d23ea4a578de415f8cb88292b",
+    "bytes": 22355,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/01_adamw/features_06.npz": {
+    "sha256": "6edb238c8a84cd0bca6c5ddf170d4e4ead1dd900ed068b962f91df62a4351550",
+    "bytes": 23237,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/01_adamw/features_07.npz": {
+    "sha256": "77e914294bb277b91dd65e27a5a2fa7cca18f04272537a585da1190e99b90fa1",
+    "bytes": 29652,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/01_adamw/features_08.npz": {
+    "sha256": "5c32a0cffbb84cdc6395e4bdb6f6c77d007a9cc1e459890ec905cde4e4dfa096",
+    "bytes": 29405,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/01_adamw/features_09.npz": {
+    "sha256": "1d3d53157a0ad593f812ed0ee9bc57bc2319fe86c81027e5c7479febb792fe02",
+    "bytes": 29384,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/01_adamw/features_10.npz": {
+    "sha256": "7b33d5052a6a1901434fa4f9f49bea253084d14c1a17dc6360020519708929db",
+    "bytes": 21856,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/01_adamw/features_11.npz": {
+    "sha256": "d7359b997ad89b3774cf766e45c839dbb6ed6f5962eeb86ebd2867a07312fa97",
+    "bytes": 21906,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/01_adamw/features_12.npz": {
+    "sha256": "3d0fd3610732864a587d7d175b43945f12c3221c29402f387c268f310cf9efb8",
+    "bytes": 29258,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/01_adamw/features_13.npz": {
+    "sha256": "3122b7d6748b7348dcbed59394bfaf24ee3152081d5f291442684113c6c8fea8",
+    "bytes": 29126,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/01_adamw/features_14.npz": {
+    "sha256": "0c04cf38a7614fbbaae6911e3b272efd0aa322d46322d30575cd3ab1d78b264c",
+    "bytes": 21367,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/01_adamw/features_15.npz": {
+    "sha256": "3611e70569ecc91f7d53a64c3160c9487bfe69129adf6baedf9477e9b4e46856",
+    "bytes": 19986,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/01_adamw/features_16.npz": {
+    "sha256": "159db907dad67af21edd1f9b8d8e023a993430f9b66fb35cbb051711f459acd5",
+    "bytes": 29192,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/01_adamw/features_17.npz": {
+    "sha256": "76b7b7610641d96e69f27773ca6d026c9523444d4d6e76a829cd9f24f9ffadb9",
+    "bytes": 29055,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/01_muon_hybrid/manifest.json": {
+    "sha256": "66cc5ebf72b9a8c3b12c104e811fba315ce3f12d6c214f4c1df6f4f11ae65d26",
+    "bytes": 4026,
+    "roles": [
+      "sae_condition_manifest"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/01_muon_hybrid/dictionary.npz": {
+    "sha256": "c39b5565af921431809e552eabf55423d36e7591627b1a9cafa68281bae5cbb6",
+    "bytes": 139560678,
+    "roles": [
+      "sae_dictionary"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/01_muon_hybrid/records.json": {
+    "sha256": "2459bb13012093de2edb5ccd75f28c6770e874573c8f81ca03ed9d1db27ad06b",
+    "bytes": 3459,
+    "roles": [
+      "sae_feature_metadata"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/01_muon_hybrid/features_00.npz": {
+    "sha256": "e1668ad3a14bb0ac3a385e8ba92f1e79451b08c846f67bd26d05e74ce3938af5",
+    "bytes": 31021,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/01_muon_hybrid/features_01.npz": {
+    "sha256": "c7946e4d23d73aa6c41a46a2c06cefb08004a44075dfbcf2ba653a13bb203707",
+    "bytes": 31072,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/01_muon_hybrid/features_02.npz": {
+    "sha256": "ae80651c04c8ab92bd6fb42aae8153cc92d3d97bf8255858a60c0697349081fd",
+    "bytes": 30014,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/01_muon_hybrid/features_03.npz": {
+    "sha256": "664fb72b4935232d3b37555e2082aeed252f9aa5c28ee209898cac89f29864ef",
+    "bytes": 29923,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/01_muon_hybrid/features_04.npz": {
+    "sha256": "c0674681bc65758307eb39859a92785bac4af58f2e1796b1beb51bdf0accf07a",
+    "bytes": 30473,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/01_muon_hybrid/features_05.npz": {
+    "sha256": "4989bffe6ae25bf5cfb81c54800373007e195543ce45185e28551c561384cdc9",
+    "bytes": 30874,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/01_muon_hybrid/features_06.npz": {
+    "sha256": "d848ddc2669086d2eeb0c780cd84c2b2ee8569b6926b1f0ff55b53860ca8aa41",
+    "bytes": 30935,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/01_muon_hybrid/features_07.npz": {
+    "sha256": "68a69ea2571cc30bde21d3f3629f73811b2f48306b5edc97d81a4365f221eeac",
+    "bytes": 30488,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/01_muon_hybrid/features_08.npz": {
+    "sha256": "32a7d5a87b830cabe3fbb6162921965e86836270a2579a54466e92c170cd0033",
+    "bytes": 30462,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/01_muon_hybrid/features_09.npz": {
+    "sha256": "63a4b62d2dda3786b4dad6e22f1751d38919c773ccc1d34fac438657237d4f6d",
+    "bytes": 30370,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/01_muon_hybrid/features_10.npz": {
+    "sha256": "4ac3056ad812c0e49351c0f1fe49877c68818df4f2118eb3870f4a8551dcb157",
+    "bytes": 30929,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/01_muon_hybrid/features_11.npz": {
+    "sha256": "30c2766bc84b9087d0f3e936093b6be79481f0d493d067de3d840883fd989008",
+    "bytes": 30811,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/01_muon_hybrid/features_12.npz": {
+    "sha256": "54c36e09e3662129c4c490df9ace09790d7e22a77d8421552162c3718aac4030",
+    "bytes": 29775,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/01_muon_hybrid/features_13.npz": {
+    "sha256": "8440ce96b07b5c584d1e39201ef09d1f1e0231c16578f7dabec742727a4cb7e6",
+    "bytes": 29873,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/01_muon_hybrid/features_14.npz": {
+    "sha256": "2538a5bf932e0b5e7db88367d789086c775d100936b8ff805405712b94581920",
+    "bytes": 30682,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/01_muon_hybrid/features_15.npz": {
+    "sha256": "fa5b02db64a545bfced24faf4cca4e4d0c90871984e1cc0d6fa6cb55d978ef36",
+    "bytes": 30282,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/01_muon_hybrid/features_16.npz": {
+    "sha256": "a51243bf821519d1c7639b14ca7f1a256b22675f668a13f7f8e09d0c51ddc8dc",
+    "bytes": 29750,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/01_muon_hybrid/features_17.npz": {
+    "sha256": "faccdfba237924337997fc0020495d584f1c1ebeafad22bfeffc64f4155c4180",
+    "bytes": 29825,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/02_adamw/manifest.json": {
+    "sha256": "96feef18387dff12755125ce05fd7ca344cfc61433d9822f59f2068308dea44f",
+    "bytes": 4008,
+    "roles": [
+      "sae_condition_manifest"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/02_adamw/dictionary.npz": {
+    "sha256": "71f322535e2e853c84b83105aaf7582a9f23017f381e09c7665898c59188c615",
+    "bytes": 139993065,
+    "roles": [
+      "sae_dictionary"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/02_adamw/records.json": {
+    "sha256": "eb5d61881472082b9364deba9ccf6a52b9c0f70db3524e0bf7611a65ae1678c2",
+    "bytes": 3459,
+    "roles": [
+      "sae_feature_metadata"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/02_adamw/features_00.npz": {
+    "sha256": "51a8523eec41a6a63aaa0f5a5fb74dac1283aa23eca154a2ea341697bcb86eac",
+    "bytes": 27101,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/02_adamw/features_01.npz": {
+    "sha256": "eaf2592ac46455e544d191bc81b8d58fec3ae5cf60179c560d3292acca4d1c73",
+    "bytes": 26302,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/02_adamw/features_02.npz": {
+    "sha256": "3030e1f6c4629d616e831be3e48a66b04b3d81ecd545a961d42a5121a4acd4a7",
+    "bytes": 31106,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/02_adamw/features_03.npz": {
+    "sha256": "053e1fc9be1c4aff8ed509b967531618a41e0fbdd2ce08686e9805c128cdb5e3",
+    "bytes": 30970,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/02_adamw/features_04.npz": {
+    "sha256": "e492f8d06e18d08bd93106187336f5342da9f67baae97f5b9e139cb994c1c5c8",
+    "bytes": 30564,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/02_adamw/features_05.npz": {
+    "sha256": "6dc4843b68d72a8bfdd2f879e4a5ac83613fc2630296ed1e8927ea9791e335cd",
+    "bytes": 27573,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/02_adamw/features_06.npz": {
+    "sha256": "e60929e3819e67ebbaca8a22b81f27816c4a805beec80ed03644602154c9e724",
+    "bytes": 26903,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/02_adamw/features_07.npz": {
+    "sha256": "d1aec16ac1b1a23e032e3be8147a24ba59485258becd2beb1d7b8afc918b773f",
+    "bytes": 31005,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/02_adamw/features_08.npz": {
+    "sha256": "3ad9e7a3c9ed18c42cff4cba41b3590c0d347d34b6ff9ec7fb6eff27c910be6f",
+    "bytes": 31205,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/02_adamw/features_09.npz": {
+    "sha256": "6bef7362188efb858635b94efdcc8e40c58b4a4d484a3e869ce5a24fe22ed3d3",
+    "bytes": 31018,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/02_adamw/features_10.npz": {
+    "sha256": "10a4ff03ae9b0dabf5431416c1f0af3ba820557730a7d60191872397547b6533",
+    "bytes": 28484,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/02_adamw/features_11.npz": {
+    "sha256": "ec543468fbaed4c3b86c38e8f82348abc07e40926078eaafc653a299443b4793",
+    "bytes": 28643,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/02_adamw/features_12.npz": {
+    "sha256": "19c75c4641bde5f7764ec9b4989fbeb649eb3c2474192a76e2ecb94a49515d3c",
+    "bytes": 31412,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/02_adamw/features_13.npz": {
+    "sha256": "a6131e71c1c4a04db81e3920081e0a821a73392311c452ed663d6fa058cf29b6",
+    "bytes": 31261,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/02_adamw/features_14.npz": {
+    "sha256": "719b5520436274093bdfd9492e2fb0871b9f23235e689d683efc6ddb84eb10ea",
+    "bytes": 28226,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/02_adamw/features_15.npz": {
+    "sha256": "9852b276b249c34bc006f852f104a7578a56d6ff0ac6082df73ff01964ab674e",
+    "bytes": 26090,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/02_adamw/features_16.npz": {
+    "sha256": "12e10e295b49b691b13a6375d4e01f2bea900c5d5867d70afd22500c6ad0071e",
+    "bytes": 31344,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/02_adamw/features_17.npz": {
+    "sha256": "84a03891467c3047c49e97a0bc92c09492b396d1343b20e58ed2c69c4762b67a",
+    "bytes": 31317,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/02_muon_hybrid/manifest.json": {
+    "sha256": "5de0768ff5786fe4b9ea3c74c7a20d52e28c5b42ba1445e38181ef233643757b",
+    "bytes": 4018,
+    "roles": [
+      "sae_condition_manifest"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/02_muon_hybrid/dictionary.npz": {
+    "sha256": "ecded94b1af4fd8301fb34bad2df34688b13c0fc5e0c0a6eeb5b18085e53f04b",
+    "bytes": 139332412,
+    "roles": [
+      "sae_dictionary"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/02_muon_hybrid/records.json": {
+    "sha256": "deb3817214882d69d8f7a60146cb0474fba873ac56834b33f123fbf8933ceb8a",
+    "bytes": 3459,
+    "roles": [
+      "sae_feature_metadata"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/02_muon_hybrid/features_00.npz": {
+    "sha256": "3c4c3d9df92fa2bc873dfda233070c096200304964969e492dc869c88715d6c6",
+    "bytes": 31174,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/02_muon_hybrid/features_01.npz": {
+    "sha256": "aebcdb1ef32f4b6f940b082ba185cb301b644cc7fdcc94c1256c842e43b68801",
+    "bytes": 31167,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/02_muon_hybrid/features_02.npz": {
+    "sha256": "9fcc9f4d0feea9bfe1f3acb1d9f7294aa40eb4ae3c7cb363fa873a95c692bbdd",
+    "bytes": 31396,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/02_muon_hybrid/features_03.npz": {
+    "sha256": "e2dd9422fb28107572f5320f3eb70051f34a239a4c04cef32b9935b3b89c1ae8",
+    "bytes": 31229,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/02_muon_hybrid/features_04.npz": {
+    "sha256": "3ff2c6701d47bf07709e5616bc83650f378ebef0696762fe9f7f45eb84eccb79",
+    "bytes": 31344,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/02_muon_hybrid/features_05.npz": {
+    "sha256": "bd0e7b2e9dae0d9d3cb56c8d3c71385e768a7eddf408874590c12aacf8fba56f",
+    "bytes": 31313,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/02_muon_hybrid/features_06.npz": {
+    "sha256": "25f25f6c32d7b9c79234803eb8186d41879987ba473351f33d2147cece9dc9fd",
+    "bytes": 31302,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/02_muon_hybrid/features_07.npz": {
+    "sha256": "986fcd605333580934d4f616258d4defc74598503511e79c694014598e4325ba",
+    "bytes": 31533,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/02_muon_hybrid/features_08.npz": {
+    "sha256": "a737ec064960d0083125326ede170ca2092bc33fa4e0cc7254046542189c1a14",
+    "bytes": 31746,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/02_muon_hybrid/features_09.npz": {
+    "sha256": "6b4fd30a88fb1640408317124f6a00bc57550e1b3dec3f4af596983e000d1a41",
+    "bytes": 31529,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/02_muon_hybrid/features_10.npz": {
+    "sha256": "d907f6e3e8506a6a2e8ad50b6f7d82b39bbeacf5c86cbe4666d4df193bb1bf4d",
+    "bytes": 31340,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/02_muon_hybrid/features_11.npz": {
+    "sha256": "8a45bdc5d8b0225094295d2d25278c69dfd900afe300229922b9b97de5a3c1c6",
+    "bytes": 31516,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/02_muon_hybrid/features_12.npz": {
+    "sha256": "d199d1166ee737a188b456f7f067f33ae0be4d7cd8c18abcb52332cddc6c8948",
+    "bytes": 31405,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/02_muon_hybrid/features_13.npz": {
+    "sha256": "93c102b4785d187039d5bebe8cab3cc23a07698328d176276d8514abe867c71a",
+    "bytes": 31184,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/02_muon_hybrid/features_14.npz": {
+    "sha256": "44b6667a3b4404c0ccb615df161cda06560c2a4b080ea0144116ece57cff8dd5",
+    "bytes": 31187,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/02_muon_hybrid/features_15.npz": {
+    "sha256": "f4975793f7cd01ce8163f7dd0d770a87f7448283256fb8cb2540484ce6e2b725",
+    "bytes": 30831,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/02_muon_hybrid/features_16.npz": {
+    "sha256": "28df9888484147645c2c0705bf5c27a8789bc78c699410b453b9c86d28a30b1d",
+    "bytes": 31195,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_sae_control_v1/02_muon_hybrid/features_17.npz": {
+    "sha256": "d9bb49b9d119359f14945ebd1c5a5f68869d4993dd508c3df34f9578558a3750",
+    "bytes": 31506,
+    "roles": [
+      "extended_optimizer_control_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/manifest.json": {
+    "sha256": "4f648af8bdf780c50a79de13816e76106730e621ce4e782f861099278e53da20",
+    "bytes": 13336,
+    "roles": [
+      "source_manifest"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/prime-20260906T204058Z-561/retrieved/artifacts/nanbeige_looped/bf16_multipass_calibration/manifest.json": {
+    "sha256": "7c5205eeb3c1e7c025ac1aababc6e0526bbe82048f633a52e73bfefa07c8a546",
+    "bytes": 13761,
+    "roles": [
+      "source_manifest"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/prime-20260906T204058Z-561/retrieved/artifacts/nanbeige_looped/bf16_multipass_calibration/examples.json": {
+    "sha256": "83fb39d5cd77bb83ae0fff6160e924217b2e9230c48b6a576ba3c2f1918d6b86",
+    "bytes": 655072,
+    "roles": [
+      "bf16_token_identity"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/prime-20260906T204058Z-561/retrieved/artifacts/nanbeige_looped/bf16_multipass_calibration/effects.json": {
+    "sha256": "15a8f165f7c97ab20a5d75c3e05eec9e72e72292321afd9309a7fbb6fda7d868",
+    "bytes": 195214,
+    "roles": [
+      "raw_vpd_intervention_metadata"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/prime-20260906T204058Z-561/retrieved/artifacts/nanbeige_looped/bf16_multipass_calibration/independent_verification.json": {
+    "sha256": "9dee5e2bb89634c7cc63ce871660534f65ca676acec10d387fa0745cd7d015d8",
+    "bytes": 1554,
+    "roles": [
+      "independent_verification"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/records.json": {
+    "sha256": "89b6e57e956f23955f3b2ebe0529e3841f9ad85707fbb0ae5b9468195583b4ce",
+    "bytes": 58021,
+    "roles": [
+      "intervention_feature_metadata"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/quality.json": {
+    "sha256": "9d3cf7abd6634b4116d0af94e9f810f6a7be103eda1fed47bdff849ee55b84b5",
+    "bytes": 6338,
+    "roles": [
+      "transfer_reconstruction_quality"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/contract.json": {
+    "sha256": "c8eeaa868e0fd534fd7df35ff2833bda190990024e9fd757f63532ca3b55dd39",
+    "bytes": 1366,
+    "roles": [
+      "intervention_transfer_contract"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_11_adamw_00.npz": {
+    "sha256": "9f31586f2f6b9a796946b87a1ca33852fd5e940adb184dc97a0a2528f836f909",
+    "bytes": 76660,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/prime-20260906T204058Z-561/retrieved/artifacts/nanbeige_looped/bf16_multipass_calibration/effect_0000.npz": {
+    "sha256": "10948e607e1b7b4d756e2576669b112f294d2c2e60e6590bb1e39fee0ae1eec9",
+    "bytes": 5251581,
+    "roles": [
+      "raw_bf16_vpd_intervention"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_11_adamw_01.npz": {
+    "sha256": "acc71696578d3ac91d515c24e4c0207094075a3c30067a4da2c636b0afec7a64",
+    "bytes": 68750,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/prime-20260906T204058Z-561/retrieved/artifacts/nanbeige_looped/bf16_multipass_calibration/effect_0001.npz": {
+    "sha256": "f8b72fd394b0bf5064bc3cf3c248335bce6e1626670267bf782d2eddec2ff992",
+    "bytes": 5129606,
+    "roles": [
+      "raw_bf16_vpd_intervention"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_11_adamw_02.npz": {
+    "sha256": "582cd1ebc0c340ccbd412da23d5780e204345a0311f1e820d2d5020a881fe891",
+    "bytes": 77018,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/prime-20260906T204058Z-561/retrieved/artifacts/nanbeige_looped/bf16_multipass_calibration/effect_0002.npz": {
+    "sha256": "1e96f063b7e54b1447a51a529c8003fe782c7fcadb3f0fc79366ec3d9c04291e",
+    "bytes": 5256969,
+    "roles": [
+      "raw_bf16_vpd_intervention"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_11_adamw_03.npz": {
+    "sha256": "cbe36285d038351587eb6338268e7727b024d50c9b6d2cdf3e44607852865093",
+    "bytes": 68369,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/prime-20260906T204058Z-561/retrieved/artifacts/nanbeige_looped/bf16_multipass_calibration/effect_0003.npz": {
+    "sha256": "c52121d23abc20d0bd2813327bfb8e36c561b2e89022ec7c36998a33fc7a07fe",
+    "bytes": 5108319,
+    "roles": [
+      "raw_bf16_vpd_intervention"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_11_adamw_04.npz": {
+    "sha256": "4963c2eb1b9cfbc1c26b1cba086043fc2ba19335c37f48c45476b2fb4cab046e",
+    "bytes": 77510,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/prime-20260906T204058Z-561/retrieved/artifacts/nanbeige_looped/bf16_multipass_calibration/effect_0004.npz": {
+    "sha256": "81f6cf0cd7f8ca189197011ae10e67a64877cb94f244e8fb4b3543298424063a",
+    "bytes": 5172092,
+    "roles": [
+      "raw_bf16_vpd_intervention"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_11_adamw_05.npz": {
+    "sha256": "d6227b904e1635c1319965283f18a13c67d435b1fcd740192d7dbe87f792d75c",
+    "bytes": 69187,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/prime-20260906T204058Z-561/retrieved/artifacts/nanbeige_looped/bf16_multipass_calibration/effect_0005.npz": {
+    "sha256": "4c6ca4a43731de52b712f39a213b9d20ba7f2765340da099a9418116df04d60e",
+    "bytes": 5023368,
+    "roles": [
+      "raw_bf16_vpd_intervention"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_11_adamw_06.npz": {
+    "sha256": "a7494049347db2928ef7b1189d5d0a18f2382d9b262c6cb40dba1f90ebc3dc9b",
+    "bytes": 76622,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/prime-20260906T204058Z-561/retrieved/artifacts/nanbeige_looped/bf16_multipass_calibration/effect_0006.npz": {
+    "sha256": "5f68fae582af217cfa3876e620fb9333dbb4b1ca867ab2be40ae44f09ee3d2b0",
+    "bytes": 5031447,
+    "roles": [
+      "raw_bf16_vpd_intervention"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_11_adamw_07.npz": {
+    "sha256": "a002513be65c6ef662a072133dc4eebf10d7a853b662d125f5dc86eb16945328",
+    "bytes": 68211,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/prime-20260906T204058Z-561/retrieved/artifacts/nanbeige_looped/bf16_multipass_calibration/effect_0007.npz": {
+    "sha256": "789fa9d70125ba884f902d24754e74974e2097c8b3d4d9e567bcfa4764b1b88f",
+    "bytes": 4880464,
+    "roles": [
+      "raw_bf16_vpd_intervention"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_11_adamw_08.npz": {
+    "sha256": "00b841ceef99ff6dc35067e9774195c0538a374fe31ba3149b4e0d70b886332d",
+    "bytes": 78173,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/prime-20260906T204058Z-561/retrieved/artifacts/nanbeige_looped/bf16_multipass_calibration/effect_0008.npz": {
+    "sha256": "7fcb71ab12678a9f88db600c52222d4199a50af2bdda9bd51be9ec7ece606b7e",
+    "bytes": 5189932,
+    "roles": [
+      "raw_bf16_vpd_intervention"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_11_adamw_09.npz": {
+    "sha256": "d232194924d0b08aceb0204bd45278fa150894465f9963e079f35d982e5e4115",
+    "bytes": 69482,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/prime-20260906T204058Z-561/retrieved/artifacts/nanbeige_looped/bf16_multipass_calibration/effect_0009.npz": {
+    "sha256": "3a8fe65163796a059ad420e5eba6a9595793b53b9d8f492c26f9288c9bb9a6f1",
+    "bytes": 5009721,
+    "roles": [
+      "raw_bf16_vpd_intervention"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_11_adamw_10.npz": {
+    "sha256": "19ba084c9cb36e027d2dd91e8f8cb06d289a3a5ea52342a599e0d5411bc06758",
+    "bytes": 79236,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/prime-20260906T204058Z-561/retrieved/artifacts/nanbeige_looped/bf16_multipass_calibration/effect_0010.npz": {
+    "sha256": "d4682bbc12de4643ed882f46ec0584e07688593f5a91f604442941360a212707",
+    "bytes": 5101025,
+    "roles": [
+      "raw_bf16_vpd_intervention"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_11_adamw_11.npz": {
+    "sha256": "49e3813c2d3ab936a0b049a351867d9af706622bff151023753e795aa162d04b",
+    "bytes": 70571,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/prime-20260906T204058Z-561/retrieved/artifacts/nanbeige_looped/bf16_multipass_calibration/effect_0011.npz": {
+    "sha256": "874ef5e703a615a3b7a488ccf71d606247b89f8705647ae2f5c0020fe3916ab3",
+    "bytes": 4930891,
+    "roles": [
+      "raw_bf16_vpd_intervention"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_11_adamw_12.npz": {
+    "sha256": "cce20503f2cf493bb76a6b8d28667cab3fce1af94048b25e03fe3677f647386a",
+    "bytes": 77086,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/prime-20260906T204058Z-561/retrieved/artifacts/nanbeige_looped/bf16_multipass_calibration/effect_0012.npz": {
+    "sha256": "b2bbd5ac4f2773171dea3cdd667f74637ebb39bec2242469de09ad593946f807",
+    "bytes": 4991513,
+    "roles": [
+      "raw_bf16_vpd_intervention"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_11_adamw_13.npz": {
+    "sha256": "c45b9f9fff133956ce0b6ef833801c4ed427a98450152dbae87f48a40dc9ad50",
+    "bytes": 68556,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/prime-20260906T204058Z-561/retrieved/artifacts/nanbeige_looped/bf16_multipass_calibration/effect_0013.npz": {
+    "sha256": "7d9d125a81501dc709295de03bbe2b6d2ef61ea1bd3764a02b5dcd1f822139f4",
+    "bytes": 4851651,
+    "roles": [
+      "raw_bf16_vpd_intervention"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_11_adamw_14.npz": {
+    "sha256": "608c82bf79c2c49a3386e8f0b4299a90f1f8ca7959225eb8e1a508cd9a6b50e3",
+    "bytes": 76310,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/prime-20260906T204058Z-561/retrieved/artifacts/nanbeige_looped/bf16_multipass_calibration/effect_0014.npz": {
+    "sha256": "7a9fd2ba2e67c86d102e96f2b88e8e9910c4f88b1045ed04059e5b5abf34e05f",
+    "bytes": 5031008,
+    "roles": [
+      "raw_bf16_vpd_intervention"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_11_adamw_15.npz": {
+    "sha256": "2214e0633c92280a7535e898b80e3266741118bc387d422c91d1c7e1075ba477",
+    "bytes": 68294,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/prime-20260906T204058Z-561/retrieved/artifacts/nanbeige_looped/bf16_multipass_calibration/effect_0015.npz": {
+    "sha256": "3a091f9e1fae7b08d30b32a67ad9b591b427e021e85e8388a44128410149db7d",
+    "bytes": 4904011,
+    "roles": [
+      "raw_bf16_vpd_intervention"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_11_adamw_16.npz": {
+    "sha256": "429e92b4e94a673015f2aa6b2624972bd40073c953867c4c7fded9ed31fa37a2",
+    "bytes": 76634,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/prime-20260906T204058Z-561/retrieved/artifacts/nanbeige_looped/bf16_multipass_calibration/effect_0016.npz": {
+    "sha256": "26e5d6d318768a338e2fd400b1d3c6012766e74ef81c8b2c23c72c3d2689baac",
+    "bytes": 5247644,
+    "roles": [
+      "raw_bf16_vpd_intervention"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_11_adamw_17.npz": {
+    "sha256": "bb901fd1f95ca0594b94c96b2afc73e63c5878447400d6d4561a9b89888b35bf",
+    "bytes": 69060,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/prime-20260906T204058Z-561/retrieved/artifacts/nanbeige_looped/bf16_multipass_calibration/effect_0017.npz": {
+    "sha256": "dfc88a59818bccd27666facb1de0a09e54e61ee87798aaa4ef12be85212c0349",
+    "bytes": 5107848,
+    "roles": [
+      "raw_bf16_vpd_intervention"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_11_adamw_18.npz": {
+    "sha256": "bea5fc1f8ed98a52ad1ffcace664452576df58fbb2ae0a1df4c65af11441f56f",
+    "bytes": 76332,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/prime-20260906T204058Z-561/retrieved/artifacts/nanbeige_looped/bf16_multipass_calibration/effect_0018.npz": {
+    "sha256": "f9924876ffff36b61531fbe557ce025e83ba1a161690606a9227775b4c867e65",
+    "bytes": 5002166,
+    "roles": [
+      "raw_bf16_vpd_intervention"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_11_adamw_19.npz": {
+    "sha256": "bf78a1d1797387e3727d2a921a5a0573a0955bd95aec4843cfb24b566ea33fcc",
+    "bytes": 67510,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/prime-20260906T204058Z-561/retrieved/artifacts/nanbeige_looped/bf16_multipass_calibration/effect_0019.npz": {
+    "sha256": "233fb1901d44d07b047f202f74a5be087c1765b682e5d8d8c80d2fed3acc7a21",
+    "bytes": 4867470,
+    "roles": [
+      "raw_bf16_vpd_intervention"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_11_muon_hybrid_00.npz": {
+    "sha256": "86c511467301b10aa8cf871db2a77f33411082b3078d03d88fdb918b3bbfaf6c",
+    "bytes": 76801,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_11_muon_hybrid_01.npz": {
+    "sha256": "b02ce7db24e0158bfbc09cb84eccc3be051991dd1dfd47f274d728db7eccc8df",
+    "bytes": 69225,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_11_muon_hybrid_02.npz": {
+    "sha256": "98328dc4bec7838037deb097ce08a2a2d99c8a53de624805a375c92881a88b74",
+    "bytes": 77684,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_11_muon_hybrid_03.npz": {
+    "sha256": "8adb3dbaac83cd161d9c07b137b9c194699b6e811dd8f7003e1d798a8e4fff8a",
+    "bytes": 69292,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_11_muon_hybrid_04.npz": {
+    "sha256": "94c0e041d528e855fb0cab696a26edc6d6e7cd8644d99ff6ea77aaf465801ad6",
+    "bytes": 77607,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_11_muon_hybrid_05.npz": {
+    "sha256": "6c980e79431829be5a4c402e386f7828892fc423eb7bdb92ed9236b380db130a",
+    "bytes": 69442,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_11_muon_hybrid_06.npz": {
+    "sha256": "a7698708eb7427184eb2415dd6b54b6648a54f47ac6e2234db46249d51605fde",
+    "bytes": 76964,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_11_muon_hybrid_07.npz": {
+    "sha256": "c14627941986c4f36b458ce4844e70dfa22ab6ef05e422db0f9c34585577550e",
+    "bytes": 68548,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_11_muon_hybrid_08.npz": {
+    "sha256": "ef0717d8a6122fcf0a41543d5a44e1cb6a3dd60b05127a4b876ce6c20bd64421",
+    "bytes": 78582,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_11_muon_hybrid_09.npz": {
+    "sha256": "150a0bdfe4520d53f8ab351e3caddc3c88567df272ef2173e3313b807dd1df18",
+    "bytes": 69965,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_11_muon_hybrid_10.npz": {
+    "sha256": "e573f995a6d1d1d6d38040d2db3d36ddd2a927b362ce7da2e32664701164af9c",
+    "bytes": 78938,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_11_muon_hybrid_11.npz": {
+    "sha256": "089a40854887bc51ea1c1252f0f999d7dc3621ab58a74430e6a64afb9651bb9c",
+    "bytes": 70300,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_11_muon_hybrid_12.npz": {
+    "sha256": "dcb15dea53ee7d866d6febaea1ce427e160afa4a83f4f416d517c8fe2b626331",
+    "bytes": 76959,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_11_muon_hybrid_13.npz": {
+    "sha256": "ad2a6a6dd8aa338b783a7019a2ab092d91e1d36b097a3eeece4347eb8260ff38",
+    "bytes": 68751,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_11_muon_hybrid_14.npz": {
+    "sha256": "1f1ffa8c20398def85a7fcfd3f45b399ab08d1f660f7568d93c78171b12e19c2",
+    "bytes": 75738,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_11_muon_hybrid_15.npz": {
+    "sha256": "cb2a8887e8ec27c5ea0d6f1e86a0bf1c666d4c2d9abd27d3c0c48b6af6ad948b",
+    "bytes": 67856,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_11_muon_hybrid_16.npz": {
+    "sha256": "a22f84e5706cd7299af2dc06d9eb416d9cd9df2fb22a42b2f3ae24d3d8d85857",
+    "bytes": 75144,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_11_muon_hybrid_17.npz": {
+    "sha256": "c3442631a7b058fce74c9af8a718485402e6f9d5fa55a28c57aa83d63b844fef",
+    "bytes": 67883,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_11_muon_hybrid_18.npz": {
+    "sha256": "90444f198e2b7574e5c6abfdbcc4c11aa07ca5a95fd8041dd5710b0e027f2d18",
+    "bytes": 77305,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_11_muon_hybrid_19.npz": {
+    "sha256": "a25dda200711dab4cc602c76cd80da4ef2264da13a408c4b8d7d2c0ed5a74efa",
+    "bytes": 68729,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_21_adamw_00.npz": {
+    "sha256": "4277ee526e8ff1caf8b61ed7976ba7c2c45392992050c15c25c67532a6d30a56",
+    "bytes": 78361,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_21_adamw_01.npz": {
+    "sha256": "ce2799fac0da9229e515260e510633099060bf2db4130a8afda0ca4a7b74d982",
+    "bytes": 78101,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_21_adamw_02.npz": {
+    "sha256": "079bc88786c3b80fe1061726c121dd89dc68016239482ac2957736c29a098698",
+    "bytes": 78556,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_21_adamw_03.npz": {
+    "sha256": "106cbed27f5d1da6bd06c3f71db87caa66cf7b1b8bbe716376930626e70c37b9",
+    "bytes": 78255,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_21_adamw_04.npz": {
+    "sha256": "bf58f0888bc57753086b4b5877f9c67d7ed18cef8ce276823fff1c7b7520d567",
+    "bytes": 78821,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_21_adamw_05.npz": {
+    "sha256": "975ff5274328fcc059812207aff80cdc8538efb5553d8cfa9de60eb88ce449f1",
+    "bytes": 78189,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_21_adamw_06.npz": {
+    "sha256": "0610de3b7c52c18a0a258a58cd5376bb5d80e84ba9df478aa889385aab56767a",
+    "bytes": 78295,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_21_adamw_07.npz": {
+    "sha256": "06022c3645ecad27cf46f29174d9b652e2e2a1e7b918d50f2a4b0b995b32e9f9",
+    "bytes": 77710,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_21_adamw_08.npz": {
+    "sha256": "35a9de8bd395c6bc4f3ab636b9d111765a2a3048ac0f92d1b0c80ec4bdb8de9d",
+    "bytes": 78822,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_21_adamw_09.npz": {
+    "sha256": "659de62ebe12b3165e1de7b1cfe82d3da8a73ba0499b543b29db5e0daa7fee81",
+    "bytes": 78073,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_21_adamw_10.npz": {
+    "sha256": "4e6177a552800fd167c08901ba30145443618025b3e984eb65d62493d249e591",
+    "bytes": 78457,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_21_adamw_11.npz": {
+    "sha256": "043277f2c2771783048b5dd14aebe231800223d1d9cdfaa8c4c633a1dc4fba78",
+    "bytes": 77423,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_21_adamw_12.npz": {
+    "sha256": "6136670719c677a2612fe022a7b4306e3250ba7f4c6282c953404b517eae5bd3",
+    "bytes": 78831,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_21_adamw_13.npz": {
+    "sha256": "26e09dcfdadff7e2ac38fb3b192847246f35c2b8a525a555922c1308dd64bc73",
+    "bytes": 78494,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_21_adamw_14.npz": {
+    "sha256": "e4c304981ce5bd9af9a3c7eb14522e598ffee214eee43a661478a9c35507d7c6",
+    "bytes": 78361,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_21_adamw_15.npz": {
+    "sha256": "fde38bc9338bb0d16ffe2c2c140ed4d13a806bb3ed9a56f475a8e39dc972e870",
+    "bytes": 78011,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_21_adamw_16.npz": {
+    "sha256": "74283d61cbc101a5538ccef76858c63c066317187ed6b83aec752cd1634bf2ba",
+    "bytes": 78150,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_21_adamw_17.npz": {
+    "sha256": "c4e7541369ca4162dc4ccab24fa359c70bfde5ee71a7ee5b3fe734acd0fbaf56",
+    "bytes": 77727,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_21_adamw_18.npz": {
+    "sha256": "f2e88f55a8fa7a8c5a62e9fc98d500cbe693f2e765e68728d35832eb89647270",
+    "bytes": 78488,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_21_adamw_19.npz": {
+    "sha256": "9042e1b1c2c86220ec7c9e808205555a1d7f718522c3aea070bd90777766d2f5",
+    "bytes": 78070,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_21_muon_hybrid_00.npz": {
+    "sha256": "bab1ee209be97d11749617217fe8b17582311157975dad158b523f8777cc7e78",
+    "bytes": 78752,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_21_muon_hybrid_01.npz": {
+    "sha256": "ad514d5c2301a06fc2ea44955780d079c3ca378504f1bb42ff03a4080bcb07c0",
+    "bytes": 78040,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_21_muon_hybrid_02.npz": {
+    "sha256": "b8f4a084dde53ccf09cac13746fb29d41485f7cb2c058113982a773f73e20c7a",
+    "bytes": 79067,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_21_muon_hybrid_03.npz": {
+    "sha256": "17508aae1cc61e4a46b0ea2be32bc2c251892e10611d811f86af0282c4701e7c",
+    "bytes": 78205,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_21_muon_hybrid_04.npz": {
+    "sha256": "d745d90c0672320106b675a50f08d2aa4589d088faec86375e5a145499df9d36",
+    "bytes": 79108,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_21_muon_hybrid_05.npz": {
+    "sha256": "d5068de97e120743d35cb91e6040fbc5ccd7fa8f175bd9bb308487d7588d5880",
+    "bytes": 78234,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_21_muon_hybrid_06.npz": {
+    "sha256": "25bccc90a834654416f1e3da219892335c01b22b2efc12279609129d9ddcbd74",
+    "bytes": 78904,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_21_muon_hybrid_07.npz": {
+    "sha256": "00e6ae6490bd3d2d572e9bd8cd3e5cd0fa01a93af55c4bbcc19bd8e2b549b1a5",
+    "bytes": 78095,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_21_muon_hybrid_08.npz": {
+    "sha256": "7806dced755712ea1865db797645846d9d1ad54fb6dfca40dc343869b15a8a0c",
+    "bytes": 79152,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_21_muon_hybrid_09.npz": {
+    "sha256": "64fecc6ea5f881cbac054c6ba716548b09d38388caa5b1d942f4956cfe3ff979",
+    "bytes": 78273,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_21_muon_hybrid_10.npz": {
+    "sha256": "07346fc1c883cfd24e283a14622e4c4bf622033874021842ff1c9a8ccdb9ca1a",
+    "bytes": 79724,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_21_muon_hybrid_11.npz": {
+    "sha256": "88dfcaee7b008695db16966e5d05d18696bdf1cb1f6063bdb83a59c1382386bc",
+    "bytes": 78447,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_21_muon_hybrid_12.npz": {
+    "sha256": "ca6b931ab4588735e131dd0864bfe786155ef603434cacabff82f2a59068fdc7",
+    "bytes": 78755,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_21_muon_hybrid_13.npz": {
+    "sha256": "ee53e105cd6bdcfcca97983950926a15224c24f91635ad743f32f68c6d8d6c23",
+    "bytes": 77915,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_21_muon_hybrid_14.npz": {
+    "sha256": "144233ac515a2f8a6951715e741394abfb9c44e1657f0e9f68091bd80afce96b",
+    "bytes": 78467,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_21_muon_hybrid_15.npz": {
+    "sha256": "39ce0eb42a80fab409f02894e92dcbe70c3011e7d787fe58bb2e53e42fba7f34",
+    "bytes": 77774,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_21_muon_hybrid_16.npz": {
+    "sha256": "6655e0030f092775c35d2a31fb57fab603906418e81fe1e0786dfed5867df0c7",
+    "bytes": 78645,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_21_muon_hybrid_17.npz": {
+    "sha256": "f944e139de9ff00c9f0825ae8edc9ccea68ff03bddaac7c24bf9050e31c62b86",
+    "bytes": 78085,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_21_muon_hybrid_18.npz": {
+    "sha256": "bfc9002fe247bfb5bbbabbed60de4cc366fa76e8797e078c08cc8a2a9b9c6f25",
+    "bytes": 78461,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_layers_21_muon_hybrid_19.npz": {
+    "sha256": "6ff0ed7700f95bd044e6fcb87420b596fe69ef37e11d458d91f3af6dc6aab9f0",
+    "bytes": 77893,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_norm_adamw_00.npz": {
+    "sha256": "1c7477206e197fd70842e19cf08150e23c6a70923c257775cacf3ce033847c68",
+    "bytes": 81511,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_norm_adamw_01.npz": {
+    "sha256": "edb18d6123aec5a1edc1eea608ae8d0b45cddff4ac358ae4137ef124c5697e06",
+    "bytes": 81066,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_norm_adamw_02.npz": {
+    "sha256": "0e3e5d17934fd036cdb2c8d878025fce70d22f2c91f5fd5fecf811e3747542de",
+    "bytes": 81468,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_norm_adamw_03.npz": {
+    "sha256": "60cfb8092e5f92f4855be0cddc87a9c2aff66c12460405615111fafef30f7f4c",
+    "bytes": 80953,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_norm_adamw_04.npz": {
+    "sha256": "60de4196b83fd33643d2d22b81b93b7824c8f491da16a378647033e4ec83c0ba",
+    "bytes": 81537,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_norm_adamw_05.npz": {
+    "sha256": "4cb5187a5708a32605100309ff92730dc31a7b09ecf3b66070e1e1738912083e",
+    "bytes": 80933,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_norm_adamw_06.npz": {
+    "sha256": "6eb6300b2e85976a847179227a4a2e49516bd19b01dfd9201ff003f8239a2dca",
+    "bytes": 81306,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_norm_adamw_07.npz": {
+    "sha256": "9ee607b802f1fa9e3d834936d52c919b3a5fe7fa8e2d2f23f5e635063f871be8",
+    "bytes": 80708,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_norm_adamw_08.npz": {
+    "sha256": "162e63999c3782bcfffcae17859d076eb2f815f82016fb4750d31067704db2c0",
+    "bytes": 81792,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_norm_adamw_09.npz": {
+    "sha256": "048308bd1b5f51d598c526d4fdb2e69136cde459a94a35f292eadd571807cab9",
+    "bytes": 81284,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_norm_adamw_10.npz": {
+    "sha256": "123ba9e9f65ac9c687e57adbbfc3c0457ba01f2db7d99b683b01a0e46cab2bc6",
+    "bytes": 81070,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_norm_adamw_11.npz": {
+    "sha256": "92dc238df8704b243a60ca2e37bff7dc07f7b03858737fb0d191473ceefcf4c3",
+    "bytes": 80386,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_norm_adamw_12.npz": {
+    "sha256": "87331691ca2f8a1921aa98a6829d65f882e44a96f18a0acb5f7c0039dd5ac9fe",
+    "bytes": 81440,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_norm_adamw_13.npz": {
+    "sha256": "c3572505a19f93119e11adc5f71b09e61e53914b21e6984273638ed977010130",
+    "bytes": 81060,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_norm_adamw_14.npz": {
+    "sha256": "e013c6f1d2d99ac5a1d02373840b8eaf13caec264e70cc0da2f5d32650f3f6e3",
+    "bytes": 80865,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_norm_adamw_15.npz": {
+    "sha256": "3a2b62437fc87b6fc440e9312c8d88115ade0ff7ccb889cf615dfea8e6ce37b3",
+    "bytes": 80432,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_norm_adamw_16.npz": {
+    "sha256": "3864532eb49695efe5e90c13efd270a529bec6fbbb8afe84bf6c8d990a6a3598",
+    "bytes": 80801,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_norm_adamw_17.npz": {
+    "sha256": "7b392b3e7fe122f28779bcc4d82f7fae7fc8b1bbc3c44d9d9c6ed224f0053e32",
+    "bytes": 80137,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_norm_adamw_18.npz": {
+    "sha256": "bc06c131f58ec14c8430c60c1cd13a3bd739ef35ed596206eeb1ea5e94f54ff7",
+    "bytes": 80992,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_norm_adamw_19.npz": {
+    "sha256": "5ed8bec279c08d67091911bb5675b794671b2e971a2194f8d0f39b262614cdcd",
+    "bytes": 80633,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_norm_muon_hybrid_00.npz": {
+    "sha256": "58eec8e82f24abd8ba186874bc33fc7c6b9abbe75c0b7e5581ee70feafc852f7",
+    "bytes": 80952,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_norm_muon_hybrid_01.npz": {
+    "sha256": "5d6e42e0164ec634fde508de86e1b58df9e5bd468e7ae191a8ae6c7c8d950b7f",
+    "bytes": 80481,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_norm_muon_hybrid_02.npz": {
+    "sha256": "02bb4bf9bb61fa8abdfe26808046e7bb57af2a53e6785f18409eb0840f19c587",
+    "bytes": 80619,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_norm_muon_hybrid_03.npz": {
+    "sha256": "cc7a3ef4adc011b3c570ff4ea45cf941092dc9ce788bbe4ab4f31bcf08c5b1cb",
+    "bytes": 80154,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_norm_muon_hybrid_04.npz": {
+    "sha256": "983788814299a122ec9518d94ab71ad85b6f5314f2a4cbcf24a11ba620603251",
+    "bytes": 81925,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_norm_muon_hybrid_05.npz": {
+    "sha256": "d92770f7d46763fc6ffc952f397a874554046d7609be0101449e0ce53660ee98",
+    "bytes": 81432,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_norm_muon_hybrid_06.npz": {
+    "sha256": "7535bb21e2ac8c7f0c725c950aee5de061b57e925a2f47fa4309d31b1a6518d2",
+    "bytes": 82164,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_norm_muon_hybrid_07.npz": {
+    "sha256": "21c26afe86de6b918f10447003a289599b572b20317e0d3cec9183147d46caad",
+    "bytes": 81635,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_norm_muon_hybrid_08.npz": {
+    "sha256": "b5048a43837e2971978775a8d91769b91018a9c94b8e8f5c69caf4f7c44c7f9e",
+    "bytes": 82454,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_norm_muon_hybrid_09.npz": {
+    "sha256": "40aa511ddee3f0cf61df7c36368a7e109d1a74a87fbc80820c4429d6bf5e447b",
+    "bytes": 81621,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_norm_muon_hybrid_10.npz": {
+    "sha256": "2cc4bfc6e057b86cff7d49d8e19ec9ce2729b25107c01fc085856d6f043700f1",
+    "bytes": 82431,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_norm_muon_hybrid_11.npz": {
+    "sha256": "c8701e6f27883acd731be10d2c6f5065071bcf523ff9997b1f9dec9caf716237",
+    "bytes": 81776,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_norm_muon_hybrid_12.npz": {
+    "sha256": "c500931da9d157b37be45994594c7372ff519dc26e635eb2f4de6d635354f843",
+    "bytes": 81918,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_norm_muon_hybrid_13.npz": {
+    "sha256": "b773b16d3e6f9594cfb76161d141eca492624d2a2667978dd224c7eece7afdfb",
+    "bytes": 81553,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_norm_muon_hybrid_14.npz": {
+    "sha256": "49c22f5ea1138257a3a3d526cbf046f7a5767e5d1efdd2e46ef0192262fb1433",
+    "bytes": 81798,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_norm_muon_hybrid_15.npz": {
+    "sha256": "656e02760a1d3c630d5202e1eaf6cce7003210389330b728dc3c4c3f2a0f0f56",
+    "bytes": 81149,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_norm_muon_hybrid_16.npz": {
+    "sha256": "b45048424f494383495ef751c9fb4c9ccfbb21bad0429b6a5310f1b4ba41757a",
+    "bytes": 80774,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_norm_muon_hybrid_17.npz": {
+    "sha256": "85425e7f0e353931ba6dae23f7e2dc468d8f81c644801822d0ba1f22520df4c7",
+    "bytes": 80385,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_norm_muon_hybrid_18.npz": {
+    "sha256": "d35ad63937c2f5c67dcb3a8f0e0d824f1422c20f6d71e27a458ab97503fea3d4",
+    "bytes": 81752,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/muon_vpd_transfer_v1/model_norm_muon_hybrid_19.npz": {
+    "sha256": "887703a399070e048aa4b1d277acfa83f0be9f6f408912e6d18fb53c95dc863b",
+    "bytes": 81374,
+    "roles": [
+      "bf16_vpd_frozen_sae_features"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_vpd64_transfer_v1/manifest.json": {
+    "sha256": "0e6773a8542e32b1942fbca264de8856fe1e0950b845174b88097bc679f05e90",
+    "bytes": 4398,
+    "roles": [
+      "source_manifest"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_v1/q4_activations/manifest.json": {
+    "sha256": "417f0b6014ff3259d7e0885ef85b9b5a070faafd19ce177177e44fbc038aa292",
+    "bytes": 8667,
+    "roles": [
+      "initial_capture_manifest"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_pilot_v1/q4_activations/records.jsonl": {
+    "sha256": "780ab2577688de88af8f45c17c477941a4f4f7d3a05cce445546976a015ad0d0",
+    "bytes": 54502,
+    "roles": [
+      "initial_capture_metadata"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/prime-20260906T204058Z-561/retrieved/artifacts/nanbeige_looped/bf16_multipass_calibration/vpd_factors.npz": {
+    "sha256": "a1acd3ffa1fe0c4f4d2566b5e95670112bb152b31a149c05777b46ee6b4a502c",
+    "bytes": 6566619,
+    "roles": [
+      "vpd64_factors"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_vpd64_transfer_v1/summary.json": {
+    "sha256": "b6e116301c4f7d620362ffd5a378f7f0f7fd2bf27c9faf38460d530b974f5058",
+    "bytes": 14025,
+    "roles": [
+      "vpd_metadata"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_vpd64_transfer_v1/layer_12_000.npz": {
+    "sha256": "edcded0b456e9a9e712a84819cf79e2486ac3573366307f975af7c7a1e1f37b8",
+    "bytes": 1118270,
+    "roles": [
+      "initial_vpd64_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_vpd64_transfer_v1/layer_22_000.npz": {
+    "sha256": "30a1a39a558420e15599717562a8b62b785225a1c25a472c46132a4d3bfdbe0b",
+    "bytes": 1118185,
+    "roles": [
+      "initial_vpd64_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_vpd64_transfer_v1/layer_12_001.npz": {
+    "sha256": "b44aaade728437857237bc3b8d56a4182fb198196689b030317deec07bbfd255",
+    "bytes": 1118277,
+    "roles": [
+      "initial_vpd64_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_vpd64_transfer_v1/layer_22_001.npz": {
+    "sha256": "ebfcd20b1b3504bd8a975966831d3f5de1e130ccb4bc09170ec085bc0679d857",
+    "bytes": 1118606,
+    "roles": [
+      "initial_vpd64_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_vpd64_transfer_v1/layer_12_002.npz": {
+    "sha256": "75efcc47b58273738bb2f1beaef164b3a94a95a76571c2dae41d087694f374ff",
+    "bytes": 1118443,
+    "roles": [
+      "initial_vpd64_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_vpd64_transfer_v1/layer_22_002.npz": {
+    "sha256": "7e28f41ad2c028c8e9fe108e6a1572ddce2922fa6b954c7a5f8205efe013443e",
+    "bytes": 1118477,
+    "roles": [
+      "initial_vpd64_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_vpd64_transfer_v1/layer_12_003.npz": {
+    "sha256": "bfdddf0ca6497defea70535c84bbe908cc2b7d2872e819e654f63b49b35d3591",
+    "bytes": 1118155,
+    "roles": [
+      "initial_vpd64_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_vpd64_transfer_v1/layer_22_003.npz": {
+    "sha256": "1af2b3991e3e118b6fc3e2456a664041c90bc68c405963f8a12310f024676ec8",
+    "bytes": 1117958,
+    "roles": [
+      "initial_vpd64_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_vpd64_transfer_v1/layer_12_004.npz": {
+    "sha256": "ab852156bce9eefa7d446de855ad6c16c5121a763afdc36d9eb2ab782cf793ed",
+    "bytes": 1118806,
+    "roles": [
+      "initial_vpd64_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_vpd64_transfer_v1/layer_22_004.npz": {
+    "sha256": "c4bbea43aa922c194b62e17b49fe267b8b9dc21cc29ff747f16193be2c18cd33",
+    "bytes": 1117634,
+    "roles": [
+      "initial_vpd64_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_vpd64_transfer_v1/layer_12_005.npz": {
+    "sha256": "d067410909606638d6fe9bb0f4dad5c69f62f9fa90f5358b043e6230ee530c57",
+    "bytes": 1118428,
+    "roles": [
+      "initial_vpd64_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_vpd64_transfer_v1/layer_22_005.npz": {
+    "sha256": "72de78b7471144c850b5a904e0b12fa817e0ea2efab48cdd8508e1a2060d11bb",
+    "bytes": 1119219,
+    "roles": [
+      "initial_vpd64_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_vpd64_transfer_v1/layer_12_006.npz": {
+    "sha256": "a53b7dd030f132ea248310d96b50f72082a52f5892a83e30225cfcd19106a4cd",
+    "bytes": 1118451,
+    "roles": [
+      "initial_vpd64_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_vpd64_transfer_v1/layer_22_006.npz": {
+    "sha256": "eeaff5dfe3bd6f7244529ac1be13241f5ef5fa862e946cfd5fe0705b56ea1539",
+    "bytes": 1119969,
+    "roles": [
+      "initial_vpd64_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_vpd64_transfer_v1/layer_12_007.npz": {
+    "sha256": "8d7f25c6c54c546d7e632e0d4e0c6600b72261974fc98ef551ef139956dbc050",
+    "bytes": 1118493,
+    "roles": [
+      "initial_vpd64_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_vpd64_transfer_v1/layer_22_007.npz": {
+    "sha256": "c98cc2e392e842ceb6305aae867793426685f6dcf10339edbf54ac462520fd62",
+    "bytes": 1118812,
+    "roles": [
+      "initial_vpd64_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_vpd64_transfer_v1/layer_12_008.npz": {
+    "sha256": "d455f6ceb2c126a4eadbe426f2eee580263171edbb1227313d720f35ce8b25e7",
+    "bytes": 1118644,
+    "roles": [
+      "initial_vpd64_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_vpd64_transfer_v1/layer_22_008.npz": {
+    "sha256": "6e963f39b8b4c9501d840647d00d2bbc288fa8c654d8e10935141f00b15c6a5f",
+    "bytes": 1119091,
+    "roles": [
+      "initial_vpd64_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_vpd64_transfer_v1/layer_12_009.npz": {
+    "sha256": "af57d6970716bbc8e39a2fc6d0c84bd16bd82edfb40603996a7f1779d3b189b3",
+    "bytes": 1118769,
+    "roles": [
+      "initial_vpd64_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_vpd64_transfer_v1/layer_22_009.npz": {
+    "sha256": "7371125f59e231761a09765cef8dd0a6697f225852996861b8ad0688c48722d4",
+    "bytes": 1119320,
+    "roles": [
+      "initial_vpd64_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_vpd64_transfer_v1/layer_12_010.npz": {
+    "sha256": "bae9251356978dce06149fa55d40335787c09b19bb90fe223bcc09dc3e3e6119",
+    "bytes": 1118408,
+    "roles": [
+      "initial_vpd64_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_vpd64_transfer_v1/layer_22_010.npz": {
+    "sha256": "a7a3c4db3ddede4beffb84cd1643e6ec7dc837371bfb78ea41042e7a03e92b2b",
+    "bytes": 1118380,
+    "roles": [
+      "initial_vpd64_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_vpd64_transfer_v1/layer_12_011.npz": {
+    "sha256": "98101a04da4c71f78a9ab46195a7008d92c1e78c8743a1257d007c8647656a39",
+    "bytes": 1118528,
+    "roles": [
+      "initial_vpd64_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_vpd64_transfer_v1/layer_22_011.npz": {
+    "sha256": "8665c98b557d247c73eb8094927f003365a17ae5ad7e37426c48a11346590147",
+    "bytes": 1117770,
+    "roles": [
+      "initial_vpd64_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_vpd64_transfer_v1/layer_12_012.npz": {
+    "sha256": "9198a53af2efa597cb3e3d15169ed5b15fa9caf0d9ed2ada376217fe9cadfadb",
+    "bytes": 1118363,
+    "roles": [
+      "initial_vpd64_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_vpd64_transfer_v1/layer_22_012.npz": {
+    "sha256": "92b03d5800232c864fb1c66d898d44c3f2af4ce91f91b7557a48d94f81c6bd44",
+    "bytes": 1118113,
+    "roles": [
+      "initial_vpd64_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_vpd64_transfer_v1/layer_12_013.npz": {
+    "sha256": "ee9b12abf65312f959f907d2dcd17ce5922278c51ed6459bdeca5cf9e5f90df6",
+    "bytes": 1118197,
+    "roles": [
+      "initial_vpd64_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_vpd64_transfer_v1/layer_22_013.npz": {
+    "sha256": "a08191bc7a7825c983ac7fba74abd9b34e3c255a9770b015d76ace19de9be206",
+    "bytes": 1118202,
+    "roles": [
+      "initial_vpd64_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_vpd64_transfer_v1/layer_12_014.npz": {
+    "sha256": "9be9312ffc64d86f21a88ee10f1911e0ab6c69b46af7b35aff37178d0a54e2ae",
+    "bytes": 1118190,
+    "roles": [
+      "initial_vpd64_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_vpd64_transfer_v1/layer_22_014.npz": {
+    "sha256": "0e83cbd4c8bf105237db66307a742bb9ce0acd0aaa2e66576a4f0235f089a23f",
+    "bytes": 1118325,
+    "roles": [
+      "initial_vpd64_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_vpd64_transfer_v1/layer_12_015.npz": {
+    "sha256": "afb127b1a9682ad907973d9c5a41eec77f5fdf5dde10211592d45a49504145ac",
+    "bytes": 1117928,
+    "roles": [
+      "initial_vpd64_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_vpd64_transfer_v1/layer_22_015.npz": {
+    "sha256": "5fe1bb29efe6504346921bcecf955c8776f4875c4173c5a6ad60b6fcc1809c6e",
+    "bytes": 1118396,
+    "roles": [
+      "initial_vpd64_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_vpd64_transfer_v1/layer_12_016.npz": {
+    "sha256": "25ee487cde723c00dae62dde1d51b2742b8515988add9e6d658ed69093a0c273",
+    "bytes": 1118580,
+    "roles": [
+      "initial_vpd64_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_vpd64_transfer_v1/layer_22_016.npz": {
+    "sha256": "ff5da83e8ca51317819d7fb6ae960bae4389c18e79639536e069fa11e6e54e79",
+    "bytes": 1118256,
+    "roles": [
+      "initial_vpd64_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_vpd64_transfer_v1/layer_12_017.npz": {
+    "sha256": "1bb8fd05f2ac1e4095a77bd4ef1eca6d2487f647ae8e8a6d307c06c946504bfb",
+    "bytes": 1118035,
+    "roles": [
+      "initial_vpd64_coordinates"
+    ]
+  },
+  "artifacts/nanbeige_reasoning/q4_reasoning_vpd64_transfer_v1/layer_22_017.npz": {
+    "sha256": "47150cda9b7ad27b386931127469d39ade17a131df6a76588cfe8a6ac6a323f8",
+    "bytes": 1118117,
+    "roles": [
+      "initial_vpd64_coordinates"
+    ]
+  }
+}

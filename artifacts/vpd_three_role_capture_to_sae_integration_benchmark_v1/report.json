@@ -1,0 +1,579 @@
+{
+  "benchmark_id": "b27a7f901d191a81a3bc4e708244edf1a3325e968b979471d064986d2c773df6",
+  "controls": {
+    "adapter_receipt_address_tamper_rejected": true,
+    "all_capture_factors_restored_and_runtimes_closed": true,
+    "all_eight_categories_chained": true,
+    "capture_receipts_drive_router_arrays": true,
+    "discovery_validation_stability_passes_all_categories": true,
+    "effect_and_sae_activation_row_units_separate": true,
+    "effect_hash_tamper_rejected": true,
+    "episode_order_tamper_rejected": true,
+    "episodes_assigned_once_without_category_archive_duplication": true,
+    "model_frameworks_absent_before_and_after": true,
+    "sae_training_not_used_for_stability_selection": true,
+    "shared_pair_ids_reused_across_categories": true,
+    "three_verified_capture_roles": true,
+    "v1_planner_collapses_real_shape_shared_pairs": true,
+    "v2_global_pair_split_consistent": true,
+    "v2_plan_verifies": true,
+    "v2_planner_has_one_shared_fallback": true,
+    "v2_planner_preserves_two_clusters_per_category": true
+  },
+  "design": {
+    "activation_categories": [
+      "missing_or_untrusted_authority",
+      "other_invalid",
+      "replayed",
+      "revoked",
+      "scope_invalid",
+      "signature_invalid",
+      "time_inactive",
+      "valid_authority"
+    ],
+    "canonical_component_clusters": 2,
+    "global_pair_split_planner_v2": true,
+    "pairs_per_role": 10,
+    "receipt_to_router_adapter": true,
+    "same_pair_ids_across_categories_within_role": true,
+    "split_roles": [
+      "discovery",
+      "cluster_validation",
+      "sae_training"
+    ]
+  },
+  "results": {
+    "adapter_receipt_ids": {
+      "missing_or_untrusted_authority": {
+        "cluster_validation": "22e16451d02673fd4d4fcb49a05ab3914d439bc4c7400277326d50fc8a565824",
+        "discovery": "f0189460614803d3a0bdac791640c37e46711cb4071150abe8076290a939a98b",
+        "sae_training": "42da5b0598fc5d1c66fc34051a24948ac9c510bed7942f1ac6b97f2f1da0e5d9"
+      },
+      "other_invalid": {
+        "cluster_validation": "ccbccdb17bd3f717843a6627947f202430752aa26625973bc0dff729408d577d",
+        "discovery": "46075ab24893812be26fa00772c6c3ece5872ae723daf62cdfc0290b004c46eb",
+        "sae_training": "43030e6b819e9247f8b319e8109acd022213864ba3874fa28808ff51ff48a348"
+      },
+      "replayed": {
+        "cluster_validation": "7593db9e3413b53ccfd10ee9510c35867afb8947adadb705545b58ca6175d732",
+        "discovery": "bb0134091b0d7c04a87cb2d872df39226cd78ea3d6d8bdba18b5b26c8a47a5b5",
+        "sae_training": "3f1749cb9d685594cf00753ce9defe7babc6f7fb024b1810875ea2ffc146250e"
+      },
+      "revoked": {
+        "cluster_validation": "d70ed26fafdb2ede1dc2aa33c53e848a9d9ce4dbf8de76e73777474e3f88f48b",
+        "discovery": "7d7ae519e07aba1187d3077d68234f5b813d7668d4f7c167e71d295ed5f9e9f6",
+        "sae_training": "bc3aa2f0cfb85f59b43a9caa2bb008b7a50684afeefca787d528236bd685d377"
+      },
+      "scope_invalid": {
+        "cluster_validation": "fbdc3e30cb020dd0c7f279def1aa40778a9e0c35f8ba8137ce9d20785798954c",
+        "discovery": "640e56fd149abda1ff8ae27ca97e09d999630badc5439cc766ce7b1bafe96dca",
+        "sae_training": "a76872510e794abfbcc51f1f7a0ee0dd33b0820dda98c272c67a863674e070d6"
+      },
+      "signature_invalid": {
+        "cluster_validation": "37ba9edd083e84e1f4430812ab7e6627f1b7bedb91d84634a639434a5a64c2df",
+        "discovery": "5e2642f44792cd46780c3a5ef31c139559a518e9616b19a091b304de3f65eb1a",
+        "sae_training": "82244f08e52dd347384c4963a6489a8639bb600b55aeef38223335c7312baa08"
+      },
+      "time_inactive": {
+        "cluster_validation": "0aea5cf99d021c2d2abb39048b076a0989099a8f231d498fb18a59d3c1ffd694",
+        "discovery": "e8348137319aeb49b7ed89b81daff52ef637350c6efd385fd923e43393479049",
+        "sae_training": "410e24246ab764d57a06c9891a9ff387f460eb855dd6363607c3dc6e23a5db46"
+      },
+      "valid_authority": {
+        "cluster_validation": "8a7d0d11ef5dc8c685eeec5eb2471e7386b4556b0869ce5bebcd9f24479f126c",
+        "discovery": "b851c4b83244916d8dd9637fb6e83ed233565d1eb82c37bcdc585a32e48f71f2",
+        "sae_training": "a8e59eccb764270def3b9b626da46eeaa61d70d9080885391b85e31979b2892f"
+      }
+    },
+    "capture_execution_ids": {
+      "cluster_validation": "1b07f9f87f6c8c07c82fcff7008a8fc6a63d1590e7d3d6fb53c4c8de8625b5a3",
+      "discovery": "a4a025b79156a37204533deec10d2c7d970b1d1d5b169acb27f3e795a7357f58",
+      "sae_training": "9cdde8cfa127b2162063425aff7579d3a418d096e31fbf91c22dbc4d6eb4b4d0"
+    },
+    "routing_stability_ids": {
+      "missing_or_untrusted_authority": "5350d003165f9680bbdd60d7d472b5c1b39e2086ba2065cc5939cdb976766121",
+      "other_invalid": "55cdf908ad7670c763b9aef57245566b7b191823d7ecf0fb3c7ee2c2bb520024",
+      "replayed": "32d1c49ff6d9a91ee37a9b7154540d1c49c6d46e48811fb6c6579a22a75a5d61",
+      "revoked": "542f0e25ad12e3955ec95c88701338a916f45d12fe762adc43049f594c0aaac1",
+      "scope_invalid": "8aac0be45e9d9dfba43a0251ec5b62a94184cb5a0c1d35ba9652aafcff2294e7",
+      "signature_invalid": "40941c1d830e2b1a2024880b600493bcbd2e20958f7e866bdd6d30514a4ba9df",
+      "time_inactive": "f320bf508824294f8a5f17497a4ef8bf95751ad56a7be066b8698d5ebbb79d76",
+      "valid_authority": "1ef278ecea673a04564fe1c182eb6f1b625cba7a36cb0cdba3e1d9289dcd0a71"
+    },
+    "v1_specific_compartments": 0,
+    "v2_cluster_aware_sae_plan_id": "db2487716cb82605e5bbe96a91e4bfa632bc0c2659d64ad11725722fd1812f3d",
+    "v2_compartment_support": {
+      "shared_cross_category": {
+        "episode_id_set_sha256": "14a378becc133286046c0ef04a0141493d73ea3aee48381f7efdc5d4e1c6a855",
+        "episode_ids": [
+          "sae_training-pair-08-missing_or_untrusted_authority",
+          "sae_training-pair-08-other_invalid",
+          "sae_training-pair-08-replayed",
+          "sae_training-pair-08-revoked",
+          "sae_training-pair-08-scope_invalid",
+          "sae_training-pair-08-signature_invalid",
+          "sae_training-pair-08-time_inactive",
+          "sae_training-pair-08-valid_authority",
+          "sae_training-pair-09-missing_or_untrusted_authority",
+          "sae_training-pair-09-other_invalid",
+          "sae_training-pair-09-replayed",
+          "sae_training-pair-09-revoked",
+          "sae_training-pair-09-scope_invalid",
+          "sae_training-pair-09-signature_invalid",
+          "sae_training-pair-09-time_inactive",
+          "sae_training-pair-09-valid_authority"
+        ],
+        "episodes": 16,
+        "pair_id_set_sha256": "4609e10615da8af26a7afb40d894fa9850600e2a52ad2d126b9e5871f1f0be33",
+        "pair_ids": [
+          "sae_training-pair-08",
+          "sae_training-pair-09"
+        ],
+        "pairs": 2,
+        "planning_reason_counts": {
+          "router_shared_fallback": 16
+        },
+        "routing_effect_rows": 16,
+        "routing_effect_rows_per_episode": 1,
+        "sae_activation_rows": 2048,
+        "sae_activation_rows_per_episode": 128
+      },
+      "vpd-sae-compartment-027c99d6175beb0988e88312e9ab698b3a4cd2691a5b53b39d6efec19fc3c5aa": {
+        "episode_id_set_sha256": "4b42aee189ff726b912fb8e395dcffb719bd1b2836f6ae565e8d4619de040677",
+        "episode_ids": [
+          "sae_training-pair-04-valid_authority",
+          "sae_training-pair-05-valid_authority",
+          "sae_training-pair-06-valid_authority",
+          "sae_training-pair-07-valid_authority"
+        ],
+        "episodes": 4,
+        "pair_id_set_sha256": "c992b529a468de241d294f8970a4372e39abc10d04b6ca743cf2a9f25f97ce66",
+        "pair_ids": [
+          "sae_training-pair-04",
+          "sae_training-pair-05",
+          "sae_training-pair-06",
+          "sae_training-pair-07"
+        ],
+        "pairs": 4,
+        "planning_reason_counts": {
+          "stable_specific_route": 4
+        },
+        "routing_effect_rows": 4,
+        "routing_effect_rows_per_episode": 1,
+        "sae_activation_rows": 512,
+        "sae_activation_rows_per_episode": 128
+      },
+      "vpd-sae-compartment-10d982cd345e13c10a0e02186fe84ea861874dd9b5b43809868b226bfc3b59a7": {
+        "episode_id_set_sha256": "8da791f8a2ef096365e4147c3b2314e0ff0d863f49f77dedd85a70dfaaaa4b8f",
+        "episode_ids": [
+          "sae_training-pair-00-other_invalid",
+          "sae_training-pair-01-other_invalid",
+          "sae_training-pair-02-other_invalid",
+          "sae_training-pair-03-other_invalid"
+        ],
+        "episodes": 4,
+        "pair_id_set_sha256": "4050264a8a36f9b7473a9c9ca34d6dbdc7851f75ce598bf2926dd94d012e0932",
+        "pair_ids": [
+          "sae_training-pair-00",
+          "sae_training-pair-01",
+          "sae_training-pair-02",
+          "sae_training-pair-03"
+        ],
+        "pairs": 4,
+        "planning_reason_counts": {
+          "stable_specific_route": 4
+        },
+        "routing_effect_rows": 4,
+        "routing_effect_rows_per_episode": 1,
+        "sae_activation_rows": 512,
+        "sae_activation_rows_per_episode": 128
+      },
+      "vpd-sae-compartment-15923e0a988e425624002b51fa9482efcc3146abb4f57691f5a25733b76efa7e": {
+        "episode_id_set_sha256": "a52209aa6d04b4442afd177263f202643c214aad1ac6912ce72a020ebe7fc8b9",
+        "episode_ids": [
+          "sae_training-pair-00-signature_invalid",
+          "sae_training-pair-01-signature_invalid",
+          "sae_training-pair-02-signature_invalid",
+          "sae_training-pair-03-signature_invalid"
+        ],
+        "episodes": 4,
+        "pair_id_set_sha256": "4050264a8a36f9b7473a9c9ca34d6dbdc7851f75ce598bf2926dd94d012e0932",
+        "pair_ids": [
+          "sae_training-pair-00",
+          "sae_training-pair-01",
+          "sae_training-pair-02",
+          "sae_training-pair-03"
+        ],
+        "pairs": 4,
+        "planning_reason_counts": {
+          "stable_specific_route": 4
+        },
+        "routing_effect_rows": 4,
+        "routing_effect_rows_per_episode": 1,
+        "sae_activation_rows": 512,
+        "sae_activation_rows_per_episode": 128
+      },
+      "vpd-sae-compartment-213ef2079c10e199965d5b7a049675120d484072032d74a87a09263919c0baed": {
+        "episode_id_set_sha256": "1d1f03edf402ad83b6e2a3b3fb77583604dbe32b2342105ebc60e9d4b0004317",
+        "episode_ids": [
+          "sae_training-pair-04-scope_invalid",
+          "sae_training-pair-05-scope_invalid",
+          "sae_training-pair-06-scope_invalid",
+          "sae_training-pair-07-scope_invalid"
+        ],
+        "episodes": 4,
+        "pair_id_set_sha256": "c992b529a468de241d294f8970a4372e39abc10d04b6ca743cf2a9f25f97ce66",
+        "pair_ids": [
+          "sae_training-pair-04",
+          "sae_training-pair-05",
+          "sae_training-pair-06",
+          "sae_training-pair-07"
+        ],
+        "pairs": 4,
+        "planning_reason_counts": {
+          "stable_specific_route": 4
+        },
+        "routing_effect_rows": 4,
+        "routing_effect_rows_per_episode": 1,
+        "sae_activation_rows": 512,
+        "sae_activation_rows_per_episode": 128
+      },
+      "vpd-sae-compartment-55e20520628848a5b85958e097dac1ddefe17d0f25ef26a1460a28b27c69b369": {
+        "episode_id_set_sha256": "fc166815fcbd345089f3903be3d62389e2db5dc9bcd9796236419a1bbaf8825d",
+        "episode_ids": [
+          "sae_training-pair-00-replayed",
+          "sae_training-pair-01-replayed",
+          "sae_training-pair-02-replayed",
+          "sae_training-pair-03-replayed"
+        ],
+        "episodes": 4,
+        "pair_id_set_sha256": "4050264a8a36f9b7473a9c9ca34d6dbdc7851f75ce598bf2926dd94d012e0932",
+        "pair_ids": [
+          "sae_training-pair-00",
+          "sae_training-pair-01",
+          "sae_training-pair-02",
+          "sae_training-pair-03"
+        ],
+        "pairs": 4,
+        "planning_reason_counts": {
+          "stable_specific_route": 4
+        },
+        "routing_effect_rows": 4,
+        "routing_effect_rows_per_episode": 1,
+        "sae_activation_rows": 512,
+        "sae_activation_rows_per_episode": 128
+      },
+      "vpd-sae-compartment-831f475557bd7f757fa2cd866a119415f066cb0da05a4f1af97b8f88313b2457": {
+        "episode_id_set_sha256": "1f5a9d1fad99285aa3ca8a3af5de369a719e3d404006970fb0ad462ac5a24a0c",
+        "episode_ids": [
+          "sae_training-pair-00-missing_or_untrusted_authority",
+          "sae_training-pair-01-missing_or_untrusted_authority",
+          "sae_training-pair-02-missing_or_untrusted_authority",
+          "sae_training-pair-03-missing_or_untrusted_authority"
+        ],
+        "episodes": 4,
+        "pair_id_set_sha256": "4050264a8a36f9b7473a9c9ca34d6dbdc7851f75ce598bf2926dd94d012e0932",
+        "pair_ids": [
+          "sae_training-pair-00",
+          "sae_training-pair-01",
+          "sae_training-pair-02",
+          "sae_training-pair-03"
+        ],
+        "pairs": 4,
+        "planning_reason_counts": {
+          "stable_specific_route": 4
+        },
+        "routing_effect_rows": 4,
+        "routing_effect_rows_per_episode": 1,
+        "sae_activation_rows": 512,
+        "sae_activation_rows_per_episode": 128
+      },
+      "vpd-sae-compartment-8377dd927480a9e26d08f5a851be5d89681a6ad83b8524d82d2b3d422cea3501": {
+        "episode_id_set_sha256": "ca1cd4fe9fadd0e0bc79ca2924e406fab4fabb655df0d337f7e2d75278643879",
+        "episode_ids": [
+          "sae_training-pair-00-revoked",
+          "sae_training-pair-01-revoked",
+          "sae_training-pair-02-revoked",
+          "sae_training-pair-03-revoked"
+        ],
+        "episodes": 4,
+        "pair_id_set_sha256": "4050264a8a36f9b7473a9c9ca34d6dbdc7851f75ce598bf2926dd94d012e0932",
+        "pair_ids": [
+          "sae_training-pair-00",
+          "sae_training-pair-01",
+          "sae_training-pair-02",
+          "sae_training-pair-03"
+        ],
+        "pairs": 4,
+        "planning_reason_counts": {
+          "stable_specific_route": 4
+        },
+        "routing_effect_rows": 4,
+        "routing_effect_rows_per_episode": 1,
+        "sae_activation_rows": 512,
+        "sae_activation_rows_per_episode": 128
+      },
+      "vpd-sae-compartment-8a7364e626e39e2b2f5d29801def919224f9eaaeea62be2723a4a97ef6ab108d": {
+        "episode_id_set_sha256": "da2ce991b89606efc43b4ff4ec5eb02a3832d29ad8d9dd55121d15cd5754d737",
+        "episode_ids": [
+          "sae_training-pair-04-signature_invalid",
+          "sae_training-pair-05-signature_invalid",
+          "sae_training-pair-06-signature_invalid",
+          "sae_training-pair-07-signature_invalid"
+        ],
+        "episodes": 4,
+        "pair_id_set_sha256": "c992b529a468de241d294f8970a4372e39abc10d04b6ca743cf2a9f25f97ce66",
+        "pair_ids": [
+          "sae_training-pair-04",
+          "sae_training-pair-05",
+          "sae_training-pair-06",
+          "sae_training-pair-07"
+        ],
+        "pairs": 4,
+        "planning_reason_counts": {
+          "stable_specific_route": 4
+        },
+        "routing_effect_rows": 4,
+        "routing_effect_rows_per_episode": 1,
+        "sae_activation_rows": 512,
+        "sae_activation_rows_per_episode": 128
+      },
+      "vpd-sae-compartment-94181dcc49793146a9bc52d8badb5df817b24fe542e8fdc654af1e1484744817": {
+        "episode_id_set_sha256": "3323a9a63eca3fa8d624828d5bb987b30d8e5b22b7547d109a09fe13df0520af",
+        "episode_ids": [
+          "sae_training-pair-00-valid_authority",
+          "sae_training-pair-01-valid_authority",
+          "sae_training-pair-02-valid_authority",
+          "sae_training-pair-03-valid_authority"
+        ],
+        "episodes": 4,
+        "pair_id_set_sha256": "4050264a8a36f9b7473a9c9ca34d6dbdc7851f75ce598bf2926dd94d012e0932",
+        "pair_ids": [
+          "sae_training-pair-00",
+          "sae_training-pair-01",
+          "sae_training-pair-02",
+          "sae_training-pair-03"
+        ],
+        "pairs": 4,
+        "planning_reason_counts": {
+          "stable_specific_route": 4
+        },
+        "routing_effect_rows": 4,
+        "routing_effect_rows_per_episode": 1,
+        "sae_activation_rows": 512,
+        "sae_activation_rows_per_episode": 128
+      },
+      "vpd-sae-compartment-95d80cbe9259bd905f009d3031062be1a250862be19860379503e077f55a6de1": {
+        "episode_id_set_sha256": "17a87d8e0e57930126739d9987763d691aa680aea6d3e0c12a444ec0f1f1ed71",
+        "episode_ids": [
+          "sae_training-pair-04-time_inactive",
+          "sae_training-pair-05-time_inactive",
+          "sae_training-pair-06-time_inactive",
+          "sae_training-pair-07-time_inactive"
+        ],
+        "episodes": 4,
+        "pair_id_set_sha256": "c992b529a468de241d294f8970a4372e39abc10d04b6ca743cf2a9f25f97ce66",
+        "pair_ids": [
+          "sae_training-pair-04",
+          "sae_training-pair-05",
+          "sae_training-pair-06",
+          "sae_training-pair-07"
+        ],
+        "pairs": 4,
+        "planning_reason_counts": {
+          "stable_specific_route": 4
+        },
+        "routing_effect_rows": 4,
+        "routing_effect_rows_per_episode": 1,
+        "sae_activation_rows": 512,
+        "sae_activation_rows_per_episode": 128
+      },
+      "vpd-sae-compartment-a3efad1ab8a962dfbc3ad789065de50f45eef05d506d6aff1b1b54b9d43851a9": {
+        "episode_id_set_sha256": "fe0e3860162ac9f8694f4bfe6786581d71af467ecef9795156142513d17360c6",
+        "episode_ids": [
+          "sae_training-pair-00-scope_invalid",
+          "sae_training-pair-01-scope_invalid",
+          "sae_training-pair-02-scope_invalid",
+          "sae_training-pair-03-scope_invalid"
+        ],
+        "episodes": 4,
+        "pair_id_set_sha256": "4050264a8a36f9b7473a9c9ca34d6dbdc7851f75ce598bf2926dd94d012e0932",
+        "pair_ids": [
+          "sae_training-pair-00",
+          "sae_training-pair-01",
+          "sae_training-pair-02",
+          "sae_training-pair-03"
+        ],
+        "pairs": 4,
+        "planning_reason_counts": {
+          "stable_specific_route": 4
+        },
+        "routing_effect_rows": 4,
+        "routing_effect_rows_per_episode": 1,
+        "sae_activation_rows": 512,
+        "sae_activation_rows_per_episode": 128
+      },
+      "vpd-sae-compartment-acbdb1d468f28dd71490de0c1d94a61f5a71eb7bdaed4d676253dcf037a9450a": {
+        "episode_id_set_sha256": "e63fd3eabe0eb477d4095b5ba152cf83718cd2be1291a0a3f2107ac310034b66",
+        "episode_ids": [
+          "sae_training-pair-04-replayed",
+          "sae_training-pair-05-replayed",
+          "sae_training-pair-06-replayed",
+          "sae_training-pair-07-replayed"
+        ],
+        "episodes": 4,
+        "pair_id_set_sha256": "c992b529a468de241d294f8970a4372e39abc10d04b6ca743cf2a9f25f97ce66",
+        "pair_ids": [
+          "sae_training-pair-04",
+          "sae_training-pair-05",
+          "sae_training-pair-06",
+          "sae_training-pair-07"
+        ],
+        "pairs": 4,
+        "planning_reason_counts": {
+          "stable_specific_route": 4
+        },
+        "routing_effect_rows": 4,
+        "routing_effect_rows_per_episode": 1,
+        "sae_activation_rows": 512,
+        "sae_activation_rows_per_episode": 128
+      },
+      "vpd-sae-compartment-b710a95f078953f6a73f95e55decf3b4e257e1100177aad354b594cce0bf6136": {
+        "episode_id_set_sha256": "bc2ddef5cd6c7d4df2e3bd4f9038b8c4e4e0c77e21d2b33093288b74ea8bcb19",
+        "episode_ids": [
+          "sae_training-pair-04-revoked",
+          "sae_training-pair-05-revoked",
+          "sae_training-pair-06-revoked",
+          "sae_training-pair-07-revoked"
+        ],
+        "episodes": 4,
+        "pair_id_set_sha256": "c992b529a468de241d294f8970a4372e39abc10d04b6ca743cf2a9f25f97ce66",
+        "pair_ids": [
+          "sae_training-pair-04",
+          "sae_training-pair-05",
+          "sae_training-pair-06",
+          "sae_training-pair-07"
+        ],
+        "pairs": 4,
+        "planning_reason_counts": {
+          "stable_specific_route": 4
+        },
+        "routing_effect_rows": 4,
+        "routing_effect_rows_per_episode": 1,
+        "sae_activation_rows": 512,
+        "sae_activation_rows_per_episode": 128
+      },
+      "vpd-sae-compartment-d17460c16b97106f98af68cc2b84ec986db69a64cf6d21846a14e9c26cff83cd": {
+        "episode_id_set_sha256": "03bc100ea7a528e3a2d39a572fc4b70e595f88c13b7661ed1b5ecb2f41d3b977",
+        "episode_ids": [
+          "sae_training-pair-04-missing_or_untrusted_authority",
+          "sae_training-pair-05-missing_or_untrusted_authority",
+          "sae_training-pair-06-missing_or_untrusted_authority",
+          "sae_training-pair-07-missing_or_untrusted_authority"
+        ],
+        "episodes": 4,
+        "pair_id_set_sha256": "c992b529a468de241d294f8970a4372e39abc10d04b6ca743cf2a9f25f97ce66",
+        "pair_ids": [
+          "sae_training-pair-04",
+          "sae_training-pair-05",
+          "sae_training-pair-06",
+          "sae_training-pair-07"
+        ],
+        "pairs": 4,
+        "planning_reason_counts": {
+          "stable_specific_route": 4
+        },
+        "routing_effect_rows": 4,
+        "routing_effect_rows_per_episode": 1,
+        "sae_activation_rows": 512,
+        "sae_activation_rows_per_episode": 128
+      },
+      "vpd-sae-compartment-ef0432a24007c189056df4176599f211610a95a30a37e3fe5e338f88675331f6": {
+        "episode_id_set_sha256": "0b3f98c179a714249e46a2a9ee47f4c885861d76aefb22b8f52ff54d4231a2a9",
+        "episode_ids": [
+          "sae_training-pair-00-time_inactive",
+          "sae_training-pair-01-time_inactive",
+          "sae_training-pair-02-time_inactive",
+          "sae_training-pair-03-time_inactive"
+        ],
+        "episodes": 4,
+        "pair_id_set_sha256": "4050264a8a36f9b7473a9c9ca34d6dbdc7851f75ce598bf2926dd94d012e0932",
+        "pair_ids": [
+          "sae_training-pair-00",
+          "sae_training-pair-01",
+          "sae_training-pair-02",
+          "sae_training-pair-03"
+        ],
+        "pairs": 4,
+        "planning_reason_counts": {
+          "stable_specific_route": 4
+        },
+        "routing_effect_rows": 4,
+        "routing_effect_rows_per_episode": 1,
+        "sae_activation_rows": 512,
+        "sae_activation_rows_per_episode": 128
+      },
+      "vpd-sae-compartment-feb1f43ec79931b97245795212d31cd491a26827d48d84e567d07f57e0d575b1": {
+        "episode_id_set_sha256": "f6a5589704cd358d0d2ee3dea8c2fbbbb30995a4f6f2806756c9d8981342b996",
+        "episode_ids": [
+          "sae_training-pair-04-other_invalid",
+          "sae_training-pair-05-other_invalid",
+          "sae_training-pair-06-other_invalid",
+          "sae_training-pair-07-other_invalid"
+        ],
+        "episodes": 4,
+        "pair_id_set_sha256": "c992b529a468de241d294f8970a4372e39abc10d04b6ca743cf2a9f25f97ce66",
+        "pair_ids": [
+          "sae_training-pair-04",
+          "sae_training-pair-05",
+          "sae_training-pair-06",
+          "sae_training-pair-07"
+        ],
+        "pairs": 4,
+        "planning_reason_counts": {
+          "stable_specific_route": 4
+        },
+        "routing_effect_rows": 4,
+        "routing_effect_rows_per_episode": 1,
+        "sae_activation_rows": 512,
+        "sae_activation_rows_per_episode": 128
+      }
+    },
+    "v2_global_pair_split_id": "5620b6c1ad610d312ea18abe922774e6535d3feb48a30b8579fcc433ca6fb457",
+    "v2_summary": {
+      "categories": 8,
+      "cross_compartment_pair_overlap_managed_by_global_split": true,
+      "global_pair_split_consistent": true,
+      "primary_compartment_episode_sets_disjoint": true,
+      "primary_compartment_pair_sets_disjoint": false,
+      "routed_training_episodes": 80,
+      "routed_training_pairs": 10,
+      "shared_compartments": 1,
+      "specific_compartments": 16,
+      "training_jobs": 34
+    }
+  },
+  "schema": "sch.vpd-three-role-capture-to-sae-integration-benchmark.v1",
+  "scientific_boundary": {
+    "empirical_effect_archive_produced": false,
+    "execution_authorized": false,
+    "model_inference_performed": false,
+    "model_loaded": false,
+    "release_authorized": false,
+    "sae_dictionary_trained": false,
+    "sae_training_authorized": false,
+    "synthetic_artifacts_only": true,
+    "weights_loaded_or_mutated": false
+  },
+  "source": {
+    "benchmark_sha256": "ae4f516384fe857440a579fe309476ff7b8c304975da4ab29b358754686be3cd",
+    "capture_router_adapter_sha256": "071a261d2250b28a236f760f8d6a16fa0e4858cc72495725d1ee02f1c43ec9f8",
+    "planner_v2_sha256": "b7fce50af30687d0fe4d7b75f589e1acc61863bddc73c7517caf91b1ad8d17a3",
+    "router_v1_sha256": "8379997e72cd278af8b34fcedb4aad9165651583248d1f1f12e2d0e77d4b3027"
+  },
+  "status": "pass",
+  "summary": {
+    "controls": 18,
+    "passed": 18
+  }
+}

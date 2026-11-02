@@ -1,0 +1,76 @@
+{
+  "invariants": {
+    "final_evaluation_not_consumed": true,
+    "no_same_pack_tuning_after_audit_failure": true,
+    "partition_audit_gate_bound": true,
+    "predecessor_receipt_reverified": true,
+    "v5_protocol_reverified": true
+  },
+  "lineage_amendment": {
+    "capture_adapter_status": "required_not_implemented",
+    "category_specific_sae_training_now_requires_partition_audit_pass": true,
+    "final_evaluation_remains_untouched": true,
+    "new_partition_audit_pack_is_separate_from_five_role_split": true,
+    "predecessor_effect_campaign_unchanged": true,
+    "predecessor_five_role_split_unchanged": true,
+    "predecessor_sae_plan_preserved_as_planned_work": true
+  },
+  "pipeline_receipt_id": "bec00550d7d523f4ece993aafdac61f203a88c4417d8cab7bafc3ef0752831e2",
+  "resources": {
+    "partition_audit_episode_forward_equivalents": 22708224,
+    "partition_audit_work_units": 16,
+    "predecessor_effect_episode_forward_equivalents": 114162048
+  },
+  "schema": "sch.vpd-unified-compartment-pipeline-receipt.v3",
+  "scientific_boundary": {
+    "empirical_partition_audited": false,
+    "execution_authorized": false,
+    "model_inference_performed": false,
+    "sae_training_performed": false,
+    "v7_negative_release_decision_unchanged": true,
+    "weights_loaded_or_mutated": false
+  },
+  "source": {
+    "partition_audit_benchmark": {
+      "benchmark_id": "f817cecf0833e66b9013b311eecbcad72f8e8091d0226094bae58bfed6f16a6f",
+      "path": "artifacts/vpd_frozen_partition_audit_benchmark_v1/report.json",
+      "sha256": "ef9c07e5f00cc11d5285ac08f2564b8770d9892d8a121dc743cf1cfdbde35b4d"
+    },
+    "partition_audit_gate_plan": {
+      "gate_plan_id": "e6762af41fcce70bca47b1a6925c9e3b53b8a88e65aee946c5c7451054818358",
+      "path": "artifacts/vpd_partition_audit_gate_v1/plan.json",
+      "sha256": "a310eeedb3ef60c60fa5e5a43892ac31036b76f814a9f746388ea779d4ecb6de"
+    },
+    "partition_audit_pack": {
+      "manifest_sha256": "2b41930f7a7910d2e6e5376b064347691f4ee42f84caed21b6a0f8123e2ad748",
+      "pack_id": "e65c78bb07fcf25c5a008d94a8f447b1b75f01cb8734632e7e2e567c81ca2f23",
+      "path": "artifacts/vpd_partition_audit_pack_v1"
+    },
+    "predecessor_unified_receipt": {
+      "path": "artifacts/vpd_unified_compartment_pipeline_v2/receipt.json",
+      "pipeline_receipt_id": "12dea48a1928ec3780f31419aed772f9584962216391bc10aabc5d2ab753ffd3",
+      "sha256": "c254f505c875cedb821e4a5d22976cc3e44e3b6452c45c602c478a85fe3f4691",
+      "verification": {
+        "execution_authorized": false,
+        "pipeline_receipt_id": "12dea48a1928ec3780f31419aed772f9584962216391bc10aabc5d2ab753ffd3",
+        "roles": 5,
+        "schema": "sch.vpd-unified-compartment-pipeline-verification.v1",
+        "split_id": "a5aa3370406876c1c48ed702b431a64cb6a68c8376ab28b0aad1d852c22dd8dc",
+        "status": "pass"
+      }
+    },
+    "protocol_v5": {
+      "path": "configs/evals/vpd_activation_category_compartments_v5.json",
+      "sha256": "0894ac8e06ba7828bf5cb21ae79e1ae48ae96e2c27cd66e6853899765c1b9c24",
+      "verification": {
+        "execution_authorized": false,
+        "post_freeze_partition_audit_required": true,
+        "predecessor_sha256": "ff8e42728f77e21c5d61d6425858e16159e0cef887959052ed2de50699c41822",
+        "protocol_sha256": "0894ac8e06ba7828bf5cb21ae79e1ae48ae96e2c27cd66e6853899765c1b9c24",
+        "schema": "sch.vpd-activation-category-protocol-verification.v5",
+        "status": "pass"
+      }
+    }
+  },
+  "status": "pass_local_lineage_partition_audit_capture_adapter_required"
+}

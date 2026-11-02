@@ -1,0 +1,47 @@
+{
+  "status": "passed",
+  "reviewed_utc": "2026-09-09T10:47:34.959077+00:00",
+  "pages": 8,
+  "method": "All pages visually inspected via contact sheets; equation/table page 3 and final appendix pages 7 and 8 inspected at full rendered size. Final layout change affects Appendix B only.",
+  "checks": [
+    "No clipping or overlaps",
+    "Equation and table labels render correctly",
+    "Appendix B begins with its source table on page 8",
+    "Consistent typography and page numbering"
+  ],
+  "pdf_sha256": "b07d222950298d108c3ac93ce2eadb3fb4beb8be2ffdf786102a4b1d37856c09",
+  "page_images": [
+    {
+      "path": "tmp\\pdfs\\v003_mechanistic_essay\\page-1.png",
+      "sha256": "f2783ae5e44f745d14f1b41f1c111c3925c10337260bbe60ff7a6784a37a9482"
+    },
+    {
+      "path": "tmp\\pdfs\\v003_mechanistic_essay\\page-2.png",
+      "sha256": "56891f0524edae1db26e0b82a55c30ec242547d187c9f51c05f1c8f9502be2e5"
+    },
+    {
+      "path": "tmp\\pdfs\\v003_mechanistic_essay\\page-3.png",
+      "sha256": "9650aed8d856e7aba72f8b31688023ddc56931a83f356acf721c6640fdd917a8"
+    },
+    {
+      "path": "tmp\\pdfs\\v003_mechanistic_essay\\page-4.png",
+      "sha256": "27787c4450f073ba8756c493f6a598e599224849581ef84824ab116517724327"
+    },
+    {
+      "path": "tmp\\pdfs\\v003_mechanistic_essay\\page-5.png",
+      "sha256": "13d3cd7210abefa693d44fe3b2a427f376208cd3ddea99fe04162c34b6630df5"
+    },
+    {
+      "path": "tmp\\pdfs\\v003_mechanistic_essay\\page-6.png",
+      "sha256": "b2717027877c863eb9221ed50694a8a95a398ffeb4db64d04ce8b8d18745d121"
+    },
+    {
+      "path": "tmp\\pdfs\\v003_mechanistic_essay\\page-7.png",
+      "sha256": "2b1621bac8171fb6aa48d30675fa26d86745836e5c426542e117f4d625a03526"
+    },
+    {
+      "path": "tmp\\pdfs\\v003_mechanistic_essay\\page-8.png",
+      "sha256": "b82430e738b1155217a006a2f86b3b58970d319ab59926c9723eca0bde73485a"
+    }
+  ]
+}

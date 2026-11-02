@@ -1,0 +1,69 @@
+{
+  "benchmark_id": "04952c9f6f8648c0a90f9cd3426e2ef546dfc6377987639ce2733479deed1861",
+  "controls": {
+    "campaign_receipt_is_content_addressed": true,
+    "campaign_receipt_tamper_rejected": true,
+    "compute_nonce_atomically_reserves_job_root": true,
+    "exact_dictionary_output_path_is_reserved_but_not_created": true,
+    "incomplete_campaign_tombstone_is_terminal": true,
+    "job_transition_is_content_addressed": true,
+    "one_release_campaign_can_bind_multiple_unique_jobs": true,
+    "partial_failure_policy_is_fail_closed_no_rollback": true,
+    "release_nonce_creates_durable_campaign": true,
+    "reused_release_nonce_cannot_switch_receipts": true,
+    "same_compute_nonce_cannot_switch_jobs": true,
+    "same_compute_nonce_replay_rejected": true,
+    "signed_admission_reserves_transition": true,
+    "source_byte_tamper_rejected": true,
+    "synthetic_transition_rejected_in_real_mode": true,
+    "transition_imports_no_model_frameworks": true,
+    "transition_never_attaches_or_invokes_or_trains": true,
+    "transition_receipt_is_inside_reserved_job_root": true,
+    "transition_receipt_tamper_rejected": true,
+    "worker_ledger_reserved_before_runtime": true
+  },
+  "design": {
+    "atomic_compute_nonce_and_job_root_directory": true,
+    "release_campaign_nonce_directory": true,
+    "runtime_attach_implemented": false,
+    "terminal_tombstones_no_rollback": true,
+    "trainer_invocation_implemented": false,
+    "worker_ledger_reserved_before_runtime": true
+  },
+  "results": {
+    "campaign_reservation_id": "c13d492813cd4ddde20930c228749250949e46c7e8f9d92d465e06e81c2045c5",
+    "execution_blueprint_id": "07122590aae37e4e07dec2077830954e5eeb56ec269c77382f227fb33e233215",
+    "first_execution_job_id": "703e053e9397e3d51f98363b7c8d7dc5df63ce0cc02110c6e8dd98118401ac5e",
+    "second_execution_job_id": "4495d20a204253cbfc3eb3a002145868b507ac3df4aa7dbd8aa039b691f571fa",
+    "temporary_reservation_entries_created": 4,
+    "temporary_transition_receipts_content_addressed": true
+  },
+  "schema": "sch.vpd-cluster-aware-sae-transition-benchmark.v1",
+  "scientific_boundary": {
+    "empirical_blueprint_present": false,
+    "execution_authorized": false,
+    "model_framework_imported": false,
+    "model_inference_performed": false,
+    "model_loaded": false,
+    "persistent_dictionary_output_created": false,
+    "persistent_workspace_output_created": false,
+    "runtime_attached": false,
+    "sae_training_authorized": false,
+    "synthetic_keys_and_receipts_only": true,
+    "temporary_simulation_only": true,
+    "trainer_callback_invoked": false,
+    "weights_loaded_or_mutated": false
+  },
+  "source": {
+    "benchmark_sha256": "448e7b6ab66b514fca653472ff1e2a9e1b1e823e6b73f0e34f7eb22660f7c275",
+    "execution_blueprint_id": "07122590aae37e4e07dec2077830954e5eeb56ec269c77382f227fb33e233215",
+    "runtime_worker_sha256": "afade79132182f4af63f24d857aa66f27dfa68246d75ef12938054ea6f867e59",
+    "signed_admission_verifier_sha256": "8604cc82392d8b38acd5de13290dc0e0939673349b24e36940503b4f069b13c2",
+    "transition_sha256": "3846e771e88d7aa92ff0a519095a6e671c0a7da29b2290157ff685a6ad933d94"
+  },
+  "status": "pass",
+  "summary": {
+    "controls": 20,
+    "passed": 20
+  }
+}

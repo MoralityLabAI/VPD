@@ -1,0 +1,773 @@
+{
+  "boundary": {
+    "fresh_pack_created": false,
+    "launch_authorized": false,
+    "model_inference_performed": false,
+    "training_performed": false
+  },
+  "inventory": {
+    "F1_necessary_family_count_check": {
+      "available_label_upper_bound": 29,
+      "families_per_pack_required": 32,
+      "is_sufficient_feasibility_test": false,
+      "packs_required": 2,
+      "single_pack_count_possible": false,
+      "total_pairwise_disjoint_labels_required": 64,
+      "two_pack_count_possible": false
+    },
+    "eligible_families_by_source_split": {
+      "dev": [
+        "arrow_maze",
+        "boolean_expressions",
+        "buggy_tables",
+        "calcudoko",
+        "cipher",
+        "dyck_language",
+        "dyck_language_errors",
+        "futoshiki",
+        "goods_exchange",
+        "kukurasu",
+        "math",
+        "math_path",
+        "mathador",
+        "minesweeper",
+        "norinori",
+        "number_wall",
+        "numbrix",
+        "object_counting",
+        "object_properties",
+        "space_reasoning_tree",
+        "sudoku",
+        "survo",
+        "time_sequence",
+        "web_of_lies",
+        "word_sorting",
+        "word_sorting_mistake",
+        "wordscapes",
+        "zebra_puzzle"
+      ],
+      "eval": [
+        "arc_grid",
+        "arrow_maze",
+        "boolean_expressions",
+        "buggy_tables",
+        "calcudoko",
+        "cipher",
+        "dyck_language",
+        "dyck_language_errors",
+        "futoshiki",
+        "goods_exchange",
+        "kukurasu",
+        "math",
+        "math_path",
+        "mathador",
+        "minesweeper",
+        "norinori",
+        "number_wall",
+        "numbrix",
+        "object_counting",
+        "object_properties",
+        "space_reasoning_tree",
+        "sudoku",
+        "survo",
+        "time_sequence",
+        "web_of_lies",
+        "word_sorting",
+        "word_sorting_mistake",
+        "wordscapes",
+        "zebra_puzzle"
+      ],
+      "train": [
+        "arc_grid",
+        "arrow_maze",
+        "boolean_expressions",
+        "buggy_tables",
+        "calcudoko",
+        "cipher",
+        "dyck_language",
+        "dyck_language_errors",
+        "futoshiki",
+        "goods_exchange",
+        "kukurasu",
+        "math",
+        "math_path",
+        "mathador",
+        "minesweeper",
+        "norinori",
+        "number_wall",
+        "numbrix",
+        "object_counting",
+        "object_properties",
+        "space_reasoning_tree",
+        "sudoku",
+        "survo",
+        "time_sequence",
+        "web_of_lies",
+        "word_sorting",
+        "word_sorting_mistake",
+        "wordscapes",
+        "zebra_puzzle"
+      ]
+    },
+    "eligible_family_labels_any_allowed_split": [
+      "arc_grid",
+      "arrow_maze",
+      "boolean_expressions",
+      "buggy_tables",
+      "calcudoko",
+      "cipher",
+      "dyck_language",
+      "dyck_language_errors",
+      "futoshiki",
+      "goods_exchange",
+      "kukurasu",
+      "math",
+      "math_path",
+      "mathador",
+      "minesweeper",
+      "norinori",
+      "number_wall",
+      "numbrix",
+      "object_counting",
+      "object_properties",
+      "space_reasoning_tree",
+      "sudoku",
+      "survo",
+      "time_sequence",
+      "web_of_lies",
+      "word_sorting",
+      "word_sorting_mistake",
+      "wordscapes",
+      "zebra_puzzle"
+    ],
+    "excluded_only_or_insufficient_family_labels": [
+      "arc_agi",
+      "campsite"
+    ],
+    "families": [
+      {
+        "family": "arc_agi",
+        "source_revisions": [
+          "a9eb9183224cec63fe9a71e7a3a80cff14868624"
+        ],
+        "splits": {
+          "quarantine": {
+            "rows": 391,
+            "unique_declared_groups": 391
+          }
+        }
+      },
+      {
+        "family": "arc_grid",
+        "source_revisions": [
+          "399030444e0ab0cc8b4e199870fb20b863846f34",
+          "f3283f727488ad98fe575ea6a5ac981e4a188e49"
+        ],
+        "splits": {
+          "eval": {
+            "rows": 586,
+            "unique_declared_groups": 514
+          },
+          "quarantine": {
+            "rows": 396,
+            "unique_declared_groups": 376
+          },
+          "train": {
+            "rows": 1096,
+            "unique_declared_groups": 632
+          }
+        }
+      },
+      {
+        "family": "arrow_maze",
+        "source_revisions": [
+          "a9eb9183224cec63fe9a71e7a3a80cff14868624"
+        ],
+        "splits": {
+          "dev": {
+            "rows": 40,
+            "unique_declared_groups": 40
+          },
+          "eval": {
+            "rows": 36,
+            "unique_declared_groups": 36
+          },
+          "train": {
+            "rows": 376,
+            "unique_declared_groups": 376
+          }
+        }
+      },
+      {
+        "family": "boolean_expressions",
+        "source_revisions": [
+          "a9eb9183224cec63fe9a71e7a3a80cff14868624"
+        ],
+        "splits": {
+          "dev": {
+            "rows": 47,
+            "unique_declared_groups": 47
+          },
+          "eval": {
+            "rows": 51,
+            "unique_declared_groups": 51
+          },
+          "train": {
+            "rows": 345,
+            "unique_declared_groups": 345
+          }
+        }
+      },
+      {
+        "family": "buggy_tables",
+        "source_revisions": [
+          "a9eb9183224cec63fe9a71e7a3a80cff14868624"
+        ],
+        "splits": {
+          "dev": {
+            "rows": 20,
+            "unique_declared_groups": 20
+          },
+          "eval": {
+            "rows": 9,
+            "unique_declared_groups": 9
+          },
+          "train": {
+            "rows": 167,
+            "unique_declared_groups": 167
+          }
+        }
+      },
+      {
+        "family": "calcudoko",
+        "source_revisions": [
+          "a9eb9183224cec63fe9a71e7a3a80cff14868624"
+        ],
+        "splits": {
+          "dev": {
+            "rows": 32,
+            "unique_declared_groups": 32
+          },
+          "eval": {
+            "rows": 23,
+            "unique_declared_groups": 23
+          },
+          "train": {
+            "rows": 239,
+            "unique_declared_groups": 239
+          }
+        }
+      },
+      {
+        "family": "campsite",
+        "source_revisions": [
+          "a9eb9183224cec63fe9a71e7a3a80cff14868624"
+        ],
+        "splits": {
+          "historical_eval": {
+            "rows": 109,
+            "unique_declared_groups": 109
+          }
+        }
+      },
+      {
+        "family": "cipher",
+        "source_revisions": [
+          "a9eb9183224cec63fe9a71e7a3a80cff14868624"
+        ],
+        "splits": {
+          "dev": {
+            "rows": 87,
+            "unique_declared_groups": 87
+          },
+          "eval": {
+            "rows": 74,
+            "unique_declared_groups": 74
+          },
+          "train": {
+            "rows": 675,
+            "unique_declared_groups": 674
+          }
+        }
+      },
+      {
+        "family": "dyck_language",
+        "source_revisions": [
+          "a9eb9183224cec63fe9a71e7a3a80cff14868624"
+        ],
+        "splits": {
+          "dev": {
+            "rows": 63,
+            "unique_declared_groups": 63
+          },
+          "eval": {
+            "rows": 43,
+            "unique_declared_groups": 43
+          },
+          "train": {
+            "rows": 370,
+            "unique_declared_groups": 370
+          }
+        }
+      },
+      {
+        "family": "dyck_language_errors",
+        "source_revisions": [
+          "a9eb9183224cec63fe9a71e7a3a80cff14868624"
+        ],
+        "splits": {
+          "dev": {
+            "rows": 35,
+            "unique_declared_groups": 35
+          },
+          "eval": {
+            "rows": 42,
+            "unique_declared_groups": 42
+          },
+          "train": {
+            "rows": 297,
+            "unique_declared_groups": 297
+          }
+        }
+      },
+      {
+        "family": "futoshiki",
+        "source_revisions": [
+          "a9eb9183224cec63fe9a71e7a3a80cff14868624"
+        ],
+        "splits": {
+          "dev": {
+            "rows": 64,
+            "unique_declared_groups": 64
+          },
+          "eval": {
+            "rows": 80,
+            "unique_declared_groups": 80
+          },
+          "train": {
+            "rows": 570,
+            "unique_declared_groups": 570
+          }
+        }
+      },
+      {
+        "family": "goods_exchange",
+        "source_revisions": [
+          "a9eb9183224cec63fe9a71e7a3a80cff14868624"
+        ],
+        "splits": {
+          "dev": {
+            "rows": 49,
+            "unique_declared_groups": 49
+          },
+          "eval": {
+            "rows": 51,
+            "unique_declared_groups": 51
+          },
+          "train": {
+            "rows": 385,
+            "unique_declared_groups": 385
+          }
+        }
+      },
+      {
+        "family": "kukurasu",
+        "source_revisions": [
+          "a9eb9183224cec63fe9a71e7a3a80cff14868624"
+        ],
+        "splits": {
+          "dev": {
+            "rows": 23,
+            "unique_declared_groups": 23
+          },
+          "eval": {
+            "rows": 30,
+            "unique_declared_groups": 30
+          },
+          "train": {
+            "rows": 187,
+            "unique_declared_groups": 187
+          }
+        }
+      },
+      {
+        "family": "math",
+        "source_revisions": [
+          "a9eb9183224cec63fe9a71e7a3a80cff14868624"
+        ],
+        "splits": {
+          "dev": {
+            "rows": 2068,
+            "unique_declared_groups": 2068
+          },
+          "eval": {
+            "rows": 2162,
+            "unique_declared_groups": 2162
+          },
+          "train": {
+            "rows": 16931,
+            "unique_declared_groups": 16931
+          }
+        }
+      },
+      {
+        "family": "math_path",
+        "source_revisions": [
+          "a9eb9183224cec63fe9a71e7a3a80cff14868624"
+        ],
+        "splits": {
+          "dev": {
+            "rows": 9,
+            "unique_declared_groups": 9
+          },
+          "eval": {
+            "rows": 6,
+            "unique_declared_groups": 6
+          },
+          "train": {
+            "rows": 38,
+            "unique_declared_groups": 38
+          }
+        }
+      },
+      {
+        "family": "mathador",
+        "source_revisions": [
+          "a9eb9183224cec63fe9a71e7a3a80cff14868624"
+        ],
+        "splits": {
+          "dev": {
+            "rows": 35,
+            "unique_declared_groups": 35
+          },
+          "eval": {
+            "rows": 27,
+            "unique_declared_groups": 27
+          },
+          "train": {
+            "rows": 299,
+            "unique_declared_groups": 299
+          }
+        }
+      },
+      {
+        "family": "minesweeper",
+        "source_revisions": [
+          "a9eb9183224cec63fe9a71e7a3a80cff14868624"
+        ],
+        "splits": {
+          "dev": {
+            "rows": 29,
+            "unique_declared_groups": 29
+          },
+          "eval": {
+            "rows": 25,
+            "unique_declared_groups": 25
+          },
+          "train": {
+            "rows": 249,
+            "unique_declared_groups": 249
+          }
+        }
+      },
+      {
+        "family": "norinori",
+        "source_revisions": [
+          "a9eb9183224cec63fe9a71e7a3a80cff14868624"
+        ],
+        "splits": {
+          "dev": {
+            "rows": 42,
+            "unique_declared_groups": 42
+          },
+          "eval": {
+            "rows": 39,
+            "unique_declared_groups": 39
+          },
+          "train": {
+            "rows": 403,
+            "unique_declared_groups": 403
+          }
+        }
+      },
+      {
+        "family": "number_wall",
+        "source_revisions": [
+          "a9eb9183224cec63fe9a71e7a3a80cff14868624"
+        ],
+        "splits": {
+          "dev": {
+            "rows": 33,
+            "unique_declared_groups": 31
+          },
+          "eval": {
+            "rows": 39,
+            "unique_declared_groups": 39
+          },
+          "train": {
+            "rows": 277,
+            "unique_declared_groups": 262
+          }
+        }
+      },
+      {
+        "family": "numbrix",
+        "source_revisions": [
+          "a9eb9183224cec63fe9a71e7a3a80cff14868624"
+        ],
+        "splits": {
+          "dev": {
+            "rows": 28,
+            "unique_declared_groups": 28
+          },
+          "eval": {
+            "rows": 30,
+            "unique_declared_groups": 30
+          },
+          "train": {
+            "rows": 257,
+            "unique_declared_groups": 257
+          }
+        }
+      },
+      {
+        "family": "object_counting",
+        "source_revisions": [
+          "a9eb9183224cec63fe9a71e7a3a80cff14868624"
+        ],
+        "splits": {
+          "dev": {
+            "rows": 59,
+            "unique_declared_groups": 59
+          },
+          "eval": {
+            "rows": 54,
+            "unique_declared_groups": 54
+          },
+          "train": {
+            "rows": 372,
+            "unique_declared_groups": 372
+          }
+        }
+      },
+      {
+        "family": "object_properties",
+        "source_revisions": [
+          "a9eb9183224cec63fe9a71e7a3a80cff14868624"
+        ],
+        "splits": {
+          "dev": {
+            "rows": 5,
+            "unique_declared_groups": 5
+          },
+          "eval": {
+            "rows": 4,
+            "unique_declared_groups": 4
+          },
+          "train": {
+            "rows": 25,
+            "unique_declared_groups": 25
+          }
+        }
+      },
+      {
+        "family": "space_reasoning_tree",
+        "source_revisions": [
+          "a9eb9183224cec63fe9a71e7a3a80cff14868624"
+        ],
+        "splits": {
+          "dev": {
+            "rows": 20,
+            "unique_declared_groups": 20
+          },
+          "eval": {
+            "rows": 14,
+            "unique_declared_groups": 14
+          },
+          "train": {
+            "rows": 186,
+            "unique_declared_groups": 186
+          }
+        }
+      },
+      {
+        "family": "sudoku",
+        "source_revisions": [
+          "a9eb9183224cec63fe9a71e7a3a80cff14868624"
+        ],
+        "splits": {
+          "dev": {
+            "rows": 33,
+            "unique_declared_groups": 33
+          },
+          "eval": {
+            "rows": 33,
+            "unique_declared_groups": 33
+          },
+          "train": {
+            "rows": 221,
+            "unique_declared_groups": 221
+          }
+        }
+      },
+      {
+        "family": "survo",
+        "source_revisions": [
+          "a9eb9183224cec63fe9a71e7a3a80cff14868624"
+        ],
+        "splits": {
+          "dev": {
+            "rows": 26,
+            "unique_declared_groups": 26
+          },
+          "eval": {
+            "rows": 25,
+            "unique_declared_groups": 25
+          },
+          "train": {
+            "rows": 206,
+            "unique_declared_groups": 206
+          }
+        }
+      },
+      {
+        "family": "time_sequence",
+        "source_revisions": [
+          "a9eb9183224cec63fe9a71e7a3a80cff14868624"
+        ],
+        "splits": {
+          "dev": {
+            "rows": 49,
+            "unique_declared_groups": 49
+          },
+          "eval": {
+            "rows": 35,
+            "unique_declared_groups": 35
+          },
+          "train": {
+            "rows": 380,
+            "unique_declared_groups": 380
+          }
+        }
+      },
+      {
+        "family": "web_of_lies",
+        "source_revisions": [
+          "a9eb9183224cec63fe9a71e7a3a80cff14868624"
+        ],
+        "splits": {
+          "dev": {
+            "rows": 38,
+            "unique_declared_groups": 38
+          },
+          "eval": {
+            "rows": 51,
+            "unique_declared_groups": 51
+          },
+          "train": {
+            "rows": 368,
+            "unique_declared_groups": 368
+          }
+        }
+      },
+      {
+        "family": "word_sorting",
+        "source_revisions": [
+          "a9eb9183224cec63fe9a71e7a3a80cff14868624"
+        ],
+        "splits": {
+          "dev": {
+            "rows": 57,
+            "unique_declared_groups": 57
+          },
+          "eval": {
+            "rows": 43,
+            "unique_declared_groups": 43
+          },
+          "train": {
+            "rows": 376,
+            "unique_declared_groups": 376
+          }
+        }
+      },
+      {
+        "family": "word_sorting_mistake",
+        "source_revisions": [
+          "a9eb9183224cec63fe9a71e7a3a80cff14868624"
+        ],
+        "splits": {
+          "dev": {
+            "rows": 41,
+            "unique_declared_groups": 41
+          },
+          "eval": {
+            "rows": 32,
+            "unique_declared_groups": 32
+          },
+          "train": {
+            "rows": 349,
+            "unique_declared_groups": 349
+          }
+        }
+      },
+      {
+        "family": "wordscapes",
+        "source_revisions": [
+          "a9eb9183224cec63fe9a71e7a3a80cff14868624"
+        ],
+        "splits": {
+          "dev": {
+            "rows": 77,
+            "unique_declared_groups": 77
+          },
+          "eval": {
+            "rows": 64,
+            "unique_declared_groups": 64
+          },
+          "train": {
+            "rows": 592,
+            "unique_declared_groups": 592
+          }
+        }
+      },
+      {
+        "family": "zebra_puzzle",
+        "source_revisions": [
+          "a9eb9183224cec63fe9a71e7a3a80cff14868624"
+        ],
+        "splits": {
+          "dev": {
+            "rows": 104,
+            "unique_declared_groups": 104
+          },
+          "eval": {
+            "rows": 90,
+            "unique_declared_groups": 90
+          },
+          "train": {
+            "rows": 743,
+            "unique_declared_groups": 743
+          }
+        }
+      }
+    ],
+    "minimum_unique_declared_groups_per_role": 4,
+    "rows": 34886,
+    "source_family_labels": 31
+  },
+  "limitations": [
+    "A distinct source label is not proof of independent semantic families; this is an upper-bound count.",
+    "Group IDs are declared source grouping, not a new near-duplicate or contamination audit.",
+    "Only this local corpus is inventoried; other disks or datasets are not ruled out.",
+    "Historical exposure across prior runs and pretraining is not certified absent.",
+    "No family roles, examples or held-out pack were selected; graders were not read."
+  ],
+  "report_id": "6510d89f24e688233fba991c991d306259f5df1f0d56230904a682082c4a5dcc",
+  "runner_sha256": "dbf5bfc3282264e7e9cc9cbce0ea1a43671afa2231eb5d33f26fa4a1c1d87411",
+  "schema": "sch.vpd-sae-source-family-inventory.v1",
+  "source": {
+    "manifest_sha256": "0c74669d4abd65defe4b445467c805e053361e186a2c2d5c741fca2d040f36fc",
+    "path": "C:\\projects\\VPD\\artifacts\\nanbeige_reasoning\\dataset_v1",
+    "questions_sha256": "53d1b14e549e1f68be0fbe3f434339ac69682486ccf19e9d564b000ee7c51291"
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "benchmark_id": "10486291b569bd2eeea91f8429702b6c668463d727013cad98baf2f676628688",
+  "controls": {
+    "adapter_receipt_tamper_rejected": true,
+    "adapter_v2_receipt_verifies": true,
+    "capture_artifacts_are_read_only": true,
+    "category_substitution_rejected": true,
+    "component_artifact_tamper_rejected": true,
+    "component_membership_substitution_rejected": true,
+    "guard_receipt_tamper_rejected": true,
+    "guarded_job_identity_preserved": true,
+    "model_frameworks_absent_before_and_after": true,
+    "no_training_or_execution_authority": true,
+    "predecessor_v2_identity_preserved": true,
+    "production_context_rejected_for_synthetic": true,
+    "router_receipt_preserves_v3_execution_identity": true,
+    "runtime_loaded_only_after_guard_reservation": true,
+    "synthetic_context_remains_explicit": true,
+    "v2_predecessor_tamper_rejected": true,
+    "v3_execution_identity_is_router_identity": true,
+    "v3_wrapper_tamper_rejected": true
+  },
+  "design": {
+    "capture_artifacts_read_only": true,
+    "predecessor_v2_array_loader_reused": true,
+    "production_allocation_and_reservation_replay_code_path_present": true,
+    "production_path_empirically_exercised": false,
+    "router_consumes_v3_execution_identity": true,
+    "synthetic_guarded_v3_capture": true
+  },
+  "results": {
+    "adapter_verification": {
+      "activation_category": "valid_authority",
+      "capture_execution_v2_id": "873be68d851900b6e008b573cef15e9e45d0302befa36a56ca6e3e7c3bb86cd0",
+      "capture_execution_v3_id": "047fb129f85063e22b56729352e2ebb791946692b0316b2fb5503bd71aefb822",
+      "capture_router_adapter_v2_id": "01b83a069c51f3b4a20942714a0f816a6c6011105b225739d2bc90c766609001",
+      "components": 2,
+      "episodes": 2,
+      "guarded_job_receipt_id": "185417e7e7819212bcc88de6f09ba6fd14ad675ac892c4ca27d02cdbfa541106",
+      "sae_training_authorized": false,
+      "schema": "sch.vpd-capture-receipt-router-input-adapter-verification.v2",
+      "split_role": "sae_training",
+      "status": "pass",
+      "v3_guarded_lineage_preserved": true
+    },
+    "capture_execution_v2_id": "873be68d851900b6e008b573cef15e9e45d0302befa36a56ca6e3e7c3bb86cd0",
+    "capture_execution_v3_id": "047fb129f85063e22b56729352e2ebb791946692b0316b2fb5503bd71aefb822",
+    "capture_router_adapter_v2_id": "01b83a069c51f3b4a20942714a0f816a6c6011105b225739d2bc90c766609001",
+    "cluster_episode_routing_id": "11c5eddaa8ae3ac81953da82db52721974843e1a80e8860b20c10c7de7a8c79b",
+    "components": 2,
+    "episodes": 2,
+    "guarded_job_receipt_id": "185417e7e7819212bcc88de6f09ba6fd14ad675ac892c4ca27d02cdbfa541106"
+  },
+  "schema": "sch.vpd-capture-receipt-router-input-adapter-benchmark.v2",
+  "scientific_boundary": {
+    "execution_authorized": false,
+    "model_inference_performed": false,
+    "model_loaded": false,
+    "persistent_empirical_router_receipt_produced": false,
+    "production_path_empirically_exercised": false,
+    "sae_training_authorized": false,
+    "synthetic_capture_and_effect_arrays_only": true,
+    "weights_loaded_or_mutated": false
+  },
+  "source": {
+    "adapter_v2_sha256": "c098b1b0f29b8b74173144b1afec7523611203fdce74312d8357f84d818fbed2",
+    "benchmark_sha256": "f9222626d957d4116fee4cd9b8d339c6d5a55c4f96e7e31b0317ef15821aef45",
+    "capture_runner_v3_sha256": "6b032dcae805a1f20f574b8e54bf872c65a128fd741c567d05ab9545a0b31bc2",
+    "router_v1_sha256": "8379997e72cd278af8b34fcedb4aad9165651583248d1f1f12e2d0e77d4b3027"
+  },
+  "status": "pass",
+  "summary": {
+    "controls": 18,
+    "passed": 18
+  }
+}

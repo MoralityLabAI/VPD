@@ -1,0 +1,6 @@
+pyarrow==21.0.0
+math-verify==0.8.0
+markdown==3.9
+pandas==2.3.2
+matplotlib==3.10.6
+# Model-side dependencies: ../nanbeige_looped/requirements.txt

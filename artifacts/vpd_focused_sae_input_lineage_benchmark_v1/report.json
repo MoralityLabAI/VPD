@@ -1,0 +1,103 @@
+{
+  "benchmark_id": "72a45142b1817269e4b991556585ad9e139c02290c31753edcc994d87ec783fe",
+  "scenarios": [
+    {
+      "expected_status": "pass",
+      "observed_status": "pass",
+      "result": {
+        "effect_archive_sha256": "8c13fc3ebb5f7493a9238ccea3971e4be68883c368e3225a8b4aad97f7e4212e",
+        "effect_merge_manifest_sha256": "58304ca61b2588a79e83b177756f37d9016d21fe1584bc91ddf4fe4bd3bc0886",
+        "empirical_category_claim_allowed": true,
+        "packet_bound_effects_required_for_category_studies": true,
+        "schema": "sch.vpd-focused-sae-packet-effect-lineage.v1",
+        "status": "pass"
+      },
+      "scenario_id": "exact_packet_bound_archive_and_manifest_pass",
+      "status": "pass"
+    },
+    {
+      "expected_status": "reject",
+      "observed_status": "reject",
+      "result": {
+        "error": "focused SAE effect archive differs from its packet lineage"
+      },
+      "scenario_id": "substituted_effect_archive_rejects",
+      "status": "pass"
+    },
+    {
+      "expected_status": "reject",
+      "observed_status": "reject",
+      "result": {
+        "error": "focused SAE effect merge manifest differs from its packet lineage"
+      },
+      "scenario_id": "substituted_effect_manifest_rejects",
+      "status": "pass"
+    },
+    {
+      "expected_status": "reject",
+      "observed_status": "reject",
+      "result": {
+        "error": "category packet lacks packet-bound discovery effect provenance"
+      },
+      "scenario_id": "category_packet_without_effect_lineage_rejects",
+      "status": "pass"
+    },
+    {
+      "expected_status": "unattested_legacy_metadata_pilot",
+      "observed_status": "unattested_legacy_metadata_pilot",
+      "result": {
+        "empirical_category_claim_allowed": false,
+        "packet_bound_effects_required_for_category_studies": true,
+        "schema": "sch.vpd-focused-sae-packet-effect-lineage.v1",
+        "status": "unattested_legacy_metadata_pilot"
+      },
+      "scenario_id": "legacy_metadata_packet_is_explicitly_unattested",
+      "status": "pass"
+    },
+    {
+      "expected_status": "pass",
+      "observed_status": "pass",
+      "result": {
+        "effect_archive_sha256": "8c13fc3ebb5f7493a9238ccea3971e4be68883c368e3225a8b4aad97f7e4212e",
+        "effect_merge_manifest_sha256": "58304ca61b2588a79e83b177756f37d9016d21fe1584bc91ddf4fe4bd3bc0886",
+        "empirical_category_claim_allowed": true,
+        "independently_verified_by_reducer": true,
+        "schema": "sch.vpd-focused-sae-packet-effect-lineage.v1",
+        "status": "pass"
+      },
+      "scenario_id": "exact_signed_input_lineage_passes_reducer",
+      "status": "pass"
+    },
+    {
+      "expected_status": "reject",
+      "observed_status": "reject",
+      "result": {
+        "error": "worker effect archive differs from its packet lineage"
+      },
+      "scenario_id": "substituted_signed_effect_archive_rejects_at_reducer",
+      "status": "pass"
+    },
+    {
+      "expected_status": "reject",
+      "observed_status": "reject",
+      "result": {
+        "error": "worker result lacks exact packet/effect lineage receipt"
+      },
+      "scenario_id": "misstated_signed_lineage_receipt_rejects_at_reducer",
+      "status": "pass"
+    }
+  ],
+  "schema": "sch.vpd-focused-sae-input-lineage-benchmark.v1",
+  "scientific_boundary": {
+    "does_not_establish_bonsai_cluster_or_feature_assignments": true,
+    "model_inference_performed": false,
+    "sae_training_performed": false,
+    "synthetic_file_lineage_only": true
+  },
+  "source": {
+    "benchmark_runner_sha256": "6122bb3547ebcd4d2200ad3675088ba9f61f7ad49af197804243d04c583e47dc",
+    "focused_study_runner_sha256": "306195df88ccbf1ec4c4093c22652db9f7c42da0f5921b4c533632ba780429fb",
+    "result_reducer_sha256": "e972349ba5e1f40c39997a3848423fcb5df45c7179d8b23f82bbdae8e5bc13ed"
+  },
+  "status": "pass"
+}

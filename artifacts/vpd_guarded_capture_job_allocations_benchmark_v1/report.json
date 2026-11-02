@@ -1,0 +1,55 @@
+{
+  "benchmark_id": "bc929b7751eb09cc9b0a8d4ff258c546e59f27b5fa61e71decc4753e02e007a8",
+  "controls": {
+    "allocation_imports_no_model_frameworks": true,
+    "allocation_manifest_reproduces": true,
+    "allocation_remains_non_authorizing": true,
+    "dataset_substitution_rejected": true,
+    "every_job_is_content_addressed": true,
+    "every_job_reserves_one_compute_job": true,
+    "final_evaluation_absent": true,
+    "four_roles_exact": true,
+    "global_totals_match_recovered_preflight": true,
+    "job_allocation_ids_are_unique": true,
+    "job_payload_tamper_rejected": true,
+    "manifest_address_tamper_rejected": true,
+    "packet_substitution_rejected": true,
+    "role_removal_rejected": true,
+    "role_totals_are_positive_and_exact": true,
+    "same_exact_packet_ids_each_role": true,
+    "sixteen_jobs_per_role": true,
+    "sixty_four_jobs_global": true
+  },
+  "results": {
+    "allocation_manifest_id": "b046a591e380bc4882534f07329ba32c1ce0fdcb1735dcb99fc362196ea23a65",
+    "global_totals": {
+      "batch_forwards": 41352192,
+      "compute_jobs": 64,
+      "episode_forward_equivalents": 164900736,
+      "float32_effect_payload_bytes": 4046192640
+    },
+    "jobs": 64,
+    "roles": 4
+  },
+  "schema": "sch.vpd-guarded-capture-job-allocation-benchmark.v1",
+  "scientific_boundary": {
+    "capture_started": false,
+    "execution_authorized": false,
+    "model_framework_imported": false,
+    "model_inference_performed": false,
+    "model_loaded": false,
+    "output_reserved": false,
+    "sae_training_authorized": false,
+    "weights_mutated": false
+  },
+  "source": {
+    "allocation_manifest_sha256": "7e4ba9b72a292373f206e10c3a653c7bdea10500a727512bce7d0a5e763f6a62",
+    "allocation_planner_sha256": "79f88b9053400ea8ce6bab2e9a523c13f389b0e69282137b42f9b2649c655299",
+    "benchmark_sha256": "1ea4d3230a1c53c4dff2a9625912ae216ab466d83eb063db8e7b57196a1c6861"
+  },
+  "status": "pass",
+  "summary": {
+    "controls": 18,
+    "passed": 18
+  }
+}

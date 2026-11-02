@@ -1,0 +1,103 @@
+{
+  "artifacts": {
+    "dataset_validation": {
+      "bytes": 2393,
+      "path": "dataset_validation.json",
+      "sha256": "97a9510cf795d675ba8996bd463f0bf90a5bef647089f14a5cc1727a223c2030"
+    },
+    "episodes": {
+      "bytes": 20521176,
+      "path": "episodes.jsonl",
+      "sha256": "a4578a2bdb34a8e9f1151545d193081727b35bdba747e05df96fb78feee70157"
+    },
+    "gated_episodes": {
+      "bytes": 25130200,
+      "path": "gated_episodes.jsonl",
+      "sha256": "3e2a3d2aa5671d95b1bd663d48370c9596eb2817b1e5152087b8c3dbcbf16ced"
+    }
+  },
+  "coverage": {
+    "activation_category_counts": {
+      "missing_or_untrusted_authority": 1024,
+      "other_invalid": 256,
+      "replayed": 256,
+      "revoked": 256,
+      "scope_invalid": 256,
+      "signature_invalid": 256,
+      "time_inactive": 256,
+      "valid_authority": 256
+    },
+    "minimum_activation_category_observations": 256,
+    "pairs": 256,
+    "rows": 2816,
+    "zero_failure_one_sided_95_percent_rate_upper_bound": 0.011633876163163248
+  },
+  "generation": {
+    "conditions_per_pair": 11,
+    "identity_namespace": "partition-audit-v1-s350829",
+    "pairs_per_family": 64,
+    "seed": 350829,
+    "semantic_families": 4,
+    "semantic_template_groups": [
+      "certificate_renewal",
+      "data_warehouse_backfill",
+      "service_account_rotation",
+      "webhook_endpoint_update"
+    ]
+  },
+  "pack_id": "e65c78bb07fcf25c5a008d94a8f447b1b75f01cb8734632e7e2e567c81ca2f23",
+  "planned_full_component_census": {
+    "batch_forwards_at_planned_batch_size": 5677056,
+    "batch_size": 4,
+    "component_count": 4032,
+    "episode_forward_equivalents": 22708224,
+    "execution_authorized": false,
+    "generated_tokens": 0,
+    "signed_perturbation_lanes": 2
+  },
+  "prior_disjointness": {
+    "episode_id_overlap": 0,
+    "exact_message_overlap": 0,
+    "pair_id_overlap": 0,
+    "prior_paths": [
+      "artifacts\\vpd_activation_category_capacity_pack_v3\\gated_episodes.jsonl"
+    ],
+    "prior_rows_checked": 25168,
+    "semantic_template_group_overlap": 0
+  },
+  "role_contract": {
+    "failure_may_not_tune_candidate_on_same_pack": true,
+    "failure_rejects_candidate": true,
+    "final_evaluation_role_consumed": false,
+    "may_promote_shared_component_to_specific": false,
+    "may_select_thresholds_clusters_or_components": false,
+    "next_candidate_requires_new_pack_version_and_seed": true,
+    "role": "partition_audit",
+    "use": "post_freeze_reject_only_partition_generalization_audit"
+  },
+  "schema": "sch.vpd-partition-audit-pack-manifest.v1",
+  "scientific_boundary": {
+    "empirical_partition_claimed": false,
+    "execution_authorized": false,
+    "externally_authenticated": false,
+    "model_inference_performed": false,
+    "model_outcomes_recorded": false,
+    "real_actions_executed": false,
+    "weights_loaded_or_mutated": false
+  },
+  "source_code": {
+    "candidate_gate": {
+      "path": "experiments/authz_mechinterp/run_candidate_gate_dataset.py",
+      "sha256": "09a0a334640d5b97e5ffad4233296030506012caf531b92ead47e50ad95b89f9"
+    },
+    "generator": {
+      "path": "experiments/authz_mechinterp/generate_partition_audit_pack_v1.py",
+      "sha256": "ea02f3ec9d8f45ea172fe0114f33b2f0ae539c5d491180b4b42168ad5de656c3"
+    },
+    "validator_and_finalizer": {
+      "path": "experiments/authz_mechinterp/finalize_partition_audit_pack_v1.py",
+      "sha256": "181c093d4b6ff110a6c8b2dc74c9474650b5959c0584880ec2386408592138ce"
+    }
+  },
+  "status": "fresh_model_free_pack_ready_capture_not_authorized"
+}

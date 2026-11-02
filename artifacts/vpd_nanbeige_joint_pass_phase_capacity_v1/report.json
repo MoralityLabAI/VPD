@@ -1,0 +1,241 @@
+{
+  "design": {
+    "all_arms_use_identical_rows_and_denominator": true,
+    "arm_ranks": {
+      "joint_pass_phase": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "monolithic": [
+        64
+      ],
+      "pass_routed": [
+        32,
+        32
+      ],
+      "phase_routed": [
+        32,
+        32
+      ],
+      "random_four_way": [
+        16,
+        16,
+        16,
+        16
+      ]
+    },
+    "bootstrap_replicates": 4096,
+    "candidate_router": "observable_joint_recurrent_pass_by_activation_phase",
+    "comparison": "equal_total_rank_held_out_linear_subspace_proxy",
+    "four_way_random_control_is_minimal_and_screening_only": true,
+    "four_way_random_train_examples_per_subspace": 1,
+    "held_out_unit": "source_designated_example_block",
+    "random_controls": 8,
+    "rows_per_pass_per_phase_per_example": 8,
+    "screening_only_because_phase_parent_is_not_operatively_admitted": true,
+    "total_rank_per_arm": 64
+  },
+  "provenance": {
+    "runner_sha256": "fb52cfea239eb52d16ed532046c75ce4ff6e3193914cac36380e507b334aabb6"
+  },
+  "report_id": "f2d47b06a1c30d6db68a5b2c78b2c3b22e59aa9dff84de7baf7d5f18e60fc79d",
+  "schema": "sch.vpd-nanbeige-joint-pass-phase-capacity.v1",
+  "scientific_boundary": {
+    "capacity_preference_cannot_bypass_parent_category_gate": true,
+    "does_not_authorize_joint_compartment_sae_training": true,
+    "execution_authorized": false,
+    "linear_subspace_proxy_is_not_sae_training": true,
+    "new_local_analysis_of_recovered_empirical_arrays": true,
+    "new_model_inference_performed": false,
+    "paid_compute_authorized": false,
+    "phase_parent_category_operatively_admitted": false,
+    "weights_loaded_or_mutated": false
+  },
+  "sites": [
+    {
+      "arm_explained_variance": {
+        "joint_pass_phase": 0.999801227441299,
+        "monolithic": 0.9998249451506644,
+        "pass_routed": 0.9998148426026993,
+        "phase_routed": 0.9998117754122825
+      },
+      "held_out_examples": 4,
+      "joint_capacity_preference": "fail",
+      "joint_compartment_training_admission": "fail",
+      "joint_minus": {
+        "monolithic": {
+          "delta": -2.3717709365489448e-05,
+          "paired_example_block_bootstrap_95_ci": [
+            -2.7312882736171803e-05,
+            -2.0487780120439946e-05
+          ]
+        },
+        "pass_routed": {
+          "delta": -1.3615161400304387e-05,
+          "paired_example_block_bootstrap_95_ci": [
+            -1.7583821837355186e-05,
+            -1.0077362663842195e-05
+          ]
+        },
+        "phase_routed": {
+          "delta": -1.0547970983543209e-05,
+          "paired_example_block_bootstrap_95_ci": [
+            -1.3342970345440396e-05,
+            -8.427534713211238e-06
+          ]
+        },
+        "random_partition_mean": {
+          "delta": 2.8235758245620524e-05,
+          "paired_example_block_bootstrap_95_ci": [
+            1.5468301779512083e-05,
+            3.854452061953601e-05
+          ]
+        }
+      },
+      "random_partition_explained_variances": [
+        0.9997721438584154,
+        0.999781740564592,
+        0.9997553580352617,
+        0.9997639907992648,
+        0.9997523946865694,
+        0.9997896562029519,
+        0.9997753126400836,
+        0.9997933366772874
+      ],
+      "random_partition_mean_explained_variance": 0.9997729916830533,
+      "site": "model.layers.11",
+      "train_examples": 4
+    },
+    {
+      "arm_explained_variance": {
+        "joint_pass_phase": 0.9970585374076324,
+        "monolithic": 0.9975060569124529,
+        "pass_routed": 0.9974232470512839,
+        "phase_routed": 0.9972122247285892
+      },
+      "held_out_examples": 4,
+      "joint_capacity_preference": "fail",
+      "joint_compartment_training_admission": "fail",
+      "joint_minus": {
+        "monolithic": {
+          "delta": -0.00044751950482047054,
+          "paired_example_block_bootstrap_95_ci": [
+            -0.0005785768914379904,
+            -0.00032183923219065725
+          ]
+        },
+        "pass_routed": {
+          "delta": -0.00036470964365153957,
+          "paired_example_block_bootstrap_95_ci": [
+            -0.0005001216014378757,
+            -0.00023485346224004356
+          ]
+        },
+        "phase_routed": {
+          "delta": -0.00015368732095677462,
+          "paired_example_block_bootstrap_95_ci": [
+            -0.0002404778720502216,
+            -9.493689088454926e-05
+          ]
+        },
+        "random_partition_mean": {
+          "delta": 0.0005369319787427163,
+          "paired_example_block_bootstrap_95_ci": [
+            0.0003799293971228932,
+            0.0006854981861089185
+          ]
+        }
+      },
+      "random_partition_explained_variances": [
+        0.9964593812171145,
+        0.9965773312371358,
+        0.996128848752752,
+        0.9964599868078197,
+        0.9960848491066745,
+        0.9969147541555958,
+        0.9965952232157446,
+        0.9969524689382809
+      ],
+      "random_partition_mean_explained_variance": 0.9965216054288897,
+      "site": "model.layers.21",
+      "train_examples": 4
+    },
+    {
+      "arm_explained_variance": {
+        "joint_pass_phase": 0.7474593311782425,
+        "monolithic": 0.8028247692958419,
+        "pass_routed": 0.7893673489014533,
+        "phase_routed": 0.7755624262865771
+      },
+      "held_out_examples": 4,
+      "joint_capacity_preference": "fail",
+      "joint_compartment_training_admission": "fail",
+      "joint_minus": {
+        "monolithic": {
+          "delta": -0.05536543811759942,
+          "paired_example_block_bootstrap_95_ci": [
+            -0.07289032485377082,
+            -0.03614790918214461
+          ]
+        },
+        "pass_routed": {
+          "delta": -0.041908017723210844,
+          "paired_example_block_bootstrap_95_ci": [
+            -0.05885491850032308,
+            -0.022229983095614945
+          ]
+        },
+        "phase_routed": {
+          "delta": -0.02810309510833464,
+          "paired_example_block_bootstrap_95_ci": [
+            -0.045915996782366186,
+            -0.011219681727777658
+          ]
+        },
+        "random_partition_mean": {
+          "delta": 0.02900603506865007,
+          "paired_example_block_bootstrap_95_ci": [
+            0.014325446787477398,
+            0.04357490851936129
+          ]
+        }
+      },
+      "random_partition_explained_variances": [
+        0.7097776097520805,
+        0.7166893372796193,
+        0.6912397856605715,
+        0.7216632688558287,
+        0.6834787251510073,
+        0.7509750377571851,
+        0.7189287234360066,
+        0.7548738809844406
+      ],
+      "random_partition_mean_explained_variance": 0.7184532961095924,
+      "site": "model.norm",
+      "train_examples": 4
+    }
+  ],
+  "sources": {
+    "common_examples": 8,
+    "generation": {
+      "manifest_sha256": "7c5205eeb3c1e7c025ac1aababc6e0526bbe82048f633a52e73bfefa07c8a546",
+      "path": "C:/projects/VPD/artifacts/nanbeige_reasoning/prime-20260906T204058Z-561/retrieved/artifacts/nanbeige_looped/bf16_multipass_calibration"
+    },
+    "prompt": {
+      "manifest_sha256": "523a54970058491885e696596385a9d15d26102469108813fe2a892a46485c9f",
+      "path": "C:/projects/VPD/artifacts/nanbeige_reasoning/local_prompt_capture_v2"
+    }
+  },
+  "status": "pass",
+  "summary": {
+    "joint_capacity_preferences": 0,
+    "joint_compartment_training_admissions": 0,
+    "joint_wins_vs_monolithic": 0,
+    "joint_wins_vs_pass_routed": 0,
+    "joint_wins_vs_phase_routed": 0,
+    "joint_wins_vs_random_mean": 3,
+    "sites": 3
+  }
+}

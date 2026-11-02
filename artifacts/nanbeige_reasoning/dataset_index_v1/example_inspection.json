@@ -1,0 +1,43 @@
+{
+  "id": "arc_agi_1/a79310a0/0",
+  "calibration_split": "train",
+  "site": "model.layers.21",
+  "optimizer": "muon_hybrid_paired_cuda",
+  "dictionary": "artifacts/nanbeige_reasoning/muon_sae_control_v1/00_muon_hybrid/dictionary.npz",
+  "dictionary_sha256": "b0b5d451751d3be4058bf4d48f426933af239ae7102bb0d92ef38fe6c6aab66d",
+  "matched_positions": 32,
+  "activation_shape": [
+    32,
+    3072
+  ],
+  "feature_shape": [
+    32,
+    6144
+  ],
+  "activation_pass_difference_l2": 11777.510289804637,
+  "largest_mean_absolute_feature_differences": [
+    {
+      "feature_id": 574,
+      "mean_absolute_delta": 493.4431095123291
+    },
+    {
+      "feature_id": 1937,
+      "mean_absolute_delta": 411.3314323425293
+    },
+    {
+      "feature_id": 295,
+      "mean_absolute_delta": 338.6413269042969
+    },
+    {
+      "feature_id": 4811,
+      "mean_absolute_delta": 253.41641807556152
+    },
+    {
+      "feature_id": 274,
+      "mean_absolute_delta": 250.6404845714569
+    }
+  ],
+  "limitation": "Descriptive coordinates in this frozen dictionary only; feature IDs carry no validated semantic label.",
+  "model_inference_performed": false,
+  "index_sha256": "8224c85885c412b07edf6e96db5560b4ec0a9fbaaefbc598cdacdf13071e75fa"
+}

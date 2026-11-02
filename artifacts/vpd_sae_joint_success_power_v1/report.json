@@ -1,0 +1,373 @@
+{
+  "boundary": {
+    "capture_performed": false,
+    "clustering_admission": false,
+    "launch_authorized": false,
+    "new_simulation_performed": false,
+    "training_performed": false
+  },
+  "exact_illustrations": [
+    {
+      "dependence_unrestricted_lower": 0.0,
+      "dependence_unrestricted_upper": 0.8,
+      "equal_marginal_probability": 0.8,
+      "events": 6,
+      "independent_events_only": 0.2621440000000001
+    },
+    {
+      "dependence_unrestricted_lower": 0.6999999999999997,
+      "dependence_unrestricted_upper": 0.95,
+      "equal_marginal_probability": 0.95,
+      "events": 6,
+      "independent_events_only": 0.7350918906249998
+    },
+    {
+      "dependence_unrestricted_lower": 0.94,
+      "dependence_unrestricted_upper": 0.99,
+      "equal_marginal_probability": 0.99,
+      "events": 6,
+      "independent_events_only": 0.9414801494009999
+    },
+    {
+      "dependence_unrestricted_lower": 0.0,
+      "dependence_unrestricted_upper": 0.8,
+      "equal_marginal_probability": 0.8,
+      "events": 18,
+      "independent_events_only": 0.018014398509482003
+    },
+    {
+      "dependence_unrestricted_lower": 0.0999999999999992,
+      "dependence_unrestricted_upper": 0.95,
+      "equal_marginal_probability": 0.95,
+      "events": 18,
+      "independent_events_only": 0.3972143184582181
+    },
+    {
+      "dependence_unrestricted_lower": 0.8199999999999998,
+      "dependence_unrestricted_upper": 0.99,
+      "equal_marginal_probability": 0.99,
+      "events": 18,
+      "independent_events_only": 0.8345137614500874
+    }
+  ],
+  "limitations": [
+    "Bounds are exact for known marginals; source scenario bounds plug in Monte Carlo estimates and are not confidence bounds.",
+    "Six and eighteen are illustrative conjunction sizes, not newly frozen Q2 endpoint counts. Source marginals still use the original alpha 0.05/18.",
+    "Shared training data, evaluation families, schedules and initialization designs make event independence unverified. Product probabilities are conditional illustrations only.",
+    "The source simulation was not rerun here; its receipt hash and stored count arithmetic were checked. It is synthetic, not empirical variance calibration.",
+    "Quality prerequisites, model failures, censoring and missing captures are absent from the source simulation. Adding required gates cannot improve all-required-success probability.",
+    "No useful-effect margin in EV units, prompt non-degradation rule, final multiplicity scope or calibrated joint Q2 power is established."
+  ],
+  "report_id": "769e4c84e2d5357a5e5728bdf66d07d473ecffc6988a3b6c194fc6c294b79156",
+  "runner_sha256": "224725649dd8f291aa53469d168ad4feadf2c181a3550599c87c89e4e5cff5fb",
+  "schema": "sch.vpd-sae-joint-success-power-audit.v1",
+  "source": {
+    "path": "C:\\projects\\VPD\\artifacts\\vpd_sae_family_test_power_v1\\report.json",
+    "report_id": "650e0ee6b2a76b7a15a5388f1e89c44ef62bf9b69d39334dadfcf42f8953a5aa",
+    "sha256": "ddede6ed18abeb712e853c176f8261c362e43f19bc133425fc628720c2d92164"
+  },
+  "source_marginal_sensitivity": [
+    {
+      "distribution": "gaussian",
+      "excess_effect_in_family_sd": 1.0,
+      "families": 10,
+      "hypothetical_equal_marginal_events": 6,
+      "marginal_power_estimate": 0.30078125,
+      "plug_in_joint_bounds": {
+        "dependence_unrestricted_lower": 0.0,
+        "dependence_unrestricted_upper": 0.30078125,
+        "independent_events_only": 0.0007404650407103475
+      }
+    },
+    {
+      "distribution": "gaussian",
+      "excess_effect_in_family_sd": 1.0,
+      "families": 10,
+      "hypothetical_equal_marginal_events": 18,
+      "marginal_power_estimate": 0.30078125,
+      "plug_in_joint_bounds": {
+        "dependence_unrestricted_lower": 0.0,
+        "dependence_unrestricted_upper": 0.30078125,
+        "independent_events_only": 4.05988449083084e-10
+      }
+    },
+    {
+      "distribution": "gaussian",
+      "excess_effect_in_family_sd": 1.5,
+      "families": 10,
+      "hypothetical_equal_marginal_events": 6,
+      "marginal_power_estimate": 0.71875,
+      "plug_in_joint_bounds": {
+        "dependence_unrestricted_lower": 0.0,
+        "dependence_unrestricted_upper": 0.71875,
+        "independent_events_only": 0.1378691652789712
+      }
+    },
+    {
+      "distribution": "gaussian",
+      "excess_effect_in_family_sd": 1.5,
+      "families": 10,
+      "hypothetical_equal_marginal_events": 18,
+      "marginal_power_estimate": 0.71875,
+      "plug_in_joint_bounds": {
+        "dependence_unrestricted_lower": 0.0,
+        "dependence_unrestricted_upper": 0.71875,
+        "independent_events_only": 0.0026206042352164196
+      }
+    },
+    {
+      "distribution": "gaussian",
+      "excess_effect_in_family_sd": 2.0,
+      "families": 10,
+      "hypothetical_equal_marginal_events": 6,
+      "marginal_power_estimate": 0.95703125,
+      "plug_in_joint_bounds": {
+        "dependence_unrestricted_lower": 0.7421875,
+        "dependence_unrestricted_upper": 0.95703125,
+        "independent_events_only": 0.7683457870499844
+      }
+    },
+    {
+      "distribution": "gaussian",
+      "excess_effect_in_family_sd": 2.0,
+      "families": 10,
+      "hypothetical_equal_marginal_events": 18,
+      "marginal_power_estimate": 0.95703125,
+      "plug_in_joint_bounds": {
+        "dependence_unrestricted_lower": 0.2265625,
+        "dependence_unrestricted_upper": 0.95703125,
+        "independent_events_only": 0.45359696803050303
+      }
+    },
+    {
+      "distribution": "student_t_3_unit_variance",
+      "excess_effect_in_family_sd": 1.0,
+      "families": 10,
+      "hypothetical_equal_marginal_events": 6,
+      "marginal_power_estimate": 0.515625,
+      "plug_in_joint_bounds": {
+        "dependence_unrestricted_lower": 0.0,
+        "dependence_unrestricted_upper": 0.515625,
+        "independent_events_only": 0.01879333240503911
+      }
+    },
+    {
+      "distribution": "student_t_3_unit_variance",
+      "excess_effect_in_family_sd": 1.0,
+      "families": 10,
+      "hypothetical_equal_marginal_events": 18,
+      "marginal_power_estimate": 0.515625,
+      "plug_in_joint_bounds": {
+        "dependence_unrestricted_lower": 0.0,
+        "dependence_unrestricted_upper": 0.515625,
+        "independent_events_only": 6.63760472277944e-06
+      }
+    },
+    {
+      "distribution": "student_t_3_unit_variance",
+      "excess_effect_in_family_sd": 1.5,
+      "families": 10,
+      "hypothetical_equal_marginal_events": 6,
+      "marginal_power_estimate": 0.806640625,
+      "plug_in_joint_bounds": {
+        "dependence_unrestricted_lower": 0.0,
+        "dependence_unrestricted_upper": 0.806640625,
+        "independent_events_only": 0.2754739548876955
+      }
+    },
+    {
+      "distribution": "student_t_3_unit_variance",
+      "excess_effect_in_family_sd": 1.5,
+      "families": 10,
+      "hypothetical_equal_marginal_events": 18,
+      "marginal_power_estimate": 0.806640625,
+      "plug_in_joint_bounds": {
+        "dependence_unrestricted_lower": 0.0,
+        "dependence_unrestricted_upper": 0.806640625,
+        "independent_events_only": 0.020904588944031285
+      }
+    },
+    {
+      "distribution": "student_t_3_unit_variance",
+      "excess_effect_in_family_sd": 2.0,
+      "families": 10,
+      "hypothetical_equal_marginal_events": 6,
+      "marginal_power_estimate": 0.904296875,
+      "plug_in_joint_bounds": {
+        "dependence_unrestricted_lower": 0.42578125,
+        "dependence_unrestricted_upper": 0.904296875,
+        "independent_events_only": 0.5468474360895375
+      }
+    },
+    {
+      "distribution": "student_t_3_unit_variance",
+      "excess_effect_in_family_sd": 2.0,
+      "families": 10,
+      "hypothetical_equal_marginal_events": 18,
+      "marginal_power_estimate": 0.904296875,
+      "plug_in_joint_bounds": {
+        "dependence_unrestricted_lower": 0.0,
+        "dependence_unrestricted_upper": 0.904296875,
+        "independent_events_only": 0.1635304157066927
+      }
+    },
+    {
+      "distribution": "gaussian",
+      "excess_effect_in_family_sd": 1.0,
+      "families": 12,
+      "hypothetical_equal_marginal_events": 6,
+      "marginal_power_estimate": 0.56640625,
+      "plug_in_joint_bounds": {
+        "dependence_unrestricted_lower": 0.0,
+        "dependence_unrestricted_upper": 0.56640625,
+        "independent_events_only": 0.03301932732791002
+      }
+    },
+    {
+      "distribution": "gaussian",
+      "excess_effect_in_family_sd": 1.0,
+      "families": 12,
+      "hypothetical_equal_marginal_events": 18,
+      "marginal_power_estimate": 0.56640625,
+      "plug_in_joint_bounds": {
+        "dependence_unrestricted_lower": 0.0,
+        "dependence_unrestricted_upper": 0.56640625,
+        "independent_events_only": 3.600017936851649e-05
+      }
+    },
+    {
+      "distribution": "gaussian",
+      "excess_effect_in_family_sd": 1.5,
+      "families": 12,
+      "hypothetical_equal_marginal_events": 6,
+      "marginal_power_estimate": 0.9296875,
+      "plug_in_joint_bounds": {
+        "dependence_unrestricted_lower": 0.578125,
+        "dependence_unrestricted_upper": 0.9296875,
+        "independent_events_only": 0.6456868630450572
+      }
+    },
+    {
+      "distribution": "gaussian",
+      "excess_effect_in_family_sd": 1.5,
+      "families": 12,
+      "hypothetical_equal_marginal_events": 18,
+      "marginal_power_estimate": 0.9296875,
+      "plug_in_joint_bounds": {
+        "dependence_unrestricted_lower": 0.0,
+        "dependence_unrestricted_upper": 0.9296875,
+        "independent_events_only": 0.2691942948149391
+      }
+    },
+    {
+      "distribution": "gaussian",
+      "excess_effect_in_family_sd": 2.0,
+      "families": 12,
+      "hypothetical_equal_marginal_events": 6,
+      "marginal_power_estimate": 0.990234375,
+      "plug_in_joint_bounds": {
+        "dependence_unrestricted_lower": 0.94140625,
+        "dependence_unrestricted_upper": 0.990234375,
+        "independent_events_only": 0.9428182709152826
+      }
+    },
+    {
+      "distribution": "gaussian",
+      "excess_effect_in_family_sd": 2.0,
+      "families": 12,
+      "hypothetical_equal_marginal_events": 18,
+      "marginal_power_estimate": 0.990234375,
+      "plug_in_joint_bounds": {
+        "dependence_unrestricted_lower": 0.82421875,
+        "dependence_unrestricted_upper": 0.990234375,
+        "independent_events_only": 0.8380770932024578
+      }
+    },
+    {
+      "distribution": "student_t_3_unit_variance",
+      "excess_effect_in_family_sd": 1.0,
+      "families": 12,
+      "hypothetical_equal_marginal_events": 6,
+      "marginal_power_estimate": 0.744140625,
+      "plug_in_joint_bounds": {
+        "dependence_unrestricted_lower": 0.0,
+        "dependence_unrestricted_upper": 0.744140625,
+        "independent_events_only": 0.1697970294816265
+      }
+    },
+    {
+      "distribution": "student_t_3_unit_variance",
+      "excess_effect_in_family_sd": 1.0,
+      "families": 12,
+      "hypothetical_equal_marginal_events": 18,
+      "marginal_power_estimate": 0.744140625,
+      "plug_in_joint_bounds": {
+        "dependence_unrestricted_lower": 0.0,
+        "dependence_unrestricted_upper": 0.744140625,
+        "independent_events_only": 0.004895423458181214
+      }
+    },
+    {
+      "distribution": "student_t_3_unit_variance",
+      "excess_effect_in_family_sd": 1.5,
+      "families": 12,
+      "hypothetical_equal_marginal_events": 6,
+      "marginal_power_estimate": 0.923828125,
+      "plug_in_joint_bounds": {
+        "dependence_unrestricted_lower": 0.54296875,
+        "dependence_unrestricted_upper": 0.923828125,
+        "independent_events_only": 0.6216516326401349
+      }
+    },
+    {
+      "distribution": "student_t_3_unit_variance",
+      "excess_effect_in_family_sd": 1.5,
+      "families": 12,
+      "hypothetical_equal_marginal_events": 18,
+      "marginal_power_estimate": 0.923828125,
+      "plug_in_joint_bounds": {
+        "dependence_unrestricted_lower": 0.0,
+        "dependence_unrestricted_upper": 0.923828125,
+        "independent_events_only": 0.24023774114217938
+      }
+    },
+    {
+      "distribution": "student_t_3_unit_variance",
+      "excess_effect_in_family_sd": 2.0,
+      "families": 12,
+      "hypothetical_equal_marginal_events": 6,
+      "marginal_power_estimate": 0.96484375,
+      "plug_in_joint_bounds": {
+        "dependence_unrestricted_lower": 0.7890625,
+        "dependence_unrestricted_upper": 0.96484375,
+        "independent_events_only": 0.8067554866774493
+      }
+    },
+    {
+      "distribution": "student_t_3_unit_variance",
+      "excess_effect_in_family_sd": 2.0,
+      "families": 12,
+      "hypothetical_equal_marginal_events": 18,
+      "marginal_power_estimate": 0.96484375,
+      "plug_in_joint_bounds": {
+        "dependence_unrestricted_lower": 0.3671875,
+        "dependence_unrestricted_upper": 0.96484375,
+        "independent_events_only": 0.5250803705587458
+      }
+    }
+  ],
+  "target_requirements": [
+    {
+      "equal_marginal_if_independent": 0.9634924839989961,
+      "joint_target": 0.8,
+      "required_successes": 6,
+      "sufficient_equal_marginal_for_arbitrary_dependence": 0.9666666666666667
+    },
+    {
+      "equal_marginal_if_independent": 0.9876796606081734,
+      "joint_target": 0.8,
+      "required_successes": 18,
+      "sufficient_equal_marginal_for_arbitrary_dependence": 0.9888888888888889
+    }
+  ]
+}

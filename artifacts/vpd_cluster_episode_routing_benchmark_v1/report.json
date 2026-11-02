@@ -1,0 +1,89 @@
+{
+  "benchmark_id": "0d5668cdbec6629f1632b3cf0f26a69695c95ec137fcaa2cae0342cde1056ac1",
+  "controls": {
+    "aggregate_preserving_condition_swap_rejected": true,
+    "ambiguous_and_low_response_use_shared": true,
+    "component_effect_tamper_rejected": true,
+    "component_order_invariant": true,
+    "condition_stable_roles_admitted": true,
+    "episode_order_tamper_rejected": true,
+    "inputs_byte_identical": true,
+    "known_two_cluster_routes_recovered": true,
+    "label_renaming_invariant": true,
+    "nonfinite_effect_rejected": true,
+    "pair_conflict_is_atomic_shared": true,
+    "partition_membership_tamper_rejected": true,
+    "primary_routes_disjoint_without_duplication": true,
+    "row_count_mismatch_rejected": true,
+    "stable_discovery_validation_admitted": true,
+    "unequal_cluster_size_normalized": true
+  },
+  "design": {
+    "activation_rows_per_episode": 2,
+    "condition_stratified_stability_required": true,
+    "discovery_and_independent_validation": true,
+    "hidden_size": 3,
+    "known_clusters": 2,
+    "model_free": true,
+    "pair_atomic_primary_routing": true,
+    "unequal_component_counts": [
+      1,
+      3
+    ]
+  },
+  "results": {
+    "condition_swap_maximum_condition_total_variation": 1.0,
+    "condition_swap_overall_total_variation": 0.0,
+    "condition_swap_stability_id": "c0d8ada7231ecfbd3128c9fc6f35e3120780113ba64d59023ece19a1417bd9b0",
+    "discovery_routing_id": "e5f9c8d4087af93a1467fe421130d8506ed56c149061b25cb6421f051effe513",
+    "discovery_verification": {
+      "cluster_episode_routing_id": "e5f9c8d4087af93a1467fe421130d8506ed56c149061b25cb6421f051effe513",
+      "episodes": 14,
+      "routes": 3,
+      "sae_training_authorized": false,
+      "schema": "sch.vpd-cluster-episode-routing-verification.v1",
+      "status": "pass"
+    },
+    "pair_route_conflicts_sent_to_shared": 1,
+    "stable_routing_stability_id": "c8aa68a7956d5194774dcb4d4d11837f94133274ae6b80f283d2dc070821115a",
+    "support_by_route": {
+      "shared_ambiguous": {
+        "episode_id_set_sha256": "b6a3d0097db7ee40b4040fbf57cd61e65a2563e39efceb7e90166c0158906ae1",
+        "episodes": 6,
+        "pair_id_set_sha256": "7902761a4ffe05ed795cf387050f288122476e0e7e14632f24526fe2abd45ca0",
+        "pairs": 3
+      },
+      "vpd-cluster-201d0b5924945baa4ba738c552ed43256004e15d677f295174d3a2ae58c6db7f": {
+        "episode_id_set_sha256": "e3ae1eee211fb132feb5c91747991c47b086662f4d837a3719c79735ecffe824",
+        "episodes": 4,
+        "pair_id_set_sha256": "a12309158b9109beeb3204fda9bc869daf69e3211575aba1509c2b826d1998dd",
+        "pairs": 2
+      },
+      "vpd-cluster-a4938754cbb194b78128651c75ae969f73fc1b0be220388710080568656de011": {
+        "episode_id_set_sha256": "29374ece013e77938900e856a2caaa88a30f12adb8bb060d285c1649523ac633",
+        "episodes": 4,
+        "pair_id_set_sha256": "d77ebe5c088e870974f681a69d961bc6ffd2c1b09e9cd79603a2406ee9b04fbb",
+        "pairs": 2
+      }
+    }
+  },
+  "schema": "sch.vpd-cluster-episode-routing-benchmark.v1",
+  "scientific_boundary": {
+    "empirical_routing_receipt_produced": false,
+    "execution_authorized": false,
+    "model_inference_performed": false,
+    "model_loaded": false,
+    "sae_training_authorized": false,
+    "synthetic_effect_arrays_only": true,
+    "weights_loaded_or_mutated": false
+  },
+  "source": {
+    "router_sha256": "8379997e72cd278af8b34fcedb4aad9165651583248d1f1f12e2d0e77d4b3027",
+    "runner_sha256": "69571c67df6befbd6cfdda9ede072326a9551ef33bf60de80156ff76dc313f64"
+  },
+  "status": "pass",
+  "summary": {
+    "controls": 16,
+    "passed": 16
+  }
+}

@@ -1,0 +1,766 @@
+{
+  "archives": [
+    {
+      "path": "C:\\projects\\VPD\\artifacts\\nanbeige_reasoning\\q4_reasoning_pilot_v1\\q4_reasoning_saes",
+      "sites": [
+        {
+          "mixed_phase_ev": [
+            0.29613771936927424,
+            0.25113989340072873
+          ],
+          "phases": [
+            {
+              "family_reconstruction_quality": [
+                {
+                  "examples": 6,
+                  "family": "arc_grid",
+                  "per_pass_ev": [
+                    0.8742055361470255,
+                    0.7385094542843154
+                  ],
+                  "rows_per_pass": 48
+                },
+                {
+                  "examples": 1,
+                  "family": "campsite",
+                  "per_pass_ev": [
+                    0.3186510069834365,
+                    0.24014279647248982
+                  ],
+                  "rows_per_pass": 8
+                },
+                {
+                  "examples": 1,
+                  "family": "dyck_language",
+                  "per_pass_ev": [
+                    0.028323539583817503,
+                    0.03591005544191328
+                  ],
+                  "rows_per_pass": 8
+                },
+                {
+                  "examples": 2,
+                  "family": "math",
+                  "per_pass_ev": [
+                    0.5500438918054207,
+                    0.3861366331798127
+                  ],
+                  "rows_per_pass": 16
+                }
+              ],
+              "phase": "prompt",
+              "pooled_ev": [
+                0.6783973168001145,
+                0.5718685929754808
+              ],
+              "quality_decision": {
+                "clustering_admission": false,
+                "failed_families": [
+                  "dyck_language"
+                ],
+                "families": [
+                  {
+                    "examples": 6,
+                    "family": "arc_grid",
+                    "reason": "both_pass_threshold",
+                    "status": "pass"
+                  },
+                  {
+                    "examples": 1,
+                    "family": "campsite",
+                    "reason": "both_pass_threshold",
+                    "status": "pass"
+                  },
+                  {
+                    "examples": 1,
+                    "family": "dyck_language",
+                    "reason": "both_pass_threshold",
+                    "status": "fail"
+                  },
+                  {
+                    "examples": 2,
+                    "family": "math",
+                    "reason": "both_pass_threshold",
+                    "status": "pass"
+                  }
+                ],
+                "pooled_status": "pass",
+                "quality_prerequisite_pass": false,
+                "threshold": 0.2,
+                "unevaluable_families": []
+              },
+              "rows_per_pass": 80
+            },
+            {
+              "family_reconstruction_quality": [
+                {
+                  "examples": 6,
+                  "family": "arc_grid",
+                  "per_pass_ev": [
+                    0.14080633642099605,
+                    0.0944627977474668
+                  ],
+                  "rows_per_pass": 144
+                },
+                {
+                  "examples": 1,
+                  "family": "campsite",
+                  "per_pass_ev": [
+                    -0.08402262693061124,
+                    -0.08305701325942083
+                  ],
+                  "rows_per_pass": 24
+                },
+                {
+                  "examples": 1,
+                  "family": "dyck_language",
+                  "per_pass_ev": [
+                    -0.08395855111365624,
+                    -0.1016663115803973
+                  ],
+                  "rows_per_pass": 24
+                },
+                {
+                  "examples": 2,
+                  "family": "math",
+                  "per_pass_ev": [
+                    -0.02744613321359024,
+                    -0.02427909330735556
+                  ],
+                  "rows_per_pass": 48
+                }
+              ],
+              "phase": "generated",
+              "pooled_ev": [
+                0.11964662265219417,
+                0.09401548405728033
+              ],
+              "quality_decision": {
+                "clustering_admission": false,
+                "failed_families": [
+                  "arc_grid",
+                  "campsite",
+                  "dyck_language",
+                  "math"
+                ],
+                "families": [
+                  {
+                    "examples": 6,
+                    "family": "arc_grid",
+                    "reason": "both_pass_threshold",
+                    "status": "fail"
+                  },
+                  {
+                    "examples": 1,
+                    "family": "campsite",
+                    "reason": "both_pass_threshold",
+                    "status": "fail"
+                  },
+                  {
+                    "examples": 1,
+                    "family": "dyck_language",
+                    "reason": "both_pass_threshold",
+                    "status": "fail"
+                  },
+                  {
+                    "examples": 2,
+                    "family": "math",
+                    "reason": "both_pass_threshold",
+                    "status": "fail"
+                  }
+                ],
+                "pooled_status": "fail",
+                "quality_prerequisite_pass": false,
+                "threshold": 0.2,
+                "unevaluable_families": []
+              },
+              "rows_per_pass": 240
+            }
+          ],
+          "site": "model.layers.11"
+        },
+        {
+          "mixed_phase_ev": [
+            0.24962772126672272,
+            0.46479569261562614
+          ],
+          "phases": [
+            {
+              "family_reconstruction_quality": [
+                {
+                  "examples": 6,
+                  "family": "arc_grid",
+                  "per_pass_ev": [
+                    0.7420535978442924,
+                    0.7109832443225674
+                  ],
+                  "rows_per_pass": 48
+                },
+                {
+                  "examples": 1,
+                  "family": "campsite",
+                  "per_pass_ev": [
+                    0.2573957465838882,
+                    0.4453020918310501
+                  ],
+                  "rows_per_pass": 8
+                },
+                {
+                  "examples": 1,
+                  "family": "dyck_language",
+                  "per_pass_ev": [
+                    0.0314645572349882,
+                    0.3683415576235647
+                  ],
+                  "rows_per_pass": 8
+                },
+                {
+                  "examples": 2,
+                  "family": "math",
+                  "per_pass_ev": [
+                    0.318835848747535,
+                    0.41422492417957835
+                  ],
+                  "rows_per_pass": 16
+                }
+              ],
+              "phase": "prompt",
+              "pooled_ev": [
+                0.5888957350037504,
+                0.6215639027889047
+              ],
+              "quality_decision": {
+                "clustering_admission": false,
+                "failed_families": [
+                  "dyck_language"
+                ],
+                "families": [
+                  {
+                    "examples": 6,
+                    "family": "arc_grid",
+                    "reason": "both_pass_threshold",
+                    "status": "pass"
+                  },
+                  {
+                    "examples": 1,
+                    "family": "campsite",
+                    "reason": "both_pass_threshold",
+                    "status": "pass"
+                  },
+                  {
+                    "examples": 1,
+                    "family": "dyck_language",
+                    "reason": "both_pass_threshold",
+                    "status": "fail"
+                  },
+                  {
+                    "examples": 2,
+                    "family": "math",
+                    "reason": "both_pass_threshold",
+                    "status": "pass"
+                  }
+                ],
+                "pooled_status": "pass",
+                "quality_prerequisite_pass": false,
+                "threshold": 0.2,
+                "unevaluable_families": []
+              },
+              "rows_per_pass": 80
+            },
+            {
+              "family_reconstruction_quality": [
+                {
+                  "examples": 6,
+                  "family": "arc_grid",
+                  "per_pass_ev": [
+                    0.13863458664847084,
+                    0.32035117110471023
+                  ],
+                  "rows_per_pass": 144
+                },
+                {
+                  "examples": 1,
+                  "family": "campsite",
+                  "per_pass_ev": [
+                    -0.13646309363316855,
+                    0.1186047375415149
+                  ],
+                  "rows_per_pass": 24
+                },
+                {
+                  "examples": 1,
+                  "family": "dyck_language",
+                  "per_pass_ev": [
+                    -0.14018881858177545,
+                    0.04104361684759095
+                  ],
+                  "rows_per_pass": 24
+                },
+                {
+                  "examples": 2,
+                  "family": "math",
+                  "per_pass_ev": [
+                    -0.046888783594126515,
+                    0.16754049459138198
+                  ],
+                  "rows_per_pass": 48
+                }
+              ],
+              "phase": "generated",
+              "pooled_ev": [
+                0.11486928271647867,
+                0.2933524186930683
+              ],
+              "quality_decision": {
+                "clustering_admission": false,
+                "failed_families": [
+                  "arc_grid",
+                  "campsite",
+                  "dyck_language",
+                  "math"
+                ],
+                "families": [
+                  {
+                    "examples": 6,
+                    "family": "arc_grid",
+                    "reason": "both_pass_threshold",
+                    "status": "fail"
+                  },
+                  {
+                    "examples": 1,
+                    "family": "campsite",
+                    "reason": "both_pass_threshold",
+                    "status": "fail"
+                  },
+                  {
+                    "examples": 1,
+                    "family": "dyck_language",
+                    "reason": "both_pass_threshold",
+                    "status": "fail"
+                  },
+                  {
+                    "examples": 2,
+                    "family": "math",
+                    "reason": "both_pass_threshold",
+                    "status": "fail"
+                  }
+                ],
+                "pooled_status": "fail",
+                "quality_prerequisite_pass": false,
+                "threshold": 0.2,
+                "unevaluable_families": []
+              },
+              "rows_per_pass": 240
+            }
+          ],
+          "site": "model.norm"
+        }
+      ]
+    },
+    {
+      "path": "C:\\projects\\VPD\\artifacts\\nanbeige_reasoning\\q4_reasoning_pilot_8192_v1\\q4_reasoning_saes",
+      "sites": [
+        {
+          "mixed_phase_ev": [
+            0.2965142746934686,
+            0.2629355289077634
+          ],
+          "phases": [
+            {
+              "family_reconstruction_quality": [
+                {
+                  "examples": 6,
+                  "family": "arc_grid",
+                  "per_pass_ev": [
+                    0.8701647896177419,
+                    0.7486873119675899
+                  ],
+                  "rows_per_pass": 48
+                },
+                {
+                  "examples": 1,
+                  "family": "campsite",
+                  "per_pass_ev": [
+                    0.34341091735191365,
+                    0.2429002929405346
+                  ],
+                  "rows_per_pass": 8
+                },
+                {
+                  "examples": 1,
+                  "family": "dyck_language",
+                  "per_pass_ev": [
+                    0.039649299811941874,
+                    0.008315586468366831
+                  ],
+                  "rows_per_pass": 8
+                },
+                {
+                  "examples": 2,
+                  "family": "math",
+                  "per_pass_ev": [
+                    0.5603984704269076,
+                    0.3843717384948593
+                  ],
+                  "rows_per_pass": 16
+                }
+              ],
+              "phase": "prompt",
+              "pooled_ev": [
+                0.681880410674766,
+                0.5738354395061065
+              ],
+              "quality_decision": {
+                "clustering_admission": false,
+                "failed_families": [
+                  "dyck_language"
+                ],
+                "families": [
+                  {
+                    "examples": 6,
+                    "family": "arc_grid",
+                    "reason": "both_pass_threshold",
+                    "status": "pass"
+                  },
+                  {
+                    "examples": 1,
+                    "family": "campsite",
+                    "reason": "both_pass_threshold",
+                    "status": "pass"
+                  },
+                  {
+                    "examples": 1,
+                    "family": "dyck_language",
+                    "reason": "both_pass_threshold",
+                    "status": "fail"
+                  },
+                  {
+                    "examples": 2,
+                    "family": "math",
+                    "reason": "both_pass_threshold",
+                    "status": "pass"
+                  }
+                ],
+                "pooled_status": "pass",
+                "quality_prerequisite_pass": false,
+                "threshold": 0.2,
+                "unevaluable_families": []
+              },
+              "rows_per_pass": 80
+            },
+            {
+              "family_reconstruction_quality": [
+                {
+                  "examples": 6,
+                  "family": "arc_grid",
+                  "per_pass_ev": [
+                    0.153444871079484,
+                    0.1327835292611752
+                  ],
+                  "rows_per_pass": 144
+                },
+                {
+                  "examples": 1,
+                  "family": "campsite",
+                  "per_pass_ev": [
+                    -0.09962612098290036,
+                    -0.09759222313614613
+                  ],
+                  "rows_per_pass": 24
+                },
+                {
+                  "examples": 1,
+                  "family": "dyck_language",
+                  "per_pass_ev": [
+                    -0.1070676468802918,
+                    -0.07093358621896284
+                  ],
+                  "rows_per_pass": 24
+                },
+                {
+                  "examples": 2,
+                  "family": "math",
+                  "per_pass_ev": [
+                    -0.01550186934979636,
+                    0.0012404764127205148
+                  ],
+                  "rows_per_pass": 48
+                }
+              ],
+              "phase": "generated",
+              "pooled_ev": [
+                0.1226687975870342,
+                0.12008333248504943
+              ],
+              "quality_decision": {
+                "clustering_admission": false,
+                "failed_families": [
+                  "arc_grid",
+                  "campsite",
+                  "dyck_language",
+                  "math"
+                ],
+                "families": [
+                  {
+                    "examples": 6,
+                    "family": "arc_grid",
+                    "reason": "both_pass_threshold",
+                    "status": "fail"
+                  },
+                  {
+                    "examples": 1,
+                    "family": "campsite",
+                    "reason": "both_pass_threshold",
+                    "status": "fail"
+                  },
+                  {
+                    "examples": 1,
+                    "family": "dyck_language",
+                    "reason": "both_pass_threshold",
+                    "status": "fail"
+                  },
+                  {
+                    "examples": 2,
+                    "family": "math",
+                    "reason": "both_pass_threshold",
+                    "status": "fail"
+                  }
+                ],
+                "pooled_status": "fail",
+                "quality_prerequisite_pass": false,
+                "threshold": 0.2,
+                "unevaluable_families": []
+              },
+              "rows_per_pass": 240
+            }
+          ],
+          "site": "model.layers.11"
+        },
+        {
+          "mixed_phase_ev": [
+            0.2922872700558219,
+            0.427979820423841
+          ],
+          "phases": [
+            {
+              "family_reconstruction_quality": [
+                {
+                  "examples": 6,
+                  "family": "arc_grid",
+                  "per_pass_ev": [
+                    0.7821380641524509,
+                    0.7197140794932291
+                  ],
+                  "rows_per_pass": 48
+                },
+                {
+                  "examples": 1,
+                  "family": "campsite",
+                  "per_pass_ev": [
+                    0.2880918410016343,
+                    0.44399569117919957
+                  ],
+                  "rows_per_pass": 8
+                },
+                {
+                  "examples": 1,
+                  "family": "dyck_language",
+                  "per_pass_ev": [
+                    0.03119049209008995,
+                    0.34209023459144927
+                  ],
+                  "rows_per_pass": 8
+                },
+                {
+                  "examples": 2,
+                  "family": "math",
+                  "per_pass_ev": [
+                    0.3748016749196591,
+                    0.44102235632232223
+                  ],
+                  "rows_per_pass": 16
+                }
+              ],
+              "phase": "prompt",
+              "pooled_ev": [
+                0.6209096540504375,
+                0.6293429513073355
+              ],
+              "quality_decision": {
+                "clustering_admission": false,
+                "failed_families": [
+                  "dyck_language"
+                ],
+                "families": [
+                  {
+                    "examples": 6,
+                    "family": "arc_grid",
+                    "reason": "both_pass_threshold",
+                    "status": "pass"
+                  },
+                  {
+                    "examples": 1,
+                    "family": "campsite",
+                    "reason": "both_pass_threshold",
+                    "status": "pass"
+                  },
+                  {
+                    "examples": 1,
+                    "family": "dyck_language",
+                    "reason": "both_pass_threshold",
+                    "status": "fail"
+                  },
+                  {
+                    "examples": 2,
+                    "family": "math",
+                    "reason": "both_pass_threshold",
+                    "status": "pass"
+                  }
+                ],
+                "pooled_status": "pass",
+                "quality_prerequisite_pass": false,
+                "threshold": 0.2,
+                "unevaluable_families": []
+              },
+              "rows_per_pass": 80
+            },
+            {
+              "family_reconstruction_quality": [
+                {
+                  "examples": 6,
+                  "family": "arc_grid",
+                  "per_pass_ev": [
+                    0.22234855491214456,
+                    0.3408832077961542
+                  ],
+                  "rows_per_pass": 144
+                },
+                {
+                  "examples": 1,
+                  "family": "campsite",
+                  "per_pass_ev": [
+                    -0.06512903257667091,
+                    0.1768482952045971
+                  ],
+                  "rows_per_pass": 24
+                },
+                {
+                  "examples": 1,
+                  "family": "dyck_language",
+                  "per_pass_ev": [
+                    -0.11155363586165712,
+                    0.1157197952036435
+                  ],
+                  "rows_per_pass": 24
+                },
+                {
+                  "examples": 2,
+                  "family": "math",
+                  "per_pass_ev": [
+                    0.020101902252692372,
+                    0.20285303784223074
+                  ],
+                  "rows_per_pass": 48
+                }
+              ],
+              "phase": "generated",
+              "pooled_ev": [
+                0.17503683308111118,
+                0.3091975631920021
+              ],
+              "quality_decision": {
+                "clustering_admission": false,
+                "failed_families": [
+                  "campsite",
+                  "dyck_language",
+                  "math"
+                ],
+                "families": [
+                  {
+                    "examples": 6,
+                    "family": "arc_grid",
+                    "reason": "both_pass_threshold",
+                    "status": "pass"
+                  },
+                  {
+                    "examples": 1,
+                    "family": "campsite",
+                    "reason": "both_pass_threshold",
+                    "status": "fail"
+                  },
+                  {
+                    "examples": 1,
+                    "family": "dyck_language",
+                    "reason": "both_pass_threshold",
+                    "status": "fail"
+                  },
+                  {
+                    "examples": 2,
+                    "family": "math",
+                    "reason": "both_pass_threshold",
+                    "status": "fail"
+                  }
+                ],
+                "pooled_status": "fail",
+                "quality_prerequisite_pass": false,
+                "threshold": 0.2,
+                "unevaluable_families": []
+              },
+              "rows_per_pass": 240
+            }
+          ],
+          "site": "model.norm"
+        }
+      ]
+    }
+  ],
+  "boundary": {
+    "encoder_recomputed": false,
+    "model_inference_performed": false,
+    "operative_admissions": 0,
+    "training_performed": false
+  },
+  "design": {
+    "analysis": "exploratory reanalysis of saved codes from mixed-phase trained SAEs",
+    "phase_rule": "prompt if absolute position < prompt token count, otherwise generated",
+    "threshold": 0.2,
+    "variance": "center observed activations separately inside each scored phase/family subset; keep full uncorrected reconstruction error"
+  },
+  "limitations": [
+    "No phase-specific dictionary was trained and no pass group was reassigned.",
+    "32 retained windows per example are not all trajectory tokens.",
+    "Tiny, partly training-overlapping families and same-seed archives cannot establish independent replication.",
+    "A phase quality pass alone does not establish functional groups or a split-dictionary advantage."
+  ],
+  "provenance": {
+    "audit_q4_common_capture_rows_v1.py": "6f8c546234fc2990c9b6e37c36062c82a8ff4048b49987f1d0c03af149ecb8f8",
+    "audit_q4_sae_phase_quality_v1.py": "6ef8aab76c1d7f524530a27b0a416afe6a1dc1843a49d6a2a142f26dd102c95e",
+    "benchmark_nanbeige_q4_sae_pass_selectivity_v1.py": "a5c6a3f3e3c5fa4299c8343bdd550ac3cc7b2c8ab600714da787546b8bda2430",
+    "evaluate_sae_family_quality_v1.py": "6fd9bef45a3538536be0c25ca0f1b38a4caf4185c4d0f0aa966f01ce5630c266"
+  },
+  "report_id": "6a0ed1c025177bcf5dca22c46fe00a06aa0effe0ec6fcc138541556211a3cd04",
+  "schema": "sch.vpd-q4-sae-phase-quality.v1",
+  "source": {
+    "path": "C:\\projects\\VPD\\artifacts\\vpd_q4_sae_family_contributions_v1\\report.json",
+    "report_id": "2b2aeb74ec4d644c3fcb70b5fa22ff937f638b7ac21210a714969fdba4317b44",
+    "sha256": "1f369231fb2f918f868aa6d0b2246f21020ef798b3762db91a37d7d449b0121d"
+  },
+  "summary": [
+    {
+      "all_family_quality_passes": 0,
+      "family_checks": 16,
+      "family_passes": 12,
+      "fits": 4,
+      "phase": "prompt",
+      "pooled_quality_passes": 4
+    },
+    {
+      "all_family_quality_passes": 0,
+      "family_checks": 16,
+      "family_passes": 1,
+      "fits": 4,
+      "phase": "generated",
+      "pooled_quality_passes": 0
+    }
+  ]
+}

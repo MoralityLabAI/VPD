@@ -1,0 +1,52 @@
+{
+  "status": "passed",
+  "reviewed_utc": "2026-09-09T14:06:10.088118+00:00",
+  "pages": 9,
+  "pdf_sha256": "2161f3cc417e5a5ee6e2ce6e398e56680d8f6b69cd3be1330d19f098820f4afa",
+  "method": "All nine pages inspected via contact sheets. Final equation pages 2 and 4 and empirical-table pages 5 and 8 inspected at full rendered size.",
+  "checks": [
+    "Equations correct and legible",
+    "All tables and captions fit",
+    "No clipping or overlap",
+    "Appendices begin on separate pages",
+    "Page numbers and footer consistent"
+  ],
+  "page_images": [
+    {
+      "path": "tmp\\pdfs\\v004_intervention_fidelity\\page-1.png",
+      "sha256": "8f2c8ef7a060bd20b7ab5d18b7cb3fbf9c003696892d637ad720241cefe5f978"
+    },
+    {
+      "path": "tmp\\pdfs\\v004_intervention_fidelity\\page-2.png",
+      "sha256": "06c5adca0ceb23b88bca0b738a474b5a16917cce852c605b7b1b2a00b646d674"
+    },
+    {
+      "path": "tmp\\pdfs\\v004_intervention_fidelity\\page-3.png",
+      "sha256": "1df5b554d241c9386985f53b011fc32abadeaa340061b7bcbef345bb3cec82cb"
+    },
+    {
+      "path": "tmp\\pdfs\\v004_intervention_fidelity\\page-4.png",
+      "sha256": "3fb4af7d30807625eab8d9b74981135bcb8487fa4abd544876a6ff48f5bbfe26"
+    },
+    {
+      "path": "tmp\\pdfs\\v004_intervention_fidelity\\page-5.png",
+      "sha256": "660799724dc456f583e33213a377a874772d3159dd0fbac60c4d5abb53e9210e"
+    },
+    {
+      "path": "tmp\\pdfs\\v004_intervention_fidelity\\page-6.png",
+      "sha256": "4cb64a78a1305be8df1834c79610e1e4949b3732d1c3d13caafe541d7818f91a"
+    },
+    {
+      "path": "tmp\\pdfs\\v004_intervention_fidelity\\page-7.png",
+      "sha256": "00b0f50da3d030f30340333f1f915f04dfec9d35af88f0104d7fa96870ace05f"
+    },
+    {
+      "path": "tmp\\pdfs\\v004_intervention_fidelity\\page-8.png",
+      "sha256": "c471d0d99aac3f8f362421f164fe66b33461e660516d36d25d2548bbde4b4920"
+    },
+    {
+      "path": "tmp\\pdfs\\v004_intervention_fidelity\\page-9.png",
+      "sha256": "003f2582583824df2641fb89675e7d732f188264f241053308ca46c81d58e57d"
+    }
+  ]
+}

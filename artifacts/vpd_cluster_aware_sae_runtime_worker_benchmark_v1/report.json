@@ -1,0 +1,67 @@
+{
+  "benchmark_id": "dbab569a095cd9c01449886d84f7a292b75edcf919ae65ba5cfc29af0a059188",
+  "controls": {
+    "active_runtime_rejected_in_simulation": true,
+    "all_34_execution_jobs_are_runtime_validated": true,
+    "blueprint_content_verifies_without_model_framework": true,
+    "blueprint_inner_job_tamper_rejected": true,
+    "callback_observes_preincremented_started_state": true,
+    "callback_receives_exact_job_contract": true,
+    "callback_result_identity_tamper_rejected_and_charged": true,
+    "failed_callback_remains_charged": true,
+    "job_reserved_before_runtime_loader": true,
+    "planned_steps_and_rows_charged_at_reservation": true,
+    "receipt_is_content_addressed": true,
+    "replay_is_rejected": true,
+    "reservation_can_stop_without_runtime_attach": true,
+    "reservation_object_contains_no_runtime": true,
+    "runtime_attachment_is_single_use": true,
+    "runtime_close_delegates_exactly_once": true,
+    "simulation_receipt_remains_non_authorizing": true,
+    "successful_job_finishes_completed": true,
+    "synthetic_blueprint_rejected_for_production": true,
+    "trainer_callback_is_single_use": true,
+    "worker_imports_no_model_frameworks": true,
+    "wrong_job_authority_rejected_before_reservation": true
+  },
+  "design": {
+    "production_cli_implemented": false,
+    "real_compute_authorization_verifier_implemented": false,
+    "real_release_verifier_implemented": false,
+    "runtime_is_injected_after_reservation": true,
+    "simulation_only_benchmark": true,
+    "worker_core_implemented": true
+  },
+  "results": {
+    "execution_blueprint_id": "07122590aae37e4e07dec2077830954e5eeb56ec269c77382f227fb33e233215",
+    "execution_jobs": 34,
+    "failed_job_id": "4495d20a204253cbfc3eb3a002145868b507ac3df4aa7dbd8aa039b691f571fa",
+    "successful_job_id": "703e053e9397e3d51f98363b7c8d7dc5df63ce0cc02110c6e8dd98118401ac5e",
+    "synthetic_runtime_worker_receipt_id": "c4891fcd9c0b6e135a95e23757dd6269f7adb58cbd042e45550118ab963d6201"
+  },
+  "schema": "sch.vpd-cluster-aware-sae-runtime-worker-benchmark.v1",
+  "scientific_boundary": {
+    "empirical_blueprint_present": false,
+    "execution_authorized": false,
+    "explicit_compute_authorization_present": false,
+    "model_framework_imported": false,
+    "model_inference_performed": false,
+    "model_loaded": false,
+    "persistent_output_created": false,
+    "sae_training_authorized": false,
+    "scientific_release_receipt_present": false,
+    "synthetic_callbacks_only": true,
+    "weights_mutated": false
+  },
+  "source": {
+    "benchmark_sha256": "c23a6a6a06a0a7e5629ff582a2214864820d404b8458b6ad8f6a7a52cf214167",
+    "execution_blueprint_builder_sha256": "478eb659651d4ef5a1060547db356ac4ec24ab73c9a5697cb7b77d105d5f0279",
+    "execution_blueprint_id": "07122590aae37e4e07dec2077830954e5eeb56ec269c77382f227fb33e233215",
+    "runtime_worker_sha256": "afade79132182f4af63f24d857aa66f27dfa68246d75ef12938054ea6f867e59"
+  },
+  "status": "pass",
+  "summary": {
+    "controls": 22,
+    "passed": 22
+  }
+}

@@ -1,0 +1,457 @@
+{
+  "design": {
+    "bootstrap_replicates": 4096,
+    "bootstrap_seed": 250829,
+    "common_explained_variance_denominator": "held-out squared distance from the all-pass training mean",
+    "held_out_examples": 10,
+    "hidden_size": 3072,
+    "monolithic_rank": 64,
+    "pass_compartment_rank_per_dictionary": 32,
+    "random_partition_rank_per_dictionary": 32,
+    "random_partition_seeds": [
+      17,
+      29,
+      43,
+      59,
+      71,
+      89,
+      101,
+      127
+    ],
+    "rows_per_example_per_pass": 8,
+    "screening_admission_rule": "pass routing lower 95% paired-bootstrap delta exceeds zero versus monolithic and random-mean controls, and point estimate exceeds every random-partition replicate",
+    "total_rank_per_arm": 64,
+    "train_examples": 8
+  },
+  "existing_monolithic_sae_context": {
+    "context_only_not_recomputed_by_this_proxy": true,
+    "expansion": 2,
+    "held_out_quality": {
+      "model.layers.11": {
+        "pass_0": {
+          "explained_variance": 0.003536046481012245,
+          "mean_l0": 32.0
+        },
+        "pass_1": {
+          "explained_variance": -0.008711564388511173,
+          "mean_l0": 32.0
+        }
+      },
+      "model.layers.21": {
+        "pass_0": {
+          "explained_variance": 0.6667237208188319,
+          "mean_l0": 32.0
+        },
+        "pass_1": {
+          "explained_variance": -2.6588888976157197,
+          "mean_l0": 32.0
+        }
+      },
+      "model.norm": {
+        "pass_0": {
+          "explained_variance": -0.07738633866049893,
+          "mean_l0": 32.0
+        },
+        "pass_1": {
+          "explained_variance": 0.13807676219582998,
+          "mean_l0": 32.0
+        }
+      }
+    },
+    "training_loss": "balanced-pass raw activation MSE",
+    "training_steps": 1000
+  },
+  "report_id": "e868e0690a54f42fde87dde73a306d41954712704b3bb174454036adc6ad95dc",
+  "schema": "sch.vpd-nanbeige-pass-compartment-linear-proxy.v1",
+  "scientific_boundary": {
+    "execution_authorized": false,
+    "linear_proxy_is_not_an_sae_quality_result": true,
+    "model_or_sae_weights_loaded_or_mutated": false,
+    "new_model_inference_performed": false,
+    "new_sae_training_performed": false,
+    "paid_compute_authorized": false,
+    "screening_result_cannot_authorize_training": true,
+    "source_family_disjoint": false,
+    "source_revision_verified": false,
+    "stored_empirical_bf16_activations_used": true
+  },
+  "sites": [
+    {
+      "held_out_common_denominator": 945423.6703251558,
+      "monolithic_explained_variance": 0.1986002927198357,
+      "pass_compartment_explained_variance": 0.15379115336314286,
+      "pass_minus_monolithic": -0.04480913935669284,
+      "pass_minus_monolithic_paired_bootstrap_95_ci": [
+        -0.04734934842728239,
+        -0.04240183803721295
+      ],
+      "pass_minus_random_partition_mean": 0.04891894060187314,
+      "pass_minus_random_partition_mean_paired_bootstrap_95_ci": [
+        0.03514516698921716,
+        0.06543209844064282
+      ],
+      "random_partition_controls": [
+        {
+          "explained_variance": 0.09664666164281255,
+          "held_out_group_sizes": {
+            "0": 5,
+            "1": 5
+          },
+          "seed": 17,
+          "train_group_sizes": {
+            "0": 4,
+            "1": 4
+          }
+        },
+        {
+          "explained_variance": 0.10420995888510676,
+          "held_out_group_sizes": {
+            "0": 5,
+            "1": 5
+          },
+          "seed": 29,
+          "train_group_sizes": {
+            "0": 4,
+            "1": 4
+          }
+        },
+        {
+          "explained_variance": 0.12089978042791583,
+          "held_out_group_sizes": {
+            "0": 5,
+            "1": 5
+          },
+          "seed": 43,
+          "train_group_sizes": {
+            "0": 4,
+            "1": 4
+          }
+        },
+        {
+          "explained_variance": 0.10860084914741297,
+          "held_out_group_sizes": {
+            "0": 5,
+            "1": 5
+          },
+          "seed": 59,
+          "train_group_sizes": {
+            "0": 4,
+            "1": 4
+          }
+        },
+        {
+          "explained_variance": 0.11427038804144518,
+          "held_out_group_sizes": {
+            "0": 5,
+            "1": 5
+          },
+          "seed": 71,
+          "train_group_sizes": {
+            "0": 4,
+            "1": 4
+          }
+        },
+        {
+          "explained_variance": 0.09901163675731184,
+          "held_out_group_sizes": {
+            "0": 5,
+            "1": 5
+          },
+          "seed": 89,
+          "train_group_sizes": {
+            "0": 4,
+            "1": 4
+          }
+        },
+        {
+          "explained_variance": 0.09908403233303198,
+          "held_out_group_sizes": {
+            "0": 5,
+            "1": 5
+          },
+          "seed": 101,
+          "train_group_sizes": {
+            "0": 4,
+            "1": 4
+          }
+        },
+        {
+          "explained_variance": 0.09625439485512066,
+          "held_out_group_sizes": {
+            "0": 5,
+            "1": 5
+          },
+          "seed": 127,
+          "train_group_sizes": {
+            "0": 4,
+            "1": 4
+          }
+        }
+      ],
+      "random_partition_mean_explained_variance": 0.10487221276126972,
+      "random_partition_range_explained_variance": [
+        0.09625439485512066,
+        0.12089978042791583
+      ],
+      "screening_admission": "fail",
+      "site": "model.layers.11"
+    },
+    {
+      "held_out_common_denominator": 275704498.68890876,
+      "monolithic_explained_variance": 0.9502288229867707,
+      "pass_compartment_explained_variance": 0.9482993873395594,
+      "pass_minus_monolithic": -0.001929435647211264,
+      "pass_minus_monolithic_paired_bootstrap_95_ci": [
+        -0.003113642077487751,
+        -0.001268094425798867
+      ],
+      "pass_minus_random_partition_mean": 0.005277538308954166,
+      "pass_minus_random_partition_mean_paired_bootstrap_95_ci": [
+        0.0037935230229809384,
+        0.008426304949427959
+      ],
+      "random_partition_controls": [
+        {
+          "explained_variance": 0.9420512476759483,
+          "held_out_group_sizes": {
+            "0": 5,
+            "1": 5
+          },
+          "seed": 17,
+          "train_group_sizes": {
+            "0": 4,
+            "1": 4
+          }
+        },
+        {
+          "explained_variance": 0.9428491245331253,
+          "held_out_group_sizes": {
+            "0": 5,
+            "1": 5
+          },
+          "seed": 29,
+          "train_group_sizes": {
+            "0": 4,
+            "1": 4
+          }
+        },
+        {
+          "explained_variance": 0.943792259517493,
+          "held_out_group_sizes": {
+            "0": 5,
+            "1": 5
+          },
+          "seed": 43,
+          "train_group_sizes": {
+            "0": 4,
+            "1": 4
+          }
+        },
+        {
+          "explained_variance": 0.943304037765043,
+          "held_out_group_sizes": {
+            "0": 5,
+            "1": 5
+          },
+          "seed": 59,
+          "train_group_sizes": {
+            "0": 4,
+            "1": 4
+          }
+        },
+        {
+          "explained_variance": 0.9435994796520406,
+          "held_out_group_sizes": {
+            "0": 5,
+            "1": 5
+          },
+          "seed": 71,
+          "train_group_sizes": {
+            "0": 4,
+            "1": 4
+          }
+        },
+        {
+          "explained_variance": 0.9433641873880402,
+          "held_out_group_sizes": {
+            "0": 5,
+            "1": 5
+          },
+          "seed": 89,
+          "train_group_sizes": {
+            "0": 4,
+            "1": 4
+          }
+        },
+        {
+          "explained_variance": 0.9435432806181383,
+          "held_out_group_sizes": {
+            "0": 5,
+            "1": 5
+          },
+          "seed": 101,
+          "train_group_sizes": {
+            "0": 4,
+            "1": 4
+          }
+        },
+        {
+          "explained_variance": 0.9416711750950133,
+          "held_out_group_sizes": {
+            "0": 5,
+            "1": 5
+          },
+          "seed": 127,
+          "train_group_sizes": {
+            "0": 4,
+            "1": 4
+          }
+        }
+      ],
+      "random_partition_mean_explained_variance": 0.9430218490306053,
+      "random_partition_range_explained_variance": [
+        0.9416711750950133,
+        0.943792259517493
+      ],
+      "screening_admission": "fail",
+      "site": "model.layers.21"
+    },
+    {
+      "held_out_common_denominator": 2106011.37961915,
+      "monolithic_explained_variance": 0.618091390710207,
+      "pass_compartment_explained_variance": 0.5840661924457197,
+      "pass_minus_monolithic": -0.034025198264487355,
+      "pass_minus_monolithic_paired_bootstrap_95_ci": [
+        -0.045831646080311955,
+        -0.022950104507054574
+      ],
+      "pass_minus_random_partition_mean": 0.028937511105547542,
+      "pass_minus_random_partition_mean_paired_bootstrap_95_ci": [
+        0.014162409778397063,
+        0.04411626763155135
+      ],
+      "random_partition_controls": [
+        {
+          "explained_variance": 0.5551049838953599,
+          "held_out_group_sizes": {
+            "0": 5,
+            "1": 5
+          },
+          "seed": 17,
+          "train_group_sizes": {
+            "0": 4,
+            "1": 4
+          }
+        },
+        {
+          "explained_variance": 0.5504728135605059,
+          "held_out_group_sizes": {
+            "0": 5,
+            "1": 5
+          },
+          "seed": 29,
+          "train_group_sizes": {
+            "0": 4,
+            "1": 4
+          }
+        },
+        {
+          "explained_variance": 0.5482729571698325,
+          "held_out_group_sizes": {
+            "0": 5,
+            "1": 5
+          },
+          "seed": 43,
+          "train_group_sizes": {
+            "0": 4,
+            "1": 4
+          }
+        },
+        {
+          "explained_variance": 0.5641349242803839,
+          "held_out_group_sizes": {
+            "0": 5,
+            "1": 5
+          },
+          "seed": 59,
+          "train_group_sizes": {
+            "0": 4,
+            "1": 4
+          }
+        },
+        {
+          "explained_variance": 0.5564457860608091,
+          "held_out_group_sizes": {
+            "0": 5,
+            "1": 5
+          },
+          "seed": 71,
+          "train_group_sizes": {
+            "0": 4,
+            "1": 4
+          }
+        },
+        {
+          "explained_variance": 0.557270962913917,
+          "held_out_group_sizes": {
+            "0": 5,
+            "1": 5
+          },
+          "seed": 89,
+          "train_group_sizes": {
+            "0": 4,
+            "1": 4
+          }
+        },
+        {
+          "explained_variance": 0.565869172970962,
+          "held_out_group_sizes": {
+            "0": 5,
+            "1": 5
+          },
+          "seed": 101,
+          "train_group_sizes": {
+            "0": 4,
+            "1": 4
+          }
+        },
+        {
+          "explained_variance": 0.5434578498696065,
+          "held_out_group_sizes": {
+            "0": 5,
+            "1": 5
+          },
+          "seed": 127,
+          "train_group_sizes": {
+            "0": 4,
+            "1": 4
+          }
+        }
+      ],
+      "random_partition_mean_explained_variance": 0.5551286813401721,
+      "random_partition_range_explained_variance": [
+        0.5434578498696065,
+        0.565869172970962
+      ],
+      "screening_admission": "fail",
+      "site": "model.norm"
+    }
+  ],
+  "source": {
+    "dtype": "torch.bfloat16",
+    "examples_sha256": "83fb39d5cd77bb83ae0fff6160e924217b2e9230c48b6a576ba3c2f1918d6b86",
+    "expected_revision": "451ed48c3273ecef7ea8faaa43c31ce529763bb1",
+    "family_disjoint": false,
+    "manifest_sha256": "7c5205eeb3c1e7c025ac1aababc6e0526bbe82048f633a52e73bfefa07c8a546",
+    "model_id": "Nanbeige/Nanbeige4.2-3B",
+    "path": "C:/projects/VPD/artifacts/nanbeige_reasoning/prime-20260906T204058Z-561/retrieved/artifacts/nanbeige_looped/bf16_multipass_calibration",
+    "revision_verified": false,
+    "runner_sha256": "1dc1338a5effca156069920b482cd8598f9c311d09c52c1722a5dda7ab2c9c6c",
+    "sae_quality_sha256": "baa75af13ee245f452c75bbf2b4f6d27652f3594da17897a92c7e03937d39e5f"
+  },
+  "status": "pass",
+  "summary": {
+    "pass_compartment_screening_admissions": 0,
+    "sites": 3
+  }
+}

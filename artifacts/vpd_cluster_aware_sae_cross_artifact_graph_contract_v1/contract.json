@@ -1,0 +1,498 @@
+{
+  "edge_specs": [
+    {
+      "edge": "capture_receipt_to_preflight_id",
+      "source_field_path": "source.preflight_id",
+      "source_node": "capture_authorization_receipt",
+      "target_node": "empirical_preflight_v2",
+      "target_value": "content_id"
+    },
+    {
+      "edge": "capture_receipt_to_preflight_hash",
+      "source_field_path": "source.preflight_sha256",
+      "source_node": "capture_authorization_receipt",
+      "target_node": "empirical_preflight_v2",
+      "target_value": "file_sha256"
+    },
+    {
+      "edge": "capture_receipt_to_registry_id",
+      "source_field_path": "source.registry_id",
+      "source_node": "capture_authorization_receipt",
+      "target_node": "capture_authority_registry",
+      "target_value": "content_id"
+    },
+    {
+      "edge": "capture_manifest_to_preflight_id",
+      "source_field_path": "source.preflight_id",
+      "source_node": "empirical_capture_manifest",
+      "target_node": "empirical_preflight_v2",
+      "target_value": "content_id"
+    },
+    {
+      "edge": "capture_manifest_to_receipt_id",
+      "source_field_path": "source.capture_authorization_receipt_id",
+      "source_node": "empirical_capture_manifest",
+      "target_node": "capture_authorization_receipt",
+      "target_value": "content_id"
+    },
+    {
+      "edge": "routing_bundle_to_capture_id",
+      "source_field_path": "source.capture_manifest_id",
+      "source_node": "empirical_routing_bundle",
+      "target_node": "empirical_capture_manifest",
+      "target_value": "content_id"
+    },
+    {
+      "edge": "routing_bundle_to_capture_hash",
+      "source_field_path": "source.capture_manifest_sha256",
+      "source_node": "empirical_routing_bundle",
+      "target_node": "empirical_capture_manifest",
+      "target_value": "file_sha256"
+    },
+    {
+      "edge": "stability_to_routing_id",
+      "source_field_path": "source.routing_bundle_id",
+      "source_node": "routing_stability_manifest",
+      "target_node": "empirical_routing_bundle",
+      "target_value": "content_id"
+    },
+    {
+      "edge": "split_to_routing_id",
+      "source_field_path": "source.routing_bundle_id",
+      "source_node": "global_pair_split",
+      "target_node": "empirical_routing_bundle",
+      "target_value": "content_id"
+    },
+    {
+      "edge": "split_to_stability_id",
+      "source_field_path": "source.routing_stability_id",
+      "source_node": "global_pair_split",
+      "target_node": "routing_stability_manifest",
+      "target_value": "content_id"
+    },
+    {
+      "edge": "plan_to_routing_id",
+      "source_field_path": "source.routing_bundle_id",
+      "source_node": "cluster_aware_sae_plan",
+      "target_node": "empirical_routing_bundle",
+      "target_value": "content_id"
+    },
+    {
+      "edge": "plan_to_stability_id",
+      "source_field_path": "source.routing_stability_id",
+      "source_node": "cluster_aware_sae_plan",
+      "target_node": "routing_stability_manifest",
+      "target_value": "content_id"
+    },
+    {
+      "edge": "plan_to_split_id",
+      "source_field_path": "source.global_pair_split_id",
+      "source_node": "cluster_aware_sae_plan",
+      "target_node": "global_pair_split",
+      "target_value": "content_id"
+    },
+    {
+      "edge": "materialization_to_plan_id",
+      "source_field_path": "source.cluster_aware_sae_plan_id",
+      "source_node": "materialization",
+      "target_node": "cluster_aware_sae_plan",
+      "target_value": "content_id"
+    },
+    {
+      "edge": "materialization_to_split_id",
+      "source_field_path": "source.global_pair_split_id",
+      "source_node": "materialization",
+      "target_node": "global_pair_split",
+      "target_value": "content_id"
+    },
+    {
+      "edge": "blueprint_to_materialization_id",
+      "source_field_path": "source.materialization_id",
+      "source_node": "execution_blueprint",
+      "target_node": "materialization",
+      "target_value": "content_id"
+    },
+    {
+      "edge": "blueprint_to_plan_id",
+      "source_field_path": "source.cluster_aware_sae_plan_id",
+      "source_node": "execution_blueprint",
+      "target_node": "cluster_aware_sae_plan",
+      "target_value": "content_id"
+    },
+    {
+      "edge": "blueprint_to_split_id",
+      "source_field_path": "source.global_pair_split_id",
+      "source_node": "execution_blueprint",
+      "target_node": "global_pair_split",
+      "target_value": "content_id"
+    },
+    {
+      "edge": "proposal_to_policy_id",
+      "source_field_path": "source.budget_policy_id",
+      "source_node": "budget_proposal",
+      "target_node": "__budget_policy__",
+      "target_value": "content_id"
+    },
+    {
+      "edge": "proposal_to_blueprint_id",
+      "source_field_path": "source.execution_blueprint_id",
+      "source_node": "budget_proposal",
+      "target_node": "execution_blueprint",
+      "target_value": "content_id"
+    },
+    {
+      "edge": "proposal_to_blueprint_hash",
+      "source_field_path": "source.execution_blueprint_sha256",
+      "source_node": "budget_proposal",
+      "target_node": "execution_blueprint",
+      "target_value": "file_sha256"
+    },
+    {
+      "edge": "admission_to_policy_id",
+      "source_field_path": "source.budget_policy_id",
+      "source_node": "budget_admission",
+      "target_node": "__budget_policy__",
+      "target_value": "content_id"
+    },
+    {
+      "edge": "admission_to_proposal_id",
+      "source_field_path": "source.proposal_id",
+      "source_node": "budget_admission",
+      "target_node": "budget_proposal",
+      "target_value": "content_id"
+    },
+    {
+      "edge": "admission_to_blueprint_id",
+      "source_field_path": "source.execution_blueprint_id",
+      "source_node": "budget_admission",
+      "target_node": "execution_blueprint",
+      "target_value": "content_id"
+    },
+    {
+      "edge": "release_to_registry_id",
+      "source_field_path": "source.registry_id",
+      "source_node": "scientific_release_receipt",
+      "target_node": "release_authority_registry",
+      "target_value": "content_id"
+    },
+    {
+      "edge": "release_to_blueprint_id",
+      "source_field_path": "source.execution_blueprint_id",
+      "source_node": "scientific_release_receipt",
+      "target_node": "execution_blueprint",
+      "target_value": "content_id"
+    },
+    {
+      "edge": "release_to_admission_id",
+      "source_field_path": "source.budget_admission_id",
+      "source_node": "scientific_release_receipt",
+      "target_node": "budget_admission",
+      "target_value": "content_id"
+    },
+    {
+      "edge": "compute_to_registry_id",
+      "source_field_path": "source.registry_id",
+      "source_node": "compute_authorization_manifest",
+      "target_node": "compute_authority_registry",
+      "target_value": "content_id"
+    },
+    {
+      "edge": "compute_to_release_id",
+      "source_field_path": "source.scientific_release_receipt_id",
+      "source_node": "compute_authorization_manifest",
+      "target_node": "scientific_release_receipt",
+      "target_value": "content_id"
+    },
+    {
+      "edge": "compute_to_blueprint_id",
+      "source_field_path": "source.execution_blueprint_id",
+      "source_node": "compute_authorization_manifest",
+      "target_node": "execution_blueprint",
+      "target_value": "content_id"
+    },
+    {
+      "edge": "nonce_to_compute_id",
+      "source_field_path": "source.compute_authorization_manifest_id",
+      "source_node": "nonce_consumption_manifest",
+      "target_node": "compute_authorization_manifest",
+      "target_value": "content_id"
+    },
+    {
+      "edge": "reservation_to_compute_id",
+      "source_field_path": "source.compute_authorization_manifest_id",
+      "source_node": "output_reservation_manifest",
+      "target_node": "compute_authorization_manifest",
+      "target_value": "content_id"
+    },
+    {
+      "edge": "reservation_to_nonce_id",
+      "source_field_path": "source.nonce_consumption_manifest_id",
+      "source_node": "output_reservation_manifest",
+      "target_node": "nonce_consumption_manifest",
+      "target_value": "content_id"
+    },
+    {
+      "edge": "worker_to_reservation_id",
+      "source_field_path": "source.output_reservation_manifest_id",
+      "source_node": "worker_ledger_claim",
+      "target_node": "output_reservation_manifest",
+      "target_value": "content_id"
+    },
+    {
+      "edge": "worker_to_compute_id",
+      "source_field_path": "source.compute_authorization_manifest_id",
+      "source_node": "worker_ledger_claim",
+      "target_node": "compute_authorization_manifest",
+      "target_value": "content_id"
+    },
+    {
+      "edge": "runtime_to_worker_id",
+      "source_field_path": "source.worker_ledger_claim_id",
+      "source_node": "runtime_attachment_claim",
+      "target_node": "worker_ledger_claim",
+      "target_value": "content_id"
+    },
+    {
+      "edge": "runtime_to_reservation_id",
+      "source_field_path": "source.output_reservation_manifest_id",
+      "source_node": "runtime_attachment_claim",
+      "target_node": "output_reservation_manifest",
+      "target_value": "content_id"
+    }
+  ],
+  "graph_contract": {
+    "all_37_edges_must_resolve_exactly": true,
+    "all_content_addresses_use_declared_exclusions": true,
+    "all_node_file_hashes_and_content_ids_must_match": true,
+    "all_node_files_must_be_json_objects": true,
+    "all_node_paths_must_remain_under_dedicated_graph_root": true,
+    "all_ten_execution_identity_bindings_must_match_preflight": true,
+    "required_edges": 37,
+    "required_nodes": 20,
+    "structural_integrity_transfers_execution_authority": false,
+    "synthetic_graph_can_only_prove_structural_integrity": true
+  },
+  "graph_contract_id": "a01ac25024b52e64c9b23ad1e3f3203b17403a8164becac168bd1fda7a4d754e",
+  "node_specs": [
+    {
+      "address_excluded_fields": [
+        "preflight_id"
+      ],
+      "id_field": "preflight_id",
+      "node": "empirical_preflight_v2",
+      "phase": "empirical_capture",
+      "schema": "sch.vpd-cluster-to-sae-empirical-preflight.v2"
+    },
+    {
+      "address_excluded_fields": [
+        "registry_id"
+      ],
+      "id_field": "registry_id",
+      "node": "capture_authority_registry",
+      "phase": "empirical_capture",
+      "schema": "sch.vpd-cluster-to-sae-capture-authority-registry.v1"
+    },
+    {
+      "address_excluded_fields": [
+        "receipt_id",
+        "signature"
+      ],
+      "id_field": "receipt_id",
+      "node": "capture_authorization_receipt",
+      "phase": "empirical_capture",
+      "schema": "sch.vpd-cluster-to-sae-capture-authorization-receipt.v1"
+    },
+    {
+      "address_excluded_fields": [
+        "capture_manifest_id"
+      ],
+      "id_field": "capture_manifest_id",
+      "node": "empirical_capture_manifest",
+      "phase": "empirical_capture",
+      "schema": "sch.vpd-activation-capture-manifest.v1"
+    },
+    {
+      "address_excluded_fields": [
+        "routing_bundle_id"
+      ],
+      "id_field": "routing_bundle_id",
+      "node": "empirical_routing_bundle",
+      "phase": "routing_and_partition",
+      "schema": "sch.vpd-guarded-cluster-routing-evidence-bundle.v1"
+    },
+    {
+      "address_excluded_fields": [
+        "routing_stability_id"
+      ],
+      "id_field": "routing_stability_id",
+      "node": "routing_stability_manifest",
+      "phase": "routing_and_partition",
+      "schema": "sch.vpd-cluster-routing-stability-manifest.v1"
+    },
+    {
+      "address_excluded_fields": [
+        "global_pair_split_id"
+      ],
+      "id_field": "global_pair_split_id",
+      "node": "global_pair_split",
+      "phase": "routing_and_partition",
+      "schema": "sch.vpd-cluster-aware-sae-global-pair-split.v2"
+    },
+    {
+      "address_excluded_fields": [
+        "cluster_aware_sae_plan_id"
+      ],
+      "id_field": "cluster_aware_sae_plan_id",
+      "node": "cluster_aware_sae_plan",
+      "phase": "routing_and_partition",
+      "schema": "sch.vpd-cluster-aware-sae-training-plan.v2"
+    },
+    {
+      "address_excluded_fields": [
+        "materialization_id"
+      ],
+      "id_field": "materialization_id",
+      "node": "materialization",
+      "phase": "routing_and_partition",
+      "schema": "sch.vpd-cluster-aware-sae-plan-materialization.v1"
+    },
+    {
+      "address_excluded_fields": [
+        "execution_blueprint_id"
+      ],
+      "id_field": "execution_blueprint_id",
+      "node": "execution_blueprint",
+      "phase": "execution_blueprint_and_budget",
+      "schema": "sch.vpd-cluster-aware-sae-execution-blueprint.v1"
+    },
+    {
+      "address_excluded_fields": [
+        "proposal_id"
+      ],
+      "id_field": "proposal_id",
+      "node": "budget_proposal",
+      "phase": "execution_blueprint_and_budget",
+      "schema": "sch.vpd-cluster-aware-sae-budget-proposal.v1"
+    },
+    {
+      "address_excluded_fields": [
+        "admission_id"
+      ],
+      "id_field": "admission_id",
+      "node": "budget_admission",
+      "phase": "execution_blueprint_and_budget",
+      "schema": "sch.vpd-cluster-aware-sae-budget-admission.v1"
+    },
+    {
+      "address_excluded_fields": [
+        "registry_id"
+      ],
+      "id_field": "registry_id",
+      "node": "release_authority_registry",
+      "phase": "signed_release_and_compute_authority",
+      "schema": "sch.vpd-cluster-aware-sae-authority-registry.v1"
+    },
+    {
+      "address_excluded_fields": [
+        "receipt_id",
+        "signature"
+      ],
+      "id_field": "receipt_id",
+      "node": "scientific_release_receipt",
+      "phase": "signed_release_and_compute_authority",
+      "schema": "sch.vpd-cluster-aware-sae-scientific-release-receipt.v1"
+    },
+    {
+      "address_excluded_fields": [
+        "registry_id"
+      ],
+      "id_field": "registry_id",
+      "node": "compute_authority_registry",
+      "phase": "signed_release_and_compute_authority",
+      "schema": "sch.vpd-cluster-aware-sae-authority-registry.v1"
+    },
+    {
+      "address_excluded_fields": [
+        "compute_authorization_manifest_id"
+      ],
+      "id_field": "compute_authorization_manifest_id",
+      "node": "compute_authorization_manifest",
+      "phase": "signed_release_and_compute_authority",
+      "schema": "sch.vpd-cluster-aware-sae-compute-authorization-manifest.v1"
+    },
+    {
+      "address_excluded_fields": [
+        "nonce_consumption_manifest_id"
+      ],
+      "id_field": "nonce_consumption_manifest_id",
+      "node": "nonce_consumption_manifest",
+      "phase": "durable_runtime_transition",
+      "schema": "sch.vpd-cluster-aware-sae-nonce-consumption-manifest.v1"
+    },
+    {
+      "address_excluded_fields": [
+        "output_reservation_manifest_id"
+      ],
+      "id_field": "output_reservation_manifest_id",
+      "node": "output_reservation_manifest",
+      "phase": "durable_runtime_transition",
+      "schema": "sch.vpd-cluster-aware-sae-output-reservation-manifest.v1"
+    },
+    {
+      "address_excluded_fields": [
+        "worker_ledger_claim_id"
+      ],
+      "id_field": "worker_ledger_claim_id",
+      "node": "worker_ledger_claim",
+      "phase": "durable_runtime_transition",
+      "schema": "sch.vpd-cluster-aware-sae-worker-ledger-claim.v1"
+    },
+    {
+      "address_excluded_fields": [
+        "runtime_attachment_claim_id"
+      ],
+      "id_field": "runtime_attachment_claim_id",
+      "node": "runtime_attachment_claim",
+      "phase": "durable_runtime_transition",
+      "schema": "sch.vpd-cluster-aware-sae-runtime-attachment-claim.v1"
+    }
+  ],
+  "required_execution_identity_bindings": [
+    "model_id",
+    "model_revision",
+    "model_files_manifest_sha256",
+    "adapter_path",
+    "adapter_weights_sha256",
+    "adapter_config_sha256",
+    "device",
+    "wall_time_ceiling_seconds",
+    "cost_ceiling_usd",
+    "output_root"
+  ],
+  "schema": "sch.vpd-cluster-aware-sae-cross-artifact-graph-contract.v1",
+  "scientific_boundary": {
+    "contract_only": true,
+    "durable_runtime_transition_verified": false,
+    "empirical_graph_supplied": false,
+    "execution_authorized": false,
+    "model_inference_performed": false,
+    "model_loaded": false,
+    "model_or_adapter_content_opened": false,
+    "paid_compute_authorized": false,
+    "persistent_dictionary_output_created": false,
+    "sae_training_authorized": false,
+    "signed_authority_verified": false,
+    "training_performed": false,
+    "weights_loaded_or_mutated": false
+  },
+  "source": {
+    "binding_readiness_id": "08bdaaf4733afeae33d847e25bba0ea5657a2723ed49b58137f64c9904084c7a",
+    "binding_readiness_path": "artifacts/vpd_cluster_aware_sae_empirical_budget_binding_readiness_v1/readiness.json",
+    "binding_readiness_sha256": "130e3c49c4ad9e11ff81757479fda6539e44dc975f5057243357c6a9f545d4d7",
+    "budget_policy_id": "5e9f4fc0841d0e71a2eef6f9ac91f5e27d0702c0e0aadfa5a6f511dad50719f2",
+    "budget_policy_path": "artifacts/vpd_cluster_aware_sae_budget_admission_policy_v1/policy.json",
+    "budget_policy_sha256": "1846d857c2d415cbc337e155996e653ff8ba123319fcb0c79e418ae7d576dbaf",
+    "builder_sha256": "e1b6e8435f8a779571f77d978ec217fd967536cc2d1175e2bbc4bb5889bf3f10"
+  },
+  "status": "sealed_nonexecuting_exact_20_node_37_edge_graph_contract"
+}

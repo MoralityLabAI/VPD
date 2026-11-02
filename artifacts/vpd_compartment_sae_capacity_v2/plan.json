@@ -1,0 +1,618 @@
+{
+  "capacity_plan_id": "809deb31cba4642ee38cbaf2f7417120610b4fc9cfe6c37d0ed6cbaa885efb7d",
+  "frozen_support_policy": {
+    "claim_boundary": "Conservative design-floor arithmetic, not a guarantee of SAE quality. Empirical reconstruction, sparsity, dead-feature, and held-out behavior checks remain mandatory.",
+    "minimum_expected_training_firings_per_feature_under_uniform_usage": 32,
+    "minimum_training_observations_per_dictionary_feature": 8,
+    "minimum_unique_prompt_pairs_per_compartment": 32,
+    "training_fraction": 0.9
+  },
+  "invariants": {
+    "capacity_plan_does_not_authorize_inference_or_training": true,
+    "no_profile_declared_ready_without_all_specific_and_shared_support": true,
+    "single_anchor_current_default_is_audited_not_grandfathered": true
+  },
+  "model_space": {
+    "activation_space": "layer_35_residual_stream",
+    "dictionary_scope": "fixed_base_per_compartment",
+    "hidden_size": 4096
+  },
+  "observed_training_role": {
+    "category_episode_counts": {
+      "missing_or_untrusted_authority": 2288,
+      "other_invalid": 572,
+      "replayed": 572,
+      "revoked": 572,
+      "scope_invalid": 572,
+      "signature_invalid": 572,
+      "time_inactive": 572,
+      "valid_authority": 572
+    },
+    "category_unique_pair_counts": {
+      "missing_or_untrusted_authority": 572,
+      "other_invalid": 572,
+      "replayed": 572,
+      "revoked": 572,
+      "scope_invalid": 572,
+      "signature_invalid": 572,
+      "time_inactive": 572,
+      "valid_authority": 572
+    },
+    "rows": 6292,
+    "template_groups": 4,
+    "unique_pairs": 572
+  },
+  "profiles": [
+    {
+      "activation_rows_per_episode": 1,
+      "current_pairs_per_template_group": 143,
+      "dictionary_features": 32768,
+      "estimated_full_pack_pairs": 1165088,
+      "estimated_full_pack_rows": 12815968,
+      "expansion": 8,
+      "id": "legacy_anchor_default",
+      "minimum_pairs_per_training_template_group_for_fresh_pack": 72818,
+      "purpose": "audit_only_current_single_anchor_default",
+      "requirements": {
+        "by_expected_feature_firings": 32768,
+        "by_observation_to_feature_ratio": 262144,
+        "required_total_observations_before_train_validation_split": 291272,
+        "required_training_observations": 262144
+      },
+      "shared_compartment": {
+        "activation_rows_per_episode": 1,
+        "additional_observations_required": 286696,
+        "additional_unique_pairs_required": 0,
+        "balance_rule": "equal_rows_per_activation_category",
+        "balanced_rows_per_category": 572,
+        "checks": {
+          "nonempty_validation": true,
+          "total_observations": false,
+          "unique_pairs": true
+        },
+        "episodes": 4576,
+        "expected_training_firings_per_feature_under_uniform_usage": 4.021484375,
+        "status": "insufficient",
+        "total_observations": 4576,
+        "training_observations": 4118,
+        "training_observations_per_feature": 0.12567138671875,
+        "unique_pairs": 572,
+        "validation_observations": 458
+      },
+      "specific_compartments": {
+        "missing_or_untrusted_authority": {
+          "activation_rows_per_episode": 1,
+          "additional_observations_required": 288984,
+          "additional_unique_pairs_required": 0,
+          "checks": {
+            "nonempty_validation": true,
+            "total_observations": false,
+            "unique_pairs": true
+          },
+          "episodes": 2288,
+          "expected_training_firings_per_feature_under_uniform_usage": 2.0107421875,
+          "status": "insufficient",
+          "total_observations": 2288,
+          "training_observations": 2059,
+          "training_observations_per_feature": 0.062835693359375,
+          "unique_pairs": 572,
+          "validation_observations": 229
+        },
+        "other_invalid": {
+          "activation_rows_per_episode": 1,
+          "additional_observations_required": 290700,
+          "additional_unique_pairs_required": 0,
+          "checks": {
+            "nonempty_validation": true,
+            "total_observations": false,
+            "unique_pairs": true
+          },
+          "episodes": 572,
+          "expected_training_firings_per_feature_under_uniform_usage": 0.501953125,
+          "status": "insufficient",
+          "total_observations": 572,
+          "training_observations": 514,
+          "training_observations_per_feature": 0.01568603515625,
+          "unique_pairs": 572,
+          "validation_observations": 58
+        },
+        "replayed": {
+          "activation_rows_per_episode": 1,
+          "additional_observations_required": 290700,
+          "additional_unique_pairs_required": 0,
+          "checks": {
+            "nonempty_validation": true,
+            "total_observations": false,
+            "unique_pairs": true
+          },
+          "episodes": 572,
+          "expected_training_firings_per_feature_under_uniform_usage": 0.501953125,
+          "status": "insufficient",
+          "total_observations": 572,
+          "training_observations": 514,
+          "training_observations_per_feature": 0.01568603515625,
+          "unique_pairs": 572,
+          "validation_observations": 58
+        },
+        "revoked": {
+          "activation_rows_per_episode": 1,
+          "additional_observations_required": 290700,
+          "additional_unique_pairs_required": 0,
+          "checks": {
+            "nonempty_validation": true,
+            "total_observations": false,
+            "unique_pairs": true
+          },
+          "episodes": 572,
+          "expected_training_firings_per_feature_under_uniform_usage": 0.501953125,
+          "status": "insufficient",
+          "total_observations": 572,
+          "training_observations": 514,
+          "training_observations_per_feature": 0.01568603515625,
+          "unique_pairs": 572,
+          "validation_observations": 58
+        },
+        "scope_invalid": {
+          "activation_rows_per_episode": 1,
+          "additional_observations_required": 290700,
+          "additional_unique_pairs_required": 0,
+          "checks": {
+            "nonempty_validation": true,
+            "total_observations": false,
+            "unique_pairs": true
+          },
+          "episodes": 572,
+          "expected_training_firings_per_feature_under_uniform_usage": 0.501953125,
+          "status": "insufficient",
+          "total_observations": 572,
+          "training_observations": 514,
+          "training_observations_per_feature": 0.01568603515625,
+          "unique_pairs": 572,
+          "validation_observations": 58
+        },
+        "signature_invalid": {
+          "activation_rows_per_episode": 1,
+          "additional_observations_required": 290700,
+          "additional_unique_pairs_required": 0,
+          "checks": {
+            "nonempty_validation": true,
+            "total_observations": false,
+            "unique_pairs": true
+          },
+          "episodes": 572,
+          "expected_training_firings_per_feature_under_uniform_usage": 0.501953125,
+          "status": "insufficient",
+          "total_observations": 572,
+          "training_observations": 514,
+          "training_observations_per_feature": 0.01568603515625,
+          "unique_pairs": 572,
+          "validation_observations": 58
+        },
+        "time_inactive": {
+          "activation_rows_per_episode": 1,
+          "additional_observations_required": 290700,
+          "additional_unique_pairs_required": 0,
+          "checks": {
+            "nonempty_validation": true,
+            "total_observations": false,
+            "unique_pairs": true
+          },
+          "episodes": 572,
+          "expected_training_firings_per_feature_under_uniform_usage": 0.501953125,
+          "status": "insufficient",
+          "total_observations": 572,
+          "training_observations": 514,
+          "training_observations_per_feature": 0.01568603515625,
+          "unique_pairs": 572,
+          "validation_observations": 58
+        },
+        "valid_authority": {
+          "activation_rows_per_episode": 1,
+          "additional_observations_required": 290700,
+          "additional_unique_pairs_required": 0,
+          "checks": {
+            "nonempty_validation": true,
+            "total_observations": false,
+            "unique_pairs": true
+          },
+          "episodes": 572,
+          "expected_training_firings_per_feature_under_uniform_usage": 0.501953125,
+          "status": "insufficient",
+          "total_observations": 572,
+          "training_observations": 514,
+          "training_observations_per_feature": 0.01568603515625,
+          "unique_pairs": 572,
+          "validation_observations": 58
+        }
+      },
+      "status": "insufficient",
+      "top_k": 32
+    },
+    {
+      "activation_rows_per_episode": 128,
+      "current_pairs_per_template_group": 143,
+      "dictionary_features": 8192,
+      "estimated_full_pack_pairs": 2288,
+      "estimated_full_pack_rows": 25168,
+      "expansion": 2,
+      "id": "bounded_context_pilot",
+      "minimum_pairs_per_training_template_group_for_fresh_pack": 143,
+      "purpose": "minimum_compartment_pilot_candidate",
+      "requirements": {
+        "by_expected_feature_firings": 16384,
+        "by_observation_to_feature_ratio": 65536,
+        "required_total_observations_before_train_validation_split": 72818,
+        "required_training_observations": 65536
+      },
+      "shared_compartment": {
+        "activation_rows_per_episode": 128,
+        "additional_observations_required": 0,
+        "additional_unique_pairs_required": 0,
+        "balance_rule": "equal_rows_per_activation_category",
+        "balanced_rows_per_category": 572,
+        "checks": {
+          "nonempty_validation": true,
+          "total_observations": true,
+          "unique_pairs": true
+        },
+        "episodes": 4576,
+        "expected_training_firings_per_feature_under_uniform_usage": 1029.599609375,
+        "status": "ready",
+        "total_observations": 585728,
+        "training_observations": 527155,
+        "training_observations_per_feature": 64.3499755859375,
+        "unique_pairs": 572,
+        "validation_observations": 58573
+      },
+      "specific_compartments": {
+        "missing_or_untrusted_authority": {
+          "activation_rows_per_episode": 128,
+          "additional_observations_required": 0,
+          "additional_unique_pairs_required": 0,
+          "checks": {
+            "nonempty_validation": true,
+            "total_observations": true,
+            "unique_pairs": true
+          },
+          "episodes": 2288,
+          "expected_training_firings_per_feature_under_uniform_usage": 514.798828125,
+          "status": "ready",
+          "total_observations": 292864,
+          "training_observations": 263577,
+          "training_observations_per_feature": 32.1749267578125,
+          "unique_pairs": 572,
+          "validation_observations": 29287
+        },
+        "other_invalid": {
+          "activation_rows_per_episode": 128,
+          "additional_observations_required": 0,
+          "additional_unique_pairs_required": 0,
+          "checks": {
+            "nonempty_validation": true,
+            "total_observations": true,
+            "unique_pairs": true
+          },
+          "episodes": 572,
+          "expected_training_firings_per_feature_under_uniform_usage": 128.69921875,
+          "status": "ready",
+          "total_observations": 73216,
+          "training_observations": 65894,
+          "training_observations_per_feature": 8.043701171875,
+          "unique_pairs": 572,
+          "validation_observations": 7322
+        },
+        "replayed": {
+          "activation_rows_per_episode": 128,
+          "additional_observations_required": 0,
+          "additional_unique_pairs_required": 0,
+          "checks": {
+            "nonempty_validation": true,
+            "total_observations": true,
+            "unique_pairs": true
+          },
+          "episodes": 572,
+          "expected_training_firings_per_feature_under_uniform_usage": 128.69921875,
+          "status": "ready",
+          "total_observations": 73216,
+          "training_observations": 65894,
+          "training_observations_per_feature": 8.043701171875,
+          "unique_pairs": 572,
+          "validation_observations": 7322
+        },
+        "revoked": {
+          "activation_rows_per_episode": 128,
+          "additional_observations_required": 0,
+          "additional_unique_pairs_required": 0,
+          "checks": {
+            "nonempty_validation": true,
+            "total_observations": true,
+            "unique_pairs": true
+          },
+          "episodes": 572,
+          "expected_training_firings_per_feature_under_uniform_usage": 128.69921875,
+          "status": "ready",
+          "total_observations": 73216,
+          "training_observations": 65894,
+          "training_observations_per_feature": 8.043701171875,
+          "unique_pairs": 572,
+          "validation_observations": 7322
+        },
+        "scope_invalid": {
+          "activation_rows_per_episode": 128,
+          "additional_observations_required": 0,
+          "additional_unique_pairs_required": 0,
+          "checks": {
+            "nonempty_validation": true,
+            "total_observations": true,
+            "unique_pairs": true
+          },
+          "episodes": 572,
+          "expected_training_firings_per_feature_under_uniform_usage": 128.69921875,
+          "status": "ready",
+          "total_observations": 73216,
+          "training_observations": 65894,
+          "training_observations_per_feature": 8.043701171875,
+          "unique_pairs": 572,
+          "validation_observations": 7322
+        },
+        "signature_invalid": {
+          "activation_rows_per_episode": 128,
+          "additional_observations_required": 0,
+          "additional_unique_pairs_required": 0,
+          "checks": {
+            "nonempty_validation": true,
+            "total_observations": true,
+            "unique_pairs": true
+          },
+          "episodes": 572,
+          "expected_training_firings_per_feature_under_uniform_usage": 128.69921875,
+          "status": "ready",
+          "total_observations": 73216,
+          "training_observations": 65894,
+          "training_observations_per_feature": 8.043701171875,
+          "unique_pairs": 572,
+          "validation_observations": 7322
+        },
+        "time_inactive": {
+          "activation_rows_per_episode": 128,
+          "additional_observations_required": 0,
+          "additional_unique_pairs_required": 0,
+          "checks": {
+            "nonempty_validation": true,
+            "total_observations": true,
+            "unique_pairs": true
+          },
+          "episodes": 572,
+          "expected_training_firings_per_feature_under_uniform_usage": 128.69921875,
+          "status": "ready",
+          "total_observations": 73216,
+          "training_observations": 65894,
+          "training_observations_per_feature": 8.043701171875,
+          "unique_pairs": 572,
+          "validation_observations": 7322
+        },
+        "valid_authority": {
+          "activation_rows_per_episode": 128,
+          "additional_observations_required": 0,
+          "additional_unique_pairs_required": 0,
+          "checks": {
+            "nonempty_validation": true,
+            "total_observations": true,
+            "unique_pairs": true
+          },
+          "episodes": 572,
+          "expected_training_firings_per_feature_under_uniform_usage": 128.69921875,
+          "status": "ready",
+          "total_observations": 73216,
+          "training_observations": 65894,
+          "training_observations_per_feature": 8.043701171875,
+          "unique_pairs": 572,
+          "validation_observations": 7322
+        }
+      },
+      "status": "ready",
+      "top_k": 16
+    },
+    {
+      "activation_rows_per_episode": 256,
+      "current_pairs_per_template_group": 143,
+      "dictionary_features": 32768,
+      "estimated_full_pack_pairs": 4560,
+      "estimated_full_pack_rows": 50160,
+      "expansion": 8,
+      "id": "overcomplete_context_study",
+      "minimum_pairs_per_training_template_group_for_fresh_pack": 285,
+      "purpose": "overcomplete_compartment_study_candidate",
+      "requirements": {
+        "by_expected_feature_firings": 32768,
+        "by_observation_to_feature_ratio": 262144,
+        "required_total_observations_before_train_validation_split": 291272,
+        "required_training_observations": 262144
+      },
+      "shared_compartment": {
+        "activation_rows_per_episode": 256,
+        "additional_observations_required": 0,
+        "additional_unique_pairs_required": 0,
+        "balance_rule": "equal_rows_per_activation_category",
+        "balanced_rows_per_category": 572,
+        "checks": {
+          "nonempty_validation": true,
+          "total_observations": true,
+          "unique_pairs": true
+        },
+        "episodes": 4576,
+        "expected_training_firings_per_feature_under_uniform_usage": 1029.599609375,
+        "status": "ready",
+        "total_observations": 1171456,
+        "training_observations": 1054310,
+        "training_observations_per_feature": 32.17498779296875,
+        "unique_pairs": 572,
+        "validation_observations": 117146
+      },
+      "specific_compartments": {
+        "missing_or_untrusted_authority": {
+          "activation_rows_per_episode": 256,
+          "additional_observations_required": 0,
+          "additional_unique_pairs_required": 0,
+          "checks": {
+            "nonempty_validation": true,
+            "total_observations": true,
+            "unique_pairs": true
+          },
+          "episodes": 2288,
+          "expected_training_firings_per_feature_under_uniform_usage": 514.7998046875,
+          "status": "ready",
+          "total_observations": 585728,
+          "training_observations": 527155,
+          "training_observations_per_feature": 16.087493896484375,
+          "unique_pairs": 572,
+          "validation_observations": 58573
+        },
+        "other_invalid": {
+          "activation_rows_per_episode": 256,
+          "additional_observations_required": 144840,
+          "additional_unique_pairs_required": 0,
+          "checks": {
+            "nonempty_validation": true,
+            "total_observations": false,
+            "unique_pairs": true
+          },
+          "episodes": 572,
+          "expected_training_firings_per_feature_under_uniform_usage": 128.69921875,
+          "status": "insufficient",
+          "total_observations": 146432,
+          "training_observations": 131788,
+          "training_observations_per_feature": 4.0218505859375,
+          "unique_pairs": 572,
+          "validation_observations": 14644
+        },
+        "replayed": {
+          "activation_rows_per_episode": 256,
+          "additional_observations_required": 144840,
+          "additional_unique_pairs_required": 0,
+          "checks": {
+            "nonempty_validation": true,
+            "total_observations": false,
+            "unique_pairs": true
+          },
+          "episodes": 572,
+          "expected_training_firings_per_feature_under_uniform_usage": 128.69921875,
+          "status": "insufficient",
+          "total_observations": 146432,
+          "training_observations": 131788,
+          "training_observations_per_feature": 4.0218505859375,
+          "unique_pairs": 572,
+          "validation_observations": 14644
+        },
+        "revoked": {
+          "activation_rows_per_episode": 256,
+          "additional_observations_required": 144840,
+          "additional_unique_pairs_required": 0,
+          "checks": {
+            "nonempty_validation": true,
+            "total_observations": false,
+            "unique_pairs": true
+          },
+          "episodes": 572,
+          "expected_training_firings_per_feature_under_uniform_usage": 128.69921875,
+          "status": "insufficient",
+          "total_observations": 146432,
+          "training_observations": 131788,
+          "training_observations_per_feature": 4.0218505859375,
+          "unique_pairs": 572,
+          "validation_observations": 14644
+        },
+        "scope_invalid": {
+          "activation_rows_per_episode": 256,
+          "additional_observations_required": 144840,
+          "additional_unique_pairs_required": 0,
+          "checks": {
+            "nonempty_validation": true,
+            "total_observations": false,
+            "unique_pairs": true
+          },
+          "episodes": 572,
+          "expected_training_firings_per_feature_under_uniform_usage": 128.69921875,
+          "status": "insufficient",
+          "total_observations": 146432,
+          "training_observations": 131788,
+          "training_observations_per_feature": 4.0218505859375,
+          "unique_pairs": 572,
+          "validation_observations": 14644
+        },
+        "signature_invalid": {
+          "activation_rows_per_episode": 256,
+          "additional_observations_required": 144840,
+          "additional_unique_pairs_required": 0,
+          "checks": {
+            "nonempty_validation": true,
+            "total_observations": false,
+            "unique_pairs": true
+          },
+          "episodes": 572,
+          "expected_training_firings_per_feature_under_uniform_usage": 128.69921875,
+          "status": "insufficient",
+          "total_observations": 146432,
+          "training_observations": 131788,
+          "training_observations_per_feature": 4.0218505859375,
+          "unique_pairs": 572,
+          "validation_observations": 14644
+        },
+        "time_inactive": {
+          "activation_rows_per_episode": 256,
+          "additional_observations_required": 144840,
+          "additional_unique_pairs_required": 0,
+          "checks": {
+            "nonempty_validation": true,
+            "total_observations": false,
+            "unique_pairs": true
+          },
+          "episodes": 572,
+          "expected_training_firings_per_feature_under_uniform_usage": 128.69921875,
+          "status": "insufficient",
+          "total_observations": 146432,
+          "training_observations": 131788,
+          "training_observations_per_feature": 4.0218505859375,
+          "unique_pairs": 572,
+          "validation_observations": 14644
+        },
+        "valid_authority": {
+          "activation_rows_per_episode": 256,
+          "additional_observations_required": 144840,
+          "additional_unique_pairs_required": 0,
+          "checks": {
+            "nonempty_validation": true,
+            "total_observations": false,
+            "unique_pairs": true
+          },
+          "episodes": 572,
+          "expected_training_firings_per_feature_under_uniform_usage": 128.69921875,
+          "status": "insufficient",
+          "total_observations": 146432,
+          "training_observations": 131788,
+          "training_observations_per_feature": 4.0218505859375,
+          "unique_pairs": 572,
+          "validation_observations": 14644
+        }
+      },
+      "status": "insufficient",
+      "top_k": 32
+    }
+  ],
+  "schema": "sch.vpd-compartment-sae-capacity-plan.v1",
+  "scientific_boundary": {
+    "current_pack_trainability_claimed": false,
+    "model_inference_performed": false,
+    "weights_loaded_or_mutated": false
+  },
+  "source": {
+    "pack_id": "ad753063ac5f83bd7197fbb1d17c4bd7bdced1d3a5140a7d765ab0f8e90f3a11",
+    "pack_manifest_sha256": "d43e83b4e7a848c0857d827740e1a4f0e2cdd8fd9ab65decd7b0741caea80581",
+    "planner_sha256": "73a31039a53394a1ee59aeeb3bbfe3f064bbf5dbd61a178b2b8ae1e7b0989031",
+    "sae_training_artifact_sha256": "3673e72770c5bd1229a1455e4b5aa0e489e2f779f579fe47a42301458b7c71d4",
+    "source_pack_split_id": "a9b7fa1fcc2bfc959b586e6f2890a3787b04abdbb7bd08c4772f75c0a23ee81e",
+    "split_id": "a5aa3370406876c1c48ed702b431a64cb6a68c8376ab28b0aad1d852c22dd8dc",
+    "split_manifest_sha256": "5677d42e1ab01aedb12ed7350fd8598cf903f7bf3642015592cba901ec0acfd5"
+  },
+  "status": "ready"
+}

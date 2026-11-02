@@ -1,0 +1,911 @@
+{
+  "archives": [
+    {
+      "capture_manifest_sha256": "417f0b6014ff3259d7e0885ef85b9b5a070faafd19ce177177e44fbc038aa292",
+      "evaluation_families": [
+        "arc_grid",
+        "campsite",
+        "dyck_language",
+        "math"
+      ],
+      "families_shared_between_train_and_eval": [
+        "arc_grid",
+        "math"
+      ],
+      "path": "C:\\projects\\VPD\\artifacts\\nanbeige_reasoning\\q4_reasoning_pilot_v1\\q4_reasoning_saes",
+      "sae_manifest_sha256": "6fc6377d128459f711953d1667a32b8ebdf10c36cd6e6047888b21b447e3bc92",
+      "sites": [
+        {
+          "family_reconstruction_quality": [
+            {
+              "examples": 6,
+              "family": "arc_grid",
+              "per_pass_ev": [
+                0.3637813011495522,
+                0.2947089258218969
+              ]
+            },
+            {
+              "examples": 1,
+              "family": "campsite",
+              "per_pass_ev": [
+                0.12144065316029373,
+                0.10771619226199414
+              ]
+            },
+            {
+              "examples": 1,
+              "family": "dyck_language",
+              "per_pass_ev": [
+                0.047908761817833434,
+                0.04146979473316781
+              ]
+            },
+            {
+              "examples": 2,
+              "family": "math",
+              "per_pass_ev": [
+                0.16012602453929514,
+                0.12913872785354974
+              ]
+            }
+          ],
+          "groups": [
+            {
+              "assigned_pass": 0,
+              "equal_family_mean_advantage": 0.039813563819819396,
+              "families": 4,
+              "families_with_positive_advantage": 4,
+              "family_advantage_sample_sd": 0.03517555758335677,
+              "family_scores": [
+                {
+                  "advantage_over_random_mean": 0.092146979451664,
+                  "family": "arc_grid",
+                  "random_effects": [
+                    0.012047494450296847,
+                    0.004016852793123464,
+                    0.012261709200698627,
+                    0.009495451521974837,
+                    0.009589002404860401,
+                    -0.012016772793592666,
+                    0.0038480624581009454,
+                    0.016449341342724466,
+                    -0.009978881421067065,
+                    0.005647827437756121
+                  ],
+                  "selected_effect": 0.0972829881911516
+                },
+                {
+                  "advantage_over_random_mean": 0.028665871773497546,
+                  "family": "campsite",
+                  "random_effects": [
+                    0.0012323986099853114,
+                    -0.0033865392901668394,
+                    0.007662411741663662,
+                    0.006364413350106884,
+                    0.0013284162148471078,
+                    -0.00984620900079078,
+                    0.0022471693091761728,
+                    0.009459676616257288,
+                    0.009329388866957767,
+                    0.0003059682527738108
+                  ],
+                  "selected_effect": 0.031135581240578584
+                },
+                {
+                  "advantage_over_random_mean": 0.0198412705621836,
+                  "family": "dyck_language",
+                  "random_effects": [
+                    0.002436654693116729,
+                    0.0007118625869919539,
+                    0.007678247472397922,
+                    0.004851663565534384,
+                    0.0036491621171686273,
+                    -0.008366361136315625,
+                    0.0037960621777272663,
+                    0.008605364736232923,
+                    0.007529633894121503,
+                    0.004133724965197398
+                  ],
+                  "selected_effect": 0.023343872069400907
+                },
+                {
+                  "advantage_over_random_mean": 0.018600133491932427,
+                  "family": "math",
+                  "random_effects": [
+                    -0.003750868320226683,
+                    -0.007230376106859806,
+                    0.007275146095848494,
+                    0.0066440482533156875,
+                    -0.0005640999245872594,
+                    -0.007985380411338505,
+                    -9.524577389464009e-05,
+                    0.004163349110284244,
+                    0.004199873094446527,
+                    -0.0015324898105026196
+                  ],
+                  "selected_effect": 0.01871252911258097
+                }
+              ],
+              "mean_over_sample_sd_descriptive": 1.1318530978641002,
+              "minimum_family_advantage": 0.018600133491932427,
+              "minimum_leave_one_family_out_mean": 0.022369091942537857,
+              "selected_features": 102
+            },
+            {
+              "assigned_pass": 1,
+              "equal_family_mean_advantage": 0.03896963381818971,
+              "families": 4,
+              "families_with_positive_advantage": 4,
+              "family_advantage_sample_sd": 0.02649583479331693,
+              "family_scores": [
+                {
+                  "advantage_over_random_mean": 0.07799350715350108,
+                  "family": "arc_grid",
+                  "random_effects": [
+                    0.0006070454894847588,
+                    0.0068081561240898765,
+                    0.015863743677258294,
+                    -0.005937860087081581,
+                    -0.0006118639520008434,
+                    -0.003740175390113499,
+                    0.0029972824806501416,
+                    -0.005214336755850382,
+                    0.0054630485975775064,
+                    0.01799045590234502
+                  ],
+                  "selected_effect": 0.081416056762137
+                },
+                {
+                  "advantage_over_random_mean": 0.031259000921998494,
+                  "family": "campsite",
+                  "random_effects": [
+                    -0.004558948381100034,
+                    0.003759719131487399,
+                    0.012955345801240963,
+                    -0.007815489019263315,
+                    0.0001328753798883163,
+                    -0.005619659721589957,
+                    -0.010924388879913219,
+                    -0.010051744912978925,
+                    -0.004651544726597949,
+                    0.005413140983981043
+                  ],
+                  "selected_effect": 0.029122931487513926
+                },
+                {
+                  "advantage_over_random_mean": 0.019219621299148375,
+                  "family": "dyck_language",
+                  "random_effects": [
+                    -0.005099542276226754,
+                    0.002409124746922368,
+                    0.01016111805668931,
+                    -0.006360950210170515,
+                    0.00028274307692034185,
+                    -0.0026833172994953393,
+                    -0.005363001243808813,
+                    -0.00806421740010137,
+                    -0.004099049052675463,
+                    0.0034769925519517342
+                  ],
+                  "selected_effect": 0.017685611394148926
+                },
+                {
+                  "advantage_over_random_mean": 0.027406405898110876,
+                  "family": "math",
+                  "random_effects": [
+                    -0.006982941666447135,
+                    -0.00020507945402418494,
+                    0.008879222481874088,
+                    -0.005812502304420625,
+                    -0.0009531028297606291,
+                    -0.003634997251366002,
+                    -0.003876822365448956,
+                    -0.0063320244881001735,
+                    -0.0010027595140613063,
+                    0.0049152032106196935
+                  ],
+                  "selected_effect": 0.02590582547999735
+                }
+              ],
+              "mean_over_sample_sd_descriptive": 1.4707833937739927,
+              "minimum_family_advantage": 0.019219621299148375,
+              "minimum_leave_one_family_out_mean": 0.02596167603975258,
+              "selected_features": 120
+            }
+          ],
+          "normalizer_training_variance_per_row": [
+            6585.478550115111,
+            4327.8534302838225
+          ],
+          "pooled_ev": [
+            0.29613771936927424,
+            0.25113989340072873
+          ],
+          "site": "model.layers.11"
+        },
+        {
+          "family_reconstruction_quality": [
+            {
+              "examples": 6,
+              "family": "arc_grid",
+              "per_pass_ev": [
+                0.3109493917533419,
+                0.5184243684448737
+              ]
+            },
+            {
+              "examples": 1,
+              "family": "campsite",
+              "per_pass_ev": [
+                0.04695227828245474,
+                0.3350430113067697
+              ]
+            },
+            {
+              "examples": 1,
+              "family": "dyck_language",
+              "per_pass_ev": [
+                0.006517101065916409,
+                0.2832727235044682
+              ]
+            },
+            {
+              "examples": 2,
+              "family": "math",
+              "per_pass_ev": [
+                0.0841670918294477,
+                0.3430997368327914
+              ]
+            }
+          ],
+          "groups": [
+            {
+              "assigned_pass": 0,
+              "equal_family_mean_advantage": 0.18182653794182876,
+              "families": 4,
+              "families_with_positive_advantage": 4,
+              "family_advantage_sample_sd": 0.07317804149765401,
+              "family_scores": [
+                {
+                  "advantage_over_random_mean": 0.2894974989265221,
+                  "family": "arc_grid",
+                  "random_effects": [
+                    -0.0560497120136831,
+                    0.06037208608065184,
+                    -0.02736866335383792,
+                    0.027622998937844243,
+                    0.0021159565616562376,
+                    0.08255693521895806,
+                    -0.08210376075729482,
+                    -0.09716083525793673,
+                    -0.04633330976632013,
+                    -0.023972546736656566
+                  ],
+                  "selected_effect": 0.2734654138178602
+                },
+                {
+                  "advantage_over_random_mean": 0.16580976572252734,
+                  "family": "campsite",
+                  "random_effects": [
+                    -0.07500451273561529,
+                    0.02513832306212395,
+                    -0.0459159150535977,
+                    0.0071248210532263295,
+                    -0.044636623490199784,
+                    0.022433498825333534,
+                    -0.10243277987954179,
+                    -0.12094745742293009,
+                    -0.06902330359546359,
+                    -0.04149436927142696
+                  ],
+                  "selected_effect": 0.1213339338717182
+                },
+                {
+                  "advantage_over_random_mean": 0.1332372631265996,
+                  "family": "dyck_language",
+                  "random_effects": [
+                    -0.05551213738358738,
+                    0.015594165784489113,
+                    -0.056787820294408826,
+                    -0.0001514479943883762,
+                    -0.04577206883099727,
+                    0.012778103069146847,
+                    -0.08576300085234853,
+                    -0.09030173884934407,
+                    -0.06859348522198175,
+                    -0.04338618668475881
+                  ],
+                  "selected_effect": 0.09144770140078168
+                },
+                {
+                  "advantage_over_random_mean": 0.13876162399166606,
+                  "family": "math",
+                  "random_effects": [
+                    -0.04635840868357062,
+                    0.00923432377130158,
+                    -0.04082030282340207,
+                    -0.008765499925949945,
+                    -0.04104614366115827,
+                    0.034797178799516014,
+                    -0.07822983309174122,
+                    -0.08313616457008802,
+                    -0.06129191418042172,
+                    -0.0514271932762484
+                  ],
+                  "selected_effect": 0.10205722822748979
+                }
+              ],
+              "mean_over_sample_sd_descriptive": 2.4847144610676395,
+              "minimum_family_advantage": 0.1332372631265996,
+              "minimum_leave_one_family_out_mean": 0.14593621761359765,
+              "selected_features": 51
+            },
+            {
+              "assigned_pass": 1,
+              "equal_family_mean_advantage": 0.2112974720469175,
+              "families": 4,
+              "families_with_positive_advantage": 4,
+              "family_advantage_sample_sd": 0.07436376470852978,
+              "family_scores": [
+                {
+                  "advantage_over_random_mean": 0.32049941200528975,
+                  "family": "arc_grid",
+                  "random_effects": [
+                    0.11918079082661287,
+                    0.11462551813848848,
+                    0.11587093196063017,
+                    0.12509696073943957,
+                    0.20388276113961093,
+                    0.02952929327355014,
+                    0.1549024584754201,
+                    0.13284881873886328,
+                    0.09474902855284695,
+                    0.07751770717916587
+                  ],
+                  "selected_effect": 0.4373198389077526
+                },
+                {
+                  "advantage_over_random_mean": 0.19564047320471822,
+                  "family": "campsite",
+                  "random_effects": [
+                    0.17251434617640543,
+                    0.18465899378769138,
+                    0.1703885920646453,
+                    0.17313199893631231,
+                    0.20721121895031697,
+                    0.11452526814177545,
+                    0.19159078064865132,
+                    0.1574289390830521,
+                    0.16219892486771345,
+                    0.1719129737923969
+                  ],
+                  "selected_effect": 0.36619667684961427
+                },
+                {
+                  "advantage_over_random_mean": 0.15981463009975552,
+                  "family": "dyck_language",
+                  "random_effects": [
+                    0.16920801580829833,
+                    0.17361946000297307,
+                    0.1528398195103238,
+                    0.16361470036297232,
+                    0.19974716601902276,
+                    0.1171691763975869,
+                    0.18460367385335955,
+                    0.14302646101213184,
+                    0.15922583732457032,
+                    0.1638395862552574
+                  ],
+                  "selected_effect": 0.3225040197544051
+                },
+                {
+                  "advantage_over_random_mean": 0.1692353728779066,
+                  "family": "math",
+                  "random_effects": [
+                    0.20153517188457962,
+                    0.21625968669322865,
+                    0.20304742892099628,
+                    0.1890704633583949,
+                    0.22205058533462613,
+                    0.15099051538851524,
+                    0.1771878676419063,
+                    0.13754377373529927,
+                    0.19674621666328285,
+                    0.17382857419928935
+                  ],
+                  "selected_effect": 0.3560614012599185
+                }
+              ],
+              "mean_over_sample_sd_descriptive": 2.841403644303137,
+              "minimum_family_advantage": 0.15981463009975552,
+              "minimum_leave_one_family_out_mean": 0.17489682539412676,
+              "selected_features": 223
+            }
+          ],
+          "normalizer_training_variance_per_row": [
+            439.9239371833045,
+            17053.203370074392
+          ],
+          "pooled_ev": [
+            0.24962772126672272,
+            0.46479569261562614
+          ],
+          "site": "model.norm"
+        }
+      ],
+      "training_families": [
+        "arc_grid",
+        "futoshiki",
+        "goods_exchange",
+        "math"
+      ]
+    },
+    {
+      "capture_manifest_sha256": "6e31e77285cafcc9d2f600a3e6e59d38b5b1d5e66a895c5b89395a2cf22b5caa",
+      "evaluation_families": [
+        "arc_grid",
+        "campsite",
+        "dyck_language",
+        "math"
+      ],
+      "families_shared_between_train_and_eval": [
+        "arc_grid",
+        "math"
+      ],
+      "path": "C:\\projects\\VPD\\artifacts\\nanbeige_reasoning\\q4_reasoning_pilot_8192_v1\\q4_reasoning_saes",
+      "sae_manifest_sha256": "8cea34fb5c46b826059d5684c18c5694e38cf1aabf03eb51a152c8a1f785d6e9",
+      "sites": [
+        {
+          "family_reconstruction_quality": [
+            {
+              "examples": 6,
+              "family": "arc_grid",
+              "per_pass_ev": [
+                0.3626035589408937,
+                0.30966636252845425
+              ]
+            },
+            {
+              "examples": 1,
+              "family": "campsite",
+              "per_pass_ev": [
+                0.12530041843925876,
+                0.09551348789072966
+              ]
+            },
+            {
+              "examples": 1,
+              "family": "dyck_language",
+              "per_pass_ev": [
+                0.013005356348125718,
+                0.03580658421716443
+              ]
+            },
+            {
+              "examples": 2,
+              "family": "math",
+              "per_pass_ev": [
+                0.18700799184367833,
+                0.15860946089504824
+              ]
+            }
+          ],
+          "groups": [
+            {
+              "assigned_pass": 0,
+              "equal_family_mean_advantage": 0.04556310278247687,
+              "families": 4,
+              "families_with_positive_advantage": 4,
+              "family_advantage_sample_sd": 0.043767926013126186,
+              "family_scores": [
+                {
+                  "advantage_over_random_mean": 0.11043594309374201,
+                  "family": "arc_grid",
+                  "random_effects": [
+                    0.005090209597677385,
+                    0.002812290516124673,
+                    0.007761581477811162,
+                    0.01767671783084982,
+                    -0.0033254020055199576,
+                    0.026573275254753705,
+                    0.015404050958179892,
+                    0.004142395557386793,
+                    -0.0017873442618174806,
+                    -0.004912680260343225
+                  ],
+                  "selected_effect": 0.11737945256025228
+                },
+                {
+                  "advantage_over_random_mean": 0.02987128306104436,
+                  "family": "campsite",
+                  "random_effects": [
+                    0.005904214004408961,
+                    0.001055363510778784,
+                    -0.0002848392467195253,
+                    0.01236107361954318,
+                    -0.0027755555693192296,
+                    0.009470972486970777,
+                    0.003703433417275387,
+                    0.0020410404978395483,
+                    0.004956257285759942,
+                    0.0004101524817239424
+                  ],
+                  "selected_effect": 0.03355549430987054
+                },
+                {
+                  "advantage_over_random_mean": 0.02740644953919952,
+                  "family": "dyck_language",
+                  "random_effects": [
+                    0.00926711411459136,
+                    -0.0021734306928564776,
+                    -0.0038665776380567562,
+                    0.007568141683476595,
+                    -0.00024645954552501154,
+                    0.013357120255262494,
+                    0.008116668755838701,
+                    -0.005475623664022884,
+                    0.005304193565477464,
+                    -0.005239749751573149
+                  ],
+                  "selected_effect": 0.030067589247460755
+                },
+                {
+                  "advantage_over_random_mean": 0.014538735435921603,
+                  "family": "math",
+                  "random_effects": [
+                    0.01917675556340072,
+                    -0.0008859038122287586,
+                    0.0003748087513143622,
+                    0.0035354644227732906,
+                    0.00842013549697436,
+                    0.007036524809462439,
+                    0.011243385669804772,
+                    -0.0006800989772404488,
+                    0.01044567509504805,
+                    0.010165557481832586
+                  ],
+                  "selected_effect": 0.02142196588603574
+                }
+              ],
+              "mean_over_sample_sd_descriptive": 1.041015806159339,
+              "minimum_family_advantage": 0.014538735435921603,
+              "minimum_leave_one_family_out_mean": 0.023938822678721827,
+              "selected_features": 104
+            },
+            {
+              "assigned_pass": 1,
+              "equal_family_mean_advantage": 0.0336496685802853,
+              "families": 4,
+              "families_with_positive_advantage": 4,
+              "family_advantage_sample_sd": 0.02517540775600416,
+              "family_scores": [
+                {
+                  "advantage_over_random_mean": 0.07101128739593202,
+                  "family": "arc_grid",
+                  "random_effects": [
+                    -0.0025003756247999817,
+                    -0.005429135455919699,
+                    0.003718101303726856,
+                    -0.0014992191038577206,
+                    -0.006991011315745418,
+                    -0.0013587407747091412,
+                    -0.004980191480858747,
+                    0.004822026482367969,
+                    -0.009423011759377816,
+                    0.0006712465988039928
+                  ],
+                  "selected_effect": 0.06871425628289504
+                },
+                {
+                  "advantage_over_random_mean": 0.026292476675209703,
+                  "family": "campsite",
+                  "random_effects": [
+                    -0.00028108832826786653,
+                    -0.0032497834371618475,
+                    0.0055851827381362285,
+                    -0.0009904737042798657,
+                    -0.0002391777119348168,
+                    -0.0019673669852425177,
+                    -0.0016193807542940423,
+                    -0.0007422750305568753,
+                    -0.00526761726429896,
+                    0.00647955257390186
+                  ],
+                  "selected_effect": 0.02606323388480983
+                },
+                {
+                  "advantage_over_random_mean": 0.017856311435925545,
+                  "family": "dyck_language",
+                  "random_effects": [
+                    0.002849451204470414,
+                    0.005396258623364993,
+                    6.719999113942443e-05,
+                    0.00013462199401490568,
+                    -0.0007796698952496108,
+                    0.004573994222440651,
+                    0.008264457749828532,
+                    -0.000503934759284775,
+                    -0.005644634851929336,
+                    0.006196261859538539
+                  ],
+                  "selected_effect": 0.019911712049758917
+                },
+                {
+                  "advantage_over_random_mean": 0.019438598814073924,
+                  "family": "math",
+                  "random_effects": [
+                    0.0017831461998864956,
+                    0.0005038963656520401,
+                    -0.002907765678357181,
+                    -0.0009353423195337367,
+                    0.006689736511906663,
+                    0.0028105154658113717,
+                    -0.006199425233069,
+                    -0.0017737392480414102,
+                    -0.003132308741791986,
+                    0.0009938083527557713
+                  ],
+                  "selected_effect": 0.019221850981595828
+                }
+              ],
+              "mean_over_sample_sd_descriptive": 1.3366086820285994,
+              "minimum_family_advantage": 0.017856311435925545,
+              "minimum_leave_one_family_out_mean": 0.02119579564173639,
+              "selected_features": 112
+            }
+          ],
+          "normalizer_training_variance_per_row": [
+            6193.325803048746,
+            4320.189106023548
+          ],
+          "pooled_ev": [
+            0.2965142746934686,
+            0.2629355289077634
+          ],
+          "site": "model.layers.11"
+        },
+        {
+          "family_reconstruction_quality": [
+            {
+              "examples": 6,
+              "family": "arc_grid",
+              "per_pass_ev": [
+                0.3634900263649564,
+                0.4769398629335341
+              ]
+            },
+            {
+              "examples": 1,
+              "family": "campsite",
+              "per_pass_ev": [
+                0.10092513632859113,
+                0.3193584290587945
+              ]
+            },
+            {
+              "examples": 1,
+              "family": "dyck_language",
+              "per_pass_ev": [
+                -0.00165285338490051,
+                0.22011231496734296
+              ]
+            },
+            {
+              "examples": 2,
+              "family": "math",
+              "per_pass_ev": [
+                0.1503883654415683,
+                0.3440488231276839
+              ]
+            }
+          ],
+          "groups": [
+            {
+              "assigned_pass": 0,
+              "equal_family_mean_advantage": 0.17998874458300265,
+              "families": 4,
+              "families_with_positive_advantage": 4,
+              "family_advantage_sample_sd": 0.06462544709401896,
+              "family_scores": [
+                {
+                  "advantage_over_random_mean": 0.2722560163249359,
+                  "family": "arc_grid",
+                  "random_effects": [
+                    -0.005639089041009723,
+                    0.026184631786047206,
+                    0.039993000376098306,
+                    0.046155334870626084,
+                    0.01848474850798207,
+                    0.020539283828083926,
+                    0.004781202987385991,
+                    -0.0021923109705020982,
+                    0.017631166057744216,
+                    -0.013261559797350442
+                  ],
+                  "selected_effect": 0.2875236571854464
+                },
+                {
+                  "advantage_over_random_mean": 0.16945245272023773,
+                  "family": "campsite",
+                  "random_effects": [
+                    -0.024686298920598315,
+                    -0.0027168047150747734,
+                    -0.011437009303496865,
+                    0.01564426216425304,
+                    0.014161747756653208,
+                    0.01104618634367767,
+                    -0.03929974594472184,
+                    0.005168354835865509,
+                    -0.01787750173844263,
+                    -0.0291991152643208
+                  ],
+                  "selected_effect": 0.16153286024161714
+                },
+                {
+                  "advantage_over_random_mean": 0.12231394443472907,
+                  "family": "dyck_language",
+                  "random_effects": [
+                    -0.023395927772151902,
+                    -0.019524067450910416,
+                    -0.0020535007516564313,
+                    -0.010470361301640734,
+                    -0.005830076847540444,
+                    -0.008019786875579075,
+                    -0.046587013854839064,
+                    -0.01631307443641676,
+                    -0.002994296030617384,
+                    -0.045083625034012614
+                  ],
+                  "selected_effect": 0.10428677139919258
+                },
+                {
+                  "advantage_over_random_mean": 0.1559325648521079,
+                  "family": "math",
+                  "random_effects": [
+                    -0.022128579742712783,
+                    0.006603521845142651,
+                    -0.01175965214820272,
+                    -0.0012178317678459075,
+                    -0.004396222299837223,
+                    -0.012189912985715406,
+                    -0.04129091320825955,
+                    0.001080637072739185,
+                    -0.009521868151728029,
+                    -0.03345331793888212
+                  ],
+                  "selected_effect": 0.1431051509195777
+                }
+              ],
+              "mean_over_sample_sd_descriptive": 2.785106373363264,
+              "minimum_family_advantage": 0.12231394443472907,
+              "minimum_leave_one_family_out_mean": 0.14923298733569157,
+              "selected_features": 78
+            },
+            {
+              "assigned_pass": 1,
+              "equal_family_mean_advantage": 0.2164215065899749,
+              "families": 4,
+              "families_with_positive_advantage": 4,
+              "family_advantage_sample_sd": 0.08899776769647448,
+              "family_scores": [
+                {
+                  "advantage_over_random_mean": 0.3469183602039512,
+                  "family": "arc_grid",
+                  "random_effects": [
+                    0.10735095299307157,
+                    0.07471493635222329,
+                    0.08902226721126816,
+                    0.029765460647644904,
+                    0.0351196855762243,
+                    0.09042920162785847,
+                    0.0741874481581472,
+                    0.00413608557164169,
+                    0.08621061265969437,
+                    0.01396703429554616
+                  ],
+                  "selected_effect": 0.40740872871328326
+                },
+                {
+                  "advantage_over_random_mean": 0.1966734223593828,
+                  "family": "campsite",
+                  "random_effects": [
+                    0.12047150709857772,
+                    0.12758534145299558,
+                    0.143592311838412,
+                    0.08536063961280506,
+                    0.07842801088906975,
+                    0.1481635781761954,
+                    0.12974151361292907,
+                    0.07255430518479611,
+                    0.14109699754985566,
+                    0.0898606071748182
+                  ],
+                  "selected_effect": 0.3103589036184283
+                },
+                {
+                  "advantage_over_random_mean": 0.15080633650423825,
+                  "family": "dyck_language",
+                  "random_effects": [
+                    0.1507429668486051,
+                    0.1338853375725931,
+                    0.14471020237288734,
+                    0.1135431851737008,
+                    0.0967474572839974,
+                    0.16710297989532044,
+                    0.1325948846549727,
+                    0.07697763009692232,
+                    0.14556521662193075,
+                    0.08640671040324274
+                  ],
+                  "selected_effect": 0.2756339935966555
+                },
+                {
+                  "advantage_over_random_mean": 0.17128790729232718,
+                  "family": "math",
+                  "random_effects": [
+                    0.13574615082083447,
+                    0.11323670405976018,
+                    0.13464222969846606,
+                    0.12592730442118544,
+                    0.07479436421625499,
+                    0.18544221582013382,
+                    0.13836500839994964,
+                    0.09738954308990945,
+                    0.1427984663027212,
+                    0.07992514533060377
+                  ],
+                  "selected_effect": 0.29411462050830905
+                }
+              ],
+              "mean_over_sample_sd_descriptive": 2.4317633148741113,
+              "minimum_family_advantage": 0.15080633650423825,
+              "minimum_leave_one_family_out_mean": 0.17292255538531606,
+              "selected_features": 236
+            }
+          ],
+          "normalizer_training_variance_per_row": [
+            467.4833648839807,
+            19295.832894773965
+          ],
+          "pooled_ev": [
+            0.2922872700558219,
+            0.427979820423841
+          ],
+          "site": "model.norm"
+        }
+      ],
+      "training_families": [
+        "arc_grid",
+        "futoshiki",
+        "goods_exchange",
+        "math"
+      ]
+    }
+  ],
+  "authority": {
+    "model_inference_performed": false,
+    "operative_admissions": 0,
+    "training_performed": false
+  },
+  "design": {
+    "aggregation": "equal_weight_per_family",
+    "centering": "within_evaluation_family_and_pass_for_descriptive_variation",
+    "denominator": "family_row_count_times_training_only_variance_per_row",
+    "random_groups": 10,
+    "thresholds_fitted_from_evaluation": false
+  },
+  "limitations": [
+    "Only four broad source family labels; no estimate of population family variance is established.",
+    "ARC grid and math appear in both training and evaluation.",
+    "Changing centering, denominators, and family weighting means these scores differ from pooled V1.",
+    "Same seeds and example IDs across archives; no independent replication or model-behavior claim."
+  ],
+  "provenance": {
+    "group_audit_sha256": "3e904921ff73ab7c087c672c56a462ef57b8a192d0f82a9491ec2d5200dfa1f6",
+    "loader_sha256": "a5c6a3f3e3c5fa4299c8343bdd550ac3cc7b2c8ab600714da787546b8bda2430",
+    "runner_sha256": "0403ebe3e38f37eee7e4e036e16289362d146aec28db0208c497601bf7ba00c9"
+  },
+  "report_id": "2b2aeb74ec4d644c3fcb70b5fa22ff937f638b7ac21210a714969fdba4317b44",
+  "schema": "sch.vpd-q4-sae-family-contributions.v1"
+}

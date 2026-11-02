@@ -1,0 +1,66 @@
+{
+  "benchmark_id": "6d359a0c2608afe5f4d5bd8366ec4afe53a667b7be497cb521b814b22fee0f18",
+  "controls": {
+    "all_paths_remain_nonexecuting": true,
+    "clean_synthetic_signature_and_scope_validate_without_authority": true,
+    "consumed_nonce_replay_rejected": true,
+    "disabled_authority_rejected": true,
+    "expired_and_not_yet_active_receipts_rejected": true,
+    "final_evaluation_scope_broadening_rejected": true,
+    "identity_complete_preflight_awaits_one_way_receipt": true,
+    "invalid_signature_rejected": true,
+    "resource_ceiling_broadening_rejected": true,
+    "revoked_receipt_rejected": true,
+    "sae_training_scope_broadening_rejected": true,
+    "v1_content_address_cycle_is_recorded": true,
+    "v2_removes_receipt_from_preflight_inputs": true,
+    "validator_imports_no_model_frameworks": true,
+    "wrong_identity_binding_rejected": true,
+    "wrong_preflight_binding_rejected": true
+  },
+  "results": {
+    "clean_verification": {
+      "active_at_as_of": true,
+      "authority_id": "synthetic-authority",
+      "authority_registry_id": "b1fcc88de7fc59a499373f9b6810ba9464a2d0b24f1a53b4a79eee06fbe81090",
+      "authorization_receipt_id": "4d8f46a71ecd2490977c784119a0b888045b1be1b9e37a678ee202bcaed08103",
+      "execution_authorized": false,
+      "final_evaluation_authorized": false,
+      "nonce_unconsumed": true,
+      "preflight_id": "865f365bd889ccc7668ab2d5d3faa0f24605661e655cd8e5838976f5c4ed36e2",
+      "real_actions_authorized": false,
+      "sae_training_authorized": false,
+      "schema": "sch.vpd-cluster-to-sae-capture-authorization-verification.v1",
+      "scope_exact": true,
+      "signature_valid": true,
+      "status": "pass_authenticated_synthetic_fixture_not_authorized",
+      "synthetic_fixture_only": true
+    },
+    "preflight_v1_id": "edf41948607ac8471030545ea9782c1f6ea76dd2aec72f09aa7cffac5fb45f91",
+    "preflight_v2_template_id": "5465f17d583a0dd19f5c4ea4939883ac8f65b7a19e128f7ad130246eb2a816bf",
+    "synthetic_authority_registry_id": "b1fcc88de7fc59a499373f9b6810ba9464a2d0b24f1a53b4a79eee06fbe81090",
+    "synthetic_authorization_receipt_id": "4d8f46a71ecd2490977c784119a0b888045b1be1b9e37a678ee202bcaed08103",
+    "synthetic_bound_preflight_id": "865f365bd889ccc7668ab2d5d3faa0f24605661e655cd8e5838976f5c4ed36e2"
+  },
+  "schema": "sch.vpd-cluster-to-sae-capture-authorization-benchmark.v1",
+  "scientific_boundary": {
+    "execution_authorized": false,
+    "model_inference_performed": false,
+    "model_loaded": false,
+    "private_key_persisted": false,
+    "release_authorized": false,
+    "sae_training_authorized": false,
+    "synthetic_keys_and_identities_only": true,
+    "weights_loaded_or_mutated": false
+  },
+  "source": {
+    "authorization_validator_sha256": "0058decf145ac36b91bb4ff9182ec0faf4d5bc27164b552a6d4baa62d2b5b017",
+    "benchmark_sha256": "62a2fc2ab75375891b756cf091c24e54588470c1ea9740a3309ef4602d3a0f77",
+    "preflight_v2_builder_sha256": "362a61efc9d809a0271fadff2102124a1d03470d2d1bac747bdf188ad3c53de7"
+  },
+  "status": "pass",
+  "summary": {
+    "controls": 16,
+    "passed": 16
+  }
+}

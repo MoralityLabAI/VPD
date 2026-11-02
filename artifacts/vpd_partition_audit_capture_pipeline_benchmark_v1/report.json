@@ -1,0 +1,82 @@
+{
+  "benchmark_id": "9efa073d053ee89551c847f09af0b56b450f134b333a88d80ae8ed5ee5d7ec89",
+  "contract": {
+    "audit_is_reject_only": true,
+    "capture_packetization_is_assignment_agnostic": true,
+    "exact_signed_work_unit_coverage_required": true,
+    "fresh_pack_attestation_before_signature_required": true,
+    "frozen_category_bundle_supplies_assignments_and_discovery_lineage": true,
+    "same_component_census_required": true,
+    "same_packet_ids_required": false
+  },
+  "scenarios": [
+    {
+      "audit_status": "pass_partition_audit",
+      "name": "distinct_capture_and_category_packetizations_clean_pass",
+      "passed": true,
+      "specific_failures": 0
+    },
+    {
+      "audit_status": "reject_partition_audit",
+      "name": "fresh_audit_category_mismatch_rejects",
+      "passed": true,
+      "reason_counts": {
+        "audit_category_mismatch": 1
+      }
+    },
+    {
+      "audit_status": "reject_partition_audit",
+      "name": "fresh_audit_condition_robustness_failure_rejects",
+      "passed": true,
+      "reason_counts": {
+        "audit_stratified_robustness_failure": 1
+      }
+    },
+    {
+      "name": "wrong_capture_packet_bundle_rejects",
+      "passed": true
+    },
+    {
+      "name": "different_model_identity_rejects",
+      "passed": true,
+      "rejection_stage": "production_cross_archive_identity"
+    },
+    {
+      "name": "different_adapter_identity_rejects",
+      "passed": true,
+      "rejection_stage": "production_cross_archive_identity"
+    },
+    {
+      "name": "different_effect_space_rejects",
+      "passed": true,
+      "rejection_stage": "pre_signing_campaign_attestation"
+    }
+  ],
+  "schema": "sch.vpd-partition-audit-capture-pipeline-benchmark.v1",
+  "scientific_boundary": {
+    "empirical_bonsai_category_claimed": false,
+    "execution_authorized": false,
+    "model_inference_performed": false,
+    "model_outcomes_used": false,
+    "synthetic_effects_only": true,
+    "weights_loaded_or_mutated": false
+  },
+  "source": {
+    "benchmark_runner_sha256": "d5146872282093d43a5bf3ce04c10d6abf6c534238950c8b5253cc1bd14d26e2",
+    "capture_adapter_sha256": "a662e0c770a07d8e0064f0f7847e802ece57e34292a980f14d552a58f5bbd7f5",
+    "gate_plan_v2_builder_sha256": "7fb0140dac9e2a6204fcfe9684bf50e93534abf4203d627bc5333b97c0f7bd02",
+    "merge_front_end_sha256": "e5f2c72ba9b1c4415fac7e5b36fae6df6791e6980d9d2e3ab652ad45e1d362c1",
+    "production_evaluator_sha256": "ae4c4bb8630d968159b6c3cbcf2a5161a0d4cae95033123d19df46d6cf47f33b"
+  },
+  "status": "pass",
+  "summary": {
+    "capture_work_units": 2,
+    "components": 6,
+    "failed": 0,
+    "model_inference_performed": false,
+    "passed": 7,
+    "scenarios": 7,
+    "signed_receipt_sets_merged": 5,
+    "signed_receipt_sets_rejected_before_merge": 1
+  }
+}

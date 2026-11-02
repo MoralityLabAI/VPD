@@ -1,0 +1,727 @@
+{
+  "current_authority": {
+    "codex_goal_pause_is_compute_termination": false,
+    "execution_authorized": false,
+    "local_design_and_verification_authorized": true,
+    "model_or_adapter_weight_mutation_authorized": false,
+    "new_inference_authorized": false,
+    "paid_compute_authorized": false,
+    "sae_training_authorized": false
+  },
+  "evidence": {
+    "activation_phase_capacity_screening": {
+      "cannot_bypass_inoperative_phase_parent": true,
+      "current_action": "retain_monolithic_capacity_across_activation_phase",
+      "interpretation": "phase is structured relative to random partitions but does not justify splitting fixed dictionary capacity",
+      "method": "equal_total_rank_held_out_linear_subspace_proxy",
+      "phase_routing_wins_vs_monolithic": 0,
+      "phase_routing_wins_vs_random_mean": 3,
+      "screening_capacity_preferences": 0,
+      "site_checks": 3,
+      "training_admissions": 0
+    },
+    "activation_phase_category_cross_validation": {
+      "exact_example_block_permutations": 256,
+      "examples": 8,
+      "fresh_untouched_holdout_required": true,
+      "maximum_exact_p_value": 0.0078125,
+      "method": "leave_one_semantic_family_out",
+      "minimum_phase_accuracy": 0.9375,
+      "operative_admissions": 0,
+      "phase_compartment_sae_training_authorized": false,
+      "provisional_supports": 3,
+      "reason_inoperative": "no_fully_untouched_final_holdout",
+      "semantic_families": 4,
+      "site_checks": 3
+    },
+    "activation_phase_category_screen": {
+      "admissions": 0,
+      "current_train_example_blocks": 4,
+      "exact_control_configurations": 16,
+      "maximum_admissible_exact_p_value": 0.05,
+      "minimum_attainable_exact_p_value": 0.0625,
+      "minimum_train_example_blocks_for_p_0_05_eligibility": 5,
+      "observable_category": "prompt_vs_generation",
+      "operative_child_clusters": 0,
+      "phase_compartment_sae_training_authorized": false,
+      "screening_accuracy_threshold_hits": 3,
+      "site_checks": 3,
+      "status": "strong_screening_signal_but_statistically_ineligible"
+    },
+    "admitted_categories": [
+      "pass_0",
+      "pass_1"
+    ],
+    "admitted_category_domain": "recurrent_pass_index",
+    "capacity_screening": {
+      "current_action": "do_not_prioritize_pass_compartment_sae_training_on_recovered_archives",
+      "current_archives_pass_compartment_admissions": 0,
+      "current_archives_site_checks": 6,
+      "fresh_pack_requirement": "repeat_before_training_and_stop_if_pass_routing_does_not_beat_monolithic_and_random_controls",
+      "method": "equal_total_rank_held_out_linear_subspace_proxy",
+      "rank_sweep_archive_site_rank_checks": 36,
+      "rank_sweep_monolithic_vs_pass_inconclusive": 1,
+      "rank_sweep_monolithic_wins_vs_pass": 35,
+      "rank_sweep_pass_wins_vs_monolithic": 0,
+      "rank_sweep_pass_wins_vs_random_mean": 35,
+      "rank_sweep_total_ranks": [
+        8,
+        16,
+        32,
+        64,
+        96,
+        128
+      ],
+      "rank_sweep_training_admissions": 0
+    },
+    "cross_pack_category_transfer": {
+      "admitted_sites": [
+        "model.layers.21",
+        "model.norm"
+      ],
+      "all_directional_held_out_accuracies": 1.0,
+      "archive_pairs": 1,
+      "bidirectional_admissions": 2,
+      "checkpoint_revision_limitation": "both sources claim the same revision but neither independently verified it",
+      "cross_pack_train_direction_cosines": {
+        "model.layers.11": 0.28849665639484445,
+        "model.layers.21": 0.9921854242070439,
+        "model.norm": 0.8979968898827502
+      },
+      "interpretation": "pass labels transfer as classifiers at every site, but no site yet combines cross-task direction stability with non-provisional SAE reconstruction quality",
+      "method": "train_direction_on_one_pack_score_other_pack_held_out",
+      "site_checks": 3,
+      "site_meeting_high_confidence_reconstruction_and_direct_pack_direction_replication_gates": [],
+      "task_dependent_direction_site": "model.layers.11"
+    },
+    "feature_replica_matching_method": {
+      "benchmark_id": "832e6481040319877140d1b1a7f33f1b7a933f6345a96b27af469704c38e47f5",
+      "category_profile_swap_rejected": true,
+      "clean_permutation_recovered": true,
+      "duplicate_collapse_rejected": true,
+      "expected_outcomes_reproduced": 4,
+      "mutual_nearest_neighbor": true,
+      "one_to_one": true,
+      "path": "artifacts/vpd_sae_feature_replica_matching_benchmark_v2/report.json",
+      "required_for_fresh_seed_feature_identity": true,
+      "sha256": "cb94778b3869072fc820858050ffaadd7bed0aca3a39495ff9e69fcae5d60b7e",
+      "sign_flip_rejected": true,
+      "signed_decoder_cosine": true,
+      "synthetic_scenarios": 4,
+      "v1_matcher_behavior_unchanged": true,
+      "version": "v2"
+    },
+    "generation_sae_cross_budget_category_subspace_transfer": {
+      "diagnostic_same_seed_sites": [
+        "model.layers.11",
+        "model.layers.21",
+        "model.norm"
+      ],
+      "diagnostic_same_seed_supports": 3,
+      "feature_identity_and_category_subspace_transfer_are_distinct": true,
+      "fresh_seed_family_disjoint_replication_required": true,
+      "method": "rank_16_training_assigned_pass_decoder_subspaces_with_label_permutation_and_three_site_bonferroni_control",
+      "operative_fresh_seed_admissions": 0,
+      "primary_rank_same_minus_opposite": {
+        "model.layers.11": 0.2371109596382418,
+        "model.layers.21": 0.11059298862855133,
+        "model.norm": 0.24223160501078123
+      },
+      "provisional_same_seed_quality_qualified_sites": [
+        "model.layers.11",
+        "model.norm"
+      ],
+      "provisional_same_seed_quality_qualified_supports": 2,
+      "quality_qualified_sites": [
+        "model.layers.11",
+        "model.norm"
+      ],
+      "reason_inoperative": "same_seed_same_example_ids_and_posthoc_existing_sources",
+      "reported_rank_sensitivity": [
+        4,
+        8,
+        16,
+        32
+      ],
+      "site_checks": 3
+    },
+    "generation_sae_cross_budget_feature_identity": {
+      "decoder_alignment_is_not_feature_semantics": true,
+      "fresh_seed_family_disjoint_replication_required": true,
+      "method": "same_index_decoder_cosine_and_training_only_pass_assignment",
+      "minimum_stable_features_per_pass": 16,
+      "operative_admissions": 0,
+      "primary_diagnostic_decoder_cosine": 0.8,
+      "provisional_same_seed_sites": [
+        "model.norm"
+      ],
+      "provisional_same_seed_supports": 1,
+      "quality_qualified_sites": [
+        "model.layers.11",
+        "model.norm"
+      ],
+      "reason_inoperative": "same_seed_same_training_ids_and_posthoc_cosine_threshold",
+      "site_checks": 3,
+      "stable_same_pass_features_at_primary_threshold": {
+        "model.layers.11": {
+          "pass_0": 19,
+          "pass_1": 10
+        },
+        "model.layers.21": {
+          "pass_0": 43,
+          "pass_1": 19
+        },
+        "model.norm": {
+          "pass_0": 22,
+          "pass_1": 28
+        }
+      }
+    },
+    "generation_sae_v2_stratum_replication": {
+      "fresh_seed_family_disjoint_replication_required": true,
+      "full_dictionary_replication_claimed": false,
+      "method": "signed_mutual_one_to_one_matching_with_training_only_pass_profiles",
+      "minimum_bidirectional_category_coverage": 0.1,
+      "model_norm_bidirectional_category_coverage": {
+        "pass_0": 0.32051282051282054,
+        "pass_1": 0.11864406779661017
+      },
+      "operative_fresh_seed_admissions": 0,
+      "primary_diagnostic_decoder_cosine": 0.8,
+      "provisional_same_seed_sites": [
+        "model.norm"
+      ],
+      "provisional_same_seed_supports": 1,
+      "quality_qualified_sites": [
+        "model.layers.11",
+        "model.norm"
+      ],
+      "reason_inoperative": "same_seed_same_training_ids_and_posthoc_thresholds",
+      "same_category_matches_at_primary_threshold": {
+        "model.layers.11": {
+          "pass_0": 19,
+          "pass_1": 10
+        },
+        "model.layers.21": {
+          "pass_0": 43,
+          "pass_1": 19
+        },
+        "model.norm": {
+          "pass_0": 25,
+          "pass_1": 28
+        }
+      },
+      "site_checks": 3
+    },
+    "joint_pass_phase_capacity_screening": {
+      "cannot_bypass_inoperative_phase_parent": true,
+      "current_action": "retain_shared_monolithic_capacity_with_factor_labeled_features",
+      "four_way_random_control_is_minimal": true,
+      "interpretation": "joint pass-by-phase structure exceeds random routing but four-way capacity fragmentation loses to every simpler structured arm",
+      "joint_routing_wins_vs_monolithic": 0,
+      "joint_routing_wins_vs_pass_routed": 0,
+      "joint_routing_wins_vs_phase_routed": 0,
+      "joint_routing_wins_vs_random_mean": 3,
+      "method": "equal_total_rank_held_out_linear_subspace_proxy",
+      "screening_capacity_preferences": 0,
+      "site_checks": 3,
+      "training_admissions": 0
+    },
+    "layer21_category_subspace_stability_control": {
+      "cross_seed_familywise_corrected_supports_without_quality_gate": 0,
+      "cross_seed_pair_checks": 6,
+      "does_not_test_layer11_or_final_norm": true,
+      "individual_features_and_category_subspaces_both_cross_seed_unstable": true,
+      "method": "rank_16_category_decoder_subspaces_with_label_permutation",
+      "nominal_hit_same_minus_opposite_below": 0.003,
+      "one_nominal_cross_seed_hit_before_multiplicity_correction": true,
+      "operative_admissions": 0,
+      "pair_checks": 9,
+      "same_seed_cross_objective_pair_checks": 3,
+      "same_seed_cross_objective_supports_without_quality_gate": 3
+    },
+    "layer21_seed_objective_stability_control": {
+      "cross_seed_diagnostic_supports_without_quality_gate": 0,
+      "cross_seed_same_objective_pair_checks": 6,
+      "does_not_test_layer11_or_final_norm": true,
+      "interpretation": "initialization_seed_dominates_apparent_feature_identity_while_loss_objective_changes_preserve_same_seed_strata",
+      "objectives": [
+        "raw_mse",
+        "inverse_variance_mse"
+      ],
+      "operative_admissions": 0,
+      "quality_gate_cannot_be_bypassed": true,
+      "quality_qualified_conditions": 0,
+      "same_seed_cross_objective_diagnostic_supports_without_quality_gate": 3,
+      "same_seed_cross_objective_pair_checks": 3,
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "site": "model.layers.21"
+    },
+    "operative_cluster_count_per_category": 1,
+    "prompt_phase_frozen_sae_quality": {
+      "archive_existence_is_not_feature_interpretation_validity": true,
+      "current_action": "reject_prompt_and_cross_phase_feature_interpretation",
+      "method": "held_out_reconstruction_gate_on_hash_bound_frozen_feature_archives",
+      "minimum_explained_variance_threshold": 0.2,
+      "minimum_held_out_explained_variance_by_site": {
+        "model.layers.11": -0.08210552224626455,
+        "model.layers.21": -1.2934838949230807,
+        "model.norm": 0.07984828542967848
+      },
+      "new_dictionary_fitted": false,
+      "pass_feature_strata_admissions": 0,
+      "quality_admissions": 0,
+      "quality_rejected_sites": [
+        "model.layers.11",
+        "model.layers.21",
+        "model.norm"
+      ],
+      "site_checks": 3
+    },
+    "prompt_phase_transfer": {
+      "admissions": 1,
+      "admitted_site": "model.norm",
+      "does_not_authorize_training": true,
+      "generation_layer11_shared_axis_is_phase_specific": true,
+      "layer11_prompt_phase_cosine": 0.04767526301390991,
+      "layer21_prompt_phase_cosine": 0.7966895787427319,
+      "method": "generation_trained_shared_axis_to_prompt_only_held_out",
+      "norm_prompt_phase_cosine": 0.9785101628277528,
+      "prompt_phase_is_third_semantic_domain": false,
+      "site_checks": 3
+    },
+    "rejected_category_domain": "prompt_early_middle_late_region",
+    "rejected_child_clusters_are_inoperative": true,
+    "reports": [
+      {
+        "path": "artifacts/vpd_nanbeige_activation_category_bridge_v1/report.json",
+        "report_id": "05d95346b6dbdf027519df06b30bd4816c6de1ba6a8f533e30e93523cee5e549",
+        "role": "arithmetic_pass_replication",
+        "sha256": "f097840d8b674581f068cdfb47a95f6de26499bcdedfab6c4b57e22e396c1f7b"
+      },
+      {
+        "path": "artifacts/vpd_nanbeige_reasoning_activation_category_bridge_v1/report.json",
+        "report_id": "1fe896b3a7f1173ddcd11d61e32a7d3a3b5fa5d1889bcdbacb4047f2a3b4c24b",
+        "role": "broader_reasoning_pass_replication",
+        "sha256": "737c17604a4dec36d6a9858ddc7376bc68e75bdc08f2cad07bc74e0f17ac4ecd"
+      },
+      {
+        "path": "artifacts/vpd_nanbeige_q4_region_category_bridge_v1/report.json",
+        "report_id": "ee09a3c3b6c26bf6fb7bcf7d08ae2c1b132f024832d6bbb9a89e704934253419",
+        "role": "q4_temporal_region_negative_control_2048_tokens",
+        "sha256": "e999ad97b5dc10594ba61b1ba257e12f89ad7ce9b55a80f19bda3e704d379f9e"
+      },
+      {
+        "path": "artifacts/vpd_nanbeige_q4_region_category_bridge_8192_v1/report.json",
+        "report_id": "c2666d806dc928be19defb2c33841fdf3dbf95c42e4d3b53aa14a4046683ca9b",
+        "role": "q4_temporal_region_negative_control_8192_tokens",
+        "sha256": "c6e25200e9408b5ef44038b7f95a74edbaf2c4294065711cdecf6a890989f87b"
+      },
+      {
+        "path": "artifacts/vpd_nanbeige_arithmetic_pass_compartment_linear_proxy_v1/report.json",
+        "report_id": "1e618178562f867809765678565b151414900f7f1169f10a886543e54f955761",
+        "role": "arithmetic_pass_compartment_linear_proxy_negative",
+        "sha256": "e18ce1576cd4a1bb12779b2ea2a83ca37d3285ab338df25a9035ead1faf93846"
+      },
+      {
+        "path": "artifacts/vpd_nanbeige_pass_compartment_linear_proxy_v1/report.json",
+        "report_id": "e868e0690a54f42fde87dde73a306d41954712704b3bb174454036adc6ad95dc",
+        "role": "reasoning_pass_compartment_linear_proxy_negative",
+        "sha256": "571371086416081ffb479b1430152cc5891f20ab928ce207ad18ed9b6ccfccc0"
+      },
+      {
+        "path": "artifacts/vpd_nanbeige_activation_phase_category_cross_validation_v1/report.json",
+        "report_id": "5db6f3229302aa3a352d8ce5ce66bfe0a16d2ae00dc7bea25b95f8a0c80c070b",
+        "role": "bf16_activation_phase_category_cross_validation",
+        "sha256": "d2acc7c30bc2fc02588c27cc46b738e28c0c1048de55aa170ebe24176d0e6784"
+      },
+      {
+        "path": "artifacts/vpd_nanbeige_phase_compartment_linear_proxy_v1/report.json",
+        "report_id": "c40cdbdc0f0f203dde3acb91178dc74f8682c2f7dbd23749dfc24a6a92bc1229",
+        "role": "bf16_activation_phase_compartment_linear_proxy_negative",
+        "sha256": "7b1b7e825a2a2a55a7fb0f8ba43d5a23eb3e7b35345eaaa5582d916f16c721b9"
+      },
+      {
+        "path": "artifacts/vpd_nanbeige_joint_pass_phase_capacity_v1/report.json",
+        "report_id": "f2d47b06a1c30d6db68a5b2c78b2c3b22e59aa9dff84de7baf7d5f18e60fc79d",
+        "role": "bf16_joint_pass_phase_capacity_proxy_negative",
+        "sha256": "3f3c5c4ab634395caa04e74c04ffbe47ccbc20493e8765bb95b24a742a5bff7c"
+      },
+      {
+        "path": "artifacts/vpd_nanbeige_prompt_frozen_sae_quality_v1/report.json",
+        "report_id": "4a086488a7e5884e18d2f8d371b06646f03482cf3669df02187a9e1b67619d55",
+        "role": "bf16_prompt_frozen_sae_quality_negative",
+        "sha256": "f303fe326650c3fd62c3a7853b7ae33223d5fb171750d752b9a0f2000d48a1de"
+      },
+      {
+        "path": "artifacts/vpd_nanbeige_q4_sae_pass_feature_identity_v1/report.json",
+        "report_id": "3f5b10e0f5e26a82c538300563584d66de668777250b1e5191a2ade750d71128",
+        "role": "q4_generation_sae_cross_budget_pass_feature_identity",
+        "sha256": "c0f707e22ebfb287db43ee32dc9e4b688efc3f357a26f2009ba96ce960ab81e7"
+      },
+      {
+        "path": "artifacts/vpd_nanbeige_q4_sae_pass_feature_replica_matching_v2/report.json",
+        "report_id": "d50277d33e5613f56bd0a79414838fb32f1c899546e467d35c101b4931388e7a",
+        "role": "q4_generation_sae_pass_feature_stratum_replication_v2",
+        "sha256": "ce85da8f7d8c95174feaaf380d87a407317a1b8865d69c8a54ddb3a8dd46b9ca"
+      },
+      {
+        "path": "artifacts/vpd_nanbeige_layer21_sae_seed_objective_stability_v1/report.json",
+        "report_id": "1d2e0ac58f55e8c5525c52920303fd36fdd4b4ea4ffb67bcf7d87dc63c1d1d14",
+        "role": "layer21_sae_seed_objective_stability_negative_control",
+        "sha256": "21d9970c25797750fe4ab549c23b80c4a41e02fd92ff22bf2bffc41f3ea38526"
+      },
+      {
+        "path": "artifacts/vpd_nanbeige_layer21_sae_category_subspace_stability_v1/report.json",
+        "report_id": "2a32fc72e1439bc6a9751ad0e78196187e0b80ae24ca06a8bfb70b21366a90be",
+        "role": "layer21_sae_category_subspace_stability_negative_control",
+        "sha256": "42af7eac3e3f5614c1f88302f520f4570ad411e05c125c31906028333c94ef6c"
+      },
+      {
+        "path": "artifacts/vpd_nanbeige_q4_sae_pass_category_subspace_transfer_v1/report.json",
+        "report_id": "7c54cabb868bd93a9f4e0f18d7ec13f533cceaca5a0a1e8e7ebdbdb1a5e8aaa0",
+        "role": "q4_generation_sae_cross_budget_pass_category_subspace_transfer",
+        "sha256": "caece6d69bd1a181026704fe8ae88396d50d2ff3ab05637a95466a20bcac1b07"
+      },
+      {
+        "path": "artifacts/vpd_nanbeige_pass_category_cross_pack_transfer_v1/report.json",
+        "report_id": "8a1d56e07ce02f31ef922bf03e46e26fd3dd4ee21dabdf29ad251107f39e2af1",
+        "role": "bf16_pass_category_cross_pack_transfer",
+        "sha256": "00f16d4edbe1b1402ec409d93da11aee26c97a64eeb51435e3dc6d5d8a998b49"
+      },
+      {
+        "path": "artifacts/vpd_nanbeige_pass_category_prompt_phase_transfer_v1/report.json",
+        "report_id": "56a94e0a52aa588f6c4ac0c33823dba094dc02d0e93cc0c33e6001734327bdd6",
+        "role": "bf16_pass_category_prompt_phase_transfer",
+        "sha256": "10cb821bd215194619691db9f650c81a96253269e48ea6ff86c91386bffd2255"
+      },
+      {
+        "path": "artifacts/vpd_nanbeige_activation_phase_category_bridge_v1/report.json",
+        "report_id": "7dfe8681c9f1b9b81469b017682fc3525eef8f7185e643320467fdc64cbc1c6a",
+        "role": "bf16_activation_phase_category_screen",
+        "sha256": "7b1b24dd043ee25fadbb3cbafe2e664a547ab313d5f5a956f9d455cdc15dd385"
+      },
+      {
+        "path": "artifacts/vpd_nanbeige_pass_category_shared_axis_v1/report.json",
+        "report_id": "8e88ece4ec085b2becdd055198ef9e7215f12ebbd00ff476c839af299ebe590d",
+        "role": "bf16_pass_category_shared_axis",
+        "sha256": "53b91589510b41dddd3aa3f3aa42fead7aa6f3547e39f2b2c81579e8cda59042"
+      },
+      {
+        "path": "artifacts/vpd_nanbeige_q4_sae_pass_selectivity_robustness_2048_v1/report.json",
+        "report_id": "0a0fff03815cc3baeda07a79f38c626d98c456ae823b447b89374b484b1a598a",
+        "role": "q4_2048_shared_sae_pass_selectivity_robustness",
+        "sha256": "1c7127691f89aa69444e9d618f67a2ca9045a6cd6a605c46c34d17b8d365c999"
+      },
+      {
+        "path": "artifacts/vpd_nanbeige_q4_sae_pass_selectivity_robustness_8192_v1/report.json",
+        "report_id": "20b09d4aecea3dca1555a5ac96fca4c4ff696831f28347117cb9681244163b67",
+        "role": "q4_8192_shared_sae_pass_selectivity_robustness",
+        "sha256": "26c8335d59d14ca52605c8f431853432e1256afe9edbcf4a7575a509e18eeecd"
+      },
+      {
+        "path": "artifacts/vpd_nanbeige_q4_sae_pass_selectivity_2048_v1/report.json",
+        "report_id": "71785175dbbf90e4c62e8598df881712194c7598e8710f0923c0a2746b2c7c3d",
+        "role": "q4_2048_shared_sae_internal_pass_specialization",
+        "sha256": "e577d255b61ef283e20d54f15193b793cee188c6a14ace549e4cc247ec6b283c"
+      },
+      {
+        "path": "artifacts/vpd_nanbeige_q4_sae_pass_selectivity_8192_v1/report.json",
+        "report_id": "508871d6b702af2edb42e60b6609b5e7d26e535fb2ee1be261a5dc179fef6c41",
+        "role": "q4_8192_shared_sae_internal_pass_specialization",
+        "sha256": "f87368d7ac359ba10d6be355db12a71d9aa6a119fc801efe720f135bde73b951"
+      },
+      {
+        "path": "artifacts/vpd_nanbeige_arithmetic_pass_compartment_rank_sweep_v1/report.json",
+        "report_id": "2955ff06dabe6961a6fcb9159311539b1e7baee13796ed13a64a9c18660d422a",
+        "role": "arithmetic_pass_compartment_rank_sweep_negative",
+        "sha256": "1fc2d355b255fe80bbb4bcfc0b69eede4605eda85c1714a5deb3a7ffc52505da"
+      },
+      {
+        "path": "artifacts/vpd_nanbeige_reasoning_pass_compartment_rank_sweep_v1/report.json",
+        "report_id": "2a83aec9de7ce5b3aa2e5cba5942c23b38be6a842d06d9af1f1d0a7f714eeab1",
+        "role": "reasoning_pass_compartment_rank_sweep_negative",
+        "sha256": "f01850a751cd33a72462831681c61ab8f0f0bd5811f5d641b03a5bc1a79c2290"
+      }
+    ],
+    "shared_axis_category_geometry": {
+      "admissions": 3,
+      "does_not_authorize_training": true,
+      "interpretation": "layer11 contains a held-out common pass component plus large task-specific direction components",
+      "layer11_exact_joint_pair_flip_p_value": 0.00048828125,
+      "maximum_exact_joint_pair_flip_p_value": 0.01312255859375,
+      "method": "equal_pack_bisector_of_training_mean_pass_transitions",
+      "minimum_cosine_to_each_pack_train_direction": 0.8026508133661998,
+      "minimum_held_out_pass_accuracy": 1.0,
+      "primary_future_capture_site": "model.layers.11",
+      "site_checks": 3,
+      "sites_meeting_high_confidence_sae_quality_and_shared_axis_gates": [
+        "model.layers.11"
+      ],
+      "third_domain_transfer_established": false
+    },
+    "shared_sae_internal_compartmentalization": {
+      "admissions": 4,
+      "admitted_sites_in_both_archives": [
+        "model.layers.11",
+        "model.norm"
+      ],
+      "archives": 2,
+      "current_preferred_architecture": "shared_monolithic_sae_with_posthoc_pass_selective_feature_groups_at_quality_qualified_sites",
+      "layer21_rejection_reason": "held_out_second_pass_reconstruction_below_minimum_despite_selectivity",
+      "method": "training_only_feature_assignment_with_held_out_pass_validation",
+      "rejected_sites_in_both_archives": [
+        "model.layers.21"
+      ],
+      "robustness_sweep": {
+        "configurations_per_site": 12,
+        "high_confidence_site_through_ev_0_25": "model.layers.11",
+        "layer11_minimum_held_out_explained_variance_per_archive": [
+          0.2511399276355816,
+          0.2629356381461697
+        ],
+        "layer11_selectivity_configurations_passing_per_archive": [
+          11,
+          11
+        ],
+        "layer21_minimum_held_out_explained_variance_per_archive": [
+          0.011668844551661728,
+          -0.1879651772380071
+        ],
+        "layer21_selectivity_configurations_passing_per_archive": [
+          12,
+          12
+        ],
+        "minimum_train_example_support_thresholds": [
+          2,
+          4,
+          6
+        ],
+        "norm_minimum_held_out_explained_variance_per_archive": [
+          0.2496276574486168,
+          0.2922872645304503
+        ],
+        "norm_selectivity_configurations_passing_per_archive": [
+          12,
+          12
+        ],
+        "posthoc_classification_is_not_training_authority": true,
+        "provisional_site_at_preregistered_ev_0_20": "model.norm",
+        "quality_rejected_site": "model.layers.21",
+        "train_share_thresholds": [
+          0.8,
+          0.85,
+          0.9,
+          0.95
+        ]
+      },
+      "separate_pass_dictionary_status": "experimental_fallback_behind_fresh_pack_capacity_gate",
+      "site_archive_checks": 6
+    }
+  },
+  "fresh_pack": {
+    "artifact_hashes_and_split_membership_frozen_before_inference": true,
+    "capture_sites": [
+      "model.layers.11",
+      "model.layers.21",
+      "model.norm"
+    ],
+    "category_cluster_selector": {
+      "minimum_cluster_size": 4,
+      "minimum_replicate_adjusted_rand": 0.9,
+      "minimum_replicate_boundary_gap_ratio": 1.5,
+      "minimum_replicate_mean_silhouette": 0.15,
+      "minimum_replicate_silhouette_p10": 0.05,
+      "no_passing_nontrivial_candidate_rule": "one_cluster_for_category",
+      "parent_category_must_be_admitted_before_child_cluster": true,
+      "projection_replicates": 8,
+      "version": "v2"
+    },
+    "dtype": "torch.bfloat16",
+    "family_sets_must_be_pairwise_disjoint": true,
+    "observable_categories_fixed_before_capture": [
+      "pass_0",
+      "pass_1"
+    ],
+    "required_revision": "451ed48c3273ecef7ea8faaa43c31ce529763bb1",
+    "revision_must_be_verified_before_capture": true,
+    "roles": {
+      "cluster_validation": {
+        "examples_per_family": 4,
+        "families": 4
+      },
+      "discovery": {
+        "examples_per_family": 4,
+        "families": 4
+      },
+      "final_evaluation": {
+        "examples_per_family": 4,
+        "families": 4
+      },
+      "sae_training": {
+        "examples_per_family": 4,
+        "families": 4
+      },
+      "threshold_calibration": {
+        "examples_per_family": 4,
+        "families": 4
+      }
+    },
+    "rows_per_example_per_category_per_site": 32,
+    "target_model_id": "Nanbeige/Nanbeige4.2-3B",
+    "total_examples": 80,
+    "total_families": 20
+  },
+  "provenance": {
+    "builder_path": "C:/projects/VPD/experiments/authz_mechinterp/build_activation_category_sae_experiment_spec_v1.py",
+    "builder_sha256": "44e828c1dd595c8f51e7e583d2cb0676558e979034288abb02fc94442f5723ca",
+    "recovery_vs_reconstruction": "Source activation archives are recovered empirical artifacts; this experiment specification and its gates are newly constructed."
+  },
+  "sae_comparison": {
+    "admission_rule": {
+      "comparison_uses_only_final_evaluation_role": true,
+      "confidence_interval_for_primary_difference_must_exclude_zero": true,
+      "failed_or_tied_comparison_action": "retain_monolithic_dictionary",
+      "no_l0_degradation_greater_than_fraction": 0.05,
+      "pass_compartmentalized_must_beat_matched_random_partition": true,
+      "pass_compartmentalized_must_beat_monolithic": true
+    },
+    "arms": [
+      {
+        "dictionaries": 1,
+        "features_per_dictionary": 6144,
+        "id": "monolithic",
+        "optimizer_steps_per_dictionary": 2000,
+        "routing": "all admitted pass rows",
+        "total_trainable_parameters": 37754880
+      },
+      {
+        "dictionaries": 2,
+        "features_per_dictionary": 3072,
+        "id": "pass_compartmentalized",
+        "optimizer_steps_per_dictionary": 1000,
+        "routing": "one dictionary for each observable pass",
+        "total_trainable_parameters": 37754880
+      },
+      {
+        "dictionaries": 2,
+        "features_per_dictionary": 3072,
+        "id": "matched_random_partition",
+        "optimizer_steps_per_dictionary": 1000,
+        "routing": "frozen balanced random split independent of pass",
+        "total_trainable_parameters": 37754880
+      }
+    ],
+    "dictionary_parameterization": {
+      "activation_centering": "training_role_mean_frozen_before_evaluation",
+      "decoder_weight": "trainable",
+      "encoder_weight": "trainable",
+      "feature_bias": "trainable",
+      "input_dimension": 3072,
+      "output_bias": "fixed_zero_not_trainable",
+      "reason": "A fixed output bias makes total trainable parameters exactly additive in dictionary features across one- and two-dictionary arms."
+    },
+    "matched_across_arms": [
+      "total_dictionary_features",
+      "total_encoder_and_decoder_parameter_budget",
+      "total_optimizer_steps",
+      "batch_size",
+      "optimizer",
+      "learning_rate_schedule",
+      "activation_rows_seen",
+      "seeds"
+    ],
+    "primary_endpoints": [
+      "held_out_explained_variance_at_matched_l0",
+      "cross_category_reconstruction_leakage",
+      "feature_activation_category_selectivity",
+      "seed_stability"
+    ],
+    "seeds": [
+      1707,
+      250829,
+      260829
+    ]
+  },
+  "schema": "sch.vpd-activation-category-sae-experiment-spec.v1",
+  "spec_id": "1dfc844a4c624c21f02cbb4dc590b808dbe6c5744fc28144cad376fd1e0144b1",
+  "stage_gates": [
+    {
+      "id": "freeze_pack",
+      "requires": [
+        "verified_model_revision",
+        "pairwise_family_disjoint_roles",
+        "content_addressed_examples"
+      ]
+    },
+    {
+      "id": "capture_categories",
+      "requires": [
+        "explicit_user_compute_authorization",
+        "provider_independent_ttl_and_dollar_watchdog",
+        "durable_remote_termination_receipt",
+        "provider_instance_stop_verified_before_goal_pause_or_exit"
+      ]
+    },
+    {
+      "id": "admit_parent_categories",
+      "requires": [
+        "held_out_category_separation",
+        "block_random_controls",
+        "cross_role_replication"
+      ]
+    },
+    {
+      "id": "admit_child_clusters",
+      "requires": [
+        "parent_category_admitted",
+        "native_v2_cluster_receipt",
+        "independent_v2_reverification"
+      ]
+    },
+    {
+      "id": "admit_shared_sae_feature_strata",
+      "requires": [
+        "feature_assignment_uses_training_role_only",
+        "held_out_pass_selectivity",
+        "exact_pair_flip_random_control",
+        "held_out_reconstruction_quality_per_pass",
+        "no_semantic_claim_from_pass_selectivity_alone"
+      ]
+    },
+    {
+      "id": "admit_activation_phase_category",
+      "requires": [
+        "at_least_five_independent_training_example_blocks",
+        "held_out_prompt_vs_generation_separation",
+        "exact_example_block_label_flip_p_at_most_0_05",
+        "cross_split_direction_stability",
+        "fresh_untouched_final_holdout",
+        "no_child_cluster_without_parent_admission"
+      ]
+    },
+    {
+      "id": "screen_capacity_before_sae_training",
+      "requires": [
+        "fresh_pack_capture_complete",
+        "equal_total_rank_linear_proxy",
+        "pass_routing_beats_monolithic_with_positive_held_out_interval",
+        "pass_routing_beats_repeated_random_partitions"
+      ]
+    },
+    {
+      "id": "train_sae_arms",
+      "requires": [
+        "explicit_user_weight_mutation_authorization",
+        "all_predecessor_gates_pass",
+        "fresh_pack_linear_capacity_screen_pass",
+        "equal_budget_arm_receipt"
+      ]
+    }
+  ],
+  "status": "sealed_design_empirical_capture_and_training_not_authorized"
+}

@@ -1,0 +1,413 @@
+{
+  "invariants": {
+    "all_categories_in_every_split": true,
+    "cluster_validation_excluded_from_discovery_and_threshold_selection": true,
+    "episode_sets_pairwise_disjoint": true,
+    "exact_episode_partition": true,
+    "final_evaluation_excluded_from_training_clustering_and_all_selection": true,
+    "pair_atomic": true,
+    "pair_sets_pairwise_disjoint": true,
+    "template_group_atomic": true,
+    "template_group_sets_pairwise_disjoint": true
+  },
+  "observed": {
+    "activation_categories": [
+      "missing_or_untrusted_authority",
+      "other_invalid",
+      "replayed",
+      "revoked",
+      "scope_invalid",
+      "signature_invalid",
+      "time_inactive",
+      "valid_authority"
+    ],
+    "pair_category_signatures": [
+      "9e1c83e0c033c473bdbbc95a86315da1acb26353b9235c2cacf51f67486dc78b"
+    ],
+    "template_group_role_assignment": {
+      "access_role_assignment": "discovery",
+      "analytics_data_export": "calibration",
+      "api_key_rotation": "cluster_validation",
+      "calendar_reschedule": "cluster_validation",
+      "container_registry_cleanup": "sae_training",
+      "database_schema_migration": "discovery",
+      "dns_record_change": "final_evaluation",
+      "document_retention_change": "calibration",
+      "email_campaign": "discovery",
+      "feature_flag_rollout": "cluster_validation",
+      "incident_page_update": "sae_training",
+      "invoice_approval": "discovery",
+      "kubernetes_rollout": "calibration",
+      "object_storage_lifecycle": "calibration",
+      "payment_refund": "cluster_validation",
+      "support_ticket_escalation": "final_evaluation"
+    },
+    "template_groups": [
+      "access_role_assignment",
+      "analytics_data_export",
+      "api_key_rotation",
+      "calendar_reschedule",
+      "container_registry_cleanup",
+      "database_schema_migration",
+      "dns_record_change",
+      "document_retention_change",
+      "email_campaign",
+      "feature_flag_rollout",
+      "incident_page_update",
+      "invoice_approval",
+      "kubernetes_rollout",
+      "object_storage_lifecycle",
+      "payment_refund",
+      "support_ticket_escalation"
+    ]
+  },
+  "protocol": {
+    "activation_category_contract_sha256": "ca14b85b0e49f59fefc1d0cf9f4bfb299830b5fe06f78def884a9abfe61a1a13",
+    "assignment": "whole_template_group_to_exactly_one_role",
+    "atomic_units": [
+      "template_group",
+      "pair_id"
+    ],
+    "final_evaluation_boundary": "pair_and_semantic_template_disjoint_from_all_training_selection_roles_algorithmically_held_out_not_secret_or_externally_authenticated",
+    "minimum_episodes_per_category_per_split": 8,
+    "role_uses": {
+      "calibration": "cross_template_compartment_threshold_selection_only",
+      "cluster_validation": "within_category_cluster_count_replication_only",
+      "discovery": "vpd_effect_features_and_final_cluster_assignment_only",
+      "final_evaluation": "unseen_template_focused_intervention_evaluation_only",
+      "sae_training": "fixed_base_dictionary_learning_only"
+    },
+    "roles": [
+      "sae_training",
+      "discovery",
+      "calibration",
+      "cluster_validation",
+      "final_evaluation"
+    ],
+    "seed": 330829,
+    "split_weights": {
+      "calibration": 2,
+      "cluster_validation": 2,
+      "discovery": 2,
+      "final_evaluation": 1,
+      "sae_training": 1
+    },
+    "stratification": [
+      "semantic_template_group"
+    ]
+  },
+  "schema": "sch.vpd-activation-category-split-manifest.v3",
+  "source": {
+    "dataset_sha256": "9f3f990a40ffb9ca2c58fec82d56519268298d24a2074cafe789d6998d352f11",
+    "episode_id_set_sha256": "9cb811cdd492a1126db65adba89e0f1b1d12c4682ebb8f238fdfeeb4d8a7fc8d",
+    "pair_id_set_sha256": "0dfc8fa82243c88fb1ddd3572c4ff1f803654b8194446cdbefd9fd0ed3e102ad",
+    "pairs": 96,
+    "rows": 1056,
+    "template_group_set_sha256": "846f6578e75dc17d6e33a80710e2112163bd7d4a0c62bbf7f39c4a982fcfe987"
+  },
+  "split_id": "7f8157155dc5cb6d816b09a91b4d0ec6114ba0499022633aaf4160b3ffe575d5",
+  "splits": {
+    "calibration": {
+      "activation_category_counts": {
+        "missing_or_untrusted_authority": 96,
+        "other_invalid": 24,
+        "replayed": 24,
+        "revoked": 24,
+        "scope_invalid": 24,
+        "signature_invalid": 24,
+        "time_inactive": 24,
+        "valid_authority": 24
+      },
+      "artifact": {
+        "path": "calibration_episodes.jsonl",
+        "sha256": "79b4a1a0ffef02390acdfbb0b296b72845906caf7a47573ed8cfbe4baf43f87c"
+      },
+      "episode_id_set_sha256": "ce52ea7aae2d843012f4441dbbd862484bad460792091d4ff596009037605268",
+      "pair_id_set_sha256": "9c6793233cfb2224dad7a6248cdcec2904ac450c5144990ea7dfd2b6dc4c7a12",
+      "pairs": 24,
+      "rows": 264,
+      "template_group_activation_category_counts": {
+        "analytics_data_export": {
+          "missing_or_untrusted_authority": 24,
+          "other_invalid": 6,
+          "replayed": 6,
+          "revoked": 6,
+          "scope_invalid": 6,
+          "signature_invalid": 6,
+          "time_inactive": 6,
+          "valid_authority": 6
+        },
+        "document_retention_change": {
+          "missing_or_untrusted_authority": 24,
+          "other_invalid": 6,
+          "replayed": 6,
+          "revoked": 6,
+          "scope_invalid": 6,
+          "signature_invalid": 6,
+          "time_inactive": 6,
+          "valid_authority": 6
+        },
+        "kubernetes_rollout": {
+          "missing_or_untrusted_authority": 24,
+          "other_invalid": 6,
+          "replayed": 6,
+          "revoked": 6,
+          "scope_invalid": 6,
+          "signature_invalid": 6,
+          "time_inactive": 6,
+          "valid_authority": 6
+        },
+        "object_storage_lifecycle": {
+          "missing_or_untrusted_authority": 24,
+          "other_invalid": 6,
+          "replayed": 6,
+          "revoked": 6,
+          "scope_invalid": 6,
+          "signature_invalid": 6,
+          "time_inactive": 6,
+          "valid_authority": 6
+        }
+      },
+      "template_group_counts": {
+        "analytics_data_export": 66,
+        "document_retention_change": 66,
+        "kubernetes_rollout": 66,
+        "object_storage_lifecycle": 66
+      },
+      "template_group_set_sha256": "83d50bcd4d4811cccff4fd2ee2ddaf922bf23c903eb3101278852c58e5a453f7"
+    },
+    "cluster_validation": {
+      "activation_category_counts": {
+        "missing_or_untrusted_authority": 96,
+        "other_invalid": 24,
+        "replayed": 24,
+        "revoked": 24,
+        "scope_invalid": 24,
+        "signature_invalid": 24,
+        "time_inactive": 24,
+        "valid_authority": 24
+      },
+      "artifact": {
+        "path": "cluster_validation_episodes.jsonl",
+        "sha256": "b539cb746f41295b2d6c25afb9c0c7e65c5a5308d0f56b5a34657bb69dfa3f5a"
+      },
+      "episode_id_set_sha256": "6bf3e97d3144818033066ab31c6bd679ed74e8948d65467d36ab205b629b6cf4",
+      "pair_id_set_sha256": "359761e68ddbe12b912bbf8b5089c6174ec74928e901843bbd56b113c28e1df4",
+      "pairs": 24,
+      "rows": 264,
+      "template_group_activation_category_counts": {
+        "api_key_rotation": {
+          "missing_or_untrusted_authority": 24,
+          "other_invalid": 6,
+          "replayed": 6,
+          "revoked": 6,
+          "scope_invalid": 6,
+          "signature_invalid": 6,
+          "time_inactive": 6,
+          "valid_authority": 6
+        },
+        "calendar_reschedule": {
+          "missing_or_untrusted_authority": 24,
+          "other_invalid": 6,
+          "replayed": 6,
+          "revoked": 6,
+          "scope_invalid": 6,
+          "signature_invalid": 6,
+          "time_inactive": 6,
+          "valid_authority": 6
+        },
+        "feature_flag_rollout": {
+          "missing_or_untrusted_authority": 24,
+          "other_invalid": 6,
+          "replayed": 6,
+          "revoked": 6,
+          "scope_invalid": 6,
+          "signature_invalid": 6,
+          "time_inactive": 6,
+          "valid_authority": 6
+        },
+        "payment_refund": {
+          "missing_or_untrusted_authority": 24,
+          "other_invalid": 6,
+          "replayed": 6,
+          "revoked": 6,
+          "scope_invalid": 6,
+          "signature_invalid": 6,
+          "time_inactive": 6,
+          "valid_authority": 6
+        }
+      },
+      "template_group_counts": {
+        "api_key_rotation": 66,
+        "calendar_reschedule": 66,
+        "feature_flag_rollout": 66,
+        "payment_refund": 66
+      },
+      "template_group_set_sha256": "0aeacd7be8cbbee6e093400708addd48368361f952e094327e2157d6e7c15c0d"
+    },
+    "discovery": {
+      "activation_category_counts": {
+        "missing_or_untrusted_authority": 96,
+        "other_invalid": 24,
+        "replayed": 24,
+        "revoked": 24,
+        "scope_invalid": 24,
+        "signature_invalid": 24,
+        "time_inactive": 24,
+        "valid_authority": 24
+      },
+      "artifact": {
+        "path": "discovery_episodes.jsonl",
+        "sha256": "f1af6517e77436823dc91dab3e2eac35021ed6e8f0012bd75c09f53972d34305"
+      },
+      "episode_id_set_sha256": "44267611fb19c77ecb9ed1c0239709cdee65c579a4777241fb68ec50e697fc9f",
+      "pair_id_set_sha256": "47bc6f05f0155cba6678cbcfd02940bc75abe6b05692c829c899ce21c5762beb",
+      "pairs": 24,
+      "rows": 264,
+      "template_group_activation_category_counts": {
+        "access_role_assignment": {
+          "missing_or_untrusted_authority": 24,
+          "other_invalid": 6,
+          "replayed": 6,
+          "revoked": 6,
+          "scope_invalid": 6,
+          "signature_invalid": 6,
+          "time_inactive": 6,
+          "valid_authority": 6
+        },
+        "database_schema_migration": {
+          "missing_or_untrusted_authority": 24,
+          "other_invalid": 6,
+          "replayed": 6,
+          "revoked": 6,
+          "scope_invalid": 6,
+          "signature_invalid": 6,
+          "time_inactive": 6,
+          "valid_authority": 6
+        },
+        "email_campaign": {
+          "missing_or_untrusted_authority": 24,
+          "other_invalid": 6,
+          "replayed": 6,
+          "revoked": 6,
+          "scope_invalid": 6,
+          "signature_invalid": 6,
+          "time_inactive": 6,
+          "valid_authority": 6
+        },
+        "invoice_approval": {
+          "missing_or_untrusted_authority": 24,
+          "other_invalid": 6,
+          "replayed": 6,
+          "revoked": 6,
+          "scope_invalid": 6,
+          "signature_invalid": 6,
+          "time_inactive": 6,
+          "valid_authority": 6
+        }
+      },
+      "template_group_counts": {
+        "access_role_assignment": 66,
+        "database_schema_migration": 66,
+        "email_campaign": 66,
+        "invoice_approval": 66
+      },
+      "template_group_set_sha256": "b4cfd9cd3ad7f297dd8feb0137e91ae90804e87e32bf1a292a22e85fe0f796a9"
+    },
+    "final_evaluation": {
+      "activation_category_counts": {
+        "missing_or_untrusted_authority": 48,
+        "other_invalid": 12,
+        "replayed": 12,
+        "revoked": 12,
+        "scope_invalid": 12,
+        "signature_invalid": 12,
+        "time_inactive": 12,
+        "valid_authority": 12
+      },
+      "artifact": {
+        "path": "final_evaluation_episodes.jsonl",
+        "sha256": "61f1d300fcd5a649bf1a26236c393ee82c3ee79d7db354e377fdb50bb27da9a6"
+      },
+      "episode_id_set_sha256": "0c9404f9958aac4488a70738dd612e592cbb328cb58d0c4350ad020849e5a71d",
+      "pair_id_set_sha256": "2f790bede624fade746b8e529f5232354ffbd1f6e25c6662fce90f8c37b12c28",
+      "pairs": 12,
+      "rows": 132,
+      "template_group_activation_category_counts": {
+        "dns_record_change": {
+          "missing_or_untrusted_authority": 24,
+          "other_invalid": 6,
+          "replayed": 6,
+          "revoked": 6,
+          "scope_invalid": 6,
+          "signature_invalid": 6,
+          "time_inactive": 6,
+          "valid_authority": 6
+        },
+        "support_ticket_escalation": {
+          "missing_or_untrusted_authority": 24,
+          "other_invalid": 6,
+          "replayed": 6,
+          "revoked": 6,
+          "scope_invalid": 6,
+          "signature_invalid": 6,
+          "time_inactive": 6,
+          "valid_authority": 6
+        }
+      },
+      "template_group_counts": {
+        "dns_record_change": 66,
+        "support_ticket_escalation": 66
+      },
+      "template_group_set_sha256": "22146ed775f2d7b3689f59cb388306be08f92f6904109ed9a042aeede8de7b9c"
+    },
+    "sae_training": {
+      "activation_category_counts": {
+        "missing_or_untrusted_authority": 48,
+        "other_invalid": 12,
+        "replayed": 12,
+        "revoked": 12,
+        "scope_invalid": 12,
+        "signature_invalid": 12,
+        "time_inactive": 12,
+        "valid_authority": 12
+      },
+      "artifact": {
+        "path": "sae_training_episodes.jsonl",
+        "sha256": "048b56a4fdb2d0444b89c25ca4d27832e1ebae554842a7882e028b32260468d1"
+      },
+      "episode_id_set_sha256": "64f93ccc0797acf4023576c1dc899262b450cba956d33d37c5a709a69abbafb5",
+      "pair_id_set_sha256": "45541a2de25e032386264435c882602dfe5239c349c7e6621696431c26cd063f",
+      "pairs": 12,
+      "rows": 132,
+      "template_group_activation_category_counts": {
+        "container_registry_cleanup": {
+          "missing_or_untrusted_authority": 24,
+          "other_invalid": 6,
+          "replayed": 6,
+          "revoked": 6,
+          "scope_invalid": 6,
+          "signature_invalid": 6,
+          "time_inactive": 6,
+          "valid_authority": 6
+        },
+        "incident_page_update": {
+          "missing_or_untrusted_authority": 24,
+          "other_invalid": 6,
+          "replayed": 6,
+          "revoked": 6,
+          "scope_invalid": 6,
+          "signature_invalid": 6,
+          "time_inactive": 6,
+          "valid_authority": 6
+        }
+      },
+      "template_group_counts": {
+        "container_registry_cleanup": 66,
+        "incident_page_update": 66
+      },
+      "template_group_set_sha256": "55cebac937fa0eab13e5113e30c5b244561e9d6996b1c102f813f19c79244409"
+    }
+  },
+  "status": "complete"
+}

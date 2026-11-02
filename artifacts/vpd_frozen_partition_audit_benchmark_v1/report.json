@@ -1,0 +1,58 @@
+{
+  "benchmark_id": "f817cecf0833e66b9013b311eecbcad72f8e8091d0226094bae58bfed6f16a6f",
+  "invariants": {
+    "category_mismatch_detected": true,
+    "direction_failure_detected": true,
+    "execution_authorized": false,
+    "magnitude_failure_detected": true,
+    "model_inference_performed": false,
+    "post_freeze_only": true,
+    "shared_to_specific_promotion_forbidden": true,
+    "stratified_robustness_failure_detected": true,
+    "zero_specific_failures_required": true
+  },
+  "scenarios": {
+    "all_frozen_specific_assignments_replicate": {
+      "decision": "pass_partition_audit",
+      "partition_audit_id": "83b18e5071722e0098f1b82381c75cb2e23276adf61b582d2dfe2947ec0ee52e",
+      "summary": {
+        "component_count": 6,
+        "eligible_for_category_specific_sae_training": true,
+        "frozen_shared_component_count": 5,
+        "frozen_specific_component_count": 1,
+        "specific_failure_count": 0,
+        "specific_failure_reason_counts": {},
+        "specific_pass_count": 1
+      }
+    },
+    "orthogonal_failure_modes_and_shared_nonpromotion": {
+      "decision": "reject_partition_audit",
+      "expected_rejection_reasons": {
+        "synthetic-component-0": null,
+        "synthetic-component-1": "audit_category_mismatch",
+        "synthetic-component-2": "audit_direction_instability",
+        "synthetic-component-3": "audit_magnitude_instability",
+        "synthetic-component-4": "audit_stratified_robustness_failure"
+      },
+      "partition_audit_id": "40d5119775511760976d18f2073349bff8a7fde8873c90c153be6e45a21f7adf",
+      "shared_audit_point_estimate": "category_c",
+      "shared_promoted": false,
+      "summary": {
+        "component_count": 6,
+        "eligible_for_category_specific_sae_training": false,
+        "frozen_shared_component_count": 1,
+        "frozen_specific_component_count": 5,
+        "specific_failure_count": 4,
+        "specific_failure_reason_counts": {
+          "audit_category_mismatch": 1,
+          "audit_direction_instability": 1,
+          "audit_magnitude_instability": 1,
+          "audit_stratified_robustness_failure": 1
+        },
+        "specific_pass_count": 1
+      }
+    }
+  },
+  "schema": "sch.vpd-frozen-category-partition-audit-benchmark.v1",
+  "status": "pass"
+}

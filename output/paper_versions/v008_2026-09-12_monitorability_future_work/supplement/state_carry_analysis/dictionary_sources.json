@@ -1,0 +1,8 @@
+{
+  "artifacts\\nanbeige_reasoning\\muon_sae_control_v1\\00_adamw\\dictionary.npz": "c687493fae897df16986b1252025c792b8d5a17c281361b6bb641d11e498a44f",
+  "artifacts\\nanbeige_reasoning\\muon_sae_control_v1\\00_muon_hybrid\\dictionary.npz": "b0b5d451751d3be4058bf4d48f426933af239ae7102bb0d92ef38fe6c6aab66d",
+  "artifacts\\nanbeige_reasoning\\muon_sae_control_v1\\01_adamw\\dictionary.npz": "7aa5e286ca0e7a7619cb458c9f30337bbf5f1108741ba7e84d6662e59ef20f6d",
+  "artifacts\\nanbeige_reasoning\\muon_sae_control_v1\\01_muon_hybrid\\dictionary.npz": "c39b5565af921431809e552eabf55423d36e7591627b1a9cafa68281bae5cbb6",
+  "artifacts\\nanbeige_reasoning\\muon_sae_control_v1\\02_adamw\\dictionary.npz": "71f322535e2e853c84b83105aaf7582a9f23017f381e09c7665898c59188c615",
+  "artifacts\\nanbeige_reasoning\\muon_sae_control_v1\\02_muon_hybrid\\dictionary.npz": "ecded94b1af4fd8301fb34bad2df34688b13c0fc5e0c0a6eeb5b18085e53f04b"
+}

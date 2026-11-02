@@ -1,0 +1,11 @@
+{
+  "status": "saved_analysis_verified",
+  "analysis_manifest_sha256": "a3d059c993d297442856c3796cb5c905a4fe8af73c0c03c675b104369ff7d6c3",
+  "boundary_manifest_sha256": "52d84d5f0186271a4bb6db204707de215b3a59c0d0233c99a290d87c6adeebca",
+  "output_hashes_checked": 21,
+  "scalar_metric_checks": 72,
+  "max_absolute_error": 2.220446049250313e-16,
+  "scope": "Every example at physical layers 12/22, late sampled window; independent math.fsum scalar calculation.",
+  "verifier_sha256": "74ba0cac1959209b6a592d514ea72a2590bff3a829846fc2567651cf88cf0e4e",
+  "new_inference": false
+}

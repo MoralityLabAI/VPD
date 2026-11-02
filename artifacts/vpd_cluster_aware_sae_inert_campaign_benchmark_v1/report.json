@@ -1,0 +1,81 @@
+{
+  "benchmark_id": "34204198cc2cd605e74fff0f24da7b5d09337613f16da74872f354c53f8b32f5",
+  "controls": {
+    "all_34_success_callbacks_invoked_exactly_once": true,
+    "all_34_success_runtimes_closed_exactly_once": true,
+    "all_campaign_artifacts_are_temporary": true,
+    "blueprint_tamper_rejected_transitively": true,
+    "callback_receipt_tamper_rejected_transitively": true,
+    "campaign_and_per_job_claims_precede_all_success_callbacks": true,
+    "campaign_and_per_job_claims_precede_invoked_failure_path": true,
+    "campaign_imports_no_model_frameworks": true,
+    "campaign_receipts_remain_non_authorizing": true,
+    "campaigns_create_no_dictionary_output": true,
+    "claim_tamper_rejected_before_campaign_claim": true,
+    "duplicate_job_rejected_before_campaign_claim": true,
+    "exact_34_job_coverage_required_before_campaign_claim": true,
+    "failure_campaign_charges_successes_plus_failure": true,
+    "failure_campaign_closes_all_runtimes_once": true,
+    "failure_campaign_emits_terminal_receipt": true,
+    "failure_campaign_leaves_remaining_uninvoked": true,
+    "failure_campaign_receipt_tamper_rejected": true,
+    "failure_campaign_replay_rejected": true,
+    "failure_campaign_stops_at_exact_job": true,
+    "remaining_claim_tamper_rejected_transitively": true,
+    "success_campaign_charges_exactly_34_callbacks": true,
+    "success_campaign_covers_17_compartments": true,
+    "success_campaign_covers_8_categories": true,
+    "success_campaign_preserves_34_unique_output_dirs": true,
+    "success_campaign_receipt_is_durable_and_verifiable": true,
+    "success_campaign_receipt_tamper_rejected": true,
+    "success_campaign_replay_rejected": true
+  },
+  "design": {
+    "durable_campaign_claim_before_callbacks": true,
+    "durable_per_job_claim_before_each_callback": true,
+    "exact_activation_categories": 8,
+    "exact_compartments": 17,
+    "exact_execution_jobs": 34,
+    "exact_shared_fallback_compartments": 1,
+    "exact_specific_compartments": 16,
+    "one_global_pair_split": true,
+    "production_campaign_execution_implemented": false,
+    "unique_output_directories": 34
+  },
+  "results": {
+    "execution_blueprint_id": "07122590aae37e4e07dec2077830954e5eeb56ec269c77382f227fb33e233215",
+    "failure_campaign_callbacks_charged": 8,
+    "persistent_campaign_receipts_created": false,
+    "success_callbacks_charged": 34,
+    "synthetic_failure_campaign_id": "35019b605b1d1eb634052a94e982fc91bf69fbfd6a8064028377c7e10637d6c2",
+    "synthetic_success_campaign_id": "6a3d31be599e689636e3cde67715f9ab6a6971a7c704e7a7e438b27bcc386343"
+  },
+  "schema": "sch.vpd-cluster-aware-sae-inert-campaign-benchmark.v1",
+  "scientific_boundary": {
+    "empirical_blueprint_present": false,
+    "execution_authorized": false,
+    "model_framework_imported": false,
+    "model_inference_performed": false,
+    "model_loaded": false,
+    "persistent_dictionary_output_created": false,
+    "production_runtime_attached": false,
+    "production_trainer_callback_invoked": false,
+    "sae_training_authorized": false,
+    "synthetic_campaign_callbacks_invoked": true,
+    "synthetic_keys_receipts_runtimes_and_callbacks_only": true,
+    "temporary_simulation_only": true,
+    "training_performed": false,
+    "weights_loaded_or_mutated": false
+  },
+  "source": {
+    "benchmark_sha256": "4a67cd7c24c3beea19f981104e1c438d092e880b79c1d5f505f7af8d18b5f833",
+    "execution_blueprint_id": "07122590aae37e4e07dec2077830954e5eeb56ec269c77382f227fb33e233215",
+    "inert_callback_execution_sha256": "ff4867940adb549c7e38c49c806aee26470a62fc20da9c462d6c7f62fe76aab0",
+    "inert_campaign_execution_sha256": "f52f148ec0f9e1155ed0693f021d0a5a05991bf78a5133e5ac843e4de6437c6a"
+  },
+  "status": "pass",
+  "summary": {
+    "controls": 28,
+    "passed": 28
+  }
+}

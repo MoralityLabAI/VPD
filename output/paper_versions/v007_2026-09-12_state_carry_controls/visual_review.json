@@ -1,0 +1,29 @@
+{
+  "status": "all_final_pages_visually_reviewed",
+  "pages": 18,
+  "pdf_sha256": "16c25de17320e5f8a3d7a8c7869f2e0a842ca14fcae66ba82c1e862995f6f8da",
+  "timestamp": "2026-09-13T04:36:50.850914+00:00",
+  "method": "All pages reviewed in contact sheets; Figure 2 and the revised final appendix additionally inspected at full rendered size. Unchanged pages retained their layout after the final appendix was shortened.",
+  "findings": "No clipping, overlap or missing visible glyphs. Tables, equations, figures and page transitions checked. Near-empty nineteenth page removed by shortening prose.",
+  "render_note": "Poppler Symbol/ArialUnicode fallback warnings; visible equation and text rendering reviewed.",
+  "images": {
+    "1": "f760d70909c1aae0fa18a71b9d2b2661c9728ccc60f41a87b482e8e4b7308654",
+    "2": "240776ae8f9aac1227b2c96e59e6ba3c143f33940aa593d0a972693e4ab89784",
+    "3": "656df1aab8e529ddce71058d6c23e66313e56246949390d1cd740168bc1be184",
+    "4": "321923bc5ccfe33cbcbf09a526a481d77d076b4f3a58b282f81b4c205751cfa6",
+    "5": "9474d511947842d1131ba699b2c09c13d274b0ee2839ce7e37a93c4ed65af635",
+    "6": "515a68508c46ecc7b0e46320ac1e6b1d6f1492f55f5cc87b579cc14f462cd185",
+    "7": "de4bd2ab788282923ffb91e637124ed13e8c69c23a0e53fcca6ea54cbafefa6c",
+    "8": "d76cd602fdb87997025f7e7d24646d92484ae5e9bffc4e3f9827d61538986006",
+    "9": "4b461e91a64b88418cdf2460377708940ed52cc893032025d2807564c331af71",
+    "10": "4c7d1222725ab43b1b7f6f58238d2aa3adf8848d1ee7f895d3f85bd1bae28cca",
+    "11": "6e4b41ba0d8bd060b04f8deb0f2b3a9334b68963478cc2b517b930bf9450bcc3",
+    "12": "7ba88634f202b54882ad1bfd8b54fe819c8514e21e1892628eebc4d8a9321b96",
+    "13": "cf3b431e3256a0c616cbc5349f8fe150dd77a568f2113bbf5a1f243aa6f4fae6",
+    "14": "659aec062d300eedb843796e29a9ca59cd49de4bc8869758894b930f8871ace3",
+    "15": "06c583983068d46893c884d499efee51a18e84d9aed7938706e1f99c343c18e1",
+    "16": "9357054063c365d83897c65615b78ea974b9687695779ccba719b952c5d479ab",
+    "17": "39f619073784077910cb69049ce6a9a141a3a83ed7310c4355de2ee17299bcd0",
+    "18": "5e896d6f9321960c46b573f0af93bd0402bfed6c13a043c5eed17cbf8e6ec7ee"
+  }
+}

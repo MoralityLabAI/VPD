@@ -1,0 +1,46 @@
+{
+  "status": "gate_not_passed_due_to_length_censoring",
+  "assigned": 12,
+  "model_responses": 3,
+  "correct": 1,
+  "censored": 2,
+  "not_run": 9,
+  "required_correct": 11,
+  "ledger_pilot_episodes": 0,
+  "rows": [
+    {
+      "question": 1,
+      "id": "s0-dev-world-00000-main-DISPATCH",
+      "outcome": "correct",
+      "correct": true,
+      "generated_tokens": 4041,
+      "finish_reason": "stop",
+      "reasoning_status": "complete",
+      "visible_characters": 73,
+      "source_sha256": "80b8670192ae56fd945089c6e6f26208b58d8a4e0edc44610dcf2471094f2d0c"
+    },
+    {
+      "question": 2,
+      "id": "s0-dev-world-00000-main-POST",
+      "outcome": "censored",
+      "correct": false,
+      "generated_tokens": 4096,
+      "finish_reason": "length",
+      "reasoning_status": "partial_unclosed",
+      "visible_characters": 0,
+      "source_sha256": "0a30a97f4f83944e6a2f11615f64d7a6d60c94a9e3559e3c18fc085d717d79a0"
+    },
+    {
+      "question": 3,
+      "id": "s0-dev-world-00000-pending-POST",
+      "outcome": "censored",
+      "correct": false,
+      "generated_tokens": 4096,
+      "finish_reason": "length",
+      "reasoning_status": "partial_unclosed",
+      "visible_characters": 0,
+      "source_sha256": "cc45ada3d8004e9311bfbad389a1e333e2f0f75c17efdb15c45ca0d8a1f37625"
+    }
+  ],
+  "scope": "Hypothetical mechanics questions; these are not agentic receipt-replay episodes or deception labels."
+}

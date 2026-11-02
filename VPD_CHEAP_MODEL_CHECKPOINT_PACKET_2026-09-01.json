@@ -1,0 +1,119 @@
+{
+  "schema": "sch.vpd-cheap-model-checkpoint-packet.v1",
+  "date": "2026-09-01",
+  "project_root": "C:\\projects\\VPD",
+  "authority": {
+    "safe_stage_now": 0,
+    "local_model_free_work_authorized": true,
+    "model_or_adapter_load_authorized": false,
+    "inference_authorized": false,
+    "external_compute_authorized": false,
+    "weight_mutation_authorized": false,
+    "sae_training_authorized": false,
+    "real_actions_authorized": false
+  },
+  "historical_release_decision": {
+    "base": "reject",
+    "adapter": "reject",
+    "base_separation": 0.692347,
+    "adapter_separation": 0.580743,
+    "adapter_minus_base": -0.111604,
+    "adapter_minus_base_ci95": [-0.122397, -0.100996],
+    "invalid_request_rate": 0.0,
+    "valid_propose_rate": 1.0,
+    "v7_trained_new_weights": false
+  },
+  "current_ids": {
+    "cluster_routing_benchmark_id": "0d5668cdbec6629f1632b3cf0f26a69695c95ec137fcaa2cae0342cde1056ac1",
+    "cluster_aware_planner_benchmark_id": "d79ff71b50d0bfc0bddb649609234b6bf9fbf9be78ef985daa773ebd5687ca10",
+    "synthetic_cluster_aware_plan_id": "43ecfc3bfe7356d06cdcbb03f64eb50b9aeb0d083d2207b891357067cc526973",
+    "sae_training_capture_plan_benchmark_id": "525fbf3433a410ad883b438ee301285f31d704815a86f955751a9cb29b0f09f2",
+    "protocol_v21_sha256": "b26f5668a877923c4f45a877edd8836e65ec061d4132b9ca309abb3d9e74556a",
+    "protocol_v22_sha256": "4a59df7c095e407be02ebfa5f01504eee6f98bc0872b4c9379c3f40ea98d016c",
+    "protocol_v23_sha256": "8eda03fd5c982af058da674feff55c223b58598a8d38422fd8bb27afc34e5c49",
+    "protocol_v24_sha256": "c42dc6e43296c7e4a3d6054174e015620221cf141377bff44773d8cfc0add2b2",
+    "runbook_v13_id": "79f1c87f1cfa84fb05d575be0265cdf7e41405e1e791306e1b36c9b41b0ea757",
+    "runbook_v14_id": "bea30e4ef92a8237f44db800db816db436e2c29f9ec7233b37eff9ac8798690e",
+    "runbook_v15_id": "60e3a3e8778a2efe435eeaa904d58c11621add35ed105345974fad26e5aa2699",
+    "runbook_v16_id": "321b0cab4fc95d0270395f39ba95d0139a3ea258e3cb9c05822b6c82f6ce5dd3",
+    "sae_training_capture_runtime_benchmark_id": "2023baf1646230680ed7d23d84fb1c6174f63d99abcc8cf629580f8f77086bf3",
+    "capture_worker_v2_source_sha256": "0db5cad97effe8c06a8caf329a6b973537c4fa11b75b5433ae7d0b889d29dd87",
+    "effect_shard_assembler_v2_source_sha256": "f82d08497a7c0d97371bdfd8e629432d326808afcecd05ef361330adb1f38cd3",
+    "three_role_integration_benchmark_id": "b27a7f901d191a81a3bc4e708244edf1a3325e968b979471d064986d2c773df6",
+    "recovered_shape_capacity_benchmark_id": "e8021583211fde3fc1185dfb2423a7c56dd33089db66d3143ca5823692239390",
+    "capture_router_adapter_source_sha256": "071a261d2250b28a236f760f8d6a16fa0e4858cc72495725d1ee02f1c43ec9f8",
+    "cluster_aware_sae_planner_v2_source_sha256": "b7fce50af30687d0fe4d7b75f589e1acc61863bddc73c7517caf91b1ad8d17a3"
+  },
+  "corrected_row_units": {
+    "synthetic_episodes": 22,
+    "routing_effect_rows_per_episode": 2,
+    "routing_effect_rows": 44,
+    "sae_activation_rows_per_episode": 128,
+    "sae_activation_rows": 2816
+  },
+  "local_verification": {
+    "status": "pass",
+    "router_controls": "16/16",
+    "cluster_aware_planner_controls": "17/17",
+    "capture_plan_controls": "12/12",
+    "capture_runtime_controls": "16/16",
+    "three_role_integration_controls": "18/18",
+    "protocol_verifiers": "4/4",
+    "runbook_verifiers": "4/4",
+    "focused_tests": "25/25",
+    "full_local_suite": "334_passed_1_known_recursive_test_deselected_3_subtests_passed",
+    "capture_worker_v2_compiles": true,
+    "capture_worker_v2_synthetic_runtime_ready": true,
+    "empirical_capture_ready": false,
+    "model_loaded": false,
+    "inference_performed": false,
+    "weights_written": false
+  },
+  "runs": [
+    {
+      "id": "R0",
+      "status": "authorized_now",
+      "kind": "local_model_free_reproduction",
+      "report": "VPD_CHEAP_MODEL_CHECKPOINT_AND_PROPOSED_RUNS_2026-09-01.md"
+    },
+    {
+      "id": "R1",
+      "status": "authorized_after_R0_pass",
+      "kind": "implement_recovered_shape_global_pair_capacity_stress_benchmark",
+      "output": "artifacts/vpd_recovered_shape_cluster_aware_sae_capacity_benchmark_v1/report.json"
+    },
+    {
+      "id": "R2",
+      "status": "completed_locally_verified",
+      "kind": "protocol_v23_v24_and_runbook_v15_v16_worker_and_integration_lineage",
+      "must_preserve": ["protocol_v22", "protocol_v23", "runbook_v14", "runbook_v15"]
+    },
+    {
+      "id": "R3",
+      "status": "blocked_explicit_authorization_required",
+      "kind": "empirical_preflight_and_effect_capture"
+    },
+    {
+      "id": "R4",
+      "status": "blocked_empirical_receipts_required",
+      "kind": "empirical_partition_admission_routing_and_manifest_planning"
+    },
+    {
+      "id": "R5",
+      "status": "blocked_paid_and_weight_mutation_authorization_required",
+      "kind": "sae_and_authorization_retraining_candidates"
+    }
+  ],
+  "required_receipt_fields": [
+    "run_id",
+    "status",
+    "commands",
+    "exit_codes",
+    "observed_ids_or_hashes",
+    "files_changed",
+    "first_stop_reason",
+    "model_loaded",
+    "inference_performed",
+    "weights_written"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "benchmark_id": "5eb11595d2d24b75fd8535e42625150c7257bcdeea4f44feb69f1e3f602225a9",
+  "controls": {
+    "batch_size_tamper_rejected": true,
+    "binding_imports_no_model_frameworks": true,
+    "binding_never_authorizes_execution": true,
+    "category_count_tamper_rejected": true,
+    "complete_identity_tamper_rejected": true,
+    "complete_output_escape_rejected": true,
+    "component_substitution_rejected": true,
+    "dataset_substitution_rejected": true,
+    "episode_allocation_tamper_rejected": true,
+    "exact_recovered_plan_shape_binds": true,
+    "forward_allocation_tamper_rejected": true,
+    "identity_complete_shape_binds_without_execution": true,
+    "incomplete_preflight_remains_not_ready": true,
+    "role_substitution_rejected": true,
+    "sketch_shape_tamper_rejected": true
+  },
+  "results": {
+    "complete_identity_shape_still_requires_runtime_admission": true,
+    "incomplete_bindings_ready": false,
+    "job_allocation_id": "852fa96e3f5e3db8e329638a5dc2f3d3148d7aba95f25d4df42b564a4d6240f7",
+    "packet_id": "043f5aeafed27ced02843f2ee1281c6a916fa4ca0c0a0ff2f9644dce2f5cdf32",
+    "role": "discovery"
+  },
+  "schema": "sch.vpd-guarded-capture-job-binding-benchmark.v1",
+  "scientific_boundary": {
+    "capture_started": false,
+    "execution_authorized": false,
+    "model_framework_imported": false,
+    "model_inference_performed": false,
+    "model_loaded": false,
+    "output_reserved": false,
+    "sae_training_authorized": false,
+    "weights_mutated": false
+  },
+  "source": {
+    "benchmark_sha256": "f878c735386bbb98515ced7b7e8a7819df77fcf7f80d31043246ff030a350060",
+    "binding_verifier_sha256": "bb48ddf4a1cd60e339e67acfdaf3c7ec71bf107846f57febaf3ffd7ea9e1fe5c"
+  },
+  "status": "pass",
+  "summary": {
+    "controls": 15,
+    "passed": 15
+  }
+}

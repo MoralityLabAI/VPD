@@ -1,0 +1,67 @@
+{
+  "benchmark_id": "2023baf1646230680ed7d23d84fb1c6174f63d99abcc8cf629580f8f77086bf3",
+  "controls": {
+    "callback_failure_rejected_without_output": true,
+    "callback_failure_runtime_closed_and_restored": true,
+    "component_artifact_tamper_rejected": true,
+    "effect_shard_tamper_rejected": true,
+    "exact_planned_callback_count": true,
+    "execution_receipt_verifies": true,
+    "no_weight_or_dictionary_artifacts_persisted": true,
+    "readdressed_split_role_tamper_rejected": true,
+    "readdressed_training_authority_tamper_rejected": true,
+    "split_role_exactly_sae_training": true,
+    "success_factors_restored": true,
+    "success_runtime_closed": true,
+    "synthetic_plan_cannot_enter_actual_loader": true,
+    "v1_worker_rejects_v2_schema": true,
+    "wrong_adapter_rejected_without_output": true,
+    "wrong_adapter_runtime_closed_and_restored": true
+  },
+  "scenario": {
+    "activation_categories": 8,
+    "components": 2,
+    "execution_verification": {
+      "capture_authorization_id": "8a5610c1e767a5daf8c9938bb6693b44cab7283478fc596096ded546d6027a40",
+      "capture_execution_id": "1980aa28a8c193ac40c02f21936233235fd118bce36b62927531282a23984d15",
+      "capture_job_plan_id": "0bb55a60ed5fb244c983f3633e3163fd53f140342c6beceeba260cf7d8c31e03",
+      "components": 2,
+      "effect_shard_artifact_id": "16fc3560cf4c17923441c4001c70e920fe4d2a69bb6761a9d87de9bf2de92a9c",
+      "real_actions_authorized": false,
+      "release_authorized": false,
+      "sae_dictionary_training_authorized": false,
+      "schema": "sch.vpd-canonical-category-capture-job-execution-verification.v2",
+      "split_role": "sae_training",
+      "status": "pass"
+    },
+    "forward_passes": 32,
+    "rows": 16,
+    "split_role": "sae_training"
+  },
+  "schema": "sch.vpd-canonical-sae-training-capture-runtime-benchmark.v2",
+  "scientific_boundary": {
+    "actual_model_loaded": false,
+    "empirical_effect_capture_produced": false,
+    "model_frameworks_absent_before_and_after": true,
+    "model_inference_performed": false,
+    "real_actions_authorized": false,
+    "release_authorized": false,
+    "sae_dictionary_training_authorized": false,
+    "sae_training_authorized": false,
+    "synthetic_artifacts_only": true,
+    "synthetic_authorization_is_not_user_authorization": true,
+    "weights_loaded_or_mutated": false,
+    "weights_or_sae_dictionary_persisted": false
+  },
+  "source": {
+    "benchmark_sha256": "32a9d19b6922298615ed1759ea648b95a598d17106389d766ce33a1e14445d63",
+    "fake_runtime_predecessor_sha256": "11133ccfa1870b8fa004c9f802984279da61c34b076a6f23529626d00c70de7d",
+    "planner_v2_sha256": "5ccfc18eb6bf6a2a921514b905672a197a7079af51ab344dbcb4593e3624f9da",
+    "runner_v2_sha256": "0db5cad97effe8c06a8caf329a6b973537c4fa11b75b5433ae7d0b889d29dd87"
+  },
+  "status": "pass",
+  "summary": {
+    "controls": 16,
+    "passed": 16
+  }
+}

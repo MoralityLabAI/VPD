@@ -1,0 +1,93 @@
+{
+  "benchmark_id": "57f3f9a612883b04bb9651ca8de3fee7f17a6b0996b7eb88ee7d85d22a84ed25",
+  "scenarios": [
+    {
+      "activation_category": "replayed",
+      "complete_control_pool_size": 2,
+      "name": "truncated_packet_pool_expands_to_complete_specific_pool",
+      "observed_stage": "same_compartment_plan",
+      "plan_id": "9d5d43465df395b022232f7a531cf7b87f91e447d0dfa8b265b47f6fce9c60de",
+      "predecessor_packet_pool_size": 1,
+      "selected_control": "same-category-control-2",
+      "status": "pass"
+    },
+    {
+      "activation_category": "shared_cross_category",
+      "complete_control_pool_size": 2,
+      "name": "shared_same_compartment_replacement",
+      "observed_stage": "same_compartment_plan",
+      "plan_id": "b96ce973e26bba3a3bb624e11ae9684a7f16c82473c982d05163e383e125ba71",
+      "predecessor_packet_pool_size": 1,
+      "selected_control": "same-category-control-2",
+      "status": "pass"
+    },
+    {
+      "error": "focused SAE packet has no complete out-of-packet same-compartment pool",
+      "name": "empty_same_compartment_pool",
+      "observed_stage": "pre_plan_rejection",
+      "status": "pass"
+    },
+    {
+      "error": "focused SAE predecessor control pool crosses activation compartments",
+      "name": "cross_category_pool",
+      "observed_stage": "pre_plan_rejection",
+      "status": "pass"
+    },
+    {
+      "error": "focused SAE packet membership crosses activation compartments",
+      "name": "target_category_mismatch",
+      "observed_stage": "pre_plan_rejection",
+      "status": "pass"
+    },
+    {
+      "error": "focused SAE predecessor controls overlap the target packet",
+      "name": "control_overlaps_target_packet",
+      "observed_stage": "pre_plan_rejection",
+      "status": "pass"
+    },
+    {
+      "error": "focused SAE effect archive omits same-compartment controls",
+      "name": "missing_control_effect",
+      "observed_stage": "pre_plan_rejection",
+      "status": "pass"
+    },
+    {
+      "error": "focused SAE predecessor plan content address mismatch",
+      "name": "tampered_predecessor_plan",
+      "observed_stage": "pre_plan_rejection",
+      "status": "pass"
+    }
+  ],
+  "schema": "sch.vpd-focused-sae-compartment-control-benchmark.v1",
+  "scientific_boundary": {
+    "execution_authorized": false,
+    "interventions_executed": false,
+    "model_inference_performed": false,
+    "sae_training_performed": false,
+    "synthetic_only": true,
+    "weights_loaded_or_mutated": false
+  },
+  "source": {
+    "benchmark_runner_sha256": "c658d64cea7343275e49229e1d3cd8dd7780551102e3183d2488d5cbf65f4f62",
+    "executor_v2": {
+      "path": "experiments/authz_mechinterp/compute_focused_sae_interventions_v2.py",
+      "sha256": "d5b1f20032dbac4f87aaf277597a04d9dccbe986e4312885aa0d5dc171118223"
+    },
+    "predecessor_runner": {
+      "path": "experiments/authz_mechinterp/run_focused_vpd_sae.py",
+      "preserved_unmodified": true,
+      "sha256": "306195df88ccbf1ec4c4093c22652db9f7c42da0f5921b4c533632ba780429fb"
+    },
+    "runner_v2": {
+      "path": "experiments/authz_mechinterp/run_focused_vpd_sae_v2.py",
+      "sha256": "459ba8e0d31c021b48163b2c16c11d9a3f253170e06c6ec6b81192caa2c4084e"
+    }
+  },
+  "status": "pass",
+  "summary": {
+    "passed": 8,
+    "rejected_before_plan": 6,
+    "same_compartment_plans": 2,
+    "scenarios": 8
+  }
+}

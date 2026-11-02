@@ -1,0 +1,137 @@
+{
+  "invariants": {
+    "capture_pipeline_benchmark_reverified_through_protocol": true,
+    "cross_archive_measurement_identity_contract_bound": true,
+    "discovery_campaign_numeric_capture_contract_bound": true,
+    "execution_not_authorized": true,
+    "final_evaluation_not_consumed": true,
+    "implementation_hashes_bound_by_gate_and_protocol": true,
+    "no_same_pack_tuning_after_audit_failure": true,
+    "partition_audit_gate_v2_reverified": true,
+    "predecessor_receipt_reverified": true,
+    "research_protocol_v6_reverified": true,
+    "signed_receipt_measurement_contract_bound_by_protocol": true,
+    "worker_scoped_signing_plan_bound": true
+  },
+  "lineage_amendment": {
+    "audit_model_load_dtype_frozen_by_gate_plan": true,
+    "capture_adapter_implemented_and_hash_bound": true,
+    "category_specific_sae_training_still_requires_audit_pass": true,
+    "cross_archive_model_adapter_and_measurement_identity_required": true,
+    "dedicated_signed_merge_front_end_required": true,
+    "final_evaluation_remains_untouched": true,
+    "fresh_pack_attestation_occurs_before_signature": true,
+    "model_free_signed_pipeline_rehearsal_passed": true,
+    "packet_assigned_worker_signing_required": true,
+    "packet_specific_compute_command_hash_required": true,
+    "predecessor_receipt_preserved": true,
+    "production_reject_only_evaluator_required": true,
+    "research_protocol_v5_preserved": true,
+    "research_protocol_v6_is_not_historical_experiment_v6": true,
+    "signed_receipt_campaign_measurement_contract_required": true,
+    "verified_discovery_campaign_capture_parameters_bound": true
+  },
+  "pipeline_receipt_id": "e12976b0161b3c947006fb785c5cf598e63a6620f4cd1563b3690e2769af6f75",
+  "resources": {
+    "partition_audit_episode_forward_equivalents": 22708224,
+    "partition_audit_work_units": 16,
+    "prepared_capture_job_groups": 16
+  },
+  "schema": "sch.vpd-unified-compartment-pipeline-receipt.v4",
+  "scientific_boundary": {
+    "empirical_partition_audited": false,
+    "execution_authorized": false,
+    "model_inference_performed": false,
+    "sae_training_performed": false,
+    "signed_partition_audit_receipts_created": false,
+    "v7_negative_release_decision_unchanged": true,
+    "weights_loaded_or_mutated": false
+  },
+  "source": {
+    "implementation": {
+      "base_merge_and_signer": {
+        "modified_for_partition_audit": false,
+        "path": "experiments/authz_mechinterp/merge_vpd_effect_shards.py",
+        "sha256": "b33288bb1898fbda6a904dd1cad11ae7859e08b10e6472bfc30b6b4e8c4b6a47"
+      },
+      "capture_adapter": {
+        "attestation_occurs_before_signature": true,
+        "path": "experiments/authz_mechinterp/attest_partition_audit_effect_receipt.py",
+        "sha256": "a662e0c770a07d8e0064f0f7847e802ece57e34292a980f14d552a58f5bbd7f5",
+        "status": "implemented_locally_not_executed"
+      },
+      "core_reject_only_evaluator": {
+        "path": "experiments/authz_mechinterp/audit_frozen_vpd_category_partition.py",
+        "sha256": "046f296d4fe7a0071fbf8a18955e39ae02390e9550be4c3b934483cbdd8c91ab"
+      },
+      "effect_worker_execution_wrapper": {
+        "correction": "convert_hex_countsketch_seed_to_integer_before_modulo",
+        "path": "experiments/authz_mechinterp/compute_vpd_effect_shard_v2.py",
+        "preserved_worker_modified": false,
+        "sha256": "1cc03ee68265b52f1454f8aec93e5f236568bc99ef3f9d273e6daa7d8e5e6159"
+      },
+      "preserved_effect_worker": {
+        "modified_for_partition_audit": false,
+        "path": "experiments/authz_mechinterp/compute_vpd_effect_shard.py",
+        "sha256": "02db527aa019cc9120435bcf9960fb819568045f3ef7cc3378d901808c5eb1a4"
+      },
+      "production_evaluator": {
+        "path": "experiments/authz_mechinterp/evaluate_vpd_partition_audit.py",
+        "sha256": "ae4c4bb8630d968159b6c3cbcf2a5161a0d4cae95033123d19df46d6cf47f33b",
+        "status": "implemented_locally_not_executed"
+      },
+      "signed_merge_front_end": {
+        "path": "experiments/authz_mechinterp/merge_vpd_partition_audit_effect_shards.py",
+        "sha256": "e5f2c72ba9b1c4415fac7e5b36fae6df6791e6980d9d2e3ab652ad45e1d362c1",
+        "status": "implemented_locally_not_executed"
+      }
+    },
+    "partition_audit_capture_pipeline_benchmark": {
+      "benchmark_id": "9efa073d053ee89551c847f09af0b56b450f134b333a88d80ae8ed5ee5d7ec89",
+      "path": "artifacts/vpd_partition_audit_capture_pipeline_benchmark_v1/report.json",
+      "scenarios": 7,
+      "sha256": "49cd6fed449035e831baee178f3e66285e691bcdbc57c08dc5c6ea70ac0eed3d",
+      "status": "pass"
+    },
+    "partition_audit_gate_plan_v2": {
+      "gate_plan_id": "1341c8f6371fab72cd9e8f8be92b1e740ae47f08c71a77a8bab39b04fe2a119b",
+      "path": "artifacts/vpd_partition_audit_gate_v2/plan.json",
+      "sha256": "4d8ffc1e1c8fa807400085ff30c7f22732082241a70cadeb0160203527ffb9d2",
+      "verification": {
+        "capture_adapter_status": "implemented_locally_not_executed",
+        "episode_forward_equivalents": 22708224,
+        "execution_authorized": false,
+        "gate_plan_id": "1341c8f6371fab72cd9e8f8be92b1e740ae47f08c71a77a8bab39b04fe2a119b",
+        "job_groups": 16,
+        "schema": "sch.vpd-partition-audit-gate-plan-verification.v2",
+        "status": "pass",
+        "work_units": 16
+      }
+    },
+    "predecessor_unified_receipt_v3": {
+      "path": "artifacts/vpd_unified_compartment_pipeline_v3/receipt.json",
+      "pipeline_receipt_id": "bec00550d7d523f4ece993aafdac61f203a88c4417d8cab7bafc3ef0752831e2",
+      "sha256": "0e45a0841dca6618c42115537db0ba93a974db50a775a5a7325d590c69297778",
+      "verification": {
+        "execution_authorized": false,
+        "partition_audit_work_units": 16,
+        "pipeline_receipt_id": "bec00550d7d523f4ece993aafdac61f203a88c4417d8cab7bafc3ef0752831e2",
+        "schema": "sch.vpd-unified-compartment-pipeline-verification.v3",
+        "status": "pass"
+      }
+    },
+    "research_protocol_v6": {
+      "path": "configs/evals/vpd_activation_category_compartments_v6.json",
+      "sha256": "c5d9a47f651fcf654a9b33780c0c556e681a80cf4379a1684c65dba985e2b84a",
+      "verification": {
+        "capture_adapter_status": "implemented_locally_not_executed",
+        "execution_authorized": false,
+        "predecessor_sha256": "0894ac8e06ba7828bf5cb21ae79e1ae48ae96e2c27cd66e6853899765c1b9c24",
+        "protocol_sha256": "c5d9a47f651fcf654a9b33780c0c556e681a80cf4379a1684c65dba985e2b84a",
+        "schema": "sch.vpd-activation-category-protocol-verification.v6",
+        "status": "pass"
+      }
+    }
+  },
+  "status": "pass_local_capture_path_implemented_not_run"
+}

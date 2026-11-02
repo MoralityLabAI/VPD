@@ -1,0 +1,41 @@
+{
+  "audit_id": "8a873f01610ce17313bce07459e64dc80ded7bdb6f23d4011ae0f15e57fb2793",
+  "boundary": {
+    "inference_performed": false,
+    "model_loaded": false,
+    "sae_training_authorized": false,
+    "weights_written": false
+  },
+  "finding": "category_only_no_within_category_cluster_routing",
+  "interpretation": "The plan preserves observable activation categories but does not bind SAE jobs to admitted within-category component clusters.",
+  "observed": {
+    "category_specific_jobs": 16,
+    "cluster_bound_job_ids": [],
+    "cluster_bound_training_jobs": 0,
+    "jobs_by_compartment": {
+      "missing_or_untrusted_authority": 2,
+      "other_invalid": 2,
+      "replayed": 2,
+      "revoked": 2,
+      "scope_invalid": 2,
+      "shared_cross_category": 2,
+      "signature_invalid": 2,
+      "time_inactive": 2,
+      "valid_authority": 2
+    },
+    "selection_modes": {
+      "equal_whole_episodes_per_observed_activation_category": 2,
+      "exact_observable_activation_category": 16
+    },
+    "shared_jobs": 2,
+    "training_jobs": 18,
+    "unique_compartments": 9
+  },
+  "schema": "sch.vpd-compartment-sae-cluster-routing-gap-audit.v1",
+  "source": {
+    "path": "artifacts/vpd_compartment_sae_training_plan_v4/plan.json",
+    "sha256": "f90dc761017b15369fbc31bf8d9efdee4f4d8f6e9c7fce585e8ecc5e94b5975c",
+    "training_plan_id": "a7a050abead2d60a63e16a6d07126609ac38c034f18ad3e37f98cd7c9f4d8c2b"
+  },
+  "status": "pass"
+}

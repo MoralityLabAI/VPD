@@ -1,0 +1,55 @@
+{
+  "previous_goal_turn": "progress: implemented and verified the ledger harness; empirical GPU execution remained incomplete",
+  "this_goal_turn": "progress: computed new task-grouped hidden-state/feature statistics and a normalization-boundary control from saved tensors",
+  "new_inference": false,
+  "goal_complete": false,
+  "requirements": [
+    {
+      "requirement": "Nanbeige activation dataset spanning ARC-AGI-1, ARC-AGI-2, INTELLECT-3 logic and math",
+      "status": "verified_small_pilot",
+      "examples_by_lane": {
+        "arc_agi_1": 5,
+        "arc_agi_2": 5,
+        "intellect3_logic": 4,
+        "intellect3_math": 4
+      },
+      "physical_layers": 22,
+      "passes": 2,
+      "checked_assets": 190
+    },
+    {
+      "requirement": "Pass-resolved VPD and SAE mechanistic analysis",
+      "status": "existing_measurements_plus_new_descriptive_cross_family_analysis",
+      "limitation": "Semantic behavioral mediation is not established. New profiles are observations, not interventions."
+    },
+    {
+      "requirement": "Paper emphasizing mechanistic interpretation",
+      "status": "existing_v004_manuscript_hash_verified",
+      "path": "output\\paper_versions\\v004_2026-09-09_intervention_fidelity",
+      "new_analysis_incorporated_into_pdf": false
+    },
+    {
+      "requirement": "Benchmark against TRM-infused skills and the 27B comparator across requested task families",
+      "status": "incomplete",
+      "verified_comparator": "Fresh 109-puzzle Qwen3.5-27B Campsite comparison only",
+      "pilot_identifier_overlap": [
+        "intellect3_logic/00062/72b57dbd293b"
+      ],
+      "matched_prompt_and_compute_comparison": false,
+      "missing_families": [
+        "arc_agi_1",
+        "arc_agi_2",
+        "intellect3_math"
+      ],
+      "limitation": "Identifier overlap does not establish equal prompts, tools, thinking budgets or runtime conditions."
+    },
+    {
+      "requirement": "Receipt-replay behavioral pilot and controlled latent-variable probes",
+      "status": "incomplete_thermal_block",
+      "behavioral_episodes": 0
+    }
+  ],
+  "comparator_summary_sha256": "1d9b0bb83f8bec3622d4fe74c94560472b58a99d4a71308bd146b5159d5e55a9",
+  "cases_sha256": "ccbff9a905388984df2ccdfcf356360ea59435cd831c54320f1de117ffc24950",
+  "checked_at": "2026-09-11T23:24:12.551977+00:00"
+}

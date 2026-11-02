@@ -1,0 +1,6 @@
+{
+  "status": "passed",
+  "empirical_table_rows_checked": 18,
+  "source_sha256": "84e2f0c22a75dd490dcfb74ca8bcd09b9b9815e12d0664eafcab29f32d62975e",
+  "final_wording_check": "280 eight-position encoding arrays; numerical tables unchanged"
+}

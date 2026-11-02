@@ -1,0 +1,176 @@
+{
+  "authorization_join": {
+    "authority_registry_path": null,
+    "preflight_path": null,
+    "runtime_identity_and_output_checks_are_separate": true,
+    "signature_validation_is_necessary_but_not_sufficient": true,
+    "signed_receipt_path": null,
+    "status": "not_attempted_real_inputs_absent",
+    "verification_as_of_utc": null
+  },
+  "binding_rows": [
+    {
+      "completion_evidence": "exact configured model identifier",
+      "content_opened_by_this_check": false,
+      "field": "model_id",
+      "kind": "nonempty_string",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "immutable revision or commit identifier",
+      "content_opened_by_this_check": false,
+      "field": "model_revision",
+      "kind": "nonempty_string",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "digest of a separately produced model-files manifest",
+      "content_opened_by_this_check": false,
+      "field": "model_files_manifest_sha256",
+      "kind": "sha256",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "canonical absolute adapter path",
+      "content_opened_by_this_check": false,
+      "field": "adapter_path",
+      "kind": "canonical_absolute_path",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "adapter weight-file digest",
+      "content_opened_by_this_check": false,
+      "field": "adapter_weights_sha256",
+      "kind": "sha256",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "adapter configuration digest",
+      "content_opened_by_this_check": false,
+      "field": "adapter_config_sha256",
+      "kind": "sha256",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "literal cpu, cuda, or cuda:N device",
+      "content_opened_by_this_check": false,
+      "field": "device",
+      "kind": "cpu_or_cuda_device",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "explicit operator ceiling later bounded by signed authority",
+      "content_opened_by_this_check": false,
+      "field": "wall_time_ceiling_seconds",
+      "kind": "positive_integer",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "explicit operator ceiling later bounded by signed authority",
+      "content_opened_by_this_check": false,
+      "field": "cost_ceiling_usd",
+      "kind": "positive_finite_number",
+      "status": "missing",
+      "value": null
+    },
+    {
+      "completion_evidence": "nonexistent direct child of the dedicated empirical-capture parent",
+      "content_opened_by_this_check": false,
+      "field": "output_root",
+      "kind": "canonical_absolute_new_direct_child",
+      "status": "missing",
+      "value": null
+    }
+  ],
+  "completed_binding_audit": null,
+  "readiness_id": "77e2c766499f22d401ffa60166b31dbc8fe4d0ecaefa349ab3b636202fef1472",
+  "resource_ceiling": {
+    "components_per_role": 4032,
+    "estimated_float32_effect_payload_bytes": 4046192640,
+    "generated_tokens": 0,
+    "maximum_batch_forwards_at_batch_size_4": 41352192,
+    "maximum_compute_jobs": 64,
+    "maximum_episode_forward_equivalents": 164900736,
+    "not_estimated": [
+      "tokenized_sequence_lengths",
+      "model_memory",
+      "runtime_overhead",
+      "npz_overhead",
+      "wall_time",
+      "monetary_cost"
+    ],
+    "packets_per_role": 16,
+    "roles": 4,
+    "sae_routing_extension_compute_jobs": 16,
+    "selection_compute_jobs": 48
+  },
+  "runtime_isolation_contract": {
+    "allowed_output_parent": "C:\\projects\\VPD\\artifacts\\vpd_cluster_to_sae_empirical_capture_runs",
+    "existing_reparse_points_forbidden": true,
+    "model_or_adapter_files_opened_by_readiness_builder": false,
+    "output_root_must_be_canonical_absolute": true,
+    "output_root_must_be_new_direct_child": true,
+    "output_root_must_not_preexist": true,
+    "runtime_must_create_output_root_atomically": true,
+    "runtime_must_refuse_overwrite_or_resume": true,
+    "writes_outside_output_root_forbidden": true
+  },
+  "schema": "sch.vpd-cluster-to-sae-binding-readiness.v1",
+  "scientific_boundary": {
+    "authorization_receipt_present": false,
+    "execution_authorized": false,
+    "final_evaluation_authorized": false,
+    "model_framework_imported": false,
+    "model_inference_performed": false,
+    "model_or_adapter_content_opened": false,
+    "real_actions_authorized": false,
+    "sae_training_authorized": false,
+    "weights_loaded_or_mutated": false,
+    "worksheet_only": true
+  },
+  "source": {
+    "preflight_v2": {
+      "bound_preflight_id": "5465f17d583a0dd19f5c4ea4939883ac8f65b7a19e128f7ad130246eb2a816bf",
+      "builder_sha256": "362a61efc9d809a0271fadff2102124a1d03470d2d1bac747bdf188ad3c53de7",
+      "path": "artifacts/vpd_cluster_to_sae_empirical_preflight_v2/preflight.json",
+      "template_id": "5465f17d583a0dd19f5c4ea4939883ac8f65b7a19e128f7ad130246eb2a816bf"
+    },
+    "readiness_builder_sha256": "fa65a58ab1e664a363b62d57d58ec60ed9e0357b5b707220646cbd8f6a4d8a20"
+  },
+  "status": "blocked_missing_execution_bindings",
+  "stop_conditions": [
+    "any_binding_missing_or_noncanonical",
+    "model_or_adapter_digest_not_independently_verified_at_runtime",
+    "output_root_exists_is_outside_dedicated_parent_or_crosses_reparse_point",
+    "signed_authorization_receipt_absent_invalid_inactive_revoked_or_consumed",
+    "authorization_scope_or_resource_ceiling_differs",
+    "runtime_attempts_generation_training_final_evaluation_or_real_actions"
+  ],
+  "summary": {
+    "identity_syntax_complete": false,
+    "missing_bindings": [
+      "model_id",
+      "model_revision",
+      "model_files_manifest_sha256",
+      "adapter_path",
+      "adapter_weights_sha256",
+      "adapter_config_sha256",
+      "device",
+      "wall_time_ceiling_seconds",
+      "cost_ceiling_usd",
+      "output_root"
+    ],
+    "model_or_adapter_content_verified": false,
+    "output_isolation_verified": false,
+    "required_bindings": 10,
+    "supplied_bindings": 0
+  }
+}

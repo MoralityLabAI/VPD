@@ -1,0 +1,62 @@
+{
+  "benchmark_id": "adc1d00bf3be2ab9d790252534bc084add403842b26ae9002e2d6216f0095732",
+  "controls": {
+    "all_20_graph_nodes_audited": true,
+    "all_37_graph_edges_audited": true,
+    "all_referenced_verifier_callables_exist": true,
+    "audit_content_tamper_changes_address": true,
+    "audit_reproduces": true,
+    "audit_transfers_no_authority": true,
+    "benchmark_imports_no_model_frameworks": true,
+    "budget_blueprint_binding_gap_is_explicit": true,
+    "capture_manifest_id_and_sidecar_gap_is_explicit": true,
+    "capture_preflight_file_hash_edge_is_rejected_as_representation_mismatch": true,
+    "capture_preflight_id_edge_is_one_of_exact_nine": true,
+    "capture_receipt_id_mismatch_is_explicit": true,
+    "compute_receipt_representation_gap_is_explicit": true,
+    "durable_transition_is_one_combined_receipt": true,
+    "exactly_12_node_schema_and_id_shapes_match": true,
+    "global_split_embedding_is_explicit": true,
+    "only_4_nodes_are_dispatch_ready_under_v1": true,
+    "only_9_field_edges_match_implementation": true,
+    "production_runtime_attachment_gap_is_explicit": true,
+    "remaining_28_edges_are_explicit_mismatches": true,
+    "routing_bundle_id_mismatch_is_explicit": true,
+    "semantic_dispatch_remains_disallowed": true,
+    "successor_corrections_cover_capture_budget_compute_transition_and_runtime": true
+  },
+  "schema": "sch.vpd-cluster-aware-sae-semantic-dispatch-coverage-benchmark.v1",
+  "scientific_boundary": {
+    "empirical_graph_present": false,
+    "execution_authorized": false,
+    "gap_detection_only": true,
+    "model_framework_imported": false,
+    "model_inference_performed": false,
+    "model_loaded": false,
+    "paid_compute_authorized": false,
+    "persistent_dictionary_output_created": false,
+    "sae_training_authorized": false,
+    "semantic_dispatch_allowed": false,
+    "training_performed": false,
+    "weights_loaded_or_mutated": false
+  },
+  "source": {
+    "audit_builder_sha256": "72a32c218501f505bd7bffae01af38102ed4a337b59371ae2c4222e4366b6abc",
+    "audit_path": "artifacts/vpd_cluster_aware_sae_semantic_dispatch_coverage_audit_v1/audit.json",
+    "audit_sha256": "775b3b4814dca6827a2ab3463ce6d18d3393d5dcb56d81fbff472b54c0d4ddf6",
+    "semantic_dispatch_coverage_audit_id": "bd3cc043f7b658029fd20c99492c43edbace23550a7e237d36d692e46297eaa7"
+  },
+  "status": "pass_fail_closed_gap_detection",
+  "summary": {
+    "controls": 23,
+    "dispatch_ready_nodes_under_v1_graph": 4,
+    "exact_implemented_field_edges": 9,
+    "graph_edges": 37,
+    "graph_nodes": 20,
+    "mismatched_edges": 28,
+    "passed": 23,
+    "production_runtime_attachment_verifier_present": false,
+    "schema_and_id_matching_nodes": 12,
+    "semantic_dispatch_allowed": false
+  }
+}

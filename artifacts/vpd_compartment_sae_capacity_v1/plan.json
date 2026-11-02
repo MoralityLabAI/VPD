@@ -1,0 +1,617 @@
+{
+  "capacity_plan_id": "f2f92a86a33ee8193bd6d8df9c3841e7710a9fe220237d5660679ecf040b0067",
+  "frozen_support_policy": {
+    "claim_boundary": "Conservative design-floor arithmetic, not a guarantee of SAE quality. Empirical reconstruction, sparsity, dead-feature, and held-out behavior checks remain mandatory.",
+    "minimum_expected_training_firings_per_feature_under_uniform_usage": 32,
+    "minimum_training_observations_per_dictionary_feature": 8,
+    "minimum_unique_prompt_pairs_per_compartment": 32,
+    "training_fraction": 0.9
+  },
+  "invariants": {
+    "capacity_plan_does_not_authorize_inference_or_training": true,
+    "no_profile_declared_ready_without_all_specific_and_shared_support": true,
+    "single_anchor_current_default_is_audited_not_grandfathered": true
+  },
+  "model_space": {
+    "activation_space": "layer_35_residual_stream",
+    "dictionary_scope": "fixed_base_per_compartment",
+    "hidden_size": 4096
+  },
+  "observed_training_role": {
+    "category_episode_counts": {
+      "missing_or_untrusted_authority": 96,
+      "other_invalid": 24,
+      "replayed": 24,
+      "revoked": 24,
+      "scope_invalid": 24,
+      "signature_invalid": 24,
+      "time_inactive": 24,
+      "valid_authority": 24
+    },
+    "category_unique_pair_counts": {
+      "missing_or_untrusted_authority": 24,
+      "other_invalid": 24,
+      "replayed": 24,
+      "revoked": 24,
+      "scope_invalid": 24,
+      "signature_invalid": 24,
+      "time_inactive": 24,
+      "valid_authority": 24
+    },
+    "rows": 264,
+    "template_groups": 4,
+    "unique_pairs": 24
+  },
+  "profiles": [
+    {
+      "activation_rows_per_episode": 1,
+      "current_pairs_per_template_group": 6,
+      "dictionary_features": 32768,
+      "estimated_full_pack_pairs": 1165088,
+      "estimated_full_pack_rows": 12815968,
+      "expansion": 8,
+      "id": "legacy_anchor_default",
+      "minimum_pairs_per_training_template_group_for_fresh_pack": 72818,
+      "purpose": "audit_only_current_single_anchor_default",
+      "requirements": {
+        "by_expected_feature_firings": 32768,
+        "by_observation_to_feature_ratio": 262144,
+        "required_total_observations_before_train_validation_split": 291272,
+        "required_training_observations": 262144
+      },
+      "shared_compartment": {
+        "activation_rows_per_episode": 1,
+        "additional_observations_required": 291080,
+        "additional_unique_pairs_required": 8,
+        "balance_rule": "equal_rows_per_activation_category",
+        "balanced_rows_per_category": 24,
+        "checks": {
+          "nonempty_validation": true,
+          "total_observations": false,
+          "unique_pairs": false
+        },
+        "episodes": 192,
+        "expected_training_firings_per_feature_under_uniform_usage": 0.16796875,
+        "status": "insufficient",
+        "total_observations": 192,
+        "training_observations": 172,
+        "training_observations_per_feature": 0.0052490234375,
+        "unique_pairs": 24,
+        "validation_observations": 20
+      },
+      "specific_compartments": {
+        "missing_or_untrusted_authority": {
+          "activation_rows_per_episode": 1,
+          "additional_observations_required": 291176,
+          "additional_unique_pairs_required": 8,
+          "checks": {
+            "nonempty_validation": true,
+            "total_observations": false,
+            "unique_pairs": false
+          },
+          "episodes": 96,
+          "expected_training_firings_per_feature_under_uniform_usage": 0.083984375,
+          "status": "insufficient",
+          "total_observations": 96,
+          "training_observations": 86,
+          "training_observations_per_feature": 0.00262451171875,
+          "unique_pairs": 24,
+          "validation_observations": 10
+        },
+        "other_invalid": {
+          "activation_rows_per_episode": 1,
+          "additional_observations_required": 291248,
+          "additional_unique_pairs_required": 8,
+          "checks": {
+            "nonempty_validation": true,
+            "total_observations": false,
+            "unique_pairs": false
+          },
+          "episodes": 24,
+          "expected_training_firings_per_feature_under_uniform_usage": 0.0205078125,
+          "status": "insufficient",
+          "total_observations": 24,
+          "training_observations": 21,
+          "training_observations_per_feature": 0.000640869140625,
+          "unique_pairs": 24,
+          "validation_observations": 3
+        },
+        "replayed": {
+          "activation_rows_per_episode": 1,
+          "additional_observations_required": 291248,
+          "additional_unique_pairs_required": 8,
+          "checks": {
+            "nonempty_validation": true,
+            "total_observations": false,
+            "unique_pairs": false
+          },
+          "episodes": 24,
+          "expected_training_firings_per_feature_under_uniform_usage": 0.0205078125,
+          "status": "insufficient",
+          "total_observations": 24,
+          "training_observations": 21,
+          "training_observations_per_feature": 0.000640869140625,
+          "unique_pairs": 24,
+          "validation_observations": 3
+        },
+        "revoked": {
+          "activation_rows_per_episode": 1,
+          "additional_observations_required": 291248,
+          "additional_unique_pairs_required": 8,
+          "checks": {
+            "nonempty_validation": true,
+            "total_observations": false,
+            "unique_pairs": false
+          },
+          "episodes": 24,
+          "expected_training_firings_per_feature_under_uniform_usage": 0.0205078125,
+          "status": "insufficient",
+          "total_observations": 24,
+          "training_observations": 21,
+          "training_observations_per_feature": 0.000640869140625,
+          "unique_pairs": 24,
+          "validation_observations": 3
+        },
+        "scope_invalid": {
+          "activation_rows_per_episode": 1,
+          "additional_observations_required": 291248,
+          "additional_unique_pairs_required": 8,
+          "checks": {
+            "nonempty_validation": true,
+            "total_observations": false,
+            "unique_pairs": false
+          },
+          "episodes": 24,
+          "expected_training_firings_per_feature_under_uniform_usage": 0.0205078125,
+          "status": "insufficient",
+          "total_observations": 24,
+          "training_observations": 21,
+          "training_observations_per_feature": 0.000640869140625,
+          "unique_pairs": 24,
+          "validation_observations": 3
+        },
+        "signature_invalid": {
+          "activation_rows_per_episode": 1,
+          "additional_observations_required": 291248,
+          "additional_unique_pairs_required": 8,
+          "checks": {
+            "nonempty_validation": true,
+            "total_observations": false,
+            "unique_pairs": false
+          },
+          "episodes": 24,
+          "expected_training_firings_per_feature_under_uniform_usage": 0.0205078125,
+          "status": "insufficient",
+          "total_observations": 24,
+          "training_observations": 21,
+          "training_observations_per_feature": 0.000640869140625,
+          "unique_pairs": 24,
+          "validation_observations": 3
+        },
+        "time_inactive": {
+          "activation_rows_per_episode": 1,
+          "additional_observations_required": 291248,
+          "additional_unique_pairs_required": 8,
+          "checks": {
+            "nonempty_validation": true,
+            "total_observations": false,
+            "unique_pairs": false
+          },
+          "episodes": 24,
+          "expected_training_firings_per_feature_under_uniform_usage": 0.0205078125,
+          "status": "insufficient",
+          "total_observations": 24,
+          "training_observations": 21,
+          "training_observations_per_feature": 0.000640869140625,
+          "unique_pairs": 24,
+          "validation_observations": 3
+        },
+        "valid_authority": {
+          "activation_rows_per_episode": 1,
+          "additional_observations_required": 291248,
+          "additional_unique_pairs_required": 8,
+          "checks": {
+            "nonempty_validation": true,
+            "total_observations": false,
+            "unique_pairs": false
+          },
+          "episodes": 24,
+          "expected_training_firings_per_feature_under_uniform_usage": 0.0205078125,
+          "status": "insufficient",
+          "total_observations": 24,
+          "training_observations": 21,
+          "training_observations_per_feature": 0.000640869140625,
+          "unique_pairs": 24,
+          "validation_observations": 3
+        }
+      },
+      "status": "insufficient",
+      "top_k": 32
+    },
+    {
+      "activation_rows_per_episode": 128,
+      "current_pairs_per_template_group": 6,
+      "dictionary_features": 8192,
+      "estimated_full_pack_pairs": 2288,
+      "estimated_full_pack_rows": 25168,
+      "expansion": 2,
+      "id": "bounded_context_pilot",
+      "minimum_pairs_per_training_template_group_for_fresh_pack": 143,
+      "purpose": "minimum_compartment_pilot_candidate",
+      "requirements": {
+        "by_expected_feature_firings": 16384,
+        "by_observation_to_feature_ratio": 65536,
+        "required_total_observations_before_train_validation_split": 72818,
+        "required_training_observations": 65536
+      },
+      "shared_compartment": {
+        "activation_rows_per_episode": 128,
+        "additional_observations_required": 48242,
+        "additional_unique_pairs_required": 8,
+        "balance_rule": "equal_rows_per_activation_category",
+        "balanced_rows_per_category": 24,
+        "checks": {
+          "nonempty_validation": true,
+          "total_observations": false,
+          "unique_pairs": false
+        },
+        "episodes": 192,
+        "expected_training_firings_per_feature_under_uniform_usage": 43.19921875,
+        "status": "insufficient",
+        "total_observations": 24576,
+        "training_observations": 22118,
+        "training_observations_per_feature": 2.699951171875,
+        "unique_pairs": 24,
+        "validation_observations": 2458
+      },
+      "specific_compartments": {
+        "missing_or_untrusted_authority": {
+          "activation_rows_per_episode": 128,
+          "additional_observations_required": 60530,
+          "additional_unique_pairs_required": 8,
+          "checks": {
+            "nonempty_validation": true,
+            "total_observations": false,
+            "unique_pairs": false
+          },
+          "episodes": 96,
+          "expected_training_firings_per_feature_under_uniform_usage": 21.599609375,
+          "status": "insufficient",
+          "total_observations": 12288,
+          "training_observations": 11059,
+          "training_observations_per_feature": 1.3499755859375,
+          "unique_pairs": 24,
+          "validation_observations": 1229
+        },
+        "other_invalid": {
+          "activation_rows_per_episode": 128,
+          "additional_observations_required": 69746,
+          "additional_unique_pairs_required": 8,
+          "checks": {
+            "nonempty_validation": true,
+            "total_observations": false,
+            "unique_pairs": false
+          },
+          "episodes": 24,
+          "expected_training_firings_per_feature_under_uniform_usage": 5.3984375,
+          "status": "insufficient",
+          "total_observations": 3072,
+          "training_observations": 2764,
+          "training_observations_per_feature": 0.33740234375,
+          "unique_pairs": 24,
+          "validation_observations": 308
+        },
+        "replayed": {
+          "activation_rows_per_episode": 128,
+          "additional_observations_required": 69746,
+          "additional_unique_pairs_required": 8,
+          "checks": {
+            "nonempty_validation": true,
+            "total_observations": false,
+            "unique_pairs": false
+          },
+          "episodes": 24,
+          "expected_training_firings_per_feature_under_uniform_usage": 5.3984375,
+          "status": "insufficient",
+          "total_observations": 3072,
+          "training_observations": 2764,
+          "training_observations_per_feature": 0.33740234375,
+          "unique_pairs": 24,
+          "validation_observations": 308
+        },
+        "revoked": {
+          "activation_rows_per_episode": 128,
+          "additional_observations_required": 69746,
+          "additional_unique_pairs_required": 8,
+          "checks": {
+            "nonempty_validation": true,
+            "total_observations": false,
+            "unique_pairs": false
+          },
+          "episodes": 24,
+          "expected_training_firings_per_feature_under_uniform_usage": 5.3984375,
+          "status": "insufficient",
+          "total_observations": 3072,
+          "training_observations": 2764,
+          "training_observations_per_feature": 0.33740234375,
+          "unique_pairs": 24,
+          "validation_observations": 308
+        },
+        "scope_invalid": {
+          "activation_rows_per_episode": 128,
+          "additional_observations_required": 69746,
+          "additional_unique_pairs_required": 8,
+          "checks": {
+            "nonempty_validation": true,
+            "total_observations": false,
+            "unique_pairs": false
+          },
+          "episodes": 24,
+          "expected_training_firings_per_feature_under_uniform_usage": 5.3984375,
+          "status": "insufficient",
+          "total_observations": 3072,
+          "training_observations": 2764,
+          "training_observations_per_feature": 0.33740234375,
+          "unique_pairs": 24,
+          "validation_observations": 308
+        },
+        "signature_invalid": {
+          "activation_rows_per_episode": 128,
+          "additional_observations_required": 69746,
+          "additional_unique_pairs_required": 8,
+          "checks": {
+            "nonempty_validation": true,
+            "total_observations": false,
+            "unique_pairs": false
+          },
+          "episodes": 24,
+          "expected_training_firings_per_feature_under_uniform_usage": 5.3984375,
+          "status": "insufficient",
+          "total_observations": 3072,
+          "training_observations": 2764,
+          "training_observations_per_feature": 0.33740234375,
+          "unique_pairs": 24,
+          "validation_observations": 308
+        },
+        "time_inactive": {
+          "activation_rows_per_episode": 128,
+          "additional_observations_required": 69746,
+          "additional_unique_pairs_required": 8,
+          "checks": {
+            "nonempty_validation": true,
+            "total_observations": false,
+            "unique_pairs": false
+          },
+          "episodes": 24,
+          "expected_training_firings_per_feature_under_uniform_usage": 5.3984375,
+          "status": "insufficient",
+          "total_observations": 3072,
+          "training_observations": 2764,
+          "training_observations_per_feature": 0.33740234375,
+          "unique_pairs": 24,
+          "validation_observations": 308
+        },
+        "valid_authority": {
+          "activation_rows_per_episode": 128,
+          "additional_observations_required": 69746,
+          "additional_unique_pairs_required": 8,
+          "checks": {
+            "nonempty_validation": true,
+            "total_observations": false,
+            "unique_pairs": false
+          },
+          "episodes": 24,
+          "expected_training_firings_per_feature_under_uniform_usage": 5.3984375,
+          "status": "insufficient",
+          "total_observations": 3072,
+          "training_observations": 2764,
+          "training_observations_per_feature": 0.33740234375,
+          "unique_pairs": 24,
+          "validation_observations": 308
+        }
+      },
+      "status": "insufficient",
+      "top_k": 16
+    },
+    {
+      "activation_rows_per_episode": 256,
+      "current_pairs_per_template_group": 6,
+      "dictionary_features": 32768,
+      "estimated_full_pack_pairs": 4560,
+      "estimated_full_pack_rows": 50160,
+      "expansion": 8,
+      "id": "overcomplete_context_study",
+      "minimum_pairs_per_training_template_group_for_fresh_pack": 285,
+      "purpose": "overcomplete_compartment_study_candidate",
+      "requirements": {
+        "by_expected_feature_firings": 32768,
+        "by_observation_to_feature_ratio": 262144,
+        "required_total_observations_before_train_validation_split": 291272,
+        "required_training_observations": 262144
+      },
+      "shared_compartment": {
+        "activation_rows_per_episode": 256,
+        "additional_observations_required": 242120,
+        "additional_unique_pairs_required": 8,
+        "balance_rule": "equal_rows_per_activation_category",
+        "balanced_rows_per_category": 24,
+        "checks": {
+          "nonempty_validation": true,
+          "total_observations": false,
+          "unique_pairs": false
+        },
+        "episodes": 192,
+        "expected_training_firings_per_feature_under_uniform_usage": 43.19921875,
+        "status": "insufficient",
+        "total_observations": 49152,
+        "training_observations": 44236,
+        "training_observations_per_feature": 1.3499755859375,
+        "unique_pairs": 24,
+        "validation_observations": 4916
+      },
+      "specific_compartments": {
+        "missing_or_untrusted_authority": {
+          "activation_rows_per_episode": 256,
+          "additional_observations_required": 266696,
+          "additional_unique_pairs_required": 8,
+          "checks": {
+            "nonempty_validation": true,
+            "total_observations": false,
+            "unique_pairs": false
+          },
+          "episodes": 96,
+          "expected_training_firings_per_feature_under_uniform_usage": 21.599609375,
+          "status": "insufficient",
+          "total_observations": 24576,
+          "training_observations": 22118,
+          "training_observations_per_feature": 0.67498779296875,
+          "unique_pairs": 24,
+          "validation_observations": 2458
+        },
+        "other_invalid": {
+          "activation_rows_per_episode": 256,
+          "additional_observations_required": 285128,
+          "additional_unique_pairs_required": 8,
+          "checks": {
+            "nonempty_validation": true,
+            "total_observations": false,
+            "unique_pairs": false
+          },
+          "episodes": 24,
+          "expected_training_firings_per_feature_under_uniform_usage": 5.3994140625,
+          "status": "insufficient",
+          "total_observations": 6144,
+          "training_observations": 5529,
+          "training_observations_per_feature": 0.168731689453125,
+          "unique_pairs": 24,
+          "validation_observations": 615
+        },
+        "replayed": {
+          "activation_rows_per_episode": 256,
+          "additional_observations_required": 285128,
+          "additional_unique_pairs_required": 8,
+          "checks": {
+            "nonempty_validation": true,
+            "total_observations": false,
+            "unique_pairs": false
+          },
+          "episodes": 24,
+          "expected_training_firings_per_feature_under_uniform_usage": 5.3994140625,
+          "status": "insufficient",
+          "total_observations": 6144,
+          "training_observations": 5529,
+          "training_observations_per_feature": 0.168731689453125,
+          "unique_pairs": 24,
+          "validation_observations": 615
+        },
+        "revoked": {
+          "activation_rows_per_episode": 256,
+          "additional_observations_required": 285128,
+          "additional_unique_pairs_required": 8,
+          "checks": {
+            "nonempty_validation": true,
+            "total_observations": false,
+            "unique_pairs": false
+          },
+          "episodes": 24,
+          "expected_training_firings_per_feature_under_uniform_usage": 5.3994140625,
+          "status": "insufficient",
+          "total_observations": 6144,
+          "training_observations": 5529,
+          "training_observations_per_feature": 0.168731689453125,
+          "unique_pairs": 24,
+          "validation_observations": 615
+        },
+        "scope_invalid": {
+          "activation_rows_per_episode": 256,
+          "additional_observations_required": 285128,
+          "additional_unique_pairs_required": 8,
+          "checks": {
+            "nonempty_validation": true,
+            "total_observations": false,
+            "unique_pairs": false
+          },
+          "episodes": 24,
+          "expected_training_firings_per_feature_under_uniform_usage": 5.3994140625,
+          "status": "insufficient",
+          "total_observations": 6144,
+          "training_observations": 5529,
+          "training_observations_per_feature": 0.168731689453125,
+          "unique_pairs": 24,
+          "validation_observations": 615
+        },
+        "signature_invalid": {
+          "activation_rows_per_episode": 256,
+          "additional_observations_required": 285128,
+          "additional_unique_pairs_required": 8,
+          "checks": {
+            "nonempty_validation": true,
+            "total_observations": false,
+            "unique_pairs": false
+          },
+          "episodes": 24,
+          "expected_training_firings_per_feature_under_uniform_usage": 5.3994140625,
+          "status": "insufficient",
+          "total_observations": 6144,
+          "training_observations": 5529,
+          "training_observations_per_feature": 0.168731689453125,
+          "unique_pairs": 24,
+          "validation_observations": 615
+        },
+        "time_inactive": {
+          "activation_rows_per_episode": 256,
+          "additional_observations_required": 285128,
+          "additional_unique_pairs_required": 8,
+          "checks": {
+            "nonempty_validation": true,
+            "total_observations": false,
+            "unique_pairs": false
+          },
+          "episodes": 24,
+          "expected_training_firings_per_feature_under_uniform_usage": 5.3994140625,
+          "status": "insufficient",
+          "total_observations": 6144,
+          "training_observations": 5529,
+          "training_observations_per_feature": 0.168731689453125,
+          "unique_pairs": 24,
+          "validation_observations": 615
+        },
+        "valid_authority": {
+          "activation_rows_per_episode": 256,
+          "additional_observations_required": 285128,
+          "additional_unique_pairs_required": 8,
+          "checks": {
+            "nonempty_validation": true,
+            "total_observations": false,
+            "unique_pairs": false
+          },
+          "episodes": 24,
+          "expected_training_firings_per_feature_under_uniform_usage": 5.3994140625,
+          "status": "insufficient",
+          "total_observations": 6144,
+          "training_observations": 5529,
+          "training_observations_per_feature": 0.168731689453125,
+          "unique_pairs": 24,
+          "validation_observations": 615
+        }
+      },
+      "status": "insufficient",
+      "top_k": 32
+    }
+  ],
+  "schema": "sch.vpd-compartment-sae-capacity-plan.v1",
+  "scientific_boundary": {
+    "current_pack_trainability_claimed": false,
+    "model_inference_performed": false,
+    "weights_loaded_or_mutated": false
+  },
+  "source": {
+    "pack_id": "dc5224d9838d8661764f45342543a4f3ea35152cc16be60dd7d2d11b3589910d",
+    "pack_manifest_sha256": "be61d446ca5294035eca8a8361b5be8795f1980cb78ec62d30d88de14675f921",
+    "planner_sha256": "73a31039a53394a1ee59aeeb3bbfe3f064bbf5dbd61a178b2b8ae1e7b0989031",
+    "sae_training_artifact_sha256": "4b25258cca0b5bce24656676eb39b6e7bd2a6be71ff96a0d55b8d1623eac1853",
+    "split_id": "bf36a956222f517a68a6d7596033b4d66a59f49e2be37f946d0984f85715c606",
+    "split_manifest_sha256": "8215bafe9f398dde8986d1cc21249386833c1e44990db0d9a817982549d8f782"
+  },
+  "status": "insufficient_current_pack"
+}

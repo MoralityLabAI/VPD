@@ -1,0 +1,239 @@
+{
+  "design": {
+    "comparison": "same_index_decoder_direction_and_training_only_pass_assignment",
+    "cosine_threshold_sweep": [
+      0.5,
+      0.7,
+      0.8,
+      0.9
+    ],
+    "maximum_monte_carlo_p_value": 0.05,
+    "minimum_stable_features_per_pass": 16,
+    "permutation_preserves_target_pass_assignment_counts": true,
+    "primary_diagnostic_cosine_threshold": 0.8,
+    "same_evaluation_ids": true,
+    "same_seed": 42,
+    "same_training_ids": true,
+    "target_label_permutation_replicates": 4096,
+    "target_label_permutation_seed": 260911,
+    "threshold_and_same_seed_analysis_are_posthoc": true
+  },
+  "provenance": {
+    "runner_sha256": "40174ec4bcc191ff21d6b1c6b64741ce914e06e85f2a948291a4616b243c0b2f"
+  },
+  "report_id": "3f5b10e0f5e26a82c538300563584d66de668777250b1e5191a2ade750d71128",
+  "schema": "sch.vpd-nanbeige-q4-sae-pass-feature-identity.v1",
+  "scientific_boundary": {
+    "cosine_threshold_sweep_is_posthoc": true,
+    "decoder_alignment_is_not_feature_semantics": true,
+    "execution_authorized": false,
+    "fresh_seed_and_family_disjoint_replication_required": true,
+    "model_weights_loaded": false,
+    "new_model_inference_performed": false,
+    "new_sae_training_performed": false,
+    "paid_compute_authorized": false,
+    "quality_gate_applied_before_identity_support": true,
+    "sae_decoder_weights_loaded_for_read_only_analysis": true,
+    "sae_training_authorized": false,
+    "same_seed_and_training_ids_limit_independence": true,
+    "weights_mutated": false
+  },
+  "sites": [
+    {
+      "operative_cross_budget_feature_identity_admission": "fail",
+      "provisional_same_seed_feature_identity_support": "fail",
+      "quality_qualified_in_both_archives": true,
+      "same_index_decoder_cosine_median_all_features": 0.3373335810876339,
+      "site": "model.layers.11",
+      "source_assigned_features": {
+        "2048": {
+          "pass_0": 102,
+          "pass_1": 120
+        },
+        "8192": {
+          "pass_0": 104,
+          "pass_1": 112
+        }
+      },
+      "threshold_sweep": [
+        {
+          "minimum_same_index_decoder_cosine": 0.5,
+          "opposite_pass_features": 0,
+          "stable_same_pass_features": {
+            "pass_0": 31,
+            "pass_1": 25
+          },
+          "target_label_permutation_p_value": 0.000244081034903588
+        },
+        {
+          "minimum_same_index_decoder_cosine": 0.7,
+          "opposite_pass_features": 0,
+          "stable_same_pass_features": {
+            "pass_0": 27,
+            "pass_1": 14
+          },
+          "target_label_permutation_p_value": 0.000244081034903588
+        },
+        {
+          "minimum_same_index_decoder_cosine": 0.8,
+          "opposite_pass_features": 0,
+          "stable_same_pass_features": {
+            "pass_0": 19,
+            "pass_1": 10
+          },
+          "target_label_permutation_p_value": 0.000244081034903588
+        },
+        {
+          "minimum_same_index_decoder_cosine": 0.9,
+          "opposite_pass_features": 0,
+          "stable_same_pass_features": {
+            "pass_0": 7,
+            "pass_1": 3
+          },
+          "target_label_permutation_p_value": 0.000244081034903588
+        }
+      ]
+    },
+    {
+      "operative_cross_budget_feature_identity_admission": "fail",
+      "provisional_same_seed_feature_identity_support": "fail",
+      "quality_qualified_in_both_archives": false,
+      "same_index_decoder_cosine_median_all_features": 0.03857675439210896,
+      "site": "model.layers.21",
+      "source_assigned_features": {
+        "2048": {
+          "pass_0": 129,
+          "pass_1": 187
+        },
+        "8192": {
+          "pass_0": 151,
+          "pass_1": 179
+        }
+      },
+      "threshold_sweep": [
+        {
+          "minimum_same_index_decoder_cosine": 0.5,
+          "opposite_pass_features": 0,
+          "stable_same_pass_features": {
+            "pass_0": 71,
+            "pass_1": 88
+          },
+          "target_label_permutation_p_value": 0.000244081034903588
+        },
+        {
+          "minimum_same_index_decoder_cosine": 0.7,
+          "opposite_pass_features": 0,
+          "stable_same_pass_features": {
+            "pass_0": 59,
+            "pass_1": 53
+          },
+          "target_label_permutation_p_value": 0.000244081034903588
+        },
+        {
+          "minimum_same_index_decoder_cosine": 0.8,
+          "opposite_pass_features": 0,
+          "stable_same_pass_features": {
+            "pass_0": 43,
+            "pass_1": 19
+          },
+          "target_label_permutation_p_value": 0.000244081034903588
+        },
+        {
+          "minimum_same_index_decoder_cosine": 0.9,
+          "opposite_pass_features": 0,
+          "stable_same_pass_features": {
+            "pass_0": 22,
+            "pass_1": 0
+          },
+          "target_label_permutation_p_value": 0.000244081034903588
+        }
+      ]
+    },
+    {
+      "operative_cross_budget_feature_identity_admission": "fail",
+      "provisional_same_seed_feature_identity_support": "pass",
+      "quality_qualified_in_both_archives": true,
+      "same_index_decoder_cosine_median_all_features": 0.2534072242210905,
+      "site": "model.norm",
+      "source_assigned_features": {
+        "2048": {
+          "pass_0": 51,
+          "pass_1": 223
+        },
+        "8192": {
+          "pass_0": 78,
+          "pass_1": 236
+        }
+      },
+      "threshold_sweep": [
+        {
+          "minimum_same_index_decoder_cosine": 0.5,
+          "opposite_pass_features": 1,
+          "stable_same_pass_features": {
+            "pass_0": 22,
+            "pass_1": 104
+          },
+          "target_label_permutation_p_value": 0.000244081034903588
+        },
+        {
+          "minimum_same_index_decoder_cosine": 0.7,
+          "opposite_pass_features": 0,
+          "stable_same_pass_features": {
+            "pass_0": 22,
+            "pass_1": 53
+          },
+          "target_label_permutation_p_value": 0.000244081034903588
+        },
+        {
+          "minimum_same_index_decoder_cosine": 0.8,
+          "opposite_pass_features": 0,
+          "stable_same_pass_features": {
+            "pass_0": 22,
+            "pass_1": 28
+          },
+          "target_label_permutation_p_value": 0.000244081034903588
+        },
+        {
+          "minimum_same_index_decoder_cosine": 0.9,
+          "opposite_pass_features": 0,
+          "stable_same_pass_features": {
+            "pass_0": 20,
+            "pass_1": 1
+          },
+          "target_label_permutation_p_value": 0.000244081034903588
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "budget": 2048,
+      "report_id": "71785175dbbf90e4c62e8598df881712194c7598e8710f0923c0a2746b2c7c3d",
+      "report_path": "C:/projects/VPD/artifacts/vpd_nanbeige_q4_sae_pass_selectivity_2048_v1/report.json",
+      "report_sha256": "e577d255b61ef283e20d54f15193b793cee188c6a14ace549e4cc247ec6b283c",
+      "sae_manifest_sha256": "6fc6377d128459f711953d1667a32b8ebdf10c36cd6e6047888b21b447e3bc92",
+      "sae_path": "C:/projects/VPD/artifacts/nanbeige_reasoning/q4_reasoning_pilot_v1/q4_reasoning_saes"
+    },
+    {
+      "budget": 8192,
+      "report_id": "508871d6b702af2edb42e60b6609b5e7d26e535fb2ee1be261a5dc179fef6c41",
+      "report_path": "C:/projects/VPD/artifacts/vpd_nanbeige_q4_sae_pass_selectivity_8192_v1/report.json",
+      "report_sha256": "f87368d7ac359ba10d6be355db12a71d9aa6a119fc801efe720f135bde73b951",
+      "sae_manifest_sha256": "8cea34fb5c46b826059d5684c18c5694e38cf1aabf03eb51a152c8a1f785d6e9",
+      "sae_path": "C:/projects/VPD/artifacts/nanbeige_reasoning/q4_reasoning_pilot_8192_v1/q4_reasoning_saes"
+    }
+  ],
+  "status": "pass",
+  "summary": {
+    "operative_cross_budget_feature_identity_admissions": 0,
+    "provisional_same_seed_feature_identity_sites": [
+      "model.norm"
+    ],
+    "provisional_same_seed_feature_identity_supports": 1,
+    "quality_qualified_sites": [
+      "model.layers.11",
+      "model.norm"
+    ],
+    "site_checks": 3
+  }
+}

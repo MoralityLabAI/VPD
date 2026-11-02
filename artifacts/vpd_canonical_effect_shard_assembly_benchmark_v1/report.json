@@ -1,0 +1,43 @@
+{
+  "benchmark_id": "a722200d27ae115a92e6b77d865eba137b6fd0111d6adda11ace0937e400e30f",
+  "design": {
+    "authenticated_extraction_chained": true,
+    "canonical_category_capture_chained": true,
+    "categories": 2,
+    "countsketch_dimension": 256,
+    "episodes": 8,
+    "pair_blocks": 2,
+    "semantic_split_schema": "v3"
+  },
+  "results": {
+    "all_support_counts_match": true,
+    "capture_receipt_tamper_rejected": true,
+    "capture_row_count_mismatch_rejected": true,
+    "category_pair_set_mismatch_rejected": true,
+    "category_template_set_mismatch_rejected": true,
+    "components": 2,
+    "deterministic_reassembly": true,
+    "duplicate_episode_rejected": true,
+    "expected_array_shapes_match": true,
+    "raw_rank_component_rejected": true,
+    "small_countsketch_rejected": true,
+    "split_identity_tamper_rejected": true,
+    "written_artifact_tamper_rejected": true,
+    "written_artifact_verified": true
+  },
+  "schema": "sch.vpd-canonical-effect-shard-assembly-benchmark.v1",
+  "scientific_boundary": {
+    "execution_authorized": false,
+    "fake_peft_objects_only": true,
+    "model_inference_performed": false,
+    "model_loaded": false,
+    "real_adapter_accessed": false,
+    "real_effect_archive_emitted": false,
+    "synthetic_inputs_only": true
+  },
+  "source": {
+    "assembler_sha256": "29e48610784a1f05aff23a68783865dae82a2b1719a6ccad1e024117743d08ec",
+    "runner_sha256": "24e8f07af8ab9ddbae47369751bf798751f9edacd49592cc3588ebb107c4d07f"
+  },
+  "status": "pass"
+}

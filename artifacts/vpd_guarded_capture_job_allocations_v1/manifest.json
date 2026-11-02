@@ -1,0 +1,1408 @@
+{
+  "allocation_manifest_id": "b046a591e380bc4882534f07329ba32c1ce0fdcb1735dcb99fc362196ea23a65",
+  "contract": {
+    "batch_size": 4,
+    "final_evaluation_forbidden": true,
+    "identity_bindings_complete": false,
+    "job_allocation_must_be_reserved_before_runtime_load": true,
+    "job_plan_component_membership_must_equal_packet": true,
+    "job_plan_dataset_and_role_must_equal_allocation": true,
+    "missing_required_bindings": [
+      "model_id",
+      "model_revision",
+      "model_files_manifest_sha256",
+      "adapter_path",
+      "adapter_weights_sha256",
+      "adapter_config_sha256",
+      "device",
+      "wall_time_ceiling_seconds",
+      "cost_ceiling_usd",
+      "output_root"
+    ],
+    "packets_per_role": 16,
+    "role_order": [
+      "discovery",
+      "calibration",
+      "cluster_validation",
+      "sae_training"
+    ]
+  },
+  "global_totals": {
+    "batch_forwards": 41352192,
+    "compute_jobs": 64,
+    "episode_forward_equivalents": 164900736,
+    "float32_effect_payload_bytes": 4046192640
+  },
+  "preflight_id": "5465f17d583a0dd19f5c4ea4939883ac8f65b7a19e128f7ad130246eb2a816bf",
+  "roles": {
+    "calibration": {
+      "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/calibration_episodes.jsonl",
+      "dataset_sha256": "d63a7aa128d3eabdabb2c349a534a6d6dd6c5b36445ec07fda1f121f3ed0ba10",
+      "jobs": [
+        {
+          "allocation": {
+            "batch_forwards": 601980,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 2397252,
+            "float32_effect_payload_bytes": 63203328
+          },
+          "component_count": 254,
+          "component_id_set_sha256": "1b0ea2820650d4a843ce8168f4311202f182f43c792f049cfb36db621ff8db1d",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/calibration_episodes.jsonl",
+          "dataset_sha256": "d63a7aa128d3eabdabb2c349a534a6d6dd6c5b36445ec07fda1f121f3ed0ba10",
+          "job_allocation_id": "5678b8643293d9f6771f1ddb7e6e35f7a4fc31f85d0f9fc12a41dbc0403d67ce",
+          "packet_id": "043f5aeafed27ced02843f2ee1281c6a916fa4ca0c0a0ff2f9644dce2f5cdf32",
+          "packet_index": 0,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-1b0ea2820650d4a8.json",
+          "packet_sha256": "562453b296a55b0739f62ded07eb538dbec1477c0079ff8675d406116c9f651a",
+          "role": "calibration",
+          "split_role_id": "906d9b311fe0aad33a8b60ea9f5fc7d3fe40ab57c5b14fa3bcf7c698e4d0842e"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 675450,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 2689830,
+            "float32_effect_payload_bytes": 70917120
+          },
+          "component_count": 285,
+          "component_id_set_sha256": "684c00d6dda68fdccb294e4d9a8801157ba370f1758ecf824e3365f7c199aef4",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/calibration_episodes.jsonl",
+          "dataset_sha256": "d63a7aa128d3eabdabb2c349a534a6d6dd6c5b36445ec07fda1f121f3ed0ba10",
+          "job_allocation_id": "8a84f6a334a4e6595b5f2114ab95c0f21b16a84af8111ff86c3d0da3f5088a0b",
+          "packet_id": "20402f6d492827b42f64f09ae72b9354a75dfc9ecd82a89aa816bba1ea9270ba",
+          "packet_index": 1,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-684c00d6dda68fdc.json",
+          "packet_sha256": "0cd4ce7c5dd871ded11f2287c21f07b7649258dac87ee1a4a263a39770016ac4",
+          "role": "calibration",
+          "split_role_id": "906d9b311fe0aad33a8b60ea9f5fc7d3fe40ab57c5b14fa3bcf7c698e4d0842e"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 609090,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 2425566,
+            "float32_effect_payload_bytes": 63949824
+          },
+          "component_count": 257,
+          "component_id_set_sha256": "278f7ddd06f477e2ae27febb72479f2da13f73ef89aab9cf7c0190bf428b47c5",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/calibration_episodes.jsonl",
+          "dataset_sha256": "d63a7aa128d3eabdabb2c349a534a6d6dd6c5b36445ec07fda1f121f3ed0ba10",
+          "job_allocation_id": "060ec361713f8a8b9eea18449e20e346c541a6e0df3b5cf92068d020edca5f0d",
+          "packet_id": "21a7d21fbd6606a3d222b381439808e5f0a5410443959517b5d4f00179bd58ff",
+          "packet_index": 2,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-278f7ddd06f477e2.json",
+          "packet_sha256": "b1986dee6c5889aabf541789662883fd7033637e383bdea842c0c9b1d9b6412b",
+          "role": "calibration",
+          "split_role_id": "906d9b311fe0aad33a8b60ea9f5fc7d3fe40ab57c5b14fa3bcf7c698e4d0842e"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 661230,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 2633202,
+            "float32_effect_payload_bytes": 69424128
+          },
+          "component_count": 279,
+          "component_id_set_sha256": "cf799e4a58483b53c94885b93676056333ac1692eb0bcd416e973383bf7acb1a",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/calibration_episodes.jsonl",
+          "dataset_sha256": "d63a7aa128d3eabdabb2c349a534a6d6dd6c5b36445ec07fda1f121f3ed0ba10",
+          "job_allocation_id": "339e989b9f48416793d1389e75aa8e592535c6488a37a99a0562b162757e347a",
+          "packet_id": "275b0dbf9a2839bf311f5b8b2f5f50112c20de3151ca69542386201ece90ea95",
+          "packet_index": 3,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-cf799e4a58483b53.json",
+          "packet_sha256": "f93ae3e4efe4cc0786215105f46042ad7bb7cca714a16f89335b9b4e9e688271",
+          "role": "calibration",
+          "split_role_id": "906d9b311fe0aad33a8b60ea9f5fc7d3fe40ab57c5b14fa3bcf7c698e4d0842e"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 445560,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 1774344,
+            "float32_effect_payload_bytes": 46780416
+          },
+          "component_count": 188,
+          "component_id_set_sha256": "aabda2d04daa79b1fcbf7d36339b9e4adff18fb70186c5c23a16d723eaaa6423",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/calibration_episodes.jsonl",
+          "dataset_sha256": "d63a7aa128d3eabdabb2c349a534a6d6dd6c5b36445ec07fda1f121f3ed0ba10",
+          "job_allocation_id": "a0abd0ecfd56540d57206e10cbb18f4ef583f200341e4baf21ceb994e79654a3",
+          "packet_id": "2d9392a303d82104e75fd30c08a7cbc5f244158bfade28daee0960170c739aba",
+          "packet_index": 4,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-aabda2d04daa79b1.json",
+          "packet_sha256": "ebd6b6623b771867b6295eb3d654f19501599e946086aa2972f3945d3ec43937",
+          "role": "calibration",
+          "split_role_id": "906d9b311fe0aad33a8b60ea9f5fc7d3fe40ab57c5b14fa3bcf7c698e4d0842e"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 682560,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 2718144,
+            "float32_effect_payload_bytes": 71663616
+          },
+          "component_count": 288,
+          "component_id_set_sha256": "dafadedbe21d41ce53bd86e1817d7e9f051dac7569fa33c73d479560900ac47c",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/calibration_episodes.jsonl",
+          "dataset_sha256": "d63a7aa128d3eabdabb2c349a534a6d6dd6c5b36445ec07fda1f121f3ed0ba10",
+          "job_allocation_id": "78a9eba2f23e8a8b75acbc80be280e6bf714a6ea0074188b86d53ad143b1334b",
+          "packet_id": "3333608043a7a174b60eaded70e67d8e1f05ef7a130931416b5a4dcc3726ff20",
+          "packet_index": 5,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-dafadedbe21d41ce.json",
+          "packet_sha256": "b8a4772edf97691e70c5329bc692f0915b3ba6db3cbfad6a127e28033bdcae23",
+          "role": "calibration",
+          "split_role_id": "906d9b311fe0aad33a8b60ea9f5fc7d3fe40ab57c5b14fa3bcf7c698e4d0842e"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 573540,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 2283996,
+            "float32_effect_payload_bytes": 60217344
+          },
+          "component_count": 242,
+          "component_id_set_sha256": "346e043d2aa20892d6b94805e9f047129f28de64a254113a2bbeb7bf8d26445d",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/calibration_episodes.jsonl",
+          "dataset_sha256": "d63a7aa128d3eabdabb2c349a534a6d6dd6c5b36445ec07fda1f121f3ed0ba10",
+          "job_allocation_id": "de10b0f2d6e39282251d629cebc60bdf617f646b49a82322ea86e19f619979c2",
+          "packet_id": "5682eb9af7b1dcc6c1e8b2d3bfc27cc5f84d2404d904ddf067fd5b65fad1acbd",
+          "packet_index": 6,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-346e043d2aa20892.json",
+          "packet_sha256": "b32165962dae9ceff06776f3e40e60785c2fbfc1c3462f6fc89e7d55b145ff72",
+          "role": "calibration",
+          "split_role_id": "906d9b311fe0aad33a8b60ea9f5fc7d3fe40ab57c5b14fa3bcf7c698e4d0842e"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 682560,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 2718144,
+            "float32_effect_payload_bytes": 71663616
+          },
+          "component_count": 288,
+          "component_id_set_sha256": "da07324e8d1e148aceb666ad1da828aede173c80a220070ddb71a8c6c62fdf28",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/calibration_episodes.jsonl",
+          "dataset_sha256": "d63a7aa128d3eabdabb2c349a534a6d6dd6c5b36445ec07fda1f121f3ed0ba10",
+          "job_allocation_id": "ebe923910553001ea7194f4ed6c5ea6048ef3604e34aad38855337d0c6cf71cb",
+          "packet_id": "60bb47c8546bcd0eeb32d7201b23ace2a5df91cd1693732d51913fdba6260771",
+          "packet_index": 7,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-da07324e8d1e148a.json",
+          "packet_sha256": "cc05562010c64346c099998c416e2912d213c626d8d97b6904f81b5491d52300",
+          "role": "calibration",
+          "split_role_id": "906d9b311fe0aad33a8b60ea9f5fc7d3fe40ab57c5b14fa3bcf7c698e4d0842e"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 682560,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 2718144,
+            "float32_effect_payload_bytes": 71663616
+          },
+          "component_count": 288,
+          "component_id_set_sha256": "10ead17add7ffca99c7595ff64a576a0381f42377438c1fdc0a86b7cd211b6fc",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/calibration_episodes.jsonl",
+          "dataset_sha256": "d63a7aa128d3eabdabb2c349a534a6d6dd6c5b36445ec07fda1f121f3ed0ba10",
+          "job_allocation_id": "4124840b53fea5fe44dd8cc6fb12217b0e4c2a9d8dc74d42d7631bbb1223efa2",
+          "packet_id": "6993bc8b4d485bf2afef043cc10290bede6baccb93379be75cb70fe813f7affc",
+          "packet_index": 8,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-10ead17add7ffca9.json",
+          "packet_sha256": "01745c70993a9e5773a45c0b76eb4cc1392a6b2e61b2bc20552cda99d9e24949",
+          "role": "calibration",
+          "split_role_id": "906d9b311fe0aad33a8b60ea9f5fc7d3fe40ab57c5b14fa3bcf7c698e4d0842e"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 452670,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 1802658,
+            "float32_effect_payload_bytes": 47526912
+          },
+          "component_count": 191,
+          "component_id_set_sha256": "2ebce3008e2cba78f9776692d7374ef96e176ac421e6dc235e82faefb0888c8d",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/calibration_episodes.jsonl",
+          "dataset_sha256": "d63a7aa128d3eabdabb2c349a534a6d6dd6c5b36445ec07fda1f121f3ed0ba10",
+          "job_allocation_id": "5a02d000c1274e440953d455efb26c3bbc3c71c48d134d6026d08f893f33bea5",
+          "packet_id": "a4be7ef2b1ba9f91410548d246d4a718b572d6f19e9a00697aa62cfff573b235",
+          "packet_index": 9,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-2ebce3008e2cba78.json",
+          "packet_sha256": "d2af5eaece8034ee6615605c9f481a4da22c8d5fa8587a97bdb2aa09b6dd2a0c",
+          "role": "calibration",
+          "split_role_id": "906d9b311fe0aad33a8b60ea9f5fc7d3fe40ab57c5b14fa3bcf7c698e4d0842e"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 620940,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 2472756,
+            "float32_effect_payload_bytes": 65193984
+          },
+          "component_count": 262,
+          "component_id_set_sha256": "c41fd50cd81836eef71ba5ff281d6fa9db3513d1b694490e0bce02877b6144f4",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/calibration_episodes.jsonl",
+          "dataset_sha256": "d63a7aa128d3eabdabb2c349a534a6d6dd6c5b36445ec07fda1f121f3ed0ba10",
+          "job_allocation_id": "b7bde8d7f0cac441a6942ff441cdb65ced2bc3b08dd54b954d84e88786bb9b39",
+          "packet_id": "b22b31d6f6021e8f885074cf6b30a843ac1735d66c0187128fdaf716c9950c21",
+          "packet_index": 10,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-c41fd50cd81836ee.json",
+          "packet_sha256": "6245b3e12741cc5a8c4b9d7130757fa5b807259f4dbb1e506e03fddfa73e7a62",
+          "role": "calibration",
+          "split_role_id": "906d9b311fe0aad33a8b60ea9f5fc7d3fe40ab57c5b14fa3bcf7c698e4d0842e"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 682560,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 2718144,
+            "float32_effect_payload_bytes": 71663616
+          },
+          "component_count": 288,
+          "component_id_set_sha256": "c954655ba0e40dfff1b92ad3432d5ea17044791778c463a811635da7c1536f56",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/calibration_episodes.jsonl",
+          "dataset_sha256": "d63a7aa128d3eabdabb2c349a534a6d6dd6c5b36445ec07fda1f121f3ed0ba10",
+          "job_allocation_id": "89ca9d9174a725bfaf942842cf0e73e9f011caeaa6de68f1f5793671f3cef3d8",
+          "packet_id": "bb7f7b3ae4bd1e8dad254147d783c3add8e9c0f6123fdb8b070886a9b225a8c4",
+          "packet_index": 11,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-c954655ba0e40dff.json",
+          "packet_sha256": "1cc5b5b37a314037824914a893f0bde67a506cc22dbeda6ddc734a2d7f3a14ce",
+          "role": "calibration",
+          "split_role_id": "906d9b311fe0aad33a8b60ea9f5fc7d3fe40ab57c5b14fa3bcf7c698e4d0842e"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 443190,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 1764906,
+            "float32_effect_payload_bytes": 46531584
+          },
+          "component_count": 187,
+          "component_id_set_sha256": "65dbd0aa0e168a3245774050bdaa969f6fdffd470cc868bd4520f221f1dc0167",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/calibration_episodes.jsonl",
+          "dataset_sha256": "d63a7aa128d3eabdabb2c349a534a6d6dd6c5b36445ec07fda1f121f3ed0ba10",
+          "job_allocation_id": "2eb2d9c01c098caa50aa2f6a7d81b92f8729f44a3eced545a9145e3b423d01b8",
+          "packet_id": "c856247d9dacc7a130a605dd44ef2e5de5629fd684497de0b2770d63a2b3d4f7",
+          "packet_index": 12,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-65dbd0aa0e168a32.json",
+          "packet_sha256": "0b53b9e1a8c07014154294728c490d32cc6719dc638d06b828ab5c728ddbd963",
+          "role": "calibration",
+          "split_role_id": "906d9b311fe0aad33a8b60ea9f5fc7d3fe40ab57c5b14fa3bcf7c698e4d0842e"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 440820,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 1755468,
+            "float32_effect_payload_bytes": 46282752
+          },
+          "component_count": 186,
+          "component_id_set_sha256": "03c86c53cbc6af663f2ec8ab885bc414c121c1bedb0f93f2434b8321470cecee",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/calibration_episodes.jsonl",
+          "dataset_sha256": "d63a7aa128d3eabdabb2c349a534a6d6dd6c5b36445ec07fda1f121f3ed0ba10",
+          "job_allocation_id": "25cde0b76c269081d4de6d859348753523989a3baf31389e657643e2de85c563",
+          "packet_id": "ca33bc4e9c2f766f1678e66fe9366334686d3f2d6f44665f2db08acfbf211318",
+          "packet_index": 13,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-03c86c53cbc6af66.json",
+          "packet_sha256": "ab1d884207f66b1bf12de279ba013a30f38a3e253b56606484c68037fe57d5e2",
+          "role": "calibration",
+          "split_role_id": "906d9b311fe0aad33a8b60ea9f5fc7d3fe40ab57c5b14fa3bcf7c698e4d0842e"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 855570,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 3407118,
+            "float32_effect_payload_bytes": 89828352
+          },
+          "component_count": 361,
+          "component_id_set_sha256": "dc0b735519eedf83018f0a65c4e135173ada7357f8aa98ab1d4c7fe4fa4e0984",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/calibration_episodes.jsonl",
+          "dataset_sha256": "d63a7aa128d3eabdabb2c349a534a6d6dd6c5b36445ec07fda1f121f3ed0ba10",
+          "job_allocation_id": "ecfb8318ad9a943384652b99a47228f11019848765d9d59c90ce1ff7d7cd1721",
+          "packet_id": "e8fad14f8e43a8a0a0ab8215f740439a80546b30a373650b5c7868b300a878ec",
+          "packet_index": 14,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-dc0b735519eedf83.json",
+          "packet_sha256": "754ab4e8f78a7904be5b9c54f66021aef97984304d81b5bbdd6314aa188c14d8",
+          "role": "calibration",
+          "split_role_id": "906d9b311fe0aad33a8b60ea9f5fc7d3fe40ab57c5b14fa3bcf7c698e4d0842e"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 445560,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 1774344,
+            "float32_effect_payload_bytes": 46780416
+          },
+          "component_count": 188,
+          "component_id_set_sha256": "c3f55cc2b7f9ea9af14e8f80188001094ada0ee565887d7600d43eebdd908952",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/calibration_episodes.jsonl",
+          "dataset_sha256": "d63a7aa128d3eabdabb2c349a534a6d6dd6c5b36445ec07fda1f121f3ed0ba10",
+          "job_allocation_id": "3a760606f7d93acfe02ef9409f70c06271b869b55115676f332176b893ab9f24",
+          "packet_id": "eafd76598cb1240fd2e2efe9c7f0cf19b5dc5476dccad418c01d1992ef2780ab",
+          "packet_index": 15,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-c3f55cc2b7f9ea9a.json",
+          "packet_sha256": "e266e61c3a514f713b52425e4952af107324611641cbe84b87ddc0b63fd7abb8",
+          "role": "calibration",
+          "split_role_id": "906d9b311fe0aad33a8b60ea9f5fc7d3fe40ab57c5b14fa3bcf7c698e4d0842e"
+        }
+      ],
+      "resource_shape": {
+        "categories": 8,
+        "category_counts": {
+          "missing_or_untrusted_authority": 1716,
+          "other_invalid": 429,
+          "replayed": 429,
+          "revoked": 429,
+          "scope_invalid": 429,
+          "signature_invalid": 429,
+          "time_inactive": 429,
+          "valid_authority": 429
+        },
+        "condition_cells": 11,
+        "countsketch_dimension": 256,
+        "episodes": 4719,
+        "hidden_size": 4096,
+        "template_cells": 24,
+        "uncertainty_blocks": 8
+      },
+      "split_role_id": "906d9b311fe0aad33a8b60ea9f5fc7d3fe40ab57c5b14fa3bcf7c698e4d0842e",
+      "totals": {
+        "batch_forwards": 9555840,
+        "compute_jobs": 16,
+        "episode_forward_equivalents": 38054016,
+        "float32_effect_payload_bytes": 1003290624
+      }
+    },
+    "cluster_validation": {
+      "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/cluster_validation_episodes.jsonl",
+      "dataset_sha256": "d8b9bbfffca9fad7688fc708c86e390aedf1300ec5736e9435b83d764f7bee4e",
+      "jobs": [
+        {
+          "allocation": {
+            "batch_forwards": 601980,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 2397252,
+            "float32_effect_payload_bytes": 63203328
+          },
+          "component_count": 254,
+          "component_id_set_sha256": "1b0ea2820650d4a843ce8168f4311202f182f43c792f049cfb36db621ff8db1d",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/cluster_validation_episodes.jsonl",
+          "dataset_sha256": "d8b9bbfffca9fad7688fc708c86e390aedf1300ec5736e9435b83d764f7bee4e",
+          "job_allocation_id": "1729b3badf0cd2fa39f29a632bc390cdbb86adee8daf96844328d5935f0bf3bd",
+          "packet_id": "043f5aeafed27ced02843f2ee1281c6a916fa4ca0c0a0ff2f9644dce2f5cdf32",
+          "packet_index": 0,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-1b0ea2820650d4a8.json",
+          "packet_sha256": "562453b296a55b0739f62ded07eb538dbec1477c0079ff8675d406116c9f651a",
+          "role": "cluster_validation",
+          "split_role_id": "202637e821396765e920b3e72b03328ccc17debb911e245aff9d632345466676"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 675450,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 2689830,
+            "float32_effect_payload_bytes": 70917120
+          },
+          "component_count": 285,
+          "component_id_set_sha256": "684c00d6dda68fdccb294e4d9a8801157ba370f1758ecf824e3365f7c199aef4",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/cluster_validation_episodes.jsonl",
+          "dataset_sha256": "d8b9bbfffca9fad7688fc708c86e390aedf1300ec5736e9435b83d764f7bee4e",
+          "job_allocation_id": "c3af1137c944e8cde2902ab1bd2c8b2068f8da76deae3d30a0c2a5ce20fa8c69",
+          "packet_id": "20402f6d492827b42f64f09ae72b9354a75dfc9ecd82a89aa816bba1ea9270ba",
+          "packet_index": 1,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-684c00d6dda68fdc.json",
+          "packet_sha256": "0cd4ce7c5dd871ded11f2287c21f07b7649258dac87ee1a4a263a39770016ac4",
+          "role": "cluster_validation",
+          "split_role_id": "202637e821396765e920b3e72b03328ccc17debb911e245aff9d632345466676"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 609090,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 2425566,
+            "float32_effect_payload_bytes": 63949824
+          },
+          "component_count": 257,
+          "component_id_set_sha256": "278f7ddd06f477e2ae27febb72479f2da13f73ef89aab9cf7c0190bf428b47c5",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/cluster_validation_episodes.jsonl",
+          "dataset_sha256": "d8b9bbfffca9fad7688fc708c86e390aedf1300ec5736e9435b83d764f7bee4e",
+          "job_allocation_id": "379553e8bdfda47e44e0db21cc0ac7b3fc75058276d22a3362089e32c6beb0ad",
+          "packet_id": "21a7d21fbd6606a3d222b381439808e5f0a5410443959517b5d4f00179bd58ff",
+          "packet_index": 2,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-278f7ddd06f477e2.json",
+          "packet_sha256": "b1986dee6c5889aabf541789662883fd7033637e383bdea842c0c9b1d9b6412b",
+          "role": "cluster_validation",
+          "split_role_id": "202637e821396765e920b3e72b03328ccc17debb911e245aff9d632345466676"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 661230,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 2633202,
+            "float32_effect_payload_bytes": 69424128
+          },
+          "component_count": 279,
+          "component_id_set_sha256": "cf799e4a58483b53c94885b93676056333ac1692eb0bcd416e973383bf7acb1a",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/cluster_validation_episodes.jsonl",
+          "dataset_sha256": "d8b9bbfffca9fad7688fc708c86e390aedf1300ec5736e9435b83d764f7bee4e",
+          "job_allocation_id": "321e6655dd25c512fb5ab415f20e9adeb0d24ceb9665edf19a1c3c8c63829804",
+          "packet_id": "275b0dbf9a2839bf311f5b8b2f5f50112c20de3151ca69542386201ece90ea95",
+          "packet_index": 3,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-cf799e4a58483b53.json",
+          "packet_sha256": "f93ae3e4efe4cc0786215105f46042ad7bb7cca714a16f89335b9b4e9e688271",
+          "role": "cluster_validation",
+          "split_role_id": "202637e821396765e920b3e72b03328ccc17debb911e245aff9d632345466676"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 445560,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 1774344,
+            "float32_effect_payload_bytes": 46780416
+          },
+          "component_count": 188,
+          "component_id_set_sha256": "aabda2d04daa79b1fcbf7d36339b9e4adff18fb70186c5c23a16d723eaaa6423",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/cluster_validation_episodes.jsonl",
+          "dataset_sha256": "d8b9bbfffca9fad7688fc708c86e390aedf1300ec5736e9435b83d764f7bee4e",
+          "job_allocation_id": "7498aae301079adf752b70d389f24639d8ca551f6f9c7c19f48c88703d5d2b68",
+          "packet_id": "2d9392a303d82104e75fd30c08a7cbc5f244158bfade28daee0960170c739aba",
+          "packet_index": 4,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-aabda2d04daa79b1.json",
+          "packet_sha256": "ebd6b6623b771867b6295eb3d654f19501599e946086aa2972f3945d3ec43937",
+          "role": "cluster_validation",
+          "split_role_id": "202637e821396765e920b3e72b03328ccc17debb911e245aff9d632345466676"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 682560,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 2718144,
+            "float32_effect_payload_bytes": 71663616
+          },
+          "component_count": 288,
+          "component_id_set_sha256": "dafadedbe21d41ce53bd86e1817d7e9f051dac7569fa33c73d479560900ac47c",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/cluster_validation_episodes.jsonl",
+          "dataset_sha256": "d8b9bbfffca9fad7688fc708c86e390aedf1300ec5736e9435b83d764f7bee4e",
+          "job_allocation_id": "0cabe6869429653a288ab85fe569c988c8069d162eefe2d508906f87bea47638",
+          "packet_id": "3333608043a7a174b60eaded70e67d8e1f05ef7a130931416b5a4dcc3726ff20",
+          "packet_index": 5,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-dafadedbe21d41ce.json",
+          "packet_sha256": "b8a4772edf97691e70c5329bc692f0915b3ba6db3cbfad6a127e28033bdcae23",
+          "role": "cluster_validation",
+          "split_role_id": "202637e821396765e920b3e72b03328ccc17debb911e245aff9d632345466676"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 573540,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 2283996,
+            "float32_effect_payload_bytes": 60217344
+          },
+          "component_count": 242,
+          "component_id_set_sha256": "346e043d2aa20892d6b94805e9f047129f28de64a254113a2bbeb7bf8d26445d",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/cluster_validation_episodes.jsonl",
+          "dataset_sha256": "d8b9bbfffca9fad7688fc708c86e390aedf1300ec5736e9435b83d764f7bee4e",
+          "job_allocation_id": "dbec927d7f73b3abfd86c81916edccc6dacfb14b3e873676989d39fff2e27673",
+          "packet_id": "5682eb9af7b1dcc6c1e8b2d3bfc27cc5f84d2404d904ddf067fd5b65fad1acbd",
+          "packet_index": 6,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-346e043d2aa20892.json",
+          "packet_sha256": "b32165962dae9ceff06776f3e40e60785c2fbfc1c3462f6fc89e7d55b145ff72",
+          "role": "cluster_validation",
+          "split_role_id": "202637e821396765e920b3e72b03328ccc17debb911e245aff9d632345466676"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 682560,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 2718144,
+            "float32_effect_payload_bytes": 71663616
+          },
+          "component_count": 288,
+          "component_id_set_sha256": "da07324e8d1e148aceb666ad1da828aede173c80a220070ddb71a8c6c62fdf28",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/cluster_validation_episodes.jsonl",
+          "dataset_sha256": "d8b9bbfffca9fad7688fc708c86e390aedf1300ec5736e9435b83d764f7bee4e",
+          "job_allocation_id": "429c4c6d68e4bada18b9c15e2c6f6ddfe45b8db99ed3822c8d12e221f3bbe681",
+          "packet_id": "60bb47c8546bcd0eeb32d7201b23ace2a5df91cd1693732d51913fdba6260771",
+          "packet_index": 7,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-da07324e8d1e148a.json",
+          "packet_sha256": "cc05562010c64346c099998c416e2912d213c626d8d97b6904f81b5491d52300",
+          "role": "cluster_validation",
+          "split_role_id": "202637e821396765e920b3e72b03328ccc17debb911e245aff9d632345466676"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 682560,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 2718144,
+            "float32_effect_payload_bytes": 71663616
+          },
+          "component_count": 288,
+          "component_id_set_sha256": "10ead17add7ffca99c7595ff64a576a0381f42377438c1fdc0a86b7cd211b6fc",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/cluster_validation_episodes.jsonl",
+          "dataset_sha256": "d8b9bbfffca9fad7688fc708c86e390aedf1300ec5736e9435b83d764f7bee4e",
+          "job_allocation_id": "02883b0f42bbcb5918b08917c8307cc4ab7a32b6d31f83480bc5c0fc3a1a87bd",
+          "packet_id": "6993bc8b4d485bf2afef043cc10290bede6baccb93379be75cb70fe813f7affc",
+          "packet_index": 8,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-10ead17add7ffca9.json",
+          "packet_sha256": "01745c70993a9e5773a45c0b76eb4cc1392a6b2e61b2bc20552cda99d9e24949",
+          "role": "cluster_validation",
+          "split_role_id": "202637e821396765e920b3e72b03328ccc17debb911e245aff9d632345466676"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 452670,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 1802658,
+            "float32_effect_payload_bytes": 47526912
+          },
+          "component_count": 191,
+          "component_id_set_sha256": "2ebce3008e2cba78f9776692d7374ef96e176ac421e6dc235e82faefb0888c8d",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/cluster_validation_episodes.jsonl",
+          "dataset_sha256": "d8b9bbfffca9fad7688fc708c86e390aedf1300ec5736e9435b83d764f7bee4e",
+          "job_allocation_id": "18066d44fa1c92b38a8c79188c2b53a3eb0e3409af29bd07259a604c4bd60b51",
+          "packet_id": "a4be7ef2b1ba9f91410548d246d4a718b572d6f19e9a00697aa62cfff573b235",
+          "packet_index": 9,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-2ebce3008e2cba78.json",
+          "packet_sha256": "d2af5eaece8034ee6615605c9f481a4da22c8d5fa8587a97bdb2aa09b6dd2a0c",
+          "role": "cluster_validation",
+          "split_role_id": "202637e821396765e920b3e72b03328ccc17debb911e245aff9d632345466676"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 620940,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 2472756,
+            "float32_effect_payload_bytes": 65193984
+          },
+          "component_count": 262,
+          "component_id_set_sha256": "c41fd50cd81836eef71ba5ff281d6fa9db3513d1b694490e0bce02877b6144f4",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/cluster_validation_episodes.jsonl",
+          "dataset_sha256": "d8b9bbfffca9fad7688fc708c86e390aedf1300ec5736e9435b83d764f7bee4e",
+          "job_allocation_id": "f15d317740fce1631900f8b3c74ce85b2fc2bf340fcdcfb8aa6f192d8a94e524",
+          "packet_id": "b22b31d6f6021e8f885074cf6b30a843ac1735d66c0187128fdaf716c9950c21",
+          "packet_index": 10,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-c41fd50cd81836ee.json",
+          "packet_sha256": "6245b3e12741cc5a8c4b9d7130757fa5b807259f4dbb1e506e03fddfa73e7a62",
+          "role": "cluster_validation",
+          "split_role_id": "202637e821396765e920b3e72b03328ccc17debb911e245aff9d632345466676"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 682560,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 2718144,
+            "float32_effect_payload_bytes": 71663616
+          },
+          "component_count": 288,
+          "component_id_set_sha256": "c954655ba0e40dfff1b92ad3432d5ea17044791778c463a811635da7c1536f56",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/cluster_validation_episodes.jsonl",
+          "dataset_sha256": "d8b9bbfffca9fad7688fc708c86e390aedf1300ec5736e9435b83d764f7bee4e",
+          "job_allocation_id": "acb3610beec3a7a1b9fe9c58f814372d47ef192277000dbfb28e0466f8a12c69",
+          "packet_id": "bb7f7b3ae4bd1e8dad254147d783c3add8e9c0f6123fdb8b070886a9b225a8c4",
+          "packet_index": 11,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-c954655ba0e40dff.json",
+          "packet_sha256": "1cc5b5b37a314037824914a893f0bde67a506cc22dbeda6ddc734a2d7f3a14ce",
+          "role": "cluster_validation",
+          "split_role_id": "202637e821396765e920b3e72b03328ccc17debb911e245aff9d632345466676"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 443190,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 1764906,
+            "float32_effect_payload_bytes": 46531584
+          },
+          "component_count": 187,
+          "component_id_set_sha256": "65dbd0aa0e168a3245774050bdaa969f6fdffd470cc868bd4520f221f1dc0167",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/cluster_validation_episodes.jsonl",
+          "dataset_sha256": "d8b9bbfffca9fad7688fc708c86e390aedf1300ec5736e9435b83d764f7bee4e",
+          "job_allocation_id": "53df8d20bb72ab5bc519edacd0a1d4a8f3a5c143c130c8d417874e3eafc293ba",
+          "packet_id": "c856247d9dacc7a130a605dd44ef2e5de5629fd684497de0b2770d63a2b3d4f7",
+          "packet_index": 12,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-65dbd0aa0e168a32.json",
+          "packet_sha256": "0b53b9e1a8c07014154294728c490d32cc6719dc638d06b828ab5c728ddbd963",
+          "role": "cluster_validation",
+          "split_role_id": "202637e821396765e920b3e72b03328ccc17debb911e245aff9d632345466676"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 440820,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 1755468,
+            "float32_effect_payload_bytes": 46282752
+          },
+          "component_count": 186,
+          "component_id_set_sha256": "03c86c53cbc6af663f2ec8ab885bc414c121c1bedb0f93f2434b8321470cecee",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/cluster_validation_episodes.jsonl",
+          "dataset_sha256": "d8b9bbfffca9fad7688fc708c86e390aedf1300ec5736e9435b83d764f7bee4e",
+          "job_allocation_id": "8554106f5ca10d7eee07f93c26f079acc4364a10bbb173172d943013fd35b817",
+          "packet_id": "ca33bc4e9c2f766f1678e66fe9366334686d3f2d6f44665f2db08acfbf211318",
+          "packet_index": 13,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-03c86c53cbc6af66.json",
+          "packet_sha256": "ab1d884207f66b1bf12de279ba013a30f38a3e253b56606484c68037fe57d5e2",
+          "role": "cluster_validation",
+          "split_role_id": "202637e821396765e920b3e72b03328ccc17debb911e245aff9d632345466676"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 855570,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 3407118,
+            "float32_effect_payload_bytes": 89828352
+          },
+          "component_count": 361,
+          "component_id_set_sha256": "dc0b735519eedf83018f0a65c4e135173ada7357f8aa98ab1d4c7fe4fa4e0984",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/cluster_validation_episodes.jsonl",
+          "dataset_sha256": "d8b9bbfffca9fad7688fc708c86e390aedf1300ec5736e9435b83d764f7bee4e",
+          "job_allocation_id": "a105430c761c40948de263f3b6490dccb03f0e03ce48a22ba8c46a1c93da9171",
+          "packet_id": "e8fad14f8e43a8a0a0ab8215f740439a80546b30a373650b5c7868b300a878ec",
+          "packet_index": 14,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-dc0b735519eedf83.json",
+          "packet_sha256": "754ab4e8f78a7904be5b9c54f66021aef97984304d81b5bbdd6314aa188c14d8",
+          "role": "cluster_validation",
+          "split_role_id": "202637e821396765e920b3e72b03328ccc17debb911e245aff9d632345466676"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 445560,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 1774344,
+            "float32_effect_payload_bytes": 46780416
+          },
+          "component_count": 188,
+          "component_id_set_sha256": "c3f55cc2b7f9ea9af14e8f80188001094ada0ee565887d7600d43eebdd908952",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/cluster_validation_episodes.jsonl",
+          "dataset_sha256": "d8b9bbfffca9fad7688fc708c86e390aedf1300ec5736e9435b83d764f7bee4e",
+          "job_allocation_id": "689719ff7685ef54a703968a6499def2774ed2d02773d4dbb852ac6b31fe390b",
+          "packet_id": "eafd76598cb1240fd2e2efe9c7f0cf19b5dc5476dccad418c01d1992ef2780ab",
+          "packet_index": 15,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-c3f55cc2b7f9ea9a.json",
+          "packet_sha256": "e266e61c3a514f713b52425e4952af107324611641cbe84b87ddc0b63fd7abb8",
+          "role": "cluster_validation",
+          "split_role_id": "202637e821396765e920b3e72b03328ccc17debb911e245aff9d632345466676"
+        }
+      ],
+      "resource_shape": {
+        "categories": 8,
+        "category_counts": {
+          "missing_or_untrusted_authority": 1716,
+          "other_invalid": 429,
+          "replayed": 429,
+          "revoked": 429,
+          "scope_invalid": 429,
+          "signature_invalid": 429,
+          "time_inactive": 429,
+          "valid_authority": 429
+        },
+        "condition_cells": 11,
+        "countsketch_dimension": 256,
+        "episodes": 4719,
+        "hidden_size": 4096,
+        "template_cells": 24,
+        "uncertainty_blocks": 8
+      },
+      "split_role_id": "202637e821396765e920b3e72b03328ccc17debb911e245aff9d632345466676",
+      "totals": {
+        "batch_forwards": 9555840,
+        "compute_jobs": 16,
+        "episode_forward_equivalents": 38054016,
+        "float32_effect_payload_bytes": 1003290624
+      }
+    },
+    "discovery": {
+      "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/discovery_episodes.jsonl",
+      "dataset_sha256": "982e2cb0cbb376cf429e0ab1196bcd5cc3619bbf4f8d81361b2c275c6dc41d62",
+      "jobs": [
+        {
+          "allocation": {
+            "batch_forwards": 601980,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 2397252,
+            "float32_effect_payload_bytes": 63203328
+          },
+          "component_count": 254,
+          "component_id_set_sha256": "1b0ea2820650d4a843ce8168f4311202f182f43c792f049cfb36db621ff8db1d",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/discovery_episodes.jsonl",
+          "dataset_sha256": "982e2cb0cbb376cf429e0ab1196bcd5cc3619bbf4f8d81361b2c275c6dc41d62",
+          "job_allocation_id": "852fa96e3f5e3db8e329638a5dc2f3d3148d7aba95f25d4df42b564a4d6240f7",
+          "packet_id": "043f5aeafed27ced02843f2ee1281c6a916fa4ca0c0a0ff2f9644dce2f5cdf32",
+          "packet_index": 0,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-1b0ea2820650d4a8.json",
+          "packet_sha256": "562453b296a55b0739f62ded07eb538dbec1477c0079ff8675d406116c9f651a",
+          "role": "discovery",
+          "split_role_id": "236958a0a55a7bfb45e96c5e5e2b2da084d45dff71c5cada88db4e452520ed8f"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 675450,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 2689830,
+            "float32_effect_payload_bytes": 70917120
+          },
+          "component_count": 285,
+          "component_id_set_sha256": "684c00d6dda68fdccb294e4d9a8801157ba370f1758ecf824e3365f7c199aef4",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/discovery_episodes.jsonl",
+          "dataset_sha256": "982e2cb0cbb376cf429e0ab1196bcd5cc3619bbf4f8d81361b2c275c6dc41d62",
+          "job_allocation_id": "b16cff7bcdc585816c5b7c299fbd44d9d238675d9ad04b99f3acae5672bd4e08",
+          "packet_id": "20402f6d492827b42f64f09ae72b9354a75dfc9ecd82a89aa816bba1ea9270ba",
+          "packet_index": 1,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-684c00d6dda68fdc.json",
+          "packet_sha256": "0cd4ce7c5dd871ded11f2287c21f07b7649258dac87ee1a4a263a39770016ac4",
+          "role": "discovery",
+          "split_role_id": "236958a0a55a7bfb45e96c5e5e2b2da084d45dff71c5cada88db4e452520ed8f"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 609090,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 2425566,
+            "float32_effect_payload_bytes": 63949824
+          },
+          "component_count": 257,
+          "component_id_set_sha256": "278f7ddd06f477e2ae27febb72479f2da13f73ef89aab9cf7c0190bf428b47c5",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/discovery_episodes.jsonl",
+          "dataset_sha256": "982e2cb0cbb376cf429e0ab1196bcd5cc3619bbf4f8d81361b2c275c6dc41d62",
+          "job_allocation_id": "e01bde7de6094252e00de6ac2ab585a6177be1eb4a9f8b598785ca331fb27d2a",
+          "packet_id": "21a7d21fbd6606a3d222b381439808e5f0a5410443959517b5d4f00179bd58ff",
+          "packet_index": 2,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-278f7ddd06f477e2.json",
+          "packet_sha256": "b1986dee6c5889aabf541789662883fd7033637e383bdea842c0c9b1d9b6412b",
+          "role": "discovery",
+          "split_role_id": "236958a0a55a7bfb45e96c5e5e2b2da084d45dff71c5cada88db4e452520ed8f"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 661230,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 2633202,
+            "float32_effect_payload_bytes": 69424128
+          },
+          "component_count": 279,
+          "component_id_set_sha256": "cf799e4a58483b53c94885b93676056333ac1692eb0bcd416e973383bf7acb1a",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/discovery_episodes.jsonl",
+          "dataset_sha256": "982e2cb0cbb376cf429e0ab1196bcd5cc3619bbf4f8d81361b2c275c6dc41d62",
+          "job_allocation_id": "d92f13fb1e2f5ad3be58cf205fe15053dd65252fbf47a646b3991dcd7e9e5b76",
+          "packet_id": "275b0dbf9a2839bf311f5b8b2f5f50112c20de3151ca69542386201ece90ea95",
+          "packet_index": 3,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-cf799e4a58483b53.json",
+          "packet_sha256": "f93ae3e4efe4cc0786215105f46042ad7bb7cca714a16f89335b9b4e9e688271",
+          "role": "discovery",
+          "split_role_id": "236958a0a55a7bfb45e96c5e5e2b2da084d45dff71c5cada88db4e452520ed8f"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 445560,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 1774344,
+            "float32_effect_payload_bytes": 46780416
+          },
+          "component_count": 188,
+          "component_id_set_sha256": "aabda2d04daa79b1fcbf7d36339b9e4adff18fb70186c5c23a16d723eaaa6423",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/discovery_episodes.jsonl",
+          "dataset_sha256": "982e2cb0cbb376cf429e0ab1196bcd5cc3619bbf4f8d81361b2c275c6dc41d62",
+          "job_allocation_id": "cc930ef8004eb0ad4123711006d3a7af5ae422830ed3834cdc082bb4561da4d4",
+          "packet_id": "2d9392a303d82104e75fd30c08a7cbc5f244158bfade28daee0960170c739aba",
+          "packet_index": 4,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-aabda2d04daa79b1.json",
+          "packet_sha256": "ebd6b6623b771867b6295eb3d654f19501599e946086aa2972f3945d3ec43937",
+          "role": "discovery",
+          "split_role_id": "236958a0a55a7bfb45e96c5e5e2b2da084d45dff71c5cada88db4e452520ed8f"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 682560,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 2718144,
+            "float32_effect_payload_bytes": 71663616
+          },
+          "component_count": 288,
+          "component_id_set_sha256": "dafadedbe21d41ce53bd86e1817d7e9f051dac7569fa33c73d479560900ac47c",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/discovery_episodes.jsonl",
+          "dataset_sha256": "982e2cb0cbb376cf429e0ab1196bcd5cc3619bbf4f8d81361b2c275c6dc41d62",
+          "job_allocation_id": "89bd91536bfaa8a59f52351a72ad87b0d2bf616c05f97a898b89447c86a68a5f",
+          "packet_id": "3333608043a7a174b60eaded70e67d8e1f05ef7a130931416b5a4dcc3726ff20",
+          "packet_index": 5,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-dafadedbe21d41ce.json",
+          "packet_sha256": "b8a4772edf97691e70c5329bc692f0915b3ba6db3cbfad6a127e28033bdcae23",
+          "role": "discovery",
+          "split_role_id": "236958a0a55a7bfb45e96c5e5e2b2da084d45dff71c5cada88db4e452520ed8f"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 573540,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 2283996,
+            "float32_effect_payload_bytes": 60217344
+          },
+          "component_count": 242,
+          "component_id_set_sha256": "346e043d2aa20892d6b94805e9f047129f28de64a254113a2bbeb7bf8d26445d",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/discovery_episodes.jsonl",
+          "dataset_sha256": "982e2cb0cbb376cf429e0ab1196bcd5cc3619bbf4f8d81361b2c275c6dc41d62",
+          "job_allocation_id": "85502111197f3c82b236d8d53b98ed3926e22459076d8e912efa7422ac839060",
+          "packet_id": "5682eb9af7b1dcc6c1e8b2d3bfc27cc5f84d2404d904ddf067fd5b65fad1acbd",
+          "packet_index": 6,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-346e043d2aa20892.json",
+          "packet_sha256": "b32165962dae9ceff06776f3e40e60785c2fbfc1c3462f6fc89e7d55b145ff72",
+          "role": "discovery",
+          "split_role_id": "236958a0a55a7bfb45e96c5e5e2b2da084d45dff71c5cada88db4e452520ed8f"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 682560,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 2718144,
+            "float32_effect_payload_bytes": 71663616
+          },
+          "component_count": 288,
+          "component_id_set_sha256": "da07324e8d1e148aceb666ad1da828aede173c80a220070ddb71a8c6c62fdf28",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/discovery_episodes.jsonl",
+          "dataset_sha256": "982e2cb0cbb376cf429e0ab1196bcd5cc3619bbf4f8d81361b2c275c6dc41d62",
+          "job_allocation_id": "cdae033aab3c93c52abf688f11db5baf68b8610ac9c565441d7eca9d722ccb5d",
+          "packet_id": "60bb47c8546bcd0eeb32d7201b23ace2a5df91cd1693732d51913fdba6260771",
+          "packet_index": 7,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-da07324e8d1e148a.json",
+          "packet_sha256": "cc05562010c64346c099998c416e2912d213c626d8d97b6904f81b5491d52300",
+          "role": "discovery",
+          "split_role_id": "236958a0a55a7bfb45e96c5e5e2b2da084d45dff71c5cada88db4e452520ed8f"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 682560,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 2718144,
+            "float32_effect_payload_bytes": 71663616
+          },
+          "component_count": 288,
+          "component_id_set_sha256": "10ead17add7ffca99c7595ff64a576a0381f42377438c1fdc0a86b7cd211b6fc",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/discovery_episodes.jsonl",
+          "dataset_sha256": "982e2cb0cbb376cf429e0ab1196bcd5cc3619bbf4f8d81361b2c275c6dc41d62",
+          "job_allocation_id": "498cc5cf13cc24b39f1db4bd986586985bf820ba97ed51bf38de60075ec05faf",
+          "packet_id": "6993bc8b4d485bf2afef043cc10290bede6baccb93379be75cb70fe813f7affc",
+          "packet_index": 8,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-10ead17add7ffca9.json",
+          "packet_sha256": "01745c70993a9e5773a45c0b76eb4cc1392a6b2e61b2bc20552cda99d9e24949",
+          "role": "discovery",
+          "split_role_id": "236958a0a55a7bfb45e96c5e5e2b2da084d45dff71c5cada88db4e452520ed8f"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 452670,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 1802658,
+            "float32_effect_payload_bytes": 47526912
+          },
+          "component_count": 191,
+          "component_id_set_sha256": "2ebce3008e2cba78f9776692d7374ef96e176ac421e6dc235e82faefb0888c8d",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/discovery_episodes.jsonl",
+          "dataset_sha256": "982e2cb0cbb376cf429e0ab1196bcd5cc3619bbf4f8d81361b2c275c6dc41d62",
+          "job_allocation_id": "c66a5da3b823632a2d4971f3cc3950b8a46e5c4654cd87b259a24cff7bbe8da5",
+          "packet_id": "a4be7ef2b1ba9f91410548d246d4a718b572d6f19e9a00697aa62cfff573b235",
+          "packet_index": 9,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-2ebce3008e2cba78.json",
+          "packet_sha256": "d2af5eaece8034ee6615605c9f481a4da22c8d5fa8587a97bdb2aa09b6dd2a0c",
+          "role": "discovery",
+          "split_role_id": "236958a0a55a7bfb45e96c5e5e2b2da084d45dff71c5cada88db4e452520ed8f"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 620940,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 2472756,
+            "float32_effect_payload_bytes": 65193984
+          },
+          "component_count": 262,
+          "component_id_set_sha256": "c41fd50cd81836eef71ba5ff281d6fa9db3513d1b694490e0bce02877b6144f4",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/discovery_episodes.jsonl",
+          "dataset_sha256": "982e2cb0cbb376cf429e0ab1196bcd5cc3619bbf4f8d81361b2c275c6dc41d62",
+          "job_allocation_id": "2868aa8368b9eed53f274579aaffb1007bae8664d96ebff03a1298c8d6428ab8",
+          "packet_id": "b22b31d6f6021e8f885074cf6b30a843ac1735d66c0187128fdaf716c9950c21",
+          "packet_index": 10,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-c41fd50cd81836ee.json",
+          "packet_sha256": "6245b3e12741cc5a8c4b9d7130757fa5b807259f4dbb1e506e03fddfa73e7a62",
+          "role": "discovery",
+          "split_role_id": "236958a0a55a7bfb45e96c5e5e2b2da084d45dff71c5cada88db4e452520ed8f"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 682560,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 2718144,
+            "float32_effect_payload_bytes": 71663616
+          },
+          "component_count": 288,
+          "component_id_set_sha256": "c954655ba0e40dfff1b92ad3432d5ea17044791778c463a811635da7c1536f56",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/discovery_episodes.jsonl",
+          "dataset_sha256": "982e2cb0cbb376cf429e0ab1196bcd5cc3619bbf4f8d81361b2c275c6dc41d62",
+          "job_allocation_id": "06eae47b2d2fd8854d9de0e152249579af5a3d39233d9c890656a7b59a97a430",
+          "packet_id": "bb7f7b3ae4bd1e8dad254147d783c3add8e9c0f6123fdb8b070886a9b225a8c4",
+          "packet_index": 11,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-c954655ba0e40dff.json",
+          "packet_sha256": "1cc5b5b37a314037824914a893f0bde67a506cc22dbeda6ddc734a2d7f3a14ce",
+          "role": "discovery",
+          "split_role_id": "236958a0a55a7bfb45e96c5e5e2b2da084d45dff71c5cada88db4e452520ed8f"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 443190,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 1764906,
+            "float32_effect_payload_bytes": 46531584
+          },
+          "component_count": 187,
+          "component_id_set_sha256": "65dbd0aa0e168a3245774050bdaa969f6fdffd470cc868bd4520f221f1dc0167",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/discovery_episodes.jsonl",
+          "dataset_sha256": "982e2cb0cbb376cf429e0ab1196bcd5cc3619bbf4f8d81361b2c275c6dc41d62",
+          "job_allocation_id": "2ba1ff97586135076b715c47b71c7beb25da6541931738ebec497462319ddae5",
+          "packet_id": "c856247d9dacc7a130a605dd44ef2e5de5629fd684497de0b2770d63a2b3d4f7",
+          "packet_index": 12,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-65dbd0aa0e168a32.json",
+          "packet_sha256": "0b53b9e1a8c07014154294728c490d32cc6719dc638d06b828ab5c728ddbd963",
+          "role": "discovery",
+          "split_role_id": "236958a0a55a7bfb45e96c5e5e2b2da084d45dff71c5cada88db4e452520ed8f"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 440820,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 1755468,
+            "float32_effect_payload_bytes": 46282752
+          },
+          "component_count": 186,
+          "component_id_set_sha256": "03c86c53cbc6af663f2ec8ab885bc414c121c1bedb0f93f2434b8321470cecee",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/discovery_episodes.jsonl",
+          "dataset_sha256": "982e2cb0cbb376cf429e0ab1196bcd5cc3619bbf4f8d81361b2c275c6dc41d62",
+          "job_allocation_id": "92a9bde896f08cab387fb0e845fdd1a82fcd1bff8a7510f1c33936219848f09c",
+          "packet_id": "ca33bc4e9c2f766f1678e66fe9366334686d3f2d6f44665f2db08acfbf211318",
+          "packet_index": 13,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-03c86c53cbc6af66.json",
+          "packet_sha256": "ab1d884207f66b1bf12de279ba013a30f38a3e253b56606484c68037fe57d5e2",
+          "role": "discovery",
+          "split_role_id": "236958a0a55a7bfb45e96c5e5e2b2da084d45dff71c5cada88db4e452520ed8f"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 855570,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 3407118,
+            "float32_effect_payload_bytes": 89828352
+          },
+          "component_count": 361,
+          "component_id_set_sha256": "dc0b735519eedf83018f0a65c4e135173ada7357f8aa98ab1d4c7fe4fa4e0984",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/discovery_episodes.jsonl",
+          "dataset_sha256": "982e2cb0cbb376cf429e0ab1196bcd5cc3619bbf4f8d81361b2c275c6dc41d62",
+          "job_allocation_id": "f010219a3c71c86f49d0061b83a7b96081ee7d73f0c2a6b399843746cf21fa0d",
+          "packet_id": "e8fad14f8e43a8a0a0ab8215f740439a80546b30a373650b5c7868b300a878ec",
+          "packet_index": 14,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-dc0b735519eedf83.json",
+          "packet_sha256": "754ab4e8f78a7904be5b9c54f66021aef97984304d81b5bbdd6314aa188c14d8",
+          "role": "discovery",
+          "split_role_id": "236958a0a55a7bfb45e96c5e5e2b2da084d45dff71c5cada88db4e452520ed8f"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 445560,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 1774344,
+            "float32_effect_payload_bytes": 46780416
+          },
+          "component_count": 188,
+          "component_id_set_sha256": "c3f55cc2b7f9ea9af14e8f80188001094ada0ee565887d7600d43eebdd908952",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/discovery_episodes.jsonl",
+          "dataset_sha256": "982e2cb0cbb376cf429e0ab1196bcd5cc3619bbf4f8d81361b2c275c6dc41d62",
+          "job_allocation_id": "0c2feb874a5ce51b0c9cec76aa0b1bf492ff2766af26fa637667d46aec058e78",
+          "packet_id": "eafd76598cb1240fd2e2efe9c7f0cf19b5dc5476dccad418c01d1992ef2780ab",
+          "packet_index": 15,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-c3f55cc2b7f9ea9a.json",
+          "packet_sha256": "e266e61c3a514f713b52425e4952af107324611641cbe84b87ddc0b63fd7abb8",
+          "role": "discovery",
+          "split_role_id": "236958a0a55a7bfb45e96c5e5e2b2da084d45dff71c5cada88db4e452520ed8f"
+        }
+      ],
+      "resource_shape": {
+        "categories": 8,
+        "category_counts": {
+          "missing_or_untrusted_authority": 1716,
+          "other_invalid": 429,
+          "replayed": 429,
+          "revoked": 429,
+          "scope_invalid": 429,
+          "signature_invalid": 429,
+          "time_inactive": 429,
+          "valid_authority": 429
+        },
+        "condition_cells": 11,
+        "countsketch_dimension": 256,
+        "episodes": 4719,
+        "hidden_size": 4096,
+        "template_cells": 24,
+        "uncertainty_blocks": 8
+      },
+      "split_role_id": "236958a0a55a7bfb45e96c5e5e2b2da084d45dff71c5cada88db4e452520ed8f",
+      "totals": {
+        "batch_forwards": 9555840,
+        "compute_jobs": 16,
+        "episode_forward_equivalents": 38054016,
+        "float32_effect_payload_bytes": 1003290624
+      }
+    },
+    "sae_training": {
+      "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/sae_training_episodes.jsonl",
+      "dataset_sha256": "3673e72770c5bd1229a1455e4b5aa0e489e2f779f579fe47a42301458b7c71d4",
+      "jobs": [
+        {
+          "allocation": {
+            "batch_forwards": 799084,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 3196336,
+            "float32_effect_payload_bytes": 65284096
+          },
+          "component_count": 254,
+          "component_id_set_sha256": "1b0ea2820650d4a843ce8168f4311202f182f43c792f049cfb36db621ff8db1d",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/sae_training_episodes.jsonl",
+          "dataset_sha256": "3673e72770c5bd1229a1455e4b5aa0e489e2f779f579fe47a42301458b7c71d4",
+          "job_allocation_id": "b621b044a1b4aef50f1d8cb94e0fcc0389d19e68ab2f2a50bb04440dfde13858",
+          "packet_id": "043f5aeafed27ced02843f2ee1281c6a916fa4ca0c0a0ff2f9644dce2f5cdf32",
+          "packet_index": 0,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-1b0ea2820650d4a8.json",
+          "packet_sha256": "562453b296a55b0739f62ded07eb538dbec1477c0079ff8675d406116c9f651a",
+          "role": "sae_training",
+          "split_role_id": "95f24fbd0785c07aaabbb0a37f74d077d9d769ae198f8c52c6f06f630b818c7d"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 896610,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 3586440,
+            "float32_effect_payload_bytes": 73251840
+          },
+          "component_count": 285,
+          "component_id_set_sha256": "684c00d6dda68fdccb294e4d9a8801157ba370f1758ecf824e3365f7c199aef4",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/sae_training_episodes.jsonl",
+          "dataset_sha256": "3673e72770c5bd1229a1455e4b5aa0e489e2f779f579fe47a42301458b7c71d4",
+          "job_allocation_id": "48ffcf67bd08b080f59bf819cfed1765d4b48bafa2da7ec97f24bbe95795536a",
+          "packet_id": "20402f6d492827b42f64f09ae72b9354a75dfc9ecd82a89aa816bba1ea9270ba",
+          "packet_index": 1,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-684c00d6dda68fdc.json",
+          "packet_sha256": "0cd4ce7c5dd871ded11f2287c21f07b7649258dac87ee1a4a263a39770016ac4",
+          "role": "sae_training",
+          "split_role_id": "95f24fbd0785c07aaabbb0a37f74d077d9d769ae198f8c52c6f06f630b818c7d"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 808522,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 3234088,
+            "float32_effect_payload_bytes": 66055168
+          },
+          "component_count": 257,
+          "component_id_set_sha256": "278f7ddd06f477e2ae27febb72479f2da13f73ef89aab9cf7c0190bf428b47c5",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/sae_training_episodes.jsonl",
+          "dataset_sha256": "3673e72770c5bd1229a1455e4b5aa0e489e2f779f579fe47a42301458b7c71d4",
+          "job_allocation_id": "a0df1efa9f1c5ed448df0ef38a16eed9c09d00a6cf63a756af507ab9bb1d17f3",
+          "packet_id": "21a7d21fbd6606a3d222b381439808e5f0a5410443959517b5d4f00179bd58ff",
+          "packet_index": 2,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-278f7ddd06f477e2.json",
+          "packet_sha256": "b1986dee6c5889aabf541789662883fd7033637e383bdea842c0c9b1d9b6412b",
+          "role": "sae_training",
+          "split_role_id": "95f24fbd0785c07aaabbb0a37f74d077d9d769ae198f8c52c6f06f630b818c7d"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 877734,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 3510936,
+            "float32_effect_payload_bytes": 71709696
+          },
+          "component_count": 279,
+          "component_id_set_sha256": "cf799e4a58483b53c94885b93676056333ac1692eb0bcd416e973383bf7acb1a",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/sae_training_episodes.jsonl",
+          "dataset_sha256": "3673e72770c5bd1229a1455e4b5aa0e489e2f779f579fe47a42301458b7c71d4",
+          "job_allocation_id": "539ac0829972ab3cabeb800f8fe532a7df78779528bec94ab9d9c0eba171fa56",
+          "packet_id": "275b0dbf9a2839bf311f5b8b2f5f50112c20de3151ca69542386201ece90ea95",
+          "packet_index": 3,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-cf799e4a58483b53.json",
+          "packet_sha256": "f93ae3e4efe4cc0786215105f46042ad7bb7cca714a16f89335b9b4e9e688271",
+          "role": "sae_training",
+          "split_role_id": "95f24fbd0785c07aaabbb0a37f74d077d9d769ae198f8c52c6f06f630b818c7d"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 591448,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 2365792,
+            "float32_effect_payload_bytes": 48320512
+          },
+          "component_count": 188,
+          "component_id_set_sha256": "aabda2d04daa79b1fcbf7d36339b9e4adff18fb70186c5c23a16d723eaaa6423",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/sae_training_episodes.jsonl",
+          "dataset_sha256": "3673e72770c5bd1229a1455e4b5aa0e489e2f779f579fe47a42301458b7c71d4",
+          "job_allocation_id": "2c04f9bcbfd70052f5e4aae2810035205a75e99af70d3c99941297726f26fcec",
+          "packet_id": "2d9392a303d82104e75fd30c08a7cbc5f244158bfade28daee0960170c739aba",
+          "packet_index": 4,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-aabda2d04daa79b1.json",
+          "packet_sha256": "ebd6b6623b771867b6295eb3d654f19501599e946086aa2972f3945d3ec43937",
+          "role": "sae_training",
+          "split_role_id": "95f24fbd0785c07aaabbb0a37f74d077d9d769ae198f8c52c6f06f630b818c7d"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 906048,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 3624192,
+            "float32_effect_payload_bytes": 74022912
+          },
+          "component_count": 288,
+          "component_id_set_sha256": "dafadedbe21d41ce53bd86e1817d7e9f051dac7569fa33c73d479560900ac47c",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/sae_training_episodes.jsonl",
+          "dataset_sha256": "3673e72770c5bd1229a1455e4b5aa0e489e2f779f579fe47a42301458b7c71d4",
+          "job_allocation_id": "0276866e14ec5c4daf9c011cb898a6a60f292136daecd9884871b131445d3335",
+          "packet_id": "3333608043a7a174b60eaded70e67d8e1f05ef7a130931416b5a4dcc3726ff20",
+          "packet_index": 5,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-dafadedbe21d41ce.json",
+          "packet_sha256": "b8a4772edf97691e70c5329bc692f0915b3ba6db3cbfad6a127e28033bdcae23",
+          "role": "sae_training",
+          "split_role_id": "95f24fbd0785c07aaabbb0a37f74d077d9d769ae198f8c52c6f06f630b818c7d"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 761332,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 3045328,
+            "float32_effect_payload_bytes": 62199808
+          },
+          "component_count": 242,
+          "component_id_set_sha256": "346e043d2aa20892d6b94805e9f047129f28de64a254113a2bbeb7bf8d26445d",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/sae_training_episodes.jsonl",
+          "dataset_sha256": "3673e72770c5bd1229a1455e4b5aa0e489e2f779f579fe47a42301458b7c71d4",
+          "job_allocation_id": "aabe10d9a4faface967006d6f385c53f228448e7a5410b12ae9118e0fce3bd18",
+          "packet_id": "5682eb9af7b1dcc6c1e8b2d3bfc27cc5f84d2404d904ddf067fd5b65fad1acbd",
+          "packet_index": 6,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-346e043d2aa20892.json",
+          "packet_sha256": "b32165962dae9ceff06776f3e40e60785c2fbfc1c3462f6fc89e7d55b145ff72",
+          "role": "sae_training",
+          "split_role_id": "95f24fbd0785c07aaabbb0a37f74d077d9d769ae198f8c52c6f06f630b818c7d"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 906048,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 3624192,
+            "float32_effect_payload_bytes": 74022912
+          },
+          "component_count": 288,
+          "component_id_set_sha256": "da07324e8d1e148aceb666ad1da828aede173c80a220070ddb71a8c6c62fdf28",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/sae_training_episodes.jsonl",
+          "dataset_sha256": "3673e72770c5bd1229a1455e4b5aa0e489e2f779f579fe47a42301458b7c71d4",
+          "job_allocation_id": "ca8df759f18a7fdebdb5250b2447938aff504d36dfbd7e23197bbd20708b7264",
+          "packet_id": "60bb47c8546bcd0eeb32d7201b23ace2a5df91cd1693732d51913fdba6260771",
+          "packet_index": 7,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-da07324e8d1e148a.json",
+          "packet_sha256": "cc05562010c64346c099998c416e2912d213c626d8d97b6904f81b5491d52300",
+          "role": "sae_training",
+          "split_role_id": "95f24fbd0785c07aaabbb0a37f74d077d9d769ae198f8c52c6f06f630b818c7d"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 906048,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 3624192,
+            "float32_effect_payload_bytes": 74022912
+          },
+          "component_count": 288,
+          "component_id_set_sha256": "10ead17add7ffca99c7595ff64a576a0381f42377438c1fdc0a86b7cd211b6fc",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/sae_training_episodes.jsonl",
+          "dataset_sha256": "3673e72770c5bd1229a1455e4b5aa0e489e2f779f579fe47a42301458b7c71d4",
+          "job_allocation_id": "3ddc39abe43d77fd5d4044c2f72a175a5aa9f73ba46a1a2458a0a78d4738d970",
+          "packet_id": "6993bc8b4d485bf2afef043cc10290bede6baccb93379be75cb70fe813f7affc",
+          "packet_index": 8,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-10ead17add7ffca9.json",
+          "packet_sha256": "01745c70993a9e5773a45c0b76eb4cc1392a6b2e61b2bc20552cda99d9e24949",
+          "role": "sae_training",
+          "split_role_id": "95f24fbd0785c07aaabbb0a37f74d077d9d769ae198f8c52c6f06f630b818c7d"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 600886,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 2403544,
+            "float32_effect_payload_bytes": 49091584
+          },
+          "component_count": 191,
+          "component_id_set_sha256": "2ebce3008e2cba78f9776692d7374ef96e176ac421e6dc235e82faefb0888c8d",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/sae_training_episodes.jsonl",
+          "dataset_sha256": "3673e72770c5bd1229a1455e4b5aa0e489e2f779f579fe47a42301458b7c71d4",
+          "job_allocation_id": "ee888a364f9d971c2a8b5bd84e3d7018979b3b8565db5252010c81721f0400ca",
+          "packet_id": "a4be7ef2b1ba9f91410548d246d4a718b572d6f19e9a00697aa62cfff573b235",
+          "packet_index": 9,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-2ebce3008e2cba78.json",
+          "packet_sha256": "d2af5eaece8034ee6615605c9f481a4da22c8d5fa8587a97bdb2aa09b6dd2a0c",
+          "role": "sae_training",
+          "split_role_id": "95f24fbd0785c07aaabbb0a37f74d077d9d769ae198f8c52c6f06f630b818c7d"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 824252,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 3297008,
+            "float32_effect_payload_bytes": 67340288
+          },
+          "component_count": 262,
+          "component_id_set_sha256": "c41fd50cd81836eef71ba5ff281d6fa9db3513d1b694490e0bce02877b6144f4",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/sae_training_episodes.jsonl",
+          "dataset_sha256": "3673e72770c5bd1229a1455e4b5aa0e489e2f779f579fe47a42301458b7c71d4",
+          "job_allocation_id": "e5fa477b6ff0c8db280137ebd9d77cf6a2737d340e8f5c9412d256442f8a3c13",
+          "packet_id": "b22b31d6f6021e8f885074cf6b30a843ac1735d66c0187128fdaf716c9950c21",
+          "packet_index": 10,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-c41fd50cd81836ee.json",
+          "packet_sha256": "6245b3e12741cc5a8c4b9d7130757fa5b807259f4dbb1e506e03fddfa73e7a62",
+          "role": "sae_training",
+          "split_role_id": "95f24fbd0785c07aaabbb0a37f74d077d9d769ae198f8c52c6f06f630b818c7d"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 906048,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 3624192,
+            "float32_effect_payload_bytes": 74022912
+          },
+          "component_count": 288,
+          "component_id_set_sha256": "c954655ba0e40dfff1b92ad3432d5ea17044791778c463a811635da7c1536f56",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/sae_training_episodes.jsonl",
+          "dataset_sha256": "3673e72770c5bd1229a1455e4b5aa0e489e2f779f579fe47a42301458b7c71d4",
+          "job_allocation_id": "c63efc5e5bcb2317dd7c95275ff89b293edd6e1b5a30021c32f26e437f0934c7",
+          "packet_id": "bb7f7b3ae4bd1e8dad254147d783c3add8e9c0f6123fdb8b070886a9b225a8c4",
+          "packet_index": 11,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-c954655ba0e40dff.json",
+          "packet_sha256": "1cc5b5b37a314037824914a893f0bde67a506cc22dbeda6ddc734a2d7f3a14ce",
+          "role": "sae_training",
+          "split_role_id": "95f24fbd0785c07aaabbb0a37f74d077d9d769ae198f8c52c6f06f630b818c7d"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 588302,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 2353208,
+            "float32_effect_payload_bytes": 48063488
+          },
+          "component_count": 187,
+          "component_id_set_sha256": "65dbd0aa0e168a3245774050bdaa969f6fdffd470cc868bd4520f221f1dc0167",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/sae_training_episodes.jsonl",
+          "dataset_sha256": "3673e72770c5bd1229a1455e4b5aa0e489e2f779f579fe47a42301458b7c71d4",
+          "job_allocation_id": "edc9192c053fd40a1908acc35cea82aade8c759295025d818e759eaa173aace2",
+          "packet_id": "c856247d9dacc7a130a605dd44ef2e5de5629fd684497de0b2770d63a2b3d4f7",
+          "packet_index": 12,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-65dbd0aa0e168a32.json",
+          "packet_sha256": "0b53b9e1a8c07014154294728c490d32cc6719dc638d06b828ab5c728ddbd963",
+          "role": "sae_training",
+          "split_role_id": "95f24fbd0785c07aaabbb0a37f74d077d9d769ae198f8c52c6f06f630b818c7d"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 585156,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 2340624,
+            "float32_effect_payload_bytes": 47806464
+          },
+          "component_count": 186,
+          "component_id_set_sha256": "03c86c53cbc6af663f2ec8ab885bc414c121c1bedb0f93f2434b8321470cecee",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/sae_training_episodes.jsonl",
+          "dataset_sha256": "3673e72770c5bd1229a1455e4b5aa0e489e2f779f579fe47a42301458b7c71d4",
+          "job_allocation_id": "a6cda51c6e1cd17889e9c0dc6895caf70177b85543f3251145cb904aac4248ed",
+          "packet_id": "ca33bc4e9c2f766f1678e66fe9366334686d3f2d6f44665f2db08acfbf211318",
+          "packet_index": 13,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-03c86c53cbc6af66.json",
+          "packet_sha256": "ab1d884207f66b1bf12de279ba013a30f38a3e253b56606484c68037fe57d5e2",
+          "role": "sae_training",
+          "split_role_id": "95f24fbd0785c07aaabbb0a37f74d077d9d769ae198f8c52c6f06f630b818c7d"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 1135706,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 4542824,
+            "float32_effect_payload_bytes": 92785664
+          },
+          "component_count": 361,
+          "component_id_set_sha256": "dc0b735519eedf83018f0a65c4e135173ada7357f8aa98ab1d4c7fe4fa4e0984",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/sae_training_episodes.jsonl",
+          "dataset_sha256": "3673e72770c5bd1229a1455e4b5aa0e489e2f779f579fe47a42301458b7c71d4",
+          "job_allocation_id": "d40f2a73a92e8d173f473d98f0b1c663c8bb74fbf4ff5a464d3e3b6d268e1322",
+          "packet_id": "e8fad14f8e43a8a0a0ab8215f740439a80546b30a373650b5c7868b300a878ec",
+          "packet_index": 14,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-dc0b735519eedf83.json",
+          "packet_sha256": "754ab4e8f78a7904be5b9c54f66021aef97984304d81b5bbdd6314aa188c14d8",
+          "role": "sae_training",
+          "split_role_id": "95f24fbd0785c07aaabbb0a37f74d077d9d769ae198f8c52c6f06f630b818c7d"
+        },
+        {
+          "allocation": {
+            "batch_forwards": 591448,
+            "compute_jobs": 1,
+            "episode_forward_equivalents": 2365792,
+            "float32_effect_payload_bytes": 48320512
+          },
+          "component_count": 188,
+          "component_id_set_sha256": "c3f55cc2b7f9ea9af14e8f80188001094ada0ee565887d7600d43eebdd908952",
+          "dataset_path": "artifacts/vpd_activation_category_capacity_split_v4/sae_training_episodes.jsonl",
+          "dataset_sha256": "3673e72770c5bd1229a1455e4b5aa0e489e2f779f579fe47a42301458b7c71d4",
+          "job_allocation_id": "590e9e3871e9caa8fa12cb630f3ec1a23dc415ac07f27a450f5b8f0c4f06dfac",
+          "packet_id": "eafd76598cb1240fd2e2efe9c7f0cf19b5dc5476dccad418c01d1992ef2780ab",
+          "packet_index": 15,
+          "packet_path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/packets/vpd-cluster-c3f55cc2b7f9ea9a.json",
+          "packet_sha256": "e266e61c3a514f713b52425e4952af107324611641cbe84b87ddc0b63fd7abb8",
+          "role": "sae_training",
+          "split_role_id": "95f24fbd0785c07aaabbb0a37f74d077d9d769ae198f8c52c6f06f630b818c7d"
+        }
+      ],
+      "resource_shape": {
+        "categories": 8,
+        "category_counts": {
+          "missing_or_untrusted_authority": 2288,
+          "other_invalid": 572,
+          "replayed": 572,
+          "revoked": 572,
+          "scope_invalid": 572,
+          "signature_invalid": 572,
+          "time_inactive": 572,
+          "valid_authority": 572
+        },
+        "condition_cells": 11,
+        "countsketch_dimension": 256,
+        "episodes": 6292,
+        "hidden_size": 4096,
+        "template_cells": 32,
+        "uncertainty_blocks": 8
+      },
+      "split_role_id": "95f24fbd0785c07aaabbb0a37f74d077d9d769ae198f8c52c6f06f630b818c7d",
+      "totals": {
+        "batch_forwards": 12684672,
+        "compute_jobs": 16,
+        "episode_forward_equivalents": 50738688,
+        "float32_effect_payload_bytes": 1036320768
+      }
+    }
+  },
+  "schema": "sch.vpd-guarded-capture-job-allocation-manifest.v1",
+  "scientific_boundary": {
+    "capture_started": false,
+    "execution_authorized": false,
+    "generated_tokens": 0,
+    "model_framework_imported": false,
+    "model_inference_performed": false,
+    "model_loaded": false,
+    "output_reserved": false,
+    "real_actions": 0,
+    "sae_training_authorized": false,
+    "weights_mutated": false
+  },
+  "source": {
+    "packet_bundle": {
+      "component_count": 4032,
+      "component_id_set_sha256": "0cab606cc4ab7f092b57ab9b02a58544511be7c11009872afaebd84621f38aa2",
+      "packets": 16,
+      "path": "artifacts/bonsai8b_authz_v8/vpd_sae_clusters/manifest.json",
+      "sha256": "6b4baf7491887c23bb34b0e5dd6db121d3ccc4ab2e891086ad0e6bfb547c5445"
+    },
+    "preflight_path": "artifacts/vpd_cluster_to_sae_empirical_preflight_v2/preflight.json",
+    "preflight_sha256": "6287c9f0d9b39a98536e14ab8a0f04acb8cf0651a0b86ea5e3ec0c0b39ead24f"
+  },
+  "status": "complete_model_free_exact_four_role_packet_allocations"
+}

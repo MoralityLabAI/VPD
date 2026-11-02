@@ -1,0 +1,47 @@
+{
+  "benchmark_id": "dd035b55e6d56d941c369338123257f7bb5548326e4297f8c2d547315cb50f1a",
+  "controls": {
+    "adapter_config_mutation_rejected": true,
+    "adapter_weight_mutation_rejected": true,
+    "all_verification_paths_remain_non_authorizing": true,
+    "ambiguous_adapter_weights_rejected": true,
+    "clean_exact_byte_verification_passes_without_loading": true,
+    "duplicate_manifest_path_rejected": true,
+    "empty_model_tree_rejected": true,
+    "incomplete_preflight_rejected": true,
+    "manifest_inside_addressed_tree_rejected": true,
+    "manifest_is_one_way_and_cycle_free": true,
+    "model_file_mutation_rejected": true,
+    "path_traversal_rejected": true,
+    "preflight_adapter_path_mismatch_rejected": true,
+    "preflight_manifest_digest_mismatch_rejected": true,
+    "readdressed_wrong_file_hash_rejected": true,
+    "synthetic_reparse_point_rejected": true,
+    "unlisted_model_file_rejected": true,
+    "unsorted_manifest_path_rejected": true,
+    "verifier_imports_no_model_frameworks": true
+  },
+  "schema": "sch.vpd-cluster-to-sae-bound-content-benchmark.v1",
+  "scientific_boundary": {
+    "adapter_loaded": false,
+    "authorization_receipt_present": false,
+    "execution_authorized": false,
+    "model_framework_imported": false,
+    "model_inference_performed": false,
+    "model_loaded": false,
+    "real_model_or_adapter_content_opened": false,
+    "sae_training_authorized": false,
+    "synthetic_temporary_files_only": true,
+    "temporary_files_persisted": false,
+    "weights_mutated": false
+  },
+  "source": {
+    "benchmark_sha256": "0fd0993f2d2dad8af320b1b85c2edce694c343dffb15d7bd69c0604265ebe6a8",
+    "content_verifier_sha256": "9ff9368ad785e28056dd935e6eaf4580a69fa25de6d51f202a55d75ff73a30df"
+  },
+  "status": "pass",
+  "summary": {
+    "controls": 19,
+    "passed": 19
+  }
+}

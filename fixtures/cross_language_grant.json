@@ -1,0 +1,38 @@
+{
+  "version": "sch.authorization-grant.v1",
+  "grant_id": "grant-test-0001",
+  "contract_id": "contract-test-0001",
+  "issuer": "host:user-approval-service",
+  "subject": "agent:bitagent-small",
+  "audience": "host:bitagent-executor",
+  "allowed_actions": [
+    {
+      "tool": "tradelayer",
+      "verb": "allocate_strategy",
+      "constraints": {
+        "strategy_id": "starter",
+        "network": "regtest",
+        "max_notional": 25
+      }
+    }
+  ],
+  "limits": {
+    "max_calls": 1,
+    "max_notional": 25,
+    "max_fee": 0.25,
+    "max_compute_seconds": 30
+  },
+  "issued_at": "2026-08-08T20:00:00.000Z",
+  "expires_at": "2026-08-08T20:30:00.000Z",
+  "nonce": "nonce-test-0001",
+  "one_shot": true,
+  "parent_grant_id": null,
+  "signature": {
+    "alg": "HS256",
+    "key_id": "local-dev-v1",
+    "value": "e18d1e1c0e400b5294bee3bab21ce9119cc172c98ee4ad2c233db9a75764b06d"
+  },
+  "metadata": {
+    "confirmation_receipt_id": "confirm-test-0001"
+  }
+}

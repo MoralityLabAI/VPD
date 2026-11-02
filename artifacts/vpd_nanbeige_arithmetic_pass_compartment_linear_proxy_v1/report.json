@@ -1,0 +1,457 @@
+{
+  "design": {
+    "bootstrap_replicates": 4096,
+    "bootstrap_seed": 250829,
+    "common_explained_variance_denominator": "held-out squared distance from the all-pass training mean",
+    "held_out_examples": 4,
+    "hidden_size": 3072,
+    "monolithic_rank": 64,
+    "pass_compartment_rank_per_dictionary": 32,
+    "random_partition_rank_per_dictionary": 32,
+    "random_partition_seeds": [
+      17,
+      29,
+      43,
+      59,
+      71,
+      89,
+      101,
+      127
+    ],
+    "rows_per_example_per_pass": 8,
+    "screening_admission_rule": "pass routing lower 95% paired-bootstrap delta exceeds zero versus monolithic and random-mean controls, and point estimate exceeds every random-partition replicate",
+    "total_rank_per_arm": 64,
+    "train_examples": 12
+  },
+  "existing_monolithic_sae_context": {
+    "context_only_not_recomputed_by_this_proxy": true,
+    "expansion": 2,
+    "held_out_quality": {
+      "model.layers.11": {
+        "pass_0": {
+          "explained_variance": 0.9910522028763551,
+          "mean_l0": 26.5625
+        },
+        "pass_1": {
+          "explained_variance": 0.9813867502714866,
+          "mean_l0": 30.3125
+        }
+      },
+      "model.layers.21": {
+        "pass_0": {
+          "explained_variance": 0.991179765631673,
+          "mean_l0": 32.0
+        },
+        "pass_1": {
+          "explained_variance": 0.9186568824638806,
+          "mean_l0": 32.0
+        }
+      },
+      "model.norm": {
+        "pass_0": {
+          "explained_variance": 0.9883676759462605,
+          "mean_l0": 31.609375
+        },
+        "pass_1": {
+          "explained_variance": 0.9735735651021304,
+          "mean_l0": 27.6875
+        }
+      }
+    },
+    "training_loss": "balanced-pass raw activation MSE",
+    "training_steps": 1000
+  },
+  "report_id": "1e618178562f867809765678565b151414900f7f1169f10a886543e54f955761",
+  "schema": "sch.vpd-nanbeige-pass-compartment-linear-proxy.v1",
+  "scientific_boundary": {
+    "execution_authorized": false,
+    "linear_proxy_is_not_an_sae_quality_result": true,
+    "model_or_sae_weights_loaded_or_mutated": false,
+    "new_model_inference_performed": false,
+    "new_sae_training_performed": false,
+    "paid_compute_authorized": false,
+    "screening_result_cannot_authorize_training": true,
+    "source_family_disjoint": false,
+    "source_revision_verified": false,
+    "stored_empirical_bf16_activations_used": true
+  },
+  "sites": [
+    {
+      "held_out_common_denominator": 728784.0060741389,
+      "monolithic_explained_variance": 0.9894591690995919,
+      "pass_compartment_explained_variance": 0.988965600526344,
+      "pass_minus_monolithic": -0.0004935685732478934,
+      "pass_minus_monolithic_paired_bootstrap_95_ci": [
+        -0.0006170728820817161,
+        -0.00036921597013048874
+      ],
+      "pass_minus_random_partition_mean": 0.007566938696360825,
+      "pass_minus_random_partition_mean_paired_bootstrap_95_ci": [
+        0.003376811094583726,
+        0.012040107083564792
+      ],
+      "random_partition_controls": [
+        {
+          "explained_variance": 0.9838931737303414,
+          "held_out_group_sizes": {
+            "0": 2,
+            "1": 2
+          },
+          "seed": 17,
+          "train_group_sizes": {
+            "0": 6,
+            "1": 6
+          }
+        },
+        {
+          "explained_variance": 0.9851225191555799,
+          "held_out_group_sizes": {
+            "0": 2,
+            "1": 2
+          },
+          "seed": 29,
+          "train_group_sizes": {
+            "0": 6,
+            "1": 6
+          }
+        },
+        {
+          "explained_variance": 0.9815982017510547,
+          "held_out_group_sizes": {
+            "0": 2,
+            "1": 2
+          },
+          "seed": 43,
+          "train_group_sizes": {
+            "0": 6,
+            "1": 6
+          }
+        },
+        {
+          "explained_variance": 0.9807547480655067,
+          "held_out_group_sizes": {
+            "0": 2,
+            "1": 2
+          },
+          "seed": 59,
+          "train_group_sizes": {
+            "0": 6,
+            "1": 6
+          }
+        },
+        {
+          "explained_variance": 0.9836108981382422,
+          "held_out_group_sizes": {
+            "0": 2,
+            "1": 2
+          },
+          "seed": 71,
+          "train_group_sizes": {
+            "0": 6,
+            "1": 6
+          }
+        },
+        {
+          "explained_variance": 0.9814402825172287,
+          "held_out_group_sizes": {
+            "0": 2,
+            "1": 2
+          },
+          "seed": 89,
+          "train_group_sizes": {
+            "0": 6,
+            "1": 6
+          }
+        },
+        {
+          "explained_variance": 0.9785926723586582,
+          "held_out_group_sizes": {
+            "0": 2,
+            "1": 2
+          },
+          "seed": 101,
+          "train_group_sizes": {
+            "0": 6,
+            "1": 6
+          }
+        },
+        {
+          "explained_variance": 0.9761767989232533,
+          "held_out_group_sizes": {
+            "0": 2,
+            "1": 2
+          },
+          "seed": 127,
+          "train_group_sizes": {
+            "0": 6,
+            "1": 6
+          }
+        }
+      ],
+      "random_partition_mean_explained_variance": 0.9813986618299831,
+      "random_partition_range_explained_variance": [
+        0.9761767989232533,
+        0.9851225191555799
+      ],
+      "screening_admission": "fail",
+      "site": "model.layers.11"
+    },
+    {
+      "held_out_common_denominator": 301320100.4052404,
+      "monolithic_explained_variance": 0.9992841978037097,
+      "pass_compartment_explained_variance": 0.9992429193962223,
+      "pass_minus_monolithic": -4.127840748735512e-05,
+      "pass_minus_monolithic_paired_bootstrap_95_ci": [
+        -4.60475024219013e-05,
+        -3.617716217742755e-05
+      ],
+      "pass_minus_random_partition_mean": 0.00041955269096893844,
+      "pass_minus_random_partition_mean_paired_bootstrap_95_ci": [
+        0.0002129877799922668,
+        0.0006337753104114874
+      ],
+      "random_partition_controls": [
+        {
+          "explained_variance": 0.9989320902587329,
+          "held_out_group_sizes": {
+            "0": 2,
+            "1": 2
+          },
+          "seed": 17,
+          "train_group_sizes": {
+            "0": 6,
+            "1": 6
+          }
+        },
+        {
+          "explained_variance": 0.9990250305195745,
+          "held_out_group_sizes": {
+            "0": 2,
+            "1": 2
+          },
+          "seed": 29,
+          "train_group_sizes": {
+            "0": 6,
+            "1": 6
+          }
+        },
+        {
+          "explained_variance": 0.9988388910411361,
+          "held_out_group_sizes": {
+            "0": 2,
+            "1": 2
+          },
+          "seed": 43,
+          "train_group_sizes": {
+            "0": 6,
+            "1": 6
+          }
+        },
+        {
+          "explained_variance": 0.9987999196326445,
+          "held_out_group_sizes": {
+            "0": 2,
+            "1": 2
+          },
+          "seed": 59,
+          "train_group_sizes": {
+            "0": 6,
+            "1": 6
+          }
+        },
+        {
+          "explained_variance": 0.9989424187731334,
+          "held_out_group_sizes": {
+            "0": 2,
+            "1": 2
+          },
+          "seed": 71,
+          "train_group_sizes": {
+            "0": 6,
+            "1": 6
+          }
+        },
+        {
+          "explained_variance": 0.9987501081308142,
+          "held_out_group_sizes": {
+            "0": 2,
+            "1": 2
+          },
+          "seed": 89,
+          "train_group_sizes": {
+            "0": 6,
+            "1": 6
+          }
+        },
+        {
+          "explained_variance": 0.9987035496032426,
+          "held_out_group_sizes": {
+            "0": 2,
+            "1": 2
+          },
+          "seed": 101,
+          "train_group_sizes": {
+            "0": 6,
+            "1": 6
+          }
+        },
+        {
+          "explained_variance": 0.9985949256827491,
+          "held_out_group_sizes": {
+            "0": 2,
+            "1": 2
+          },
+          "seed": 127,
+          "train_group_sizes": {
+            "0": 6,
+            "1": 6
+          }
+        }
+      ],
+      "random_partition_mean_explained_variance": 0.9988233667052534,
+      "random_partition_range_explained_variance": [
+        0.9985949256827491,
+        0.9990250305195745
+      ],
+      "screening_admission": "fail",
+      "site": "model.layers.21"
+    },
+    {
+      "held_out_common_denominator": 1535525.000858007,
+      "monolithic_explained_variance": 0.9860871974568372,
+      "pass_compartment_explained_variance": 0.9842092583019324,
+      "pass_minus_monolithic": -0.0018779391549047508,
+      "pass_minus_monolithic_paired_bootstrap_95_ci": [
+        -0.00220152410007497,
+        -0.0016693530347499201
+      ],
+      "pass_minus_random_partition_mean": 0.008253781275565197,
+      "pass_minus_random_partition_mean_paired_bootstrap_95_ci": [
+        0.004295914988159164,
+        0.012622708685667347
+      ],
+      "random_partition_controls": [
+        {
+          "explained_variance": 0.97855068111366,
+          "held_out_group_sizes": {
+            "0": 2,
+            "1": 2
+          },
+          "seed": 17,
+          "train_group_sizes": {
+            "0": 6,
+            "1": 6
+          }
+        },
+        {
+          "explained_variance": 0.9804479407697619,
+          "held_out_group_sizes": {
+            "0": 2,
+            "1": 2
+          },
+          "seed": 29,
+          "train_group_sizes": {
+            "0": 6,
+            "1": 6
+          }
+        },
+        {
+          "explained_variance": 0.9765612429599979,
+          "held_out_group_sizes": {
+            "0": 2,
+            "1": 2
+          },
+          "seed": 43,
+          "train_group_sizes": {
+            "0": 6,
+            "1": 6
+          }
+        },
+        {
+          "explained_variance": 0.975749290899146,
+          "held_out_group_sizes": {
+            "0": 2,
+            "1": 2
+          },
+          "seed": 59,
+          "train_group_sizes": {
+            "0": 6,
+            "1": 6
+          }
+        },
+        {
+          "explained_variance": 0.9794165010222082,
+          "held_out_group_sizes": {
+            "0": 2,
+            "1": 2
+          },
+          "seed": 71,
+          "train_group_sizes": {
+            "0": 6,
+            "1": 6
+          }
+        },
+        {
+          "explained_variance": 0.9735634847001,
+          "held_out_group_sizes": {
+            "0": 2,
+            "1": 2
+          },
+          "seed": 89,
+          "train_group_sizes": {
+            "0": 6,
+            "1": 6
+          }
+        },
+        {
+          "explained_variance": 0.9727813353082388,
+          "held_out_group_sizes": {
+            "0": 2,
+            "1": 2
+          },
+          "seed": 101,
+          "train_group_sizes": {
+            "0": 6,
+            "1": 6
+          }
+        },
+        {
+          "explained_variance": 0.9705733394378244,
+          "held_out_group_sizes": {
+            "0": 2,
+            "1": 2
+          },
+          "seed": 127,
+          "train_group_sizes": {
+            "0": 6,
+            "1": 6
+          }
+        }
+      ],
+      "random_partition_mean_explained_variance": 0.9759554770263672,
+      "random_partition_range_explained_variance": [
+        0.9705733394378244,
+        0.9804479407697619
+      ],
+      "screening_admission": "fail",
+      "site": "model.norm"
+    }
+  ],
+  "source": {
+    "dtype": "torch.bfloat16",
+    "examples_sha256": "d672918d4e778620c02cefd6a5fe9a474e4afebd40e221d9ad0e5e5875cefc82",
+    "expected_revision": "451ed48c3273ecef7ea8faaa43c31ce529763bb1",
+    "family_disjoint": false,
+    "manifest_sha256": "6046aa35c98e0934c57e0acd6864951d4174249bfe26c22041ca37d38608857e",
+    "model_id": "Nanbeige/Nanbeige4.2-3B",
+    "path": "C:/projects/VPD/artifacts/nanbeige_looped/prime-20260906T034844Z-719/retrieved/artifacts/nanbeige_looped/bf16_multipass_calibration",
+    "revision_verified": false,
+    "runner_sha256": "1dc1338a5effca156069920b482cd8598f9c311d09c52c1722a5dda7ab2c9c6c",
+    "sae_quality_sha256": "da63d75d87c9f9ff1566fe88d1b35f5793b14b455a844d974ed67ae3775f2dcc"
+  },
+  "status": "pass",
+  "summary": {
+    "pass_compartment_screening_admissions": 0,
+    "sites": 3
+  }
+}

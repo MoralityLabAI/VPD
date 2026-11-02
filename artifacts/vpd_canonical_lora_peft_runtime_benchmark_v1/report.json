@@ -1,0 +1,76 @@
+{
+  "benchmark_id": "9474f42a0cc59297a6e52cba1ca5a8b709e3e6c981e2693b3a70145eeea21de5",
+  "design": {
+    "authenticated_extraction_chained": true,
+    "canonical_inventory_chained": true,
+    "fake_peft_module_and_tensor_only": true,
+    "multipliers": [
+      -1.0,
+      0.0,
+      1.0,
+      2.0
+    ]
+  },
+  "results": {
+    "ambiguous_module_match_rejected": true,
+    "callback_failure_propagated": true,
+    "callback_failure_restored": true,
+    "canonical_artifact_tamper_rejected": true,
+    "live_scale_mismatch_rejected": true,
+    "maximum_delta_frobenius_error": 2.782851238295949e-07,
+    "maximum_relative_probe_error": 6.402081657065176e-08,
+    "multiplier_rows": [
+      {
+        "a_factor_restored_exactly": true,
+        "b_factor_restored_exactly": true,
+        "delta_frobenius_error": 1.4849448078479606e-07,
+        "multiplier": -1.0,
+        "observed_relative_probe_error": 4.7988738295340447e-08,
+        "resolved_module_suffix_matched": true
+      },
+      {
+        "a_factor_restored_exactly": true,
+        "b_factor_restored_exactly": true,
+        "delta_frobenius_error": 1.8353793344453087e-07,
+        "multiplier": 0.0,
+        "observed_relative_probe_error": 6.402081657065176e-08,
+        "resolved_module_suffix_matched": true
+      },
+      {
+        "a_factor_restored_exactly": true,
+        "b_factor_restored_exactly": true,
+        "delta_frobenius_error": 2.782851238295949e-07,
+        "multiplier": 1.0,
+        "observed_relative_probe_error": 4.88144425842339e-08,
+        "resolved_module_suffix_matched": true
+      },
+      {
+        "a_factor_restored_exactly": true,
+        "b_factor_restored_exactly": true,
+        "delta_frobenius_error": 1.4995043210603322e-07,
+        "multiplier": 2.0,
+        "observed_relative_probe_error": 4.297469029779635e-08,
+        "resolved_module_suffix_matched": true
+      }
+    ],
+    "source_hash_mismatch_never_mutated": true,
+    "source_hash_mismatch_rejected": true
+  },
+  "schema": "sch.vpd-canonical-lora-peft-runtime-benchmark.v1",
+  "scientific_boundary": {
+    "actual_torch_peft_execution_verified": false,
+    "execution_authorized": false,
+    "fake_peft_objects_only": true,
+    "model_inference_performed": false,
+    "model_loaded": false,
+    "peft_imported": false,
+    "real_adapter_accessed": false,
+    "real_weights_mutated": false,
+    "torch_imported": false
+  },
+  "source": {
+    "runner_sha256": "36757438e8d91197f7b4c19cdc257cd77a6cb83dde603067162d1841075ae242",
+    "runtime_sha256": "e76dc9957586d7ddb1a739ffc2b9b274e183c38bf7d4dc0294aa74e0a0570076"
+  },
+  "status": "pass"
+}

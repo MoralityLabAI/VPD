@@ -1,0 +1,10 @@
+# Matches the model publisher's documented Transformers runtime.
+transformers==4.45.1
+jinja2>=3.1,<4
+protobuf>=4,<7
+accelerate>=0.34,<2
+sentencepiece>=0.2,<0.3
+safetensors>=0.4,<1
+numpy>=1.26,<3
+# Use the CUDA-enabled torch already installed in the selected Prime image.
+torch>=2.4

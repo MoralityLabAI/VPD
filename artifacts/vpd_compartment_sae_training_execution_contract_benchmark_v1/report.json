@@ -1,0 +1,85 @@
+{
+  "benchmark_id": "08255dba491199e4963080c8e059c8ebd0fdddaffb3e4fbd70c781a8685b2ff4",
+  "scenarios": [
+    {
+      "expected": "accept",
+      "id": "exact_v2_blueprint",
+      "observed": "accept",
+      "status": "pass"
+    },
+    {
+      "expected": "reject",
+      "id": "changed_batch_size",
+      "observed": "reject",
+      "status": "pass"
+    },
+    {
+      "expected": "reject",
+      "id": "changed_learning_rate",
+      "observed": "reject",
+      "status": "pass"
+    },
+    {
+      "expected": "reject",
+      "id": "changed_selected_episode_identity",
+      "observed": "reject",
+      "status": "pass"
+    },
+    {
+      "expected": "reject",
+      "id": "specific_cross_compartment_row",
+      "observed": "reject",
+      "status": "pass"
+    },
+    {
+      "expected": "reject",
+      "id": "shared_balance_weakened",
+      "observed": "reject",
+      "status": "pass"
+    },
+    {
+      "expected": "reject",
+      "id": "training_job_removed",
+      "observed": "reject",
+      "status": "pass"
+    },
+    {
+      "expected": "accept_documents_gap",
+      "id": "predecessor_v1_documents_unbound_hyperparameter_acceptance",
+      "observed": "accept_documents_gap",
+      "planned": {
+        "batch_size": 128,
+        "learning_rate": 0.0003
+      },
+      "predecessor_dictionary_bundle_id": "acfa1bc29d889cf0e3df518c0baebec67515488aca09b87b0b19ff757fc2ed78",
+      "status": "pass",
+      "synthetic_reported": {
+        "batch_size": 64,
+        "learning_rate": 0.01
+      }
+    }
+  ],
+  "schema": "sch.vpd-compartment-sae-training-execution-contract-benchmark.v1",
+  "scientific_boundary": {
+    "execution_authorized": false,
+    "model_inference_performed": false,
+    "sae_training_performed": false,
+    "v7_negative_release_decision_unchanged": true,
+    "weights_loaded_or_mutated": false
+  },
+  "source": {
+    "benchmark_runner_sha256": "09bea4c5439c6aeffe3007a6393a0f53f84af63878fa4a2ba3edd20f95445c3e",
+    "execution_blueprint_id": "33bc09fac66fcec62bc0374c39d7ad4209a5d17eafd9b1003b4353073687e40e",
+    "execution_blueprint_runner_sha256": "9929275b5a61e6fe2afd56d741ac46d0b44b0a3b1f30b02d3a4be64e73fa42c6",
+    "training_plan_id": "d4ef3eca0c642d22f3df415bacb61d5a2130fed969570eb6836777589d1301dd",
+    "training_plan_sha256": "56de0620d8a6a6a93797f1a16f3379d53fe6161ff27e8689680d099ce8edb7cc"
+  },
+  "status": "pass",
+  "summary": {
+    "passed": 8,
+    "scenarios": 8,
+    "v1_batch_size_and_learning_rate_gap_reproduced": true,
+    "v2_accepts_exact_contract": true,
+    "v2_rejects_hyperparameter_or_sample_contract_substitution": true
+  }
+}

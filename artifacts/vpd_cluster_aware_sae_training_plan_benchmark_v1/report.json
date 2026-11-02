@@ -1,0 +1,144 @@
+{
+  "benchmark_id": "d79ff71b50d0bfc0bddb649609234b6bf9fbf9be78ef985daa773ebd5687ca10",
+  "controls": {
+    "all_training_episodes_assigned_once": true,
+    "compartment_pair_sets_disjoint": true,
+    "manifest_plan_verifies": true,
+    "no_model_or_weight_authority": true,
+    "pair_atomic_train_validation_splits": true,
+    "predecessor_and_evidence_not_mutated": true,
+    "routing_and_sae_row_units_separated": true,
+    "routing_policy_drift_rejected": true,
+    "shared_has_no_fake_component_membership": true,
+    "specific_membership_hashes_bound": true,
+    "stability_receipt_tamper_rejected": true,
+    "three_specific_routes_and_one_shared": true,
+    "training_discovery_overlap_rejected": true,
+    "two_categories_bound": true,
+    "two_initialization_jobs_per_compartment": true,
+    "under_supported_route_merged_to_shared": true,
+    "unstable_routing_rejected": true
+  },
+  "design": {
+    "categories": [
+      "missing_or_untrusted_authority",
+      "valid_authority"
+    ],
+    "manifest_only": true,
+    "pair_atomic_train_validation": true,
+    "routing_roles": [
+      "discovery",
+      "cluster_validation",
+      "sae_training"
+    ],
+    "stable_routing_required_before_planning": true,
+    "two_initialization_seeds": true,
+    "under_supported_routes_merge_to_shared": true
+  },
+  "results": {
+    "cluster_aware_sae_plan_id": "43ecfc3bfe7356d06cdcbb03f64eb50b9aeb0d083d2207b891357067cc526973",
+    "compartment_support": {
+      "shared_cross_category": {
+        "episode_id_set_sha256": "32ad782b822aed61e702fca000a700ad4f85fd7d067a277f3033b7527111ac19",
+        "episodes": 10,
+        "pair_id_set_sha256": "3ede3c9de0f8776753cc251e67ba802bc7db21520f9135b0609b16c056bdff26",
+        "pairs": 5,
+        "planning_reason_counts": {
+          "router_shared_fallback": 8,
+          "under_supported_route_merged_to_shared": 2
+        },
+        "routing_effect_rows": 20,
+        "routing_effect_rows_per_episode": 2,
+        "sae_activation_rows": 1280,
+        "sae_activation_rows_per_episode": 128
+      },
+      "vpd-sae-compartment-3d6c60715e82f0969c0ee337da5e7cc8c58abb4309ab28e33f041f76876b0946": {
+        "episode_id_set_sha256": "5677a675d3005a9fa187c953f2826527772f465574cb7b1b9eda235674c5d4ab",
+        "episodes": 4,
+        "pair_id_set_sha256": "9bb42880154b249e660b3cdb0a3332cd2848cbe92c6dbdd792c0f4be425059e4",
+        "pairs": 2,
+        "planning_reason_counts": {
+          "stable_specific_route": 4
+        },
+        "routing_effect_rows": 8,
+        "routing_effect_rows_per_episode": 2,
+        "sae_activation_rows": 512,
+        "sae_activation_rows_per_episode": 128
+      },
+      "vpd-sae-compartment-4c090262f4be6dee774e8731c72c2b2039ab5ae3476518f2e1d24149d6fd2fcd": {
+        "episode_id_set_sha256": "5bcf146ab34ef612f3be7af000f7b495d21196243e7756e45210b54737ecb5f6",
+        "episodes": 4,
+        "pair_id_set_sha256": "b8d14518125b3019a322ed86a2db548c65c3b9301477e1050fb76c6e9d37f9f0",
+        "pairs": 2,
+        "planning_reason_counts": {
+          "stable_specific_route": 4
+        },
+        "routing_effect_rows": 8,
+        "routing_effect_rows_per_episode": 2,
+        "sae_activation_rows": 512,
+        "sae_activation_rows_per_episode": 128
+      },
+      "vpd-sae-compartment-f3281aa5f33cc4d89fd31620f2ec532315a189df25ac99847f19e026ec865ea0": {
+        "episode_id_set_sha256": "802d62ac1c6ae5da361b80ec546f23466af3d6b525edad191c79d2bd34f8db8f",
+        "episodes": 4,
+        "pair_id_set_sha256": "06da9dd74181c0c82454e57cf4dd35bb79e7d2b292cf1c3bf32768413ee40bfa",
+        "pairs": 2,
+        "planning_reason_counts": {
+          "stable_specific_route": 4
+        },
+        "routing_effect_rows": 8,
+        "routing_effect_rows_per_episode": 2,
+        "sae_activation_rows": 512,
+        "sae_activation_rows_per_episode": 128
+      }
+    },
+    "summary": {
+      "categories": 2,
+      "primary_compartment_episode_sets_disjoint": true,
+      "primary_compartment_pair_sets_disjoint": true,
+      "routed_training_episodes": 22,
+      "routed_training_pairs": 11,
+      "shared_compartments": 1,
+      "specific_compartments": 3,
+      "training_jobs": 8
+    },
+    "under_supported_routes": [
+      {
+        "episodes": 2,
+        "pairs": 1,
+        "reason": "below_frozen_specific_support_gate",
+        "route_key": "valid_authority::vpd-cluster-a4938754cbb194b78128651c75ae969f73fc1b0be220388710080568656de011"
+      }
+    ],
+    "verification": {
+      "cluster_aware_sae_plan_id": "43ecfc3bfe7356d06cdcbb03f64eb50b9aeb0d083d2207b891357067cc526973",
+      "compartments": 4,
+      "sae_training_authorized": false,
+      "schema": "sch.vpd-cluster-aware-sae-training-plan-verification.v1",
+      "status": "pass",
+      "training_jobs": 8
+    }
+  },
+  "schema": "sch.vpd-cluster-aware-sae-training-plan-benchmark.v1",
+  "scientific_boundary": {
+    "empirical_plan_produced": false,
+    "execution_authorized": false,
+    "model_inference_performed": false,
+    "model_loaded": false,
+    "sae_training_authorized": false,
+    "synthetic_routing_receipts_only": true,
+    "weights_loaded_or_mutated": false
+  },
+  "source": {
+    "planner_sha256": "f6203ac7fe66f6181a5c6ecd24081c1f28d64463b8f3ef8fdf84068890b23eef",
+    "predecessor_plan_path": "artifacts/vpd_compartment_sae_training_plan_v4/plan.json",
+    "predecessor_plan_sha256": "f90dc761017b15369fbc31bf8d9efdee4f4d8f6e9c7fce585e8ecc5e94b5975c",
+    "router_sha256": "8379997e72cd278af8b34fcedb4aad9165651583248d1f1f12e2d0e77d4b3027",
+    "runner_sha256": "3b8757e9ca57238e3b0fa090179ae468c3430e9e904c6b6c7b2814e8043744c8"
+  },
+  "status": "pass",
+  "summary": {
+    "controls": 17,
+    "passed": 17
+  }
+}

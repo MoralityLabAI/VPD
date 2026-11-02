@@ -1,0 +1,76 @@
+{
+  "benchmark_id": "0c9800d968a49df90b7b1ab942ed5f59017da4f0ee491eb8440b6257aad0f642",
+  "controls": {
+    "all_34_output_directories_remain_unique": true,
+    "campaign_source_byte_tamper_rejected": true,
+    "category_partition_tamper_rejected": true,
+    "dictionary_widths_remain_compartment_specific": true,
+    "each_category_has_two_specific_compartments": true,
+    "each_compartment_preserves_two_seed_jobs": true,
+    "exact_17_compartment_accounts": true,
+    "exact_8_category_accounts": true,
+    "failure_and_uninvoked_jobs_require_fresh_authority": true,
+    "failure_reconciliation_is_7_success_1_failure_26_uninvoked": true,
+    "failure_state_planned_rows_reconcile_to_global": true,
+    "failure_state_planned_steps_reconcile_to_global": true,
+    "global_resource_tamper_rejected": true,
+    "ledger_reproduces_from_pinned_campaign_summary": true,
+    "provenance_explicitly_reconstructed_not_raw_receipt": true,
+    "reconstruction_provenance_tamper_rejected": true,
+    "resource_ledger_remains_nonexecuting": true,
+    "retry_authority_tamper_rejected": true,
+    "shared_fallback_is_separate_two_job_account": true,
+    "specific_and_shared_jobs_sum_to_global": true,
+    "specific_and_shared_rows_sum_to_global": true,
+    "specific_and_shared_steps_sum_to_global": true,
+    "success_reconciliation_charges_34_without_training": true,
+    "synthetic_receipts_transfer_no_authority": true
+  },
+  "design": {
+    "activation_categories": 8,
+    "execution_jobs": 34,
+    "raw_campaign_receipts_present": false,
+    "reconstructed_from_verified_campaign_summary": true,
+    "shared_fallback_accounted_separately": true,
+    "shared_fallback_compartments": 1,
+    "specific_compartments": 16,
+    "unique_output_directories": 34
+  },
+  "results": {
+    "dictionary_feature_widths": [
+      4096,
+      8192
+    ],
+    "failure_charged_callbacks": 8,
+    "failure_uninvoked_callbacks": 26,
+    "planned_activation_rows": 20480,
+    "planned_steps": 68000,
+    "success_charged_callbacks": 34
+  },
+  "schema": "sch.vpd-cluster-aware-sae-compartment-resource-reconciliation-benchmark.v1",
+  "scientific_boundary": {
+    "empirical_evidence_created": false,
+    "execution_authorized": false,
+    "inference_performed": false,
+    "model_loaded": false,
+    "persistent_dictionary_output_created": false,
+    "raw_campaign_receipts_recovered": false,
+    "retry_authorized": false,
+    "sae_training_authorized": false,
+    "synthetic_reconstruction_only": true,
+    "training_performed": false,
+    "weights_mutated": false
+  },
+  "source": {
+    "benchmark_sha256": "655755052594f21875b91a3def9c6a7d11a6f5ee99c344f8a31922722af2749b",
+    "builder_sha256": "5c9d266684b3f9dceec0d518821ddbcb78aebcfd4e882632c58abdca494132a9",
+    "resource_reconciliation_id": "c9759d5e1f89cd3f2e6d3a9fa264e27f0ae7e1eee933c3413de5ac3de54bf0ff",
+    "resource_reconciliation_path": "artifacts/vpd_cluster_aware_sae_compartment_resource_reconciliation_v1/ledger.json",
+    "resource_reconciliation_sha256": "3e690917a3cd7ec7797011e77843c3cde973d2015eb40be7999d1f8530de42f5"
+  },
+  "status": "pass",
+  "summary": {
+    "controls": 24,
+    "passed": 24
+  }
+}

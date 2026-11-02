@@ -1,0 +1,18 @@
+{
+  "status": "completed",
+  "analysis_manifest_sha256": "41afe43d826f1c0e0bd48241eb2d2024145265673a9ec68909410ad1e796bf8d",
+  "validation_sha256": "b267126e2297d9eff653178fcff8037af1a932d51f3358b925c42cf81547bd3c",
+  "code_sha256": "28af459b8d86d3ba2a3fb8f51891e1e3092ea3eff0d0aab577d3d619af6f269a",
+  "files": {
+    "carry_reset_fidelity.png": "443f6f7f6268939c766155921309d8d3c039d37444b8322ec23f3f0cd00eb768",
+    "REPORT.md": "0e06a7ba6ea0e76da18e839173d024f3123af18e73dc34aafcab21e53d5aefbe",
+    "source_snapshots/analyze_recurrence_state_control.py": "637fd159091871f8d71403470d1b8b779d3dac1eca1f3ce76766a086d63ad56b",
+    "source_snapshots/llama_capture.py": "e42716821749ebe8c227ecccff7501c12839e953fd92db5d810e6218f22bf74c",
+    "source_snapshots/llama_steer.py": "d6b384f3ef72491f833ed2088b7c9b0c6b028068a66932a59186b008b006135c",
+    "source_snapshots/recurrence_state_control.py": "a18f8aedcbd829e528b0891a9c6fbe40259947f776b97394060c1485f58556c9",
+    "source_snapshots/report_recurrence_state_control.py": "28af459b8d86d3ba2a3fb8f51891e1e3092ea3eff0d0aab577d3d619af6f269a",
+    "source_snapshots/run_recurrence_state_control.py": "b41a8cb283c2e4e01e96f32cbf46bd7573e356e212280b1c9d53be99ed1f96bb",
+    "source_snapshots/test_recurrence_state_analysis.py": "ba4bc739cc4f0af7f759bf6d32f6577e3da0c482baf91a149d1926a7b2565649",
+    "source_snapshots/verify_recurrence_state_control.py": "fe18ed1cb0b82d5b712ba06d4fd94a08161da76485c3503e53f11aca0c29028e"
+  }
+}

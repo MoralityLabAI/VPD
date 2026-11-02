@@ -1,0 +1,425 @@
+{
+  "schema": "sch.vpd-activation-category-protocol.v2",
+  "status": "locally_verified_design_no_empirical_effect_archive",
+  "predecessor": "configs/evals/vpd_activation_category_compartments_v1.json",
+  "category_contract": {
+    "schema": "sch.vpd-activation-category-contract.v1",
+    "basis": "model_visible_authorization_state_not_model_outcome",
+    "categories": [
+      {"id": "valid_authority", "sae_protocol": "valid_authority_retention"},
+      {"id": "missing_or_untrusted_authority", "sae_protocol": "provenance_rejection"},
+      {"id": "signature_invalid", "sae_protocol": "cryptographic_validity_rejection"},
+      {"id": "time_inactive", "sae_protocol": "temporal_validity_rejection"},
+      {"id": "revoked", "sae_protocol": "revocation_state_rejection"},
+      {"id": "replayed", "sae_protocol": "nonce_freshness_rejection"},
+      {"id": "scope_invalid", "sae_protocol": "scope_and_resource_rejection"},
+      {"id": "other_invalid", "sae_protocol": "conservative_request_rejection"}
+    ],
+    "unknown_condition_rule": "allow_maps_to_valid_authority_else_other_invalid",
+    "explicit_category_must_be_known": true
+  },
+  "effect_capture": {
+    "receipt_schema": "sch.vpd-effect-shard-receipt.v5",
+    "aggregate_array": "delta_h",
+    "category_array": "delta_h_by_category",
+    "category_array_axes": ["component", "category", "hidden"],
+    "aggregate_rule": "category_episode_count_weighted_mean",
+    "capture_phase": "pre_gate",
+    "generated_tokens": 0,
+    "episode_selection_default": "full_verified_split_role",
+    "uncertainty_sufficient_statistics": {
+      "atomic_unit": "pair_id",
+      "blocks": 8,
+      "assignment": "stable_hash_rank_round_robin",
+      "countsketch_dimension": 256,
+      "arrays": [
+        "category_uncertainty_block_counts",
+        "delta_h_countsketch_block_sums"
+      ],
+      "full_per_episode_hidden_states_retained": false
+    },
+    "stratified_robustness_sufficient_statistics": {
+      "countsketch_dimension": 256,
+      "condition_cells": [
+        "condition_names",
+        "condition_category_names",
+        "condition_episode_counts",
+        "delta_h_countsketch_condition_sums"
+      ],
+      "category_template_cells": [
+        "template_cell_names",
+        "template_cell_category_names",
+        "template_cell_group_names",
+        "template_cell_episode_counts",
+        "delta_h_countsketch_template_cell_sums"
+      ],
+      "full_per_episode_hidden_states_retained": false
+    },
+    "sketch_fidelity_admission": {
+      "path": "artifacts/vpd_effect_sketch_fidelity_benchmark_v1/report.json",
+      "status": "pass",
+      "benchmark_id": "4ed9790051cabd86dd4b2faffd68d57bfd1a8fbead2e8ea0df0b107ab29e04dd",
+      "hidden_size": 4096,
+      "selected_countsketch_dimension": 256,
+      "operational_minimum_direction_cosine": 0.50,
+      "operational_minimum_relative_norm": 0.25,
+      "production_archives_below_selected_dimension_rejected": true
+    },
+    "campaign_plan": {
+      "schema": "sch.vpd-effect-capture-campaign-plan.v1",
+      "path": "artifacts/vpd_effect_capture_campaign_v1/plan.json",
+      "status": "locally_verified_requires_frozen_identities_signing_registry_and_compute_authorization",
+      "effect_roles": ["discovery", "calibration", "cluster_validation"],
+      "packets_per_role": 16,
+      "compute_jobs": 48,
+      "signing_jobs": 48,
+      "merge_jobs": 3,
+      "stage_gate_jobs": 2,
+      "stage_order": ["discovery", "calibration", "cluster_validation"],
+      "later_stage_requires_prior_passed_gate": true,
+      "episode_forward_equivalents": 6386688,
+      "batch_forwards_at_planned_batch_size": 1596672,
+      "plan_does_not_authorize_execution": true
+    }
+  },
+  "data_pack": {
+    "path": "artifacts/vpd_activation_category_pack_v2",
+    "status": "locally_validated_no_model_outcomes",
+    "pack_id": "dc5224d9838d8661764f45342543a4f3ea35152cc16be60dd7d2d11b3589910d",
+    "split_path": "artifacts/vpd_activation_category_split_v3/split_manifest.json",
+    "split_id": "7f8157155dc5cb6d816b09a91b4d0ec6114ba0499022633aaf4160b3ffe575d5",
+    "split_schema": "sch.vpd-activation-category-split-manifest.v3",
+    "split_seed": 330829,
+    "generation_seed": 310829,
+    "rows": 1056,
+    "pairs": 96,
+    "template_groups": 16,
+    "activation_categories": 8,
+    "roles": {
+      "sae_training": {
+        "rows": 132,
+        "pairs": 12,
+        "template_groups": [
+          "container_registry_cleanup",
+          "incident_page_update"
+        ],
+        "optimizer_or_threshold_use": "fixed_base_dictionary_learning_only"
+      },
+      "discovery": {
+        "rows": 264,
+        "pairs": 24,
+        "template_groups": [
+          "access_role_assignment",
+          "database_schema_migration",
+          "email_campaign",
+          "invoice_approval"
+        ],
+        "optimizer_or_threshold_use": "effect_features_and_final_cluster_assignment_only"
+      },
+      "calibration": {
+        "rows": 264,
+        "pairs": 24,
+        "template_groups": [
+          "analytics_data_export",
+          "document_retention_change",
+          "kubernetes_rollout",
+          "object_storage_lifecycle"
+        ],
+        "optimizer_or_threshold_use": "cross_template_threshold_selection_only"
+      },
+      "cluster_validation": {
+        "rows": 264,
+        "pairs": 24,
+        "template_groups": [
+          "api_key_rotation",
+          "calendar_reschedule",
+          "feature_flag_rollout",
+          "payment_refund"
+        ],
+        "optimizer_or_threshold_use": "within_category_cluster_count_replication_only"
+      },
+      "final_evaluation": {
+        "rows": 132,
+        "pairs": 12,
+        "template_groups": [
+          "dns_record_change",
+          "support_ticket_escalation"
+        ],
+        "optimizer_or_threshold_use": "never"
+      }
+    },
+    "atomic_units": ["template_group", "pair_id"],
+    "assignment": "whole_template_group_to_exactly_one_role",
+    "pair_episode_and_template_group_sets_are_disjoint": true,
+    "all_declared_categories_in_every_role": true,
+    "pair_constant_prompt_variant_is_label_independent": true,
+    "cluster_validation_is_semantically_disjoint_and_outcome_free": true,
+    "final_evaluation_is_semantically_and_algorithmically_held_out_not_secret": true
+  },
+  "component_compartments": {
+    "specificity_thresholds": {
+      "minimum_dominant_share": 0.35,
+      "minimum_dominance_margin": 0.10,
+      "maximum_normalized_entropy": 0.80,
+      "zero_total_effect_routes_to_shared": true
+    },
+    "ambiguous_compartment": "shared_cross_category",
+    "cluster_rule": "deterministic_kmeans_within_compartment",
+    "within_category_clustering_geometry": {
+      "mode": "share_weighted_direction_strength_profile_kmeans",
+      "direction_weighting": "sqrt_category_strength_share",
+      "weighting_principle": "one_unit_sum_squared_category_direction_weights_for_nonzero_effect_component",
+      "arbitrarily_small_background_directions_have_arbitrarily_small_weight": true,
+      "synthetic_benchmark_path": "artifacts/vpd_activation_category_clustering_geometry_benchmark_v1/report.json",
+      "synthetic_benchmark_id": "792a7a337cedd085f8023912178a180d7010b6a61dee9ef69fcd975f1161c8fb",
+      "production_shaped_hidden_size": 4096,
+      "minimum_worst_seed_pairwise_f1": 0.95,
+      "minimum_worst_seed_cluster_purity": 0.98,
+      "does_not_select_empirical_bonsai_cluster_count": true
+    },
+    "within_category_cluster_count_selection": {
+      "mode": "cross_archive_projection_and_pair_block_ensemble_stability_and_silhouette",
+      "discovery_projection_replicates": 8,
+      "discovery_leave_one_pair_block_out_replicates": 8,
+      "independent_cluster_validation_projection_replicates": 8,
+      "independent_cluster_validation_leave_one_pair_block_out_replicates": 8,
+      "total_replicates": 32,
+      "maximum_clusters_per_category": 4,
+      "minimum_replicate_adjusted_rand": 0.90,
+      "minimum_replicate_silhouette": 0.15,
+      "minimum_cluster_size": 4,
+      "no_passing_nontrivial_candidate_rule": "one_cluster_for_category",
+      "synthetic_benchmark_path": "artifacts/vpd_activation_category_cluster_count_benchmark_v1/report.json",
+      "synthetic_benchmark_id": "6e8fd78406ffea0cb9ba9aea73be858d5a3dc7e8dd5c7c787d7cc51fc49e1b25",
+      "required_for_production_category_bundle": true,
+      "pair_block_sampling_stability_required_for_production_category_bundle": true,
+      "independent_cluster_validation_archive_required_for_production_category_bundle": true,
+      "cluster_validation_archive_must_be_content_pair_and_template_disjoint_from_discovery_and_calibration": true,
+      "cluster_validation_split_role_status": "locally_validated_no_model_outcomes_not_captured",
+      "manual_total_cluster_count_allowed_only_as_explicit_ablation": true,
+      "does_not_select_empirical_bonsai_cluster_counts": true
+    },
+    "packets_must_be_compartment_homogeneous": true,
+    "thresholds_bound_into_packet_id": true,
+    "within_split_uncertainty_screen": {
+      "mode": "leave_one_pair_block_out_countsketch",
+      "minimum_same_compartment_stability": 0.875,
+      "low_stability_specific_routes_to": "shared_cross_category",
+      "required_for_production_category_bundle": true,
+      "does_not_replace_independent_calibration_split": true
+    },
+    "within_category_pair_block_direction_robustness_screen": {
+      "mode": "pair_block_mean_countsketch_direction_and_relative_norm_coverage",
+      "minimum_pair_block_coverage": 0.75,
+      "minimum_pair_block_direction_cosine": 0.50,
+      "minimum_pair_block_relative_norm": 0.25,
+      "minimum_countsketch_dimension": 256,
+      "failed_specific_routes_to": "shared_cross_category",
+      "required_for_production_category_bundle": true,
+      "reuses_signed_uncertainty_arrays": true,
+      "model_outcomes_used": false,
+      "does_not_replace_condition_template_or_independent_split_replication": true
+    },
+    "within_category_condition_robustness_screen": {
+      "mode": "condition_mean_countsketch_direction_and_relative_norm_coverage",
+      "minimum_condition_coverage": 0.75,
+      "minimum_condition_direction_cosine": 0.50,
+      "minimum_condition_relative_norm": 0.25,
+      "failed_specific_routes_to": "shared_cross_category",
+      "required_for_production_category_bundle": true,
+      "model_outcomes_used": false,
+      "minimum_countsketch_dimension": 256,
+      "does_not_replace_pair_block_or_independent_split_replication": true
+    },
+    "within_category_template_robustness_screen": {
+      "mode": "template_group_mean_countsketch_direction_and_relative_norm_coverage",
+      "minimum_template_group_coverage": 0.75,
+      "minimum_template_group_direction_cosine": 0.50,
+      "minimum_template_group_relative_norm": 0.25,
+      "same_template_group_set_required_per_category": true,
+      "failed_specific_routes_to": "shared_cross_category",
+      "required_for_production_category_bundle": true,
+      "model_outcomes_used": false,
+      "minimum_countsketch_dimension": 256,
+      "does_not_replace_pair_block_condition_or_independent_split_replication": true
+    },
+    "threshold_calibration": {
+      "mode": "independent_cross_template_effect_archive_stability_selection",
+      "minimum_replication_rate": 0.90,
+      "minimum_stable_specific_components": 32,
+      "minimum_episodes_per_category_per_archive": 8,
+      "minimum_signed_direction_cosine": 0.50,
+      "minimum_dominant_strength_ratio": 0.50,
+      "candidate_grid": {
+        "minimum_dominant_share": [0.35, 0.45, 0.55, 0.65, 0.75, 0.85, 0.95],
+        "minimum_dominance_margin": [0.10, 0.15, 0.20, 0.30, 0.40, 0.50, 0.60],
+        "maximum_normalized_entropy": [0.40, 0.50, 0.60, 0.70, 0.80]
+      },
+      "selection_order": [
+        "maximum_stable_specific_count",
+        "maximum_symmetric_replication_rate",
+        "maximum_exact_compartment_agreement_rate",
+        "maximum_minimum_stable_specific_decision_slack",
+        "strictest_thresholds_lexicographic"
+      ],
+      "discovery_archive_is_only_clustering_feature_source": true,
+      "calibration_archive_may_only_select_thresholds": true,
+      "same_stratified_robustness_gates_required_in_both_archives": true,
+      "stratified_robustness_rejected_specific_components_do_not_count_as_stable": true,
+      "verified_v3_split_role_and_template_set_hash_required": true,
+      "discovery_and_calibration_template_sets_must_differ": true,
+      "no_passing_candidate_rule": "reject_bundle"
+    }
+  },
+  "sae_training": {
+    "specific_component_dictionary": "fixed_base_per_activation_category",
+    "shared_component_dictionary": "fixed_base_balanced_cross_category",
+    "shared_balance_rule": "equal_rows_per_observed_activation_category",
+    "same_alignment_activation_key_required": true,
+    "base_model_capture_required": true,
+    "training_template_groups_must_be_disjoint_from_effect_and_evaluation_groups": true,
+    "capacity_support": {
+      "schema": "sch.vpd-compartment-sae-capacity-plan.v1",
+      "path": "artifacts/vpd_compartment_sae_capacity_v1/plan.json",
+      "capacity_plan_id": "f2f92a86a33ee8193bd6d8df9c3841e7710a9fe220237d5660679ecf040b0067",
+      "current_pack_status": "insufficient_current_pack",
+      "ready_profiles": 0,
+      "capacity_candidate": {
+        "pack_path": "artifacts/vpd_activation_category_capacity_pack_v3",
+        "pack_id": "ad753063ac5f83bd7197fbb1d17c4bd7bdced1d3a5140a7d765ab0f8e90f3a11",
+        "split_path": "artifacts/vpd_activation_category_capacity_split_v4/split_manifest.json",
+        "split_schema": "sch.vpd-activation-category-split-manifest.v3",
+        "split_id": "a5aa3370406876c1c48ed702b431a64cb6a68c8376ab28b0aad1d852c22dd8dc",
+        "source_pack_split_id": "a9b7fa1fcc2bfc959b586e6f2890a3787b04abdbb7bd08c4772f75c0a23ee81e",
+        "rows": 25168,
+        "pairs": 2288,
+        "identity_pair_and_message_overlap_with_checked_priors": 0,
+        "capacity_plan_path": "artifacts/vpd_compartment_sae_capacity_v2/plan.json",
+        "capacity_plan_id": "809deb31cba4642ee38cbaf2f7417120610b4fc9cfe6c37d0ed6cbaa885efb7d",
+        "support_ready_profiles": ["bounded_context_pilot"],
+        "capture_completed": false,
+        "training_completed": false,
+        "empirical_trainability_claimed": false
+      },
+      "capture_resources": {
+        "path": "artifacts/vpd_compartment_capture_resources_v1/plan.json",
+        "resource_plan_id": "5be1b942362cc3aceb42df6490df95505da5a1d19b7e7666a1a56decb132520e",
+        "activation_rows": 805376,
+        "fp16_bytes_per_layer": 6597640192,
+        "shard_rows": 4096,
+        "shards_per_layer": 197,
+        "maximum_full_shard_bytes": 33554432,
+        "monolithic_npz_forbidden": true,
+        "streaming_metadata_required": true,
+        "memory_mapped_training_reader_required": true,
+        "pair_atomic_train_validation_split_required": true,
+        "capture_completed": false
+      },
+      "minimum_training_observations_per_dictionary_feature": 8,
+      "minimum_expected_training_firings_per_feature_under_uniform_usage": 32,
+      "minimum_unique_prompt_pairs_per_compartment": 32,
+      "training_fraction": 0.90,
+      "training_gate": "selected_profile_and_compartment_support_must_both_be_ready",
+      "capture_contract": "complete_whole_episode_prompt_context_window_ending_at_proposal_start_with_zero_generated_tokens_and_profile_bound_rows_per_episode",
+      "single_anchor_capture_may_not_train_a_category_dictionary": true,
+      "support_floor_is_not_a_trainability_or_mechanism_claim": true
+    },
+    "quality_gate": {
+      "schema": "sch.vpd-compartment-sae-quality-report.v1",
+      "synthetic_benchmark_path": "artifacts/vpd_compartment_sae_quality_benchmark_v1/report.json",
+      "synthetic_benchmark_id": "01d7c090a7af3f2ffe2046cf9474cb849b6774128172af28fc747b3620370d38",
+      "evaluation_split_role": "calibration",
+      "sampling": {
+        "schema": "sch.vpd-compartment-sae-quality-sampling.v1",
+        "seed": 270829,
+        "episodes_per_category": 64,
+        "activation_rows_per_episode": 128,
+        "selected_rows": 65536,
+        "whole_prompt_windows_only": true,
+        "observable_activation_category_only": true,
+        "model_outcomes_used_for_selection": false,
+        "final_evaluation_rows_used": false
+      },
+      "execution": {
+        "runner": "experiments/authz_mechinterp/run_compartment_sae_quality.py",
+        "evaluator": "experiments/authz_mechinterp/evaluate_compartment_sae_quality.py",
+        "activation_batch_rows": 256,
+        "dictionary_loading": "one_replica_at_a_time",
+        "decoder_matching_feature_block_rows": 256,
+        "full_activation_matrix_materialized": false,
+        "full_feature_matrix_materialized": false,
+        "full_replica_cosine_matrix_materialized": false,
+        "bounded_context_pilot_estimated_numeric_peak_bytes_excluding_python_and_npz_overhead": 680525824,
+        "bounded_context_pilot_full_calibration_rows": 805376,
+        "bounded_context_pilot_selected_quality_rows": 65536,
+        "bounded_context_pilot_dictionary_passes": 18
+      },
+      "minimum_replicas_per_compartment": 2,
+      "minimum_rows_per_category": 32,
+      "minimum_target_explained_variance": 0.70,
+      "minimum_target_cross_category_ev_advantage": 0.20,
+      "maximum_dead_feature_fraction": 0.25,
+      "minimum_target_selective_feature_fraction": 0.20,
+      "target_selectivity_mean_activation_ratio": 2.0,
+      "minimum_mean_l0": 1.0,
+      "minimum_replica_decoder_cosine": 0.80,
+      "minimum_replica_decoder_coverage": 0.90,
+      "minimum_selective_replica_profile_cosine": 0.80,
+      "minimum_selective_replication_rate": 0.50,
+      "minimum_shared_category_explained_variance": 0.25,
+      "maximum_shared_category_ev_range": 0.15,
+      "dictionary_duplicate_cosine_reporting_threshold": 0.98,
+      "shared_duplicate_diagnostic_is_non_gating": true,
+      "exact_dictionary_capacity_split_and_capture_provenance_required": true,
+      "dictionary_bundle_admission": {
+        "schema": "sch.vpd-compartment-sae-dictionary-bundle.v1",
+        "runner": "experiments/authz_mechinterp/admit_compartment_sae_dictionary_bundle.py",
+        "receipt": "dictionary_bundle/dictionary_bundle_receipt.json",
+        "exact_planned_job_coverage_required": true,
+        "required_before_quality_scoring": true,
+        "quality_claimed_by_admission": false
+      },
+      "distinct_initialization_seeds_per_compartment_required": true,
+      "common_data_selection_seed": 17,
+      "focused_study_requires_passed_quality_receipt": true,
+      "final_evaluation_may_not_select_quality_thresholds": true,
+      "quality_screen_is_not_causal_evidence": true
+    },
+    "replica_training_plan": {
+      "schema": "sch.vpd-compartment-sae-training-plan.v1",
+      "path": "artifacts/vpd_compartment_sae_training_plan_v1/plan.json",
+      "status": "locally_verified_requires_model_identity_and_compute_authorization",
+      "compartments": 9,
+      "replicas_per_compartment": 2,
+      "initialization_seeds": [17, 29],
+      "data_selection_seed": 17,
+      "same_training_capture_for_every_replica": true,
+      "dictionary_bundle_admission_required_before_quality": true,
+      "calibration_capture_disjoint_from_dictionary_training": true,
+      "quality_pass_required_before_focused_interventions": true
+    }
+  },
+  "focused_evaluation": {
+    "screening_endpoint": {
+      "schema": "sch.vpd-focused-sae-screen-endpoint.v1",
+      "specific_compartment": "observable_activation_category_membership",
+      "specific_model_outcome_label_used_for_selection": false,
+      "shared_compartment": "behavior_label",
+      "heldout_intervention_endpoint": "signed_authorization_decision_margin",
+      "synthetic_benchmark_path": "artifacts/vpd_compartment_sae_screening_benchmark_v1/report.json",
+      "synthetic_benchmark_id": "6640db1ae1a23a0d2c41ca10f6917e0c9463d5b653b406a0c9233ea2f7b79a00"
+    },
+    "specific_compartment_requires_target_and_cross_category_rows": true,
+    "shared_compartment_requires_multiple_categories": true,
+    "shared_interventions_cover_every_family_category_cell": true,
+    "report_effects_by_category_and_in_aggregate": true,
+    "matched_parameter_control_required": true,
+    "final_template_groups_unseen_by_dictionary_effect_and_threshold_selection": true
+  },
+  "scientific_boundary": {
+    "cluster_membership_is_screening_only": true,
+    "individual_causality_requires_signed_heldout_intervention_agreement": true,
+    "paid_compute_authorized": false,
+    "weight_mutation_authorized": false
+  }
+}
