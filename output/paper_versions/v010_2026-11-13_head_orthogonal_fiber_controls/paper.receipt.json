@@ -1,0 +1,11 @@
+{
+  "version": "v010_2026-11-13_head_orthogonal_fiber_controls",
+  "pages": 13,
+  "title": "From Shared Weights to Head-Orthogonal Fibers: Virtual Depth, Head-Readable Staircases, and Post-Stall Search in Looped Transformers",
+  "source_sha256": "623cdc4f06f920d3530e75de219f5fdfc68a5c764cca60e57c86c7f181cb09b3",
+  "tex_sha256": "1b180f8a8d28e85ebd7ee1d963a693c905bec76261f8e83b6b5349fd82f1c556",
+  "pdf_sha256": "67f2e8d535f5c3b8f4abc39cc4e1c8af3ab2bd671d1a3f9a177170a5e584ea00",
+  "builder_sha256": "5268929c95eeac7a108bb3b8173a554e31e422d6632d67264a7923dd7752a982",
+  "controls_receipt_sha256": "3623cb6272fd6430255407336486273024ecee288b51b875d60cf97edb5f53ad",
+  "loopscope_commit": "9972f566aa36b3757e35888d8264b03d0c970fbd"
+}

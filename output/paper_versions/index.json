@@ -1263,8 +1263,60 @@
           "sha256": "fe0b5cc0691068626bd0a4ce7992744aae5c0cc3ba2e36575fe6b825fc4c07f4"
         }
       }
+    },
+    {
+      "version": "v010_2026-11-13_head_orthogonal_fiber_controls",
+      "pages": 13,
+      "note": "Head-orthogonal fiber controls and peer-review revision: adds 24-arm LoopedChase P_head contrast projection (1.000 retention at lambda=0.1), TRM per-stratum manifold/donor/step-1-freeze/top-k PCA dose-response (1.000 on WB-Prop, -7.7 to -8.7 pp on WB-Stall p<=0.0043, full recovery at k=64 PCA p=1.00) and linear ridge-probe controls (97.1%-97.8% step-1 candidate masks), input re-injection audit, and numerical/sourcing reconciliations. Earlier versions v001-v009 remain unchanged.",
+      "files": {
+        "build_figures.py": {
+          "sha256": "5268929c95eeac7a108bb3b8173a554e31e422d6632d67264a7923dd7752a982"
+        },
+        "figures/fig1_virtual_depth_triangulation.pdf": {
+          "sha256": "f88fe3e531b33758621a2dd2f065d59ccff9570b9eb59e93fd410ab80fc64f7c"
+        },
+        "figures/fig1_virtual_depth_triangulation.png": {
+          "sha256": "11cacb44588965dfe687c1f55716e4bc151f6540392c0379d6c2ca4ab975978e"
+        },
+        "figures/fig2_fragility_vs_specificity_tca.pdf": {
+          "sha256": "85f8bd9f41de84bec870d035d3419ca0b1448545c2372b4d38c4bf8fdd7bace5"
+        },
+        "figures/fig2_fragility_vs_specificity_tca.png": {
+          "sha256": "abe849abee658a03bada1c1f379fdab7682df0f3c332686984dc66995151da38"
+        },
+        "figures/fig3_compactification_staircase.pdf": {
+          "sha256": "f0728c41b888da2f6065fb3261bc947e894afa77fa9b74226cf91425d814fb1c"
+        },
+        "figures/fig3_compactification_staircase.png": {
+          "sha256": "43e1ee1cccc476d9e727aa5916d0a482716e10feab3dd77f4319c8fc686b2465"
+        },
+        "figures/fig4_dark_fiber_ablation.pdf": {
+          "sha256": "562fd07fbe09442fbe7a146ec2f3388ded94b3a25b0a89dc65074300c24c645f"
+        },
+        "figures/fig4_dark_fiber_ablation.png": {
+          "sha256": "168005a711428d6a2a30d920a8d2f45322f33cd9d74acd93924365d969d50bd3"
+        },
+        "main.tex": {
+          "sha256": "1b180f8a8d28e85ebd7ee1d963a693c905bec76261f8e83b6b5349fd82f1c556"
+        },
+        "PAPER.md": {
+          "sha256": "623cdc4f06f920d3530e75de219f5fdfc68a5c764cca60e57c86c7f181cb09b3"
+        },
+        "paper.pdf": {
+          "sha256": "67f2e8d535f5c3b8f4abc39cc4e1c8af3ab2bd671d1a3f9a177170a5e584ea00"
+        },
+        "paper.receipt.json": {
+          "sha256": "ea771e4df9127a1265f2ec20d777fb3dc1908c4e538bb40986ba81e378926295"
+        },
+        "README.md": {
+          "sha256": "c7c149ff57a25c0ead9c2656e39cb43fc619931c8c039924c519d316b393adde"
+        },
+        "references.bib": {
+          "sha256": "a7d8664ccb82d142ad307fe134a7718bfa1fc29e531e90df44564887cfec1d0b"
+        }
+      }
     }
   ],
-  "current_manuscript": "v009_2026-11-13_shared_weights_dark_fibers",
+  "current_manuscript": "v010_2026-11-13_head_orthogonal_fiber_controls",
   "technical_companion": "v002_2026-09-09_with_campsite"
 }
