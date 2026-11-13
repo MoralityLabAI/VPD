@@ -72,3 +72,4 @@ vendor/
 /output/*
 !/output/paper_versions/
 !/output/pdf/
+!/output/literature/

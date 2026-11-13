@@ -1315,8 +1315,60 @@
           "sha256": "a7d8664ccb82d142ad307fe134a7718bfa1fc29e531e90df44564887cfec1d0b"
         }
       }
+    },
+    {
+      "version": "v011_2026-11-13_cited_looped_mechinterp_pdfs",
+      "pages": 14,
+      "note": "Archives verified PDFs of all 12 cited external looped-transformer mechanistic interpretability and architecture papers in output/literature/looped_mechinterp/ (mirrored in LoopedTransformers papers/shared_weights_dark_fibers/literature/) and embeds direct repository PDF URIs across references.bib, paper.pdf, PAPER.md, and README.md. Earlier versions v001-v010 remain unchanged.",
+      "files": {
+        "build_figures.py": {
+          "sha256": "5268929c95eeac7a108bb3b8173a554e31e422d6632d67264a7923dd7752a982"
+        },
+        "figures/fig1_virtual_depth_triangulation.pdf": {
+          "sha256": "f88fe3e531b33758621a2dd2f065d59ccff9570b9eb59e93fd410ab80fc64f7c"
+        },
+        "figures/fig1_virtual_depth_triangulation.png": {
+          "sha256": "11cacb44588965dfe687c1f55716e4bc151f6540392c0379d6c2ca4ab975978e"
+        },
+        "figures/fig2_fragility_vs_specificity_tca.pdf": {
+          "sha256": "85f8bd9f41de84bec870d035d3419ca0b1448545c2372b4d38c4bf8fdd7bace5"
+        },
+        "figures/fig2_fragility_vs_specificity_tca.png": {
+          "sha256": "abe849abee658a03bada1c1f379fdab7682df0f3c332686984dc66995151da38"
+        },
+        "figures/fig3_compactification_staircase.pdf": {
+          "sha256": "f0728c41b888da2f6065fb3261bc947e894afa77fa9b74226cf91425d814fb1c"
+        },
+        "figures/fig3_compactification_staircase.png": {
+          "sha256": "43e1ee1cccc476d9e727aa5916d0a482716e10feab3dd77f4319c8fc686b2465"
+        },
+        "figures/fig4_dark_fiber_ablation.pdf": {
+          "sha256": "562fd07fbe09442fbe7a146ec2f3388ded94b3a25b0a89dc65074300c24c645f"
+        },
+        "figures/fig4_dark_fiber_ablation.png": {
+          "sha256": "168005a711428d6a2a30d920a8d2f45322f33cd9d74acd93924365d969d50bd3"
+        },
+        "main.tex": {
+          "sha256": "d4545faa90a9ca1fb91089d866721265622eea428ea30e5d19b8376b5017eb81"
+        },
+        "PAPER.md": {
+          "sha256": "5800138ed1439345fa0ab8431776a498fbae8e074c8626d25bd64e930f6337de"
+        },
+        "paper.pdf": {
+          "sha256": "2ac7f0b22f4a9419ddf16bfb7f386d3663f159bdff03949b181a2297543db799"
+        },
+        "paper.receipt.json": {
+          "sha256": "89280facd5d8897c1e8e4d9bd9078542b06e3f735fe74a9ec2ea5acc83a6f298"
+        },
+        "README.md": {
+          "sha256": "55144efaed6878f090ab8c373d14c5918ee8e690313e9478583f9e291645e963"
+        },
+        "references.bib": {
+          "sha256": "6bf84ed97d88c34949603cf5112dc755eada8e576381dec2d4b5ea4575109de4"
+        }
+      }
     }
   ],
-  "current_manuscript": "v010_2026-11-13_head_orthogonal_fiber_controls",
+  "current_manuscript": "v011_2026-11-13_cited_looped_mechinterp_pdfs",
   "technical_companion": "v002_2026-09-09_with_campsite"
 }
