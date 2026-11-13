@@ -1211,8 +1211,60 @@
           "sha256": "9a3b279a562b6ba82835e94fa6bacbd7bedde7f7e016c6444c593849099cd75b"
         }
       }
+    },
+    {
+      "version": "v009_2026-11-13_shared_weights_dark_fibers",
+      "pages": 14,
+      "note": "Unified manuscript synthesizing v008 Nanbeige VPD/SAE state-carry controls with Huginn-0125 HUG-CAL-02 rotation confirmation, RMP closed-loop dictionaries/transcoders/DAS transfer, LOOPSCOPE-01 TCA & Q11 compactification (AUC=0.992), ARG-02, and LOOPSCOPE-02 Sudoku dark-fiber localization (1.000 -> 0.070, p=2.02e-28). Earlier versions remain unchanged.",
+      "files": {
+        "build_figures.py": {
+          "sha256": "ce0f9173173337034c504b0add573742399ac0dc34ba66dbee58a56cece164d7"
+        },
+        "figures/fig1_virtual_depth_triangulation.pdf": {
+          "sha256": "5c08ef06eddc5873ffa8a1cd642bc31b97295e3b995b873312e2deefdd5c51a5"
+        },
+        "figures/fig1_virtual_depth_triangulation.png": {
+          "sha256": "11cacb44588965dfe687c1f55716e4bc151f6540392c0379d6c2ca4ab975978e"
+        },
+        "figures/fig2_fragility_vs_specificity_tca.pdf": {
+          "sha256": "7f1c8dfb9acd9b911d5d23ac9d501a224020fb973b95006f0673e1c6214f25b7"
+        },
+        "figures/fig2_fragility_vs_specificity_tca.png": {
+          "sha256": "abe849abee658a03bada1c1f379fdab7682df0f3c332686984dc66995151da38"
+        },
+        "figures/fig3_compactification_staircase.pdf": {
+          "sha256": "8a823505db49f86acec3d24312d4eb828faf2d7f4f3489231ffc28f64b58ddba"
+        },
+        "figures/fig3_compactification_staircase.png": {
+          "sha256": "43e1ee1cccc476d9e727aa5916d0a482716e10feab3dd77f4319c8fc686b2465"
+        },
+        "figures/fig4_dark_fiber_ablation.pdf": {
+          "sha256": "d85b67f4ec80c1b0beb1d98cd4c1a5d03f27d47b93cc99c819b85048d42f0c45"
+        },
+        "figures/fig4_dark_fiber_ablation.png": {
+          "sha256": "17d0f79efd0054a5cd429fea30280bb7e9f2fbec48569bd692adc8d1d4cb2cfe"
+        },
+        "main.tex": {
+          "sha256": "b03cf5b6c7f0ec33a20c8d04df2f1c62f77b35595db194c940f7b529fd83a198"
+        },
+        "PAPER.md": {
+          "sha256": "ab6fbdad9bfd3ff37f005e11424e32b51fbfbecbaac2a1ede91ad1a314342830"
+        },
+        "paper.pdf": {
+          "sha256": "8c3f960e02703581b90bb39f894f3077a94c741d491c686f689dfbb5d4621041"
+        },
+        "paper.receipt.json": {
+          "sha256": "0e8f2e99284a63d00981e69bb1d8e2a5f2b09bc3d224c14ba0cc80204e614c19"
+        },
+        "README.md": {
+          "sha256": "2fa0e081a62b4cd7c65236426aaee0e67fc1438f8a50c0960a4f5ab63143f182"
+        },
+        "references.bib": {
+          "sha256": "fe0b5cc0691068626bd0a4ce7992744aae5c0cc3ba2e36575fe6b825fc4c07f4"
+        }
+      }
     }
   ],
-  "current_manuscript": "v008_2026-09-12_monitorability_future_work",
+  "current_manuscript": "v009_2026-11-13_shared_weights_dark_fibers",
   "technical_companion": "v002_2026-09-09_with_campsite"
 }

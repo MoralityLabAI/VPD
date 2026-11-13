@@ -6,8 +6,8 @@ HRM experiments. This repository is a fork of
 [Goodfire's parameter decomposition project](https://github.com/goodfire-ai/param-decomp).
 The original upstream project is preserved in [`upstream/goodfire/`](upstream/goodfire/).
 
-- [Latest paper: v008, with monitorability Future Work](output/paper_versions/v008_2026-09-12_monitorability_future_work/paper.pdf)
-- [Paper source](output/paper_versions/v008_2026-09-12_monitorability_future_work/PAPER.md)
+- [Latest paper: v009, From Shared Weights to Dark Fibers](output/paper_versions/v009_2026-11-13_shared_weights_dark_fibers/paper.pdf)
+- [Paper source](output/paper_versions/v009_2026-11-13_shared_weights_dark_fibers/PAPER.md) ([LaTeX](output/paper_versions/v009_2026-11-13_shared_weights_dark_fibers/main.tex); prior [v008 Nanbeige manuscript](output/paper_versions/v008_2026-09-12_monitorability_future_work/paper.pdf))
   and [version history](output/paper_versions/README.md)
 - [Mechanistic dataset index v2](artifacts/nanbeige_reasoning/dataset_index_v2/README.md)
 - [Nanbeige experiments](experiments/nanbeige_reasoning/README.md)

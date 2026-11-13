@@ -17,4 +17,6 @@ Preserve these directories. Future paper revisions should receive a new incremen
 
 - [v007: 12 September, state-carry controls](v007_2026-09-12_state_carry_controls/paper.pdf), 18 pages. Previous manuscript. Adds completed recurrence-state and sparse-support controls with exact parity checks, preserving the earlier results and explicit semantic limitations.
 
-- [v008: 12 September, monitorability Future Work](v008_2026-09-12_monitorability_future_work/paper.pdf), 19 pages. Current manuscript. Adds the prospective behavioral, probing and causal study, its success criterion and compute-budget limitation. Existing results remain unchanged.
+- [v008: 12 September, monitorability Future Work](v008_2026-09-12_monitorability_future_work/paper.pdf), 19 pages. Previous manuscript. Adds the prospective behavioral, probing and causal study, its success criterion and compute-budget limitation. Existing results remain unchanged.
+
+- [v009: 13 November, From Shared Weights to Dark Fibers](v009_2026-11-13_shared_weights_dark_fibers/paper.pdf), 14 pages. Current manuscript. Unifies the September Nanbeige VPD/SAE state-carry manuscript (v008) with Huginn-0125 matched-rotation confirmation (HUG-CAL-02), RMP & LOOPSCOPE-01 TCA/compactification laws, ARG-02, and LOOPSCOPE-02 9x9 Sudoku dark-fiber localization. Earlier versions v001-v008 remain unchanged.

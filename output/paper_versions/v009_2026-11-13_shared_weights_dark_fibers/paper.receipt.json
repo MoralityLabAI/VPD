@@ -1,0 +1,10 @@
+{
+  "version": "v009_2026-11-13_shared_weights_dark_fibers",
+  "pages": 14,
+  "title": "From Shared Weights to Dark Fibers: Virtual Depth, Head-Readable Staircases, and Unmonitored Search in Looped Transformers",
+  "source_sha256": "ab6fbdad9bfd3ff37f005e11424e32b51fbfbecbaac2a1ede91ad1a314342830",
+  "tex_sha256": "b03cf5b6c7f0ec33a20c8d04df2f1c62f77b35595db194c940f7b529fd83a198",
+  "pdf_sha256": "8c3f960e02703581b90bb39f894f3077a94c741d491c686f689dfbb5d4621041",
+  "builder_sha256": "ce0f9173173337034c504b0add573742399ac0dc34ba66dbee58a56cece164d7",
+  "loopscope_commit": "a5f0f6cdb8c992482d32c68f1ab90e5dfa8a9cfa"
+}
