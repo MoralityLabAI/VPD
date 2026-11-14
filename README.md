@@ -6,8 +6,8 @@ HRM experiments. This repository is a fork of
 [Goodfire's parameter decomposition project](https://github.com/goodfire-ai/param-decomp).
 The original upstream project is preserved in [`upstream/goodfire/`](upstream/goodfire/).
 
-- [Latest paper: v011, From Shared Weights to Head-Orthogonal Fibers](output/paper_versions/v011_2026-11-13_cited_looped_mechinterp_pdfs/paper.pdf)
-- [Paper source](output/paper_versions/v011_2026-11-13_cited_looped_mechinterp_pdfs/PAPER.md) ([LaTeX](output/paper_versions/v011_2026-11-13_cited_looped_mechinterp_pdfs/main.tex); prior [v010](output/paper_versions/v010_2026-11-13_head_orthogonal_fiber_controls/paper.pdf), [v009](output/paper_versions/v009_2026-11-13_shared_weights_dark_fibers/paper.pdf), and [v008 Nanbeige manuscript](output/paper_versions/v008_2026-09-12_monitorability_future_work/paper.pdf))
+- [Latest paper: v012, From Shared Weights to Head-Orthogonal Fibers](output/paper_versions/v012_2026-11-14_replication_history_probes_and_licenses/paper.pdf)
+- [Paper source](output/paper_versions/v012_2026-11-14_replication_history_probes_and_licenses/PAPER.md) ([LaTeX](output/paper_versions/v012_2026-11-14_replication_history_probes_and_licenses/main.tex); prior [v011](output/paper_versions/v011_2026-11-13_cited_looped_mechinterp_pdfs/paper.pdf), [v010](output/paper_versions/v010_2026-11-13_head_orthogonal_fiber_controls/paper.pdf), [v009](output/paper_versions/v009_2026-11-13_shared_weights_dark_fibers/paper.pdf), and [v008 Nanbeige manuscript](output/paper_versions/v008_2026-09-12_monitorability_future_work/paper.pdf))
   and [version history](output/paper_versions/README.md)
 - [Cited looped-mechinterp PDF archive & repo URIs](output/literature/looped_mechinterp/README.md)
 - [Mechanistic dataset index v2](artifacts/nanbeige_reasoning/dataset_index_v2/README.md)

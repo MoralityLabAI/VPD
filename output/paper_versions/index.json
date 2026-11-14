@@ -1367,8 +1367,60 @@
           "sha256": "6bf84ed97d88c34949603cf5112dc755eada8e576381dec2d4b5ea4575109de4"
         }
       }
+    },
+    {
+      "version": "v012_2026-11-14_replication_history_probes_and_licenses",
+      "pages": 15,
+      "note": "Peer-review replication, differential history probes, and license audit: adds two-checkpoint items256 per-stratum ablation and PCA dose-response curves (gaoxin492 + yagizdevre), differential search-history and refuted-digit probes with shuffled-label nulls (Table 6), bench100 batch-size/SVD-precision determinism controls, public VPD repo PDF URIs, PrimeIntellect/INTELLECT-3-RL and ARG-02 pre-run registration commit citations, Regime I input re-injection scope note, and per-paper arXiv license audit (retaining binary PDFs only for CC BY 4.0 works). Earlier versions v001-v011 remain unchanged.",
+      "files": {
+        "build_figures.py": {
+          "sha256": "48615113bc1542a9c80ee7e7ae638164005e5a90a9eff997c9a2181613591fb9"
+        },
+        "figures/fig1_virtual_depth_triangulation.pdf": {
+          "sha256": "aab456d6633426b417f3d1d204a423c1950bbee5a37b5e5a83895b1d929c01c0"
+        },
+        "figures/fig1_virtual_depth_triangulation.png": {
+          "sha256": "11cacb44588965dfe687c1f55716e4bc151f6540392c0379d6c2ca4ab975978e"
+        },
+        "figures/fig2_fragility_vs_specificity_tca.pdf": {
+          "sha256": "b9e82a62f3ee9db5257afc686f0965e7f4f00e226f2b9492c0bc97458bddedf4"
+        },
+        "figures/fig2_fragility_vs_specificity_tca.png": {
+          "sha256": "abe849abee658a03bada1c1f379fdab7682df0f3c332686984dc66995151da38"
+        },
+        "figures/fig3_compactification_staircase.pdf": {
+          "sha256": "ebdcc416be521923ce4d7d946a18346e7a95b5ec66970941b89d929ac9cce83e"
+        },
+        "figures/fig3_compactification_staircase.png": {
+          "sha256": "43e1ee1cccc476d9e727aa5916d0a482716e10feab3dd77f4319c8fc686b2465"
+        },
+        "figures/fig4_dark_fiber_ablation.pdf": {
+          "sha256": "6455cc2957143e34900f7880013fc7ce1475bd483d57f51f12cd1e228295ed9e"
+        },
+        "figures/fig4_dark_fiber_ablation.png": {
+          "sha256": "56f6fadbae05241c10d2cd3992c191eec404eafc89e8576468ec1ba372244f0c"
+        },
+        "main.tex": {
+          "sha256": "b0590d97c12fe14840d3101550e825a6b26b87ace926e1e665390d950da56aaf"
+        },
+        "PAPER.md": {
+          "sha256": "13e623183092ed7ee719f2b4a16e1e70024aeda9cc74f81844d454b03ab982b4"
+        },
+        "paper.pdf": {
+          "sha256": "e802b75aedf419e6086a2e9eddfc798ba9c8e961092a5d56eb66f1c7a692495e"
+        },
+        "paper.receipt.json": {
+          "sha256": "d608ea50f6d350f5edc0fe05902c7eecfa5153e1753d39bbae2250cf6d4419c1"
+        },
+        "README.md": {
+          "sha256": "e250cab4f643153676e87b93824571e5bcd9857e12d2255a09ab36a79deb1053"
+        },
+        "references.bib": {
+          "sha256": "3d460c9f9014a39ee17fc9b4d7d8509b9f73682c9692a9a362f8484bbf0b40d7"
+        }
+      }
     }
   ],
-  "current_manuscript": "v011_2026-11-13_cited_looped_mechinterp_pdfs",
+  "current_manuscript": "v012_2026-11-14_replication_history_probes_and_licenses",
   "technical_companion": "v002_2026-09-09_with_campsite"
 }
