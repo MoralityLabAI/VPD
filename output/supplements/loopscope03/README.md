@@ -1,0 +1,15 @@
+# `mechinterp/loopscope03`: Three-Ledger Iteration Pricing, Data-Scaled Conditional Refill, and Enforced Path Independence
+
+`LOOPSCOPE-03` implements a three-ledger state decomposition $S_t = V_t \oplus C_t \oplus R_t$, data-scaled conditional refill (`N = 100..8,100`), covariate-shift-free `Resume` testing, and unconditional / enforced path-independence audits across frozen looped-transformer checkpoints (`TRM` primary `gaoxin492` and replication `yagizdevre`, `LoopedChase` `Q4` 12-arm suite, `tomg-group-umd/huginn-0125`, and `Nanbeige/Nanbeige4.2-3B` stationarity admission control). Publicly mirrored in `MoralityLabAI/VPD/output/supplements/loopscope03/`.
+
+## Directory Layout
+
+- [`docs/registration.md`](docs/registration.md) — Pre-registration locked at commit `b1ec77550997cbc5ae2cd84618af74e8f34e38e7` (`2026-11-14T08:28:03+08:00`) prior to held-out inference (`H3.1`–`H3.5`).
+- [`docs/report.md`](docs/report.md) — Complete Stage 1–4 evaluation report covering the Stationarity Admission Gate, Conditional Refill capacity (`C0`–`C6`) and data-size (`N = 100..8,100`) scaling curves, periodic refill (`m = 1, 2, 4, 8`), unselected `Resume` `never_lock` rates and uncapped solver delays, unconditional vs. `VC`-enforced path independence (`K = 8` forks, testing Anil et al., 2022 and replicating Kubo et al., 2026 `C-voting`), causal $R_t$ swaps, and `Huginn-0125` cache contraction.
+- [`ledger_lib.py`](ledger_lib.py) — Exact `float64` `P_head` SVD projectors, `Post-RMSNorm` sphere calibration (`autocast(enabled=False)`), exact Sudoku candidate-mask & unit-conflict extractors, periodic visible-board cycle detector, 2-layer/4-layer RoPE+SwiGLU `RefillTransformer`, and exact McNemar / paired permutation tests.
+- [`scripts/conditional_refill.py`](scripts/conditional_refill.py) — Stage 1 runner (`train_900` / `val_100` capacity sweep `C0`–`C6` + `items256` & `bench100` closed-loop $z_H \times z_L$ cross at $s \in \{16, 32, 64\}$).
+- [`scripts/resume_and_fork.py`](scripts/resume_and_fork.py) — Stage 2 & Stage 3 runner (stationarity admission gate, `LoopedChase` + two-checkpoint `TRM` `Resume` test, `K=8` `C-voting` replication & fork divergence, and matched-step causal $R_t$ swap / revisit audit).
+- [`scripts/huginn_ledger_probe.py`](scripts/huginn_ledger_probe.py) — Supplementary `Huginn-0125` multi-init path-variance contraction, cross-fork `CacheMean` / donor-$R_t$ swap, and $t=4$ `Resume` test.
+- [`scripts/path_independence_and_scaling.py`](scripts/path_independence_and_scaling.py) — Stage 4 runner (canonical-isomorphism-disjoint `N = 100..8,100` `C5` scaling curve, periodic refill `m = 1, 2, 4, 8`, unselected `never_lock` + uncapped mutual-solver delay `Resume` audit, and `K = 8` unconditional vs. enforced path independence).
+- [`results/`](results/) — Committed JSON receipts (`stage1_conditional_refill.json`, `stage2_3_resume_and_fork.json`, `huginn_cache_and_fork.json`, `stage4_path_independence_and_scaling.json`).
+- [`tests/test_loopscope03.py`](tests/test_loopscope03.py) — Unit and receipt-integrity tests (`pytest mechinterp/loopscope03/tests`, `7 passed`).

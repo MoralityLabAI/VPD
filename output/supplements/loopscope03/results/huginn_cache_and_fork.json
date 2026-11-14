@@ -1,0 +1,56 @@
+{
+  "model": "tomg-group-umd/huginn-0125",
+  "snapshot_commit": "bb6621b65e90b6a4b9b29ef88dc83866d450470c",
+  "elapsed_sec": 411.69235372543335,
+  "n_prompts": 32,
+  "k_forks": 4,
+  "n_steps": 32,
+  "stationarity_transplant_linf_diff": 0.0,
+  "path_dependent_variance_share_upper_bound_by_step": {
+    "0": 1.0068234981930095,
+    "1": 0.38939677195494654,
+    "2": 0.20196240717352348,
+    "4": 0.08945427788896412,
+    "8": 0.02909379749874847,
+    "16": 0.004125659882107449,
+    "32": 0.000571005786124717
+  },
+  "cross_fork_latent_cosine_by_step": {
+    "0": 0.0012597344660510619,
+    "1": 0.7654279073079427,
+    "2": 0.8737154304981232,
+    "4": 0.9433077474435171,
+    "8": 0.982900470495224,
+    "16": 0.9976621568202972,
+    "32": 0.9996890624364217
+  },
+  "cross_fork_top1_token_agreement_by_step": {
+    "1": 0.6770833333333334,
+    "2": 0.8333333333333334,
+    "4": 0.90625,
+    "8": 0.9375,
+    "16": 1.0,
+    "32": 0.984375
+  },
+  "cross_fork_symmetric_kl_by_step": {
+    "1": 0.5276299659114253,
+    "2": 0.13769425044301897,
+    "4": 0.05543001735592649,
+    "8": 0.022823329794240028,
+    "16": 0.004130135377674074,
+    "32": 0.0006231202667237312
+  },
+  "fork_swap_and_cache_mean": {
+    "step_4_cache_mean_next_top1_match_rate": 0.84375,
+    "step_4_donor_R_swap_top1_flip_rate": 0.09375,
+    "step_8_cache_mean_next_top1_match_rate": 1.0,
+    "step_8_donor_R_swap_top1_flip_rate": 0.03125
+  },
+  "resume_to_step32_steady_token_at_t4": {
+    "mean_tau_fresh": 5.6875,
+    "mean_tau_cache_mean": 3.1875,
+    "mean_tau_full": 2.6875,
+    "accrued_cache_loops": 2.5,
+    "price_R_loops": 0.5
+  }
+}

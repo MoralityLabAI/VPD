@@ -16,6 +16,15 @@
       "bibkey": "dugan2026muonsae",
       "title": "Late-Layer Feature Reweighting by a Constitutional Adapter: An Industrial Sparse Autoencoder Analysis",
       "public_uri": "https://www.moralitylab.xyz/papers/Late_Layer_Feature_Reweighting_by_a_Constitutional_Adapter_An_Industrial_Sparse_Autoencoder_Analysis.pdf"
+    },
+    {
+      "bibkey": "dugan2026loopscope01",
+      "title": "LOOPSCOPE-01-03: Public Supplement Mirror of Pre-Registrations, Evaluation Reports, Scripts, and JSON Receipts",
+      "loopscope02_preregistration_uri": "https://github.com/MoralityLabAI/VPD/blob/main/output/supplements/loopscope02/docs/registration.md",
+      "loopscope02_report_uri": "https://github.com/MoralityLabAI/VPD/blob/main/output/supplements/loopscope02/docs/report.md",
+      "loopscope03_preregistration_uri": "https://github.com/MoralityLabAI/VPD/blob/main/output/supplements/loopscope03/docs/registration.md",
+      "loopscope03_preregistration_patch_uri": "https://github.com/MoralityLabAI/VPD/blob/main/output/supplements/loopscope03/preregistration_commit_b1ec7755.patch",
+      "loopscope03_report_uri": "https://github.com/MoralityLabAI/VPD/blob/main/output/supplements/loopscope03/docs/report.md"
     }
   ],
   "external_arxiv_papers": [
@@ -240,6 +249,7 @@
       "category": "concurrent_2026_mechinterp",
       "title": "C-voting: Confidence-Based Test-Time Voting without Explicit Energy Functions",
       "authors": "Kenji Kubo, Shunsuke Kamiya, Masanori Koyama, Kohei Hayashi, Yusuke Iwasawa, Yutaka Matsuo",
+      "venue": "ICLR 2026",
       "license": "CC-BY-4.0",
       "license_uri": "http://creativecommons.org/licenses/by/4.0/",
       "redistributable_in_public_repo": true,
@@ -250,6 +260,23 @@
       "filename": "2604.13521_kubo2026_cvoting_confidence_based_voting.pdf",
       "public_vpd_blob_uri": "https://github.com/MoralityLabAI/VPD/blob/main/output/literature/looped_mechinterp/2604.13521_kubo2026_cvoting_confidence_based_voting.pdf",
       "public_vpd_raw_uri": "https://raw.githubusercontent.com/MoralityLabAI/VPD/main/output/literature/looped_mechinterp/2604.13521_kubo2026_cvoting_confidence_based_voting.pdf"
+    },
+    {
+      "bibkey": "sharma2026dense",
+      "arxiv_id": "2606.24898",
+      "category": "concurrent_2026_mechinterp",
+      "title": "Dense Supervision Is Not Enough: The Readout Blind Spot in Looped Language Models",
+      "authors": "Rituraj Sharma, Tu Vu",
+      "license": "CC-BY-4.0",
+      "license_uri": "http://creativecommons.org/licenses/by/4.0/",
+      "redistributable_in_public_repo": true,
+      "bytes": 1893901,
+      "sha256": "1688226003cf3e244f582b94a20814d9606f6d792dac0c97323e6edb547c3461",
+      "arxiv_abs_uri": "https://arxiv.org/abs/2606.24898",
+      "arxiv_pdf_uri": "https://arxiv.org/pdf/2606.24898.pdf",
+      "filename": "2606.24898_sharma2026_readout_blind_spot.pdf",
+      "public_vpd_blob_uri": "https://github.com/MoralityLabAI/VPD/blob/main/output/literature/looped_mechinterp/2606.24898_sharma2026_readout_blind_spot.pdf",
+      "public_vpd_raw_uri": "https://raw.githubusercontent.com/MoralityLabAI/VPD/main/output/literature/looped_mechinterp/2606.24898_sharma2026_readout_blind_spot.pdf"
     }
   ]
 }

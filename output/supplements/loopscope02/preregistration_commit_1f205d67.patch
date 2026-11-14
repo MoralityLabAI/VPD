@@ -1,0 +1,2982 @@
+commit 1f205d67f940ec198dcbd7f7854ab101e932e283
+Author: Patrick Dugan <patrick.buchanan.dugan@gmail.com>
+Date:   Fri Nov 13 17:46:36 2026 +0800
+
+    LOOPSCOPE-02: register 9x9 Sudoku triangulation across TRM, Nanbeige-3B, and Qwen-4B
+
+diff --git a/mechinterp/loopscope02/__init__.py b/mechinterp/loopscope02/__init__.py
+new file mode 100644
+index 0000000..af8547e
+--- /dev/null
++++ b/mechinterp/loopscope02/__init__.py
+@@ -0,0 +1 @@
++"""LOOPSCOPE-02: Multiplexed depth vs. iterative operator convergence on 9x9 Sudoku."""
+diff --git a/mechinterp/loopscope02/docs/registration.md b/mechinterp/loopscope02/docs/registration.md
+new file mode 100644
+index 0000000..1db086b
+--- /dev/null
++++ b/mechinterp/loopscope02/docs/registration.md
+@@ -0,0 +1,113 @@
++# LOOPSCOPE-02: Triangulating Looped Virtual Depth vs. Recursive Attractor Search on Stratified 9×9 Sudoku
++
++Registered 2026-11-13 on branch `main`, prior to evaluating any held-out Sudoku test board across any model.
++
++## 1. Motivation and Literature Boundary
++
++Five looped-transformer interpretability papers from the preceding ten weeks establish important pieces of how weight-tied models compute, while leaving a central capability question unresolved:
++
++1. **Wu, Hu, and Zhang (`arXiv:2609.39892`, Sept 2026)** show via Jacobian steering (`J-steering`) that shared weights route to distinct linear transformations across loop iterations. Consequently, showing that `Nanbeige4.2-3B` activates nearly orthogonal SVD rank-one mixtures on Pass 1 vs. Pass 2 is necessary context, not a standalone contribution.
++2. **Sesodia et al. (`arXiv:2610.24135`, NeurIPS 2026)** characterize iteration-budget difficulty staircases across recurrent depth, without testing whether the recurrent map commutes with a ground-truth symbolic propagation operator or how post-stall conflicts are repaired.
++3. **Olszowiec et al. (`arXiv:2610.18127`, Oct 2026)** track representation refinement across loops without open-loop or donor-displacement counterfactual falsification.
++4. **Kaissis et al. (`SDI`, ICML 2026)** use per-step outer products $\phi_t = \sum \delta_t \otimes a_t$ for training-data influence, without closed-form orthogonal rotation nulls or attractor-repair masking analysis.
++5. **Blayney et al. (2026)** analyze loop-depth representations without contrasting fixed-pass looped language models against convergent Tiny Recursive Models (`TRM`) on a shared, deductively stratified constraint-satisfaction benchmark.
++
++**Core question.** Can isolating Pass-1 vs. Pass-2 parameter-activation changes in a 2-pass looped 3B language model (`Nanbeige4.2-3B`) explain a capability gain over an untied 4B model (`Qwen3.5-4B-Base`, plus pure-SDPA `Qwen3-4B-Instruct-2507` sensitivity arm) on combinatorial constraint satisfaction, and what mechanistically separates both models from a 7M-parameter Attention-TRM (`TinyRecursiveReasoningModel_ACTV1`) that unrolls a 2-layer transformer across 16 outer ACT steps (`3 H-cycles × 6 L-cycles = 336` passes) on the exact same 9×9 Sudoku boards?
++
++**Blindness audit.** Before committing this registration:
++- Two rows of `train.csv` were used solely to verify `PureSudokuTRM` tensor chunking (`flat3` QKV, `gate_first` SwiGLU, Post-RMSNorm, RoPE) against `step_21700`.
++- Cached tokenizers were checked on a single synthetic board derived from a textbook solved grid to verify that ending the 3-shot prompt with `"Answer: "` makes digits `'1'..'9'` exact single next tokens across all three LLM tokenizers.
++- Zero rows of `test_sudoku_bench.csv` or `test_hard.csv` have been passed through `TRM`, `Nanbeige4.2-3B`, `Qwen3.5-4B-Base`, or `Qwen3-4B-Instruct-2507`.
++
++---
++
++## 2. Pinned Artifacts and SHA-256 Locks
++
++### 2.1 Dataset (`sapientinc/sudoku-extreme-1k`)
++- `train.csv`: `887dea10daba811d3a6a565bb138e31ef60a95fdb57045633e4762fc46357cbb` (3 few-shot demonstrations only)
++- `test_sudoku_bench.csv`: `0bd94e4843c3ec55e225c8798bf3f63083b2b2207e88ca996c3bbb4b8b1c18e1` (100 canonical boards: 49 propagation-solvable, 51 stalled)
++- `test_hard.csv`: `5f9549fb2f38e2cbcb9a515733fdfb19d10c599f21d5c9e82ec20bca28e78c2c` (first 1,500 rows pooled with `test_sudoku_bench.csv` for stratified distinct-board sampling)
++
++### 2.2 Frozen Checkpoints
++1. **Primary TRM (7M Attention-TRM):** `gaoxin492/TinyRecursiveModels-Sudoku-Extreme-att`, `step_21700` (`sha256: 932b5e0df4e90021c21a064d4e716154086c46fda7afa676ea294484a30e38c3`)
++2. **Replication TRM (7M Attention-TRM):** `yagizdevre/trm-sudoku-extreme-att`, `model.pt` (`sha256: d67723394a7fe439f1fa498b58196399ee89cd82a794c7da9ce0a8cc3df7fa39`)
++3. **Looped 3B LM:** `Nanbeige/Nanbeige4.2-3B` @ `451ed48c3273ecef7ea8faaa43c31ce529763bb1` (`config.json` `f6cb15b22847664f3a6049dc4b58fdd10f1650d112ac99a1da3d051f17c2ca19`; `model.safetensors.index.json` `30d8da0fa8b97abc6d9eddfd017a0cb7a649bcbd58caa57804c56c767db5c0f1`)
++4. **Prosaic 4B Base LM:** `Qwen/Qwen3.5-4B-Base` @ `1001bb4d826a52d1f399e183466143f4da7b741b` (`config.json` `ddc63e1c717afa86c865bb5e01313d89d72bb53b97ad4a8a03ba8510c0621670`; `model.safetensors.index.json` `eae340074abb0a5f31a6621f7ae8e8248a7c1790df04a722c4e4b70c2a6d1dbb`)
++5. **Pure-SDPA 4B Sensitivity Arm:** `Qwen/Qwen3-4B-Instruct-2507` @ `cdbee75f17c01a7cc42f958dc650907174af0554` (`config.json` `5beea1a4a34c62782bfb2f911c606741a3bab8f92d80a118fa053c28af12e8ba`; `model.safetensors.index.json` `d6c42883a895dfef5b0080ed2116a1bcd764f558406b98923d675978a1abf29c`)
++
++---
++
++## 3. Deductive Stratification and Instruments
++
++### 3.1 Exact Synchronous Propagation Lattice $G_{\text{prop}}$ (`sudoku_prop.py`)
++Let $G_{\text{prop}}$ denote one synchronous round of naked-single plus hidden-single elimination across all 27 Sudoku units (9 rows, 9 columns, 9 boxes). Iterating $G_{\text{prop}}$ from initial clues assigns every empty cell $i$ an exact deductive round $r(i) \in \{1, 2, \dots, R\}$ or $r(i) = -1$ (stalled). With seed `20261113`, `build_benchmark_bundle()` samples **256 distinct boards** (`64` per stratum, one target cell `?` per board):
++- **`S1_naked1` (`n=64`):** Empty cell with 8 distinct given peer digits at round 0 ($r(i) = 1$, immediate local elimination).
++- **`S2_prop2` (`n=64`):** Empty cell deduced at synchronous round $r(i) = 2$.
++- **`S3_prop3plus` (`n=64`):** Empty cell deduced at synchronous round $r(i) \ge 3$.
++- **`S4_stalled` (`n=64`):** Empty cell on a strict zero-single board where $G_{\text{prop}}$ makes zero progress at round 0 (`num_rounds = 0`, backtracking/search required).
++
++Each item $i$ is paired with a deterministic within-stratum donor item $d(i)$ whose ground-truth target digit satisfies $y_{d(i)}^* \neq y_i^*$, guaranteeing donor-state swaps cannot leak the target answer. All LLMs receive the identical 3-shot prompt (`1 naked1`, `1 prop2`, `1 prop3` from `train.csv`) ending with `"Cell ? (RrCc) Answer: "` and are scored over the 9 single-token digit logits `'1'..'9'`.
++
++### 3.2 Causal Counterfactual Suite (`ARG-02` + Compactification Fiber Erasure)
++1. **Open-loop extrapolation (`H2a`):**
++   - `Nanbeige`: $h_{\text{open}}(t) = h(1) + (t - 1)(h(1) - x)$ at $t \in \{2, 8\}$.
++   - `TRM`: $z_{H,\text{open}}(16) = z_H(1) + 15(z_H(1) - H_{\text{init}})$.
++2. **Donor recurrent displacement shuffle (`H2b`):**
++   - `Nanbeige`: $h_{\text{shuf},i}(t) = h_i(1) + (h_{d(i)}(t) - h_{d(i)}(1))$ on the right-aligned answer tail.
++   - `TRM`: $z_{H,\text{shuf},i}(16) = z_{H,i}(1) + (z_{H,d(i)}(16) - z_{H,d(i)}(1))$.
++3. **Perturbation repair vs. amplification:**
++   - `TRM`: patch 10 random empty cells of $z_H(1)$ with donor states $z_{H,d(i)}(1)$ and unroll steps $2..16$; also measure $0.25 \cdot \text{RMS}(z_H(1))$ Gaussian kick norm ratio $\|z_H^{\text{kick}}(s) - z_H^{\text{clean}}(s)\|_2 / \|\delta_1\|_2$.
++   - `Nanbeige`: patch the last 5 answer-site tokens of $h(1)$ with donor $h_{d(i)}(1)$ before Pass 2.
++4. **Dark-fiber vs. scratchpad state erasure (`TRM`):**
++   - `reset_zL`: reset $z_L \leftarrow L_{\text{init}}$ between every outer ACT step while retaining full 512-dim $z_H$.
++   - `fiber_erased`: reset $z_L \leftarrow L_{\text{init}}$ **and** project the 81 board-cell vectors of $z_H$ onto the 11-dimensional row space $P_{\text{head}}$ of `lm_head.weight` ($z_H^{\text{board}} \leftarrow z_H^{\text{board}} P_{\text{head}} + H_{\text{init}}(I - P_{\text{head}})$) between outer ACT steps. This preserves step-$s$ digit logits identically while erasing the 501-dimensional orthogonal fiber of $z_H$.
++
++### 3.3 Weight-Usage Geometry, Unrolled `TCA`, and `Q11` Compactification
++- **SVD rank-one usage (`top-64` singular triplets):** Input activation magnitude $|(X v_r)| \sigma_r$ on `Nanbeige` physical layers `(6, 12, 17, 22)` `mlp.down_proj` (Pass 1 vs. Pass 2 Pearson $r_{\text{pass1,pass2}}$) and on all 4 `TRM` `L_level` output matrices (`L0.o_proj`, `L0.down_proj`, `L1.o_proj`, `L1.down_proj`), separating pairwise outer-step correlation $r_{\text{outer}}$ (`s = 2..16`) from within-step scratchpad-vs-commit role correlation $r_{\text{role}}$ (`z_L` vs. `z_H`).
++- **Transported Component Attribution (`TCA`):** Log-odds target-digit margin backpropagated through unrolled steps (`s = 1..6` in float32 for `TRM` on `S1_naked1 + S3_prop3plus`; Pass 1–2 for `Nanbeige` and single pass for `Qwen` on `S1_naked1`), yielding fragility $F_s = \|X_s^\top A_s\|_F$ and closed-form orthogonal rotation z-scores $z_{\text{read}}, z_{\text{write}}$.
++- **`Q11` $G_{\text{prop}}$ commutation & deductive staircase:** On `bench100` and `items256`, measure commutation error $\rho_s(b) = \text{mean}_{i \in \text{empty}} \|p_{s+1}(b, i) - G_{\text{prop}}(p_s(b), \text{givens}_b)_i\|_2$ against deranged-board $\text{givens}_{b'}$, within-board deductive-round convergence concordance $C_{\text{stair}}$ across empty-cell pairs $1 \le r(i) < r(j)$ across all 48 $H$-cycles (vs. within-board cell-permutation null), and post-stall non-monotone cell-prediction flips.
++
++---
++
++## 4. Pre-Registered Hypotheses and Decision Rules (`score_loopscope02.py`)
++
++All paired binary comparisons use exact two-sided binomial McNemar tests and 2,000-resample paired bootstrap 95% CIs (`seed = 20261113`).
++
++### P1 — Capability Triangulation Across Model Classes
++- **Supported** if all hold:
++  1. `Nanbeige` fails out-of-distribution loop scaling: $\text{acc}_{\text{NB}}(t=8) - \text{acc}_{\text{NB}}(t=2) \le 0.02$.
++  2. `Nanbeige` (`t=2`) fails to exceed `Qwen3.5-4B-Base` by $\ge 0.10$ on multi-step strata (`S2_prop2` $\cup$ `S3_prop3plus` $\cup$ `S4_stalled`). *(Note: if `Nanbeige` exceeds `Qwen3.5-4B-Base` by $\ge +0.10$ with McNemar $p < 0.05$, `P1` is falsified in the positive direction of genuine 2-pass LLM multi-step gain.)*
++  3. `TRM` iterative scaling: $\text{acc}_{\text{TRM}}(s=16) - \text{acc}_{\text{TRM}}(s=1) \ge 0.25$.
++  4. `TRM` (`s=16`) exceeds $\max(\text{acc}_{\text{NB}}(t=2), \text{acc}_{\text{Qwen4B}})$ by $\ge 0.35$ with exact McNemar $p < 10^{-6}$.
++- **Weak** if $\text{acc}_{\text{TRM}}(s=16) - \text{acc}_{\text{TRM}}(s=1) \ge 0.15$ and margin over best LLM $\ge 0.25$.
++- **Not supported** otherwise.
++
++### P2 — `ARG-02` Causal Counterfactuals: Input-Conditioned Attractor vs. Virtual Depth
++- **Supported** if all hold:
++  1. `TRM` open-loop and donor-$z_H$ displacement both collapse accuracy: $\text{acc}_{\text{clean16}} - \text{acc}_{\text{open16}} \ge 0.30$ ($p < 10^{-6}$) and $\text{acc}_{\text{clean16}} - \text{acc}_{\text{donor16}} \ge 0.30$ ($p < 10^{-6}$).
++  2. `TRM` actively repairs step-1 perturbations: board or target corruption recovery $\ge +0.15$, or final Gaussian kick norm ratio $< 1.0$.
++  3. `Nanbeige` is non-contractive across loops: mean relative step norm at $t=8$ is $\ge 0.10$ with $\text{acc}_{\text{NB}}(t=8) - \text{acc}_{\text{NB}}(t=2) \le 0.02$.
++- **Weak** if `TRM` counterfactual drops are in $[0.20, 0.30)$ with repair holding.
++- **Not supported** otherwise.
++
++### P3 — SVD Weight-Usage Geometry: Cross-Pass Multiplexing vs. Stationary Outer Operator + Role Split
++- **Supported** if all hold:
++  1. `Nanbeige` Pass-1 vs. Pass-2 component usage is nearly orthogonal: $\bar{r}_{\text{pass1,pass2}} < 0.30$.
++  2. `TRM` reuses a stationary outer operator across steps `2..16`: $\bar{r}_{\text{outer},z_H} \ge 0.80$.
++  3. `TRM` multiplexes scratchpad vs. board-commit roles within each cycle: $\bar{r}_{\text{role}}(z_L, z_H) \le \bar{r}_{\text{outer},z_H} - 0.10$.
++- **Weak** if $\bar{r}_{\text{pass1,pass2}} < 0.40$, $\bar{r}_{\text{outer},z_H} \ge 0.70$, and $\bar{r}_{\text{role}} < \bar{r}_{\text{outer},z_H} - 0.05$.
++- **Not supported** otherwise.
++
++### P4 — Unrolled `TCA`: Attractor Masking of Early Fragility with Specific Subspaces
++- **Supported** if `TRM` unrolled 6-step `TCA` exhibits strong early fragility attenuation ($\bar{F}_1 / \bar{F}_6 \le 0.25$) while overall rotation specificity (`|z_read| > 3` or `|z_write| > 3`) is $\ge 1.35\%$ ($\ge 5\times$ the $0.27\%$ two-sided $3\sigma$ Gaussian null).
++- **Weak** if $\bar{F}_1 / \bar{F}_6 \le 0.40$ and max specificity $\ge 0.81\%$ ($\ge 3\times$ null).
++- **Not supported** otherwise.
++
++### P5 — `Q11` $G_{\text{prop}}$ Compactification, Deductive Staircase, and Dark-Fiber Search
++Five sub-criteria:
++1. Propagation-solvable commutation separation Mann-Whitney $\text{AUC}(\rho_{\text{clean}} < \rho_{\text{shuf}}) \ge 0.90$ on `bench100`.
++2. Within-board deductive-round convergence concordance $C_{\text{stair}} \ge 0.65$ and $\ge C_{\text{shuf\_null}} + 0.10$ across `items256`.
++3. `TRM` step-16 exact-solve rate on the 51 stalled `bench100` boards $\ge 0.40$ (where $G_{\text{prop}}$ solves $0\%$).
++4. Share of `TRM`-solved stalled boards exhibiting non-monotone empty-cell prediction flips $\ge 0.80$.
++5. Erasing inter-step latent carry (`reset_zL` or `fiber_erased`) reduces exact-board solve accuracy by $\ge 0.05$ with exact McNemar $p < 0.05$ on `bench100` or `items256`.
++- **Supported** if `5/5` sub-criteria hold; **Weak** if `4/5` hold; **Not supported** if $\le 3/5$ hold.
+diff --git a/mechinterp/loopscope02/scripts/__init__.py b/mechinterp/loopscope02/scripts/__init__.py
+new file mode 100644
+index 0000000..33e5d52
+--- /dev/null
++++ b/mechinterp/loopscope02/scripts/__init__.py
+@@ -0,0 +1 @@
++"""LOOPSCOPE-02 experiment and analysis scripts."""
+diff --git a/mechinterp/loopscope02/scripts/llm_sudoku.py b/mechinterp/loopscope02/scripts/llm_sudoku.py
+new file mode 100644
+index 0000000..0ad1965
+--- /dev/null
++++ b/mechinterp/loopscope02/scripts/llm_sudoku.py
+@@ -0,0 +1,718 @@
++"""LOOPSCOPE-02: Nanbeige4.2-3B (looped 3B) and Qwen3.5-4B-Base / Qwen3-4B (untied 4B) runner on 9x9 Sudoku.
++
++Runs on the exact stratified 256-item target-cell benchmark (`benchmark_bundle.json`):
++  - `nanbeige`: Nanbeige/Nanbeige4.2-3B @ 451ed48c (bvg-v03 venv, transformers 4.46.3),
++    evaluating loops t = 1..max_loops, ARG-02 counterfactuals (open-loop sharpening at t=2 and t=8,
++    donor recurrent displacement shuffle at t=2 and t=8, step-1 answer-site patch repair),
++    and per-pass SVD component usage + Transported Component Attribution (TCA) across Pass 1 vs Pass 2
++    on physical layers (6, 12, 17, 22) `mlp.down_proj`.
++  - `qwen4b`: Qwen/Qwen3.5-4B-Base @ 1001bb4d (bluebeam venv, transformers 5.17), plus optional
++    `qwen3_4b_inst` (Qwen/Qwen3-4B-Instruct-2507 @ cdbee75f), evaluating single-pass accuracy,
++    untied mid-stack vs final-stack component usage correlation, and TCA specificity.
++
++Resumable and power-cap safe: checks `enforced.power.limit` between batches and exits 75 if capped.
++"""
++from __future__ import annotations
++
++import argparse
++import json
++import math
++import os
++import subprocess
++import sys
++import time
++from pathlib import Path
++
++import numpy as np
++import torch
++import torch.nn.functional as F
++
++sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
++from mechinterp.loopscope02.scripts import sudoku_prop as SP  # noqa: E402
++
++EXIT_POWER_CAP = 75
++TOP_SVD = 64
++
++MODEL_LOCKS = {
++    "nanbeige": {
++        "repo": "Nanbeige/Nanbeige4.2-3B",
++        "revision": "451ed48c3273ecef7ea8faaa43c31ce529763bb1",
++        "bos_token_id": 166100,
++        "files_sha256": {
++            "config.json": "f6cb15b22847664f3a6049dc4b58fdd10f1650d112ac99a1da3d051f17c2ca19",
++            "model.safetensors.index.json": "30d8da0fa8b97abc6d9eddfd017a0cb7a649bcbd58caa57804c56c767db5c0f1",
++        },
++        "tca_layers": (5, 11, 16, 21),  # 0-based -> physical layers 6, 12, 17, 22
++    },
++    "qwen4b": {
++        "repo": "Qwen/Qwen3.5-4B-Base",
++        "revision": "1001bb4d826a52d1f399e183466143f4da7b741b",
++        "bos_token_id": None,
++        "files_sha256": {
++            "config.json": "ddc63e1c717afa86c865bb5e01313d89d72bb53b97ad4a8a03ba8510c0621670",
++            "model.safetensors.index.json": "eae340074abb0a5f31a6621f7ae8e8248a7c1790df04a722c4e4b70c2a6d1dbb",
++        },
++        "tca_layers": (7, 15, 23, 31),  # quartiles of the 32-layer stack
++    },
++    "qwen3_4b_inst": {
++        "repo": "Qwen/Qwen3-4B-Instruct-2507",
++        "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
++        "bos_token_id": None,
++        "files_sha256": {
++            "config.json": "5beea1a4a34c62782bfb2f911c606741a3bab8f92d80a118fa053c28af12e8ba",
++            "model.safetensors.index.json": "d6c42883a895dfef5b0080ed2116a1bcd764f558406b98923d675978a1abf29c",
++        },
++        "tca_layers": (8, 17, 26, 35),  # quartiles of the 36-layer stack
++    },
++}
++
++
++def power_limit_watts() -> float | None:
++    try:
++        out = subprocess.run(
++            ["nvidia-smi", "--query-gpu=enforced.power.limit", "--format=csv,noheader,nounits"],
++            capture_output=True, text=True, timeout=15,
++        ).stdout.strip().splitlines()[0]
++        return float(out.strip())
++    except Exception:
++        return None
++
++
++def snapshot_path(entry: dict) -> Path:
++    home = Path(os.environ.get("HF_HOME", Path.home() / ".cache" / "huggingface"))
++    root = home / "hub" / ("models--" + entry["repo"].replace("/", "--")) / "snapshots" / entry["revision"]
++    for fname, expected in entry["files_sha256"].items():
++        p = root / fname
++        if not p.is_file():
++            raise FileNotFoundError(f"missing snapshot file: {p}")
++        actual = SP.sha256_file(p)
++        if actual != expected:
++            raise RuntimeError(f"SHA-256 mismatch on {p}: {actual} != {expected}")
++    return root
++
++
++def verify_and_resolve_digit_tokens(encode_fn, sample_prompt: str) -> list[int]:
++    """Verify prompt + d == encode(prompt) + [digit_id[d]] for all digits 1..9."""
++    base_ids = encode_fn(sample_prompt)
++    digit_ids = []
++    for d in range(1, 10):
++        full_ids = encode_fn(sample_prompt + str(d))
++        if len(full_ids) != len(base_ids) + 1 or full_ids[:-1] != base_ids:
++            raise RuntimeError(
++                f"Tokenizer boundary violation for digit {d}: "
++                f"len(base)={len(base_ids)}, len(full)={len(full_ids)}, tail={full_ids[-3:]}"
++            )
++        digit_ids.append(int(full_ids[-1]))
++    if len(set(digit_ids)) != 9:
++        raise RuntimeError(f"Digit token IDs are not 9 distinct tokens: {digit_ids}")
++    return digit_ids
++
++
++def load_nanbeige(root: Path, device: str):
++    """Stream safetensors shards straight onto GPU without host RAM duplication."""
++    from transformers import AutoConfig, AutoModelForCausalLM, PreTrainedTokenizerFast
++
++    tok_raw = PreTrainedTokenizerFast(tokenizer_file=str(root / "tokenizer.json"))
++    bos = MODEL_LOCKS["nanbeige"]["bos_token_id"]
++
++    def encode_fn(text: str) -> list[int]:
++        return [bos] + tok_raw.encode(text, add_special_tokens=False)
++
++    config = AutoConfig.from_pretrained(str(root), trust_remote_code=True, local_files_only=True)
++    config._attn_implementation = "sdpa"
++    prev_dt = torch.get_default_dtype()
++    torch.set_default_dtype(torch.bfloat16)
++    try:
++        with torch.device(device):
++            model = AutoModelForCausalLM.from_config(config, trust_remote_code=True, attn_implementation="sdpa")
++    finally:
++        torch.set_default_dtype(prev_dt)
++
++    index = json.loads((root / "model.safetensors.index.json").read_text(encoding="utf-8"))
++    params = model.state_dict()
++    dtypes = {"BF16": torch.bfloat16, "F16": torch.float16, "F32": torch.float32}
++    loaded = set()
++    for shard in sorted(set(index["weight_map"].values())):
++        with open(root / shard, "rb") as f:
++            hdr_len = int.from_bytes(f.read(8), "little")
++            header = json.loads(f.read(hdr_len))
++            base_off = 8 + hdr_len
++            for key, spec in header.items():
++                if key == "__metadata__":
++                    continue
++                s0, s1 = spec["data_offsets"]
++                f.seek(base_off + s0)
++                raw = bytearray(f.read(s1 - s0))
++                t = torch.frombuffer(raw, dtype=dtypes[spec["dtype"]]).reshape(spec["shape"])
++                with torch.no_grad():
++                    params[key].copy_(t.to(device))
++                loaded.add(key)
++    missing = sorted(k for k in set(params) - loaded if "rotary" not in k)
++    if missing:
++        raise RuntimeError(f"Nanbeige missing weights: {missing[:5]}")
++    model.eval()
++    model.requires_grad_(False)
++    return model, encode_fn
++
++
++def load_qwen(profile: str, root: Path, device: str):
++    """Stream Qwen3.5-4B-Base (text CausalLM) or Qwen3-4B safetensors shards straight onto GPU."""
++    from transformers import AutoConfig, AutoModelForCausalLM, AutoTokenizer
++
++    tok = AutoTokenizer.from_pretrained(str(root), local_files_only=True)
++
++    def encode_fn(text: str) -> list[int]:
++        return tok.encode(text, add_special_tokens=False)
++
++    raw_cfg = AutoConfig.from_pretrained(str(root), local_files_only=True)
++    cfg = raw_cfg.text_config if hasattr(raw_cfg, "text_config") else raw_cfg
++    cfg._attn_implementation = "sdpa"
++
++    prev_dt = torch.get_default_dtype()
++    torch.set_default_dtype(torch.bfloat16)
++    try:
++        with torch.device(device):
++            model = AutoModelForCausalLM.from_config(cfg, attn_implementation="sdpa")
++    finally:
++        torch.set_default_dtype(prev_dt)
++
++    index = json.loads((root / "model.safetensors.index.json").read_text(encoding="utf-8"))
++    params = model.state_dict()
++    dtypes = {"BF16": torch.bfloat16, "F16": torch.float16, "F32": torch.float32}
++    loaded: set[str] = set()
++    for shard in sorted(set(index["weight_map"].values())):
++        with open(root / shard, "rb") as f:
++            hdr_len = int.from_bytes(f.read(8), "little")
++            header = json.loads(f.read(hdr_len))
++            base_off = 8 + hdr_len
++            for key, spec in header.items():
++                if key == "__metadata__" or key.startswith("model.visual.") or key.startswith("mtp."):
++                    continue
++                mapped = "model." + key[len("model.language_model."):] if key.startswith("model.language_model.") else key
++                if mapped not in params:
++                    raise RuntimeError(f"Unexpected Qwen weight key {key} -> {mapped}")
++                s0, s1 = spec["data_offsets"]
++                f.seek(base_off + s0)
++                raw = bytearray(f.read(s1 - s0))
++                t = torch.frombuffer(raw, dtype=dtypes[spec["dtype"]]).reshape(spec["shape"])
++                with torch.no_grad():
++                    params[mapped].copy_(t.to(device=device, dtype=params[mapped].dtype))
++                loaded.add(mapped)
++
++    if getattr(cfg, "tie_word_embeddings", False) and "lm_head.weight" not in loaded:
++        model.tie_weights()
++        loaded.add("lm_head.weight")
++
++    missing = sorted(k for k in set(params) - loaded if "rotary" not in k and "inv_freq" not in k)
++    if missing:
++        raise RuntimeError(f"Qwen ({profile}) missing weights: {missing[:5]}")
++    model.eval()
++    model.requires_grad_(False)
++    return model, encode_fn
++
++
++def nanbeige_prepare(model, ids: torch.Tensor):
++    base = model.model
++    emb = base.embed_tokens(ids)
++    rows, length = ids.shape
++    cache_pos = torch.arange(length, device=ids.device)
++    pos = cache_pos.unsqueeze(0).expand(rows, -1)
++    mask = base._update_causal_mask(None, emb, cache_pos, None, False)
++    return emb, {"mask": mask, "pos": pos, "cache_position": cache_pos}
++
++
++def nanbeige_step(model, h: torch.Tensor, ctx: dict) -> torch.Tensor:
++    base = model.model
++    for layer in base.layers:
++        h = layer(
++            h,
++            attention_mask=ctx["mask"],
++            position_ids=ctx["pos"],
++            past_key_value=None,
++            output_attentions=False,
++            use_cache=False,
++            cache_position=ctx["cache_position"],
++            loop_idx=0,
++        )[0]
++    return base.norm(h)
++
++
++def compute_svd_top(weight: torch.Tensor, top_k: int = TOP_SVD):
++    # Compute truncated SVD in float32 on GPU (fast, low host RAM)
++    w = weight.detach().float()
++    u, s, vh = torch.linalg.svd(w, full_matrices=False)
++    r = min(top_k, s.numel())
++    return u[:, :r].contiguous(), s[:r].contiguous(), vh[:r, :].T.contiguous()
++
++
++def run_nanbeige_suite(model, encode_fn, bundle: dict, max_loops: int, min_watts: float) -> dict:
++    dev = next(model.parameters()).device
++    items = bundle["items"]
++    shots = bundle["shots"]
++    n = len(items)
++    prompts = [SP.format_target_prompt(shots, it["question"], int(it["target_idx"])) for it in items]
++    digit_ids = verify_and_resolve_digit_tokens(encode_fn, prompts[0])
++    digit_ids_t = torch.tensor(digit_ids, dtype=torch.long, device=dev)
++
++    # Verify parity of 2-step manual loop against native model.forward on item 0
++    ids0 = torch.tensor([encode_fn(prompts[0])], dtype=torch.long, device=dev)
++    with torch.no_grad():
++        native_logits = model(input_ids=ids0, use_cache=False).logits[:, -1, digit_ids_t].float()
++        emb0, ctx0 = nanbeige_prepare(model, ids0)
++        h1_0 = nanbeige_step(model, emb0, ctx0)
++        h2_0 = nanbeige_step(model, h1_0, ctx0)
++        manual_logits = model.lm_head(h2_0[:, -1:, :])[:, 0, digit_ids_t].float()
++        parity_max_diff = float((native_logits - manual_logits).abs().max().item())
++    if parity_max_diff > 1e-2:
++        raise RuntimeError(f"Nanbeige loop-2 parity check failed: max diff {parity_max_diff}")
++
++    encoded = [encode_fn(p) for p in prompts]
++    # Group indices by exact token length so zero padding is introduced
++    by_len: dict[int, list[int]] = {}
++    for idx, seq in enumerate(encoded):
++        by_len.setdefault(len(seq), []).append(idx)
++
++    tca_layers = MODEL_LOCKS["nanbeige"]["tca_layers"]
++    facs = {
++        L: compute_svd_top(model.model.layers[L].mlp.down_proj.weight)
++        for L in tca_layers
++    }
++    usage_pass = {L: {1: np.zeros(TOP_SVD, dtype=np.float64), 2: np.zeros(TOP_SVD, dtype=np.float64)} for L in tca_layers}
++
++    probs_loops = np.zeros((max_loops, n, 9), dtype=np.float32)
++    h1_tail = torch.zeros((n, 5, model.config.hidden_size), dtype=torch.bfloat16)
++    h2_tail = torch.zeros((n, 5, model.config.hidden_size), dtype=torch.bfloat16)
++    hmax_tail = torch.zeros((n, 5, model.config.hidden_size), dtype=torch.bfloat16)
++    x_tail = torch.zeros((n, 5, model.config.hidden_size), dtype=torch.bfloat16)
++    rel_step_norms = np.zeros((max_loops, n), dtype=np.float32)
++
++    batch_size = 4
++    with torch.no_grad():
++        for seq_len, group in sorted(by_len.items()):
++            for b0 in range(0, len(group), batch_size):
++                watts = power_limit_watts()
++                if watts is not None and watts < min_watts:
++                    raise SystemExit(EXIT_POWER_CAP)
++                sub_idx = group[b0:b0 + batch_size]
++                ids = torch.tensor([encoded[i] for i in sub_idx], dtype=torch.long, device=dev)
++                emb, ctx = nanbeige_prepare(model, ids)
++                x_tail[sub_idx] = emb[:, -5:, :].cpu()
++                prev = emb
++
++                active_loop = {"t": 0}
++                handles = []
++                for L in tca_layers:
++                    _, s_vec, v_mat = facs[L]
++
++                    def make_hk(lay=L, sv=s_vec, vm=v_mat):
++                        def _hk(_m, inp, _out):
++                            t_now = active_loop["t"]
++                            if t_now in (1, 2):
++                                xin = inp[0][:, -1, :].float()  # answer token [b, d_in]
++                                mag = (xin @ vm).abs() * sv
++                                usage_pass[lay][t_now] += mag.sum(0).cpu().numpy()
++                        return _hk
++
++                    handles.append(model.model.layers[L].mlp.down_proj.register_forward_hook(make_hk()))
++
++                try:
++                    h = emb
++                    for t in range(1, max_loops + 1):
++                        active_loop["t"] = t
++                        h = nanbeige_step(model, h, ctx)
++                        logits = model.lm_head(h[:, -1:, :])[:, 0, digit_ids_t].float()
++                        probs_loops[t - 1, sub_idx] = torch.softmax(logits, dim=-1).cpu().numpy()
++                        step_norm = (h.float() - prev.float()).flatten(1).norm(dim=1)
++                        prev_norm = prev.float().flatten(1).norm(dim=1).clamp_min(1e-8)
++                        rel_step_norms[t - 1, sub_idx] = (step_norm / prev_norm).cpu().numpy()
++                        prev = h
++                        if t == 1:
++                            h1_tail[sub_idx] = h[:, -5:, :].cpu()
++                        if t == 2:
++                            h2_tail[sub_idx] = h[:, -5:, :].cpu()
++                        if t == max_loops:
++                            hmax_tail[sub_idx] = h[:, -5:, :].cpu()
++                finally:
++                    for hk in handles:
++                        hk.remove()
++
++    # Open-loop & donor-shuffle counterfactuals at depth 2 and depth max_loops (exact right-aligned last token)
++    id_to_idx = {it["item_id"]: idx for idx, it in enumerate(items)}
++    donor_idx = torch.tensor([id_to_idx[it["donor_item_id"]] for it in items], dtype=torch.long)
++
++    def readout_tail_last(h_tail_cpu: torch.Tensor) -> np.ndarray:
++        out = []
++        with torch.no_grad():
++            for i0 in range(0, n, 64):
++                last_h = h_tail_cpu[i0:i0 + 64, -1:, :].to(dev)
++                lg = model.lm_head(last_h)[:, 0, digit_ids_t].float()
++                out.append(torch.softmax(lg, dim=-1).cpu().numpy())
++        return np.concatenate(out, axis=0)
++
++    probs_open2 = readout_tail_last(2 * h1_tail - x_tail)
++    probs_open_max = readout_tail_last(max_loops * h1_tail - (max_loops - 1) * x_tail)
++    probs_donor2 = readout_tail_last(h1_tail + (h2_tail[donor_idx] - h1_tail[donor_idx]))
++    probs_donor_max = readout_tail_last(h1_tail + (hmax_tail[donor_idx] - h1_tail[donor_idx]))
++
++    # Step-1 answer-site donor patch repair (patch last 5 positions after loop 1, then run loop 2)
++    probs_patch_repaired2 = np.zeros((n, 9), dtype=np.float32)
++    with torch.no_grad():
++        for seq_len, group in sorted(by_len.items()):
++            for b0 in range(0, len(group), batch_size):
++                sub_idx = group[b0:b0 + batch_size]
++                ids = torch.tensor([encoded[i] for i in sub_idx], dtype=torch.long, device=dev)
++                emb, ctx = nanbeige_prepare(model, ids)
++                h1 = nanbeige_step(model, emb, ctx)
++                h1_patched = h1.clone()
++                d_sub = donor_idx[sub_idx]
++                h1_patched[:, -5:, :] = h1_tail[d_sub].to(dev)
++                h2_rep = nanbeige_step(model, h1_patched, ctx)
++                lg = model.lm_head(h2_rep[:, -1:, :])[:, 0, digit_ids_t].float()
++                probs_patch_repaired2[sub_idx] = torch.softmax(lg, dim=-1).cpu().numpy()
++
++    # Pass 1 vs Pass 2 component usage correlations
++    usage_corrs = {}
++    for L in tca_layers:
++        u1 = usage_pass[L][1] / n
++        u2 = usage_pass[L][2] / n
++        r_val = float(np.corrcoef(u1, u2)[0, 1])
++        usage_corrs[f"L{L + 1}"] = {
++            "r_pass1_vs_pass2": r_val,
++            "usage_ratio_pass2_over_pass1": float(u2.sum() / max(u1.sum(), 1e-12)),
++        }
++
++    # Unrolled 2-pass TCA on the 64 S1_naked1 items (parameter-grad-free activation backprop!)
++    s1_indices = [i for i, it in enumerate(items) if it["stratum"] == "S1_naked1"]
++    m_cnt = len(tca_layers)
++    frag = np.zeros((m_cnt, 2, len(s1_indices)), dtype=np.float32)
++    zr_gt3 = np.zeros((m_cnt, 2), dtype=np.int64)
++    zw_gt3 = np.zeros((m_cnt, 2), dtype=np.int64)
++
++    for k0 in range(0, len(s1_indices), 2):
++        watts = power_limit_watts()
++        if watts is not None and watts < min_watts:
++            raise SystemExit(EXIT_POWER_CAP)
++        sub_local = list(range(k0, min(len(s1_indices), k0 + 2)))
++        sub_global = [s1_indices[j] for j in sub_local]
++        # Run 1 item at a time if lengths differ so zero padding is needed
++        for loc_j, glob_i in zip(sub_local, sub_global):
++            ids = torch.tensor([encoded[glob_i]], dtype=torch.long, device=dev)
++            tgt = int(items[glob_i]["target_digit"]) - 1
++            emb, ctx = nanbeige_prepare(model, ids)
++            emb = emb.detach().requires_grad_(True)
++
++            cap_x: dict[int, list[torch.Tensor]] = {mi: [] for mi in range(m_cnt)}
++            cap_g: dict[int, dict[int, torch.Tensor]] = {mi: {} for mi in range(m_cnt)}
++            handles = []
++            for mi, L in enumerate(tca_layers):
++                mod = model.model.layers[L].mlp.down_proj
++
++                def make_tca_hk(m_idx=mi):
++                    def _hk(_m, inp, out):
++                        p_idx = len(cap_x[m_idx])
++                        cap_x[m_idx].append(inp[0].detach())
++
++                        def _sv(grad, m_i=m_idx, p_i=p_idx):
++                            cap_g[m_i][p_i] = grad.detach()
++
++                        out.register_hook(_sv)
++                    return _hk
++
++                handles.append(mod.register_forward_hook(make_tca_hk()))
++
++            try:
++                h1 = nanbeige_step(model, emb, ctx)
++                h2 = nanbeige_step(model, h1, ctx)
++                logits9 = model.lm_head(h2[:, -1:, :])[:, 0, digit_ids_t].float()  # [1, 9]
++                zc = logits9[0, tgt]
++                other = logits9[0].clone()
++                other[tgt] = float("-inf")
++                margin = zc - torch.logsumexp(other, dim=0)
++                margin.backward()
++
++                for mi, L in enumerate(tca_layers):
++                    u_mat, s_vec, v_mat = facs[L]
++                    din, dout = v_mat.shape[0], u_mat.shape[0]
++                    for p_idx in range(2):
++                        xb = cap_x[mi][p_idx].float()  # [1, P, din]
++                        ab = cap_g[mi][p_idx].float()  # [1, P, dout]
++                        xv = xb @ v_mat
++                        au = ab @ u_mat
++                        delta = -s_vec * (xv * au).sum(dim=1)  # [1, r]
++                        xtau = torch.einsum("bpi,bpr->bir", xb, au)
++                        atxv = torch.einsum("bpo,bpr->bor", ab, xv)
++                        sdr = s_vec * xtau.norm(dim=1) / math.sqrt(din)
++                        sdw = s_vec * atxv.norm(dim=1) / math.sqrt(dout)
++                        zr = (delta / sdr.clamp_min(1e-12)).abs()
++                        zw = (delta / sdw.clamp_min(1e-12)).abs()
++                        zr_gt3[mi, p_idx] += int((zr > 3.0).sum().item())
++                        zw_gt3[mi, p_idx] += int((zw > 3.0).sum().item())
++                        # Norm of answer-position + last-16 positions gradient-input outer product
++                        x_sub, a_sub = xb[:, -32:, :], ab[:, -32:, :]
++                        frag[mi, p_idx, loc_j] = float(
++                            ((x_sub @ x_sub.transpose(1, 2)) * (a_sub @ a_sub.transpose(1, 2)))
++                            .sum().clamp_min(0).sqrt().item()
++                        )
++            finally:
++                for hk in handles:
++                    hk.remove()
++                del cap_x, cap_g
++
++    tgt_all = np.array([int(it["target_digit"]) - 1 for it in items], dtype=np.int64)
++    denom = float(len(s1_indices) * TOP_SVD)
++    f_mean = frag.mean(axis=2)
++
++    return {
++        "model": MODEL_LOCKS["nanbeige"]["repo"],
++        "revision": MODEL_LOCKS["nanbeige"]["revision"],
++        "bundle_sha256": bundle["bundle_sha256"],
++        "loop2_native_parity_max_diff": parity_max_diff,
++        "max_loops": max_loops,
++        "items_target_correct_by_loop": (probs_loops.argmax(axis=-1) == tgt_all[None, :]).astype(int).tolist(),
++        "items_target_logprob_by_loop": [
++            np.log(np.clip(probs_loops[t, np.arange(n), tgt_all], 1e-12, 1.0)).mean().item()
++            for t in range(max_loops)
++        ],
++        "items_open2_correct": (probs_open2.argmax(axis=-1) == tgt_all).astype(int).tolist(),
++        "items_open_max_correct": (probs_open_max.argmax(axis=-1) == tgt_all).astype(int).tolist(),
++        "items_donor2_correct": (probs_donor2.argmax(axis=-1) == tgt_all).astype(int).tolist(),
++        "items_donor_max_correct": (probs_donor_max.argmax(axis=-1) == tgt_all).astype(int).tolist(),
++        "items_donor2_top1_agree_with_loop2": (probs_donor2.argmax(axis=-1) == probs_loops[1].argmax(axis=-1)).astype(int).tolist(),
++        "items_patch_repaired2_top1_agree_with_loop2": (
++            probs_patch_repaired2.argmax(axis=-1) == probs_loops[1].argmax(axis=-1)
++        ).astype(int).tolist(),
++        "items_patch_repaired2_correct": (probs_patch_repaired2.argmax(axis=-1) == tgt_all).astype(int).tolist(),
++        "rel_step_norm_mean_by_loop": rel_step_norms.mean(axis=1).tolist(),
++        "usage_pass1_vs_pass2": usage_corrs,
++        "mean_r_pass1_vs_pass2": float(np.mean([v["r_pass1_vs_pass2"] for v in usage_corrs.values()])),
++        "tca_s1": {
++            "layers": [f"L{L + 1}" for L in tca_layers],
++            "frag_pass1_pass2": f_mean.tolist(),
++            "f1_over_f2_by_layer": (f_mean[:, 0] / np.maximum(f_mean[:, 1], 1e-12)).tolist(),
++            "zr_gt3_share_pass1_pass2": (zr_gt3 / denom).tolist(),
++            "zw_gt3_share_pass1_pass2": (zw_gt3 / denom).tolist(),
++        },
++    }
++
++
++def get_qwen_layers_and_norm(model):
++    # Qwen3_5ForCausalLM vs Qwen3ForCausalLM
++    base = model.model
++    if hasattr(base, "layers"):
++        return base.layers, base.norm
++    if hasattr(base, "language_model") and hasattr(base.language_model, "layers"):
++        return base.language_model.layers, base.language_model.norm
++    raise RuntimeError(f"Unsupported Qwen base structure: {type(base)}")
++
++
++def run_qwen_suite(profile: str, model, encode_fn, bundle: dict, min_watts: float) -> dict:
++    dev = next(model.parameters()).device
++    items = bundle["items"]
++    shots = bundle["shots"]
++    n = len(items)
++    prompts = [SP.format_target_prompt(shots, it["question"], int(it["target_idx"])) for it in items]
++    digit_ids = verify_and_resolve_digit_tokens(encode_fn, prompts[0])
++    digit_ids_t = torch.tensor(digit_ids, dtype=torch.long, device=dev)
++
++    encoded = [encode_fn(p) for p in prompts]
++    by_len: dict[int, list[int]] = {}
++    for idx, seq in enumerate(encoded):
++        by_len.setdefault(len(seq), []).append(idx)
++
++    layers_mod, final_norm = get_qwen_layers_and_norm(model)
++    n_layers = len(layers_mod)
++    mid_layer = (n_layers // 2) - 1
++    tca_layers = MODEL_LOCKS[profile]["tca_layers"]
++    facs = {L: compute_svd_top(layers_mod[L].mlp.down_proj.weight) for L in tca_layers}
++    usage_by_layer = {L: np.zeros(TOP_SVD, dtype=np.float64) for L in tca_layers}
++
++    probs_final = np.zeros((n, 9), dtype=np.float32)
++    probs_mid_lens = np.zeros((n, 9), dtype=np.float32)
++
++    batch_size = 4
++    with torch.no_grad():
++        for _seq_len, group in sorted(by_len.items()):
++            for b0 in range(0, len(group), batch_size):
++                watts = power_limit_watts()
++                if watts is not None and watts < min_watts:
++                    raise SystemExit(EXIT_POWER_CAP)
++                sub_idx = group[b0:b0 + batch_size]
++                ids = torch.tensor([encoded[i] for i in sub_idx], dtype=torch.long, device=dev)
++
++                mid_capture = {}
++                handles = []
++
++                def mid_hk(_m, _inp, out):
++                    h_out = out[0] if isinstance(out, tuple) else out
++                    mid_capture["h"] = h_out[:, -1:, :].detach()
++
++                handles.append(layers_mod[mid_layer].register_forward_hook(mid_hk))
++                for L in tca_layers:
++                    _, s_vec, v_mat = facs[L]
++
++                    def make_u_hk(lay=L, sv=s_vec, vm=v_mat):
++                        def _hk(_m, inp, _out):
++                            xin = inp[0][:, -1, :].float()
++                            mag = (xin @ vm).abs() * sv
++                            usage_by_layer[lay] += mag.sum(0).cpu().numpy()
++                        return _hk
++
++                    handles.append(layers_mod[L].mlp.down_proj.register_forward_hook(make_u_hk()))
++
++                try:
++                    logits = model(input_ids=ids, use_cache=False).logits[:, -1, digit_ids_t].float()
++                    probs_final[sub_idx] = torch.softmax(logits, dim=-1).cpu().numpy()
++                    mid_lg = model.lm_head(final_norm(mid_capture["h"]))[:, 0, digit_ids_t].float()
++                    probs_mid_lens[sub_idx] = torch.softmax(mid_lg, dim=-1).cpu().numpy()
++                finally:
++                    for hk in handles:
++                        hk.remove()
++
++    # Single-pass TCA specificity on the 64 S1_naked1 items
++    s1_indices = [i for i, it in enumerate(items) if it["stratum"] == "S1_naked1"]
++    m_cnt = len(tca_layers)
++    zr_gt3 = np.zeros(m_cnt, dtype=np.int64)
++    zw_gt3 = np.zeros(m_cnt, dtype=np.int64)
++    frag = np.zeros((m_cnt, len(s1_indices)), dtype=np.float32)
++
++    embed_mod = model.get_input_embeddings()
++    for loc_j, glob_i in enumerate(s1_indices):
++        if loc_j % 8 == 0:
++            watts = power_limit_watts()
++            if watts is not None and watts < min_watts:
++                raise SystemExit(EXIT_POWER_CAP)
++        ids = torch.tensor([encoded[glob_i]], dtype=torch.long, device=dev)
++        tgt = int(items[glob_i]["target_digit"]) - 1
++        inp_emb = embed_mod(ids).detach().requires_grad_(True)
++
++        cap_x: dict[int, torch.Tensor] = {}
++        cap_g: dict[int, torch.Tensor] = {}
++        handles = []
++        for mi, L in enumerate(tca_layers):
++            mod = layers_mod[L].mlp.down_proj
++
++            def make_tca_hk(m_idx=mi):
++                def _hk(_m, inp, out):
++                    cap_x[m_idx] = inp[0].detach()
++
++                    def _sv(grad, m_i=m_idx):
++                        cap_g[m_i] = grad.detach()
++
++                    out.register_hook(_sv)
++                return _hk
++
++            handles.append(mod.register_forward_hook(make_tca_hk()))
++
++        try:
++            logits9 = model(inputs_embeds=inp_emb, use_cache=False).logits[:, -1, digit_ids_t].float()
++            zc = logits9[0, tgt]
++            other = logits9[0].clone()
++            other[tgt] = float("-inf")
++            margin = zc - torch.logsumexp(other, dim=0)
++            margin.backward()
++
++            for mi, L in enumerate(tca_layers):
++                u_mat, s_vec, v_mat = facs[L]
++                din, dout = v_mat.shape[0], u_mat.shape[0]
++                xb = cap_x[mi].float()
++                ab = cap_g[mi].float()
++                xv = xb @ v_mat
++                au = ab @ u_mat
++                delta = -s_vec * (xv * au).sum(dim=1)
++                xtau = torch.einsum("bpi,bpr->bir", xb, au)
++                atxv = torch.einsum("bpo,bpr->bor", ab, xv)
++                sdr = s_vec * xtau.norm(dim=1) / math.sqrt(din)
++                sdw = s_vec * atxv.norm(dim=1) / math.sqrt(dout)
++                zr = (delta / sdr.clamp_min(1e-12)).abs()
++                zw = (delta / sdw.clamp_min(1e-12)).abs()
++                zr_gt3[mi] += int((zr > 3.0).sum().item())
++                zw_gt3[mi] += int((zw > 3.0).sum().item())
++                x_sub, a_sub = xb[:, -32:, :], ab[:, -32:, :]
++                frag[mi, loc_j] = float(
++                    ((x_sub @ x_sub.transpose(1, 2)) * (a_sub @ a_sub.transpose(1, 2)))
++                    .sum().clamp_min(0).sqrt().item()
++                )
++        finally:
++            for hk in handles:
++                hk.remove()
++            del cap_x, cap_g
++
++    tgt_all = np.array([int(it["target_digit"]) - 1 for it in items], dtype=np.int64)
++    denom = float(len(s1_indices) * TOP_SVD)
++    return {
++        "profile": profile,
++        "model": MODEL_LOCKS[profile]["repo"],
++        "revision": MODEL_LOCKS[profile]["revision"],
++        "num_layers": n_layers,
++        "mid_layer_index": mid_layer + 1,
++        "bundle_sha256": bundle["bundle_sha256"],
++        "items_target_correct": (probs_final.argmax(axis=-1) == tgt_all).astype(int).tolist(),
++        "items_mid_lens_correct": (probs_mid_lens.argmax(axis=-1) == tgt_all).astype(int).tolist(),
++        "items_target_mean_logprob": float(
++            np.log(np.clip(probs_final[np.arange(n), tgt_all], 1e-12, 1.0)).mean()
++        ),
++        "tca_s1": {
++            "layers": [f"L{L + 1}" for L in tca_layers],
++            "frag_mean": frag.mean(axis=1).tolist(),
++            "zr_gt3_share": (zr_gt3 / denom).tolist(),
++            "zw_gt3_share": (zw_gt3 / denom).tolist(),
++        },
++    }
++
++
++def main() -> int:
++    parser = argparse.ArgumentParser(description=__doc__)
++    parser.add_argument("--profile", choices=("nanbeige", "qwen4b", "qwen3_4b_inst"), required=True)
++    parser.add_argument("--out", type=Path, default=Path("mechinterp/loopscope02/results"))
++    parser.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
++    parser.add_argument("--mem-fraction", type=float, default=0.72)
++    parser.add_argument("--max-loops", type=int, default=8)
++    parser.add_argument("--min-watts", type=float, default=40.0)
++    args = parser.parse_args()
++
++    if args.device.startswith("cuda"):
++        watts = power_limit_watts()
++        if watts is not None and watts < args.min_watts:
++            print(f"[power-guard] GPU enforced limit {watts}W < {args.min_watts}W; pausing (75).")
++            return EXIT_POWER_CAP
++        torch.cuda.set_per_process_memory_fraction(args.mem_fraction)
++        torch.backends.cuda.matmul.allow_tf32 = False
++
++    args.out.mkdir(parents=True, exist_ok=True)
++    bundle_path = args.out / "benchmark_bundle.json"
++    if bundle_path.exists():
++        bundle = json.loads(bundle_path.read_text(encoding="utf-8"))
++    else:
++        bundle = SP.build_benchmark_bundle()
++        bundle_path.write_text(json.dumps(bundle, indent=2), encoding="utf-8")
++
++    t0 = time.time()
++    root = snapshot_path(MODEL_LOCKS[args.profile])
++    if args.profile == "nanbeige":
++        model, enc = load_nanbeige(root, args.device)
++        res = run_nanbeige_suite(model, enc, bundle, max_loops=args.max_loops, min_watts=args.min_watts)
++        res["elapsed_sec"] = time.time() - t0
++        out_file = args.out / "nanbeige_results.json"
++        out_file.write_text(json.dumps(res, indent=2), encoding="utf-8")
++        c1 = np.mean(res["items_target_correct_by_loop"][0])
++        c2 = np.mean(res["items_target_correct_by_loop"][1])
++        c8 = np.mean(res["items_target_correct_by_loop"][-1])
++        print(
++            f"[NANBEIGE DONE] {res['elapsed_sec']:.1f}s | acc loop1={c1:.3f} loop2={c2:.3f} loop{args.max_loops}={c8:.3f} "
++            f"| r_pass1_pass2={res['mean_r_pass1_vs_pass2']:.3f}"
++        )
++    else:
++        model, enc = load_qwen(args.profile, root, args.device)
++        res = run_qwen_suite(args.profile, model, enc, bundle, min_watts=args.min_watts)
++        res["elapsed_sec"] = time.time() - t0
++        out_file = args.out / f"{args.profile}_results.json"
++        out_file.write_text(json.dumps(res, indent=2), encoding="utf-8")
++        print(
++            f"[{args.profile.upper()} DONE] {res['elapsed_sec']:.1f}s | "
++            f"acc={np.mean(res['items_target_correct']):.3f} (mid={np.mean(res['items_mid_lens_correct']):.3f})"
++        )
++    return 0
++
++
++if __name__ == "__main__":
++    raise SystemExit(main())
+diff --git a/mechinterp/loopscope02/scripts/score_loopscope02.py b/mechinterp/loopscope02/scripts/score_loopscope02.py
+new file mode 100644
+index 0000000..5727315
+--- /dev/null
++++ b/mechinterp/loopscope02/scripts/score_loopscope02.py
+@@ -0,0 +1,413 @@
++"""Pure-CPU deterministic replay scorer for LOOPSCOPE-02.
++
++Reads `benchmark_bundle.json`, `trm_results.json`, `nanbeige_results.json`,
++`qwen4b_results.json` (plus optional `qwen3_4b_inst_results.json`), verifies
++`bundle_sha256` alignment across all receipts, computes exact two-sided McNemar
++p-values and 2,000-resample paired bootstrap 95% CIs (seed 20261113), and scores
++pre-registered hypotheses P1-P5.
++"""
++from __future__ import annotations
++
++import argparse
++import json
++import math
++import sys
++from pathlib import Path
++from typing import Sequence
++
++import numpy as np
++
++sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
++from mechinterp.loopscope02.scripts import sudoku_prop as SP  # noqa: E402
++
++BOOTSTRAP_SEED = 20261113
++BOOTSTRAP_RESAMPLES = 2000
++
++
++def exact_mcnemar_p(a: Sequence[int | bool], b: Sequence[int | bool]) -> float:
++    """Exact two-sided binomial McNemar p-value on paired binary outcomes."""
++    arr_a = np.asarray(a, dtype=bool)
++    arr_b = np.asarray(b, dtype=bool)
++    if arr_a.shape != arr_b.shape:
++        raise ValueError(f"shape mismatch in McNemar: {arr_a.shape} vs {arr_b.shape}")
++    n10 = int(np.sum(arr_a & ~arr_b))
++    n01 = int(np.sum(~arr_a & arr_b))
++    n = n10 + n01
++    if n == 0:
++        return 1.0
++    k = min(n10, n01)
++    log2_n = n * math.log(2.0)
++    tail = 0.0
++    for i in range(k + 1):
++        log_c = math.lgamma(n + 1) - math.lgamma(i + 1) - math.lgamma(n - i + 1)
++        tail += math.exp(log_c - log2_n)
++    return float(min(1.0, 2.0 * tail))
++
++
++def bootstrap_mean_ci(
++    vals: Sequence[float | int],
++    rng: np.random.Generator,
++    n_resamples: int = BOOTSTRAP_RESAMPLES,
++) -> dict[str, float]:
++    arr = np.asarray(vals, dtype=np.float64)
++    n = arr.size
++    idx = rng.integers(0, n, size=(n_resamples, n))
++    means = arr[idx].mean(axis=1)
++    lo, hi = np.percentile(means, [2.5, 97.5])
++    return {"mean": float(arr.mean()), "ci95_lo": float(lo), "ci95_hi": float(hi)}
++
++
++def paired_diff_summary(
++    a: Sequence[int | bool],
++    b: Sequence[int | bool],
++    rng: np.random.Generator,
++    n_resamples: int = BOOTSTRAP_RESAMPLES,
++) -> dict[str, float]:
++    """Summary of (a - b) on paired binary outcomes with bootstrap CI and exact McNemar p."""
++    arr_a = np.asarray(a, dtype=np.float64)
++    arr_b = np.asarray(b, dtype=np.float64)
++    diff = arr_a - arr_b
++    ci = bootstrap_mean_ci(diff, rng, n_resamples=n_resamples)
++    return {
++        "mean_a": float(arr_a.mean()),
++        "mean_b": float(arr_b.mean()),
++        "diff": ci["mean"],
++        "ci95_lo": ci["ci95_lo"],
++        "ci95_hi": ci["ci95_hi"],
++        "mcnemar_p": exact_mcnemar_p(a, b),
++    }
++
++
++def stratum_breakdown(
++    correct: Sequence[int | bool],
++    strata_labels: Sequence[str],
++    rng: np.random.Generator,
++) -> dict[str, dict[str, float]]:
++    arr = np.asarray(correct, dtype=np.float64)
++    out: dict[str, dict[str, float]] = {"overall": bootstrap_mean_ci(arr, rng)}
++    for s in SP.STRATA:
++        mask = np.array([lbl == s for lbl in strata_labels], dtype=bool)
++        if np.any(mask):
++            out[s] = bootstrap_mean_ci(arr[mask], rng)
++    multistep_mask = np.array([lbl != "S1_naked1" for lbl in strata_labels], dtype=bool)
++    if np.any(multistep_mask):
++        out["multistep_S2_S4"] = bootstrap_mean_ci(arr[multistep_mask], rng)
++    return out
++
++
++def score_all(
++    bundle: dict,
++    trm: dict,
++    nanbeige: dict,
++    qwen4b: dict,
++    qwen3_inst: dict | None = None,
++    seed: int = BOOTSTRAP_SEED,
++) -> dict:
++    expected_sha = bundle["bundle_sha256"]
++    for tag, rec in [("trm", trm), ("nanbeige", nanbeige), ("qwen4b", qwen4b)]:
++        if rec.get("bundle_sha256") != expected_sha:
++            raise ValueError(f"{tag} bundle_sha256 mismatch: {rec.get('bundle_sha256')} != {expected_sha}")
++    if qwen3_inst is not None and qwen3_inst.get("bundle_sha256") != expected_sha:
++        raise ValueError("qwen3_inst bundle_sha256 mismatch")
++
++    rng = np.random.default_rng(seed)
++    items = bundle["items"]
++    strata = [it["stratum"] for it in items]
++    multistep_idx = [i for i, s in enumerate(strata) if s != "S1_naked1"]
++
++    trm_s1 = trm["items_target_correct_by_step"][0]
++    trm_s16 = trm["items_target_correct_by_step"][-1]
++    nb_t1 = nanbeige["items_target_correct_by_loop"][0]
++    nb_t2 = nanbeige["items_target_correct_by_loop"][1]
++    nb_tmax = nanbeige["items_target_correct_by_loop"][-1]
++    qw4_fin = qwen4b["items_target_correct"]
++    qw4_mid = qwen4b["items_mid_lens_correct"]
++
++    accuracy_tables = {
++        "trm_step1": stratum_breakdown(trm_s1, strata, rng),
++        "trm_step16": stratum_breakdown(trm_s16, strata, rng),
++        "nanbeige_loop1": stratum_breakdown(nb_t1, strata, rng),
++        "nanbeige_loop2": stratum_breakdown(nb_t2, strata, rng),
++        "nanbeige_loop_max": stratum_breakdown(nb_tmax, strata, rng),
++        "qwen4b_final": stratum_breakdown(qw4_fin, strata, rng),
++        "qwen4b_mid_lens": stratum_breakdown(qw4_mid, strata, rng),
++    }
++    if qwen3_inst is not None:
++        accuracy_tables["qwen3_4b_inst_final"] = stratum_breakdown(qwen3_inst["items_target_correct"], strata, rng)
++
++    # Key paired comparisons
++    nb_vs_qw_all = paired_diff_summary(nb_t2, qw4_fin, rng)
++    nb_vs_qw_multistep = paired_diff_summary(
++        [nb_t2[i] for i in multistep_idx],
++        [qw4_fin[i] for i in multistep_idx],
++        rng,
++    )
++    nb_t2_vs_t1 = paired_diff_summary(nb_t2, nb_t1, rng)
++    nb_tmax_vs_t2 = paired_diff_summary(nb_tmax, nb_t2, rng)
++    trm_s16_vs_s1 = paired_diff_summary(trm_s16, trm_s1, rng)
++    trm_vs_nb = paired_diff_summary(trm_s16, nb_t2, rng)
++    trm_vs_qw = paired_diff_summary(trm_s16, qw4_fin, rng)
++
++    # Counterfactual comparisons
++    trm_vs_open = paired_diff_summary(trm_s16, trm["items_target_open_correct"], rng)
++    trm_vs_donor = paired_diff_summary(trm_s16, trm["items_target_donor_correct"], rng)
++    trm_board_s16 = trm["items_board_exact_by_step"][-1]
++    trm_board_repair = paired_diff_summary(
++        trm["items_board_exact_corrupt_repaired"],
++        trm["items_board_exact_corrupt_step1"],
++        rng,
++    )
++    trm_target_repair = paired_diff_summary(
++        trm["items_target_corrupt_repaired_correct"],
++        trm["items_target_corrupt_step1_correct"],
++        rng,
++    )
++    trm_board_reset_zl = paired_diff_summary(trm_board_s16, trm["items_board_exact_reset_zL"], rng)
++    trm_board_fiber = paired_diff_summary(trm_board_s16, trm["items_board_exact_fiber_erased"], rng)
++    bench_reset_zl = paired_diff_summary(trm["bench100_clean16_exact"], trm["bench100_reset_zL_exact"], rng)
++    bench_fiber = paired_diff_summary(trm["bench100_clean16_exact"], trm["bench100_fiber_erased_exact"], rng)
++
++    nb_vs_open2 = paired_diff_summary(nb_t2, nanbeige["items_open2_correct"], rng)
++    nb_vs_donor2 = paired_diff_summary(nb_t2, nanbeige["items_donor2_correct"], rng)
++    nb_vs_patch2 = paired_diff_summary(nb_t2, nanbeige["items_patch_repaired2_correct"], rng)
++
++    # P1 verdict: Capability scaling triangulation
++    p1a_no_extrap = nb_tmax_vs_t2["diff"] <= 0.02
++    p1a_llm_multistep_ceiling = nb_vs_qw_multistep["diff"] < 0.10
++    p1b_trm_gain = trm_s16_vs_s1["diff"] >= 0.25
++    best_llm_acc = max(nb_vs_qw_all["mean_a"], nb_vs_qw_all["mean_b"])
++    p1b_trm_margin_vs_llm = (trm_s16_vs_s1["mean_a"] - best_llm_acc) >= 0.35
++    p1b_sig = max(trm_vs_nb["mcnemar_p"], trm_vs_qw["mcnemar_p"]) < 1e-6
++
++    if p1a_no_extrap and p1a_llm_multistep_ceiling and p1b_trm_gain and p1b_trm_margin_vs_llm and p1b_sig:
++        p1_verdict = "Supported"
++    elif trm_s16_vs_s1["diff"] >= 0.15 and (trm_s16_vs_s1["mean_a"] - best_llm_acc) >= 0.25:
++        p1_verdict = "Weak"
++    else:
++        p1_verdict = "Not supported"
++
++    # P2 verdict: ARG-02 causal counterfactuals & perturbation repair
++    kick_final = float(trm["kick_ratio_curve_mean"][-1])
++    trm_cf_ok = (
++        trm_vs_open["diff"] >= 0.30
++        and trm_vs_open["mcnemar_p"] < 1e-6
++        and trm_vs_donor["diff"] >= 0.30
++        and trm_vs_donor["mcnemar_p"] < 1e-6
++    )
++    trm_repair_ok = (
++        trm_board_repair["diff"] >= 0.15
++        or trm_target_repair["diff"] >= 0.15
++        or kick_final < 1.0
++    )
++    nb_rel_norm_last = float(nanbeige["rel_step_norm_mean_by_loop"][-1])
++    nb_non_convergent = (nb_rel_norm_last >= 0.10) and (nb_tmax_vs_t2["diff"] <= 0.02)
++
++    if trm_cf_ok and trm_repair_ok and nb_non_convergent:
++        p2_verdict = "Supported"
++    elif trm_vs_open["diff"] >= 0.20 and trm_vs_donor["diff"] >= 0.20 and trm_repair_ok:
++        p2_verdict = "Weak"
++    else:
++        p2_verdict = "Not supported"
++
++    # P3 verdict: SVD weight-usage correlations (Nanbeige orthogonal pass multiplexing vs TRM outer reuse + role split)
++    nb_mean_r = float(nanbeige["mean_r_pass1_vs_pass2"])
++    trm_u = trm["usage_stats"]
++    trm_r_outer_zh = float(np.mean([v["r_outer_zH_mean"] for v in trm_u.values()]))
++    trm_r_outer_zl = float(np.mean([v["r_outer_zL_mean"] for v in trm_u.values()]))
++    trm_r_role = float(np.mean([v["r_role_zL_vs_zH_mean"] for v in trm_u.values()]))
++
++    if nb_mean_r < 0.30 and trm_r_outer_zh >= 0.80 and trm_r_role <= (trm_r_outer_zh - 0.10):
++        p3_verdict = "Supported"
++    elif nb_mean_r < 0.40 and trm_r_outer_zh >= 0.70 and trm_r_role < (trm_r_outer_zh - 0.05):
++        p3_verdict = "Weak"
++    else:
++        p3_verdict = "Not supported"
++
++    # P4 verdict: Unrolled TCA attractor masking (F1/F6 <= 0.25) + specificity (> 5x 0.27% Gaussian null = 1.35%)
++    trm_f1_flate = float(trm["tca"]["f1_over_flate_mean"])
++    trm_max_spec = max(float(trm["tca"]["zr_gt3_overall"]), float(trm["tca"]["zw_gt3_overall"]))
++    if trm_f1_flate <= 0.25 and trm_max_spec >= 0.0135:
++        p4_verdict = "Supported"
++    elif trm_f1_flate <= 0.40 and trm_max_spec >= 0.0081:
++        p4_verdict = "Weak"
++    else:
++        p4_verdict = "Not supported"
++
++    # P5 verdict: Q11 G_prop compactification, deductive staircase, stalled non-monotone repair, and fiber carry
++    b_comp = trm["bench100_compactification"]
++    i_comp = trm["items_compactification"]
++    auc_comm = b_comp["commutation_vs_shuffled_auc_prop"]
++    concord = i_comp["within_board_round_concordance"]
++    concord_null = i_comp["within_board_round_concordance_shuf_null"]
++    stalled_solve = float(b_comp["stalled_solve_rate_step16"])
++    stalled_nonmono = float(b_comp["stalled_solved_with_nonmonotone_flips_share"])
++
++    # Dark-state carry test: either reset_zL OR full 501-dim orthogonal fiber erasure degrades solve rate >= 0.05 (p < 0.05)
++    dark_carry_drop = max(
++        bench_reset_zl["diff"],
++        trm_board_reset_zl["diff"],
++        bench_fiber["diff"],
++        trm_board_fiber["diff"],
++    )
++    dark_carry_sig = (
++        (bench_reset_zl["diff"] >= 0.05 and bench_reset_zl["mcnemar_p"] < 0.05)
++        or (trm_board_reset_zl["diff"] >= 0.05 and trm_board_reset_zl["mcnemar_p"] < 0.05)
++        or (bench_fiber["diff"] >= 0.05 and bench_fiber["mcnemar_p"] < 0.05)
++        or (trm_board_fiber["diff"] >= 0.05 and trm_board_fiber["mcnemar_p"] < 0.05)
++    )
++
++    p5_checks = {
++        "commutation_auc_ge_090": bool(auc_comm is not None and auc_comm >= 0.90),
++        "within_board_staircase_concordance": bool(
++            concord is not None and concord_null is not None and concord >= 0.65 and (concord - concord_null) >= 0.10
++        ),
++        "stalled_solve_ge_040": stalled_solve >= 0.40,
++        "stalled_nonmonotone_ge_080": stalled_nonmono >= 0.80,
++        "dark_fiber_or_zL_necessity": bool(dark_carry_sig),
++    }
++    p5_pass_count = sum(int(v) for v in p5_checks.values())
++    if p5_pass_count == 5:
++        p5_verdict = "Supported"
++    elif p5_pass_count == 4:
++        p5_verdict = "Weak"
++    else:
++        p5_verdict = "Not supported"
++
++    return {
++        "bundle_sha256": expected_sha,
++        "bootstrap_seed": seed,
++        "bootstrap_resamples": BOOTSTRAP_RESAMPLES,
++        "verdicts": {
++            "P1_capability_triangulation": p1_verdict,
++            "P2_counterfactual_attractor_vs_virtual_depth": p2_verdict,
++            "P3_svd_operator_reuse_vs_multiplexing": p3_verdict,
++            "P4_tca_attractor_masking_and_specificity": p4_verdict,
++            "P5_q11_compactification_and_beyond_prop_search": p5_verdict,
++        },
++        "accuracy_by_stratum": accuracy_tables,
++        "paired_comparisons": {
++            "nanbeige_loop2_vs_qwen4b_all": nb_vs_qw_all,
++            "nanbeige_loop2_vs_qwen4b_multistep": nb_vs_qw_multistep,
++            "nanbeige_loop2_vs_loop1": nb_t2_vs_t1,
++            "nanbeige_loopmax_vs_loop2": nb_tmax_vs_t2,
++            "trm_step16_vs_step1": trm_s16_vs_s1,
++            "trm_step16_vs_nanbeige_loop2": trm_vs_nb,
++            "trm_step16_vs_qwen4b": trm_vs_qw,
++            "trm_clean16_vs_open16": trm_vs_open,
++            "trm_clean16_vs_donor_zH16": trm_vs_donor,
++            "trm_board_corrupt_repaired_vs_step1": trm_board_repair,
++            "trm_target_corrupt_repaired_vs_step1": trm_target_repair,
++            "trm_items_board_clean16_vs_reset_zL": trm_board_reset_zl,
++            "trm_items_board_clean16_vs_fiber_erased": trm_board_fiber,
++            "trm_bench100_clean16_vs_reset_zL": bench_reset_zl,
++            "trm_bench100_clean16_vs_fiber_erased": bench_fiber,
++            "nanbeige_loop2_vs_open2": nb_vs_open2,
++            "nanbeige_loop2_vs_donor2": nb_vs_donor2,
++            "nanbeige_loop2_vs_patch_repaired2": nb_vs_patch2,
++        },
++        "mechanistic_metrics": {
++            "nanbeige_mean_r_pass1_vs_pass2": nb_mean_r,
++            "nanbeige_rel_step_norm_final": nb_rel_norm_last,
++            "nanbeige_donor2_top1_agree_loop2": float(np.mean(nanbeige["items_donor2_top1_agree_with_loop2"])),
++            "nanbeige_patch2_top1_agree_loop2": float(np.mean(nanbeige["items_patch_repaired2_top1_agree_with_loop2"])),
++            "trm_r_outer_zH_mean": trm_r_outer_zh,
++            "trm_r_outer_zL_mean": trm_r_outer_zl,
++            "trm_r_role_zL_vs_zH_mean": trm_r_role,
++            "trm_kick_ratio_final": kick_final,
++            "trm_tca_f1_over_flate_mean": trm_f1_flate,
++            "trm_tca_max_spec_gt3": trm_max_spec,
++            "nanbeige_tca_s1": nanbeige["tca_s1"],
++            "qwen4b_tca_s1": qwen4b["tca_s1"],
++            "trm_bench100_exact_step1": float(b_comp["exact_solve_curve_all"][0]),
++            "trm_bench100_exact_step16": float(b_comp["exact_solve_curve_all"][-1]),
++            "trm_replication_bench100_exact_step16": float(trm["replication_bench100_exact_step16"]),
++            "p5_subchecks": p5_checks,
++            "p5_max_dark_carry_drop": float(dark_carry_drop),
++            "bench100_compactification": b_comp,
++            "items_compactification": i_comp,
++        },
++    }
++
++
++def render_markdown_summary(rep: dict) -> str:
++    v = rep["verdicts"]
++    acc = rep["accuracy_by_stratum"]
++    pc = rep["paired_comparisons"]
++    mm = rep["mechanistic_metrics"]
++    lines = [
++        "# LOOPSCOPE-02 Automated Replay Summary",
++        "",
++        f"- **Bundle SHA-256:** `{rep['bundle_sha256']}`",
++        f"- **Bootstrap:** `{rep['bootstrap_resamples']}` resamples (`seed={rep['bootstrap_seed']}`)",
++        "",
++        "## Pre-Registered Verdicts",
++        "",
++        "| Hypothesis | Verdict | Key Quantitative Readout |",
++        "|---|---|---|",
++        f"| **P1** (Capability triangulation) | **{v['P1_capability_triangulation']}** | "
++        f"TRM s1->s16 `{pc['trm_step16_vs_step1']['diff']:+.3f}`; "
++        f"Nanbeige t=2 vs Qwen-4B (S2-S4) `{pc['nanbeige_loop2_vs_qwen4b_multistep']['diff']:+.3f}` "
++        f"(p={pc['nanbeige_loop2_vs_qwen4b_multistep']['mcnemar_p']:.3g}) |",
++        f"| **P2** (ARG-02 causal counterfactuals) | **{v['P2_counterfactual_attractor_vs_virtual_depth']}** | "
++        f"TRM clean-open `{pc['trm_clean16_vs_open16']['diff']:+.3f}`, "
++        f"clean-donor `{pc['trm_clean16_vs_donor_zH16']['diff']:+.3f}`, "
++        f"board repair `{pc['trm_board_corrupt_repaired_vs_step1']['diff']:+.3f}` |",
++        f"| **P3** (SVD operator reuse vs multiplexing) | **{v['P3_svd_operator_reuse_vs_multiplexing']}** | "
++        f"Nanbeige r(P1,P2)=`{mm['nanbeige_mean_r_pass1_vs_pass2']:.3f}`; "
++        f"TRM r_outer(zH)=`{mm['trm_r_outer_zH_mean']:.3f}`, r_role(zL,zH)=`{mm['trm_r_role_zL_vs_zH_mean']:.3f}` |",
++        f"| **P4** (TCA attractor masking & specificity) | **{v['P4_tca_attractor_masking_and_specificity']}** | "
++        f"TRM F1/F6=`{mm['trm_tca_f1_over_flate_mean']:.3f}`, max(|z|>3)=`{100*mm['trm_tca_max_spec_gt3']:.2f}%` |",
++        f"| **P5** (Q11 compactification & search) | **{v['P5_q11_compactification_and_beyond_prop_search']}** | "
++        f"Comm AUC=`{mm['bench100_compactification']['commutation_vs_shuffled_auc_prop']:.3f}`, "
++        f"staircase=`{mm['items_compactification']['within_board_round_concordance']:.3f}`, "
++        f"stalled solve=`{mm['bench100_compactification']['stalled_solve_rate_step16']:.3f}` |",
++        "",
++        "## Stratified Target-Cell Accuracy (256 Distinct Boards)",
++        "",
++        "| Model / Condition | Overall | S1 (Naked-1) | S2 (Prop-2) | S3 (Prop-3+) | S4 (Stalled) |",
++        "|---|---:|---:|---:|---:|---:|",
++    ]
++    row_order = [
++        ("Qwen3.5-4B-Base (mid-stack L16 lens)", "qwen4b_mid_lens"),
++        ("Qwen3.5-4B-Base (final L32)", "qwen4b_final"),
++        ("Qwen3-4B-Instruct-2507 (final L36)", "qwen3_4b_inst_final"),
++        ("Nanbeige4.2-3B (loop 1)", "nanbeige_loop1"),
++        ("Nanbeige4.2-3B (loop 2, trained)", "nanbeige_loop2"),
++        ("Nanbeige4.2-3B (loop 8, over-looped)", "nanbeige_loop_max"),
++        ("TRM 7M (outer step 1)", "trm_step1"),
++        ("TRM 7M (outer step 16)", "trm_step16"),
++    ]
++    for label, key in row_order:
++        if key not in acc:
++            continue
++        tb = acc[key]
++        lines.append(
++            f"| {label} | {tb['overall']['mean']:.3f} | {tb['S1_naked1']['mean']:.3f} | "
++            f"{tb['S2_prop2']['mean']:.3f} | {tb['S3_prop3plus']['mean']:.3f} | {tb['S4_stalled']['mean']:.3f} |"
++        )
++    lines.append("")
++    return "\n".join(lines)
++
++
++def main() -> int:
++    parser = argparse.ArgumentParser(description=__doc__)
++    parser.add_argument("--results-dir", type=Path, default=Path("mechinterp/loopscope02/results"))
++    args = parser.parse_args()
++
++    rdir = args.results_dir
++    bundle = json.loads((rdir / "benchmark_bundle.json").read_text(encoding="utf-8"))
++    trm = json.loads((rdir / "trm_results.json").read_text(encoding="utf-8"))
++    nanbeige = json.loads((rdir / "nanbeige_results.json").read_text(encoding="utf-8"))
++    qwen4b = json.loads((rdir / "qwen4b_results.json").read_text(encoding="utf-8"))
++    inst_path = rdir / "qwen3_4b_inst_results.json"
++    qwen3_inst = json.loads(inst_path.read_text(encoding="utf-8")) if inst_path.exists() else None
++
++    rep = score_all(bundle, trm, nanbeige, qwen4b, qwen3_inst=qwen3_inst)
++    (rdir / "loopscope02_report.json").write_text(json.dumps(rep, indent=2), encoding="utf-8")
++    (rdir / "loopscope02_report.md").write_text(render_markdown_summary(rep), encoding="utf-8")
++    print("[SCORED]", json.dumps(rep["verdicts"]))
++    return 0
++
++
++if __name__ == "__main__":
++    raise SystemExit(main())
+diff --git a/mechinterp/loopscope02/scripts/sudoku_prop.py b/mechinterp/loopscope02/scripts/sudoku_prop.py
+new file mode 100644
+index 0000000..6771747
+--- /dev/null
++++ b/mechinterp/loopscope02/scripts/sudoku_prop.py
+@@ -0,0 +1,427 @@
++"""Exact 9x9 Sudoku constraint-propagation lattice G_prop and stratified dataset builder.
++
++Defines synchronous naked-single + hidden-single elimination rounds, peer-conflict
++counting, candidate masks, and deterministic stratified sampling from
++`sapientinc/sudoku-extreme-1k` (`train.csv`, `test_sudoku_bench.csv`, `test_hard.csv`)
++with SHA-256 verification on every input file.
++"""
++from __future__ import annotations
++
++import csv
++import hashlib
++import json
++from dataclasses import dataclass
++from pathlib import Path
++from typing import Sequence
++
++import numpy as np
++
++DATASET_REPO = "sapientinc/sudoku-extreme-1k"
++EXPECTED_SHA256 = {
++    "train.csv": "887dea10daba811d3a6a565bb138e31ef60a95fdb57045633e4762fc46357cbb",
++    "test_sudoku_bench.csv": "0bd94e4843c3ec55e225c8798bf3f63083b2b2207e88ca996c3bbb4b8b1c18e1",
++    "test_hard.csv": "5f9549fb2f38e2cbcb9a515733fdfb19d10c599f21d5c9e82ec20bca28e78c2c",
++}
++SPLIT_SEED = 20261113
++STRATA = ("S1_naked1", "S2_prop2", "S3_prop3plus", "S4_stalled")
++PER_STRATUM = 64
++
++UNITS: list[list[int]] = []
++for _r in range(9):
++    UNITS.append([_r * 9 + _c for _c in range(9)])
++for _c in range(9):
++    UNITS.append([_r * 9 + _c for _r in range(9)])
++for _br in range(0, 9, 3):
++    for _bc in range(0, 9, 3):
++        UNITS.append([(_br + _dr) * 9 + (_bc + _dc) for _dr in range(3) for _dc in range(3)])
++
++PEERS: list[list[int]] = []
++for _i in range(81):
++    _r, _c = divmod(_i, 9)
++    _br, _bc = (_r // 3) * 3, (_c // 3) * 3
++    _ps = (
++        {(_r * 9 + _cc) for _cc in range(9)}
++        | {(_rr * 9 + _c) for _rr in range(9)}
++        | {(_br + _dr) * 9 + (_bc + _dc) for _dr in range(3) for _dc in range(3)}
++    )
++    _ps.remove(_i)
++    PEERS.append(sorted(_ps))
++
++
++def sha256_file(path: Path) -> str:
++    h = hashlib.sha256()
++    with open(path, "rb") as f:
++        for chunk in iter(lambda: f.read(1 << 20), b""):
++            h.update(chunk)
++    return h.hexdigest()
++
++
++def parse_grid(s: str) -> list[int]:
++    if len(s) != 81:
++        raise ValueError(f"expected 81-char Sudoku string, got len={len(s)}")
++    return [0 if ch in ".0" else int(ch) for ch in s]
++
++
++def format_grid(grid: Sequence[int]) -> str:
++    return "".join("." if v == 0 else str(v) for v in grid)
++
++
++def candidate_mask(grid: Sequence[int]) -> np.ndarray:
++    """Return [81, 9] bool mask of locally consistent digits 1..9 per cell."""
++    mask = np.zeros((81, 9), dtype=bool)
++    for i in range(81):
++        v = grid[i]
++        if v != 0:
++            mask[i, v - 1] = True
++        else:
++            used = {grid[p] for p in PEERS[i] if grid[p] != 0}
++            for d in range(1, 10):
++                if d not in used:
++                    mask[i, d - 1] = True
++    return mask
++
++
++def step_propagation(grid: Sequence[int]) -> tuple[list[int], dict[int, int], bool]:
++    """One synchronous round G_prop of naked + hidden single elimination.
++
++    Returns (next_grid, assigned_cells_map, conflict_detected).
++    """
++    nxt = list(grid)
++    if count_unit_conflicts(nxt) > 0:
++        return nxt, {}, True
++    cands: list[set[int]] = [set() for _ in range(81)]
++    for i in range(81):
++        if nxt[i] == 0:
++            used = {nxt[p] for p in PEERS[i] if nxt[p] != 0}
++            cands[i] = set(range(1, 10)) - used
++            if not cands[i]:
++                return nxt, {}, True
++    assigns: dict[int, int] = {}
++    conflict = False
++    for i in range(81):
++        if nxt[i] == 0 and len(cands[i]) == 1:
++            assigns[i] = next(iter(cands[i]))
++    for u in UNITS:
++        for d in range(1, 10):
++            if any(nxt[i] == d for i in u):
++                continue
++            places = [i for i in u if nxt[i] == 0 and d in cands[i]]
++            if not places:
++                conflict = True
++            elif len(places) == 1:
++                idx = places[0]
++                if idx in assigns and assigns[idx] != d:
++                    conflict = True
++                else:
++                    assigns[idx] = d
++    if conflict:
++        return nxt, {}, True
++    for idx, d in assigns.items():
++        nxt[idx] = d
++    if count_unit_conflicts(nxt) > 0:
++        return list(grid), {}, True
++    return nxt, assigns, False
++
++
++def count_unit_conflicts(grid: Sequence[int]) -> int:
++    """Count duplicate non-zero digit occurrences across the 27 Sudoku units."""
++    conflicts = 0
++    for u in UNITS:
++        vals = [grid[i] for i in u if grid[i] != 0]
++        conflicts += len(vals) - len(set(vals))
++    return conflicts
++
++
++def count_cell_peer_conflicts(grid: Sequence[int]) -> int:
++    """Number of cells whose non-zero digit matches at least one peer cell."""
++    bad = 0
++    for i in range(81):
++        v = grid[i]
++        if v != 0 and any(grid[p] == v for p in PEERS[i]):
++            bad += 1
++    return bad
++
++
++def is_valid_solution(grid: Sequence[int], givens: Sequence[int]) -> bool:
++    if any(v < 1 or v > 9 for v in grid):
++        return False
++    for i in range(81):
++        if givens[i] != 0 and grid[i] != givens[i]:
++            return False
++    return count_unit_conflicts(grid) == 0
++
++
++@dataclass(frozen=True)
++class PropagationTrace:
++    cell_round: tuple[int, ...]      # 0 = given, r>=1 = round deduced, -1 = stalled
++    naked_round1: tuple[bool, ...]   # True iff empty cell has 8 distinct given peer digits at round 0
++    rounds_grids: tuple[tuple[int, ...], ...]  # grid after 0, 1, ..., R rounds
++    solved: bool
++    num_rounds: int
++
++
++def trace_propagation(question: str) -> PropagationTrace:
++    g0 = parse_grid(question)
++    naked1 = [False] * 81
++    for i in range(81):
++        if g0[i] == 0:
++            used = {g0[p] for p in PEERS[i] if g0[p] != 0}
++            naked1[i] = len(used) == 8
++    cell_round = [0 if v != 0 else -1 for v in g0]
++    grids = [tuple(g0)]
++    cur = list(g0)
++    rnd = 0
++    while True:
++        nxt, assigns, conflict = step_propagation(cur)
++        if conflict or not assigns:
++            break
++        rnd += 1
++        for idx in assigns:
++            cell_round[idx] = rnd
++        cur = nxt
++        grids.append(tuple(cur))
++    solved = all(v != 0 for v in cur) and count_unit_conflicts(cur) == 0
++    return PropagationTrace(
++        cell_round=tuple(cell_round),
++        naked_round1=tuple(naked1),
++        rounds_grids=tuple(grids),
++        solved=solved,
++        num_rounds=rnd,
++    )
++
++
++def g_prop_belief(prob: np.ndarray, givens: Sequence[int]) -> np.ndarray:
++    """Apply G_prop to a discrete board projection of cell beliefs prob [81, 9].
++
++    Projects prob to its hard argmax on cells with concentration >= 0.5 (keeping givens fixed);
++    if consistent, applies one synchronous step_propagation round and returns target distribution:
++    1-hot on newly deduced/given cells, and locally masked renormalized prob on remaining cells.
++    """
++    hard = list(givens)
++    for i in range(81):
++        if hard[i] == 0:
++            top = int(np.argmax(prob[i]))
++            if prob[i, top] >= 0.5:
++                hard[i] = top + 1
++    nxt, assigns, conflict = step_propagation(hard)
++    if conflict:
++        # Fall back to propagating from certified givens + conflict-free high-confidence subset
++        nxt, assigns, _ = step_propagation(givens)
++    out = np.zeros_like(prob, dtype=np.float64)
++    mask = candidate_mask(nxt)
++    for i in range(81):
++        if nxt[i] != 0:
++            out[i, nxt[i] - 1] = 1.0
++        else:
++            p = prob[i].astype(np.float64) * mask[i].astype(np.float64)
++            s = float(p.sum())
++            if s > 1e-12:
++                out[i] = p / s
++            else:
++                m_sum = float(mask[i].sum())
++                out[i] = mask[i].astype(np.float64) / max(m_sum, 1.0)
++    return out.astype(np.float32)
++
++
++def resolve_dataset_files() -> dict[str, Path]:
++    from huggingface_hub import hf_hub_download
++
++    paths: dict[str, Path] = {}
++    for fname, expected in EXPECTED_SHA256.items():
++        p = Path(hf_hub_download(repo_id=DATASET_REPO, filename=fname, repo_type="dataset"))
++        actual = sha256_file(p)
++        if actual != expected:
++            raise RuntimeError(f"SHA-256 mismatch for {fname}: expected {expected}, got {actual}")
++        paths[fname] = p
++    return paths
++
++
++def render_board_with_query(question: str, target_idx: int | None = None) -> str:
++    """Render 9x9 Sudoku with row/col headers and optional '?' at target_idx."""
++    lines = ["    C1 C2 C3   C4 C5 C6   C7 C8 C9"]
++    for r in range(9):
++        row_tokens = []
++        for c in range(9):
++            idx = r * 9 + c
++            ch = question[idx]
++            if target_idx is not None and idx == target_idx:
++                if ch != ".":
++                    raise ValueError("target_idx must point to an empty cell")
++                tok = " ?"
++            else:
++                tok = f" {ch}"
++            row_tokens.append(tok)
++            if c in (2, 5):
++                row_tokens.append("  ")
++        lines.append(f"R{r + 1} " + "".join(row_tokens))
++        if r in (2, 5):
++            lines.append("")
++    return "\n".join(lines)
++
++
++def format_target_prompt(shots: Sequence[dict], question: str, target_idx: int) -> str:
++    """3-shot prompt ending with 'Answer: ' so digits '1'..'9' are single next tokens."""
++    blocks = [
++        "Solve for the digit (1-9) at the cell marked '?' in the 9x9 Sudoku grid. "
++        "Each row R1-R9, column C1-C9, and 3x3 box contains digits 1-9 once."
++    ]
++    for s in shots:
++        r, c = divmod(int(s["target_idx"]), 9)
++        grid_txt = render_board_with_query(s["question"], int(s["target_idx"]))
++        ans_digit = s["answer"][int(s["target_idx"])]
++        blocks.append(f"{grid_txt}\nCell ? (R{r + 1}C{c + 1}) Answer: {ans_digit}")
++    r, c = divmod(target_idx, 9)
++    grid_txt = render_board_with_query(question, target_idx)
++    blocks.append(f"{grid_txt}\nCell ? (R{r + 1}C{c + 1}) Answer: ")
++    return "\n\n".join(blocks)
++
++
++def build_benchmark_bundle(seed: int = SPLIT_SEED, per_stratum: int = PER_STRATUM) -> dict:
++    """Build deterministic 3-shot demos + 4x64 stratified target-cell items + 100 bench boards."""
++    paths = resolve_dataset_files()
++    rng = np.random.default_rng(seed)
++
++    # 1. Select 3 deterministic shots from train.csv (1 naked1, 1 prop2, 1 prop3)
++    with open(paths["train.csv"], "r", encoding="utf-8") as f:
++        train_rows = list(csv.DictReader(f))
++    shots: list[dict] = []
++    wanted = ["n1", "p2", "p3"]
++    for row in train_rows:
++        tr = trace_propagation(row["question"])
++        kind = wanted[len(shots)]
++        cand_cells = []
++        for idx in range(81):
++            if kind == "n1" and tr.naked_round1[idx]:
++                cand_cells.append(idx)
++            elif kind == "p2" and tr.cell_round[idx] == 2:
++                cand_cells.append(idx)
++            elif kind == "p3" and tr.cell_round[idx] >= 3:
++                cand_cells.append(idx)
++        if cand_cells:
++            shots.append({
++                "source": row["source"],
++                "question": row["question"],
++                "answer": row["answer"],
++                "target_idx": int(cand_cells[0]),
++                "demo_kind": kind,
++            })
++            if len(shots) == 3:
++                break
++    if len(shots) != 3:
++        raise RuntimeError(f"expected 3 shots from train.csv, got {len(shots)}")
++
++    # 2. Load 100 sudoku-bench boards + first 1,500 test_hard boards (disjoint questions)
++    with open(paths["test_sudoku_bench.csv"], "r", encoding="utf-8") as f:
++        bench_rows = list(csv.DictReader(f))
++    with open(paths["test_hard.csv"], "r", encoding="utf-8") as f:
++        hard_rows = []
++        for idx, r in enumerate(csv.DictReader(f)):
++            if idx >= 1500:
++                break
++            hard_rows.append(r)
++
++    bench_boards = []
++    for bi, r in enumerate(bench_rows):
++        tr = trace_propagation(r["question"])
++        bench_boards.append({
++            "board_id": f"bench_{bi:03d}",
++            "source": r["source"],
++            "question": r["question"],
++            "answer": r["answer"],
++            "rating": int(r["rating"]),
++            "prop_solved": tr.solved,
++            "prop_rounds": tr.num_rounds,
++            "cell_round": list(tr.cell_round),
++        })
++
++    # Pool candidate boards per stratum (bench first, then hard_rows; distinct question strings)
++    seen_q: set[str] = set()
++    pools: dict[str, list[dict]] = {s: [] for s in STRATA}
++    for tag, rows in [("bench", bench_rows), ("hard", hard_rows)]:
++        for ri, r in enumerate(rows):
++            q = r["question"]
++            if q in seen_q:
++                continue
++            seen_q.add(q)
++            tr = trace_propagation(q)
++            n1 = [i for i in range(81) if tr.naked_round1[i]]
++            p2 = [i for i in range(81) if tr.cell_round[i] == 2]
++            p3 = [i for i in range(81) if tr.cell_round[i] >= 3]
++            st = [i for i in range(81) if tr.cell_round[i] == -1]
++            rec_base = {
++                "origin": f"{tag}_{ri:04d}",
++                "question": q,
++                "answer": r["answer"],
++                "rating": int(r["rating"]),
++                "prop_solved": tr.solved,
++                "prop_rounds": tr.num_rounds,
++            }
++            if n1:
++                pools["S1_naked1"].append({**rec_base, "cands": n1, "cell_round_map": tr.cell_round})
++            if p2:
++                pools["S2_prop2"].append({**rec_base, "cands": p2, "cell_round_map": tr.cell_round})
++            if p3:
++                pools["S3_prop3plus"].append({**rec_base, "cands": p3, "cell_round_map": tr.cell_round})
++            if st and not tr.solved and tr.num_rounds == 0:
++                # Strict zero-single stalled boards: G_prop makes zero progress at step 0
++                pools["S4_stalled"].append({**rec_base, "cands": st, "cell_round_map": tr.cell_round})
++
++    items: list[dict] = []
++    used_questions: set[str] = set()
++    # Sample S3, S2, S1, S4 in order of pool scarcity so all 256 items come from 256 distinct boards
++    sample_order = ("S3_prop3plus", "S1_naked1", "S2_prop2", "S4_stalled")
++    by_stratum: dict[str, list[dict]] = {}
++    for s in sample_order:
++        avail = [b for b in pools[s] if b["question"] not in used_questions]
++        if len(avail) < per_stratum:
++            raise RuntimeError(f"insufficient distinct boards for {s}: {len(avail)} < {per_stratum}")
++        order = rng.permutation(len(avail))[:per_stratum]
++        chosen = []
++        for idx_pos, oi in enumerate(sorted(int(x) for x in order)):
++            b = avail[oi]
++            used_questions.add(b["question"])
++            cands = b["cands"]
++            target_idx = int(cands[int(rng.integers(len(cands)))])
++            target_digit = int(b["answer"][target_idx])
++            chosen.append({
++                "item_id": f"{s}_{idx_pos:02d}",
++                "stratum": s,
++                "origin": b["origin"],
++                "question": b["question"],
++                "answer": b["answer"],
++                "rating": b["rating"],
++                "prop_solved": b["prop_solved"],
++                "prop_rounds": b["prop_rounds"],
++                "target_idx": target_idx,
++                "target_digit": target_digit,
++                "target_prop_round": int(b["cell_round_map"][target_idx]),
++            })
++        by_stratum[s] = chosen
++
++    # Order canonically STRATA, and assign deterministic donor index (cyclic shift within stratum
++    # choosing next item with a DIFFERENT target_digit so donor-shuffle never leaks target label)
++    for s in STRATA:
++        grp = by_stratum[s]
++        n = len(grp)
++        for i in range(n):
++            donor = (i + 1) % n
++            for off in range(1, n):
++                cand = (i + off) % n
++                if grp[cand]["target_digit"] != grp[i]["target_digit"]:
++                    donor = cand
++                    break
++            grp[i]["donor_item_id"] = grp[donor]["item_id"]
++            items.append(grp[i])
++
++    payload = {
++        "seed": seed,
++        "per_stratum": per_stratum,
++        "dataset_repo": DATASET_REPO,
++        "sha256": EXPECTED_SHA256,
++        "shots": shots,
++        "items": items,
++        "bench_boards": bench_boards,
++    }
++    digest = hashlib.sha256(json.dumps(payload, sort_keys=True).encode("utf-8")).hexdigest()
++    payload["bundle_sha256"] = digest
++    return payload
+diff --git a/mechinterp/loopscope02/scripts/trm_sudoku.py b/mechinterp/loopscope02/scripts/trm_sudoku.py
+new file mode 100644
+index 0000000..34ede02
+--- /dev/null
++++ b/mechinterp/loopscope02/scripts/trm_sudoku.py
+@@ -0,0 +1,903 @@
++"""LOOPSCOPE-02: Pretrained 7M Attention-TRM instrumentation on stratified 9x9 Sudoku.
++
++Loads `gaoxin492/TinyRecursiveModels-Sudoku-Extreme-att` (`step_21700`, sha256 verified)
++and optional replication `yagizdevre/trm-sudoku-extreme-att` (`model.pt`, sha256 verified)
++in standalone pure PyTorch (`TinyRecursiveReasoningModel_ACTV1` parity).
++
++Computes:
++  1. Clean trajectory across outer ACT steps s = 1..16 (3 H-cycles x 6 L-cycles per step).
++  2. Counterfactual suite (open-loop extrapolation, donor z_H displacement shuffle,
++     reset-z_L ablation, donor-z_L swap, step-1 corruption repair, Gaussian kick growth/decay).
++  3. SVD rank-one component usage correlations across outer cycles (r_outer) vs. within-cycle
++     z_L / z_H role split (r_role) on L_level.layers.{0,1}.{mlp.down_proj, self_attn.o_proj}.
++  4. Transported Component Attribution (TCA: fragility F_s and closed-form rotation specificity
++     z_read, z_write) unrolled across outer steps.
++  5. Q11 Sudoku propagation commutation rho_s (with shuffled-board control) and post-stall
++     non-monotone conflict-driven cell revision metrics.
++"""
++from __future__ import annotations
++
++import argparse
++import json
++import math
++import subprocess
++import sys
++import time
++from pathlib import Path
++
++import numpy as np
++import torch
++import torch.nn as nn
++import torch.nn.functional as F
++
++sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
++from mechinterp.loopscope02.scripts import sudoku_prop as SP  # noqa: E402
++
++TRM_CHECKPOINTS = {
++    "gaoxin492": {
++        "repo_id": "gaoxin492/TinyRecursiveModels-Sudoku-Extreme-att",
++        "filename": "step_21700",
++        "sha256": "932b5e0df4e90021c21a064d4e716154086c46fda7afa676ea294484a30e38c3",
++    },
++    "yagizdevre": {
++        "repo_id": "yagizdevre/trm-sudoku-extreme-att",
++        "filename": "model.pt",
++        "sha256": "d67723394a7fe439f1fa498b58196399ee89cd82a794c7da9ce0a8cc3df7fa39",
++    },
++}
++EXIT_POWER_CAP = 75
++TOP_SVD = 64
++
++
++def power_limit_watts() -> float | None:
++    try:
++        out = subprocess.run(
++            ["nvidia-smi", "--query-gpu=enforced.power.limit", "--format=csv,noheader,nounits"],
++            capture_output=True, text=True, timeout=15,
++        ).stdout.strip().splitlines()[0]
++        return float(out.strip())
++    except Exception:
++        return None
++
++
++def rms_norm(x: torch.Tensor, eps: float = 1e-5) -> torch.Tensor:
++    orig = x.dtype
++    xf = x.float()
++    return (xf * torch.rsqrt(xf.pow(2).mean(-1, keepdim=True) + eps)).to(orig)
++
++
++def rotate_half(x: torch.Tensor) -> torch.Tensor:
++    half = x.shape[-1] // 2
++    return torch.cat((-x[..., half:], x[..., :half]), dim=-1)
++
++
++def apply_rope(q: torch.Tensor, k: torch.Tensor, cos: torch.Tensor, sin: torch.Tensor):
++    orig = q.dtype
++    qf, kf = q.to(cos.dtype), k.to(cos.dtype)
++    c, s = cos.unsqueeze(-2), sin.unsqueeze(-2)
++    return ((qf * c) + (rotate_half(qf) * s)).to(orig), ((kf * c) + (rotate_half(kf) * s)).to(orig)
++
++
++class TRMBlock(nn.Module):
++    def __init__(self, hidden_size: int = 512, num_heads: int = 8, expansion: int = 4, eps: float = 1e-5):
++        super().__init__()
++        self.hidden_size = hidden_size
++        self.num_heads = num_heads
++        self.head_dim = hidden_size // num_heads
++        self.eps = eps
++        inter = hidden_size * expansion // 2  # SwiGLU 2/3 of 4x rounded in TRM: 1536 -> gate_up 3072
++        # Exact shapes from state_dict: gate_up=(3072, 512), down=(512, 1536)
++        self.qkv_proj = nn.Linear(hidden_size, 3 * hidden_size, bias=False)
++        self.o_proj = nn.Linear(hidden_size, hidden_size, bias=False)
++        self.gate_up_proj = nn.Linear(hidden_size, 2 * inter, bias=False)
++        self.down_proj = nn.Linear(inter, hidden_size, bias=False)
++
++    def forward(self, h: torch.Tensor, cos: torch.Tensor, sin: torch.Tensor) -> torch.Tensor:
++        b, s, d = h.shape
++        q, k, v = [t.view(b, s, self.num_heads, self.head_dim) for t in self.qkv_proj(h).chunk(3, dim=-1)]
++        q, k = apply_rope(q, k, cos, sin)
++        attn = F.scaled_dot_product_attention(q.transpose(1, 2), k.transpose(1, 2), v.transpose(1, 2))
++        attn = attn.transpose(1, 2).reshape(b, s, d)
++        h = rms_norm(h + self.o_proj(attn), self.eps)
++        gate, up = self.gate_up_proj(h).chunk(2, dim=-1)
++        h = rms_norm(h + self.down_proj(F.silu(gate) * up), self.eps)
++        return h
++
++
++class PureSudokuTRM(nn.Module):
++    """Exact pure-PyTorch implementation of TinyRecursiveReasoningModel_ACTV1 (Sudoku-Extreme)."""
++
++    def __init__(self, hidden_size: int = 512, num_heads: int = 8, l_layers: int = 2,
++                 h_cycles: int = 3, l_cycles: int = 6, puzzle_emb_len: int = 16, seq_len: int = 81):
++        super().__init__()
++        self.hidden_size = hidden_size
++        self.h_cycles = h_cycles
++        self.l_cycles = l_cycles
++        self.puzzle_emb_len = puzzle_emb_len
++        self.seq_len = seq_len
++        self.total_len = puzzle_emb_len + seq_len
++
++        self.register_buffer("H_init", torch.zeros(hidden_size))
++        self.register_buffer("L_init", torch.zeros(hidden_size))
++        self.embed_tokens = nn.Embedding(11, hidden_size)
++        self.register_buffer("puzzle_weight", torch.zeros(1, hidden_size))
++        self.layers = nn.ModuleList([TRMBlock(hidden_size, num_heads) for _ in range(l_layers)])
++        self.lm_head = nn.Linear(hidden_size, 11, bias=False)
++        self.q_head = nn.Linear(hidden_size, 2, bias=True)
++
++        head_dim = hidden_size // num_heads
++        inv_freq = 1.0 / (10000.0 ** (torch.arange(0, head_dim, 2, dtype=torch.float32) / head_dim))
++        freqs = torch.outer(torch.arange(self.total_len, dtype=torch.float32), inv_freq)
++        emb = torch.cat((freqs, freqs), dim=-1)
++        self.register_buffer("cos", emb.cos(), persistent=False)
++        self.register_buffer("sin", emb.sin(), persistent=False)
++
++    @classmethod
++    def from_state_dict(cls, sd: dict[str, torch.Tensor], dtype: torch.dtype = torch.bfloat16) -> "PureSudokuTRM":
++        m = cls()
++        p = "_orig_mod.model.inner."
++        if p + "H_init" not in sd and "model" in sd:
++            sd = sd["model"]
++        with torch.no_grad():
++            m.H_init.copy_(sd[p + "H_init"].float())
++            m.L_init.copy_(sd[p + "L_init"].float())
++            m.embed_tokens.weight.copy_(sd[p + "embed_tokens.embedding_weight"].float())
++            m.puzzle_weight.copy_(sd[p + "puzzle_emb.weights"].float())
++            m.lm_head.weight.copy_(sd[p + "lm_head.weight"].float())
++            m.q_head.weight.copy_(sd[p + "q_head.weight"].float())
++            m.q_head.bias.copy_(sd[p + "q_head.bias"].float())
++            for i, blk in enumerate(m.layers):
++                lp = f"{p}L_level.layers.{i}."
++                blk.qkv_proj.weight.copy_(sd[lp + "self_attn.qkv_proj.weight"].float())
++                blk.o_proj.weight.copy_(sd[lp + "self_attn.o_proj.weight"].float())
++                blk.gate_up_proj.weight.copy_(sd[lp + "mlp.gate_up_proj.weight"].float())
++                blk.down_proj.weight.copy_(sd[lp + "mlp.down_proj.weight"].float())
++        m.to(dtype=dtype)
++        m.cos = m.cos.float()
++        m.sin = m.sin.float()
++        return m.eval()
++
++    def encode_inputs(self, inputs: torch.Tensor) -> torch.Tensor:
++        b = inputs.shape[0]
++        dt = self.embed_tokens.weight.dtype
++        emb = self.embed_tokens(inputs)
++        puz = F.pad(self.puzzle_weight.to(dt), (0, (self.puzzle_emb_len - 1) * self.hidden_size))
++        puz = puz.view(1, self.puzzle_emb_len, self.hidden_size).expand(b, -1, -1)
++        return math.sqrt(self.hidden_size) * torch.cat([puz, emb], dim=1)
++
++    def init_states(self, batch_size: int) -> tuple[torch.Tensor, torch.Tensor]:
++        dt = self.embed_tokens.weight.dtype
++        dev = self.embed_tokens.weight.device
++        zh = self.H_init.to(device=dev, dtype=dt).view(1, 1, -1).expand(batch_size, self.total_len, -1).clone()
++        zl = self.L_init.to(device=dev, dtype=dt).view(1, 1, -1).expand(batch_size, self.total_len, -1).clone()
++        return zh, zl
++
++    def run_l_level(self, state: torch.Tensor, injection: torch.Tensor) -> torch.Tensor:
++        h = state + injection
++        for blk in self.layers:
++            h = blk(h, self.cos, self.sin)
++        return h
++
++    def act_step(self, z_h: torch.Tensor, z_l: torch.Tensor, x_emb: torch.Tensor,
++                 grad_last_only: bool = False) -> tuple[torch.Tensor, torch.Tensor]:
++        for hc in range(self.h_cycles):
++            use_no_grad = grad_last_only and (hc < self.h_cycles - 1)
++            ctx = torch.no_grad() if use_no_grad else torch.enable_grad()
++            with ctx:
++                for _ in range(self.l_cycles):
++                    z_l = self.run_l_level(z_l, z_h + x_emb)
++                z_h = self.run_l_level(z_h, z_l)
++        return z_h, z_l
++
++    def digit_logits(self, z_h: torch.Tensor) -> torch.Tensor:
++        """Return logits over digits 1..9 (vocab indices 2..10) for the 81 board cells: [B, 81, 9]."""
++        raw = self.lm_head(z_h)[:, self.puzzle_emb_len:, 2:11]
++        return raw.float()
++
++
++def encode_questions(questions: list[str], device: torch.device | str) -> torch.Tensor:
++    arr = [[1 if ch == "." else int(ch) + 1 for ch in q] for q in questions]
++    return torch.tensor(arr, dtype=torch.long, device=device)
++
++
++def encode_answers(answers: list[str], device: torch.device | str) -> torch.Tensor:
++    """Zero-indexed digits 0..8 matching digit_logits [:, :, 0..8] for digits '1'..'9'."""
++    arr = [[int(ch) - 1 for ch in a] for a in answers]
++    return torch.tensor(arr, dtype=torch.long, device=device)
++
++
++def load_trm_checkpoint(tag: str, device: str, dtype: torch.dtype = torch.bfloat16) -> tuple[PureSudokuTRM, str]:
++    from huggingface_hub import hf_hub_download
++
++    spec = TRM_CHECKPOINTS[tag]
++    path = Path(hf_hub_download(repo_id=spec["repo_id"], filename=spec["filename"]))
++    digest = SP.sha256_file(path)
++    if digest != spec["sha256"]:
++        raise RuntimeError(f"TRM checkpoint SHA-256 mismatch for {tag}: {digest} != {spec['sha256']}")
++    sd = torch.load(path, map_location="cpu", weights_only=False)
++    model = PureSudokuTRM.from_state_dict(sd, dtype=dtype).to(device)
++    return model, digest
++
++
++def trm_matrices(model: PureSudokuTRM):
++    out = []
++    for li, blk in enumerate(model.layers):
++        out.append((f"L{li}.o_proj", blk.o_proj))
++        out.append((f"L{li}.down_proj", blk.down_proj))
++    return out
++
++
++def svd_factors(model: PureSudokuTRM, top_k: int = TOP_SVD):
++    facs = {}
++    for name, mod in trm_matrices(model):
++        w = mod.weight.detach().double()
++        u, s, vh = torch.linalg.svd(w, full_matrices=False)
++        r = min(top_k, s.numel())
++        facs[name] = (
++            u[:, :r].float().to(w.device),
++            s[:r].float().to(w.device),
++            vh[:r, :].T.contiguous().float().to(w.device),
++        )
++    return facs
++
++
++@torch.no_grad()
++def evaluate_trajectories_and_usage(
++    model: PureSudokuTRM,
++    questions: list[str],
++    answers: list[str],
++    donor_indices: list[int],
++    n_steps: int = 16,
++    batch_size: int = 64,
++    record_usage: bool = True,
++) -> dict:
++    """Run clean s=1..n_steps + counterfactuals + component usage across z_L vs z_H calls."""
++    dev = next(model.parameters()).device
++    n = len(questions)
++    inp_all = encode_questions(questions, dev)
++    ans_all = encode_answers(answers, dev)
++
++    total_hc = n_steps * model.h_cycles
++    probs_steps = np.zeros((n_steps, n, 81, 9), dtype=np.float32)
++    probs_hcycles = np.zeros((total_hc, n, 81, 9), dtype=np.float32)
++    z_h_step1 = []
++    z_h_stepN = []
++
++    facs = svd_factors(model) if record_usage else {}
++    # Usage accumulators: per matrix, per ACT step (0..n_steps-1), role in {'zL', 'zH'} -> [TOP_SVD]
++    usage_sum = {
++        name: {"zL": np.zeros((n_steps, facs[name][1].numel()), dtype=np.float64),
++               "zH": np.zeros((n_steps, facs[name][1].numel()), dtype=np.float64)}
++        for name in facs
++    }
++
++    for b0 in range(0, n, batch_size):
++        b1 = min(n, b0 + batch_size)
++        bsz = b1 - b0
++        x = model.encode_inputs(inp_all[b0:b1])
++        zh, zl = model.init_states(bsz)
++
++        call_state = {"step": 0, "role": "zL"}
++        handles = []
++        if record_usage:
++            for name, mod in trm_matrices(model):
++                _, s_vec, v_mat = facs[name]
++
++                def make_hook(nm=name, sv=s_vec, vm=v_mat):
++                    def _hk(_m, inputs, _out):
++                        xin = inputs[0][:, model.puzzle_emb_len:, :].float()  # board cells [b, 81, d_in]
++                        mag = (xin @ vm).abs().mean(dim=1) * sv  # [b, r]
++                        usage_sum[nm][call_state["role"]][call_state["step"]] += mag.sum(0).cpu().numpy()
++                    return _hk
++
++                handles.append(mod.register_forward_hook(make_hook()))
++
++        try:
++            for s in range(n_steps):
++                call_state["step"] = s
++                for hc in range(model.h_cycles):
++                    call_state["role"] = "zL"
++                    for _lc in range(model.l_cycles):
++                        zl = model.run_l_level(zl, zh + x)
++                    call_state["role"] = "zH"
++                    zh = model.run_l_level(zh, zl)
++                    hc_logits = model.digit_logits(zh)
++                    hc_probs = torch.softmax(hc_logits, dim=-1).cpu().numpy()
++                    probs_hcycles[s * model.h_cycles + hc, b0:b1] = hc_probs
++                probs_steps[s, b0:b1] = hc_probs
++                if s == 0:
++                    z_h_step1.append(zh.cpu())
++                if s == n_steps - 1:
++                    z_h_stepN.append(zh.cpu())
++        finally:
++            for h in handles:
++                h.remove()
++
++    zh1_all = torch.cat(z_h_step1, dim=0)  # [N, 97, 512]
++    zhN_all = torch.cat(z_h_stepN, dim=0)
++
++    # Counterfactual 1: Open-loop extrapolation at step N: z_H_open = z_H(1) + (N - 1)*(z_H(1) - H_init)
++    h_init_cpu = model.H_init.detach().cpu().view(1, 1, -1).to(zh1_all.dtype)
++    zh_open = zh1_all + (n_steps - 1) * (zh1_all - h_init_cpu)
++    probs_open = []
++    for b0 in range(0, n, batch_size):
++        logits = model.digit_logits(zh_open[b0:b0 + batch_size].to(dev))
++        probs_open.append(torch.softmax(logits, dim=-1).cpu().numpy())
++    probs_open_arr = np.concatenate(probs_open, axis=0)
++
++    # Counterfactual 2: Donor z_H displacement shuffle: z_H(1)_i + (z_H(N)_donor - z_H(1)_donor)
++    donor_idx_t = torch.tensor(donor_indices, dtype=torch.long)
++    zh_shuf = zh1_all + (zhN_all[donor_idx_t] - zh1_all[donor_idx_t])
++    probs_shuf = []
++    for b0 in range(0, n, batch_size):
++        logits = model.digit_logits(zh_shuf[b0:b0 + batch_size].to(dev))
++        probs_shuf.append(torch.softmax(logits, dim=-1).cpu().numpy())
++    probs_shuf_arr = np.concatenate(probs_shuf, axis=0)
++
++    # Counterfactual 3: Reset z_L -> L_init between every ACT step (tests persistent latent carry necessity)
++    # Counterfactual 3b: Project z_H onto the 11-dim lm_head readout subspace + reset z_L between ACT steps
++    #   (preserves step-s output logits identically while erasing the 501-dim orthogonal fiber of z_H!)
++    w_head = model.lm_head.weight.detach().float()  # [11, D]
++    _, _, vh_head = torch.linalg.svd(w_head, full_matrices=False)  # vh_head: [11, D] orthonormal rows
++    p_head = vh_head.T @ vh_head  # [D, D] orthogonal projector onto rowspace(lm_head)
++    h_init_perp = (model.H_init.detach().float() @ (torch.eye(model.hidden_size, device=dev) - p_head)).view(1, 1, -1)
++
++    probs_reset_zl = np.zeros((n, 81, 9), dtype=np.float32)
++    probs_fiber_erased = np.zeros((n, 81, 9), dtype=np.float32)
++    for b0 in range(0, n, batch_size):
++        b1 = min(n, b0 + batch_size)
++        x = model.encode_inputs(inp_all[b0:b1])
++        zh, _ = model.init_states(b1 - b0)
++        zh_fib, _ = model.init_states(b1 - b0)
++        for s_idx in range(n_steps):
++            _, zl_fresh = model.init_states(b1 - b0)
++            zh, _ = model.act_step(zh, zl_fresh, x)
++            _, zl_fresh2 = model.init_states(b1 - b0)
++            zh_fib, _ = model.act_step(zh_fib, zl_fresh2, x)
++            if s_idx < n_steps - 1:
++                # Preserve puzzle prefix embeddings + project 81 board cells onto rowspace(lm_head)
++                board_zh = zh_fib[:, model.puzzle_emb_len:, :].float()
++                board_proj = (board_zh @ p_head) + h_init_perp
++                zh_fib = torch.cat([zh_fib[:, :model.puzzle_emb_len, :], board_proj.to(zh_fib.dtype)], dim=1)
++        probs_reset_zl[b0:b1] = torch.softmax(model.digit_logits(zh), dim=-1).cpu().numpy()
++        probs_fiber_erased[b0:b1] = torch.softmax(model.digit_logits(zh_fib), dim=-1).cpu().numpy()
++
++    # Counterfactual 4: Step-1 corruption repair + Gaussian kick perturbation ratio
++    # Corrupt 10 empty cells' z_H vectors after step 1 with donor states + measure kick norm growth/decay
++    probs_corrupt_step1 = np.zeros((n, 81, 9), dtype=np.float32)
++    probs_corrupt_repaired = np.zeros((n, 81, 9), dtype=np.float32)
++    kick_ratios = np.zeros((n_steps, n), dtype=np.float32)
++    g_rng = torch.Generator(device="cpu").manual_seed(20261113)
++
++    for b0 in range(0, n, batch_size):
++        b1 = min(n, b0 + batch_size)
++        bsz = b1 - b0
++        x = model.encode_inputs(inp_all[b0:b1])
++        zh, zl = model.init_states(bsz)
++        zh, zl = model.act_step(zh, zl, x)
++
++        # Clean trajectory from step 1 onward for kick comparison
++        zh_clean, zl_clean = zh.clone(), zl.clone()
++        # Gaussian kick 0.25 * RMS(zh) after step 1
++        rms = zh.float().pow(2).mean(dim=(1, 2), keepdim=True).sqrt()
++        noise = torch.randn(zh.shape, generator=g_rng, dtype=torch.float32).to(dev) * (0.25 * rms)
++        kick_norm0 = noise.flatten(1).norm(dim=1).clamp_min(1e-8)
++        zh_kick = (zh.float() + noise).to(zh.dtype)
++        zl_kick = zl.clone()
++        kick_ratios[0, b0:b1] = 1.0
++
++        # Donor 10-empty-cell patch on z_H after step 1
++        d_sub = donor_idx_t[b0:b1]
++        zh_donor_b = zh1_all[d_sub].to(dev)
++        zh_corr = zh.clone()
++        for bi in range(bsz):
++            q_str = questions[b0 + bi]
++            empties = [idx for idx, ch in enumerate(q_str) if ch == "."]
++            perm = torch.randperm(len(empties), generator=g_rng)[: min(10, len(empties))]
++            for pi in perm:
++                pos = model.puzzle_emb_len + empties[int(pi)]
++                zh_corr[bi, pos] = zh_donor_b[bi, pos]
++        probs_corrupt_step1[b0:b1] = torch.softmax(model.digit_logits(zh_corr), dim=-1).cpu().numpy()
++        zl_corr = zl.clone()
++
++        for s in range(1, n_steps):
++            zh_clean, zl_clean = model.act_step(zh_clean, zl_clean, x)
++            zh_kick, zl_kick = model.act_step(zh_kick, zl_kick, x)
++            zh_corr, zl_corr = model.act_step(zh_corr, zl_corr, x)
++            diff = (zh_kick.float() - zh_clean.float()).flatten(1).norm(dim=1)
++            kick_ratios[s, b0:b1] = (diff / kick_norm0).cpu().numpy()
++        probs_corrupt_repaired[b0:b1] = torch.softmax(model.digit_logits(zh_corr), dim=-1).cpu().numpy()
++
++    # Summarize usage correlations
++    usage_stats = {}
++    if record_usage:
++        for name in usage_sum:
++            zl_u = usage_sum[name]["zL"] / (n * model.h_cycles * model.l_cycles)
++            zh_u = usage_sum[name]["zH"] / (n * model.h_cycles)
++            # Pairwise outer correlation across steps s=1..n_steps-1 (1-based steps 2..16)
++            zh_corr_mat = np.corrcoef(zh_u[1:])
++            zl_corr_mat = np.corrcoef(zl_u[1:])
++            iu = np.triu_indices(zh_corr_mat.shape[0], k=1)
++            r_outer_zh = float(np.mean(zh_corr_mat[iu]))
++            r_outer_zl = float(np.mean(zl_corr_mat[iu]))
++            r_step2_step8 = float(np.corrcoef(zh_u[1], zh_u[min(7, n_steps - 1)])[0, 1])
++            # Within-step role correlation between z_L and z_H usage
++            role_corrs = [float(np.corrcoef(zl_u[s], zh_u[s])[0, 1]) for s in range(1, n_steps)]
++            usage_stats[name] = {
++                "r_outer_zH_mean": r_outer_zh,
++                "r_outer_zL_mean": r_outer_zl,
++                "r_zH_step2_vs_step8": r_step2_step8,
++                "r_role_zL_vs_zH_mean": float(np.mean(role_corrs)),
++                "r_step1_vs_step2_zH": float(np.corrcoef(zh_u[0], zh_u[1])[0, 1]),
++            }
++
++    return {
++        "probs_steps": probs_steps,
++        "probs_hcycles": probs_hcycles,
++        "probs_open": probs_open_arr,
++        "probs_donor_zH": probs_shuf_arr,
++        "probs_reset_zL": probs_reset_zl,
++        "probs_fiber_erased": probs_fiber_erased,
++        "probs_corrupt_step1": probs_corrupt_step1,
++        "probs_corrupt_repaired": probs_corrupt_repaired,
++        "kick_ratios": kick_ratios,
++        "usage_stats": usage_stats,
++        "targets": ans_all.cpu().numpy(),
++    }
++
++
++def run_trm_tca(
++    model_bf16: PureSudokuTRM,
++    questions: list[str],
++    answers: list[str],
++    target_indices: list[int],
++    unroll_steps: int = 6,
++    chunk_size: int = 8,
++) -> dict:
++    """Differentiable unrolled TCA across outer steps 1..unroll_steps (1 H-cycle grad chain per step
++    or full differentiable unroll in float32) on target empty cells."""
++    dev = next(model_bf16.parameters()).device
++    # Clone a float32 model for exact unrolled gradients without bf16 underflow
++    import copy
++    model = copy.deepcopy(model_bf16).float().eval()
++    facs = svd_factors(model, top_k=TOP_SVD)
++    mats = trm_matrices(model)
++    m_cnt = len(mats)
++    n_items = len(questions)
++    r_cnt = TOP_SVD
++
++    frag = np.zeros((m_cnt, unroll_steps, n_items), dtype=np.float32)
++    zr_abs_gt3 = np.zeros((m_cnt, unroll_steps), dtype=np.float32)
++    zw_abs_gt3 = np.zeros((m_cnt, unroll_steps), dtype=np.float32)
++
++    inp_all = encode_questions(questions, dev)
++    tgt_digits = torch.tensor([int(answers[i][target_indices[i]]) - 1 for i in range(n_items)],
++                              dtype=torch.long, device=dev)
++
++    zr_counts = np.zeros((m_cnt, unroll_steps), dtype=np.int64)
++    zw_counts = np.zeros((m_cnt, unroll_steps), dtype=np.int64)
++
++    for b0 in range(0, n_items, chunk_size):
++        b1 = min(n_items, b0 + chunk_size)
++        bsz = b1 - b0
++        model.zero_grad(set_to_none=True)
++
++        # Capture z_H commit call (last call of each ACT step) per matrix
++        step_x: dict[int, list[torch.Tensor]] = {mi: [] for mi in range(m_cnt)}
++        step_g: dict[int, dict[int, torch.Tensor]] = {mi: {} for mi in range(m_cnt)}
++        active = {"capture": False, "s": 0}
++        handles = []
++
++        for mi, (_name, mod) in enumerate(mats):
++            def make_hk(m_idx=mi):
++                def _hk(_mod, inp, out):
++                    if not active["capture"]:
++                        return
++                    s_idx = active["s"]
++                    step_x[m_idx].append(inp[0].detach())
++
++                    def _save(grad, m_i=m_idx, s_i=s_idx):
++                        step_g[m_i][s_i] = grad.detach()
++
++                    out.register_hook(_save)
++                return _hk
++
++            handles.append(mod.register_forward_hook(make_hk()))
++
++        try:
++            x = model.encode_inputs(inp_all[b0:b1])
++            zh, zl = model.init_states(bsz)
++            for s in range(unroll_steps):
++                active["s"] = s
++                for hc in range(model.h_cycles):
++                    active["capture"] = False
++                    for _lc in range(model.l_cycles):
++                        zl = model.run_l_level(zl, zh + x)
++                    # Capture the final z_H commit call of each outer ACT step
++                    active["capture"] = (hc == model.h_cycles - 1)
++                    zh = model.run_l_level(zh, zl)
++                active["capture"] = False
++
++            logits = model.digit_logits(zh)  # [bsz, 81, 9]
++            t_pos = torch.tensor(target_indices[b0:b1], dtype=torch.long, device=dev)
++            cell_logits = logits[torch.arange(bsz, device=dev), t_pos]  # [bsz, 9]
++            td = tgt_digits[b0:b1]
++            zc = cell_logits.gather(1, td[:, None])[:, 0]
++            other = cell_logits.scatter(1, td[:, None], float("-inf"))
++            margin = zc - torch.logsumexp(other, dim=1)
++            margin.sum().backward()
++
++            for mi, (name, _mod) in enumerate(mats):
++                u_mat, s_vec, v_mat = facs[name]
++                din, dout = v_mat.shape[0], u_mat.shape[0]
++                for s in range(unroll_steps):
++                    xb = step_x[mi][s]
++                    ab = step_g[mi][s]
++                    xv = xb @ v_mat
++                    au = ab @ u_mat
++                    delta = -s_vec * (xv * au).sum(dim=1)  # [bsz, r]
++                    xtau = torch.einsum("bpi,bpr->bir", xb, au)
++                    atxv = torch.einsum("bpo,bpr->bor", ab, xv)
++                    sdr = s_vec * xtau.norm(dim=1) / math.sqrt(din)
++                    sdw = s_vec * atxv.norm(dim=1) / math.sqrt(dout)
++                    zr = (delta / sdr.clamp_min(1e-12)).abs()
++                    zw = (delta / sdw.clamp_min(1e-12)).abs()
++                    zr_counts[mi, s] += int((zr > 3.0).sum().item())
++                    zw_counts[mi, s] += int((zw > 3.0).sum().item())
++                    g_gram = xb @ xb.transpose(1, 2)
++                    h_gram = ab @ ab.transpose(1, 2)
++                    frag[mi, s, b0:b1] = (g_gram * h_gram).sum(dim=(1, 2)).clamp_min(0).sqrt().cpu().numpy()
++        finally:
++            for h in handles:
++                h.remove()
++            del step_x, step_g
++
++    denom = float(n_items * r_cnt)
++    zr_abs_gt3 = zr_counts / denom
++    zw_abs_gt3 = zw_counts / denom
++    f_mean = frag.mean(axis=2)  # [M, S]
++    ratios = (f_mean[:, 0] / np.maximum(f_mean[:, -1], 1e-12)).tolist()
++    return {
++        "unroll_steps": unroll_steps,
++        "n_items": n_items,
++        "matrices": [m[0] for m in mats],
++        "frag_mean_by_step": f_mean.tolist(),
++        "f1_over_flate_by_matrix": ratios,
++        "f1_over_flate_mean": float(np.mean(ratios)),
++        "zr_gt3_share_by_step": zr_abs_gt3.tolist(),
++        "zw_gt3_share_by_step": zw_abs_gt3.tolist(),
++        "zr_gt3_overall": float(zr_abs_gt3.mean()),
++        "zw_gt3_overall": float(zw_abs_gt3.mean()),
++    }
++
++
++def compute_compactification_and_revisions(
++    probs_steps: np.ndarray,
++    questions: list[str],
++    answers: list[str],
++    prop_solved_flags: list[bool],
++    probs_hcycles: np.ndarray | None = None,
++    seed: int = 20261113,
++) -> dict:
++    """Compute Q11 G_prop commutation rho_s, within-board deductive staircase, and non-monotone revisions."""
++    n_steps, n_boards, _, _ = probs_steps.shape
++    fine_probs = probs_hcycles if probs_hcycles is not None else probs_steps
++    n_fine = fine_probs.shape[0]
++    rng = np.random.default_rng(seed)
++    perm = rng.permutation(n_boards)
++    shuf = np.empty(n_boards, dtype=np.int64)
++    shuf[perm] = np.roll(perm, -1)
++
++    rho_clean = np.zeros((n_steps - 1, n_boards), dtype=np.float32)
++    rho_shuf = np.zeros((n_steps - 1, n_boards), dtype=np.float32)
++    conflicts_by_step = np.zeros((n_steps, n_boards), dtype=np.int32)
++    exact_by_step = np.zeros((n_steps, n_boards), dtype=bool)
++    non_monotone_flips = np.zeros(n_boards, dtype=np.int32)
++    had_conflict_before_solve = np.zeros(n_boards, dtype=bool)
++
++    givens_list = [SP.parse_grid(q) for q in questions]
++    traces_list = [SP.trace_propagation(q) for q in questions]
++    ans_grids = [[int(ch) for ch in a] for a in answers]
++
++    tau_by_group: dict[str, list[float]] = {"r1": [], "r2": [], "r3plus": [], "stalled": []}
++    unc_by_group: dict[str, list[float]] = {"r1": [], "r2": [], "r3plus": [], "stalled": []}
++    concord_wins = 0.0
++    concord_shuf_wins = 0.0
++    concord_pairs = 0
++
++    for b in range(n_boards):
++        giv = givens_list[b]
++        tr = traces_list[b]
++        giv_shuf = givens_list[int(shuf[b])]
++        empties = [i for i in range(81) if giv[i] == 0]
++        preds_steps = np.argmax(probs_steps[:, b, :, :], axis=-1) + 1  # [S, 81] in 1..9
++        preds_fine = np.argmax(fine_probs[:, b, :, :], axis=-1) + 1    # [K, 81] in 1..9
++
++        for s in range(n_steps):
++            grid_s = [giv[i] if giv[i] != 0 else int(preds_steps[s, i]) for i in range(81)]
++            conflicts_by_step[s, b] = SP.count_unit_conflicts(grid_s)
++            exact_by_step[s, b] = (grid_s == ans_grids[b])
++            if s < n_steps - 1 and empties:
++                gp = SP.g_prop_belief(probs_steps[s, b], giv)
++                gp_sh = SP.g_prop_belief(probs_steps[s, b], giv_shuf)
++                diff = probs_steps[s + 1, b, empties] - gp[empties]
++                diff_sh = probs_steps[s + 1, b, empties] - gp_sh[empties]
++                rho_clean[s, b] = float(np.linalg.norm(diff, axis=-1).mean())
++                rho_shuf[s, b] = float(np.linalg.norm(diff_sh, axis=-1).mean())
++
++        # Count empty cells whose argmax changes across outer steps and fine H-cycles
++        flips = 0
++        cell_tau: dict[int, int] = {}
++        cell_unc: dict[int, float] = {}
++        for i in empties:
++            seq = preds_fine[:, i]
++            flips += int(np.sum(seq[1:] != seq[:-1]))
++            true_d = ans_grids[b][i]
++            # Lock-in cycle (1..n_fine, or n_fine+1 if not solved at final cycle)
++            if seq[-1] != true_d:
++                tau_i = n_fine + 1
++            else:
++                tau_i = n_fine
++                for k in range(n_fine - 2, -1, -1):
++                    if seq[k] == true_d:
++                        tau_i = k + 1
++                    else:
++                        break
++            unc_i = float(np.sum(1.0 - fine_probs[:, b, i, true_d - 1]))
++            cell_tau[i] = tau_i
++            cell_unc[i] = unc_i
++            cr = tr.cell_round[i]
++            grp_key = "stalled" if cr < 0 else ("r1" if cr == 1 else ("r2" if cr == 2 else "r3plus"))
++            tau_by_group[grp_key].append(float(tau_i))
++            unc_by_group[grp_key].append(unc_i)
++
++        # Within-board deductive-depth concordance across empty-cell pairs (i, j) with 1 <= r(i) < r(j)
++        prop_empties = [i for i in empties if tr.cell_round[i] >= 1]
++        if len(prop_empties) >= 2:
++            rounds_vec = [tr.cell_round[i] for i in prop_empties]
++            shuf_rounds = list(rng.permutation(rounds_vec))
++            uncs_vec = [cell_unc[i] for i in prop_empties]
++            for a_i in range(len(prop_empties)):
++                for b_j in range(a_i + 1, len(prop_empties)):
++                    ri, rj = rounds_vec[a_i], rounds_vec[b_j]
++                    ui, uj = uncs_vec[a_i], uncs_vec[b_j]
++                    if ri != rj:
++                        concord_pairs += 1
++                        if (ri < rj and ui < uj) or (ri > rj and ui > uj):
++                            concord_wins += 1.0
++                        elif ui == uj:
++                            concord_wins += 0.5
++                    sri, srj = shuf_rounds[a_i], shuf_rounds[b_j]
++                    if sri != srj:
++                        if (sri < srj and ui < uj) or (sri > srj and ui > uj):
++                            concord_shuf_wins += 1.0
++                        elif ui == uj:
++                            concord_shuf_wins += 0.5
++
++        non_monotone_flips[b] = flips
++        if exact_by_step[-1, b] and np.any(conflicts_by_step[:-1, b] > 0):
++            had_conflict_before_solve[b] = True
++
++    prop_idx = [i for i, f in enumerate(prop_solved_flags) if f]
++    stall_idx = [i for i, f in enumerate(prop_solved_flags) if not f]
++
++    # Commutation separation Mann-Whitney U AUC + paired win-rate on propagation-solvable boards (steps 1..4)
++    auc_comm = None
++    paired_comm = None
++    if prop_idx:
++        c_scores = rho_clean[: min(4, n_steps - 1), prop_idx].mean(axis=0)
++        s_scores = rho_shuf[: min(4, n_steps - 1), prop_idx].mean(axis=0)
++        mw_wins = sum(float(sv > cv) + 0.5 * float(sv == cv) for cv in c_scores for sv in s_scores)
++        auc_comm = mw_wins / (len(c_scores) * len(s_scores))
++        pw_wins = sum(float(sv > cv) + 0.5 * float(sv == cv) for cv, sv in zip(c_scores, s_scores))
++        paired_comm = pw_wins / len(c_scores)
++
++    stalled_solved = [i for i in stall_idx if exact_by_step[-1, i]]
++    prop_solved_by_trm = [i for i in prop_idx if exact_by_step[-1, i]]
++
++    return {
++        "n_boards": n_boards,
++        "n_fine_cycles": n_fine,
++        "n_prop_solvable": len(prop_idx),
++        "n_stalled": len(stall_idx),
++        "exact_solve_curve_all": exact_by_step.mean(axis=1).tolist(),
++        "exact_solve_curve_prop": exact_by_step[:, prop_idx].mean(axis=1).tolist() if prop_idx else [],
++        "exact_solve_curve_stalled": exact_by_step[:, stall_idx].mean(axis=1).tolist() if stall_idx else [],
++        "conflicts_curve_stalled": conflicts_by_step[:, stall_idx].mean(axis=1).tolist() if stall_idx else [],
++        "rho_clean_curve_prop": rho_clean[:, prop_idx].mean(axis=1).tolist() if prop_idx else [],
++        "rho_shuf_curve_prop": rho_shuf[:, prop_idx].mean(axis=1).tolist() if prop_idx else [],
++        "commutation_vs_shuffled_auc_prop": auc_comm,
++        "commutation_vs_shuffled_paired_win_prop": paired_comm,
++        "staircase_lockin_cycle_mean": {
++            k: (float(np.mean(v)) if v else None) for k, v in tau_by_group.items()
++        },
++        "staircase_cum_uncertainty_mean": {
++            k: (float(np.mean(v)) if v else None) for k, v in unc_by_group.items()
++        },
++        "within_board_round_concordance": float(concord_wins / concord_pairs) if concord_pairs > 0 else None,
++        "within_board_round_concordance_shuf_null": (
++            float(concord_shuf_wins / concord_pairs) if concord_pairs > 0 else None
++        ),
++        "within_board_concordance_pairs": concord_pairs,
++        "stalled_solve_rate_step16": float(len(stalled_solved) / max(len(stall_idx), 1)),
++        "prop_solve_rate_step16": float(len(prop_solved_by_trm) / max(len(prop_idx), 1)),
++        "stalled_solved_with_nonmonotone_flips_share": float(
++            np.mean([non_monotone_flips[i] > 0 for i in stalled_solved])
++        ) if stalled_solved else 0.0,
++        "stalled_solved_with_prior_conflict_share": float(
++            np.mean([had_conflict_before_solve[i] for i in stalled_solved])
++        ) if stalled_solved else 0.0,
++        "mean_flips_stalled_solved": float(
++            np.mean([non_monotone_flips[i] for i in stalled_solved])
++        ) if stalled_solved else 0.0,
++        "mean_flips_prop_solved": float(
++            np.mean([non_monotone_flips[i] for i in prop_solved_by_trm])
++        ) if prop_solved_by_trm else 0.0,
++    }
++
++
++def main() -> int:
++    parser = argparse.ArgumentParser(description=__doc__)
++    parser.add_argument("--out", type=Path, default=Path("mechinterp/loopscope02/results"))
++    parser.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
++    parser.add_argument("--mem-fraction", type=float, default=0.35)
++    parser.add_argument("--steps", type=int, default=16)
++    parser.add_argument("--min-watts", type=float, default=40.0)
++    args = parser.parse_args()
++
++    if args.device.startswith("cuda"):
++        watts = power_limit_watts()
++        if watts is not None and watts < args.min_watts:
++            print(f"[power-guard] GPU enforced limit {watts}W < {args.min_watts}W; pausing (75).")
++            return EXIT_POWER_CAP
++        torch.cuda.set_per_process_memory_fraction(args.mem_fraction)
++        torch.backends.cuda.matmul.allow_tf32 = False
++
++    args.out.mkdir(parents=True, exist_ok=True)
++    bundle_path = args.out / "benchmark_bundle.json"
++    if bundle_path.exists():
++        bundle = json.loads(bundle_path.read_text(encoding="utf-8"))
++    else:
++        bundle = SP.build_benchmark_bundle()
++        bundle_path.write_text(json.dumps(bundle, indent=2), encoding="utf-8")
++
++    items = bundle["items"]
++    id_to_idx = {it["item_id"]: idx for idx, it in enumerate(items)}
++    donor_indices = [id_to_idx[it["donor_item_id"]] for it in items]
++    questions = [it["question"] for it in items]
++    answers = [it["answer"] for it in items]
++    target_indices = [int(it["target_idx"]) for it in items]
++    prop_flags = [bool(it["prop_solved"]) for it in items]
++
++    t0 = time.time()
++    model, sha = load_trm_checkpoint("gaoxin492", args.device)
++    traj = evaluate_trajectories_and_usage(
++        model, questions, answers, donor_indices, n_steps=args.steps, batch_size=64, record_usage=True
++    )
++
++    # Extract target-cell predictions & logprobs across all 256 stratified items
++    n = len(items)
++    tgt_d = np.array([int(it["target_digit"]) - 1 for it in items], dtype=np.int64)
++    t_idx = np.array(target_indices, dtype=np.int64)
++    ar = np.arange(n)
++
++    step_cell_probs = traj["probs_steps"][:, ar, t_idx, :]  # [S, 256, 9]
++    step_preds = step_cell_probs.argmax(axis=-1)            # [S, 256]
++
++    # Full-board exact match on the 256 items + counterfactuals
++    ans_all = traj["targets"]  # [256, 81]
++    board_exact_steps = (traj["probs_steps"].argmax(axis=-1) == ans_all[None, :, :]).all(axis=-1)  # [S, 256]
++    board_exact_open = (traj["probs_open"].argmax(axis=-1) == ans_all).all(axis=-1)
++    board_exact_donor = (traj["probs_donor_zH"].argmax(axis=-1) == ans_all).all(axis=-1)
++    board_exact_reset_zl = (traj["probs_reset_zL"].argmax(axis=-1) == ans_all).all(axis=-1)
++    board_exact_fiber_erased = (traj["probs_fiber_erased"].argmax(axis=-1) == ans_all).all(axis=-1)
++    board_exact_corr1 = (traj["probs_corrupt_step1"].argmax(axis=-1) == ans_all).all(axis=-1)
++    board_exact_corr_rep = (traj["probs_corrupt_repaired"].argmax(axis=-1) == ans_all).all(axis=-1)
++
++    open_preds = traj["probs_open"][ar, t_idx, :].argmax(axis=-1)
++    donor_preds = traj["probs_donor_zH"][ar, t_idx, :].argmax(axis=-1)
++    reset_zl_preds = traj["probs_reset_zL"][ar, t_idx, :].argmax(axis=-1)
++    fiber_erased_preds = traj["probs_fiber_erased"][ar, t_idx, :].argmax(axis=-1)
++    corr1_preds = traj["probs_corrupt_step1"][ar, t_idx, :].argmax(axis=-1)
++    corr_rep_preds = traj["probs_corrupt_repaired"][ar, t_idx, :].argmax(axis=-1)
++
++    # Run TCA on S1_naked1 (64 items) + S3_prop3plus (64 items) = 128 items
++    tca_sel = [i for i, it in enumerate(items) if it["stratum"] in ("S1_naked1", "S3_prop3plus")]
++    tca_res = run_trm_tca(
++        model,
++        [questions[i] for i in tca_sel],
++        [answers[i] for i in tca_sel],
++        [target_indices[i] for i in tca_sel],
++        unroll_steps=6,
++        chunk_size=8,
++    )
++
++    # Also evaluate the 100 canonical test_sudoku_bench boards
++    bench = bundle["bench_boards"]
++    b_donors = [(i + 1) % len(bench) for i in range(len(bench))]
++    b_traj = evaluate_trajectories_and_usage(
++        model,
++        [b["question"] for b in bench],
++        [b["answer"] for b in bench],
++        b_donors,
++        n_steps=args.steps,
++        batch_size=50,
++        record_usage=False,
++    )
++    b_comp = compute_compactification_and_revisions(
++        b_traj["probs_steps"],
++        [b["question"] for b in bench],
++        [b["answer"] for b in bench],
++        [bool(b["prop_solved"]) for b in bench],
++        probs_hcycles=b_traj["probs_hcycles"],
++    )
++    b_ans = b_traj["targets"]
++    b_reset_zl_exact = (b_traj["probs_reset_zL"].argmax(axis=-1) == b_ans).all(axis=-1)
++    b_fiber_erased_exact = (b_traj["probs_fiber_erased"].argmax(axis=-1) == b_ans).all(axis=-1)
++    b_clean16_exact = (b_traj["probs_steps"][-1].argmax(axis=-1) == b_ans).all(axis=-1)
++    b_stalled_mask = np.array([not bool(b["prop_solved"]) for b in bench], dtype=bool)
++
++    # Replication check on yagizdevre checkpoint (100 sudoku-bench boards)
++    model_rep, sha_rep = load_trm_checkpoint("yagizdevre", args.device)
++    rep_traj = evaluate_trajectories_and_usage(
++        model_rep,
++        [b["question"] for b in bench],
++        [b["answer"] for b in bench],
++        b_donors,
++        n_steps=args.steps,
++        batch_size=50,
++        record_usage=False,
++    )
++    rep_exact16 = float(((rep_traj["probs_steps"][-1].argmax(axis=-1) == b_ans).all(axis=-1)).mean())
++    rep_exact1 = float(((rep_traj["probs_steps"][0].argmax(axis=-1) == b_ans).all(axis=-1)).mean())
++
++    items_comp = compute_compactification_and_revisions(
++        traj["probs_steps"], questions, answers, prop_flags, probs_hcycles=traj["probs_hcycles"]
++    )
++
++    elapsed = time.time() - t0
++    out_json = {
++        "model": "TinyRecursiveModels-Sudoku-Extreme-att (gaoxin492/step_21700)",
++        "checkpoint_sha256": sha,
++        "replication_model": "yagizdevre/trm-sudoku-extreme-att (model.pt)",
++        "replication_sha256": sha_rep,
++        "replication_bench100_exact_step1": rep_exact1,
++        "replication_bench100_exact_step16": rep_exact16,
++        "bundle_sha256": bundle["bundle_sha256"],
++        "steps": args.steps,
++        "elapsed_sec": elapsed,
++        "items_target_correct_by_step": (step_preds == tgt_d[None, :]).astype(int).tolist(),
++        "items_target_open_correct": (open_preds == tgt_d).astype(int).tolist(),
++        "items_target_donor_correct": (donor_preds == tgt_d).astype(int).tolist(),
++        "items_target_reset_zL_correct": (reset_zl_preds == tgt_d).astype(int).tolist(),
++        "items_target_fiber_erased_correct": (fiber_erased_preds == tgt_d).astype(int).tolist(),
++        "items_target_corrupt_step1_correct": (corr1_preds == tgt_d).astype(int).tolist(),
++        "items_target_corrupt_repaired_correct": (corr_rep_preds == tgt_d).astype(int).tolist(),
++        "items_board_exact_by_step": board_exact_steps.astype(int).tolist(),
++        "items_board_exact_open": board_exact_open.astype(int).tolist(),
++        "items_board_exact_donor": board_exact_donor.astype(int).tolist(),
++        "items_board_exact_reset_zL": board_exact_reset_zl.astype(int).tolist(),
++        "items_board_exact_fiber_erased": board_exact_fiber_erased.astype(int).tolist(),
++        "items_board_exact_corrupt_step1": board_exact_corr1.astype(int).tolist(),
++        "items_board_exact_corrupt_repaired": board_exact_corr_rep.astype(int).tolist(),
++        "kick_ratio_curve_mean": traj["kick_ratios"].mean(axis=1).tolist(),
++        "usage_stats": traj["usage_stats"],
++        "tca": tca_res,
++        "items_compactification": items_comp,
++        "bench100_compactification": b_comp,
++        "bench100_clean16_exact": b_clean16_exact.astype(int).tolist(),
++        "bench100_reset_zL_exact": b_reset_zl_exact.astype(int).tolist(),
++        "bench100_fiber_erased_exact": b_fiber_erased_exact.astype(int).tolist(),
++        "bench100_stalled_mask": b_stalled_mask.astype(int).tolist(),
++    }
++    (args.out / "trm_results.json").write_text(json.dumps(out_json, indent=2), encoding="utf-8")
++    print(
++        f"[TRM DONE] {elapsed:.1f}s | bench100 exact s1={b_comp['exact_solve_curve_all'][0]:.3f} -> "
++        f"s16={b_comp['exact_solve_curve_all'][-1]:.3f} (rep={rep_exact16:.3f}) | "
++        f"stalled s16={b_comp['stalled_solve_rate_step16']:.3f}"
++    )
++    return 0
++
++
++if __name__ == "__main__":
++    raise SystemExit(main())
+diff --git a/mechinterp/loopscope02/tests/test_loopscope02.py b/mechinterp/loopscope02/tests/test_loopscope02.py
+new file mode 100644
+index 0000000..34c6c56
+--- /dev/null
++++ b/mechinterp/loopscope02/tests/test_loopscope02.py
+@@ -0,0 +1,352 @@
++"""Unit and mathematical-invariant tests for LOOPSCOPE-02."""
++from __future__ import annotations
++
++import json
++import math
++import os
++from pathlib import Path
++
++import numpy as np
++import pytest
++import torch
++
++from mechinterp.loopscope02.scripts import llm_sudoku as LLM
++from mechinterp.loopscope02.scripts import score_loopscope02 as SC
++from mechinterp.loopscope02.scripts import sudoku_prop as SP
++from mechinterp.loopscope02.scripts import trm_sudoku as TRM
++
++SOLVED_GRID = (
++    "534678912"
++    "672195348"
++    "198342567"
++    "859761423"
++    "426853791"
++    "713924856"
++    "961537284"
++    "287419635"
++    "345286179"
++)
++
++
++def test_sudoku_prop_lattice_and_trace():
++    # Remove 1 cell -> solved in 1 naked-single round
++    g_list = list(SOLVED_GRID)
++    g_list[0] = "."
++    q1 = "".join(g_list)
++    tr1 = SP.trace_propagation(q1)
++    assert tr1.solved is True
++    assert tr1.num_rounds == 1
++    assert tr1.naked_round1[0] is True
++    assert tr1.cell_round[0] == 1
++
++    # Construct a 2-round chain: empty an entire row's 2 cells plus peers so cell A is round 1 and cell B is round 2
++    # Classic easy puzzle solvable by propagation in multiple rounds:
++    easy_q = (
++        "53..7...."
++        "6..195..."
++        ".98....6."
++        "8...6...3"
++        "4..8.3..1"
++        "7...2...6"
++        ".6....28."
++        "...419..5"
++        "....8..79"
++    )
++    tr_easy = SP.trace_propagation(easy_q)
++    assert tr_easy.solved is True
++    assert tr_easy.num_rounds >= 3
++    assert tr_easy.rounds_grids[-1] == tuple(int(c) for c in SOLVED_GRID)
++    assert any(r == 1 for r in tr_easy.cell_round)
++    assert any(r == 2 for r in tr_easy.cell_round)
++    assert any(r >= 3 for r in tr_easy.cell_round)
++
++    # Empty grid is stalled at round 0 (zero singles)
++    tr_empty = SP.trace_propagation("." * 81)
++    assert tr_empty.solved is False
++    assert tr_empty.num_rounds == 0
++    assert all(r == -1 for r in tr_empty.cell_round)
++
++    # g_prop_belief returns valid distributions summing to 1 per cell
++    prob_u = np.full((81, 9), 1.0 / 9.0, dtype=np.float32)
++    gp = SP.g_prop_belief(prob_u, SP.parse_grid(q1))
++    assert gp.shape == (81, 9)
++    np.testing.assert_allclose(gp.sum(axis=-1), np.ones(81), atol=1e-5)
++    assert gp[0, int(SOLVED_GRID[0]) - 1] == pytest.approx(1.0)
++
++
++def test_prompt_and_tokenizer_single_digit_boundary():
++    q = "." + SOLVED_GRID[1:]
++    shot = {"question": q, "answer": SOLVED_GRID, "target_idx": 0}
++    prompt = SP.format_target_prompt([shot, shot, shot], q, 0)
++    assert prompt.endswith("Answer: ")
++
++    from transformers import AutoTokenizer, PreTrainedTokenizerFast
++
++    for profile, spec in LLM.MODEL_LOCKS.items():
++        home = Path(os.environ.get("HF_HOME", Path.home() / ".cache" / "huggingface"))
++        root = home / "hub" / ("models--" + spec["repo"].replace("/", "--")) / "snapshots" / spec["revision"]
++        if not root.exists():
++            pytest.skip(f"Cached snapshot not present for {profile}")
++        if profile == "nanbeige":
++            tok_raw = PreTrainedTokenizerFast(tokenizer_file=str(root / "tokenizer.json"))
++            bos = spec["bos_token_id"]
++            enc = lambda txt, tr=tok_raw, b=bos: [b] + tr.encode(txt, add_special_tokens=False)
++        else:
++            tok = AutoTokenizer.from_pretrained(str(root), local_files_only=True)
++            enc = lambda txt, tk=tok: tk.encode(txt, add_special_tokens=False)
++        d_ids = LLM.verify_and_resolve_digit_tokens(enc, prompt)
++        assert len(d_ids) == 9
++        assert len(set(d_ids)) == 9
++
++
++def test_pure_sudoku_trm_fiber_projection_and_tca_exactness():
++    torch.manual_seed(1234)
++    model = TRM.PureSudokuTRM(
++        hidden_size=32, num_heads=4, l_layers=2, h_cycles=2, l_cycles=2, puzzle_emb_len=4, seq_len=81
++    ).float().eval()
++    with torch.no_grad():
++        model.H_init.normal_(0, 0.1)
++        model.L_init.normal_(0, 0.1)
++        model.puzzle_weight.normal_(0, 0.1)
++
++    q1 = "." + SOLVED_GRID[1:]
++    q2 = SOLVED_GRID[:2] + "." + SOLVED_GRID[3:]
++
++    # 1. Verify lm_head orthogonal subspace projection preserves digit_logits identically
++    inp = TRM.encode_questions([q1, q2], "cpu")
++    with torch.no_grad():
++        x = model.encode_inputs(inp)
++        zh, zl = model.init_states(2)
++        zh, zl = model.act_step(zh, zl, x)
++        orig_logits = model.digit_logits(zh)
++
++        w_head = model.lm_head.weight.detach().float()
++        _, _, vh = torch.linalg.svd(w_head, full_matrices=False)
++        p_head = vh.T @ vh
++        h_init_perp = (model.H_init.float() @ (torch.eye(32) - p_head)).view(1, 1, -1)
++        board_proj = (zh[:, 4:, :] @ p_head) + h_init_perp
++        zh_proj = torch.cat([zh[:, :4, :], board_proj], dim=1)
++        proj_logits = model.digit_logits(zh_proj)
++        assert float((orig_logits - proj_logits).abs().max().item()) < 1e-5
++        # Orthogonal residual is non-zero before projection and matches H_init_perp after
++        ortho_diff = ((zh_proj[:, 4:, :] - h_init_perp) @ (torch.eye(32) - p_head)).abs().max().item()
++        assert ortho_diff < 1e-5
++
++    # 2. Verify TCA first-order Delta matches exact finite-difference weight rank-1 perturbation
++    facs = TRM.svd_factors(model, top_k=8)
++    u_mat, s_vec, v_mat = facs["L0.down_proj"]
++
++    def margin_val() -> float:
++        x_e = model.encode_inputs(inp[:1])
++        z_h, z_l = model.init_states(1)
++        for _ in range(2):
++            z_h, z_l = model.act_step(z_h, z_l, x_e)
++        lg = model.digit_logits(z_h)[0, 0]
++        td = int(SOLVED_GRID[0]) - 1
++        zc = lg[td]
++        oth = lg.clone()
++        oth[td] = float("-inf")
++        return float((zc - torch.logsumexp(oth, dim=0)).item())
++
++    # Differentiate across ALL calls of L0.down_proj to test exact chain rule + closed-form rotation SD
++    model.zero_grad(set_to_none=True)
++    xs, gs = [], []
++
++    def hk(_m, i_t, o_t):
++        xs.append(i_t[0].detach())
++        o_t.register_hook(lambda g: gs.append(g.detach()))
++
++    h_hook = model.layers[0].down_proj.register_forward_hook(hk)
++    try:
++        x_e = model.encode_inputs(inp[:1])
++        z_h, z_l = model.init_states(1)
++        for _ in range(2):
++            z_h, z_l = model.act_step(z_h, z_l, x_e)
++        lg = model.digit_logits(z_h)[0, 0]
++        td = int(SOLVED_GRID[0]) - 1
++        zc = lg[td]
++        oth = lg.clone()
++        oth[td] = float("-inf")
++        (zc - torch.logsumexp(oth, dim=0)).backward()
++    finally:
++        h_hook.remove()
++
++    #Note: hooks fire in reverse during backward, so reverse gs to align with xs
++    gs = list(reversed(gs))
++    w_grad = model.layers[0].down_proj.weight.grad.detach().clone()
++    pred_deltas = []
++    grad_deltas = []
++    fd_deltas = []
++    eps = 2e-3
++    w_orig = model.layers[0].down_proj.weight.detach().clone()
++    for r in range(6):
++        vr = v_mat[:, r]
++        ur = u_mat[:, r]
++        sr = float(s_vec[r].item())
++        d_pred = 0.0
++        for xb, ab in zip(xs, gs):
++            d_pred += float((-sr * ((xb @ vr) * (ab @ ur)).sum()).item())
++        pred_deltas.append(d_pred)
++        grad_deltas.append(float((-sr * (w_grad * torch.outer(ur, vr)).sum()).item()))
++
++        with torch.no_grad():
++            model.layers[0].down_proj.weight.copy_(w_orig - eps * sr * torch.outer(ur, vr))
++            m_minus = margin_val()
++            model.layers[0].down_proj.weight.copy_(w_orig + eps * sr * torch.outer(ur, vr))
++            m_plus = margin_val()
++            model.layers[0].down_proj.weight.copy_(w_orig)
++        fd_deltas.append((m_minus - m_plus) / (2.0 * eps))
++
++    # Exact chain-rule identity against parameter gradient + float32 central finite differences
++    np.testing.assert_allclose(pred_deltas, grad_deltas, rtol=1e-5, atol=1e-6)
++    assert np.corrcoef(pred_deltas, fd_deltas)[0, 1] > 0.9999
++    np.testing.assert_allclose(pred_deltas, fd_deltas, rtol=2e-2, atol=5e-4)
++
++    # 3. Verify closed-form rotation SD matches Monte Carlo random read-vector rotation
++    xb0, ab0 = xs[-1], gs[-1]
++    din = v_mat.shape[0]
++    au0 = ab0 @ u_mat[:, 0]
++    xtau0 = torch.einsum("bpi,bp->bi", xb0, au0)
++    sd_closed = float(s_vec[0].item()) * float(xtau0.norm().item()) / math.sqrt(din)
++    rng = torch.Generator().manual_seed(99)
++    mc = []
++    for _ in range(2000):
++        rv = torch.randn(din, generator=rng)
++        rv = rv / rv.norm()
++        mc.append(float((-s_vec[0].item() * ((xb0 @ rv) * au0).sum()).item()))
++    assert abs(np.std(mc) - sd_closed) / max(sd_closed, 1e-8) < 0.05
++
++    # 4. End-to-end trajectory + compactification helper smoke check
++    traj = TRM.evaluate_trajectories_and_usage(
++        model, [q1, q2], [SOLVED_GRID, SOLVED_GRID], [1, 0], n_steps=3, batch_size=2, record_usage=True
++    )
++    comp = TRM.compute_compactification_and_revisions(
++        traj["probs_steps"], [q1, q2], [SOLVED_GRID, SOLVED_GRID], [True, True], probs_hcycles=traj["probs_hcycles"]
++    )
++    assert len(comp["exact_solve_curve_all"]) == 3
++    tca_out = TRM.run_trm_tca(model, [q1, q2], [SOLVED_GRID, SOLVED_GRID], [0, 2], unroll_steps=2, chunk_size=2)
++    assert len(tca_out["f1_over_flate_by_matrix"]) == 4
++
++
++def test_qwen35_tiny_cpu_suite_hooks_and_tca(monkeypatch):
++    from transformers.models.qwen3_5.configuration_qwen3_5 import Qwen3_5TextConfig
++    from transformers.models.qwen3_5.modeling_qwen3_5 import Qwen3_5ForCausalLM
++
++    torch.manual_seed(7)
++    cfg = Qwen3_5TextConfig(
++        vocab_size=128,
++        hidden_size=64,
++        intermediate_size=128,
++        num_hidden_layers=4,
++        num_attention_heads=4,
++        num_key_value_heads=2,
++        head_dim=16,
++        linear_key_head_dim=16,
++        linear_value_head_dim=16,
++        linear_num_key_heads=2,
++        linear_num_value_heads=2,
++    )
++    model = Qwen3_5ForCausalLM(cfg).eval()
++    model.requires_grad_(False)
++    monkeypatch.setitem(LLM.MODEL_LOCKS["qwen4b"], "tca_layers", (0, 1, 2, 3))
++
++    def fake_enc(txt: str) -> list[int]:
++        base = [10, 11, 12, 13]
++        if txt and txt[-1] in "123456789":
++            return base + [20 + int(txt[-1])]
++        return base
++
++    q = "." + SOLVED_GRID[1:]
++    shot = {"question": q, "answer": SOLVED_GRID, "target_idx": 0}
++    items = [
++        {"item_id": f"i{k}", "stratum": s, "question": q, "answer": SOLVED_GRID,
++         "target_idx": 0, "target_digit": int(SOLVED_GRID[0]), "donor_item_id": f"i{(k+1)%4}"}
++        for k, s in enumerate(SP.STRATA)
++    ]
++    bundle = {"bundle_sha256": "deadbeef", "shots": [shot, shot, shot], "items": items}
++    res = LLM.run_qwen_suite("qwen4b", model, fake_enc, bundle, min_watts=0.0)
++    assert len(res["items_target_correct"]) == 4
++    assert len(res["tca_s1"]["zr_gt3_share"]) == 4
++
++
++def test_score_loopscope02_determinism_and_mcnemar():
++    assert SC.exact_mcnemar_p([1] * 10, [0] * 10) == pytest.approx(2.0 * (0.5 ** 10))
++    assert SC.exact_mcnemar_p([1, 0, 1, 0], [0, 1, 0, 1]) == pytest.approx(1.0)
++    assert SC.exact_mcnemar_p([1, 1, 0], [1, 1, 0]) == pytest.approx(1.0)
++
++    n = 16
++    items = [
++        {"item_id": f"it{i}", "stratum": SP.STRATA[i % 4]}
++        for i in range(n)
++    ]
++    bundle = {"bundle_sha256": "abc123", "items": items}
++    trm = {
++        "bundle_sha256": "abc123",
++        "items_target_correct_by_step": [[0] * n, [1] * n],
++        "items_target_open_correct": [0] * n,
++        "items_target_donor_correct": [0] * n,
++        "items_board_exact_by_step": [[0] * n, [1] * n],
++        "items_board_exact_corrupt_step1": [0] * n,
++        "items_board_exact_corrupt_repaired": [1] * n,
++        "items_target_corrupt_step1_correct": [0] * n,
++        "items_target_corrupt_repaired_correct": [1] * n,
++        "items_board_exact_reset_zL": [0] * n,
++        "items_board_exact_fiber_erased": [0] * n,
++        "bench100_clean16_exact": [1] * 20,
++        "bench100_reset_zL_exact": [0] * 20,
++        "bench100_fiber_erased_exact": [0] * 20,
++        "kick_ratio_curve_mean": [1.0, 0.4],
++        "usage_stats": {"L0.o_proj": {"r_outer_zH_mean": 0.92, "r_outer_zL_mean": 0.90, "r_role_zL_vs_zH_mean": 0.55}},
++        "tca": {"f1_over_flate_mean": 0.08, "zr_gt3_overall": 0.04, "zw_gt3_overall": 0.03},
++        "replication_bench100_exact_step16": 0.75,
++        "bench100_compactification": {
++            "exact_solve_curve_all": [0.05, 0.78],
++            "commutation_vs_shuffled_auc_prop": 0.98,
++            "stalled_solve_rate_step16": 0.62,
++            "stalled_solved_with_nonmonotone_flips_share": 0.95,
++        },
++        "items_compactification": {
++            "within_board_round_concordance": 0.81,
++            "within_board_round_concordance_shuf_null": 0.50,
++        },
++    }
++    nanbeige = {
++        "bundle_sha256": "abc123",
++        "items_target_correct_by_loop": [[1, 0, 0, 0] * 4, [1, 0, 0, 0] * 4, [1, 0, 0, 0] * 4],
++        "items_open2_correct": [1, 0, 0, 0] * 4,
++        "items_donor2_correct": [1, 0, 0, 0] * 4,
++        "items_patch_repaired2_correct": [0] * n,
++        "items_donor2_top1_agree_with_loop2": [0] * n,
++        "items_patch_repaired2_top1_agree_with_loop2": [0] * n,
++        "rel_step_norm_mean_by_loop": [0.9, 0.8, 0.5],
++        "mean_r_pass1_vs_pass2": 0.08,
++        "tca_s1": {"layers": ["L6"], "zr_gt3_share_pass1_pass2": [[0.01, 0.02]]},
++    }
++    qwen4b = {
++        "bundle_sha256": "abc123",
++        "items_target_correct": [1, 0, 0, 0] * 4,
++        "items_mid_lens_correct": [0] * n,
++        "tca_s1": {"layers": ["L8"], "zr_gt3_share": [0.02]},
++    }
++    r1 = SC.score_all(bundle, trm, nanbeige, qwen4b)
++    r2 = SC.score_all(bundle, trm, nanbeige, qwen4b)
++    assert r1 == r2
++    assert r1["verdicts"]["P3_svd_operator_reuse_vs_multiplexing"] == "Supported"
++    assert r1["verdicts"]["P4_tca_attractor_masking_and_specificity"] == "Supported"
++    assert r1["verdicts"]["P5_q11_compactification_and_beyond_prop_search"] == "Supported"
++
++
++def test_committed_results_replay_exact_if_present():
++    rdir = Path(__file__).resolve().parents[1] / "results"
++    rep_path = rdir / "loopscope02_report.json"
++    if not rep_path.exists():
++        pytest.skip("Pre-run state: committed results not yet generated")
++    bundle = json.loads((rdir / "benchmark_bundle.json").read_text(encoding="utf-8"))
++    trm = json.loads((rdir / "trm_results.json").read_text(encoding="utf-8"))
++    nanbeige = json.loads((rdir / "nanbeige_results.json").read_text(encoding="utf-8"))
++    qwen4b = json.loads((rdir / "qwen4b_results.json").read_text(encoding="utf-8"))
++    inst_path = rdir / "qwen3_4b_inst_results.json"
++    qwen3_inst = json.loads(inst_path.read_text(encoding="utf-8")) if inst_path.exists() else None
++    recomputed = SC.score_all(bundle, trm, nanbeige, qwen4b, qwen3_inst=qwen3_inst)
++    committed = json.loads(rep_path.read_text(encoding="utf-8"))
++    assert recomputed == committed
