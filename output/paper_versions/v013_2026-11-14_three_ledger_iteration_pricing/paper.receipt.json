@@ -1,0 +1,17 @@
+{
+  "version": "v013_2026-11-14_three_ledger_iteration_pricing",
+  "pages": 18,
+  "title": "From Shared Weights to Head-Orthogonal Fibers: Virtual Depth, Head-Readable Staircases, and Post-Stall Search in Looped Transformers",
+  "source_sha256": "e6565ae5957d01a778bf8d263135f14b1830e21df00a295ead937474872ce61f",
+  "tex_sha256": "80928512dacfdfca4f5ec55c765f1355065a20138b815f87b8247e8e9e69967b",
+  "pdf_sha256": "549d745a2cef74d55970e7d1b353a398cf42d21a8dd59d1c2cf1e17d9253dc81",
+  "builder_sha256": "01c063ab8f7cc5b0fce724536d2f1fc349e82b9ca161939d55fc2800d03f742f",
+  "controls_receipt_sha256": "3623cb6272fd6430255407336486273024ecee288b51b875d60cf97edb5f53ad",
+  "replication_history_probes_receipt_sha256": "e549c67a4aa1542a744872b40f77e4ef650e3a0e55cae9ba7cb333a6cb61257d",
+  "loopscope03_stage1_refill_sha256": "6e8e01bb9cf9bf735f77b1ae1286f93be66d0b99846ce4b85c02222bfdd9189f",
+  "loopscope03_stage2_3_resume_fork_sha256": "18c5ab2b0dd569b7673493f31d3e8f449f175f81abb7ff5c93f0bb593b1ff399",
+  "loopscope03_huginn_cache_fork_sha256": "96411d85944e985e154ba8d06a0b7430a27b6f7b4fe5ec8364e36b620764e981",
+  "literature_manifest_sha256": "4ebb7cca765e8f21861a4e4d923b26a5ebf82a1b87adb56dfb733b5795bf3787",
+  "loopscope03_registration_commit": "b1ec77550997cbc5ae2cd84618af74e8f34e38e7",
+  "loopscope_commit": "5e8485d8f481d0a72190419f0e3c23d0acbe1f5e"
+}

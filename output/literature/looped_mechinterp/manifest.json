@@ -216,6 +216,40 @@
       "arxiv_pdf_uri": "https://arxiv.org/pdf/1807.03819.pdf",
       "archived_pdf_in_repo": null,
       "note": "Not mirrored as a binary PDF in public repository because arXiv non-exclusive distribution license 1.0 grants redistribution rights only to arXiv.org; verified SHA-256 and canonical arXiv PDF URI recorded here."
+    },
+    {
+      "bibkey": "anil2022path",
+      "arxiv_id": "2211.09961",
+      "category": "looped_architecture_and_theory",
+      "title": "Path Independent Equilibrium Models Can Better Exploit Test-Time Computation",
+      "authors": "Cem Anil, Ashwini Pokle, Kaiqu Liang, Johannes Treutlein, Yuhuai Wu, Shaojie Bai, Zico Kolter, Roger Grosse",
+      "license": "CC-BY-4.0",
+      "license_uri": "http://creativecommons.org/licenses/by/4.0/",
+      "redistributable_in_public_repo": true,
+      "bytes": 4963835,
+      "sha256": "baa84cb5fcea897439258b4e37e33e4ef994667fa4b90a6fe44f1aba2f66b44a",
+      "arxiv_abs_uri": "https://arxiv.org/abs/2211.09961",
+      "arxiv_pdf_uri": "https://arxiv.org/pdf/2211.09961.pdf",
+      "filename": "2211.09961_anil2022_path_independent_equilibrium_models.pdf",
+      "public_vpd_blob_uri": "https://github.com/MoralityLabAI/VPD/blob/main/output/literature/looped_mechinterp/2211.09961_anil2022_path_independent_equilibrium_models.pdf",
+      "public_vpd_raw_uri": "https://raw.githubusercontent.com/MoralityLabAI/VPD/main/output/literature/looped_mechinterp/2211.09961_anil2022_path_independent_equilibrium_models.pdf"
+    },
+    {
+      "bibkey": "kubo2026cvoting",
+      "arxiv_id": "2604.13521",
+      "category": "concurrent_2026_mechinterp",
+      "title": "C-voting: Confidence-Based Test-Time Voting without Explicit Energy Functions",
+      "authors": "Kenji Kubo, Shunsuke Kamiya, Masanori Koyama, Kohei Hayashi, Yusuke Iwasawa, Yutaka Matsuo",
+      "license": "CC-BY-4.0",
+      "license_uri": "http://creativecommons.org/licenses/by/4.0/",
+      "redistributable_in_public_repo": true,
+      "bytes": 914690,
+      "sha256": "98685e1bef4dc37ce5866df9d28b450db86c8efd05012c5ffe5ba0bfc31802a4",
+      "arxiv_abs_uri": "https://arxiv.org/abs/2604.13521",
+      "arxiv_pdf_uri": "https://arxiv.org/pdf/2604.13521.pdf",
+      "filename": "2604.13521_kubo2026_cvoting_confidence_based_voting.pdf",
+      "public_vpd_blob_uri": "https://github.com/MoralityLabAI/VPD/blob/main/output/literature/looped_mechinterp/2604.13521_kubo2026_cvoting_confidence_based_voting.pdf",
+      "public_vpd_raw_uri": "https://raw.githubusercontent.com/MoralityLabAI/VPD/main/output/literature/looped_mechinterp/2604.13521_kubo2026_cvoting_confidence_based_voting.pdf"
     }
   ]
 }
