@@ -1,0 +1,963 @@
+{
+  "gate": "B3_looped_chase_suite_with_planted_control",
+  "registration_commit": "49c7207e8daf7568c6788b5b127c6c9cc6d1bb25",
+  "checkpoint_sha256": {
+    "lam0.1_s1": "b970f3117aa42bf3c48968bfa78a503fb48ac289f053bb2c20700fcb9cfba951",
+    "lam1_s1": "2a390ad986b9e3997c4926f7b6e6f833c431042e467999e08f2114309574074d",
+    "lam1_s2": "3bfd2747055aebe983dc13f867c1cd6761bb4bc6e5e1d17b6acfc9497f97cac6",
+    "lam1_s3": "2e3d4a055f02444dae086a85ff57a75a8e772430fd34c3943190d3759f1109e8"
+  },
+  "planted_positive_control": {
+    "checkpoint_label": "lam0.1_s1",
+    "checkpoint_sha256": "b970f3117aa42bf3c48968bfa78a503fb48ac289f053bb2c20700fcb9cfba951",
+    "target_module": "core.1.fc2",
+    "component": 0,
+    "sigma": 600.0,
+    "registered_z_threshold": 2.5,
+    "raw_importance": 0.31138238310813904,
+    "rotation_null_mean": 7.448607365656557e-05,
+    "rotation_null_std": 0.00011157127734498155,
+    "net_importance": 0.3113078970344825,
+    "observed_z_rot": 2789.9653458168964,
+    "margin": 2787.4653458168964,
+    "single_pass_z_rot": 1211.5507954886364,
+    "passed_positive_control": true
+  },
+  "arms": {
+    "lam0.1_s1": {
+      "gate": "B3_looped_chase_ground_truth",
+      "registration_commit": "49c7207e8daf7568c6788b5b127c6c9cc6d1bb25",
+      "label": "lam0.1_s1",
+      "n_passes": 8,
+      "hinge_kappa": 0.1,
+      "pass_null_losses": {
+        "0": 9.856599876567618e-10,
+        "1": 3.762530773054884e-09,
+        "2": 7.923486061711671e-09,
+        "3": 7.017778483331405e-09,
+        "4": 8.285411232100692e-09,
+        "5": 9.495645936219432e-09,
+        "6": 7.273477684727192e-09,
+        "7": 9.296438037778576e-09
+      },
+      "last_train_pass_loss_shares": {
+        "0": 0.8735168586778481,
+        "1": 0.00034254751043607574,
+        "2": 0.0008896746412935998,
+        "3": 0.0008410568541575828,
+        "4": 0.11072881875370705,
+        "5": 0.00900510743389733,
+        "6": 0.0018315146399351925,
+        "7": 0.0028444214887250563
+      },
+      "eval_metrics": {
+        "recon_loss": 0.14446935057640076,
+        "hinged_recon_loss": 0.14446935057640076,
+        "hinge_kappa": 0.1,
+        "final_kl": 0.12860248982906342,
+        "faith_loss": 0.0009764567948877811,
+        "mean_active_per_pass": 65.59099578857422,
+        "recruited_any_pass": 86.18383026123047,
+        "mean_tv_switches": 9.864606857299805,
+        "pass_0_loss": 0.3337245583534241,
+        "pass_0_hinged_loss": 0.3337245583534241,
+        "pass_0_loss_share": 0.2887503092751665,
+        "pass_0_raw_loss_share": 0.2887503092751665,
+        "pass_1_loss": 0.05689355358481407,
+        "pass_1_hinged_loss": 0.05689355358481407,
+        "pass_1_loss_share": 0.04922631787853189,
+        "pass_1_raw_loss_share": 0.04922631787853189,
+        "pass_2_loss": 0.14554637670516968,
+        "pass_2_hinged_loss": 0.14554637670516968,
+        "pass_2_loss_share": 0.12593188075475786,
+        "pass_2_raw_loss_share": 0.12593188075475786,
+        "pass_3_loss": 0.09707003831863403,
+        "pass_3_hinged_loss": 0.09707003831863403,
+        "pass_3_loss_share": 0.08398843562532879,
+        "pass_3_raw_loss_share": 0.08398843562532879,
+        "pass_4_loss": 0.09781136363744736,
+        "pass_4_hinged_loss": 0.09781136363744736,
+        "pass_4_loss_share": 0.08462985655082797,
+        "pass_4_raw_loss_share": 0.08462985655082797,
+        "pass_5_loss": 0.16635894775390625,
+        "pass_5_hinged_loss": 0.16635894775390625,
+        "pass_5_loss_share": 0.1439396544612697,
+        "pass_5_raw_loss_share": 0.1439396544612697,
+        "pass_6_loss": 0.12974748015403748,
+        "pass_6_hinged_loss": 0.12974748015403748,
+        "pass_6_loss_share": 0.11226211582090315,
+        "pass_6_raw_loss_share": 0.11226211582090315,
+        "pass_7_loss": 0.12860248982906342,
+        "pass_7_hinged_loss": 0.12860248982906342,
+        "pass_7_loss_share": 0.1112714296332142,
+        "pass_7_raw_loss_share": 0.1112714296332142
+      },
+      "stationary_component_fraction": 0.546875,
+      "mean_switch_rate": 0.01086384430527687,
+      "ci_variants": {
+        "state_only": {
+          "recon_loss": 0.4046386480331421,
+          "mean_active_per_pass": 62.66238021850586,
+          "recruited_any_pass": 85.24510192871094,
+          "mean_tv_switches": 10.469131469726562,
+          "pass_0_loss_share": 0.14741430615736664,
+          "pass_1_loss_share": 0.06964917928624066,
+          "pass_2_loss_share": 0.1617322054459612,
+          "pass_3_loss_share": 0.1418691710895432,
+          "pass_4_loss_share": 0.09936523652377391,
+          "pass_5_loss_share": 0.15742842371483035,
+          "pass_6_loss_share": 0.09700492976592497,
+          "pass_7_loss_share": 0.12553654801635908
+        },
+        "state_plus_clock": {
+          "recon_loss": 0.5849606394767761,
+          "mean_active_per_pass": 61.530948638916016,
+          "recruited_any_pass": 83.54902648925781,
+          "mean_tv_switches": 10.479491233825684,
+          "pass_0_loss_share": 0.22043708734379858,
+          "pass_1_loss_share": 0.06727062207287113,
+          "pass_2_loss_share": 0.1364151594083194,
+          "pass_3_loss_share": 0.11830834253191687,
+          "pass_4_loss_share": 0.10852606543848382,
+          "pass_5_loss_share": 0.13514982559118793,
+          "pass_6_loss_share": 0.09112648997438458,
+          "pass_7_loss_share": 0.12276640763903769
+        },
+        "visible_only": {
+          "recon_loss": 6.194789886474609,
+          "mean_active_per_pass": 76.5713882446289,
+          "recruited_any_pass": 76.74264526367188,
+          "mean_tv_switches": 0.11442549526691437,
+          "pass_0_loss_share": 0.1097620270152404,
+          "pass_1_loss_share": 0.10893246007087276,
+          "pass_2_loss_share": 0.14212497126107348,
+          "pass_3_loss_share": 0.12265273028581804,
+          "pass_4_loss_share": 0.1362874728781267,
+          "pass_5_loss_share": 0.1344375591827046,
+          "pass_6_loss_share": 0.1371051377334853,
+          "pass_7_loss_share": 0.10869764157267874
+        }
+      },
+      "gaps": {
+        "clock_gap_recon": -0.18032199144363403,
+        "visible_gap_recon": 5.790151238441467,
+        "clock_gap_active": 1.1314315795898438,
+        "visible_gap_active": 13.909008026123047
+      },
+      "sample_component_roles": [
+        {
+          "module": "core.0.fc1",
+          "component": 0,
+          "role": "inert",
+          "raw_all_pass_final": 9.541719236949575e-08,
+          "net_all_pass_final": -7.822700416681982e-05
+        },
+        {
+          "module": "core.0.fc1",
+          "component": 1,
+          "role": "inert",
+          "raw_all_pass_final": 4.255561236732319e-08,
+          "net_all_pass_final": 3.883407995175503e-08
+        },
+        {
+          "module": "core.0.fc2",
+          "component": 0,
+          "role": "inert",
+          "raw_all_pass_final": 3.5508641360593174e-08,
+          "net_all_pass_final": -0.4707699878794198
+        },
+        {
+          "module": "core.0.fc2",
+          "component": 1,
+          "role": "inert",
+          "raw_all_pass_final": 3.549242677536313e-08,
+          "net_all_pass_final": 2.984225266899898e-08
+        },
+        {
+          "module": "core.0.proj",
+          "component": 0,
+          "role": "bottleneck",
+          "raw_all_pass_final": 12.888412475585938,
+          "net_all_pass_final": 0.9905102252960205
+        },
+        {
+          "module": "core.0.proj",
+          "component": 1,
+          "role": "inert",
+          "raw_all_pass_final": 8.583873523093644e-08,
+          "net_all_pass_final": -2.3833129247918805e-07
+        },
+        {
+          "module": "core.0.qkv",
+          "component": 0,
+          "role": "bottleneck",
+          "raw_all_pass_final": 7.94911527633667,
+          "net_all_pass_final": -5.184696674346924
+        },
+        {
+          "module": "core.0.qkv",
+          "component": 1,
+          "role": "inert",
+          "raw_all_pass_final": 2.437593025206297e-07,
+          "net_all_pass_final": -1.8371221667765099
+        },
+        {
+          "module": "core.1.fc1",
+          "component": 0,
+          "role": "sustaining",
+          "raw_all_pass_final": 13.064552307128906,
+          "net_all_pass_final": 9.427245357934524
+        },
+        {
+          "module": "core.1.fc1",
+          "component": 1,
+          "role": "inert",
+          "raw_all_pass_final": 1.0526178328973401e-07,
+          "net_all_pass_final": -0.0001565848205062892
+        },
+        {
+          "module": "core.1.fc2",
+          "component": 0,
+          "role": "bottleneck",
+          "raw_all_pass_final": 15.858617782592773,
+          "net_all_pass_final": 15.74341311588978
+        },
+        {
+          "module": "core.1.fc2",
+          "component": 1,
+          "role": "inert",
+          "raw_all_pass_final": 1.0318793641772572e-07,
+          "net_all_pass_final": -8.563414155560167e-08
+        },
+        {
+          "module": "core.1.proj",
+          "component": 0,
+          "role": "bottleneck",
+          "raw_all_pass_final": 3.9687423706054688,
+          "net_all_pass_final": -0.0575406551361084
+        },
+        {
+          "module": "core.1.proj",
+          "component": 1,
+          "role": "bottleneck",
+          "raw_all_pass_final": 0.14794322848320007,
+          "net_all_pass_final": 0.14791738348242234
+        },
+        {
+          "module": "core.1.qkv",
+          "component": 0,
+          "role": "bottleneck",
+          "raw_all_pass_final": 5.577154159545898,
+          "net_all_pass_final": -5.450043201446533
+        },
+        {
+          "module": "core.1.qkv",
+          "component": 1,
+          "role": "bottleneck",
+          "raw_all_pass_final": 3.3059215545654297,
+          "net_all_pass_final": -4.303038120269775
+        }
+      ]
+    },
+    "lam1_s1": {
+      "gate": "B3_looped_chase_ground_truth",
+      "registration_commit": "49c7207e8daf7568c6788b5b127c6c9cc6d1bb25",
+      "label": "lam1_s1",
+      "n_passes": 8,
+      "hinge_kappa": 0.1,
+      "pass_null_losses": {
+        "0": 8.828983987484162e-09,
+        "1": 9.49423409243302e-08,
+        "2": 2.2332109578509368e-07,
+        "3": 8.784057694208314e-07,
+        "4": 2.813353095368863e-06,
+        "5": 0.01015945163218576,
+        "6": 0.009115587665445325,
+        "7": 0.029236090718720895
+      },
+      "last_train_pass_loss_shares": {
+        "0": 0.04083771786618925,
+        "1": 0.05926561550843817,
+        "2": 0.1015552096130997,
+        "3": 0.172085063917017,
+        "4": 0.16812425672000203,
+        "5": 0.13324706281911194,
+        "6": 0.1446316176471588,
+        "7": 0.18025345590898315
+      },
+      "eval_metrics": {
+        "recon_loss": 0.03493274748325348,
+        "hinged_recon_loss": 0.03333789482712746,
+        "hinge_kappa": 0.1,
+        "final_kl": 0.04119309037923813,
+        "faith_loss": 0.001043273019604385,
+        "mean_active_per_pass": 121.38481140136719,
+        "recruited_any_pass": 123.22795104980469,
+        "mean_tv_switches": 2.5540974140167236,
+        "pass_0_loss": 0.042608171701431274,
+        "pass_0_hinged_loss": 0.042608171701431274,
+        "pass_0_loss_share": 0.1597587842300626,
+        "pass_0_raw_loss_share": 0.15246500946492472,
+        "pass_1_loss": 0.01821976900100708,
+        "pass_1_hinged_loss": 0.018219705671072006,
+        "pass_1_loss_share": 0.06831454884843753,
+        "pass_1_raw_loss_share": 0.06519588009203346,
+        "pass_2_loss": 0.029476691037416458,
+        "pass_2_hinged_loss": 0.029474616050720215,
+        "pass_2_loss_share": 0.11051468856507575,
+        "pass_2_raw_loss_share": 0.10547657405969842,
+        "pass_3_loss": 0.004776939749717712,
+        "pass_3_hinged_loss": 0.003882873337715864,
+        "pass_3_loss_share": 0.01455878295129885,
+        "pass_3_raw_loss_share": 0.017093344658335126,
+        "pass_4_loss": 0.07045847177505493,
+        "pass_4_hinged_loss": 0.06890256702899933,
+        "pass_4_loss_share": 0.2583492766603163,
+        "pass_4_raw_loss_share": 0.2521218615373498,
+        "pass_5_loss": 0.03557533770799637,
+        "pass_5_hinged_loss": 0.033652301877737045,
+        "pass_5_loss_share": 0.1261788671009727,
+        "pass_5_raw_loss_share": 0.1272993884453709,
+        "pass_6_loss": 0.03715349733829498,
+        "pass_6_hinged_loss": 0.03221524506807327,
+        "pass_6_loss_share": 0.1207906413308042,
+        "pass_6_raw_loss_share": 0.13294652403843737,
+        "pass_7_loss": 0.04119309037923813,
+        "pass_7_hinged_loss": 0.03774767369031906,
+        "pass_7_loss_share": 0.14153441031303202,
+        "pass_7_raw_loss_share": 0.1474014177038502
+      },
+      "stationary_component_fraction": 0.4921875,
+      "mean_switch_rate": 0.17381855845451355,
+      "ci_variants": {
+        "state_only": {
+          "recon_loss": 0.32630836963653564,
+          "mean_active_per_pass": 115.68229675292969,
+          "recruited_any_pass": 118.1617660522461,
+          "mean_tv_switches": 2.801609992980957,
+          "pass_0_loss_share": 0.0654865665201197,
+          "pass_1_loss_share": 0.13484842016379314,
+          "pass_2_loss_share": 0.09847797252547273,
+          "pass_3_loss_share": 0.0913945540609358,
+          "pass_4_loss_share": 0.14445941124877873,
+          "pass_5_loss_share": 0.15479250559539837,
+          "pass_6_loss_share": 0.18448445419312198,
+          "pass_7_loss_share": 0.12605611569237954
+        },
+        "state_plus_clock": {
+          "recon_loss": 0.2514008581638336,
+          "mean_active_per_pass": 117.5239028930664,
+          "recruited_any_pass": 120.85049438476562,
+          "mean_tv_switches": 2.888899326324463,
+          "pass_0_loss_share": 0.06807721566656698,
+          "pass_1_loss_share": 0.09538295126320544,
+          "pass_2_loss_share": 0.1462132139592815,
+          "pass_3_loss_share": 0.0613748724788918,
+          "pass_4_loss_share": 0.10135720571352652,
+          "pass_5_loss_share": 0.23354751357288694,
+          "pass_6_loss_share": 0.10521084522218939,
+          "pass_7_loss_share": 0.18883618212345143
+        },
+        "visible_only": {
+          "recon_loss": 4.606385231018066,
+          "mean_active_per_pass": 113.14797973632812,
+          "recruited_any_pass": 113.27206420898438,
+          "mean_tv_switches": 0.14141197502613068,
+          "pass_0_loss_share": 0.1636880561633793,
+          "pass_1_loss_share": 0.13037047266007448,
+          "pass_2_loss_share": 0.1300897227904617,
+          "pass_3_loss_share": 0.10205920266454749,
+          "pass_4_loss_share": 0.10899119605183155,
+          "pass_5_loss_share": 0.11354789182008916,
+          "pass_6_loss_share": 0.12951028880598175,
+          "pass_7_loss_share": 0.12174316904363457
+        }
+      },
+      "gaps": {
+        "clock_gap_recon": 0.07490751147270203,
+        "visible_gap_recon": 4.280076861381531,
+        "clock_gap_active": -1.8416061401367188,
+        "visible_gap_active": -2.5343170166015625
+      },
+      "sample_component_roles": [
+        {
+          "module": "core.0.fc1",
+          "component": 0,
+          "role": "bottleneck",
+          "raw_all_pass_final": 4.422767639160156,
+          "net_all_pass_final": -0.4426586627960205
+        },
+        {
+          "module": "core.0.fc1",
+          "component": 1,
+          "role": "bottleneck",
+          "raw_all_pass_final": 0.22193144261837006,
+          "net_all_pass_final": -0.69647316634655
+        },
+        {
+          "module": "core.0.fc2",
+          "component": 0,
+          "role": "inert",
+          "raw_all_pass_final": 5.1341046969355375e-08,
+          "net_all_pass_final": -2.5700615727090934
+        },
+        {
+          "module": "core.0.fc2",
+          "component": 1,
+          "role": "bottleneck",
+          "raw_all_pass_final": 0.7023245692253113,
+          "net_all_pass_final": 0.09759497798868466
+        },
+        {
+          "module": "core.0.proj",
+          "component": 0,
+          "role": "bottleneck",
+          "raw_all_pass_final": 5.027827739715576,
+          "net_all_pass_final": -2.4880738258361816
+        },
+        {
+          "module": "core.0.proj",
+          "component": 1,
+          "role": "sustaining",
+          "raw_all_pass_final": 12.315689086914062,
+          "net_all_pass_final": 8.142168998718262
+        },
+        {
+          "module": "core.0.qkv",
+          "component": 0,
+          "role": "bottleneck",
+          "raw_all_pass_final": 6.975732326507568,
+          "net_all_pass_final": -1.978724479675293
+        },
+        {
+          "module": "core.0.qkv",
+          "component": 1,
+          "role": "bottleneck",
+          "raw_all_pass_final": 12.567713737487793,
+          "net_all_pass_final": 3.7755608558654785
+        },
+        {
+          "module": "core.1.fc1",
+          "component": 0,
+          "role": "bottleneck",
+          "raw_all_pass_final": 0.42324501276016235,
+          "net_all_pass_final": -5.929458796977997
+        },
+        {
+          "module": "core.1.fc1",
+          "component": 1,
+          "role": "sustaining",
+          "raw_all_pass_final": 4.307641983032227,
+          "net_all_pass_final": 4.307641979273207
+        },
+        {
+          "module": "core.1.fc2",
+          "component": 0,
+          "role": "inert",
+          "raw_all_pass_final": 6.913909089689696e-08,
+          "net_all_pass_final": -2.620765497686776
+        },
+        {
+          "module": "core.1.fc2",
+          "component": 1,
+          "role": "sustaining",
+          "raw_all_pass_final": 6.248091697692871,
+          "net_all_pass_final": 6.2480916854765525
+        },
+        {
+          "module": "core.1.proj",
+          "component": 0,
+          "role": "bottleneck",
+          "raw_all_pass_final": 1.3105623722076416,
+          "net_all_pass_final": -3.195251703262329
+        },
+        {
+          "module": "core.1.proj",
+          "component": 1,
+          "role": "inert",
+          "raw_all_pass_final": 2.0192634053728398e-07,
+          "net_all_pass_final": 2.0023184288398e-07
+        },
+        {
+          "module": "core.1.qkv",
+          "component": 0,
+          "role": "bottleneck",
+          "raw_all_pass_final": 3.905430555343628,
+          "net_all_pass_final": -7.077135801315308
+        },
+        {
+          "module": "core.1.qkv",
+          "component": 1,
+          "role": "sustaining",
+          "raw_all_pass_final": 1.2786611318588257,
+          "net_all_pass_final": 1.2786608544091251
+        }
+      ]
+    },
+    "lam1_s2": {
+      "gate": "B3_looped_chase_ground_truth",
+      "registration_commit": "49c7207e8daf7568c6788b5b127c6c9cc6d1bb25",
+      "label": "lam1_s2",
+      "n_passes": 8,
+      "hinge_kappa": 0.1,
+      "pass_null_losses": {
+        "0": 1.3177132787700607e-09,
+        "1": 8.273011262160956e-09,
+        "2": 1.4529523140183187e-09,
+        "3": 3.513444382652331e-09,
+        "4": 2.674448794370843e-09,
+        "5": 1.924101725170324e-09,
+        "6": 5.5101894852471744e-09,
+        "7": 3.5009529346721746e-09
+      },
+      "last_train_pass_loss_shares": {
+        "6": 0.29337119364864567,
+        "7": 0.7066288063513543
+      },
+      "eval_metrics": {
+        "recon_loss": 0.2664119303226471,
+        "hinged_recon_loss": 0.2664119303226471,
+        "hinge_kappa": 0.1,
+        "final_kl": 0.36793702840805054,
+        "faith_loss": 0.0009866578038781881,
+        "mean_active_per_pass": 73.69454956054688,
+        "recruited_any_pass": 93.97549438476562,
+        "mean_tv_switches": 8.120882034301758,
+        "pass_0_loss": 0.3540070950984955,
+        "pass_0_hinged_loss": 0.3540070950984955,
+        "pass_0_loss_share": 0.1660994954058733,
+        "pass_0_raw_loss_share": 0.1660994954058733,
+        "pass_1_loss": 0.24803923070430756,
+        "pass_1_hinged_loss": 0.24803923070430756,
+        "pass_1_loss_share": 0.11637956309712837,
+        "pass_1_raw_loss_share": 0.11637956309712837,
+        "pass_2_loss": 0.22641277313232422,
+        "pass_2_hinged_loss": 0.22641277313232422,
+        "pass_2_loss_share": 0.10623246791214763,
+        "pass_2_raw_loss_share": 0.10623246791214763,
+        "pass_3_loss": 0.210330069065094,
+        "pass_3_hinged_loss": 0.210330069065094,
+        "pass_3_loss_share": 0.0986864919491922,
+        "pass_3_raw_loss_share": 0.0986864919491922,
+        "pass_4_loss": 0.2812134921550751,
+        "pass_4_hinged_loss": 0.2812134921550751,
+        "pass_4_loss_share": 0.1319448671933694,
+        "pass_4_raw_loss_share": 0.1319448671933694,
+        "pass_5_loss": 0.23286530375480652,
+        "pass_5_hinged_loss": 0.23286530375480652,
+        "pass_5_loss_share": 0.10925998373125023,
+        "pass_5_raw_loss_share": 0.10925998373125023,
+        "pass_6_loss": 0.21049043536186218,
+        "pass_6_hinged_loss": 0.21049043536186218,
+        "pass_6_loss_share": 0.09876173552860659,
+        "pass_6_raw_loss_share": 0.09876173552860659,
+        "pass_7_loss": 0.36793702840805054,
+        "pass_7_hinged_loss": 0.36793702840805054,
+        "pass_7_loss_share": 0.1726353951824323,
+        "pass_7_raw_loss_share": 0.1726353951824323
+      },
+      "stationary_component_fraction": 0.59375,
+      "mean_switch_rate": 0.009264091961085796,
+      "ci_variants": {
+        "state_only": {
+          "recon_loss": 0.3753558397293091,
+          "mean_active_per_pass": 58.06556701660156,
+          "recruited_any_pass": 84.1813735961914,
+          "mean_tv_switches": 11.114566802978516,
+          "pass_0_loss_share": 0.0625431447959437,
+          "pass_1_loss_share": 0.07869142334789439,
+          "pass_2_loss_share": 0.16236660888661356,
+          "pass_3_loss_share": 0.07937384499255824,
+          "pass_4_loss_share": 0.11229816847647596,
+          "pass_5_loss_share": 0.16101883606309186,
+          "pass_6_loss_share": 0.13195908739324713,
+          "pass_7_loss_share": 0.21174888604417516
+        },
+        "state_plus_clock": {
+          "recon_loss": 1.7120494842529297,
+          "mean_active_per_pass": 63.48529815673828,
+          "recruited_any_pass": 88.57108306884766,
+          "mean_tv_switches": 11.13272476196289,
+          "pass_0_loss_share": 0.29644720293627935,
+          "pass_1_loss_share": 0.07311939645080627,
+          "pass_2_loss_share": 0.07390641088240696,
+          "pass_3_loss_share": 0.077650001697221,
+          "pass_4_loss_share": 0.10412586590909684,
+          "pass_5_loss_share": 0.14779282066814803,
+          "pass_6_loss_share": 0.08012065935730157,
+          "pass_7_loss_share": 0.14683764209873998
+        },
+        "visible_only": {
+          "recon_loss": 4.28992223739624,
+          "mean_active_per_pass": 75.89338684082031,
+          "recruited_any_pass": 75.99264526367188,
+          "mean_tv_switches": 0.08810977637767792,
+          "pass_0_loss_share": 0.14170424548232724,
+          "pass_1_loss_share": 0.12787567574169145,
+          "pass_2_loss_share": 0.1304996753433196,
+          "pass_3_loss_share": 0.12998009127123072,
+          "pass_4_loss_share": 0.12160497291253285,
+          "pass_5_loss_share": 0.1237431233369013,
+          "pass_6_loss_share": 0.10411474988389041,
+          "pass_7_loss_share": 0.12047746602810643
+        }
+      },
+      "gaps": {
+        "clock_gap_recon": -1.3366936445236206,
+        "visible_gap_recon": 3.914566397666931,
+        "clock_gap_active": -5.419731140136719,
+        "visible_gap_active": 17.82781982421875
+      },
+      "sample_component_roles": [
+        {
+          "module": "core.0.fc1",
+          "component": 0,
+          "role": "inert",
+          "raw_all_pass_final": 7.839093285610943e-08,
+          "net_all_pass_final": -10.222054879952573
+        },
+        {
+          "module": "core.0.fc1",
+          "component": 1,
+          "role": "inert",
+          "raw_all_pass_final": 8.528581929567736e-08,
+          "net_all_pass_final": -8.202485237666451
+        },
+        {
+          "module": "core.0.fc2",
+          "component": 0,
+          "role": "inert",
+          "raw_all_pass_final": 1.3004243726300047e-07,
+          "net_all_pass_final": -4.120324958458539
+        },
+        {
+          "module": "core.0.fc2",
+          "component": 1,
+          "role": "inert",
+          "raw_all_pass_final": 1.382492769153032e-07,
+          "net_all_pass_final": -0.8123241164413599
+        },
+        {
+          "module": "core.0.proj",
+          "component": 0,
+          "role": "sustaining",
+          "raw_all_pass_final": 12.558755874633789,
+          "net_all_pass_final": 5.398878574371338
+        },
+        {
+          "module": "core.0.proj",
+          "component": 1,
+          "role": "inert",
+          "raw_all_pass_final": 2.69976055733423e-07,
+          "net_all_pass_final": 2.467504200964754e-07
+        },
+        {
+          "module": "core.0.qkv",
+          "component": 0,
+          "role": "bottleneck",
+          "raw_all_pass_final": 10.774665832519531,
+          "net_all_pass_final": -5.069025039672852
+        },
+        {
+          "module": "core.0.qkv",
+          "component": 1,
+          "role": "sustaining",
+          "raw_all_pass_final": 6.605382442474365,
+          "net_all_pass_final": 6.6053784988193485
+        },
+        {
+          "module": "core.1.fc1",
+          "component": 0,
+          "role": "inert",
+          "raw_all_pass_final": 2.32901629715343e-06,
+          "net_all_pass_final": 2.054918269323025e-06
+        },
+        {
+          "module": "core.1.fc1",
+          "component": 1,
+          "role": "inert",
+          "raw_all_pass_final": 2.5922477675521804e-07,
+          "net_all_pass_final": 2.3890334333032115e-07
+        },
+        {
+          "module": "core.1.fc2",
+          "component": 0,
+          "role": "inert",
+          "raw_all_pass_final": 7.998700084499433e-07,
+          "net_all_pass_final": -12.259084927939995
+        },
+        {
+          "module": "core.1.fc2",
+          "component": 1,
+          "role": "inert",
+          "raw_all_pass_final": 2.681509556623496e-07,
+          "net_all_pass_final": -9.924269685512854e-05
+        },
+        {
+          "module": "core.1.proj",
+          "component": 0,
+          "role": "bottleneck",
+          "raw_all_pass_final": 11.996513366699219,
+          "net_all_pass_final": 0.6906094551086426
+        },
+        {
+          "module": "core.1.proj",
+          "component": 1,
+          "role": "transient",
+          "raw_all_pass_final": 0.18840980529785156,
+          "net_all_pass_final": -0.4371161609888077
+        },
+        {
+          "module": "core.1.qkv",
+          "component": 0,
+          "role": "bottleneck",
+          "raw_all_pass_final": 13.715296745300293,
+          "net_all_pass_final": 4.61354398727417
+        },
+        {
+          "module": "core.1.qkv",
+          "component": 1,
+          "role": "bottleneck",
+          "raw_all_pass_final": 3.657696485519409,
+          "net_all_pass_final": -11.08058762550354
+        }
+      ]
+    },
+    "lam1_s3": {
+      "gate": "B3_looped_chase_ground_truth",
+      "registration_commit": "49c7207e8daf7568c6788b5b127c6c9cc6d1bb25",
+      "label": "lam1_s3",
+      "n_passes": 8,
+      "hinge_kappa": 0.1,
+      "pass_null_losses": {
+        "0": 6.421400034680887e-16,
+        "1": 1.0402316916358648e-13,
+        "2": 5.255963793564683e-15,
+        "3": 1.6560297614926742e-16,
+        "4": 7.80288149276769e-15,
+        "5": 8.48066539737583e-14,
+        "6": 4.302785418594309e-14,
+        "7": 1.3960827836880923e-13
+      },
+      "last_train_pass_loss_shares": {
+        "6": 0.005506247329102309,
+        "7": 0.9944937526708977
+      },
+      "eval_metrics": {
+        "recon_loss": 0.15818926692008972,
+        "hinged_recon_loss": 0.15818926692008972,
+        "hinge_kappa": 0.1,
+        "final_kl": 0.10480665415525436,
+        "faith_loss": 0.0010245481971651316,
+        "mean_active_per_pass": 113.24723815917969,
+        "recruited_any_pass": 117.98530578613281,
+        "mean_tv_switches": 2.6272733211517334,
+        "pass_0_loss": 0.39674100279808044,
+        "pass_0_hinged_loss": 0.39674100279808044,
+        "pass_0_loss_share": 0.3135018186351154,
+        "pass_0_raw_loss_share": 0.3135018186351154,
+        "pass_1_loss": 0.09878569096326828,
+        "pass_1_hinged_loss": 0.09878569096326828,
+        "pass_1_loss_share": 0.07805972549772698,
+        "pass_1_raw_loss_share": 0.07805972549772698,
+        "pass_2_loss": 0.031674791127443314,
+        "pass_2_hinged_loss": 0.031674791127443314,
+        "pass_2_loss_share": 0.025029186681757666,
+        "pass_2_raw_loss_share": 0.025029186681757666,
+        "pass_3_loss": 0.07223804295063019,
+        "pass_3_hinged_loss": 0.07223804295063019,
+        "pass_3_loss_share": 0.057081969546742585,
+        "pass_3_raw_loss_share": 0.057081969546742585,
+        "pass_4_loss": 0.23276397585868835,
+        "pass_4_hinged_loss": 0.23276397585868835,
+        "pass_4_loss_share": 0.1839283795468391,
+        "pass_4_raw_loss_share": 0.1839283795468391,
+        "pass_5_loss": 0.25247812271118164,
+        "pass_5_hinged_loss": 0.25247812271118164,
+        "pass_5_loss_share": 0.199506353205997,
+        "pass_5_raw_loss_share": 0.199506353205997,
+        "pass_6_loss": 0.07602591812610626,
+        "pass_6_hinged_loss": 0.07602591812610626,
+        "pass_6_loss_share": 0.06007512061481843,
+        "pass_6_raw_loss_share": 0.06007512061481843,
+        "pass_7_loss": 0.10480665415525436,
+        "pass_7_hinged_loss": 0.10480665415525436,
+        "pass_7_loss_share": 0.08281744627100285,
+        "pass_7_raw_loss_share": 0.08281744627100285
+      },
+      "stationary_component_fraction": 0.453125,
+      "mean_switch_rate": 0.1457972526550293,
+      "ci_variants": {
+        "state_only": {
+          "recon_loss": 0.6877776384353638,
+          "mean_active_per_pass": 106.34037780761719,
+          "recruited_any_pass": 110.23529815673828,
+          "mean_tv_switches": 2.8084962368011475,
+          "pass_0_loss_share": 0.07004035344351983,
+          "pass_1_loss_share": 0.12303672693031716,
+          "pass_2_loss_share": 0.08927855639402954,
+          "pass_3_loss_share": 0.1007006259866782,
+          "pass_4_loss_share": 0.16736900532437574,
+          "pass_5_loss_share": 0.17125865347756147,
+          "pass_6_loss_share": 0.1882275943942403,
+          "pass_7_loss_share": 0.09008848404927776
+        },
+        "state_plus_clock": {
+          "recon_loss": 2.7192177772521973,
+          "mean_active_per_pass": 107.29197692871094,
+          "recruited_any_pass": 111.5980453491211,
+          "mean_tv_switches": 2.6474480628967285,
+          "pass_0_loss_share": 0.10647172956581187,
+          "pass_1_loss_share": 0.11554636352171324,
+          "pass_2_loss_share": 0.10909687485693921,
+          "pass_3_loss_share": 0.13585340325405876,
+          "pass_4_loss_share": 0.16199175011954772,
+          "pass_5_loss_share": 0.14823821935047823,
+          "pass_6_loss_share": 0.12818130618566115,
+          "pass_7_loss_share": 0.09462035314578984
+        },
+        "visible_only": {
+          "recon_loss": 4.047271728515625,
+          "mean_active_per_pass": 114.08793640136719,
+          "recruited_any_pass": 114.686279296875,
+          "mean_tv_switches": 0.5773923397064209,
+          "pass_0_loss_share": 0.0434366791772782,
+          "pass_1_loss_share": 0.10752715203427164,
+          "pass_2_loss_share": 0.12152035707542536,
+          "pass_3_loss_share": 0.1397467538361726,
+          "pass_4_loss_share": 0.15394394416308166,
+          "pass_5_loss_share": 0.12919699891121694,
+          "pass_6_loss_share": 0.15739491983563095,
+          "pass_7_loss_share": 0.14723319496692264
+        }
+      },
+      "gaps": {
+        "clock_gap_recon": -2.0314401388168335,
+        "visible_gap_recon": 3.3594940900802612,
+        "clock_gap_active": -0.95159912109375,
+        "visible_gap_active": 7.74755859375
+      },
+      "sample_component_roles": [
+        {
+          "module": "core.0.fc1",
+          "component": 0,
+          "role": "bottleneck",
+          "raw_all_pass_final": 0.7500207424163818,
+          "net_all_pass_final": -1.7378564178943634
+        },
+        {
+          "module": "core.0.fc1",
+          "component": 1,
+          "role": "inert",
+          "raw_all_pass_final": 7.045868066508226e-14,
+          "net_all_pass_final": 4.381604162882833e-13
+        },
+        {
+          "module": "core.0.fc2",
+          "component": 0,
+          "role": "inert",
+          "raw_all_pass_final": 1.1779881757545407e-11,
+          "net_all_pass_final": 1.1205782775216416e-11
+        },
+        {
+          "module": "core.0.fc2",
+          "component": 1,
+          "role": "inert",
+          "raw_all_pass_final": -8.970579270725643e-13,
+          "net_all_pass_final": -5.7786626639399e-13
+        },
+        {
+          "module": "core.0.proj",
+          "component": 0,
+          "role": "inert",
+          "raw_all_pass_final": 4.960844179890955e-09,
+          "net_all_pass_final": -3.3729908203754295
+        },
+        {
+          "module": "core.0.proj",
+          "component": 1,
+          "role": "inert",
+          "raw_all_pass_final": 1.979939853020106e-14,
+          "net_all_pass_final": -0.9198219180096815
+        },
+        {
+          "module": "core.0.qkv",
+          "component": 0,
+          "role": "bottleneck",
+          "raw_all_pass_final": 41.61228942871094,
+          "net_all_pass_final": 30.606939792633057
+        },
+        {
+          "module": "core.0.qkv",
+          "component": 1,
+          "role": "sustaining",
+          "raw_all_pass_final": 11.658935546875,
+          "net_all_pass_final": 8.080965518951416
+        },
+        {
+          "module": "core.1.fc1",
+          "component": 0,
+          "role": "inert",
+          "raw_all_pass_final": 6.225065601883628e-12,
+          "net_all_pass_final": 5.974966181543362e-12
+        },
+        {
+          "module": "core.1.fc1",
+          "component": 1,
+          "role": "inert",
+          "raw_all_pass_final": 2.1089924511635827e-12,
+          "net_all_pass_final": 1.2388682744599033e-12
+        },
+        {
+          "module": "core.1.fc2",
+          "component": 0,
+          "role": "bottleneck",
+          "raw_all_pass_final": 3.7204768657684326,
+          "net_all_pass_final": 3.7204768657623095
+        },
+        {
+          "module": "core.1.fc2",
+          "component": 1,
+          "role": "inert",
+          "raw_all_pass_final": -3.1758900657973335e-14,
+          "net_all_pass_final": -3.117530139476552e-13
+        },
+        {
+          "module": "core.1.proj",
+          "component": 0,
+          "role": "inert",
+          "raw_all_pass_final": 2.2307869527310453e-12,
+          "net_all_pass_final": 1.769741905105482e-12
+        },
+        {
+          "module": "core.1.proj",
+          "component": 1,
+          "role": "inert",
+          "raw_all_pass_final": 1.924420692245299e-12,
+          "net_all_pass_final": 1.2512906563764276e-12
+        },
+        {
+          "module": "core.1.qkv",
+          "component": 0,
+          "role": "inert",
+          "raw_all_pass_final": -2.011909302351844e-12,
+          "net_all_pass_final": -6.043085336687192
+        },
+        {
+          "module": "core.1.qkv",
+          "component": 1,
+          "role": "inert",
+          "raw_all_pass_final": -3.5836413589222793e-13,
+          "net_all_pass_final": -4.906030653072362e-13
+        }
+      ]
+    }
+  },
+  "checks": {
+    "planted_positive_control_passed": true,
+    "lam0.1_stationary_and_small_gaps": false,
+    "lam1_s1_exceeds_s3_visible_gap": true,
+    "lam1_s2_exceeds_s3_visible_gap": true
+  },
+  "gate_b3_passed": false
+}
