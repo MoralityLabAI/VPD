@@ -1,8 +1,19 @@
-# Public Supplements for `LOOPSCOPE-02`, `LOOPSCOPE-03`, and `BPD-01`
+# Public Supplements for `LOOPSCOPE-04` / `ARG-03-N`, `LOOPSCOPE-03`, `LOOPSCOPE-02`, and `BPD-01`
 
-Because the development repository `MoralityLabAI/LoopedTransformers` is private, this directory mirrors the pre-registrations, verbatim git commit patches, evaluation reports, experimental scripts, unit tests, and JSON result receipts for **`LOOPSCOPE-02`**, **`LOOPSCOPE-03`**, and **`BPD-01`** in the public `MoralityLabAI/VPD` repository so every citation and empirical audit is anonymously verifiable (`HTTP 200`).
+Because the development repository `MoralityLabAI/LoopedTransformers` is private, this directory mirrors the pre-registrations, verbatim git commit patches, evaluation reports, experimental scripts, unit tests, and JSON result receipts for **`LOOPSCOPE-04` & `ARG-03-N`**, **`LOOPSCOPE-03`**, **`LOOPSCOPE-02`**, and **`BPD-01`** in the public `MoralityLabAI/VPD` repository so every citation and empirical audit is anonymously verifiable (`HTTP 200`).
 
-## 0. `BPD-01` — Behavioral Parameter Decomposition (`mechinterp/bpd` Mirror)
+## 0A. `LOOPSCOPE-04` & `ARG-03-N` — Causal Quotients, History-Conditioned Caches, Delayed Observability, and Frozen `Nanbeige4.2-3B` Test Protocol
+
+- **Mirrored from `MoralityLabAI/LoopedTransformers` (`research/causal-dark-fibers-arg03-20261115`, Draft PR #47, commits `938fd72` / `bf8feca`):**
+  - Supplement overview & receipt index: [`loopscope04_arg03/README.md`](loopscope04_arg03/README.md)
+  - Empirical campaign addendum (with inline `fig6` & `fig7`): [`loopscope04_arg03/DARK_FIBERS_CAMPAIGN_ADDENDUM.md`](loopscope04_arg03/DARK_FIBERS_CAMPAIGN_ADDENDUM.md)
+  - Frozen preregistered held-out test protocol (`ARG-03-N` `test.jsonl`, $N = 168$ **strictly sealed**, `0` runs): [`loopscope04_arg03/ARG03_FROZEN_TEST_PROTOCOL.md`](loopscope04_arg03/ARG03_FROZEN_TEST_PROTOCOL.md)
+  - Theoretical rationale & design note (Propositions 1–4): [`loopscope04_arg03/CAUSAL_QUOTIENT_ARG03.md`](loopscope04_arg03/CAUSAL_QUOTIENT_ARG03.md)
+  - Unified statistical summary & frozen dev calibration: [`loopscope04_arg03/campaign_20261115/campaign_summary.json`](loopscope04_arg03/campaign_20261115/campaign_summary.json), [`loopscope04_arg03/campaign_20261115/arg03_dev_calibration.json`](loopscope04_arg03/campaign_20261115/arg03_dev_calibration.json)
+  - Per-board `LOOPSCOPE-04` receipts (24 JSONs + `rep_eval_strata.json`) & per-case `ARG-03-N` `dev_full96` diagnostics (`grade_dev96.json` + `per_case_diagnostics_dev96.json`): [`loopscope04_arg03/results/`](loopscope04_arg03/results/)
+  - Figures, gym runners, 18-test suite, & verbatim campaign diff patch: [`loopscope04_arg03/figures/`](loopscope04_arg03/figures/), [`loopscope04_arg03/gyms/`](loopscope04_arg03/gyms/), [`loopscope04_arg03/campaign_diff_26ae0cc_to_bf8feca.patch`](loopscope04_arg03/campaign_diff_26ae0cc_to_bf8feca.patch)
+
+## 0B. `BPD-01` — Behavioral Parameter Decomposition (`mechinterp/bpd` Mirror)
 
 - **Mirrored from `MoralityLabAI/LoopedTransformers` (`feat/mechinterp-bpd`, initial commit `e6baa744b82d91cd2812a73799c5d1aea5de2ce8`):**
   - Package overview: [`bpd01/README.md`](bpd01/README.md)

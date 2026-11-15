@@ -1,0 +1,72 @@
+{
+  "audit": {
+    "audit_level": "exact + digit-relabel + full Sudoku grid/transpose/digit automorphisms (WL + exact search)",
+    "excluded_files": {
+      "eval.csv": "d602aca859d61a05202d9f45ad5be9b0e64e1c8ec30b9d27b7292a8d5c15154f",
+      "sudoku_extreme_full_train_prefix2mb.csv": "874f4de40656b0c3f826dc845e16decaf51b79ae6a0ba93119ade885ed544508",
+      "sudoku_items256.json": "c0d61572683f34d8435f28e5c683725959b74cc6557e459d2dfcbd5af5c3936d",
+      "test_hard_first1500.csv": "893ef0dfbb14f06fe29a05a86696edc64aab7a27e18a022d97890771660c0864",
+      "test_sudoku_bench.csv": "0bd94e4843c3ec55e225c8798bf3f63083b2b2207e88ca996c3bbb4b8b1c18e1",
+      "train.csv": "4c6cbc5f75144267168e3f0b30389107d071239ae5f2eb6e8e0ac6c37f497167"
+    },
+    "test": 120,
+    "test_sha256": "1e06415e0675a0b8fc8599b0ecbc82632395c2466174fb68cbe466c90d5877c0",
+    "train": 180,
+    "train_sha256": "60a8eaf727d8182a33c5b5396e6860b48e93e8217d02eaa863d2ec6370f29c02"
+  },
+  "cache": {
+    "snapshot": {
+      "feature_width": 51,
+      "mse": 0.2769886382298039,
+      "parameters": 53248,
+      "r2": 0.34324563536882957,
+      "r2_zh_orth": 0.2082141740135668,
+      "r2_zl": 0.35707218397393503,
+      "training_cells": 233280,
+      "validation_cells": 155520
+    },
+    "visible_trace": {
+      "feature_width": 51,
+      "mse": 0.2619712023923193,
+      "parameters": 53248,
+      "r2": 0.3788527512233575,
+      "r2_zh_orth": 0.2580814826336668,
+      "r2_zl": 0.3912191282742854,
+      "training_cells": 233280,
+      "validation_cells": 155520
+    },
+    "visible_trace_ema": {
+      "feature_width": 51,
+      "mse": 0.26187174425076204,
+      "parameters": 53248,
+      "r2": 0.3790885716128988,
+      "r2_zh_orth": 0.25482215129211006,
+      "r2_zl": 0.3918128342144278,
+      "training_cells": 233280,
+      "validation_cells": 155520
+    }
+  },
+  "checkpoint_path": "model.pt",
+  "checkpoint_sha256": "d67723394a7fe439f1fa498b58196399ee89cd82a794c7da9ce0a8cc3df7fa39",
+  "checkpoint_tag": "yagizdevre",
+  "code_sha256": "de95701f79e19999c21479ae274a2c3f11ffcea69106bab87d1579c915db1839",
+  "device": "cuda:0",
+  "elapsed_seconds": 158.623,
+  "mode": "cache",
+  "original_local_receipt_sha256": "62424cb13e8e541b0ae84be586995c72fad6eb54827090d07e5ca70d1822ee44",
+  "peak_vram_bytes": 379188736,
+  "schema": "darkfibers.loopscope04.local.v2",
+  "scope": "cellwise ridge snapshot-vs-one-step-visible-history; not full C5",
+  "settings": {
+    "alpha": 50.0,
+    "angle": 0.04,
+    "eval_horizon": 12,
+    "gramian_horizon": 4,
+    "horizon": 32,
+    "patch_step": 4,
+    "probes": 8,
+    "seed": 20261115,
+    "sigma": 0.35,
+    "steps": 16
+  }
+}

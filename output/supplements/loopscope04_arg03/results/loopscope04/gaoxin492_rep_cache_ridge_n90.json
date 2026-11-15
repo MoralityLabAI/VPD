@@ -1,0 +1,72 @@
+{
+  "audit": {
+    "audit_level": "exact + digit-relabel + full Sudoku grid/transpose/digit automorphisms (WL + exact search)",
+    "excluded_files": {
+      "eval.csv": "d602aca859d61a05202d9f45ad5be9b0e64e1c8ec30b9d27b7292a8d5c15154f",
+      "sudoku_extreme_full_train_prefix2mb.csv": "874f4de40656b0c3f826dc845e16decaf51b79ae6a0ba93119ade885ed544508",
+      "sudoku_items256.json": "c0d61572683f34d8435f28e5c683725959b74cc6557e459d2dfcbd5af5c3936d",
+      "test_hard_first1500.csv": "893ef0dfbb14f06fe29a05a86696edc64aab7a27e18a022d97890771660c0864",
+      "test_sudoku_bench.csv": "0bd94e4843c3ec55e225c8798bf3f63083b2b2207e88ca996c3bbb4b8b1c18e1",
+      "train.csv": "4c6cbc5f75144267168e3f0b30389107d071239ae5f2eb6e8e0ac6c37f497167"
+    },
+    "test": 120,
+    "test_sha256": "1e06415e0675a0b8fc8599b0ecbc82632395c2466174fb68cbe466c90d5877c0",
+    "train": 90,
+    "train_sha256": "68e94babdad90b169cd4d4775e450c561154f69de26e6190069cf101a343c032"
+  },
+  "cache": {
+    "snapshot": {
+      "feature_width": 51,
+      "mse": 0.16639276031811337,
+      "parameters": 53248,
+      "r2": 0.5326359738918254,
+      "r2_zh_orth": 0.34178878580840255,
+      "r2_zl": 0.5468481557367191,
+      "training_cells": 116640,
+      "validation_cells": 155520
+    },
+    "visible_trace": {
+      "feature_width": 51,
+      "mse": 0.15813533282983744,
+      "parameters": 53248,
+      "r2": 0.555829438251926,
+      "r2_zh_orth": 0.39310556876175706,
+      "r2_zl": 0.5679473059507912,
+      "training_cells": 116640,
+      "validation_cells": 155520
+    },
+    "visible_trace_ema": {
+      "feature_width": 51,
+      "mse": 0.15980794855429578,
+      "parameters": 53248,
+      "r2": 0.551131394793664,
+      "r2_zh_orth": 0.38492029370342107,
+      "r2_zl": 0.5635089529337418,
+      "training_cells": 116640,
+      "validation_cells": 155520
+    }
+  },
+  "checkpoint_path": "step_21700",
+  "checkpoint_sha256": "932b5e0df4e90021c21a064d4e716154086c46fda7afa676ea294484a30e38c3",
+  "checkpoint_tag": "gaoxin492",
+  "code_sha256": "de95701f79e19999c21479ae274a2c3f11ffcea69106bab87d1579c915db1839",
+  "device": "cuda:0",
+  "elapsed_seconds": 113.117,
+  "mode": "cache",
+  "original_local_receipt_sha256": "dd400d0cc477c5ac597c9a5393266ae87a6288e74351ad7db3c1b42e145b7cb6",
+  "peak_vram_bytes": 366474752,
+  "schema": "darkfibers.loopscope04.local.v2",
+  "scope": "cellwise ridge snapshot-vs-one-step-visible-history; not full C5",
+  "settings": {
+    "alpha": 50.0,
+    "angle": 0.04,
+    "eval_horizon": 12,
+    "gramian_horizon": 4,
+    "horizon": 32,
+    "patch_step": 4,
+    "probes": 8,
+    "seed": 20261115,
+    "sigma": 0.35,
+    "steps": 16
+  }
+}

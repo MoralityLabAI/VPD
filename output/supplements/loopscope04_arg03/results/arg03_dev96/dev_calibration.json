@@ -1,0 +1,30 @@
+{
+  "dev_median_top1_top2_margin_by_depth": {
+    "1": 0.2703695297241211,
+    "2": 1.159027099609375,
+    "4": 0.375,
+    "8": 0.4381418228149414
+  },
+  "dev_per_position_op_future12": 43,
+  "dev_scalar_temp_future12_counts": {
+    "T0.25": 26,
+    "T0.35": 27,
+    "T0.5": 27,
+    "T0.75": 27,
+    "T1": 26,
+    "T1.25": 25,
+    "T1.5": 25,
+    "T2": 25,
+    "T3": 26,
+    "T4": 26
+  },
+  "fitted_on_split": "development",
+  "rows_fitted": 96,
+  "schema": "darkfibers.arg03.dev_calibration_lock.v1",
+  "selected_full_vocab_scalar_temp": "T0.35",
+  "selected_per_position_op_temps": [
+    0.35,
+    0.5,
+    2.0
+  ]
+}

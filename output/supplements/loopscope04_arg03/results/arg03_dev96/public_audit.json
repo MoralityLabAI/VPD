@@ -1,0 +1,58 @@
+{
+  "arg02_splits_sha256": "c4d1f8afd77da814ad146b1ab6e5fdea36dfbe6338589be602007e452f87e128",
+  "contamination_overlaps": {
+    "development_vs_arg02_dev": 0,
+    "development_vs_arg02_shots": 0,
+    "development_vs_evalmath": 0,
+    "development_vs_test_signatures": 0,
+    "development_vs_test_source_graphs": 0,
+    "test_vs_arg02_dev": 0,
+    "test_vs_arg02_shots": 0,
+    "test_vs_evalmath": 0
+  },
+  "counts": {
+    "development": 96,
+    "test": 168
+  },
+  "duplicate_signatures": {
+    "development_internal": 0,
+    "test_internal": 0
+  },
+  "families": {
+    "development": [
+      "signed",
+      "product",
+      "sparse"
+    ],
+    "test": [
+      "signed",
+      "product",
+      "sparse",
+      "rational",
+      "squared",
+      "twisted_product",
+      "lacunary"
+    ]
+  },
+  "forbidden": "all EvalMath oracle.roster signatures and ARG-02 dev/shots",
+  "held_out_program_rule": "test final operator R; development final operator not-R",
+  "model_input_fields": [
+    "case_id",
+    "demos",
+    "observed_degree",
+    "public_sha256",
+    "query",
+    "topology"
+  ],
+  "negative_controls": "not included; prepare a separate registered negative/collision suite",
+  "oracle_code_sha256": "c0df77faae6351e522f35d36fa6031d6270ecced2fd92d0477cb5e08992ccb0b",
+  "public_sha256": {
+    "development": "7dec3fc1cc1d78f5a133410d53f484ea9d7f908ed38232ace9ff4c2e60518e79",
+    "test": "ddd580212da5a5ea4f5fea740b515dd191b39e7a501d3e31b45944a666e7c8b5"
+  },
+  "schema": "darkfibers.arg03.new_roster.v2",
+  "seeds": {
+    "development": 2026111503,
+    "test": 2026111504
+  }
+}

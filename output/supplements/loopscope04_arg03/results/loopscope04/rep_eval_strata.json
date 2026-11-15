@@ -1,0 +1,727 @@
+{
+  "eval_csv_sha256": "e36232a26211e5245dd9db105e230b50820e2041e9d0a8ef7895b5e81f13f124",
+  "n_eval": 120,
+  "rows": [
+    {
+      "case_id": "2fa030d2edc44e14106b652510fdbbc9fbe6c9e805d791f5da263f552ad93211",
+      "clues": 35,
+      "prop_solved": 1,
+      "stratum": "WB-Prop"
+    },
+    {
+      "case_id": "7510bbc40dd254a8899840f76b5fe54e0e7feca8e8ebc78b39fe1e6cb34d9cd5",
+      "clues": 25,
+      "prop_solved": 1,
+      "stratum": "WB-Prop"
+    },
+    {
+      "case_id": "35cbc5ac7d1460d300fffa70bea94be4899c37b032087d2f1a3d3d5ef937cebf",
+      "clues": 25,
+      "prop_solved": 1,
+      "stratum": "WB-Prop"
+    },
+    {
+      "case_id": "dd452c73eb3a0ecdddcca7c7f3125ead465b06c8f2f426e40d617ff1803856c0",
+      "clues": 34,
+      "prop_solved": 1,
+      "stratum": "WB-Prop"
+    },
+    {
+      "case_id": "2371b2afb95435346c2e23877f9543293f7a7ab26b9c98a94ceebb6a20e9e552",
+      "clues": 26,
+      "prop_solved": 1,
+      "stratum": "WB-Prop"
+    },
+    {
+      "case_id": "1edb124164623b8ccbae5be9376659f765674c45c7ef1dd87b9ec7b4c1558d5f",
+      "clues": 26,
+      "prop_solved": 1,
+      "stratum": "WB-Prop"
+    },
+    {
+      "case_id": "c59ce9aaa76f7378846f61ba57495332ee58c1baa74539c247694ac7bfe6177d",
+      "clues": 26,
+      "prop_solved": 1,
+      "stratum": "WB-Prop"
+    },
+    {
+      "case_id": "a4514e7df4c5d3b81e37b2151eab14e5f1a97a605392d51b47d5f9622f95f3b6",
+      "clues": 26,
+      "prop_solved": 1,
+      "stratum": "WB-Prop"
+    },
+    {
+      "case_id": "e33066c0f8a220527fcde92810561b0cac81c0cdb6a3df9985978ee4cf8a3ebc",
+      "clues": 24,
+      "prop_solved": 1,
+      "stratum": "WB-Prop"
+    },
+    {
+      "case_id": "7856c1256b1bd19d79bf09cb35dc5f977be9063c72e834e53b8b76a4c2eeb2b7",
+      "clues": 25,
+      "prop_solved": 1,
+      "stratum": "WB-Prop"
+    },
+    {
+      "case_id": "35459019714dbab0e98dd0a1a883e72940cbeabbeeebc3912d435a42e564b0e0",
+      "clues": 26,
+      "prop_solved": 1,
+      "stratum": "WB-Prop"
+    },
+    {
+      "case_id": "15718bd96be15ed656b5e9545d5523952d78f8c1c6dd970ccbd9b69f0e4c0cf0",
+      "clues": 27,
+      "prop_solved": 1,
+      "stratum": "WB-Prop"
+    },
+    {
+      "case_id": "8d8fdb2120f0354feafecc7ee3c0ca3c0f780f4e852228cf9a139c9dd2887e61",
+      "clues": 34,
+      "prop_solved": 1,
+      "stratum": "WB-Prop"
+    },
+    {
+      "case_id": "000b09eecdae665d5d999b571a4031fd17f184192d2c777a851203b2556a5509",
+      "clues": 26,
+      "prop_solved": 1,
+      "stratum": "WB-Prop"
+    },
+    {
+      "case_id": "8f04bbe6014b6952f4246578f877e2edcbf6241203f9a8ce6475ff9898f42b6b",
+      "clues": 25,
+      "prop_solved": 1,
+      "stratum": "WB-Prop"
+    },
+    {
+      "case_id": "e649ee4e6151bcb68da1098527420830c24910a0c84668be8fa53095d5057e1a",
+      "clues": 25,
+      "prop_solved": 1,
+      "stratum": "WB-Prop"
+    },
+    {
+      "case_id": "58b7282eee1599734912ee2c510f629b14a5c17e8e27f4579aa19fde0fd1114e",
+      "clues": 26,
+      "prop_solved": 1,
+      "stratum": "WB-Prop"
+    },
+    {
+      "case_id": "afcca2fe73e050beba5af0888e2e3788c225612f8e7042849aac4c407cf3f87b",
+      "clues": 25,
+      "prop_solved": 1,
+      "stratum": "WB-Prop"
+    },
+    {
+      "case_id": "fa3517d981248248cb4adcf35e7cc47ebf3b1d16f08b87c455a448c698416cc7",
+      "clues": 34,
+      "prop_solved": 1,
+      "stratum": "WB-Prop"
+    },
+    {
+      "case_id": "03136274d6fe62c42043a312c2ebdc4ccab36370f6ba2ac19eebb01ed8244886",
+      "clues": 27,
+      "prop_solved": 1,
+      "stratum": "WB-Prop"
+    },
+    {
+      "case_id": "668e01e2f7de77326aff695d682f0f1d070268640d76c66afb347cc0296acf51",
+      "clues": 26,
+      "prop_solved": 1,
+      "stratum": "WB-Prop"
+    },
+    {
+      "case_id": "8eec8057726bb4766393e313abf514eccd560f4a73fc30390a102fc103960dae",
+      "clues": 26,
+      "prop_solved": 1,
+      "stratum": "WB-Prop"
+    },
+    {
+      "case_id": "3f7f87789079c6922fab79ae63401ebf7a60507ca401ba28cdff40b2ee521685",
+      "clues": 34,
+      "prop_solved": 1,
+      "stratum": "WB-Prop"
+    },
+    {
+      "case_id": "d4314dc110f36ef386aeb087ceefa1199253aaacfa1637a4ce1e41f1de0ce7dd",
+      "clues": 26,
+      "prop_solved": 1,
+      "stratum": "WB-Prop"
+    },
+    {
+      "case_id": "ce5566aaf545889e0e632782e18a398d3d669f0593eb145f60c795fc51aff9d8",
+      "clues": 34,
+      "prop_solved": 1,
+      "stratum": "WB-Prop"
+    },
+    {
+      "case_id": "d5f64bda6a0a33c55366dcbecc4129a6e5efb1a031f2abe15b0b993ab35d54bd",
+      "clues": 27,
+      "prop_solved": 1,
+      "stratum": "WB-Prop"
+    },
+    {
+      "case_id": "c5b211ecc9a58f8cf989e73c4d5b95671cabfdbe0e6c5bafee2611f5c3e016a5",
+      "clues": 34,
+      "prop_solved": 1,
+      "stratum": "WB-Prop"
+    },
+    {
+      "case_id": "5cd57ace78652e35d38834594658a12769bd230adae2c7d21861cab7d56b0cad",
+      "clues": 24,
+      "prop_solved": 1,
+      "stratum": "WB-Prop"
+    },
+    {
+      "case_id": "f4b4b129fa78e01a5ea8bc04762f8e3eca4ed7a3646f37e6b38d0b821c56f9d4",
+      "clues": 34,
+      "prop_solved": 1,
+      "stratum": "WB-Prop"
+    },
+    {
+      "case_id": "8779c4c78eb705f708c2913fead35639ba695a46493dfdf63967c90cea3bcabd",
+      "clues": 26,
+      "prop_solved": 1,
+      "stratum": "WB-Prop"
+    },
+    {
+      "case_id": "a4a6132b839c37f0004eb41e5aa82563996f0412a03ebca0bc07da776d3ba1c8",
+      "clues": 33,
+      "prop_solved": 1,
+      "stratum": "WB-Prop"
+    },
+    {
+      "case_id": "c4b02f314d5f1e69ad7a90c7dee11a34856abc48143f7ab93068e440300ad7a9",
+      "clues": 26,
+      "prop_solved": 1,
+      "stratum": "WB-Prop"
+    },
+    {
+      "case_id": "c0726abd0e86be9b2fa9f0a0a19f376c4895b3e3114e447dd165ab0a27c86312",
+      "clues": 25,
+      "prop_solved": 1,
+      "stratum": "WB-Prop"
+    },
+    {
+      "case_id": "0361a78da18f4b53eb0f1cdba2194ac4367eedbd429e78dba07390478c3b5d08",
+      "clues": 26,
+      "prop_solved": 1,
+      "stratum": "WB-Prop"
+    },
+    {
+      "case_id": "978a61f858f6be1c6e790b8858e7b6028ae05e8c7ff8452b0abbcd7b3a19ee77",
+      "clues": 25,
+      "prop_solved": 1,
+      "stratum": "WB-Prop"
+    },
+    {
+      "case_id": "3a046e4ece7e61d4b7e96d319eea440df402442060dc9a5243863d39c723915a",
+      "clues": 27,
+      "prop_solved": 1,
+      "stratum": "WB-Prop"
+    },
+    {
+      "case_id": "0cc4021f3651df6755ba98da59bbc99907366ff76402517c2e9ecfa4b20deaba",
+      "clues": 26,
+      "prop_solved": 1,
+      "stratum": "WB-Prop"
+    },
+    {
+      "case_id": "13ee27edbb8ebf60715583f3e21bb4c09dcc7498882d7870ae4a79dc3898d0c6",
+      "clues": 25,
+      "prop_solved": 1,
+      "stratum": "WB-Prop"
+    },
+    {
+      "case_id": "1eb6eeb62045fbec5515a53153c0fe8b4ab576bbff32d7b49aa2e15ab3d6689d",
+      "clues": 26,
+      "prop_solved": 1,
+      "stratum": "WB-Prop"
+    },
+    {
+      "case_id": "0879ba90b6f42099721d71ab2419ede1483bd7a4eec5ea3383f9d760122592a3",
+      "clues": 26,
+      "prop_solved": 1,
+      "stratum": "WB-Prop"
+    },
+    {
+      "case_id": "ef404965a7d7bafe7f43ea0dd1a1773280a5dcf049fdbf2b48c0c0c244a8eda9",
+      "clues": 28,
+      "prop_solved": 0,
+      "stratum": "WB-Stall_partial"
+    },
+    {
+      "case_id": "1237036ff7964c068b0f21d8870e9f4bc4e9b6851223acb8366191673a2f420c",
+      "clues": 23,
+      "prop_solved": 0,
+      "stratum": "WB-Stall_partial"
+    },
+    {
+      "case_id": "cbbbf5cfdebff790d9ed6bc2cb971dbe843e00dfc38641337c58993b36b244d3",
+      "clues": 24,
+      "prop_solved": 0,
+      "stratum": "WB-Stall_partial"
+    },
+    {
+      "case_id": "3dc1526dc00e5e978f1f92359f7157b9c44afb99417a2530281e7eed0c43eed3",
+      "clues": 26,
+      "prop_solved": 0,
+      "stratum": "WB-Stall_partial"
+    },
+    {
+      "case_id": "bd799039b2fe0aefad63922f94519db026c4dae4c782eb14770d14c9765b30a3",
+      "clues": 26,
+      "prop_solved": 0,
+      "stratum": "WB-Stall_partial"
+    },
+    {
+      "case_id": "e210e39a22245c9f2193501e09ffcbff31215207dec5fb2058f364f6a144c22e",
+      "clues": 26,
+      "prop_solved": 0,
+      "stratum": "WB-Stall_partial"
+    },
+    {
+      "case_id": "7366cc7595414fff84eda36c5fcfd7461a13e2f45ac45c8093acae8fa76c2205",
+      "clues": 26,
+      "prop_solved": 0,
+      "stratum": "WB-Stall_partial"
+    },
+    {
+      "case_id": "ee5d8d8a744e5a5eab07c3c93c7c8525a2c41c410ab61f6e60b2d3e5f7ba6c08",
+      "clues": 24,
+      "prop_solved": 0,
+      "stratum": "WB-Stall_partial"
+    },
+    {
+      "case_id": "152b1e539bf5a54be66b265617bac457c10771f64683b112432a068736517281",
+      "clues": 27,
+      "prop_solved": 0,
+      "stratum": "WB-Stall_partial"
+    },
+    {
+      "case_id": "796c6dd5646bad318c019282f9131d32b3c29b8e88e8917dcdccb63b58c3f2ed",
+      "clues": 26,
+      "prop_solved": 0,
+      "stratum": "WB-Stall_partial"
+    },
+    {
+      "case_id": "de54e2fce059c427ba2d46eedabfe64ffa4806de23ed9ce2ecd8f4480448285e",
+      "clues": 27,
+      "prop_solved": 0,
+      "stratum": "WB-Stall_partial"
+    },
+    {
+      "case_id": "aa46dc18c14178008bb2769fbbf344e4cda38daba2ef314351b298b5fb71178b",
+      "clues": 27,
+      "prop_solved": 0,
+      "stratum": "WB-Stall_partial"
+    },
+    {
+      "case_id": "fa5afa734a3665a40f9c1e484abb1d0fcb24de171511daa2fd6f41c5e0130950",
+      "clues": 23,
+      "prop_solved": 0,
+      "stratum": "WB-Stall_partial"
+    },
+    {
+      "case_id": "5e9378d3bcb9d7f5b7ac626b3333eae4d732eed0dbb05532f1ae67ee8e173ea8",
+      "clues": 24,
+      "prop_solved": 0,
+      "stratum": "WB-Stall_partial"
+    },
+    {
+      "case_id": "b7ffffc2dec95e5230a374a1f7572cfb01d6f84faddad7d81460eaeafc0e4251",
+      "clues": 27,
+      "prop_solved": 0,
+      "stratum": "WB-Stall_partial"
+    },
+    {
+      "case_id": "65946d139bd58cbeda66b9c52b8be39d79c70da58167d0e0ed09777077dd4ff5",
+      "clues": 25,
+      "prop_solved": 0,
+      "stratum": "WB-Stall_partial"
+    },
+    {
+      "case_id": "cbb51997d17b208f63ed40cdda2571efa7fe80eba38ee96d6d82678d801f49f5",
+      "clues": 25,
+      "prop_solved": 0,
+      "stratum": "WB-Stall_partial"
+    },
+    {
+      "case_id": "44781a23a80de8e005de01a0ae2193a9452903e9bdfeb579cf89cb28075e4a9b",
+      "clues": 26,
+      "prop_solved": 0,
+      "stratum": "WB-Stall_partial"
+    },
+    {
+      "case_id": "1a762a8972bcf5e1ef5e637ec4b741189ad3a1a0a7b99ebaeb68047079c8fd16",
+      "clues": 26,
+      "prop_solved": 0,
+      "stratum": "WB-Stall_partial"
+    },
+    {
+      "case_id": "f1b5db847afd6af6ea4097e7eb0432e821930540bdb298ede6c8045efcc9deaa",
+      "clues": 24,
+      "prop_solved": 0,
+      "stratum": "WB-Stall_partial"
+    },
+    {
+      "case_id": "db42e8eac409ab0d27dc06de2ce94a40a78fa7c36a027bfe1f3f8497599018be",
+      "clues": 26,
+      "prop_solved": 0,
+      "stratum": "WB-Stall_partial"
+    },
+    {
+      "case_id": "2027cfd0cea6bc7ff3d21a255fbf25124718874ee70e0303b4101cc2711443b4",
+      "clues": 26,
+      "prop_solved": 0,
+      "stratum": "WB-Stall_partial"
+    },
+    {
+      "case_id": "65d5c1393ac16fbbc6d9be12aa7bb839bfbfb94af7c222472a9b41a90bb654a8",
+      "clues": 27,
+      "prop_solved": 0,
+      "stratum": "WB-Stall_partial"
+    },
+    {
+      "case_id": "3fa29eb2cb41906d8f08c675b6917b33402c0555c7d9dd5b108d6b789cfd58a5",
+      "clues": 26,
+      "prop_solved": 0,
+      "stratum": "WB-Stall_partial"
+    },
+    {
+      "case_id": "56d307bc02e6ad51cb96e9397127842a665be42a2982e2c44f5dbdc66cc37756",
+      "clues": 25,
+      "prop_solved": 0,
+      "stratum": "WB-Stall_partial"
+    },
+    {
+      "case_id": "717700310f548fb4bcce25c033e0b40c5d27592b9a31fb1e4978f3da7437dfbc",
+      "clues": 27,
+      "prop_solved": 0,
+      "stratum": "WB-Stall_partial"
+    },
+    {
+      "case_id": "ca153098d606442b8a285b625492ec266b38066200beb3d9bb8ce4a73c4998dd",
+      "clues": 26,
+      "prop_solved": 0,
+      "stratum": "WB-Stall_partial"
+    },
+    {
+      "case_id": "cde754e4dbc7690c51b10a8fb80a2a3f2604ef0f5b38f9c359b20b15c4351683",
+      "clues": 26,
+      "prop_solved": 0,
+      "stratum": "WB-Stall_partial"
+    },
+    {
+      "case_id": "1465bd623af8923484eb858af1fdcc91b60fd3709a5437f0df3af395bf7861ae",
+      "clues": 25,
+      "prop_solved": 0,
+      "stratum": "WB-Stall_partial"
+    },
+    {
+      "case_id": "b6e8ee17c3c2e1d4994e12f8d9b4e8eb1d4f7c433552852a1d92b8e677bb4692",
+      "clues": 26,
+      "prop_solved": 0,
+      "stratum": "WB-Stall_partial"
+    },
+    {
+      "case_id": "899699a9553d1b22c3b7f76b05e4db1a155cfc1d595d7cd753570c0d77ea17f3",
+      "clues": 26,
+      "prop_solved": 0,
+      "stratum": "WB-Stall_partial"
+    },
+    {
+      "case_id": "e06b1607e8b9a08f14183af671da47cc1d1dae0d150275d3543dbafafabcc031",
+      "clues": 25,
+      "prop_solved": 0,
+      "stratum": "WB-Stall_partial"
+    },
+    {
+      "case_id": "b125c05eef4e00fefc3f1b0bd88598f0eedc6a614bfe52d356094bbeeba6b379",
+      "clues": 26,
+      "prop_solved": 0,
+      "stratum": "WB-Stall_partial"
+    },
+    {
+      "case_id": "226dd74c2f87179d3c70aff9335041cd93a371ef0d4a175c19655c9e9ef54d98",
+      "clues": 26,
+      "prop_solved": 0,
+      "stratum": "WB-Stall_partial"
+    },
+    {
+      "case_id": "bec27f26c714b433d42c2976d0d70e1177fe2fcd5f79546dc3d6c3908693f120",
+      "clues": 26,
+      "prop_solved": 0,
+      "stratum": "WB-Stall_partial"
+    },
+    {
+      "case_id": "e431ce8af0f6cdc07ec6714246d9eefc598a921c5923cf4d5ef8b6d3d5d7c1d3",
+      "clues": 26,
+      "prop_solved": 0,
+      "stratum": "WB-Stall_partial"
+    },
+    {
+      "case_id": "39fd309be9090813a3cea9916e8a1d514ee18a9acc7ce5fdf63b736b88939e3f",
+      "clues": 25,
+      "prop_solved": 0,
+      "stratum": "WB-Stall_partial"
+    },
+    {
+      "case_id": "2535838784cb02ce96e6b31b7a7044cedc5af6357b3f5533e1aea06ccb8985be",
+      "clues": 27,
+      "prop_solved": 0,
+      "stratum": "WB-Stall_partial"
+    },
+    {
+      "case_id": "316a26bd4d331e1ebe9498e0e31313b93a2768bfd5564ec376666b8a8510af57",
+      "clues": 24,
+      "prop_solved": 0,
+      "stratum": "WB-Stall_partial"
+    },
+    {
+      "case_id": "96e78e0b84dcaaeb6ed88ba340a43312bc1aad52fb314660bb1008453391de15",
+      "clues": 25,
+      "prop_solved": 0,
+      "stratum": "WB-Stall_partial"
+    },
+    {
+      "case_id": "ab2ad3da4c62f2e78d73a20be59906566ee47a5a1eea10536633d413a7aebba3",
+      "clues": 24,
+      "prop_solved": 0,
+      "stratum": "S4_stalled"
+    },
+    {
+      "case_id": "bf126dbb1fa2928946dbb494f2fbbe57fd618c7c0bb06a922f72f5edcc97ffc0",
+      "clues": 26,
+      "prop_solved": 0,
+      "stratum": "S4_stalled"
+    },
+    {
+      "case_id": "2390a678061a186bf19d627d01853030647960330c372495d651f461dad34428",
+      "clues": 24,
+      "prop_solved": 0,
+      "stratum": "S4_stalled"
+    },
+    {
+      "case_id": "4977ab9f7b55b5d50e0b819f13027152073e9e6ede58d54c89d5a53d63a98536",
+      "clues": 23,
+      "prop_solved": 0,
+      "stratum": "S4_stalled"
+    },
+    {
+      "case_id": "06905562157617802db4121d571c899367beff3fa87618efc78cee0f85b87856",
+      "clues": 25,
+      "prop_solved": 0,
+      "stratum": "S4_stalled"
+    },
+    {
+      "case_id": "05849c1ae73b1bfd48881762487d3a64bd8a4da57e8dabe1c9e493cbb9dec1a6",
+      "clues": 23,
+      "prop_solved": 0,
+      "stratum": "S4_stalled"
+    },
+    {
+      "case_id": "78cba5111994376425d17f8bcaefa3d1e998d7d4ed57f8afcdfe28bdbb2866ae",
+      "clues": 26,
+      "prop_solved": 0,
+      "stratum": "S4_stalled"
+    },
+    {
+      "case_id": "9260bff87bca87c66bf70d0ea0cb22dee00d0158188dbd58171d8a27d96fac87",
+      "clues": 26,
+      "prop_solved": 0,
+      "stratum": "S4_stalled"
+    },
+    {
+      "case_id": "4680aa713d240fa9f3e56de16bbd6e9e53c3c458a21f814169f03edc70c89764",
+      "clues": 26,
+      "prop_solved": 0,
+      "stratum": "S4_stalled"
+    },
+    {
+      "case_id": "b8370e49dd60bac2be84734083753eea9861e2fede459078f066ee35c127e8ee",
+      "clues": 24,
+      "prop_solved": 0,
+      "stratum": "S4_stalled"
+    },
+    {
+      "case_id": "15b82c3164e443a2ad8d98724bcf44c87642c549cc136a66c77a77a451fee94d",
+      "clues": 25,
+      "prop_solved": 0,
+      "stratum": "S4_stalled"
+    },
+    {
+      "case_id": "645f8a9ca0a7298a1fd589fd85b6e1bffa66c423df2b025adaa6823501966d33",
+      "clues": 23,
+      "prop_solved": 0,
+      "stratum": "S4_stalled"
+    },
+    {
+      "case_id": "f6ca89ff1ee3a732617d2051fcff3792196db72e6f8c892ab235262871b301f9",
+      "clues": 26,
+      "prop_solved": 0,
+      "stratum": "S4_stalled"
+    },
+    {
+      "case_id": "bc6de9871ddce55d923ffd498ce2e9a491b37c21589507329cc46e97ef8d93ab",
+      "clues": 23,
+      "prop_solved": 0,
+      "stratum": "S4_stalled"
+    },
+    {
+      "case_id": "c6e5c9b65b4976475d0f2753a457d3245f8aa0530fc8da4b0c4bde4e57758623",
+      "clues": 23,
+      "prop_solved": 0,
+      "stratum": "S4_stalled"
+    },
+    {
+      "case_id": "2c53a08237b669af2d73caa6e3e6b7d7e128e97f73224a4cd9d58f8a135d597f",
+      "clues": 22,
+      "prop_solved": 0,
+      "stratum": "S4_stalled"
+    },
+    {
+      "case_id": "6d104d6842eefb3c053abc6b9f845b522e44e88100ff49999232e46aa610d79d",
+      "clues": 26,
+      "prop_solved": 0,
+      "stratum": "S4_stalled"
+    },
+    {
+      "case_id": "496dc28765dd371c973475fe6193137599cfb634bc8417dd18046f6760134e1d",
+      "clues": 26,
+      "prop_solved": 0,
+      "stratum": "S4_stalled"
+    },
+    {
+      "case_id": "431cdf949b6d82a621cbb31953d14d116eef602639ec054f4613094534c82c6e",
+      "clues": 26,
+      "prop_solved": 0,
+      "stratum": "S4_stalled"
+    },
+    {
+      "case_id": "196161f4abccce87ea03a4d96c60eaa7892a451513c37bc8b8fcf453a1ece4a3",
+      "clues": 22,
+      "prop_solved": 0,
+      "stratum": "S4_stalled"
+    },
+    {
+      "case_id": "55c3a423489d760e76112313a1e673ddcb6f67abc2b11c0d0f54749b067ff4aa",
+      "clues": 26,
+      "prop_solved": 0,
+      "stratum": "S4_stalled"
+    },
+    {
+      "case_id": "57bb11081bb1a654692f23036dcafc397e6098cca7c747df400a70e90d38f313",
+      "clues": 26,
+      "prop_solved": 0,
+      "stratum": "S4_stalled"
+    },
+    {
+      "case_id": "395651ab1e3a3d551ac0b97976f9870b3a07abd041846598f5d142bd709adf84",
+      "clues": 24,
+      "prop_solved": 0,
+      "stratum": "S4_stalled"
+    },
+    {
+      "case_id": "fe68da7e2a2231749a119f545f6eb075a0cb326e0b8b76a42c11f52856f95e62",
+      "clues": 24,
+      "prop_solved": 0,
+      "stratum": "S4_stalled"
+    },
+    {
+      "case_id": "d13d6b44ede84d32caffc5ac3003a0e741ce693bc86c5354eb221b48ab5f2cdc",
+      "clues": 24,
+      "prop_solved": 0,
+      "stratum": "S4_stalled"
+    },
+    {
+      "case_id": "4d528c666070a7f84095f3d0aba28415939e3ab8ee05701486bb4dfb03d20635",
+      "clues": 23,
+      "prop_solved": 0,
+      "stratum": "S4_stalled"
+    },
+    {
+      "case_id": "bb0b340846c0a9d3c11008efad76ae0e1baea857dd8e0f782296a80eb5501104",
+      "clues": 26,
+      "prop_solved": 0,
+      "stratum": "S4_stalled"
+    },
+    {
+      "case_id": "36a3f57f2d9143ff5f5bbb70600f6ec599b5198cb84a94e2303de9b9b67e3962",
+      "clues": 26,
+      "prop_solved": 0,
+      "stratum": "S4_stalled"
+    },
+    {
+      "case_id": "1be37d1402b354c19a80dcad7d13bf220378dca537258cf6b1f4635876de778c",
+      "clues": 24,
+      "prop_solved": 0,
+      "stratum": "S4_stalled"
+    },
+    {
+      "case_id": "062474fa850b66b5b6f8f1b780a95eb6cd4b8f49d98b227122effec8a5625a44",
+      "clues": 25,
+      "prop_solved": 0,
+      "stratum": "S4_stalled"
+    },
+    {
+      "case_id": "ae85ccf06b49a0bfd4a22e641adbbf001d8f322cdc13601b48675f274bddc94e",
+      "clues": 24,
+      "prop_solved": 0,
+      "stratum": "S4_stalled"
+    },
+    {
+      "case_id": "4e413fdc6feebfde1b2c90010e425cfd6690e12fd7e1a2be43c72981161c9bf0",
+      "clues": 25,
+      "prop_solved": 0,
+      "stratum": "S4_stalled"
+    },
+    {
+      "case_id": "64e61c3b00edb53314343b06becd08720b907accf11b04e6d6cd7fb7421493fc",
+      "clues": 25,
+      "prop_solved": 0,
+      "stratum": "S4_stalled"
+    },
+    {
+      "case_id": "6a8aa461cde18371f6a365018848b7a5bfa169d24bf3c3b4c2a8b467a4bcadee",
+      "clues": 24,
+      "prop_solved": 0,
+      "stratum": "S4_stalled"
+    },
+    {
+      "case_id": "ac3fb5c8964136f268dc90570b9ecee8346ed1307703cef2062143f7b8eb4fd4",
+      "clues": 24,
+      "prop_solved": 0,
+      "stratum": "S4_stalled"
+    },
+    {
+      "case_id": "ba6daa14a978c1ab48411deb18277c354f7ce613d7c8ff90302d01912b96cb03",
+      "clues": 25,
+      "prop_solved": 0,
+      "stratum": "S4_stalled"
+    },
+    {
+      "case_id": "005bc40b0a1178e70ba0d7d4cff0a6664c43f4b263d4db659f397557f6513250",
+      "clues": 24,
+      "prop_solved": 0,
+      "stratum": "S4_stalled"
+    },
+    {
+      "case_id": "42f738ef37d86f540dfe9d9de2ffbad74947dd29753d393cc496145d0781a2aa",
+      "clues": 23,
+      "prop_solved": 0,
+      "stratum": "S4_stalled"
+    },
+    {
+      "case_id": "1c64a0872831f25a7d437fc2ff81f7df6c879850f176d19311d8c6c1318e4507",
+      "clues": 25,
+      "prop_solved": 0,
+      "stratum": "S4_stalled"
+    },
+    {
+      "case_id": "6ce93b8e86b8b1d5fa0bab5bd364a30d797d73f610fa87652b96c7cda7c3aebc",
+      "clues": 23,
+      "prop_solved": 0,
+      "stratum": "S4_stalled"
+    }
+  ],
+  "schema": "darkfibers.loopscope04.rep_eval_strata.v1"
+}
