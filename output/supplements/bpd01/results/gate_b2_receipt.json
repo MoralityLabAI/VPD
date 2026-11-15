@@ -1,0 +1,102 @@
+{
+  "gate": "B2_hug_cal02_negative_and_positive_control",
+  "registration_commit": "49c7207e8daf7568c6788b5b127c6c9cc6d1bb25",
+  "target": "SettlingCoreLooper_4block",
+  "n_passes": 6,
+  "n_rotations": 16,
+  "z_threshold": 2.5,
+  "max_raw_importance": 0.06011119857430458,
+  "mean_raw_importance": 0.024820397258736193,
+  "mean_abs_net_importance": 0.00516071116362582,
+  "max_abs_z_rot": 0.9644342709010846,
+  "negative_margin": 1.5355657290989155,
+  "passed_negative_control": true,
+  "positive_arm": {
+    "target_module": "core.3.down_proj",
+    "component": 0,
+    "sigma": 49.13174819946289,
+    "raw_importance": 1.4152483940124512,
+    "rotation_null_mean": 0.810639139264822,
+    "rotation_null_std": 0.11894537759755071,
+    "net_importance": 0.6046092547476292,
+    "observed_z_rot": 5.083082807660539,
+    "registered_z_threshold": 2.5,
+    "margin": 2.5830828076605394,
+    "passed_positive_control": true
+  },
+  "gate_b2_passed": true,
+  "factors": [
+    {
+      "module": "core.0.down_proj",
+      "component": 0,
+      "raw_importance": 0.06011119857430458,
+      "rotation_null_mean": 0.04938234691508114,
+      "rotation_null_std": 0.012434152858805118,
+      "net_importance": 0.010728851659223437,
+      "z_rot": 0.8628527534224725
+    },
+    {
+      "module": "core.0.down_proj",
+      "component": 1,
+      "raw_importance": 0.04253993555903435,
+      "rotation_null_mean": 0.055775589076802135,
+      "rotation_null_std": 0.014620237982093437,
+      "net_importance": -0.013235653517767787,
+      "z_rot": -0.905296102636462
+    },
+    {
+      "module": "core.1.down_proj",
+      "component": 0,
+      "raw_importance": 0.03523114696145058,
+      "rotation_null_mean": 0.02526875532930717,
+      "rotation_null_std": 0.010329767707749233,
+      "net_importance": 0.009962391632143408,
+      "z_rot": 0.9644342709010846
+    },
+    {
+      "module": "core.1.down_proj",
+      "component": 1,
+      "raw_importance": 0.008550422266125679,
+      "rotation_null_mean": 0.00786909053567797,
+      "rotation_null_std": 0.0021335229285588523,
+      "net_importance": 0.0006813317304477096,
+      "z_rot": 0.31934437070438465
+    },
+    {
+      "module": "core.2.down_proj",
+      "component": 0,
+      "raw_importance": 0.01689000055193901,
+      "rotation_null_mean": 0.014374971331562847,
+      "rotation_null_std": 0.0028903592837343133,
+      "net_importance": 0.0025150292203761637,
+      "z_rot": 0.8701411388951602
+    },
+    {
+      "module": "core.2.down_proj",
+      "component": 1,
+      "raw_importance": 0.010773385874927044,
+      "rotation_null_mean": 0.013273763295728713,
+      "rotation_null_std": 0.002703914475068375,
+      "net_importance": -0.0025003774208016694,
+      "z_rot": -0.9247216199477768
+    },
+    {
+      "module": "core.3.down_proj",
+      "component": 0,
+      "raw_importance": 0.012968870811164379,
+      "rotation_null_mean": 0.0139743807958439,
+      "rotation_null_std": 0.0027548664624235035,
+      "net_importance": -0.0010055099846795201,
+      "z_rot": -0.36499276769563704
+    },
+    {
+      "module": "core.3.down_proj",
+      "component": 1,
+      "raw_importance": 0.011498217470943928,
+      "rotation_null_mean": 0.010841673327377066,
+      "rotation_null_std": 0.0024315341499743276,
+      "net_importance": 0.0006565441435668617,
+      "z_rot": 0.27001119579662725
+    }
+  ]
+}
