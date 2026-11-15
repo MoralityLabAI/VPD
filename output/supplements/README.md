@@ -1,6 +1,16 @@
-# Public Supplements for `LOOPSCOPE-02` and `LOOPSCOPE-03`
+# Public Supplements for `LOOPSCOPE-02`, `LOOPSCOPE-03`, and `BPD-01`
 
-Because the development repository `MoralityLabAI/LoopedTransformers` is private, this directory mirrors the complete pre-registrations, verbatim git registration commit patches, evaluation reports, experimental scripts, unit tests, and JSON result receipts for **`LOOPSCOPE-02`** and **`LOOPSCOPE-03`** in the public `MoralityLabAI/VPD` repository so every citation and empirical audit is anonymously verifiable (`HTTP 200`).
+Because the development repository `MoralityLabAI/LoopedTransformers` is private, this directory mirrors the pre-registrations, verbatim git commit patches, evaluation reports, experimental scripts, unit tests, and JSON result receipts for **`LOOPSCOPE-02`**, **`LOOPSCOPE-03`**, and **`BPD-01`** in the public `MoralityLabAI/VPD` repository so every citation and empirical audit is anonymously verifiable (`HTTP 200`).
+
+## 0. `BPD-01` — Behavioral Parameter Decomposition (`mechinterp/bpd` Mirror)
+
+- **Mirrored from `MoralityLabAI/LoopedTransformers` (`feat/mechinterp-bpd`, initial commit `e6baa744b82d91cd2812a73799c5d1aea5de2ce8`):**
+  - Package overview: [`bpd01/README.md`](bpd01/README.md)
+  - Pre-registration document: [`bpd01/docs/registration.md`](bpd01/docs/registration.md)
+  - Design note: [`bpd01/docs/design_and_positioning.md`](bpd01/docs/design_and_positioning.md)
+  - Positive-control test run history: [`bpd01/docs/positive_control_history.md`](bpd01/docs/positive_control_history.md)
+  - Verbatim initial commit patch: [`bpd01/initial_commit_e6baa744.patch`](bpd01/initial_commit_e6baa744.patch)
+  - Source modules, adapters, scripts, and tests: [`bpd01/`](bpd01/)
 
 ## 1. `LOOPSCOPE-03` — Three-Ledger Iteration Pricing, Conditional Cache Refill, Enforced Path Independence, and Data Scaling
 
