@@ -1,24 +1,37 @@
-"""End-to-end tests for BPD's falsifiable gates (B1-B4), transient vs. sustaining
-classification, interventional transition composition, sustaining weight edits,
-and CLI smoke pipelines on PureSudokuTRM and LoopedChase.
+"""End-to-end tests for BPD's falsifiable gates (B1-B4), planted rank-1 positive
+controls, transient vs. sustaining classification, interventional transition
+composition, intra-checkpoint functional sustaining edits, and CLI smoke pipelines.
 """
 
 from __future__ import annotations
 
 import copy
+import math
 
+import pytest
 import torch
 from torch import Tensor, nn
 
+from mechinterp.bpd.adapters.huginn import SettlingCoreLooper, evaluate_hug_cal02_with_positive_arm
+from mechinterp.bpd.adapters.looped_chase import (
+    DEFAULT_LOOPED_CHASE_CKPT_DIR,
+    evaluate_planted_rank1_looped_chase,
+    load_looped_chase_checkpoint,
+    resolve_looped_chase_checkpoint,
+)
 from mechinterp.bpd.adapters.trm import build_mini_trm
 from mechinterp.bpd.analysis import (
     ComponentKey,
-    apply_sustaining_weight_edit,
+    apply_intra_checkpoint_sustaining_edit,
+    apply_random_component_control_edit,
+    apply_rotation_null_control_edit,
     classify_transient_sustaining,
     compose_interventional_path,
     compute_transition_operator,
-    rank_sustaining_checkpoint_diffs,
+    extract_component_functional_profiles,
+    match_components_by_function,
 )
+from mechinterp.bpd.ci import CIOutputs
 from mechinterp.bpd.components import BPDModel, RolloutTrajectory
 from mechinterp.bpd.config import AblationConfig
 from mechinterp.bpd.scripts.bench_unrolled_vs_tied import run_benchmark
@@ -106,9 +119,9 @@ class _CanonicalRolesLooper(nn.Module):
         return readouts, boundaries
 
 
-def test_transient_vs_sustaining_and_sustaining_weight_edit() -> None:
+def test_transient_vs_sustaining_and_intra_checkpoint_functional_edit() -> None:
     oracle = _CanonicalRolesLooper()
-    bpd = BPDModel(
+    bpd_ref = BPDModel(
         oracle,
         {"core": 3},
         max_passes=4,
@@ -117,31 +130,31 @@ def test_transient_vs_sustaining_and_sustaining_weight_edit() -> None:
     )
     # Set exact 3 rank-1 factors matching the 3 planted mechanisms
     with torch.no_grad():
-        bpd.wrappers["core"].V.zero_()
-        bpd.wrappers["core"].U.zero_()
+        bpd_ref.wrappers["core"].V.zero_()
+        bpd_ref.wrappers["core"].U.zero_()
         # Comp 0: transient (reads 2, writes 0, weight 4.0)
-        bpd.wrappers["core"].V[2, 0] = 2.0
-        bpd.wrappers["core"].U[0, 0] = 2.0
+        bpd_ref.wrappers["core"].V[2, 0] = 2.0
+        bpd_ref.wrappers["core"].U[0, 0] = 2.0
         # Comp 1: sustaining (reads 3, writes 1, weight 2.5)
-        bpd.wrappers["core"].V[3, 1] = 1.0
-        bpd.wrappers["core"].U[1, 1] = 2.5
+        bpd_ref.wrappers["core"].V[3, 1] = 1.0
+        bpd_ref.wrappers["core"].U[1, 1] = 2.5
         # Comp 2: inert (reads 4, writes 5, weight 0.5)
-        bpd.wrappers["core"].V[4, 2] = 1.0
-        bpd.wrappers["core"].U[2, 5] = 0.5
+        bpd_ref.wrappers["core"].V[4, 2] = 1.0
+        bpd_ref.wrappers["core"].U[2, 5] = 0.5
 
     signs = torch.tensor([1.0, -1.0] * 12)
-    with bpd.target_capture():
+    with bpd_ref.target_capture():
         ro, bs = oracle.rollout(signs, n_passes=4)
-    mod_in = bpd.collect_recorded_inputs(expected_passes=4)
-    clean_traj = RolloutTrajectory(readouts=ro, boundary_states=bs, module_inputs=mod_in)
+    mod_in = bpd_ref.collect_recorded_inputs(expected_passes=4)
+    clean_traj_ref = RolloutTrajectory(readouts=ro, boundary_states=bs, module_inputs=mod_in)
 
     def _run_oracle() -> RolloutTrajectory:
         p_ro, p_bs = oracle.rollout(signs, n_passes=4)
         return RolloutTrajectory(readouts=p_ro, boundary_states=p_bs, module_inputs=mod_in)
 
-    roles = classify_transient_sustaining(
-        bpd,
-        clean_traj,
+    roles_ref = classify_transient_sustaining(
+        bpd_ref,
+        clean_traj_ref,
         _run_oracle,
         min_effect=0.02,
         sustain_ratio=2.5,
@@ -149,29 +162,137 @@ def test_transient_vs_sustaining_and_sustaining_weight_edit() -> None:
         ablation_mode="ablate",
         seed=0,
     )
-    role_by_c = {e.component: e.role for e in roles}
+    role_by_c = {e.component: e.role for e in roles_ref}
     assert role_by_c[0] == "transient"
     assert role_by_c[1] == "sustaining"
     assert role_by_c[2] == "inert"
 
-    # Now test Gate B4's sustaining weight-edit mechanism on a degraded target checkpoint
-    degraded = _CanonicalRolesLooper()
+    # Separate decomposition of degraded target checkpoint with PERMUTED component slot order
+    degraded_base = _CanonicalRolesLooper()
     with torch.no_grad():
-        # Weaken the sustaining mechanism in degraded checkpoint -> collapses long-horizon margin
-        degraded.core.weight[1, 3] = 0.2
+        degraded_base.core.weight[1, 3] = 0.5  # weakened sustaining mechanism (0.5 vs 2.5)
 
-    diffs = rank_sustaining_checkpoint_diffs(bpd, degraded, roles)
-    assert len(diffs) == 1
-    assert diffs[0].component == 1
-    assert abs(diffs[0].coeff_gap - (1.0 - 0.2 / 2.5)) < 1e-4
+    degraded_for_bpd = copy.deepcopy(degraded_base)
+    bpd_tgt = BPDModel(
+        degraded_for_bpd,
+        {"core": 3},
+        max_passes=4,
+        ablation=AblationConfig(mode="zero", sphere_rescale=False),
+        init_svd=False,
+    )
+    with torch.no_grad():
+        bpd_tgt.wrappers["core"].V.zero_()
+        bpd_tgt.wrappers["core"].U.zero_()
+        # Slot 0: inert; Slot 1: transient; Slot 2: sustaining (permuted vs bpd_ref!)
+        bpd_tgt.wrappers["core"].V[4, 0] = 1.0
+        bpd_tgt.wrappers["core"].U[0, 5] = 0.5
+        bpd_tgt.wrappers["core"].V[2, 1] = 2.0
+        bpd_tgt.wrappers["core"].U[1, 0] = 2.0
+        bpd_tgt.wrappers["core"].V[3, 2] = 1.0
+        bpd_tgt.wrappers["core"].U[2, 1] = 0.5
 
-    edited_counts = apply_sustaining_weight_edit(degraded, bpd, diffs, interpolation=1.0)
-    assert edited_counts == {"core": 1}
+    with bpd_tgt.target_capture():
+        ro_t, bs_t = degraded_for_bpd.rollout(signs, n_passes=4)
+    mod_in_t = bpd_tgt.collect_recorded_inputs(expected_passes=4)
+    clean_traj_tgt = RolloutTrajectory(readouts=ro_t, boundary_states=bs_t, module_inputs=mod_in_t)
 
-    # Verify edited checkpoint recovers reference readout at long horizon T = 12 without hooks
+    def _run_degraded() -> RolloutTrajectory:
+        p_ro, p_bs = degraded_for_bpd.rollout(signs, n_passes=4)
+        return RolloutTrajectory(readouts=p_ro, boundary_states=p_bs, module_inputs=mod_in_t)
+
+    roles_tgt = classify_transient_sustaining(
+        bpd_tgt,
+        clean_traj_tgt,
+        _run_degraded,
+        min_effect=0.02,
+        sustain_ratio=1.5,
+        n_rotations=4,
+        ablation_mode="ablate",
+        seed=1,
+    )
+
+    # Construct functional schedules matching actual temporal usage: transient on pass 0, sustaining on all passes
+    bsz = signs.shape[0]
+    sched_ref = torch.zeros(bsz, 4, 1, 3)
+    sched_ref[:, 0, :, 0] = 1.0
+    sched_ref[:, :, :, 1] = 1.0
+    ci_ref = CIOutputs(lower_leaky={"core": sched_ref}, upper_leaky={"core": sched_ref}, pre_sigmoid={"core": sched_ref})
+
+    sched_tgt = torch.zeros(bsz, 4, 1, 3)
+    sched_tgt[:, 0, :, 1] = 1.0
+    sched_tgt[:, :, :, 2] = 1.0
+    ci_tgt = CIOutputs(lower_leaky={"core": sched_tgt}, upper_leaky={"core": sched_tgt}, pre_sigmoid={"core": sched_tgt})
+
+    prof_ref = extract_component_functional_profiles(
+        bpd_ref, ci_ref, clean_traj_ref, _run_oracle, roles_ref
+    )
+    prof_tgt = extract_component_functional_profiles(
+        bpd_tgt, ci_tgt, clean_traj_tgt, _run_degraded, roles_tgt
+    )
+    matches = match_components_by_function(prof_ref, prof_tgt)
+    assert len(matches) == 1
+    assert matches[0].ref_component == 1
+    assert matches[0].tgt_component == 2  # Matched across permuted slots purely by function!
+
+    # Edit ONLY within degraded_base's own decomposition (0.5 + 4.0 * 0.5 = 2.5)
+    edited_tgt = copy.deepcopy(degraded_base)
+    edit_rc = apply_intra_checkpoint_sustaining_edit(
+        edited_tgt, bpd_tgt, matches, scale_delta=4.0
+    )
+    assert edit_rc.edited_modules == {"core": 1}
+
+    # Controls of exact matched count and Frobenius norm
+    rand_tgt = copy.deepcopy(degraded_base)
+    rand_rc = apply_random_component_control_edit(
+        rand_tgt, bpd_tgt, edit_rc, exclude_matches=matches, seed=7
+    )
+    rot_tgt = copy.deepcopy(degraded_base)
+    rot_rc = apply_rotation_null_control_edit(
+        rot_tgt, bpd_tgt, matches, edit_rc, clean_traj=clean_traj_tgt, seed=11
+    )
+    assert math.isclose(rand_rc.total_frobenius_norm, edit_rc.total_frobenius_norm, rel_tol=1e-5)
+    assert math.isclose(rot_rc.total_frobenius_norm, edit_rc.total_frobenius_norm, rel_tol=1e-5)
+
     ref_ro_12, _ = oracle.rollout(signs, n_passes=12)
-    edit_ro_12, _ = degraded.rollout(signs, n_passes=12)
+    edit_ro_12, _ = edited_tgt.rollout(signs, n_passes=12)
+    rand_ro_12, _ = rand_tgt.rollout(signs, n_passes=12)
+    rot_ro_12, _ = rot_tgt.rollout(signs, n_passes=12)
     assert torch.allclose(ref_ro_12[11], edit_ro_12[11], atol=1e-5)
+    assert float((ref_ro_12[11] - rand_ro_12[11]).abs().max().item()) > 0.5
+    assert float((ref_ro_12[11] - rot_ro_12[11]).abs().max().item()) > 0.5
+
+
+def test_gate_b2_dual_negative_and_positive_control() -> None:
+    """Part 1.6: Gate B2 evaluates 8 settling factors alongside a planted positive arm."""
+    settler = SettlingCoreLooper(vocab_size=32, d_model=64, n_heads=4, n_core_blocks=4, seed=11)
+    toks = torch.randint(0, 32, (24, 12), generator=torch.Generator().manual_seed(11))
+    dual = evaluate_hug_cal02_with_positive_arm(
+        settler, toks, n_passes=6, n_rotations=16, z_threshold=2.5, seed=11
+    )
+    assert dual.negative_arm.passed_negative_control is True
+    assert dual.negative_margin >= 0.0
+    assert dual.positive_arm.passed_positive_control is True
+    assert dual.positive_arm.margin > 0.0
+    assert dual.passed_gate_b2 is True
+
+
+def test_planted_rank1_positive_control_on_real_looped_chase_checkpoint() -> None:
+    """Part 1.1: Planted rank-1 component on real LoopedChase checkpoint beats registered z_threshold."""
+    ckpt_candidate = DEFAULT_LOOPED_CHASE_CKPT_DIR / "lam0.1_s1.final.pt"
+    if not ckpt_candidate.exists():
+        pytest.skip(f"Real LoopedChase checkpoint not present at {ckpt_candidate}")
+    ck_path, ck_sha = resolve_looped_chase_checkpoint("lam0.1_s1")
+    lc_model = load_looped_chase_checkpoint(ck_path, device="cpu")
+    res = evaluate_planted_rank1_looped_chase(
+        lc_model,
+        n_passes=8,
+        z_threshold=2.5,
+        checkpoint_label="lam0.1_s1",
+        checkpoint_sha256=ck_sha,
+    )
+    assert res.passed_positive_control is True
+    assert res.observed_z_rot >= 2.5
+    assert res.margin > 0.0
 
 
 def test_transition_operator_and_interventional_path_composition() -> None:
@@ -273,7 +394,14 @@ def test_trm_and_looped_chase_end_to_end_smokes() -> None:
     )
     assert trm_res["total_invocations_trained"] == 4
     assert sum(trm_res["rollout_mode_counts"].values()) == 6  # type: ignore[arg-type]
-    assert "sustaining_edit_test" in trm_res
+    modes = trm_res["trajectory_state_matching_modes"]  # type: ignore[assignment]
+    assert "outer_readout_only_default" in modes  # type: ignore[operator]
+    assert "with_inner_boundary_states" in modes  # type: ignore[operator]
+    edit_sec = trm_res["sustaining_edit_test"]  # type: ignore[assignment]
+    assert "final_solve_rate" in edit_sec["intra_checkpoint_sustaining_edit"]["metrics"]  # type: ignore[index]
+    assert "ever_solved_rate" in edit_sec["intra_checkpoint_sustaining_edit"]["metrics"]  # type: ignore[index]
+    assert "matched_random_component_control" in edit_sec  # type: ignore[operator]
+    assert "rotation_null_control" in edit_sec  # type: ignore[operator]
 
     mini_chase = LoopedChase(n_nodes=6, d=24, layers=1, heads=4)
     chase_res = run_looped_chase_experiment(

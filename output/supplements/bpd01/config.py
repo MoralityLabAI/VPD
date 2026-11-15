@@ -1,14 +1,41 @@
 """Configuration dataclasses for Behavioral Parameter Decomposition (BPD).
 
-BPD generalizes Vector/Variational Parameter Decomposition (VPD; Goodfire 2026)
-to weight-tied, recurrent-depth computation, reducing identically to VPD when
-the pass count is ``T = 1`` with zero-ablation and uniform pass tolerance.
+BPD extends adVersarial Parameter Decomposition (VPD; Goodfire 2026) to
+weight-tied, recurrent-depth computation. At ``T = 1`` under
+``BPDConfig.vpd_single_pass_equivalent``, BPD matches the four-term PyTorch VPD
+port (``MoralityLabAI/VPD`` ``experiments/nanbeige_looped/vpd_math.py`` at commit
+``69509c39e96a912f99b1a83640250ac01797c571``; the Goodfire paper adds a fifth
+deterministic CI-masked reconstruction term).
 """
 
 from __future__ import annotations
 
 from dataclasses import dataclass, field
+from pathlib import Path
+import subprocess
 from typing import Literal
+
+
+def resolve_registration_commit(explicit: str | None = None) -> str:
+    """Return explicit commit hash or latest git SHA of ``mechinterp/bpd/docs/registration.md``."""
+    if explicit:
+        return explicit.strip()
+    reg_path = Path(__file__).resolve().parent / "docs" / "registration.md"
+    repo_root = Path(__file__).resolve().parents[2]
+    try:
+        out = subprocess.run(
+            ["git", "log", "-n", "1", "--format=%H", "--", str(reg_path)],
+            cwd=str(repo_root),
+            capture_output=True,
+            text=True,
+            timeout=10,
+            check=False,
+        ).stdout.strip()
+        if out:
+            return out
+    except Exception:
+        pass
+    return "uncommitted"
 
 CIVariant = Literal["state_only", "state_plus_clock", "visible_only"]
 AblationMode = Literal["pass_mean", "zero"]
@@ -39,6 +66,7 @@ class MinimalityConfig:
     coeff_level: float = 2e-4
     coeff_switch: float = 2e-4
     switch_q: float = 1.0
+    normalize_by_c: bool = True
 
 
 @dataclass(frozen=True)
@@ -70,17 +98,19 @@ class CIConfig:
     clock_dim: int = 32
     rope_base: float = 10000.0
     leaky_alpha: float = 0.01
+    final_rms_norm: bool = True
 
 
 @dataclass(frozen=True)
 class NullCalibrationConfig:
-    """Norm/RMS-matched Haar rotation null for per-pass sensitivity normalization."""
+    """Norm/RMS-matched Haar rotation null for per-pass fragility hinge calibration."""
 
-    use_tolerance_weights: bool = True
+    use_fragility_hinge: bool = True
+    hinge_kappa: float = 0.10
     n_rotations_train: int = 4
     n_rotations_eval: int = 16
     calibrate_every: int = 50
-    perturbation_scale: float = 0.25
+    perturbation_scale: float = 0.10
     eps: float = 1e-6
 
 
@@ -103,10 +133,11 @@ class BPDConfig:
     main_lr_final_frac: float = 0.1
     grad_clip_components: float = 1.0
 
-    # Objective weights
+    # Objective weights & trajectory state-matching switch
     coeff_faith: float = 1e5
     coeff_stoch: float = 0.5
     coeff_adv: float = 0.5
+    match_inner_boundary_states: bool = False
     state_boundary_weight: float = 1.0
 
     # Hybrid clean-transplant vs closed-loop rollout schedule (v014 distinction)
@@ -131,11 +162,12 @@ class BPDConfig:
         n_blocks: int = 2,
         n_heads: int = 4,
     ) -> "BPDConfig":
-        """Construct a T=1 BPDConfig that reduces identically to upstream VPD."""
+        """Construct a T=1 BPDConfig matching the four-term PyTorch VPD port (vpd_math.py @ 69509c39)."""
         return cls(
             c_per_module=dict(c_per_module),
             n_passes=1,
             seq_len=seq_len,
+            match_inner_boundary_states=False,
             rollout_mode="closed_loop",
             ci=CIConfig(
                 variant="state_only",
@@ -145,9 +177,10 @@ class BPDConfig:
                 mlp_hidden=2 * d_model,
                 max_passes=1,
                 max_seq_len=max(seq_len, 16),
+                final_rms_norm=False,
             ),
             ablation=AblationConfig(mode="zero", sphere_rescale=False),
-            minimality=MinimalityConfig(pool_mode="mean", coeff_switch=0.0),
+            minimality=MinimalityConfig(pool_mode="mean", coeff_switch=0.0, normalize_by_c=False),
             adversary=AdversaryConfig(scope="per_pass"),
-            null_calibration=NullCalibrationConfig(use_tolerance_weights=False),
+            null_calibration=NullCalibrationConfig(use_fragility_hinge=False, hinge_kappa=0.0),
         )

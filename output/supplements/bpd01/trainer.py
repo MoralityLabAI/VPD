@@ -4,8 +4,8 @@ and unrolled single-site-per-pass VPD baseline trainer for Gate B1.
 
 from __future__ import annotations
 
-from dataclasses import dataclass, replace
-from typing import Any, Callable, Mapping
+from dataclasses import dataclass, field, replace
+from typing import Any, Callable, Mapping, Sequence
 
 import torch
 from torch import Tensor, nn
@@ -27,6 +27,7 @@ from mechinterp.bpd.components import (
 from mechinterp.bpd.config import BPDConfig, CIVariant, MinimalityConfig
 from mechinterp.bpd.losses import (
     bpd_minimality_loss,
+    compute_pass_loss_shares,
     deterministic_ci_schedules,
     faithfulness_loss,
     kl_divergence_logits,
@@ -34,7 +35,7 @@ from mechinterp.bpd.losses import (
     trajectory_recon_loss,
     unrolled_faithfulness_loss,
 )
-from mechinterp.bpd.nulls import calibrate_pass_tolerances
+from mechinterp.bpd.nulls import calibrate_pass_null_losses
 
 # BatchRolloutAdapter executes target_model over `n_passes` starting at `pass_offset`
 # (optionally using cached clean state `init_state`) and returns:
@@ -49,6 +50,7 @@ AdapterRolloutFn = Callable[
     ],
 ]
 CleanStateSamplerFn = Callable[[Any, int], Any]
+ValidWindowStartsFn = Callable[[int, int, bool], Sequence[int]]
 
 
 @dataclass
@@ -64,6 +66,7 @@ class StepMetrics:
     stoch_loss: float
     adv_loss: float
     active_per_pass: float
+    pass_loss_shares: dict[int, float] = field(default_factory=dict)
 
 
 class BPDTrainer:
@@ -76,6 +79,7 @@ class BPDTrainer:
         rollout_adapter: AdapterRolloutFn,
         *,
         clean_window_state_fn: CleanStateSamplerFn | None = None,
+        valid_window_starts_fn: ValidWindowStartsFn | None = None,
         visible_dim: int | None = None,
         prompt_dim: int | None = None,
         is_causal_ci: bool = False,
@@ -86,6 +90,7 @@ class BPDTrainer:
         self.cfg = cfg
         self.rollout_adapter = rollout_adapter
         self.clean_window_state_fn = clean_window_state_fn
+        self.valid_window_starts_fn = valid_window_starts_fn
 
         module_dims = {name: bpd_model.wrappers[name].d_in for name in bpd_model.module_order}
         self.ci_net = TiedCINetwork(
@@ -100,7 +105,9 @@ class BPDTrainer:
         self.pgd = PassSharedPersistentPGD(
             bpd_model.c_per_module, cfg.adversary, device=self.device
         )
+        self.pass_null_losses: dict[int, float] | None = None
         self.pass_tolerances: dict[int, float] | None = None
+        self.train_pass_loss_accum: dict[int, float] = {}
         self.rng = torch.Generator(device=self.device).manual_seed(cfg.seed)
 
         self.optimizer = torch.optim.AdamW(
@@ -112,6 +119,15 @@ class BPDTrainer:
             betas=(0.9, 0.999),
             weight_decay=0.0,
         )
+
+    def _effective_hinge_kappa(self) -> float:
+        if not self.cfg.null_calibration.use_fragility_hinge or self.cfg.n_passes <= 1:
+            return 0.0
+        return max(float(self.cfg.null_calibration.hinge_kappa), 0.0)
+
+    def mean_train_pass_loss_shares(self) -> dict[int, float]:
+        """Return each active pass's cumulative share of total training trajectory loss."""
+        return compute_pass_loss_shares(self.train_pass_loss_accum)
 
     def _set_lr(self, step: int) -> float:
         if self.cfg.n_steps <= 1:
@@ -196,7 +212,7 @@ class BPDTrainer:
         return last
 
     def calibrate_baselines(self, batch: Any) -> dict[int, float]:
-        """Calibrate pass-conditional mean writes and optional Haar rotation tolerances."""
+        """Calibrate pass-conditional mean writes and per-pass rotation-null hinge baselines."""
         clean_traj = self.run_clean_rollout(
             batch,
             n_passes=self.cfg.n_passes,
@@ -204,9 +220,10 @@ class BPDTrainer:
             init_state=None,
             update_means=(self.cfg.ablation.mode == "pass_mean"),
         )
-        if not self.cfg.null_calibration.use_tolerance_weights or self.cfg.n_passes <= 1:
-            self.pass_tolerances = {tau: 1.0 for tau in range(self.cfg.n_passes)}
-            return self.pass_tolerances
+        if self._effective_hinge_kappa() <= 0.0:
+            self.pass_null_losses = {tau: 0.0 for tau in range(self.cfg.n_passes)}
+            self.pass_tolerances = self.pass_null_losses
+            return self.pass_null_losses
 
         def _plain_rollout() -> RolloutTrajectory:
             readouts, boundaries, vis, prompt = self.rollout_adapter(
@@ -220,17 +237,19 @@ class BPDTrainer:
                 prompt_features=prompt,
             )
 
-        self.pass_tolerances = calibrate_pass_tolerances(
+        self.pass_null_losses = calibrate_pass_null_losses(
             self.bpd_model,
             clean_traj,
             _plain_rollout,
             n_rotations=self.cfg.null_calibration.n_rotations_train,
             perturbation_scale=self.cfg.null_calibration.perturbation_scale,
+            match_inner_boundary_states=self.cfg.match_inner_boundary_states,
             state_boundary_weight=self.cfg.state_boundary_weight,
             eps=self.cfg.null_calibration.eps,
             seed=self.cfg.seed,
         )
-        return self.pass_tolerances
+        self.pass_tolerances = self.pass_null_losses
+        return self.pass_null_losses
 
     def _select_rollout_regime(self, batch: Any) -> tuple[str, int, int, Any]:
         """Choose full closed-loop rollout vs short clean-state transplant window."""
@@ -249,21 +268,36 @@ class BPDTrainer:
                 return "closed_loop", self.cfg.n_passes, 0, None
 
         assert self.clean_window_state_fn is not None
-        max_start = self.cfg.n_passes - self.cfg.window_steps
-        tau0 = int(
-            torch.randint(0, max_start + 1, (1,), generator=self.rng, device=self.device).item()
-        )
+        if self.valid_window_starts_fn is not None:
+            valid_starts = list(
+                self.valid_window_starts_fn(
+                    self.cfg.n_passes,
+                    self.cfg.window_steps,
+                    self.cfg.match_inner_boundary_states,
+                )
+            )
+            if not valid_starts:
+                return "closed_loop", self.cfg.n_passes, 0, None
+            pick = int(
+                torch.randint(0, len(valid_starts), (1,), generator=self.rng, device=self.device).item()
+            )
+            tau0 = int(valid_starts[pick])
+        else:
+            max_start = self.cfg.n_passes - self.cfg.window_steps
+            tau0 = int(
+                torch.randint(0, max_start + 1, (1,), generator=self.rng, device=self.device).item()
+            )
         init_state = self.clean_window_state_fn(batch, tau0)
         return "clean_window", self.cfg.window_steps, tau0, init_state
 
     def train_step(self, batch: Any, step: int) -> StepMetrics:
         """Execute one joint BPD optimization step."""
         self._set_lr(step)
+        kappa = self._effective_hinge_kappa()
         if (
-            self.cfg.null_calibration.use_tolerance_weights
-            and self.cfg.n_passes > 1
+            kappa > 0.0
             and (
-                self.pass_tolerances is None
+                self.pass_null_losses is None
                 or (
                     self.cfg.null_calibration.calibrate_every > 0
                     and step > 0
@@ -295,6 +329,7 @@ class BPDTrainer:
         )
 
         total_loss = self.cfg.coeff_faith * loss_faith + loss_min
+        step_pass_losses: dict[int, float] = {}
 
         # 1. Stochastic mask reconstruction branch
         loss_stoch_val = 0.0
@@ -313,12 +348,16 @@ class BPDTrainer:
                 pass_offset=pass_offset,
                 init_state=init_state,
             )
-            loss_stoch, _ = trajectory_recon_loss(
+            loss_stoch, stoch_per_pass = trajectory_recon_loss(
                 stoch_traj,
                 clean_traj,
-                pass_tolerances=self.pass_tolerances,
+                match_inner_boundary_states=self.cfg.match_inner_boundary_states,
+                pass_null_losses=self.pass_null_losses,
+                hinge_kappa=kappa,
                 state_boundary_weight=self.cfg.state_boundary_weight,
             )
+            for tau, val in stoch_per_pass.items():
+                step_pass_losses[tau] = step_pass_losses.get(tau, 0.0) + self.cfg.coeff_stoch * val
             total_loss = total_loss + self.cfg.coeff_stoch * loss_stoch
             loss_stoch_val = float(loss_stoch.detach().item())
 
@@ -337,7 +376,9 @@ class BPDTrainer:
                     l_rec, _ = trajectory_recon_loss(
                         tr,
                         clean_traj,
-                        pass_tolerances=self.pass_tolerances,
+                        match_inner_boundary_states=self.cfg.match_inner_boundary_states,
+                        pass_null_losses=self.pass_null_losses,
+                        hinge_kappa=kappa,
                         state_boundary_weight=self.cfg.state_boundary_weight,
                     )
                     return l_rec
@@ -350,18 +391,23 @@ class BPDTrainer:
             adv_traj = self.run_masked_rollout(
                 batch, adv_sched, n_passes=n_passes, pass_offset=pass_offset, init_state=init_state
             )
-            loss_adv, _ = trajectory_recon_loss(
+            loss_adv, adv_per_pass = trajectory_recon_loss(
                 adv_traj,
                 clean_traj,
-                pass_tolerances=self.pass_tolerances,
+                match_inner_boundary_states=self.cfg.match_inner_boundary_states,
+                pass_null_losses=self.pass_null_losses,
+                hinge_kappa=kappa,
                 state_boundary_weight=self.cfg.state_boundary_weight,
             )
+            for tau, val in adv_per_pass.items():
+                step_pass_losses[tau] = step_pass_losses.get(tau, 0.0) + self.cfg.coeff_adv * val
             leaf_list = [leaf_sources[name] for name in self.bpd_model.module_order]
             grads_tuple = torch.autograd.grad(
-                loss_adv, leaf_list, retain_graph=True, allow_unused=False
+                loss_adv, leaf_list, retain_graph=True, allow_unused=True
             )
             adv_source_grads = {
-                name: g.detach() for name, g in zip(self.bpd_model.module_order, grads_tuple)
+                name: (g.detach() if g is not None else torch.zeros_like(leaf_sources[name]))
+                for name, g in zip(self.bpd_model.module_order, grads_tuple)
             }
             total_loss = total_loss + self.cfg.coeff_adv * loss_adv
             loss_adv_val = float(loss_adv.detach().item())
@@ -377,12 +423,16 @@ class BPDTrainer:
             adv_traj = self.run_masked_rollout(
                 batch, stoch_adv, n_passes=n_passes, pass_offset=pass_offset, init_state=init_state
             )
-            loss_adv, _ = trajectory_recon_loss(
+            loss_adv, adv_per_pass = trajectory_recon_loss(
                 adv_traj,
                 clean_traj,
-                pass_tolerances=self.pass_tolerances,
+                match_inner_boundary_states=self.cfg.match_inner_boundary_states,
+                pass_null_losses=self.pass_null_losses,
+                hinge_kappa=kappa,
                 state_boundary_weight=self.cfg.state_boundary_weight,
             )
+            for tau, val in adv_per_pass.items():
+                step_pass_losses[tau] = step_pass_losses.get(tau, 0.0) + self.cfg.coeff_adv * val
             total_loss = total_loss + self.cfg.coeff_adv * loss_adv
             loss_adv_val = float(loss_adv.detach().item())
 
@@ -396,6 +446,10 @@ class BPDTrainer:
         if adv_source_grads is not None:
             self.pgd.ascent_step(adv_source_grads, lr=self.pgd.lr_at(step, self.cfg.n_steps))
 
+        for tau, val in step_pass_losses.items():
+            self.train_pass_loss_accum[tau] = self.train_pass_loss_accum.get(tau, 0.0) + val
+        step_shares = compute_pass_loss_shares(step_pass_losses)
+
         budget = active_component_budget(ci_out)
         return StepMetrics(
             step=step,
@@ -407,6 +461,7 @@ class BPDTrainer:
             stoch_loss=loss_stoch_val,
             adv_loss=loss_adv_val,
             active_per_pass=budget["mean_active_per_pass"],
+            pass_loss_shares=step_shares,
         )
 
     @torch.no_grad()
@@ -418,7 +473,7 @@ class BPDTrainer:
         delta_value: float = 0.0,
         threshold: float | None = None,
     ) -> tuple[dict[str, float], CIOutputs, RolloutTrajectory]:
-        """Evaluate deterministic CI reconstruction, final-pass KL, and active component budget."""
+        """Evaluate deterministic CI reconstruction, per-pass loss shares, final KL, and budget."""
         passes = self.cfg.n_passes if n_passes is None else int(n_passes)
         clean_traj = self.run_clean_rollout(batch, n_passes=passes, pass_offset=0)
         ci_out = self.ci_net.forward_trajectory(clean_traj, pass_offset=0)
@@ -426,12 +481,30 @@ class BPDTrainer:
             ci_out.lower_leaky, delta_value=delta_value, threshold=threshold
         )
         pred_traj = self.run_masked_rollout(batch, sched, n_passes=passes, pass_offset=0)
-        recon_loss, per_pass = trajectory_recon_loss(
+        raw_recon, raw_per_pass = trajectory_recon_loss(
             pred_traj,
             clean_traj,
-            pass_tolerances=self.pass_tolerances if passes == self.cfg.n_passes else None,
+            match_inner_boundary_states=self.cfg.match_inner_boundary_states,
+            pass_null_losses=None,
+            hinge_kappa=0.0,
             state_boundary_weight=self.cfg.state_boundary_weight,
         )
+        kappa_eval = self._effective_hinge_kappa() if passes == self.cfg.n_passes else 0.0
+        hinged_recon, hinged_per_pass = trajectory_recon_loss(
+            pred_traj,
+            clean_traj,
+            match_inner_boundary_states=self.cfg.match_inner_boundary_states,
+            pass_null_losses=self.pass_null_losses if passes == self.cfg.n_passes else None,
+            hinge_kappa=kappa_eval,
+            state_boundary_weight=self.cfg.state_boundary_weight,
+        )
+        raw_shares = compute_pass_loss_shares(raw_per_pass)
+        hinged_shares = (
+            compute_pass_loss_shares(hinged_per_pass)
+            if sum(hinged_per_pass.values()) > 1e-12
+            else raw_shares
+        )
+
         final_kl = 0.0
         if clean_traj.readouts:
             f_tau = max(clean_traj.readouts.keys())
@@ -440,13 +513,18 @@ class BPDTrainer:
             )
         budget = active_component_budget(ci_out)
         metrics: dict[str, float] = {
-            "recon_loss": float(recon_loss.item()),
+            "recon_loss": float(raw_recon.item()),
+            "hinged_recon_loss": float(hinged_recon.item()),
+            "hinge_kappa": kappa_eval,
             "final_kl": final_kl,
             "faith_loss": float(faithfulness_loss(self.bpd_model.wrappers).item()),
             **budget,
         }
-        for tau, val in per_pass.items():
+        for tau, val in raw_per_pass.items():
             metrics[f"pass_{tau}_loss"] = val
+            metrics[f"pass_{tau}_hinged_loss"] = hinged_per_pass[tau]
+            metrics[f"pass_{tau}_loss_share"] = hinged_shares[tau]
+            metrics[f"pass_{tau}_raw_loss_share"] = raw_shares[tau]
         return metrics, ci_out, clean_traj
 
 
@@ -459,7 +537,9 @@ def train_ci_heads_on_frozen_components(
     *,
     visible_dim: int,
     prompt_dim: int,
+    pass_null_losses: Mapping[int, float] | None = None,
     pass_tolerances: Mapping[int, float] | None = None,
+    hinge_kappa: float | None = None,
     device: torch.device | str = "cpu",
 ) -> tuple[dict[CIVariant, TiedCINetwork], dict[str, dict[str, float]], dict[str, float]]:
     """Train ``state_only``, ``state_plus_clock``, and ``visible_only`` CI variants on shared ``(V, U)``.
@@ -472,6 +552,13 @@ def train_ci_heads_on_frozen_components(
     bpd_model.to(dev)
     module_dims = {name: bpd_model.wrappers[name].d_in for name in bpd_model.module_order}
     variants: tuple[CIVariant, ...] = ("state_only", "state_plus_clock", "visible_only")
+    null_map = pass_null_losses if pass_null_losses is not None else pass_tolerances
+    raw_kappa = base_cfg.null_calibration.hinge_kappa if hinge_kappa is None else hinge_kappa
+    kappa = (
+        max(float(raw_kappa), 0.0)
+        if base_cfg.null_calibration.use_fragility_hinge and base_cfg.n_passes > 1
+        else 0.0
+    )
 
     trained_nets: dict[CIVariant, TiedCINetwork] = {}
     variant_metrics: dict[str, dict[str, float]] = {}
@@ -532,14 +619,16 @@ def train_ci_heads_on_frozen_components(
             l_rec, _ = trajectory_recon_loss(
                 pred_traj,
                 clean_traj,
-                pass_tolerances=pass_tolerances,
+                match_inner_boundary_states=base_cfg.match_inner_boundary_states,
+                pass_null_losses=null_map,
+                hinge_kappa=kappa,
                 state_boundary_weight=base_cfg.state_boundary_weight,
             )
             loss = l_min + l_rec
             loss.backward()
             opt.step()
 
-        # Deterministic evaluation
+        # Deterministic evaluation (un-hinged KL for unbiased cross-variant comparison)
         with torch.no_grad():
             with bpd_model.target_capture(pass_offset=0, detach_inputs=True):
                 e_ro, e_bs, e_vis, e_prm = rollout_adapter(eval_batch, base_cfg.n_passes, 0, None)
@@ -562,16 +651,20 @@ def train_ci_heads_on_frozen_components(
                 visible_states=m_vis,
                 prompt_features=m_prm,
             )
-            e_rec, _ = trajectory_recon_loss(
+            e_rec, e_per_pass = trajectory_recon_loss(
                 e_pred,
                 e_clean,
-                pass_tolerances=pass_tolerances,
+                match_inner_boundary_states=base_cfg.match_inner_boundary_states,
+                pass_null_losses=None,
+                hinge_kappa=0.0,
                 state_boundary_weight=base_cfg.state_boundary_weight,
             )
+            e_shares = compute_pass_loss_shares(e_per_pass)
             e_bud = active_component_budget(e_ci)
             variant_metrics[var] = {
                 "recon_loss": float(e_rec.item()),
                 **e_bud,
+                **{f"pass_{tau}_loss_share": sh for tau, sh in e_shares.items()},
             }
             trained_nets[var] = net
 
@@ -714,7 +807,10 @@ class UnrolledVPDTrainer:
             l_rec = kl_divergence_logits(pred_traj.readouts[f_tau], clean_traj.readouts[f_tau])
         else:
             l_rec, _ = trajectory_recon_loss(
-                pred_traj, clean_traj, state_boundary_weight=self.cfg.state_boundary_weight
+                pred_traj,
+                clean_traj,
+                match_inner_boundary_states=self.cfg.match_inner_boundary_states,
+                state_boundary_weight=self.cfg.state_boundary_weight,
             )
         loss = self.cfg.coeff_faith * l_faith + l_min + l_rec
         loss.backward()
@@ -731,9 +827,13 @@ class UnrolledVPDTrainer:
         ci_out = self.ci_net(clean_traj.module_inputs)
         sched = deterministic_ci_schedules(ci_out.lower_leaky, delta_value=delta_value)
         pred_traj = self._run_masked(batch, sched)
-        rec, _ = trajectory_recon_loss(
-            pred_traj, clean_traj, state_boundary_weight=self.cfg.state_boundary_weight
+        rec, per_pass = trajectory_recon_loss(
+            pred_traj,
+            clean_traj,
+            match_inner_boundary_states=self.cfg.match_inner_boundary_states,
+            state_boundary_weight=self.cfg.state_boundary_weight,
         )
+        shares = compute_pass_loss_shares(per_pass)
         final_kl = 0.0
         if clean_traj.readouts:
             f_tau = max(clean_traj.readouts.keys())
@@ -747,4 +847,5 @@ class UnrolledVPDTrainer:
             "faith_loss": float(unrolled_faithfulness_loss(self.wrappers).item()),
             "total_allocated_components": float(self.total_unrolled_components()),
             **bud,
+            **{f"pass_{tau}_loss_share": sh for tau, sh in shares.items()},
         }

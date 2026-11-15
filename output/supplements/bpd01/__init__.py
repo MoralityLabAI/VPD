@@ -1,6 +1,9 @@
-"""Behavioral Parameter Decomposition (BPD): VPD for weight-tied computation.
+"""Behavioral Parameter Decomposition (BPD): adVersarial Parameter Decomposition
+for weight-tied computation.
 
-Reduces identically to Goodfire's single-pass VPD when ``T = 1``.
+At ``T = 1`` under ``BPDConfig.vpd_single_pass_equivalent``, BPD matches the
+four-term PyTorch VPD port (``vpd_math.py`` at commit ``69509c39``; Goodfire's
+VPD paper includes a fifth deterministic CI-masked reconstruction term).
 """
 
 from mechinterp.bpd.adversary import (
@@ -9,18 +12,23 @@ from mechinterp.bpd.adversary import (
     evaluate_pgd_stability_curve,
 )
 from mechinterp.bpd.analysis import (
+    ComponentFunctionalProfile,
     ComponentKey,
     ComponentScheduleReport,
+    FunctionalComponentMatch,
+    IntraCheckpointEditReceipt,
     InterventionalPathResult,
-    SustainingCheckpointDiff,
     TransientSustainingEntry,
     TransitionOperator,
-    apply_sustaining_weight_edit,
+    apply_intra_checkpoint_sustaining_edit,
+    apply_random_component_control_edit,
+    apply_rotation_null_control_edit,
     classify_transient_sustaining,
     compose_interventional_path,
     compute_transition_operator,
+    extract_component_functional_profiles,
     extract_schedule,
-    rank_sustaining_checkpoint_diffs,
+    match_components_by_function,
 )
 from mechinterp.bpd.ci import (
     CIOutputs,
@@ -51,6 +59,7 @@ from mechinterp.bpd.losses import (
     annealed_p,
     boundary_state_loss,
     bpd_minimality_loss,
+    compute_pass_loss_shares,
     deterministic_ci_schedules,
     faithfulness_loss,
     kl_divergence_logits,
@@ -61,6 +70,7 @@ from mechinterp.bpd.losses import (
 from mechinterp.bpd.nulls import (
     ComponentNullEntry,
     ComponentNullReport,
+    calibrate_pass_null_losses,
     calibrate_pass_tolerances,
     evaluate_component_null_report,
     sample_per_pass_rms_matched_rotations,
@@ -81,12 +91,15 @@ __all__ = [
     "BPDTrainer",
     "CIConfig",
     "CIOutputs",
+    "ComponentFunctionalProfile",
     "ComponentIntervention",
     "ComponentKey",
     "ComponentNullEntry",
     "ComponentNullReport",
     "ComponentScheduleReport",
+    "FunctionalComponentMatch",
     "InterventionalPathResult",
+    "IntraCheckpointEditReceipt",
     "MinimalityConfig",
     "NullCalibrationConfig",
     "PGDStabilityReport",
@@ -94,7 +107,6 @@ __all__ = [
     "PassSharedPersistentPGD",
     "RolloutTrajectory",
     "StepMetrics",
-    "SustainingCheckpointDiff",
     "TiedCINetwork",
     "TiedComponentLinear",
     "TransientSustainingEntry",
@@ -104,22 +116,27 @@ __all__ = [
     "UnrolledVPDTrainer",
     "active_component_budget",
     "annealed_p",
-    "apply_sustaining_weight_edit",
+    "apply_intra_checkpoint_sustaining_edit",
+    "apply_random_component_control_edit",
+    "apply_rotation_null_control_edit",
     "boundary_state_loss",
     "bpd_minimality_loss",
+    "calibrate_pass_null_losses",
     "calibrate_pass_tolerances",
     "classify_transient_sustaining",
     "compose_interventional_path",
     "compute_ci_variant_gaps",
+    "compute_pass_loss_shares",
     "compute_transition_operator",
     "deterministic_ci_schedules",
     "evaluate_component_null_report",
     "evaluate_pgd_stability_curve",
+    "extract_component_functional_profiles",
     "extract_schedule",
     "faithfulness_loss",
     "kl_divergence_logits",
     "lower_leaky_sigmoid",
-    "rank_sustaining_checkpoint_diffs",
+    "match_components_by_function",
     "sample_per_pass_rms_matched_rotations",
     "sample_rms_matched_read_rotations",
     "sample_stochastic_schedules",

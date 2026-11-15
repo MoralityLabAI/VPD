@@ -6,8 +6,7 @@ Implements the three pass-tied CI parameterizations specified for BPD:
   3. ``visible_only``: ``g_{b,p,tau} = f_phi(x_{b,p}, V_{b,p,tau})``
 
 where ``phi`` is shared across all passes ``tau = 0, ..., T - 1`` so the CI
-network has ``O(1)`` parameters in ``T`` and generalizes zero-shot to unseen pass
-counts ``T' > T``.
+network has ``O(1)`` parameters in ``T``.
 
 The **Clock Gap** (``state_only`` vs ``state_plus_clock``) tests whether mechanisms
 are addressed by pass clock or by recurrent state. The **Visible Gap**
@@ -100,7 +99,7 @@ class _CITransformerBlock(nn.Module):
 
 
 class _SinusoidalLearnedClock(nn.Module):
-    """Hybrid sinusoidal + clamped learned pass-clock embedding generalizing to OOD passes."""
+    """Hybrid sinusoidal + clamped learned pass-clock embedding."""
 
     inv_freq: Tensor
 
@@ -291,7 +290,8 @@ class TiedCINetwork(nn.Module):
         h = self.proj_in(flat)
         for blk in self.blocks:
             h = blk(h, is_causal=self.is_causal)
-        raw = self.out_proj(_rms_norm(h)).view(bsz, n_passes, seq_len, self.total_c)
+        out_h = _rms_norm(h) if self.cfg.final_rms_norm else h
+        raw = self.out_proj(out_h).view(bsz, n_passes, seq_len, self.total_c)
 
         alpha = self.cfg.leaky_alpha
         lower: dict[str, Tensor] = {}
@@ -342,6 +342,7 @@ class UnrolledCINetwork(nn.Module):
             clock_dim=base_cfg.clock_dim,
             rope_base=base_cfg.rope_base,
             leaky_alpha=base_cfg.leaky_alpha,
+            final_rms_norm=base_cfg.final_rms_norm,
         )
         self.n_passes = n_passes
         self.module_order = sorted(c_per_module.keys())

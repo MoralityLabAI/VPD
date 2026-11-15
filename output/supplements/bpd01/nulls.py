@@ -9,10 +9,11 @@ inflates fragile passes and flags generic high-energy settling directions.
 This module implements:
   1. ``sample_rms_matched_read_rotations``: random unit directions ``r_k`` in
      ``R^{d_in}`` rescaled so ``RMS(X_tau @ r_k) == RMS(X_tau @ v_c)`` on pass ``tau``.
-  2. ``calibrate_pass_tolerances``: empirical per-pass perturbation sensitivity
-     ``tol_tau`` under RMS-matched random rank-1 writes, used to normalize
-     per-pass trajectory KL / state losses.
-  3. ``evaluate_component_null_report``: computes and reports **both**
+  2. ``calibrate_pass_null_losses``: empirical per-pass rotation-null loss ``KL_null_tau``
+     under time-shared RMS-matched random rank-1 writes, driving the fragility hinge
+     ``loss_tau = max(0, KL_mask_tau - kappa * KL_null_tau)``.
+  3. ``calibrate_pass_tolerances``: single-pass Jacobian sensitivity diagnostic.
+  4. ``evaluate_component_null_report``: computes and reports **both**
      ``raw_importance`` and ``net_importance = raw_importance - rotation_null_mean``
      (plus ``z_rot``) per ``(module, pass, component)`` so fragile-pass nulls
      can never silently hide real mechanisms.
@@ -215,6 +216,73 @@ def calibrate_pass_tolerances(
     return tolerances
 
 
+@torch.no_grad()
+def calibrate_pass_null_losses(
+    bpd_model: BPDModel,
+    clean_traj: RolloutTrajectory,
+    run_rollout_fn: Callable[[], RolloutTrajectory],
+    *,
+    n_rotations: int = 4,
+    perturbation_scale: float = 0.10,
+    match_inner_boundary_states: bool = False,
+    state_boundary_weight: float = 1.0,
+    eps: float = 1e-8,
+    seed: int = 0,
+) -> dict[int, float]:
+    """Estimate per-pass null loss ``KL_null_tau`` for the fragility hinge.
+
+    Samples time-shared unit read directions rescaled to exact per-pass RMS
+    (``sample_per_pass_rms_matched_rotations``) on each shared module at amplitude
+    ``perturbation_scale`` and records the induced readout KL (or boundary-state
+    discrepancy on read-free inner passes when ``match_inner_boundary_states=True``)
+    at every active pass ``tau``.
+    """
+    if not match_inner_boundary_states and clean_traj.readouts:
+        active_passes = sorted(clean_traj.readouts.keys())
+    else:
+        active_passes = sorted(
+            set(clean_traj.readouts.keys()) | set(clean_traj.boundary_states.keys())
+        )
+    if not active_passes:
+        return {}
+
+    first_name = bpd_model.module_order[0]
+    dev = clean_traj.module_inputs[first_name].device
+    gen = torch.Generator(device=dev).manual_seed(seed)
+
+    accum: dict[int, list[float]] = {tau: [] for tau in active_passes}
+    for name in bpd_model.module_order:
+        w = bpd_model.wrappers[name]
+        x_all = clean_traj.module_inputs[name]  # [B, T, P, d_in]
+        rots = sample_per_pass_rms_matched_rotations(
+            x_all, w.V[:, 0], n_rotations, generator=gen, eps=eps
+        )
+        for k in range(n_rotations):
+            r_col = rots[:, :, k : k + 1]  # [T, d_in, 1]
+            with bpd_model.intervene(
+                name,
+                0,
+                passes=None,
+                mode="override_read",
+                scale=perturbation_scale,
+                read_override=r_col,
+            ):
+                pert_traj = run_rollout_fn()
+            for tau in active_passes:
+                eff_tau = _pass_effect_against_clean(
+                    pert_traj,
+                    clean_traj,
+                    eval_pass=tau,
+                    state_boundary_weight=state_boundary_weight,
+                )
+                accum[tau].append(max(eff_tau, 0.0))
+
+    return {
+        tau: float(sum(vals) / max(len(vals), 1))
+        for tau, vals in accum.items()
+    }
+
+
 @dataclass
 class ComponentNullEntry:
     """Side-by-side raw and net-of-rotation-null importance for one ``(module, pass, c)``."""
@@ -281,7 +349,12 @@ def evaluate_component_null_report(
       - ``net_importance = raw_importance - rotation_null_mean``
       - ``z_rot = (raw_importance - rotation_null_mean) / (rotation_null_std + eps)``
     """
-    target_modules = modules if modules is not None else list(bpd_model.module_order)
+    if modules is not None:
+        target_modules = list(modules)
+    elif components_by_module is not None:
+        target_modules = [m for m in bpd_model.module_order if m in components_by_module]
+    else:
+        target_modules = list(bpd_model.module_order)
     first_mod = target_modules[0]
     n_passes = clean_traj.module_inputs[first_mod].shape[1]
     dev = clean_traj.module_inputs[first_mod].device

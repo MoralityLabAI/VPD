@@ -31,6 +31,7 @@ from mechinterp.bpd.config import (
     CIConfig,
     MinimalityConfig,
     NullCalibrationConfig,
+    resolve_registration_commit,
 )
 from mechinterp.bpd.trainer import BPDTrainer, UnrolledVPDTrainer
 
@@ -90,6 +91,8 @@ def run_benchmark(
     n_steps: int = 80,
     batch_size: int = 24,
     seq_len: int = 8,
+    hinge_kappa: float = 0.10,
+    registration_commit: str | None = None,
     device: str = "cpu",
     seed: int = 7,
 ) -> dict[str, object]:
@@ -115,7 +118,7 @@ def run_benchmark(
         ablation=AblationConfig(mode="pass_mean", sphere_rescale=True),
         minimality=MinimalityConfig(pool_mode="mean", coeff_level=1e-4, coeff_switch=2e-4),
         adversary=AdversaryConfig(scope="shared_batch_and_pass"),
-        null_calibration=NullCalibrationConfig(use_tolerance_weights=False),
+        null_calibration=NullCalibrationConfig(use_fragility_hinge=True, hinge_kappa=hinge_kappa),
     )
 
     gen = torch.Generator().manual_seed(seed + 100)
@@ -132,10 +135,12 @@ def run_benchmark(
     )
     tied_trainer = BPDTrainer(bpd_model, cfg, tied_target.rollout, device=device)
     tied_trainer.run_faithfulness_warmup()
-    tied_trainer.calibrate_baselines(eval_tokens)
+    null_losses = tied_trainer.calibrate_baselines(eval_tokens)
+    last_train_shares: dict[int, float] = {}
     for step in range(n_steps):
         tok = torch.randint(0, 24, (batch_size, seq_len), generator=gen).to(device)
-        tied_trainer.train_step(tok, step)
+        sm = tied_trainer.train_step(tok, step)
+        last_train_shares = sm.pass_loss_shares
     tied_eval, _, _ = tied_trainer.evaluate(eval_tokens, delta_value=0.0)
 
     # 2. Unrolled VPD with T * C components (each pass gets C components)
@@ -177,8 +182,12 @@ def run_benchmark(
 
     return {
         "gate": "B1_unrolled_vs_tied",
+        "registration_commit": resolve_registration_commit(registration_commit),
         "n_passes": n_passes,
         "c_shared": c_shared,
+        "hinge_kappa": hinge_kappa,
+        "pass_null_losses": {str(k): v for k, v in null_losses.items()},
+        "last_train_pass_loss_shares": {str(k): v for k, v in last_train_shares.items()},
         "tied_bpd": {
             "allocated_components": tied_c,
             **tied_eval,
@@ -201,6 +210,8 @@ def main() -> int:
     ap.add_argument("--passes", type=int, default=4)
     ap.add_argument("--c-shared", type=int, default=4)
     ap.add_argument("--steps", type=int, default=80)
+    ap.add_argument("--hinge-kappa", type=float, default=0.10)
+    ap.add_argument("--registration-commit", type=str, default=None)
     ap.add_argument("--device", type=str, default="cpu")
     ap.add_argument("--smoke", action="store_true", help="Fast CPU smoke test")
     ap.add_argument("--out", type=Path, default=None)
@@ -212,6 +223,8 @@ def main() -> int:
         c_shared=args.c_shared,
         n_steps=steps,
         batch_size=16 if args.smoke else 24,
+        hinge_kappa=args.hinge_kappa,
+        registration_commit=args.registration_commit,
         device=args.device,
     )
     text = json.dumps(res, indent=2)

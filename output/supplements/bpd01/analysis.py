@@ -14,11 +14,14 @@
      attribution from ``(c', tau)`` to ``(c, tau + 1)`` pooled over passes, plus
      multi-step nonlinear ``do``-interventional path composition contrasted against
      first-order matrix products.
-  4. **Sustaining checkpoint diff & time-shared weight edit**
-     (``rank_sustaining_checkpoint_diffs``, ``apply_sustaining_weight_edit``):
-     identifies sustaining components differing between two checkpoints (Gate B4:
-     ``gaoxin492`` vs ``yagizdevre``) and applies a permanent rank-``k`` weight edit
-     without any external refill network.
+  4. **Separate-decomposition functional matching & intra-checkpoint sustaining edit**
+     (``extract_component_functional_profiles``, ``match_components_by_function``,
+     ``apply_intra_checkpoint_sustaining_edit``, ``apply_random_component_control_edit``,
+     ``apply_rotation_null_control_edit``): decomposes reference and target checkpoints
+     independently, matches components strictly by behavioral function (schedule,
+     transition profile, readout effect), and scales components strictly inside the
+     target checkpoint's own decomposition against matched-count, matched-norm random
+     and rotation-null controls.
 """
 
 from __future__ import annotations
@@ -33,7 +36,10 @@ from torch import Tensor, nn
 from mechinterp.bpd.ci import CIOutputs
 from mechinterp.bpd.components import BPDModel, RolloutTrajectory
 from mechinterp.bpd.losses import boundary_state_loss, kl_divergence_logits
-from mechinterp.bpd.nulls import sample_per_pass_rms_matched_rotations
+from mechinterp.bpd.nulls import (
+    sample_per_pass_rms_matched_rotations,
+    sample_rms_matched_read_rotations,
+)
 
 
 @dataclass
@@ -360,11 +366,24 @@ def compute_transition_operator(
                 mode=ablation_mode,
                 scale=scale_arg,
             ):
-                pert_traj = run_rollout_fn()
+                for w in bpd_model.wrappers.values():
+                    w.record_inputs = True
+                    w.detach_recorded_inputs = True
+                try:
+                    pert_traj = run_rollout_fn()
+                    pert_mod_inputs = bpd_model.collect_recorded_inputs(expected_passes=n_passes)
+                finally:
+                    for w in bpd_model.wrappers.values():
+                        w.record_inputs = False
 
             for dst_idx, dst_key in enumerate(keys):
                 w_dst = bpd_model.wrappers[dst_key.module]
-                pert_x_next = pert_traj.module_inputs[dst_key.module][:, tau + 1].float()
+                src_inputs = (
+                    pert_mod_inputs[dst_key.module]
+                    if dst_key.module in pert_mod_inputs
+                    else pert_traj.module_inputs[dst_key.module]
+                )
+                pert_x_next = src_inputs[:, tau + 1].float()
                 pert_a_next = pert_x_next @ w_dst.V[:, dst_key.component]  # [B, P]
                 clean_a_next = clean_acts[dst_idx][:, tau + 1]  # [B, P]
                 rms_shift = (pert_a_next - clean_a_next).pow(2).mean().sqrt()
@@ -498,105 +517,404 @@ def compose_interventional_path(
 
 
 @dataclass
-class SustainingCheckpointDiff:
-    """Comparison of a sustaining component's effective weight coefficient across two checkpoints."""
+class ComponentFunctionalProfile:
+    """Behavioral signature of one decomposed component within its own checkpoint."""
 
     module: str
     component: int
-    coeff_reference: float
-    coeff_target: float
-    coeff_gap: float
-    net_sustaining_importance: float
+    role: Literal["transient", "sustaining", "bottleneck", "inert"]
+    mean_schedule: Tensor  # [T]
+    duty_cycle: float
+    switch_rate: float
+    transition_signature: Tensor  # [2 * M] outgoing + incoming pooled module-level attribution
+    readout_effect_curve: Tensor  # [R] per-readout-pass KL / state shift under all-pass ablation
+    raw_all_pass_final: float
+    net_all_pass_final: float
+    sustain_amplification: float
+
+
+@dataclass
+class FunctionalComponentMatch:
+    """Functional correspondence between independently decomposed reference and target components."""
+
+    module: str
+    ref_component: int
+    tgt_component: int
+    schedule_similarity: float
+    transition_similarity: float
+    readout_similarity: float
+    functional_similarity: float
+    ref_net_sustaining: float
+    tgt_net_sustaining: float
     priority_score: float
 
 
+@dataclass
+class IntraCheckpointEditReceipt:
+    """Summary of an in-place weight edit inside a single checkpoint's own decomposition."""
+
+    edited_modules: dict[str, int]
+    total_components_edited: int
+    frobenius_norm_by_module: dict[str, float]
+    total_frobenius_norm: float
+
+
+def _cosine_01(a: Tensor, b: Tensor, eps: float = 1e-8) -> float:
+    af = a.detach().float().reshape(-1)
+    bf = b.detach().float().reshape(-1)
+    if af.numel() != bf.numel():
+        m = min(af.numel(), bf.numel())
+        af, bf = af[:m], bf[:m]
+    na = float(af.norm().item())
+    nb = float(bf.norm().item())
+    if na <= eps and nb <= eps:
+        return 1.0
+    if na <= eps or nb <= eps:
+        return 0.5
+    cos = float(torch.dot(af, bf).item() / (na * nb + eps))
+    return 0.5 * (max(min(cos, 1.0), -1.0) + 1.0)
+
+
 @torch.no_grad()
-def rank_sustaining_checkpoint_diffs(
-    bpd_reference: BPDModel,
-    target_checkpoint_model: nn.Module,
+def extract_component_functional_profiles(
+    bpd_model: BPDModel,
+    ci_out: CIOutputs,
+    clean_traj: RolloutTrajectory,
+    run_rollout_fn: Callable[[], RolloutTrajectory],
     classifications: list[TransientSustainingEntry],
     *,
+    ablation_mode: Literal["ablate", "add_alpha"] = "ablate",
+    state_boundary_weight: float = 1.0,
     eps: float = 1e-8,
-) -> list[SustainingCheckpointDiff]:
-    """Rank sustaining components by parameter projection gap between reference and target checkpoints.
+) -> list[ComponentFunctionalProfile]:
+    """Extract purely functional (schedule, transition, readout-curve) profiles per component.
 
-    For each component ``(v_c, u_c)`` classified as ``"sustaining"`` on ``bpd_reference``
-    (e.g. ``gaoxin492``), computes its rank-1 Frobenius alignment coefficient
-
-        ``alpha(W) = <W, u_c v_c^T>_F / ||u_c v_c^T||_F^2``
-
-    on both ``W_ref`` and ``W_target_ckpt`` (e.g. ``yagizdevre``) and ranks by
-    ``|alpha_ref - alpha_tgt| * max(net_all_pass_final, 0)``.
+    Does not inspect raw parameter vectors across checkpoints; all features are
+    pass-indexed schedules, module-level causal transition profiles, and readout KL curves.
     """
-    diffs: list[SustainingCheckpointDiff] = []
+    sched = extract_schedule(ci_out)
+    sched_idx = {(k.module, k.component): idx for idx, k in enumerate(sched.keys)}
+
+    comp_by_mod: dict[str, list[int]] = {}
     for entry in classifications:
-        if entry.role != "sustaining":
-            continue
-        w_wrap = bpd_reference.wrappers[entry.module]
-        v_c = w_wrap.V[:, entry.component].detach().float()  # [d_in]
-        u_c = w_wrap.U[entry.component, :].detach().float()  # [d_out]
-        denom = float((v_c.pow(2).sum() * u_c.pow(2).sum()).clamp_min(eps).item())
+        comp_by_mod.setdefault(entry.module, []).append(entry.component)
 
-        w_ref = w_wrap.W_target.detach().float()  # [d_out, d_in]
-        tgt_sub = target_checkpoint_model.get_submodule(entry.module)
-        w_tgt = (
-            tgt_sub.W_target.detach().float()
-            if hasattr(tgt_sub, "W_target")
-            else tgt_sub.weight.detach().float()
-        ).to(v_c.device)
+    mod_order = list(bpd_model.module_order)
+    mod_to_i = {m: i for i, m in enumerate(mod_order)}
+    n_mods = len(mod_order)
 
-        # <W, u v^T>_F = u^T W v
-        coeff_ref = float((u_c @ (w_ref @ v_c)).item()) / denom
-        coeff_tgt = float((u_c @ (w_tgt @ v_c)).item()) / denom
-        gap = coeff_ref - coeff_tgt
-        score = abs(gap) * max(entry.net_all_pass_final, 0.0)
-        diffs.append(
-            SustainingCheckpointDiff(
+    first_mod = mod_order[0]
+    n_passes = clean_traj.module_inputs[first_mod].shape[1]
+    has_trans = n_passes >= 2
+    trans_op = (
+        compute_transition_operator(
+            bpd_model,
+            clean_traj,
+            run_rollout_fn,
+            components_by_module=comp_by_mod,
+            ablation_mode=ablation_mode,
+        )
+        if has_trans
+        else None
+    )
+    trans_key_idx = (
+        {(k.module, k.component): i for i, k in enumerate(trans_op.keys)}
+        if trans_op is not None
+        else {}
+    )
+
+    eval_passes = (
+        sorted(clean_traj.readouts.keys())
+        if clean_traj.readouts
+        else sorted(clean_traj.boundary_states.keys())
+    )
+    scale_arg = 0.0 if ablation_mode == "ablate" else -1.0
+
+    profiles: list[ComponentFunctionalProfile] = []
+    for entry in classifications:
+        s_i = sched_idx[(entry.module, entry.component)]
+        mean_sched_vec = sched.mean_schedule[:, s_i].detach().cpu().float()
+        duty = float(sched.duty_cycle[s_i].item())
+        sw_rate = float(sched.switch_rate[s_i].item())
+
+        trans_sig = torch.zeros(2 * n_mods, dtype=torch.float32)
+        if trans_op is not None and (entry.module, entry.component) in trans_key_idx:
+            ti = trans_key_idx[(entry.module, entry.component)]
+            row = trans_op.matrix[ti].detach().cpu().float()
+            col = trans_op.matrix[:, ti].detach().cpu().float()
+            for k_idx, k_obj in enumerate(trans_op.keys):
+                mi = mod_to_i[k_obj.module]
+                trans_sig[mi] += row[k_idx]
+                trans_sig[n_mods + mi] += col[k_idx]
+
+        with bpd_model.intervene(
+            entry.module,
+            entry.component,
+            passes=None,
+            mode=ablation_mode,
+            scale=scale_arg,
+        ):
+            pert = run_rollout_fn()
+
+        ro_curve: list[float] = []
+        for tau in eval_passes:
+            if tau in clean_traj.readouts:
+                val = float(
+                    kl_divergence_logits(pert.readouts[tau], clean_traj.readouts[tau]).item()
+                )
+            else:
+                val = float(
+                    (
+                        state_boundary_weight
+                        * boundary_state_loss(
+                            pert.boundary_states[tau], clean_traj.boundary_states[tau], eps=eps
+                        )
+                    ).item()
+                )
+            ro_curve.append(max(val, 0.0))
+
+        profiles.append(
+            ComponentFunctionalProfile(
                 module=entry.module,
                 component=entry.component,
-                coeff_reference=coeff_ref,
-                coeff_target=coeff_tgt,
-                coeff_gap=gap,
-                net_sustaining_importance=entry.net_all_pass_final,
+                role=entry.role,
+                mean_schedule=mean_sched_vec,
+                duty_cycle=duty,
+                switch_rate=sw_rate,
+                transition_signature=trans_sig,
+                readout_effect_curve=torch.tensor(ro_curve, dtype=torch.float32),
+                raw_all_pass_final=entry.raw_all_pass_final,
+                net_all_pass_final=entry.net_all_pass_final,
+                sustain_amplification=entry.sustain_amplification,
+            )
+        )
+    return profiles
+
+
+def match_components_by_function(
+    ref_profiles: list[ComponentFunctionalProfile],
+    tgt_profiles: list[ComponentFunctionalProfile],
+    *,
+    require_ref_sustaining: bool = True,
+    eps: float = 1e-8,
+) -> list[FunctionalComponentMatch]:
+    """Match separately decomposed reference and target components strictly by behavioral function.
+
+    Pairs each reference sustaining component with its highest-similarity counterpart in the
+    same module of the target checkpoint's own decomposition (1-to-1 greedy matching without
+    replacement) using schedule, transition-operator, and readout-curve cosine similarity.
+    Never compares or projects weight vectors across checkpoints.
+    """
+    ref_candidates = [
+        p for p in ref_profiles if (p.role == "sustaining" or not require_ref_sustaining)
+    ]
+    if not ref_candidates and require_ref_sustaining:
+        # Fallback if no component crossed the discrete sustaining threshold: rank by positive net sustaining effect
+        ref_candidates = [p for p in ref_profiles if p.net_all_pass_final > 0.0]
+
+    ref_candidates.sort(key=lambda p: p.net_all_pass_final, reverse=True)
+    used_tgt: set[tuple[str, int]] = set()
+    matches: list[FunctionalComponentMatch] = []
+
+    for r_prof in ref_candidates:
+        same_mod_tgts = [
+            t
+            for t in tgt_profiles
+            if t.module == r_prof.module and (t.module, t.component) not in used_tgt
+        ]
+        if not same_mod_tgts:
+            continue
+
+        best_tgt: ComponentFunctionalProfile | None = None
+        best_tuple = (-1.0, 0.0, 0.0, 0.0)
+        for t_prof in same_mod_tgts:
+            s_sim = _cosine_01(r_prof.mean_schedule, t_prof.mean_schedule, eps=eps)
+            t_sim = _cosine_01(r_prof.transition_signature, t_prof.transition_signature, eps=eps)
+            r_sim = _cosine_01(r_prof.readout_effect_curve, t_prof.readout_effect_curve, eps=eps)
+            f_sim = (s_sim + t_sim + r_sim) / 3.0
+            if f_sim > best_tuple[0]:
+                best_tuple = (f_sim, s_sim, t_sim, r_sim)
+                best_tgt = t_prof
+
+        assert best_tgt is not None
+        f_sim, s_sim, t_sim, r_sim = best_tuple
+        used_tgt.add((best_tgt.module, best_tgt.component))
+        # Prioritize functionally matched target components whose sustaining causal effect is weaker or active
+        deficit = max(r_prof.net_all_pass_final - best_tgt.net_all_pass_final, 0.0)
+        score = f_sim * (deficit + 0.25 * max(r_prof.net_all_pass_final, 0.0) + 0.25 * max(best_tgt.net_all_pass_final, 0.0))
+        matches.append(
+            FunctionalComponentMatch(
+                module=r_prof.module,
+                ref_component=r_prof.component,
+                tgt_component=best_tgt.component,
+                schedule_similarity=s_sim,
+                transition_similarity=t_sim,
+                readout_similarity=r_sim,
+                functional_similarity=f_sim,
+                ref_net_sustaining=r_prof.net_all_pass_final,
+                tgt_net_sustaining=best_tgt.net_all_pass_final,
                 priority_score=score,
             )
         )
 
-    diffs.sort(key=lambda d: d.priority_score, reverse=True)
-    return diffs
+    matches.sort(key=lambda m: m.priority_score, reverse=True)
+    return matches
+
+
+def _apply_module_deltas_inplace(
+    target_model: nn.Module,
+    deltas_by_module: dict[str, Tensor],
+    counts_by_module: dict[str, int],
+) -> IntraCheckpointEditReceipt:
+    frob_by_mod: dict[str, float] = {}
+    sq_sum = 0.0
+    for mod_name, delta_w in sorted(deltas_by_module.items()):
+        f_norm = float(delta_w.double().norm().item())
+        frob_by_mod[mod_name] = f_norm
+        sq_sum += f_norm * f_norm
+        tgt_mod = target_model.get_submodule(mod_name)
+        if hasattr(tgt_mod, "W_target"):
+            tgt_w = tgt_mod.W_target
+            tgt_w.copy_((tgt_w.float() + delta_w.to(tgt_w.device)).to(tgt_w.dtype))
+        elif isinstance(tgt_mod, nn.Linear):
+            tgt_w = tgt_mod.weight.data
+            tgt_w.copy_((tgt_w.float() + delta_w.to(tgt_w.device)).to(tgt_w.dtype))
+        else:
+            raise TypeError(f"Cannot edit unsupported module type {type(tgt_mod).__name__}")
+    return IntraCheckpointEditReceipt(
+        edited_modules=dict(counts_by_module),
+        total_components_edited=sum(counts_by_module.values()),
+        frobenius_norm_by_module=frob_by_mod,
+        total_frobenius_norm=math.sqrt(sq_sum),
+    )
 
 
 @torch.no_grad()
-def apply_sustaining_weight_edit(
+def apply_intra_checkpoint_sustaining_edit(
     target_checkpoint_model: nn.Module,
-    bpd_reference: BPDModel,
-    selected_diffs: list[SustainingCheckpointDiff],
+    bpd_target: BPDModel,
+    selected_matches: list[FunctionalComponentMatch],
     *,
-    interpolation: float = 1.0,
-) -> dict[str, int]:
-    """Apply a permanent time-shared rank-``k`` weight edit to ``target_checkpoint_model``.
+    scale_delta: float = 0.25,
+) -> IntraCheckpointEditReceipt:
+    """Scale matched sustaining components strictly within ``target_checkpoint_model``'s own decomposition.
 
-    Updates physical weight matrix ``W_tgt`` in-place via:
+    Updates ``W_tgt`` using **only** ``bpd_target``'s own factors ``(V_tgt, U_tgt)``:
 
-        ``W_tgt <- W_tgt + interpolation * sum_{c in selected} (alpha_ref - alpha_tgt) u_c v_c^T``
+        ``W_tgt[m] <- W_tgt[m] + sum_{(m, c_tgt) in selected} scale_delta * u_{tgt, m, c_tgt} v_{tgt, m, c_tgt}^T``
 
-    Requires zero runtime hooks or auxiliary refill networks at inference time.
+    Zero weights or singular vectors from the reference checkpoint ever enter ``target_checkpoint_model``.
     """
-    edited_counts: dict[str, int] = {}
-    for diff in selected_diffs:
-        w_wrap = bpd_reference.wrappers[diff.module]
-        v_c = w_wrap.V[:, diff.component].detach().float()  # [d_in]
-        u_c = w_wrap.U[diff.component, :].detach().float()  # [d_out]
-        delta_rank1 = (interpolation * diff.coeff_gap) * torch.outer(u_c, v_c)
+    deltas_by_mod: dict[str, Tensor] = {}
+    counts_by_mod: dict[str, int] = {}
+    for match in selected_matches:
+        w_wrap = bpd_target.wrappers[match.module]
+        v_c = w_wrap.V[:, match.tgt_component].detach().float()  # [d_in]
+        u_c = w_wrap.U[match.tgt_component, :].detach().float()  # [d_out]
+        term = float(scale_delta) * torch.outer(u_c, v_c)
+        deltas_by_mod[match.module] = (
+            term if match.module not in deltas_by_mod else deltas_by_mod[match.module] + term
+        )
+        counts_by_mod[match.module] = counts_by_mod.get(match.module, 0) + 1
+    return _apply_module_deltas_inplace(target_checkpoint_model, deltas_by_mod, counts_by_mod)
 
-        tgt_mod = target_checkpoint_model.get_submodule(diff.module)
-        if hasattr(tgt_mod, "W_target"):
-            tgt_w = tgt_mod.W_target
-            tgt_w.copy_((tgt_w.float() + delta_rank1.to(tgt_w.device)).to(tgt_w.dtype))
-        elif isinstance(tgt_mod, nn.Linear):
-            tgt_w = tgt_mod.weight.data
-            tgt_w.copy_((tgt_w.float() + delta_rank1.to(tgt_w.device)).to(tgt_w.dtype))
-        else:
-            raise TypeError(f"Cannot edit unsupported module type {type(tgt_mod).__name__}")
-        edited_counts[diff.module] = edited_counts.get(diff.module, 0) + 1
-    return edited_counts
+
+@torch.no_grad()
+def apply_random_component_control_edit(
+    target_checkpoint_model: nn.Module,
+    bpd_target: BPDModel,
+    reference_receipt: IntraCheckpointEditReceipt,
+    *,
+    exclude_matches: list[FunctionalComponentMatch] | None = None,
+    seed: int = 0,
+    eps: float = 1e-12,
+) -> IntraCheckpointEditReceipt:
+    """Control 1: edit a random subset of ``bpd_target``'s own components of exact matched count and Frobenius norm."""
+    excluded_by_mod: dict[str, set[int]] = {}
+    for m in exclude_matches or []:
+        excluded_by_mod.setdefault(m.module, set()).add(m.tgt_component)
+
+    gen = torch.Generator().manual_seed(seed)
+    deltas_by_mod: dict[str, Tensor] = {}
+    counts_by_mod: dict[str, int] = {}
+
+    for mod_name, k_count in sorted(reference_receipt.edited_modules.items()):
+        if k_count <= 0:
+            continue
+        w_wrap = bpd_target.wrappers[mod_name]
+        pool = [c for c in range(w_wrap.C) if c not in excluded_by_mod.get(mod_name, set())]
+        if len(pool) < k_count:
+            pool = list(range(w_wrap.C))
+        perm = torch.randperm(len(pool), generator=gen)[:k_count].tolist()
+        chosen = [pool[i] for i in perm]
+
+        raw_delta = torch.zeros((w_wrap.d_out, w_wrap.d_in), dtype=torch.float32)
+        for c_idx in chosen:
+            v_c = w_wrap.V[:, c_idx].detach().cpu().float()
+            u_c = w_wrap.U[c_idx, :].detach().cpu().float()
+            raw_delta = raw_delta + torch.outer(u_c, v_c)
+
+        target_frob = reference_receipt.frobenius_norm_by_module[mod_name]
+        cur_frob = float(raw_delta.double().norm().item())
+        if cur_frob > eps:
+            raw_delta = raw_delta * (target_frob / cur_frob)
+        deltas_by_mod[mod_name] = raw_delta
+        counts_by_mod[mod_name] = k_count
+
+    return _apply_module_deltas_inplace(target_checkpoint_model, deltas_by_mod, counts_by_mod)
+
+
+@torch.no_grad()
+def apply_rotation_null_control_edit(
+    target_checkpoint_model: nn.Module,
+    bpd_target: BPDModel,
+    selected_matches: list[FunctionalComponentMatch],
+    reference_receipt: IntraCheckpointEditReceipt,
+    *,
+    clean_traj: RolloutTrajectory | None = None,
+    seed: int = 0,
+    eps: float = 1e-12,
+) -> IntraCheckpointEditReceipt:
+    """Control 2: Haar-rotated read and write vectors at exact matched count and Frobenius norm."""
+    by_mod: dict[str, list[int]] = {}
+    for m in selected_matches:
+        by_mod.setdefault(m.module, []).append(m.tgt_component)
+
+    deltas_by_mod: dict[str, Tensor] = {}
+    counts_by_mod: dict[str, int] = {}
+
+    for mod_idx, (mod_name, comp_list) in enumerate(sorted(by_mod.items())):
+        if not comp_list:
+            continue
+        w_wrap = bpd_target.wrappers[mod_name]
+        dev = w_wrap.V.device
+        gen = torch.Generator(device=dev).manual_seed(seed + 97 * mod_idx)
+        raw_delta = torch.zeros((w_wrap.d_out, w_wrap.d_in), device=dev, dtype=torch.float32)
+        for c_idx in comp_list:
+            v_c = w_wrap.V[:, c_idx].detach().float()
+            u_c = w_wrap.U[c_idx, :].detach().float()
+            if clean_traj is not None and mod_name in clean_traj.module_inputs:
+                x_flat = clean_traj.module_inputs[mod_name].reshape(-1, w_wrap.d_in)
+                r_c = sample_rms_matched_read_rotations(
+                    x_flat, v_c, 1, orthogonal_to_v=True, generator=gen
+                )[:, 0]
+            else:
+                r_raw = torch.randn(w_wrap.d_in, generator=gen, device=dev, dtype=torch.float32)
+                v_u = v_c / v_c.norm().clamp_min(1e-8)
+                r_raw = r_raw - v_u * torch.dot(v_u, r_raw)
+                r_c = r_raw * (v_c.norm() / r_raw.norm().clamp_min(1e-8))
+            q_raw = torch.randn(w_wrap.d_out, generator=gen, device=dev, dtype=torch.float32)
+            if w_wrap.d_out > 2 and float(u_c.norm().item()) > 1e-8:
+                u_unit = u_c / u_c.norm().clamp_min(1e-8)
+                q_raw = q_raw - u_unit * torch.dot(u_unit, q_raw)
+            q_u = q_raw * (u_c.norm() / q_raw.norm().clamp_min(1e-8))
+            raw_delta = raw_delta + torch.outer(q_u, r_c)
+
+        target_frob = reference_receipt.frobenius_norm_by_module[mod_name]
+        cur_frob = float(raw_delta.double().norm().item())
+        if cur_frob > eps:
+            raw_delta = raw_delta * (target_frob / cur_frob)
+        deltas_by_mod[mod_name] = raw_delta.cpu()
+        counts_by_mod[mod_name] = len(comp_list)
+
+    return _apply_module_deltas_inplace(target_checkpoint_model, deltas_by_mod, counts_by_mod)

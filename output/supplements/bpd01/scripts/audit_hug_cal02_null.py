@@ -1,12 +1,15 @@
-"""Gate B2: ``HUG-CAL-02`` 8-factor negative control with raw + net-of-null reporting.
+"""Gate B2: ``HUG-CAL-02`` 8-factor negative control + planted rank-1 positive arm.
 
-Tests the falsifiable negative-control requirement:
-  All 8 leading settling factors across the 4 recurrent core blocks
-  (``core.{0..3}.{o_proj, down_proj}``) exhibit nonzero **raw** ablation shift due
-  to loop-settling Jacobian fragility, yet must come out with ~zero **net**
-  importance (``|z_rot| <= z_threshold``) against an RMS-matched Haar rotation null.
-  Both raw and net importance are always reported together so fragile-pass nulls
-  cannot silently hide genuine aligned mechanisms.
+Tests the dual calibration requirement:
+  1. Negative arm: the 8 leading settling factors across the 4 recurrent core blocks
+     (``core.{0..3}.down_proj``) exhibit positive **raw** ablation shift under loop-settling
+     Jacobian fragility while satisfying ``|z_rot| <= z_threshold`` against an RMS-matched
+     Haar rotation null.
+  2. Positive arm: a planted rank-1 mechanism evaluated on the identical model family,
+     batch, pass count, and Haar rotation null satisfies ``z_rot >= z_threshold`` with
+     positive net importance.
+  Both raw and net importance (plus margins relative to ``z_threshold``) are reported
+  side by side so fragile-pass nulls cannot hide aligned mechanisms.
 """
 
 from __future__ import annotations
@@ -24,9 +27,10 @@ from mechinterp.bpd.adapters.huginn import (
     HuginnBPDAdapter,
     SettlingCoreLooper,
     discover_huginn_core_linears,
-    evaluate_hug_cal02_eight_factors,
+    evaluate_hug_cal02_with_positive_arm,
 )
 from mechinterp.bpd.components import BPDModel, RolloutTrajectory
+from mechinterp.bpd.config import resolve_registration_commit
 from mechinterp.bpd.nulls import evaluate_component_null_report
 
 
@@ -37,12 +41,13 @@ def run_synthetic_hug_cal02(
     batch_size: int = 24,
     seq_len: int = 12,
     z_threshold: float = 2.5,
+    registration_commit: str | None = None,
     seed: int = 11,
 ) -> dict[str, object]:
     gen = torch.Generator().manual_seed(seed)
     model = SettlingCoreLooper(vocab_size=32, d_model=64, n_heads=4, n_core_blocks=4, seed=seed)
     tokens = torch.randint(0, 32, (batch_size, seq_len), generator=gen)
-    audit = evaluate_hug_cal02_eight_factors(
+    dual = evaluate_hug_cal02_with_positive_arm(
         model,
         tokens,
         n_passes=n_passes,
@@ -50,17 +55,35 @@ def run_synthetic_hug_cal02(
         z_threshold=z_threshold,
         seed=seed,
     )
+    neg = dual.negative_arm
+    pos = dual.positive_arm
     return {
-        "gate": "B2_hug_cal02_negative_control",
+        "gate": "B2_hug_cal02_negative_and_positive_control",
+        "registration_commit": resolve_registration_commit(registration_commit),
         "target": "SettlingCoreLooper_4block",
         "n_passes": n_passes,
         "n_rotations": n_rotations,
         "z_threshold": z_threshold,
-        "max_raw_importance": audit.max_raw_importance,
-        "mean_raw_importance": audit.mean_raw_importance,
-        "mean_abs_net_importance": audit.mean_abs_net_importance,
-        "max_abs_z_rot": audit.max_abs_z_rot,
-        "gate_b2_passed": audit.passed_negative_control,
+        "max_raw_importance": neg.max_raw_importance,
+        "mean_raw_importance": neg.mean_raw_importance,
+        "mean_abs_net_importance": neg.mean_abs_net_importance,
+        "max_abs_z_rot": neg.max_abs_z_rot,
+        "negative_margin": dual.negative_margin,
+        "passed_negative_control": neg.passed_negative_control,
+        "positive_arm": {
+            "target_module": pos.target_module,
+            "component": pos.component,
+            "sigma": pos.sigma,
+            "raw_importance": pos.raw_importance,
+            "rotation_null_mean": pos.rotation_null_mean,
+            "rotation_null_std": pos.rotation_null_std,
+            "net_importance": pos.net_importance,
+            "observed_z_rot": pos.observed_z_rot,
+            "registered_z_threshold": pos.registered_z_threshold,
+            "margin": pos.margin,
+            "passed_positive_control": pos.passed_positive_control,
+        },
+        "gate_b2_passed": dual.passed_gate_b2,
         "factors": [
             {
                 "module": e.module,
@@ -71,7 +94,7 @@ def run_synthetic_hug_cal02(
                 "net_importance": e.net_importance,
                 "z_rot": e.z_rot,
             }
-            for e in audit.factor_entries
+            for e in neg.factor_entries
         ],
     }
 
@@ -163,6 +186,7 @@ def main() -> int:
     ap.add_argument("--passes", type=int, default=6)
     ap.add_argument("--rotations", type=int, default=16)
     ap.add_argument("--z-threshold", type=float, default=2.5)
+    ap.add_argument("--registration-commit", type=str, default=None)
     ap.add_argument("--device", type=str, default="cpu")
     ap.add_argument("--smoke", action="store_true")
     ap.add_argument("--out", type=Path, default=None)
@@ -176,12 +200,14 @@ def main() -> int:
             z_threshold=args.z_threshold,
             device=args.device,
         )
+        res["registration_commit"] = resolve_registration_commit(args.registration_commit)
     else:
         res = run_synthetic_hug_cal02(
             n_passes=4 if args.smoke else args.passes,
             n_rotations=8 if args.smoke else args.rotations,
             batch_size=12 if args.smoke else 24,
             z_threshold=args.z_threshold,
+            registration_commit=args.registration_commit,
         )
 
     text = json.dumps(res, indent=2)

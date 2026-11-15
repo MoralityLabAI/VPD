@@ -1,20 +1,20 @@
-"""BPD adapter for ``Huginn-0125`` and the ``HUG-CAL-02`` 8-factor negative control.
+"""BPD adapter for ``Huginn-0125`` and the ``HUG-CAL-02`` dual negative/positive control.
 
 Supports:
   1. ``HuginnBPDAdapter``: wraps a loaded ``tomg-group-umd/huginn-0125`` recurrent
      transformer (prelude -> ``T`` shared ``core_block`` iterations -> coda + ``lm_head``
      readout at every pass), discovering the 4 recurrent core blocks' shared linear
      projections automatically.
-  2. ``SettlingCoreLooper`` & ``evaluate_hug_cal02_eight_factors``: self-contained
-     4-core-block random-warmup settling model (plus real-model entrypoint) for
-     Gate B2, auditing 8 top singular factors across ``core.{0..3}.{o_proj, down_proj}``
-     (and optional planted task-aligned positive control) to verify that isotropic
-     settling factors yield ~zero net-of-rotation-null importance while reporting
-     raw and net importance side by side.
+  2. ``SettlingCoreLooper``, ``evaluate_hug_cal02_eight_factors``, and
+     ``evaluate_hug_cal02_with_positive_arm``: self-contained 4-core-block settling
+     model (plus real-model entrypoint) for Gate B2, auditing the 8 top singular
+     factors across ``core.{0..3}.down_proj`` alongside a planted rank-1 positive
+     control arm while reporting raw and net-of-rotation-null importance side by side.
 """
 
 from __future__ import annotations
 
+import copy
 from dataclasses import dataclass
 from typing import Any
 
@@ -280,4 +280,162 @@ def evaluate_hug_cal02_eight_factors(
         mean_abs_net_importance=mean_abs_net,
         max_abs_z_rot=max_z,
         passed_negative_control=(max_raw > 0.0 and max_z <= z_threshold),
+    )
+
+
+@dataclass
+class HugCal02PositiveArmResult:
+    """Gate B2 planted rank-1 positive-control arm evaluated beside the 8-factor negative control."""
+
+    target_module: str
+    component: int
+    sigma: float
+    raw_importance: float
+    rotation_null_mean: float
+    rotation_null_std: float
+    net_importance: float
+    observed_z_rot: float
+    registered_z_threshold: float
+    margin: float
+    passed_positive_control: bool
+
+
+@dataclass
+class HugCal02DualAuditResult:
+    """Combined Gate B2 result: 8-factor settling negative control + planted positive arm."""
+
+    negative_arm: HugCal02AuditResult
+    negative_margin: float
+    positive_arm: HugCal02PositiveArmResult
+    passed_gate_b2: bool
+
+
+@torch.no_grad()
+def evaluate_hug_cal02_with_positive_arm(
+    model: SettlingCoreLooper,
+    tokens: Tensor,
+    *,
+    n_passes: int = 6,
+    n_rotations: int = 16,
+    z_threshold: float = 2.5,
+    cal_seed: int = 777,
+    cal_batch_size: int = 128,
+    cancel_fraction: float = 1.25,
+    target_token: int = 0,
+    seed: int = 0,
+) -> HugCal02DualAuditResult:
+    """Run the 8-factor settling negative control alongside a planted rank-1 positive arm.
+
+    The positive arm clones ``model``, calibrates a rank-1 read vector ``v_plant`` on an
+    independent token batch (``cal_seed``) to fire on ``tok == target_token`` across passes
+    paired with an equilibrium-reversing write ``u_plant``, adds ``u_plant v_plant^T`` to
+    ``core.{last}.down_proj.weight``, decomposes via ``BPDModel(..., init_svd=True)``, and
+    evaluates factor ``0`` out-of-sample on ``tokens`` under the identical ``n_rotations``
+    RMS-matched Haar rotation null.
+    """
+    clean_base = copy.deepcopy(model)
+    neg_res = evaluate_hug_cal02_eight_factors(
+        copy.deepcopy(clean_base),
+        tokens,
+        n_passes=n_passes,
+        n_rotations=n_rotations,
+        z_threshold=z_threshold,
+        seed=seed,
+    )
+    neg_margin = float(z_threshold - neg_res.max_abs_z_rot)
+
+    dev = clean_base.lm_head.weight.device
+    seq_len = int(tokens.shape[1])
+    gen_cal = torch.Generator().manual_seed(cal_seed)
+    cal_tok = torch.randint(
+        0, clean_base.vocab_size, (cal_batch_size, seq_len), generator=gen_cal
+    ).to(dev)
+
+    last_idx = len(clean_base.core) - 1
+    mod_name = f"core.{last_idx}.down_proj"
+    down_ins: list[Tensor] = []
+    hook = clean_base.core[last_idx].down_proj.register_forward_hook(
+        lambda _m, inp, _out: down_ins.append(inp[0].detach())
+    )
+    try:
+        _, bs_cal, _, _ = clean_base.rollout(cal_tok, n_passes, 0, None)
+    finally:
+        hook.remove()
+
+    mask_tok = cal_tok == target_token
+    s_final = bs_cal[n_passes - 1]
+    s0_mean = s_final[mask_tok].float().mean(dim=0)
+
+    x_all = torch.stack(down_ins, dim=0)  # [T, B_cal, P, d_in]
+    d_in = x_all.shape[-1]
+    y_ind = mask_tok.unsqueeze(0).expand(n_passes, -1, -1).to(dtype=torch.float64)
+    x_flat = x_all.reshape(-1, d_in).double()
+    reg = 1e-2 * torch.eye(d_in, device=dev, dtype=torch.float64)
+    v64 = torch.linalg.solve(x_flat.T @ x_flat + reg, x_flat.T @ y_ind.reshape(-1))
+    v_unit = (v64 / v64.norm().clamp_min(1e-12)).float()
+
+    alpha_target = float((down_ins[-1][mask_tok].float() @ v_unit).mean().item())
+    u_vec = (-float(cancel_fraction) * s0_mean / max(abs(alpha_target), 1e-6)).float()
+    if alpha_target < 0.0:
+        u_vec = -u_vec
+
+    planted_model = copy.deepcopy(clean_base).to(dev).eval()
+    planted_model.core[last_idx].down_proj.weight.add_(
+        torch.outer(u_vec, v_unit).to(planted_model.lm_head.weight.dtype)
+    )
+
+    bpd_pos = BPDModel(planted_model, {mod_name: 4}, max_passes=n_passes, init_svd=True)
+    tok_eval = tokens.to(dev)
+    with bpd_pos.target_capture(pass_offset=0, update_means=True, detach_inputs=True):
+        ro, bs, vis, prm = planted_model.rollout(tok_eval, n_passes, 0, None)
+    mod_in = bpd_pos.collect_recorded_inputs(expected_passes=n_passes)
+    clean_traj = RolloutTrajectory(
+        readouts=ro,
+        boundary_states=bs,
+        module_inputs=mod_in,
+        visible_states=vis,
+        prompt_features=prm,
+    )
+
+    def _run_pos() -> RolloutTrajectory:
+        p_ro, p_bs, p_vis, p_prm = planted_model.rollout(tok_eval, n_passes, 0, None)
+        return RolloutTrajectory(
+            readouts=p_ro,
+            boundary_states=p_bs,
+            module_inputs=mod_in,
+            visible_states=p_vis,
+            prompt_features=p_prm,
+        )
+
+    pos_rep = evaluate_component_null_report(
+        bpd_pos,
+        clean_traj,
+        _run_pos,
+        components_by_module={mod_name: [0]},
+        passes=[],
+        include_all_pass=True,
+        n_rotations=n_rotations,
+        seed=seed,
+    )
+    e0 = pos_rep.entries[0]
+    pos_margin = float(e0.z_rot - z_threshold)
+    pos_arm = HugCal02PositiveArmResult(
+        target_module=mod_name,
+        component=0,
+        sigma=float(u_vec.norm().item()),
+        raw_importance=float(e0.raw_importance),
+        rotation_null_mean=float(e0.rotation_null_mean),
+        rotation_null_std=float(e0.rotation_null_std),
+        net_importance=float(e0.net_importance),
+        observed_z_rot=float(e0.z_rot),
+        registered_z_threshold=float(z_threshold),
+        margin=pos_margin,
+        passed_positive_control=bool(e0.net_importance > 0.0 and e0.z_rot >= z_threshold),
+    )
+
+    return HugCal02DualAuditResult(
+        negative_arm=neg_res,
+        negative_margin=neg_margin,
+        positive_arm=pos_arm,
+        passed_gate_b2=bool(neg_res.passed_negative_control and pos_arm.passed_positive_control),
     )
