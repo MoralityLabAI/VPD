@@ -194,37 +194,49 @@ def bpd_minimality_loss(
     switch_terms: list[Tensor] = []
     total_c = 0
 
-    for name in sorted(ci_upper.keys()):
-        g = ci_upper[name].float()  # [B, T, P, C]
-        bsz, n_passes, seq_len, c_dim = g.shape
-        total_c += int(c_dim)
-        vals = (g.clamp_min(0.0) + cfg.eps).pow(p)  # [B, T, P, C]
-
+    def _per_module_terms(g_in: Tensor) -> tuple[Tensor, Tensor]:
+        g_f = g_in.float()
+        bsz, n_passes, seq_len, _ = g_f.shape
+        vals = (g_f.clamp_min(0.0) + cfg.eps).pow(p)
         if cfg.pool_mode == "mean":
-            l_c = vals.mean(dim=(0, 1, 2))  # [C]
-            max_tau = vals.amax(dim=1)  # [B, P, C]
-            sum_c = max_tau.sum(dim=(0, 1))  # [C]
-            f_c = sum_c / float(max(bsz * seq_len, 1))  # [C]
+            l_c = vals.mean(dim=(0, 1, 2))
+            max_tau = vals.amax(dim=1)
+            sum_c = max_tau.sum(dim=(0, 1))
+            f_c = sum_c / float(max(bsz * seq_len, 1))
         elif cfg.pool_mode == "max":
-            max_tau = vals.amax(dim=1)  # [B, P, C]
-            l_c = max_tau.mean(dim=(0, 1))  # [C]
-            sum_c = max_tau.sum(dim=(0, 1))  # [C]
-            f_c = sum_c / float(max(bsz * seq_len, 1))  # [C]
+            max_tau = vals.amax(dim=1)
+            l_c = max_tau.mean(dim=(0, 1))
+            sum_c = max_tau.sum(dim=(0, 1))
+            f_c = sum_c / float(max(bsz * seq_len, 1))
         elif cfg.pool_mode == "sum_legacy":
-            sum_c = vals.sum(dim=(0, 1, 2))  # [C]
-            l_c = vals.sum(dim=1).mean(dim=(0, 1))  # [C]
-            f_c = sum_c / float(max(bsz * n_passes * seq_len, 1))  # [C]
+            sum_c = vals.sum(dim=(0, 1, 2))
+            l_c = vals.sum(dim=1).mean(dim=(0, 1))
+            f_c = sum_c / float(max(bsz * n_passes * seq_len, 1))
         else:
             raise ValueError(f"Unknown pool_mode: {cfg.pool_mode!r}")
 
         mod_term = (l_c + cfg.beta * f_c * torch.log2(1.0 + sum_c * float(world_size))).sum()
-        mod_level_terms.append(mod_term)
-
         if n_passes > 1 and cfg.coeff_switch > 0.0:
-            diffs = (g[:, 1:] - g[:, :-1]).abs()  # [B, T-1, P, C]
+            diffs = (g_f[:, 1:] - g_f[:, :-1]).abs()
             if cfg.switch_q != 1.0:
                 diffs = (diffs + cfg.eps).pow(cfg.switch_q)
-            switch_terms.append(diffs.sum(dim=-1).mean())
+            sw_term = diffs.sum(dim=-1).mean()
+        else:
+            sw_term = torch.zeros_like(mod_term)
+        return mod_term, sw_term
+
+    for name in sorted(ci_upper.keys()):
+        g_raw = ci_upper[name]
+        total_c += int(g_raw.shape[-1])
+        if torch.is_grad_enabled() and g_raw.requires_grad and g_raw.numel() >= 4_000_000:
+            import torch.utils.checkpoint as torch_ckpt
+
+            m_t, s_t = torch_ckpt.checkpoint(_per_module_terms, g_raw, use_reentrant=False)  # type: ignore[misc]
+        else:
+            m_t, s_t = _per_module_terms(g_raw)
+        mod_level_terms.append(m_t)
+        if g_raw.shape[1] > 1 and cfg.coeff_switch > 0.0:
+            switch_terms.append(s_t)
 
     level_raw = torch.stack(mod_level_terms).sum()
     if cfg.normalize_by_c and total_c > 0:

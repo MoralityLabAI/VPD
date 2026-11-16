@@ -31,21 +31,38 @@ class _LowerLeakyHardSigmoid(torch.autograd.Function):
 
     @staticmethod
     def forward(ctx: Any, x: Tensor, alpha: float) -> Tensor:
-        ctx.save_for_backward(x)
+        ctx.save_for_backward(x <= 0.0, x > 1.0)
         ctx.alpha = alpha
         return x.clamp(0.0, 1.0)
 
     @staticmethod
     def backward(ctx: Any, *grad_outputs: Tensor) -> tuple[Tensor, None]:
         grad_output = grad_outputs[0]
-        (x,) = ctx.saved_tensors
+        le_zero, gt_one = ctx.saved_tensors
         alpha: float = ctx.alpha
-        zero = torch.zeros_like(grad_output)
-        grad = torch.where(
-            x <= 0.0,
-            torch.where(grad_output < 0.0, alpha * grad_output, zero),
-            torch.where(x <= 1.0, grad_output, zero),
-        )
+        grad = grad_output.masked_fill(gt_one, 0.0)
+        grad = torch.where(le_zero, grad_output.clamp_max(0.0) * alpha, grad)
+        return grad, None
+
+
+class _UpperLeakyHardSigmoid(torch.autograd.Function):
+    """Goodfire upper-leaky hard sigmoid: clamp(x, 0, 1) below 1, slope alpha above 1."""
+
+    @staticmethod
+    def forward(ctx: Any, x: Tensor, alpha: float) -> Tensor:
+        gt_one = x > 1.0
+        ctx.save_for_backward(x <= 0.0, gt_one)
+        ctx.alpha = alpha
+        out = x.clamp(0.0, 1.0)
+        return torch.where(gt_one, 1.0 + alpha * (x - 1.0), out)
+
+    @staticmethod
+    def backward(ctx: Any, *grad_outputs: Tensor) -> tuple[Tensor, None]:
+        grad_output = grad_outputs[0]
+        le_zero, gt_one = ctx.saved_tensors
+        alpha: float = ctx.alpha
+        grad = grad_output.masked_fill(le_zero, 0.0)
+        grad = torch.where(gt_one, grad_output * alpha, grad)
         return grad, None
 
 
@@ -56,7 +73,7 @@ def lower_leaky_sigmoid(x: Tensor, alpha: float = 0.01) -> Tensor:
 
 def upper_leaky_sigmoid(x: Tensor, alpha: float = 0.01) -> Tensor:
     """Clamp to [0, 1] below 1, linear slope ``alpha`` above 1 for minimality pressure."""
-    return torch.where(x > 1.0, 1.0 + alpha * (x - 1.0), x.clamp(0.0, 1.0))
+    return _UpperLeakyHardSigmoid.apply(x, alpha)  # type: ignore[return-value]
 
 
 @dataclass

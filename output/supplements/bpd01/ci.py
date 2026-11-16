@@ -291,6 +291,32 @@ class TiedCINetwork(nn.Module):
         feats = torch.cat(normed_parts, dim=-1)
         return feats, bsz, n_passes, seq_len
 
+    def _run_flat_chunk(self, flat_chunk: Tensor) -> Tensor:
+        h = self.proj_in(flat_chunk)
+        for blk in self.blocks:
+            h = blk(h, is_causal=self.is_causal)
+        out_h = _rms_norm(h) if self.cfg.final_rms_norm else h
+        return self.out_proj(out_h)
+
+    def _run_pass_slice(
+        self,
+        sub_inputs: Mapping[str, Tensor],
+        *,
+        visible_states: Mapping[int, Tensor] | Tensor | None,
+        prompt_features: Tensor | None,
+        pass_offset: int,
+    ) -> Tensor:
+        feats, bsz, sub_t, seq_len = self._assemble_features(
+            sub_inputs,
+            visible_states=visible_states,
+            prompt_features=prompt_features,
+            pass_offset=pass_offset,
+        )
+        flat = feats.reshape(bsz * sub_t, seq_len, self.in_dim)
+        del feats
+        out_flat = self._run_flat_chunk(flat)
+        return out_flat.view(bsz, sub_t, seq_len, self.total_c)
+
     def forward(
         self,
         module_inputs: Mapping[str, Tensor],
@@ -299,18 +325,74 @@ class TiedCINetwork(nn.Module):
         prompt_features: Tensor | None = None,
         pass_offset: int = 0,
     ) -> CIOutputs:
-        feats, bsz, n_passes, seq_len = self._assemble_features(
-            module_inputs,
-            visible_states=visible_states,
-            prompt_features=prompt_features,
-            pass_offset=pass_offset,
-        )
-        flat = feats.reshape(bsz * n_passes, seq_len, self.in_dim)
-        h = self.proj_in(flat)
-        for blk in self.blocks:
-            h = blk(h, is_causal=self.is_causal)
-        out_h = _rms_norm(h) if self.cfg.final_rms_norm else h
-        raw = self.out_proj(out_h).view(bsz, n_passes, seq_len, self.total_c)
+        first = module_inputs[self.module_order[0]]
+        bsz, n_passes, _seq_len, _ = first.shape
+        net_dev = self.proj_in.weight.device
+        pf_dev = prompt_features.to(net_dev) if prompt_features is not None else None
+        pass_chunk = max(1, 256 // max(bsz, 1))
+        if n_passes <= pass_chunk:
+            sub_all = {name: module_inputs[name].to(net_dev) for name in self.module_order}
+            vis_all = (
+                visible_states.to(net_dev)
+                if isinstance(visible_states, Tensor)
+                else (
+                    {k: v.to(net_dev) for k, v in visible_states.items()}
+                    if visible_states is not None
+                    else None
+                )
+            )
+            raw = self._run_pass_slice(
+                sub_all,
+                visible_states=vis_all,
+                prompt_features=pf_dev,
+                pass_offset=pass_offset,
+            )
+        else:
+            import torch.utils.checkpoint as torch_ckpt
+
+            pieces: list[Tensor] = []
+            for t0 in range(0, n_passes, pass_chunk):
+                t1 = min(t0 + pass_chunk, n_passes)
+                sub_in = {name: module_inputs[name][:, t0:t1].to(net_dev) for name in self.module_order}
+                sub_vis: Mapping[int, Tensor] | Tensor | None
+                if isinstance(visible_states, Tensor):
+                    sub_vis = visible_states[:, t0:t1].to(net_dev)
+                elif visible_states is not None:
+                    sub_vis = {
+                        pass_offset + k: visible_states[pass_offset + k].to(net_dev)
+                        for k in range(t0, t1)
+                        if (pass_offset + k) in visible_states
+                    }
+                else:
+                    sub_vis = None
+                sub_off = pass_offset + t0
+                if torch.is_grad_enabled():
+                    # Pass tensors explicitly to checkpoint so autograd tracks parameters cleanly
+                    ordered_tensors = [sub_in[n] for n in self.module_order]
+
+                    def _ckpt_slice(*t_args: Tensor, _vis=sub_vis, _off: int = sub_off) -> Tensor:
+                        s_map = {n: t_v for n, t_v in zip(self.module_order, t_args)}
+                        return self._run_pass_slice(
+                            s_map,
+                            visible_states=_vis,
+                            prompt_features=pf_dev,
+                            pass_offset=_off,
+                        )
+
+                    pieces.append(
+                        torch_ckpt.checkpoint(_ckpt_slice, *ordered_tensors, use_reentrant=False)  # type: ignore[arg-type]
+                    )
+                else:
+                    pieces.append(
+                        self._run_pass_slice(
+                            sub_in,
+                            visible_states=sub_vis,
+                            prompt_features=pf_dev,
+                            pass_offset=sub_off,
+                        )
+                    )
+            raw = torch.cat(pieces, dim=1)
+            del pieces
 
         alpha = self.cfg.leaky_alpha
         lower: dict[str, Tensor] = {}

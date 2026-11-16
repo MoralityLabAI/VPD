@@ -1082,11 +1082,19 @@ def main() -> int:
     ap.add_argument("--registration-commit", type=str, default=None)
     ap.add_argument("--device", type=str, default="cpu")
     ap.add_argument("--max-watts", type=float, default=300.0)
+    ap.add_argument(
+        "--max-vram-fraction",
+        type=float,
+        default=0.65,
+        help="Hard per-process CUDA VRAM ceiling (prevents Windows WDDM shared-RAM swap)",
+    )
     ap.add_argument("--smoke", action="store_true", help="Fast deterministic CPU smoke run on mini-TRM")
     ap.add_argument("--out", type=Path, default=None)
     args = ap.parse_args()
 
     if args.device.startswith("cuda") and not args.smoke:
+        if torch.cuda.is_available() and 0.05 <= args.max_vram_fraction < 1.0:
+            torch.cuda.set_per_process_memory_fraction(float(args.max_vram_fraction))
         watts = power_limit_watts()
         if watts is not None and watts > args.max_watts:
             print(

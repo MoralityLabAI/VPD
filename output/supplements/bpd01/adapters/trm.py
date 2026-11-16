@@ -211,7 +211,7 @@ class TRMBPDAdapter:
 
         states: list[tuple[Tensor, Tensor]] = []
         for tau in range(total_invocations):
-            states.append((z_h.detach().clone(), z_l.detach().clone()))
+            states.append((z_h.detach().cpu(), z_l.detach().cpu()))
             if (tau % cyc) < self.model.l_cycles:
                 z_l = self.model.run_l_level(z_l, z_h + x_emb)
             else:

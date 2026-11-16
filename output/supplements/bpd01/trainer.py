@@ -320,23 +320,30 @@ class BPDTrainer:
         )
 
         self.optimizer.zero_grad(set_to_none=True)
-        ci_out = self.ci_net.forward_trajectory(clean_traj, pass_offset=pass_offset)
-        ci_lower_leaf = {
-            k: v.detach().requires_grad_(True) for k, v in ci_out.lower_leaky.items()
+        # Park module_inputs on CPU so TiedCINetwork streams 8 passes at a time (~180 MB vs ~3 GB VRAM)
+        clean_traj.module_inputs = {
+            k: v.cpu() if v.is_cuda else v for k, v in clean_traj.module_inputs.items()
         }
+        if self.device.type == "cuda":
+            torch.cuda.empty_cache()
+        with torch.no_grad():
+            ci_out_nograd = self.ci_net.forward_trajectory(clean_traj, pass_offset=pass_offset)
+            budget = active_component_budget(ci_out_nograd)
+            ci_lower_leaf = {
+                k: v.detach().clone().requires_grad_(True)
+                for k, v in ci_out_nograd.lower_leaky.items()
+            }
+            del ci_out_nograd
 
-        loss_faith = faithfulness_loss(self.bpd_model.wrappers)
-        loss_min, min_stats = bpd_minimality_loss(
-            ci_out.upper_leaky,
-            step=step,
-            total_steps=self.cfg.n_steps,
-            cfg=self.cfg.minimality,
-        )
-
-        base_loss_val = float(
-            (self.cfg.coeff_faith * loss_faith.detach() + loss_min.detach()).item()
-        )
         step_pass_losses: dict[int, float] = {}
+        leaf_grads: dict[str, Tensor] = {}
+
+        def _flush_leaf_grads_to_cpu() -> None:
+            for nm, lf in ci_lower_leaf.items():
+                if lf.grad is not None:
+                    g_cpu = lf.grad.detach().cpu()
+                    leaf_grads[nm] = g_cpu if nm not in leaf_grads else (leaf_grads[nm] + g_cpu)
+                    lf.grad = None
 
         # 1. Stochastic mask reconstruction branch (backprop immediately to free rollout graph)
         loss_stoch_val = 0.0
@@ -368,7 +375,8 @@ class BPDTrainer:
             loss_stoch_val = float(loss_stoch.detach().item())
             if loss_stoch.requires_grad:
                 (self.cfg.coeff_stoch * loss_stoch).backward()
-            del stoch_traj, loss_stoch
+                _flush_leaf_grads_to_cpu()
+            del stoch_sched, stoch_traj, loss_stoch
 
         # 1b. Optional deterministic CI-masked reconstruction branch (Goodfire VPD 5th term)
         loss_det_val = 0.0
@@ -394,7 +402,8 @@ class BPDTrainer:
             loss_det_val = float(loss_det.detach().item())
             if loss_det.requires_grad:
                 (self.cfg.coeff_det * loss_det).backward()
-            del det_traj, loss_det
+                _flush_leaf_grads_to_cpu()
+            del det_sched, det_traj, loss_det
 
         # 2. Persistent PGD adversarial mask reconstruction branch (single backward, no retain_graph)
         loss_adv_val = 0.0
@@ -402,7 +411,7 @@ class BPDTrainer:
         if self.cfg.coeff_adv > 0.0 and exec_mode == "closed_loop":
             adv_lr = self.pgd.lr_at(step, self.cfg.n_steps)
             if self.cfg.adversary.inner_steps > 0:
-                ci_det = {k: v.detach() for k, v in ci_out.lower_leaky.items()}
+                ci_det = {k: v.detach() for k, v in ci_lower_leaf.items()}
 
                 def _inner_eval(sched: dict[str, PassMaskSchedule]) -> Tensor:
                     tr = self.run_masked_rollout(
@@ -419,6 +428,7 @@ class BPDTrainer:
                     return l_rec
 
                 self.pgd.warmup_inner_steps(ci_det, _inner_eval, lr=adv_lr)
+                del ci_det
 
             adv_sched, leaf_sources = self.pgd.build_schedules(
                 ci_lower_leaf, requires_grad_sources=True
@@ -452,7 +462,7 @@ class BPDTrainer:
                     name: torch.zeros_like(leaf_sources[name])
                     for name in self.bpd_model.module_order
                 }
-            del adv_traj, loss_adv
+            del adv_sched, leaf_sources, adv_traj, loss_adv
         elif self.cfg.coeff_adv > 0.0 and exec_mode == "clean_window":
             # On variable-length short transplant windows, apply fresh single-step adversarial probe
             # without mutating full-horizon persistent PGD tensor shapes.
@@ -478,15 +488,42 @@ class BPDTrainer:
             loss_adv_val = float(loss_adv.detach().item())
             if loss_adv.requires_grad:
                 (self.cfg.coeff_adv * loss_adv).backward()
-            del adv_traj, loss_adv
+            del stoch_adv, adv_traj, loss_adv
+
+        # Flush any final adv leaf grads and free leaf tensors + caches before ci_net graph
+        _flush_leaf_grads_to_cpu()
+        del ci_lower_leaf
+        clean_traj.readouts.clear()
+        clean_traj.boundary_states.clear()
+        if self.device.type == "cuda":
+            torch.cuda.empty_cache()
 
         # 3. Faithfulness + minimality + accumulated CI leaf gradients through ci_net
-        head_loss = self.cfg.coeff_faith * loss_faith + loss_min
-        for name, leaf in ci_lower_leaf.items():
-            if leaf.grad is not None:
-                head_loss = head_loss + (ci_out.lower_leaky[name] * leaf.grad.detach()).sum()
+        ci_out = self.ci_net.forward_trajectory(clean_traj, pass_offset=pass_offset)
+        ci_out.pre_sigmoid.clear()
+        loss_faith = faithfulness_loss(self.bpd_model.wrappers)
+        faith_val = float(loss_faith.detach().item())
+        head_loss = self.cfg.coeff_faith * loss_faith
+        for name in list(ci_out.lower_leaky.keys()):
+            low_n = ci_out.lower_leaky.pop(name)
+            if name in leaf_grads:
+                head_loss = head_loss + (low_n * leaf_grads.pop(name).to(self.device)).sum()
+            del low_n
+        loss_min, min_stats = bpd_minimality_loss(
+            ci_out.upper_leaky,
+            step=step,
+            total_steps=self.cfg.n_steps,
+            cfg=self.cfg.minimality,
+        )
+        ci_out.upper_leaky.clear()
+        base_loss_val = float(
+            (self.cfg.coeff_faith * faith_val + float(loss_min.detach().item()))
+        )
+        head_loss = head_loss + loss_min
+        del ci_out, loss_faith, loss_min, leaf_grads
         if head_loss.requires_grad:
             head_loss.backward()
+        del head_loss, clean_traj
 
         total_loss_val = (
             base_loss_val
@@ -507,12 +544,11 @@ class BPDTrainer:
             self.train_pass_loss_accum[tau] = self.train_pass_loss_accum.get(tau, 0.0) + val
         step_shares = compute_pass_loss_shares(step_pass_losses)
 
-        budget = active_component_budget(ci_out)
         return StepMetrics(
             step=step,
             mode=exec_mode,
             total_loss=total_loss_val,
-            faith_loss=float(loss_faith.detach().item()),
+            faith_loss=faith_val,
             min_loss=min_stats["total"],
             switch_loss=min_stats["switch_weighted"],
             stoch_loss=loss_stoch_val,
