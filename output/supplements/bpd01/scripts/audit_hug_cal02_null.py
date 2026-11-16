@@ -27,7 +27,7 @@ from mechinterp.bpd.adapters.huginn import (
     HuginnBPDAdapter,
     SettlingCoreLooper,
     discover_huginn_core_linears,
-    evaluate_hug_cal02_with_positive_arm,
+    evaluate_hug_cal02_sigma_sweep,
 )
 from mechinterp.bpd.components import BPDModel, RolloutTrajectory
 from mechinterp.bpd.config import resolve_registration_commit
@@ -37,65 +37,39 @@ from mechinterp.bpd.nulls import evaluate_component_null_report
 def run_synthetic_hug_cal02(
     *,
     n_passes: int = 6,
-    n_rotations: int = 16,
-    batch_size: int = 24,
+    n_rotations: int = 199,
+    batch_size: int = 32,
     seq_len: int = 12,
-    z_threshold: float = 2.5,
+    fwer_alpha: float = 0.05,
+    pos_alpha: float = 0.01,
+    effect_multipliers: tuple[float, ...] = (0.5, 1.0, 2.0, 4.0),
+    bpd_steps: int = 80,
     registration_commit: str | None = None,
+    device: str = "cpu",
     seed: int = 11,
 ) -> dict[str, object]:
     gen = torch.Generator().manual_seed(seed)
-    model = SettlingCoreLooper(vocab_size=32, d_model=64, n_heads=4, n_core_blocks=4, seed=seed)
-    tokens = torch.randint(0, 32, (batch_size, seq_len), generator=gen)
-    dual = evaluate_hug_cal02_with_positive_arm(
+    model = SettlingCoreLooper(vocab_size=32, d_model=64, n_heads=4, n_core_blocks=4, seed=seed).to(
+        device
+    )
+    tokens = torch.randint(0, 32, (batch_size, seq_len), generator=gen).to(device)
+    suite = evaluate_hug_cal02_sigma_sweep(
         model,
         tokens,
         n_passes=n_passes,
         n_rotations=n_rotations,
-        z_threshold=z_threshold,
+        fwer_alpha=fwer_alpha,
+        pos_alpha=pos_alpha,
+        effect_multipliers=effect_multipliers,
+        bpd_steps=bpd_steps,
         seed=seed,
     )
-    neg = dual.negative_arm
-    pos = dual.positive_arm
     return {
-        "gate": "B2_hug_cal02_negative_and_positive_control",
+        "gate": "B2_v2_hug_cal02_o_down_negative_and_sigma_sweep",
         "registration_commit": resolve_registration_commit(registration_commit),
-        "target": "SettlingCoreLooper_4block",
+        "target": "SettlingCoreLooper_4block_o_proj_and_down_proj",
         "n_passes": n_passes,
-        "n_rotations": n_rotations,
-        "z_threshold": z_threshold,
-        "max_raw_importance": neg.max_raw_importance,
-        "mean_raw_importance": neg.mean_raw_importance,
-        "mean_abs_net_importance": neg.mean_abs_net_importance,
-        "max_abs_z_rot": neg.max_abs_z_rot,
-        "negative_margin": dual.negative_margin,
-        "passed_negative_control": neg.passed_negative_control,
-        "positive_arm": {
-            "target_module": pos.target_module,
-            "component": pos.component,
-            "sigma": pos.sigma,
-            "raw_importance": pos.raw_importance,
-            "rotation_null_mean": pos.rotation_null_mean,
-            "rotation_null_std": pos.rotation_null_std,
-            "net_importance": pos.net_importance,
-            "observed_z_rot": pos.observed_z_rot,
-            "registered_z_threshold": pos.registered_z_threshold,
-            "margin": pos.margin,
-            "passed_positive_control": pos.passed_positive_control,
-        },
-        "gate_b2_passed": dual.passed_gate_b2,
-        "factors": [
-            {
-                "module": e.module,
-                "component": e.component,
-                "raw_importance": e.raw_importance,
-                "rotation_null_mean": e.rotation_null_mean,
-                "rotation_null_std": e.rotation_null_std,
-                "net_importance": e.net_importance,
-                "z_rot": e.z_rot,
-            }
-            for e in neg.factor_entries
-        ],
+        **suite,
     }
 
 
@@ -184,8 +158,10 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--hf-repo", type=str, default=None, help="Optional HF repo e.g. tomg-group-umd/huginn-0125")
     ap.add_argument("--passes", type=int, default=6)
-    ap.add_argument("--rotations", type=int, default=16)
-    ap.add_argument("--z-threshold", type=float, default=2.5)
+    ap.add_argument("--rotations", type=int, default=199)
+    ap.add_argument("--fwer-alpha", type=float, default=0.05)
+    ap.add_argument("--pos-alpha", type=float, default=0.01)
+    ap.add_argument("--bpd-steps", type=int, default=80)
     ap.add_argument("--registration-commit", type=str, default=None)
     ap.add_argument("--device", type=str, default="cpu")
     ap.add_argument("--smoke", action="store_true")
@@ -197,17 +173,20 @@ def main() -> int:
             args.hf_repo,
             n_passes=args.passes,
             n_rotations=args.rotations,
-            z_threshold=args.z_threshold,
             device=args.device,
         )
         res["registration_commit"] = resolve_registration_commit(args.registration_commit)
     else:
         res = run_synthetic_hug_cal02(
             n_passes=4 if args.smoke else args.passes,
-            n_rotations=8 if args.smoke else args.rotations,
-            batch_size=12 if args.smoke else 24,
-            z_threshold=args.z_threshold,
+            n_rotations=19 if args.smoke else args.rotations,
+            batch_size=12 if args.smoke else 32,
+            fwer_alpha=args.fwer_alpha,
+            pos_alpha=args.pos_alpha,
+            effect_multipliers=(1.0, 2.0) if args.smoke else (0.5, 1.0, 2.0, 4.0),
+            bpd_steps=15 if args.smoke else args.bpd_steps,
             registration_commit=args.registration_commit,
+            device=args.device,
         )
 
     text = json.dumps(res, indent=2)

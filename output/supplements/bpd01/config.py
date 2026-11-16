@@ -135,6 +135,7 @@ class BPDConfig:
 
     # Objective weights & trajectory state-matching switch
     coeff_faith: float = 1e5
+    coeff_det: float = 0.0
     coeff_stoch: float = 0.5
     coeff_adv: float = 0.5
     match_inner_boundary_states: bool = False

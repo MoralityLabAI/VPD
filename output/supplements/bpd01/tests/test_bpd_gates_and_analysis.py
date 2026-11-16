@@ -417,3 +417,240 @@ def test_trm_and_looped_chase_end_to_end_smokes() -> None:
     )
     assert "clock_gap_recon" in chase_res["gaps"]  # type: ignore[operator]
     assert "visible_gap_recon" in chase_res["gaps"]  # type: ignore[operator]
+
+
+def test_compose_interventional_path_wires_perturbed_inputs_when_rollout_fn_is_stale() -> None:
+    """Regression test for v1 bug where stale traj.module_inputs yielded exact 0.0 effects."""
+    torch.manual_seed(91)
+
+    class _TwoStepChain(nn.Module):
+        def __init__(self) -> None:
+            super().__init__()
+            self.core = nn.Linear(4, 4, bias=False)
+            with torch.no_grad():
+                self.core.weight.zero_()
+                self.core.weight[1, 0] = 2.0
+                self.core.weight[2, 1] = 2.0
+                self.core.weight[3, 2] = 1.5
+
+        def rollout(self, x: Tensor, n_passes: int = 4):
+            h = x.clone()
+            boundaries = {}
+            for tau in range(n_passes):
+                h = torch.tanh(h + self.core(h))
+                boundaries[tau] = h
+            return {}, boundaries
+
+    chain_mod = _TwoStepChain()
+    bpd = BPDModel(
+        chain_mod,
+        {"core": 3},
+        max_passes=4,
+        ablation=AblationConfig(mode="zero", sphere_rescale=False),
+        init_svd=False,
+    )
+    with torch.no_grad():
+        bpd.wrappers["core"].V.zero_()
+        bpd.wrappers["core"].U.zero_()
+        bpd.wrappers["core"].V[0, 0] = 1.0
+        bpd.wrappers["core"].U[0, 1] = 2.0
+        bpd.wrappers["core"].V[1, 1] = 1.0
+        bpd.wrappers["core"].U[1, 2] = 2.0
+        bpd.wrappers["core"].V[2, 2] = 1.0
+        bpd.wrappers["core"].U[2, 3] = 1.5
+
+    x0 = torch.zeros(12, 1, 4)
+    x0[:, 0, 0] = torch.linspace(-1.0, 1.0, 12)
+    with bpd.target_capture():
+        ro, bs = chain_mod.rollout(x0, n_passes=4)
+    clean_traj = RolloutTrajectory(
+        readouts=ro, boundary_states=bs, module_inputs=bpd.collect_recorded_inputs(4)
+    )
+
+    # Deliberately return stale clean_traj.module_inputs (exact v1 _ref_plain_rollout pattern!)
+    def _stale_plain_rollout() -> RolloutTrajectory:
+        p_ro, p_bs = chain_mod.rollout(x0, n_passes=4)
+        return RolloutTrajectory(
+            readouts=p_ro, boundary_states=p_bs, module_inputs=clean_traj.module_inputs
+        )
+
+    op = compute_transition_operator(bpd, clean_traj, _stale_plain_rollout, ablation_mode="ablate")
+    path = [ComponentKey("core", 0), ComponentKey("core", 1), ComponentKey("core", 2)]
+    res = compose_interventional_path(bpd, clean_traj, _stale_plain_rollout, op, path, start_pass=0)
+    assert res.direct_source_effect > 0.05
+    assert res.interventional_mediated_effect > 0.05
+
+
+def test_nested_state_plus_clock_warm_start_exact_zero_gap_at_step_zero() -> None:
+    """state_plus_clock warm-started from state_only has identical outputs at step 0."""
+    from mechinterp.bpd.ci import TiedCINetwork
+    from mechinterp.bpd.config import CIConfig
+
+    torch.manual_seed(77)
+    mod_dims = {"m0": 12, "m1": 8}
+    c_map = {"m0": 4, "m1": 3}
+    state_net = TiedCINetwork(
+        mod_dims, c_map, CIConfig(variant="state_only", d_model=32, n_blocks=1, n_heads=4)
+    )
+    clock_net = TiedCINetwork(
+        mod_dims, c_map, CIConfig(variant="state_plus_clock", d_model=32, n_blocks=1, n_heads=4)
+    )
+    clock_net.load_nested_state_only(state_net)
+
+    mod_in = {"m0": torch.randn(3, 5, 6, 12), "m1": torch.randn(3, 5, 6, 8)}
+    out_s = state_net(mod_in)
+    out_c = clock_net(mod_in)
+    for m in c_map:
+        assert torch.allclose(out_s.pre_sigmoid[m], out_c.pre_sigmoid[m], atol=1e-6)
+        assert torch.allclose(out_s.lower_leaky[m], out_c.lower_leaky[m], atol=1e-6)
+
+
+def test_v2_strict_tgt_sustaining_unmatched_similarity_mcnemar_and_rank_p() -> None:
+    """Verify strict tgt_net_sustaining > 0 filter, unmatched baseline, McNemar, and rank p."""
+    from mechinterp.bpd.analysis import (
+        ComponentFunctionalProfile,
+        compute_mcnemar_discordance,
+        compute_unmatched_similarity_baseline,
+        summarize_control_draws,
+    )
+    from mechinterp.bpd.nulls import compute_rank_p_values
+
+    ref_profs = [
+        ComponentFunctionalProfile(
+            module="m0",
+            component=0,
+            role="sustaining",
+            mean_schedule=torch.tensor([1.0, 1.0, 1.0, 0.2]),
+            duty_cycle=0.8,
+            switch_rate=0.2,
+            transition_signature=torch.tensor([0.9, 0.1]),
+            readout_effect_curve=torch.tensor([0.1, 0.5]),
+            raw_all_pass_final=0.6,
+            net_all_pass_final=0.45,
+            sustain_amplification=3.0,
+        ),
+        ComponentFunctionalProfile(
+            module="m0",
+            component=1,
+            role="transient",
+            mean_schedule=torch.tensor([1.0, 0.0, 0.0, 0.0]),
+            duty_cycle=0.25,
+            switch_rate=0.33,
+            transition_signature=torch.tensor([0.1, 0.9]),
+            readout_effect_curve=torch.tensor([0.4, 0.01]),
+            raw_all_pass_final=0.02,
+            net_all_pass_final=-0.01,
+            sustain_amplification=0.5,
+        ),
+    ]
+    tgt_profs = [
+        # Identical schedule/profile to ref comp 0, BUT negative net_all_pass_final (-0.12)!
+        ComponentFunctionalProfile(
+            module="m0",
+            component=0,
+            role="inert",
+            mean_schedule=torch.tensor([1.0, 1.0, 1.0, 0.2]),
+            duty_cycle=0.8,
+            switch_rate=0.2,
+            transition_signature=torch.tensor([0.9, 0.1]),
+            readout_effect_curve=torch.tensor([0.1, 0.5]),
+            raw_all_pass_final=0.05,
+            net_all_pass_final=-0.12,
+            sustain_amplification=0.8,
+        ),
+        # Positive sustaining target counterpart
+        ComponentFunctionalProfile(
+            module="m0",
+            component=1,
+            role="sustaining",
+            mean_schedule=torch.tensor([0.95, 0.95, 0.9, 0.25]),
+            duty_cycle=0.75,
+            switch_rate=0.2,
+            transition_signature=torch.tensor([0.85, 0.15]),
+            readout_effect_curve=torch.tensor([0.12, 0.48]),
+            raw_all_pass_final=0.4,
+            net_all_pass_final=0.22,
+            sustain_amplification=2.5,
+        ),
+    ]
+    matches = match_components_by_function(
+        ref_profs, tgt_profs, require_ref_sustaining=True, require_tgt_sustaining=True
+    )
+    assert len(matches) == 1
+    assert matches[0].tgt_component == 1  # Strictly rejected component 0 with net = -0.12!
+    assert matches[0].tgt_net_sustaining > 0.0
+
+    sim_base = compute_unmatched_similarity_baseline(
+        ref_profs, tgt_profs, matches, n_permutations=49, seed=0
+    )
+    assert sim_base.num_matched_pairs == 1
+    assert sim_base.num_unmatched_pairs == 3
+
+    mc = compute_mcnemar_discordance(
+        [True, True, True, True, True, True, False, False],
+        [False, False, False, False, False, False, False, False],
+    )
+    assert mc.n_a_only == 6 and mc.n_b_only == 0
+    assert math.isclose(mc.exact_two_sided_p, 2.0 * (0.5 ** 6), rel_tol=1e-6)
+
+    dist = summarize_control_draws(0.80, [0.50 + 0.01 * i for i in range(19)], higher_is_better=True)
+    assert dist.exceed_or_equal_count == 0
+    assert math.isclose(dist.empirical_p_rank, 1.0 / 20.0, rel_tol=1e-6)
+
+    exc, p_up, p_two = compute_rank_p_values(5.0, torch.linspace(-1.0, 1.0, 199))
+    assert exc == 0
+    assert math.isclose(p_up, 1.0 / 200.0, rel_tol=1e-6)
+    assert math.isclose(p_two, 2.0 / 200.0, rel_tol=1e-6)
+
+
+def test_trm_activation_checkpointing_exact_forward_and_gradient_parity() -> None:
+    """Verify call_idx-pinned checkpointing matches uncheckpointed forward & (V, U) grads."""
+    from mechinterp.bpd.adapters.trm import TRMBPDAdapter, default_trm_c_per_module
+    from mechinterp.bpd.components import PassMaskSchedule
+    from mechinterp.bpd.losses import trajectory_recon_loss
+
+    base_a = build_mini_trm(hidden_size=32, num_heads=4, l_layers=2, h_cycles=1, l_cycles=2, seq_len=9, seed=12)
+    base_b = copy.deepcopy(base_a)
+    c_map = default_trm_c_per_module(base_a, c=8)
+    ad_a = TRMBPDAdapter(base_a, use_activation_checkpointing=False)
+    ad_b = TRMBPDAdapter(base_b, use_activation_checkpointing=True)
+    n_inv = ad_a.invocations_for_outer_steps(2)
+
+    bpd_a = BPDModel(base_a, c_map, max_passes=n_inv, init_svd=True)
+    bpd_b = BPDModel(base_b, c_map, max_passes=n_inv, init_svd=True)
+
+    inp = torch.randint(1, 11, (4, base_a.seq_len), generator=torch.Generator().manual_seed(3))
+    batch_a = ad_a.make_batch_with_clean_cache(inp, n_inv)
+    batch_b = ad_b.make_batch_with_clean_cache(inp, n_inv)
+
+    gen = torch.Generator().manual_seed(4)
+    sched_a = {}
+    sched_b = {}
+    for m in bpd_a.module_order:
+        cm = torch.rand(4, n_inv, base_a.total_len, 8, generator=gen)
+        dm = torch.rand(4, n_inv, base_a.total_len, generator=gen)
+        sched_a[m] = PassMaskSchedule(comp_mask=cm.clone(), delta_mask=dm.clone())
+        sched_b[m] = PassMaskSchedule(comp_mask=cm.clone(), delta_mask=dm.clone())
+
+    with torch.no_grad():
+        ro_clean, bs_clean, _, _ = ad_a.rollout(batch_a, n_inv, 0, None)
+    clean_t = RolloutTrajectory(readouts=ro_clean, boundary_states=bs_clean, module_inputs={})
+
+    with bpd_a.masked_components(sched_a):
+        ro_a, bs_a, _, _ = ad_a.rollout(batch_a, n_inv, 0, None)
+    loss_a, _ = trajectory_recon_loss(
+        RolloutTrajectory(readouts=ro_a, boundary_states=bs_a, module_inputs={}), clean_t
+    )
+    loss_a.backward()
+
+    with bpd_b.masked_components(sched_b):
+        ro_b, bs_b, _, _ = ad_b.rollout(batch_b, n_inv, 0, None)
+    loss_b, _ = trajectory_recon_loss(
+        RolloutTrajectory(readouts=ro_b, boundary_states=bs_b, module_inputs={}), clean_t
+    )
+    loss_b.backward()
+
+    assert torch.allclose(loss_a, loss_b, atol=1e-5)
+    for m in bpd_a.module_order:
+        assert torch.allclose(bpd_a.wrappers[m].V.grad, bpd_b.wrappers[m].V.grad, atol=1e-5)  # type: ignore[arg-type]
+        assert torch.allclose(bpd_a.wrappers[m].U.grad, bpd_b.wrappers[m].U.grad, atol=1e-5)  # type: ignore[arg-type]

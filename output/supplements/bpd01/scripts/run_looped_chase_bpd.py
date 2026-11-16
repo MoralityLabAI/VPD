@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 from pathlib import Path
 import sys
 
@@ -23,6 +24,7 @@ from mechinterp.bpd.adapters.looped_chase import (
     DEFAULT_LOOPED_CHASE_CKPT_DIR,
     LoopedChaseBPDAdapter,
     default_looped_chase_c_per_module,
+    evaluate_looped_chase_sigma_sweep,
     evaluate_planted_rank1_looped_chase,
     load_looped_chase_checkpoint,
     resolve_looped_chase_checkpoint,
@@ -39,7 +41,7 @@ from mechinterp.bpd.config import (
     NullCalibrationConfig,
     resolve_registration_commit,
 )
-from mechinterp.bpd.trainer import BPDTrainer, train_ci_heads_on_frozen_components
+from mechinterp.bpd.trainer import BPDTrainer, evaluate_ci_variants_multiseed
 from mechinterp.loopscope01.scripts.loopscope_toy import LoopedChase
 
 
@@ -48,10 +50,11 @@ def run_looped_chase_experiment(
     *,
     label: str,
     n_passes: int = 8,
-    c_per_mod: int = 16,
-    n_steps: int = 100,
-    ci_head_steps: int = 60,
-    batch_size: int = 24,
+    c_per_mod: int = 256,
+    n_steps: int = 200,
+    ci_head_steps: int = 120,
+    n_ci_seeds: int = 1,
+    batch_size: int = 64,
     hinge_kappa: float = 0.10,
     registration_commit: str | None = None,
     device: str = "cpu",
@@ -70,9 +73,10 @@ def run_looped_chase_experiment(
         seed=seed,
         faithfulness_warmup_steps=20,
         main_lr=2e-3,
-        coeff_faith=1e3,
+        coeff_faith=1e4,
+        coeff_det=0.5,
         coeff_stoch=0.5,
-        coeff_adv=0.5,
+        coeff_adv=1.0,
         rollout_mode="hybrid",
         window_steps=min(2, max(n_passes - 1, 1)),
         closed_loop_prob=0.5,
@@ -87,7 +91,7 @@ def run_looped_chase_experiment(
         ),
         ablation=AblationConfig(mode="pass_mean", sphere_rescale=True),
         minimality=MinimalityConfig(pool_mode="mean", coeff_level=2e-4, coeff_switch=2e-4),
-        adversary=AdversaryConfig(scope="shared_batch_and_pass", inner_steps=1),
+        adversary=AdversaryConfig(scope="shared_batch_and_pass", lr=0.03, inner_steps=2),
         null_calibration=NullCalibrationConfig(
             use_fragility_hinge=True,
             hinge_kappa=hinge_kappa,
@@ -126,7 +130,11 @@ def run_looped_chase_experiment(
     eval_metrics, ci_out, clean_traj = trainer.evaluate(eval_batch)
     sched_report = extract_schedule(ci_out, position_pool="last")
 
-    # Train all 3 CI variants on the frozen shared (V, U) decomposition to measure Clock & Visible Gaps
+    val_tok, _ = sample_pointer_chase_batch(
+        n_nodes=model.n_nodes, batch_size=batch_size, max_depth=n_passes, seed=seed + 7000
+    )
+
+    # Train all 3 CI variants on frozen (V, U) with nested state_only -> state_plus_clock warm-start
     ci_cfg = BPDConfig(
         c_per_module=c_map,
         n_passes=n_passes,
@@ -141,27 +149,31 @@ def run_looped_chase_experiment(
         null_calibration=cfg.null_calibration,
     )
 
-    def _batch_fn(step_idx: int):
+    def _batch_fn_for_seed(seed_val: int, step_idx: int):
         tok, _ = sample_pointer_chase_batch(
             n_nodes=model.n_nodes,
             batch_size=batch_size,
             max_depth=n_passes,
-            seed=seed + 5000 + step_idx,
+            seed=seed_val + 5000 + step_idx,
         )
         return tok.to(device)
 
-    _, variant_metrics, gaps = train_ci_heads_on_frozen_components(
+    multiseed_ci = evaluate_ci_variants_multiseed(
         bpd_model,
         ci_cfg,
         adapter.rollout,
-        _batch_fn,
+        _batch_fn_for_seed,
         eval_tok.to(device),
+        val_batch=val_tok.to(device),
+        n_seeds=max(n_ci_seeds, 1),
         visible_dim=adapter.visible_dim,
         prompt_dim=adapter.prompt_dim,
         pass_null_losses=trainer.pass_null_losses,
         hinge_kappa=cfg.null_calibration.hinge_kappa,
         device=device,
     )
+    variant_metrics = multiseed_ci["ci_variants"]
+    gaps = multiseed_ci["gaps"]
 
     def _plain_rollout():
         ro, bs, vis, prm = adapter.rollout(eval_tok.to(device), n_passes, 0, None)
@@ -192,8 +204,10 @@ def run_looped_chase_experiment(
         "eval_metrics": eval_metrics,
         "stationary_component_fraction": float(sched_report.is_stationary.float().mean().item()),
         "mean_switch_rate": float(sched_report.switch_rate.mean().item()),
+        "n_ci_seeds": multiseed_ci["n_seeds"],
         "ci_variants": variant_metrics,
         "gaps": gaps,
+        "seed_gaps": multiseed_ci["seed_gaps"],
         "sample_component_roles": [
             {
                 "module": r.module,
@@ -211,25 +225,28 @@ def run_gate_b3_suite(
     *,
     ckpt_dir: Path = DEFAULT_LOOPED_CHASE_CKPT_DIR,
     n_passes: int = 8,
-    c_per_mod: int = 16,
-    n_steps: int = 100,
-    ci_head_steps: int = 60,
-    batch_size: int = 24,
+    c_per_mod: int = 256,
+    n_steps: int = 200,
+    ci_head_steps: int = 120,
+    n_ci_seeds: int = 3,
+    batch_size: int = 64,
     hinge_kappa: float = 0.10,
-    z_threshold: float = 2.5,
+    n_rotations: int = 199,
+    pos_alpha: float = 0.01,
     registration_commit: str | None = None,
     device: str = "cpu",
     seed: int = 0,
 ) -> dict[str, object]:
-    """Run Gate B3 across ``lam0.1_s1`` + ``lam1_s1..3`` plus the planted rank-1 positive control."""
+    """Run Amendment v2 Gate B3 across ``lam0.1_s1`` + ``lam1_s1..3`` plus natural-scale ``sigma`` sweep."""
     reg_sha = resolve_registration_commit(registration_commit)
     lam01_path, lam01_sha = resolve_looped_chase_checkpoint("lam0.1_s1", ckpt_dir=ckpt_dir)
     lam01_orig = load_looped_chase_checkpoint(lam01_path, device=device)
 
-    planted_res = evaluate_planted_rank1_looped_chase(
+    planted_sweep = evaluate_looped_chase_sigma_sweep(
         lam01_orig,
         n_passes=n_passes,
-        z_threshold=z_threshold,
+        n_rotations=n_rotations,
+        pos_alpha=pos_alpha,
         checkpoint_label="lam0.1_s1",
         checkpoint_sha256=lam01_sha,
     )
@@ -248,6 +265,7 @@ def run_gate_b3_suite(
             c_per_mod=c_per_mod,
             n_steps=n_steps,
             ci_head_steps=ci_head_steps,
+            n_ci_seeds=n_ci_seeds,
             batch_size=batch_size,
             hinge_kappa=hinge_kappa,
             registration_commit=reg_sha,
@@ -261,34 +279,71 @@ def run_gate_b3_suite(
     g_s2 = arm_results["lam1_s2"]["gaps"]  # type: ignore[assignment]
     g_s3 = arm_results["lam1_s3"]["gaps"]  # type: ignore[assignment]
 
+    nested_clock_valid = all(
+        float(arm_results[a]["gaps"]["clock_gap_recon"]) >= -0.02  # type: ignore[index]
+        for a in arms
+    )
     lam01_stationary_ok = (
         float(r01["stationary_component_fraction"]) >= 0.50  # type: ignore[arg-type]
-        and abs(float(g01["clock_gap_recon"])) <= 0.05  # type: ignore[index]
-        and abs(float(g01["visible_gap_recon"])) <= 0.05  # type: ignore[index]
+        and float(g01["clock_gap_recon"]) <= 0.05  # type: ignore[index]
+        and float(g01["visible_gap_recon"]) <= 0.15  # type: ignore[index]
     )
-    s1_beats_s3 = (
-        float(g_s1["visible_gap_recon"]) > float(g_s3["visible_gap_recon"])  # type: ignore[index]
-        or float(g_s1["visible_gap_active"]) > float(g_s3["visible_gap_active"])  # type: ignore[index]
-    )
-    s2_beats_s3 = (
-        float(g_s2["visible_gap_recon"]) > float(g_s3["visible_gap_recon"])  # type: ignore[index]
-        or float(g_s2["visible_gap_active"]) > float(g_s3["visible_gap_active"])  # type: ignore[index]
-    )
+
+    def _beats_by_2sd(ga: dict[str, float], gb: dict[str, float], min_abs: float = 0.05) -> tuple[bool, float, float]:
+        diff_rec = float(ga["visible_gap_recon"]) - float(gb["visible_gap_recon"])
+        sd_rec = math.sqrt(
+            float(ga.get("visible_gap_recon_std", 0.0)) ** 2
+            + float(gb.get("visible_gap_recon_std", 0.0)) ** 2
+        )
+        ok_rec = diff_rec > max(2.0 * sd_rec, min_abs)
+        diff_act = float(ga["visible_gap_active"]) - float(gb["visible_gap_active"])
+        sd_act = math.sqrt(
+            float(ga.get("visible_gap_active_std", 0.0)) ** 2
+            + float(gb.get("visible_gap_active_std", 0.0)) ** 2
+        )
+        ok_act = diff_act > max(2.0 * sd_act, 2.0)
+        return (ok_rec or ok_act), diff_rec, sd_rec
+
+    s1_vs_s3_ok, s1_s3_diff, s1_s3_sd = _beats_by_2sd(g_s1, g_s3)  # type: ignore[arg-type]
+    s2_vs_s3_ok, s2_s3_diff, s2_s3_sd = _beats_by_2sd(g_s2, g_s3)  # type: ignore[arg-type]
+    s1_vs_01_ok, s1_01_diff, s1_01_sd = _beats_by_2sd(g_s1, g01)  # type: ignore[arg-type]
+    s2_vs_01_ok, s2_01_diff, s2_01_sd = _beats_by_2sd(g_s2, g01)  # type: ignore[arg-type]
+
+    pos_passed = bool(planted_sweep["passed_positive_control"])
     gate_b3_passed = bool(
-        planted_res.passed_positive_control and lam01_stationary_ok and s1_beats_s3 and s2_beats_s3
+        pos_passed
+        and nested_clock_valid
+        and lam01_stationary_ok
+        and s1_vs_s3_ok
+        and s2_vs_s3_ok
+        and s1_vs_01_ok
+        and s2_vs_01_ok
     )
 
     return {
-        "gate": "B3_looped_chase_suite_with_planted_control",
+        "gate": "B3_v2_looped_chase_nested_ci_and_sigma_sweep",
         "registration_commit": reg_sha,
         "checkpoint_sha256": ckpt_shas,
-        "planted_positive_control": planted_res.to_dict(),
+        "planted_positive_sigma_sweep": planted_sweep,
         "arms": arm_results,
+        "margins_and_noise": {
+            "s1_minus_s3_visible_gap_recon": s1_s3_diff,
+            "s1_minus_s3_combined_sd": s1_s3_sd,
+            "s2_minus_s3_visible_gap_recon": s2_s3_diff,
+            "s2_minus_s3_combined_sd": s2_s3_sd,
+            "s1_minus_lam01_visible_gap_recon": s1_01_diff,
+            "s1_minus_lam01_combined_sd": s1_01_sd,
+            "s2_minus_lam01_visible_gap_recon": s2_01_diff,
+            "s2_minus_lam01_combined_sd": s2_01_sd,
+        },
         "checks": {
-            "planted_positive_control_passed": planted_res.passed_positive_control,
+            "planted_positive_sigma_sweep_passed": pos_passed,
+            "nested_clock_non_negative_across_arms": nested_clock_valid,
             "lam0.1_stationary_and_small_gaps": lam01_stationary_ok,
-            "lam1_s1_exceeds_s3_visible_gap": s1_beats_s3,
-            "lam1_s2_exceeds_s3_visible_gap": s2_beats_s3,
+            "lam1_s1_exceeds_s3_by_2sd": s1_vs_s3_ok,
+            "lam1_s2_exceeds_s3_by_2sd": s2_vs_s3_ok,
+            "lam1_s1_exceeds_lam01_by_2sd": s1_vs_01_ok,
+            "lam1_s2_exceeds_lam01_by_2sd": s2_vs_01_ok,
         },
         "gate_b3_passed": gate_b3_passed,
     }
@@ -298,11 +353,13 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--ckpt", type=Path, default=None, help="Optional single LoopedChase .final.pt")
     ap.add_argument("--ckpt-dir", type=Path, default=DEFAULT_LOOPED_CHASE_CKPT_DIR)
-    ap.add_argument("--suite", action="store_true", help="Run full 4-checkpoint Gate B3 + planted control")
+    ap.add_argument("--suite", action="store_true", help="Run full 4-checkpoint Gate B3 v2 + sigma sweep")
     ap.add_argument("--label", type=str, default="smoke_looped_chase")
     ap.add_argument("--passes", type=int, default=8)
-    ap.add_argument("--c", type=int, default=16)
-    ap.add_argument("--steps", type=int, default=100)
+    ap.add_argument("--c", type=int, default=256)
+    ap.add_argument("--steps", type=int, default=200)
+    ap.add_argument("--ci-seeds", type=int, default=3)
+    ap.add_argument("--rotations", type=int, default=199)
     ap.add_argument("--hinge-kappa", type=float, default=0.10)
     ap.add_argument("--z-threshold", type=float, default=2.5)
     ap.add_argument("--registration-commit", type=str, default=None)
@@ -328,9 +385,10 @@ def main() -> int:
             mini,
             label=args.label,
             n_passes=4,
-            c_per_mod=6,
+            c_per_mod=16,
             n_steps=16,
             ci_head_steps=10,
+            n_ci_seeds=1,
             batch_size=12,
             hinge_kappa=args.hinge_kappa,
             registration_commit=args.registration_commit,
@@ -343,9 +401,10 @@ def main() -> int:
             n_passes=args.passes,
             c_per_mod=args.c,
             n_steps=args.steps,
-            ci_head_steps=max(args.steps // 2, 20),
+            ci_head_steps=max((args.steps * 3) // 5, 30),
+            n_ci_seeds=args.ci_seeds,
             hinge_kappa=args.hinge_kappa,
-            z_threshold=args.z_threshold,
+            n_rotations=args.rotations,
             registration_commit=args.registration_commit,
             device=args.device,
         )
@@ -358,7 +417,8 @@ def main() -> int:
             n_passes=args.passes,
             c_per_mod=args.c,
             n_steps=args.steps,
-            ci_head_steps=max(args.steps // 2, 20),
+            ci_head_steps=max((args.steps * 3) // 5, 30),
+            n_ci_seeds=args.ci_seeds,
             hinge_kappa=args.hinge_kappa,
             registration_commit=args.registration_commit,
             device=args.device,

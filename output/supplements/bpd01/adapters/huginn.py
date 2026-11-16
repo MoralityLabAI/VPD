@@ -24,7 +24,10 @@ import torch.nn.functional as F
 
 from mechinterp.bpd.adapters.trm import compute_head_projector_f64
 from mechinterp.bpd.components import BPDModel, RolloutTrajectory
+from mechinterp.bpd.config import AblationConfig, BPDConfig, CIConfig, MinimalityConfig, NullCalibrationConfig
+from mechinterp.bpd.losses import kl_divergence_logits
 from mechinterp.bpd.nulls import ComponentNullEntry, evaluate_component_null_report
+from mechinterp.bpd.trainer import BPDTrainer
 
 
 def discover_huginn_core_linears(model: nn.Module, c: int = 32) -> dict[str, int]:
@@ -211,6 +214,9 @@ class HugCal02AuditResult:
     mean_abs_net_importance: float
     max_abs_z_rot: float
     passed_negative_control: bool
+    min_p_rank: float = 1.0
+    min_p_rank_two_sided: float = 1.0
+    bonferroni_alpha: float = 0.00625
 
 
 def evaluate_hug_cal02_eight_factors(
@@ -220,20 +226,33 @@ def evaluate_hug_cal02_eight_factors(
     n_passes: int = 6,
     n_rotations: int = 16,
     z_threshold: float = 2.5,
+    fwer_alpha: float = 0.05,
+    include_o_proj: bool = False,
     seed: int = 0,
 ) -> HugCal02AuditResult:
-    """Audit the 8 leading ``mlp.down_proj`` SVD factors (top-2 per block across ``core.{0..3}``).
+    """Audit the 8 leading core-block factors across ``core.{0..3}.{o_proj, down_proj}``.
 
-    Matches ``HUG-CAL-02`` (8 frozen ``mlp.proj`` factors ``f0, f1`` across ``core0..core3``,
-    evaluated against orthogonal read rotations matched to exact per-iteration projection RMS
-    while fixing write vector ``u``). Reports both ``raw_importance`` and ``net_importance``.
+    When ``include_o_proj=True`` (default, restoring the initial ``e6baa744`` scope),
+    evaluates leading factor ``c = 0`` on both ``o_proj`` and ``down_proj`` across all 4
+    recurrent core blocks (``8`` factors total). For ``n_rotations >= 50`` (e.g. ``K = 199``),
+    gates strictly on exact Monte Carlo rank p-values ``min_p_rank > fwer_alpha / 8``.
     """
-    four_mlp_modules = {f"core.{i}.down_proj": 4 for i in range(4)}
-    bpd_model = BPDModel(model, four_mlp_modules, max_passes=n_passes, init_svd=True)
+    work_model = copy.deepcopy(model)
+    if include_o_proj:
+        modules_map = {}
+        for i in range(4):
+            modules_map[f"core.{i}.o_proj"] = 4
+            modules_map[f"core.{i}.down_proj"] = 4
+        comp_sel = {m: [0] for m in modules_map}
+    else:
+        modules_map = {f"core.{i}.down_proj": 4 for i in range(4)}
+        comp_sel = {m: [0, 1] for m in modules_map}
+
+    bpd_model = BPDModel(work_model, modules_map, max_passes=n_passes, init_svd=True)
 
     with torch.no_grad():
         with bpd_model.target_capture(pass_offset=0, update_means=True, detach_inputs=True):
-            ro, bs, vis, prm = model.rollout(tokens, n_passes, 0, None)
+            ro, bs, vis, prm = work_model.rollout(tokens, n_passes, 0, None)
         mod_in = bpd_model.collect_recorded_inputs(expected_passes=n_passes)
     clean_traj = RolloutTrajectory(
         readouts=ro,
@@ -244,7 +263,7 @@ def evaluate_hug_cal02_eight_factors(
     )
 
     def _run() -> RolloutTrajectory:
-        p_ro, p_bs, p_vis, p_prm = model.rollout(tokens, n_passes, 0, None)
+        p_ro, p_bs, p_vis, p_prm = work_model.rollout(tokens, n_passes, 0, None)
         return RolloutTrajectory(
             readouts=p_ro,
             boundary_states=p_bs,
@@ -257,7 +276,7 @@ def evaluate_hug_cal02_eight_factors(
         bpd_model,
         clean_traj,
         _run,
-        components_by_module={m: [0, 1] for m in four_mlp_modules},
+        components_by_module=comp_sel,
         passes=[],  # evaluate multi-pass tied factor ablation (pass_idx = -1)
         include_all_pass=True,
         n_rotations=n_rotations,
@@ -267,11 +286,21 @@ def evaluate_hug_cal02_eight_factors(
     raws = [e.raw_importance for e in entries]
     abs_nets = [abs(e.net_importance) for e in entries]
     abs_zs = [abs(e.z_rot) for e in entries]
+    p_ranks = [e.p_rank for e in entries]
+    p_twos = [e.p_rank_two_sided for e in entries]
 
     max_raw = max(raws) if raws else 0.0
     mean_raw = sum(raws) / max(len(raws), 1)
     mean_abs_net = sum(abs_nets) / max(len(abs_nets), 1)
     max_z = max(abs_zs) if abs_zs else 0.0
+    min_p = min(p_ranks) if p_ranks else 1.0
+    min_p2 = min(p_twos) if p_twos else 1.0
+    bonf = float(fwer_alpha) / float(max(len(entries), 1))
+
+    if n_rotations >= 50:
+        passed_neg = bool(max_raw > 0.0 and min_p > bonf)
+    else:
+        passed_neg = bool(max_raw > 0.0 and max_z <= z_threshold)
 
     return HugCal02AuditResult(
         factor_entries=entries,
@@ -279,7 +308,10 @@ def evaluate_hug_cal02_eight_factors(
         mean_raw_importance=mean_raw,
         mean_abs_net_importance=mean_abs_net,
         max_abs_z_rot=max_z,
-        passed_negative_control=(max_raw > 0.0 and max_z <= z_threshold),
+        passed_negative_control=passed_neg,
+        min_p_rank=min_p,
+        min_p_rank_two_sided=min_p2,
+        bonferroni_alpha=bonf,
     )
 
 
@@ -439,3 +471,390 @@ def evaluate_hug_cal02_with_positive_arm(
         positive_arm=pos_arm,
         passed_gate_b2=bool(neg_res.passed_negative_control and pos_arm.passed_positive_control),
     )
+
+
+def _calibrate_sigma_for_target_raw_kl(
+    clean_base: SettlingCoreLooper,
+    cal_tok: Tensor,
+    *,
+    n_passes: int,
+    blk_idx: int,
+    u_unit: Tensor,
+    v_unit: Tensor,
+    target_raw_kl: float,
+) -> tuple[float, float]:
+    """Binary-search ``sigma > 0`` on ``cal_tok`` so planted raw final KL matches ``target_raw_kl``."""
+    dev = clean_base.lm_head.weight.device
+    with torch.no_grad():
+        ro_clean, _, _, _ = clean_base.rollout(cal_tok, n_passes, 0, None)
+        clean_final = ro_clean[n_passes - 1]
+
+        def _kl_at(sig: float) -> float:
+            probe = copy.deepcopy(clean_base).to(dev).eval()
+            probe.core[blk_idx].down_proj.weight.add_(
+                torch.outer(float(sig) * u_unit, v_unit).to(probe.lm_head.weight.dtype)
+            )
+            ro_p, _, _, _ = probe.rollout(cal_tok, n_passes, 0, None)
+            return float(kl_divergence_logits(ro_p[n_passes - 1], clean_final).item())
+
+        lo = 0.0
+        hi = 1.0
+        while _kl_at(hi) < target_raw_kl and hi < 1e4:
+            hi *= 2.0
+        for _ in range(22):
+            mid = 0.5 * (lo + hi)
+            if _kl_at(mid) < target_raw_kl:
+                lo = mid
+            else:
+                hi = mid
+        sigma_star = 0.5 * (lo + hi)
+        achieved = _kl_at(sigma_star)
+    return sigma_star, achieved
+
+
+def evaluate_hug_cal02_sigma_sweep(
+    model: SettlingCoreLooper,
+    eval_tokens: Tensor,
+    *,
+    n_passes: int = 6,
+    n_rotations: int = 199,
+    fwer_alpha: float = 0.05,
+    pos_alpha: float = 0.01,
+    effect_multipliers: tuple[float, ...] = (0.5, 1.0, 2.0, 4.0),
+    bpd_steps: int = 80,
+    cal_seed: int = 777,
+    cal_batch_size: int = 128,
+    target_token: int = 0,
+    seed: int = 11,
+) -> dict[str, Any]:
+    """Amendment v2 Gate B2: 8-factor ``o_proj + down_proj`` negative control + natural-scale ``sigma`` sweep.
+
+    1. Audits the 8 leading ``core.{0..3}.{o_proj, down_proj}`` factors under ``n_rotations``
+       RMS-matched Haar read rotations using exact rank p-values (``min_p_rank > fwer_alpha / 8``).
+    2. Calibrates planted rank-1 amplitudes ``sigma`` on disjoint ``cal_tok`` so induced raw KL
+       matches ``m * max_natural_raw_cal`` for ``m in effect_multipliers`` (down to ``0.5x`` and
+       ``1.0x`` of the largest natural settling factor).
+    3. Reports out-of-sample ``n_rotations`` exact rank p-values on ``eval_tokens`` for both:
+       - ``instrument_power``: known planted rank-1 component under the ``HUG-CAL-02`` rotation null,
+       - ``blind_bpd_recovery``: full-rank BPD trained strictly on ``cal_seed`` batches, single
+         component ``c*`` selected on ``cal_tok`` by quick net calibration shift, audited once
+         out-of-sample on ``eval_tokens`` under ``n_rotations`` Haar rotations.
+    """
+    dev = model.lm_head.weight.device
+    clean_base = copy.deepcopy(model).to(dev).eval()
+    eval_tok = eval_tokens.to(dev)
+
+    neg_eval = evaluate_hug_cal02_eight_factors(
+        copy.deepcopy(clean_base),
+        eval_tok,
+        n_passes=n_passes,
+        n_rotations=n_rotations,
+        fwer_alpha=fwer_alpha,
+        include_o_proj=True,
+        seed=seed,
+    )
+
+    seq_len = int(eval_tok.shape[1])
+    gen_cal = torch.Generator().manual_seed(cal_seed)
+    cal_tok = torch.randint(
+        0, clean_base.vocab_size, (cal_batch_size, seq_len), generator=gen_cal
+    ).to(dev)
+
+    # Measure max natural factor raw effect on cal_tok (zero peeking at eval_tok)
+    neg_cal = evaluate_hug_cal02_eight_factors(
+        copy.deepcopy(clean_base),
+        cal_tok[: int(eval_tok.shape[0])],
+        n_passes=n_passes,
+        n_rotations=4,
+        include_o_proj=True,
+        seed=cal_seed,
+    )
+    ref_natural_raw_cal = max(neg_cal.max_raw_importance, 1e-4)
+
+    last_idx = len(clean_base.core) - 1
+    mod_name = f"core.{last_idx}.down_proj"
+    down_ins: list[Tensor] = []
+    hook = clean_base.core[last_idx].down_proj.register_forward_hook(
+        lambda _m, inp, _out: down_ins.append(inp[0].detach())
+    )
+    with torch.no_grad():
+        try:
+            _, bs_cal, _, _ = clean_base.rollout(cal_tok, n_passes, 0, None)
+        finally:
+            hook.remove()
+
+    mask_tok = cal_tok == target_token
+    s_final = bs_cal[n_passes - 1]
+    s0_mean = s_final[mask_tok].float().mean(dim=0)
+    x_all = torch.stack(down_ins, dim=0)
+    d_in = x_all.shape[-1]
+    y_ind = mask_tok.unsqueeze(0).expand(n_passes, -1, -1).to(dtype=torch.float64)
+    x_flat = x_all.reshape(-1, d_in).double()
+    reg = 1e-2 * torch.eye(d_in, device=dev, dtype=torch.float64)
+    v64 = torch.linalg.solve(x_flat.T @ x_flat + reg, x_flat.T @ y_ind.reshape(-1))
+    v_unit = (v64 / v64.norm().clamp_min(1e-12)).float()
+
+    alpha_target = float((down_ins[-1][mask_tok].float() @ v_unit).mean().item())
+    raw_u = -s0_mean * (1.0 if alpha_target >= 0.0 else -1.0)
+    u_unit = F.normalize(raw_u.float(), dim=0)
+
+    sweep_rows: list[dict[str, Any]] = []
+    for mult_idx, mult in enumerate(effect_multipliers):
+        target_kl = float(mult) * ref_natural_raw_cal
+        sigma_val, cal_kl = _calibrate_sigma_for_target_raw_kl(
+            clean_base,
+            cal_tok[: int(eval_tok.shape[0])],
+            n_passes=n_passes,
+            blk_idx=last_idx,
+            u_unit=u_unit,
+            v_unit=v_unit,
+            target_raw_kl=target_kl,
+        )
+        u_vec = float(sigma_val) * u_unit
+
+        # A. Null-instrument sensitivity on exact planted rank-1 factor (1 + rank(W) exact representation)
+        inst_model = copy.deepcopy(clean_base).to(dev).eval()
+        inst_model.core[last_idx].down_proj.weight.data.add_(
+            torch.outer(u_vec, v_unit).to(inst_model.lm_head.weight.dtype)
+        )
+        c_full = int(clean_base.d_model)
+        bpd_inst = BPDModel(inst_model, {mod_name: c_full + 1}, max_passes=n_passes, init_svd=False)
+        with torch.no_grad():
+            # Decompose W_planted = u_vec v_unit^T + W_clean (component 0 is planted, 1..d are exact clean SVD)
+            w_clean_64 = clean_base.core[last_idx].down_proj.weight.detach().double().cpu()
+            u_s, s_s, vh_s = torch.linalg.svd(w_clean_64, full_matrices=False)
+            k_s = min(c_full, int(s_s.numel()))
+            sq = s_s[:k_s].sqrt()
+            v_mat = torch.zeros((d_in, c_full + 1), dtype=torch.float32)
+            u_mat = torch.zeros((c_full + 1, clean_base.d_model), dtype=torch.float32)
+            v_mat[:, 0] = v_unit.cpu()
+            u_mat[0, :] = u_vec.cpu()
+            v_mat[:, 1 : 1 + k_s] = (vh_s[:k_s].T * sq.unsqueeze(0)).float()
+            u_mat[1 : 1 + k_s, :] = (sq.unsqueeze(1) * u_s[:, :k_s].T).float()
+            bpd_inst.wrappers[mod_name].V.copy_(v_mat.to(dev))
+            bpd_inst.wrappers[mod_name].U.copy_(u_mat.to(dev))
+
+            with bpd_inst.target_capture(pass_offset=0, update_means=True, detach_inputs=True):
+                ro_i, bs_i, vis_i, prm_i = inst_model.rollout(eval_tok, n_passes, 0, None)
+            mod_in_i = bpd_inst.collect_recorded_inputs(expected_passes=n_passes)
+            clean_traj_i = RolloutTrajectory(
+                readouts=ro_i,
+                boundary_states=bs_i,
+                module_inputs=mod_in_i,
+                visible_states=vis_i,
+                prompt_features=prm_i,
+            )
+
+            def _run_inst() -> RolloutTrajectory:
+                r2, b2, v2, p2 = inst_model.rollout(eval_tok, n_passes, 0, None)
+                return RolloutTrajectory(
+                    readouts=r2,
+                    boundary_states=b2,
+                    module_inputs=mod_in_i,
+                    visible_states=v2,
+                    prompt_features=p2,
+                )
+
+            inst_rep = evaluate_component_null_report(
+                bpd_inst,
+                clean_traj_i,
+                _run_inst,
+                components_by_module={mod_name: [0]},
+                passes=[],
+                include_all_pass=True,
+                n_rotations=n_rotations,
+                seed=seed + 100 * mult_idx,
+            )
+            e_inst = inst_rep.entries[0]
+
+        # B. Blind BPD recovery trained strictly on cal_seed stream (no access to u_vec, v_unit, or eval_tok)
+        blind_model = copy.deepcopy(clean_base).to(dev).eval()
+        blind_model.core[last_idx].down_proj.weight.data.add_(
+            torch.outer(u_vec, v_unit).to(blind_model.lm_head.weight.dtype)
+        )
+        c_blind = int(clean_base.d_model)
+        cfg_b = BPDConfig(
+            c_per_module={mod_name: c_blind},
+            n_passes=n_passes,
+            n_steps=bpd_steps,
+            batch_size=int(eval_tok.shape[0]),
+            seq_len=seq_len,
+            seed=cal_seed + mult_idx,
+            faithfulness_warmup_steps=10,
+            main_lr=4e-3,
+            coeff_faith=1e4,
+            coeff_det=0.5,
+            coeff_stoch=0.5,
+            coeff_adv=0.5,
+            rollout_mode="closed_loop",
+            ci=CIConfig(variant="state_only", d_model=48, n_blocks=1, n_heads=4, mlp_hidden=96),
+            ablation=AblationConfig(mode="pass_mean", sphere_rescale=True),
+            minimality=MinimalityConfig(pool_mode="mean", coeff_level=5e-4, coeff_switch=2e-4),
+            null_calibration=NullCalibrationConfig(use_fragility_hinge=False, hinge_kappa=0.0),
+        )
+        bpd_blind = BPDModel(
+            blind_model, {mod_name: c_blind}, max_passes=n_passes, ablation=cfg_b.ablation, init_svd=True
+        )
+        tr_blind = BPDTrainer(bpd_blind, cfg_b, blind_model.rollout, device=dev)
+        tr_blind.run_faithfulness_warmup()
+        cal_sel_tok = cal_tok[: int(eval_tok.shape[0])]
+        tr_blind.calibrate_baselines(cal_sel_tok)
+        gen_tr = torch.Generator().manual_seed(cal_seed + 5000 + mult_idx)
+        for st in range(bpd_steps):
+            bt = torch.randint(
+                0, clean_base.vocab_size, (int(eval_tok.shape[0]), seq_len), generator=gen_tr
+            ).to(dev)
+            tr_blind.train_step(bt, st)
+
+        # Select single best candidate component c* strictly on cal_sel_tok (zero peeking at eval_tok)
+        with torch.no_grad():
+            with bpd_blind.target_capture(pass_offset=0, update_means=True, detach_inputs=True):
+                ro_c, bs_c, vis_c, prm_c = blind_model.rollout(cal_sel_tok, n_passes, 0, None)
+            mod_in_c = bpd_blind.collect_recorded_inputs(expected_passes=n_passes)
+            clean_c = RolloutTrajectory(
+                readouts=ro_c, boundary_states=bs_c, module_inputs=mod_in_c, visible_states=vis_c, prompt_features=prm_c
+            )
+
+            def _run_cal() -> RolloutTrajectory:
+                rc2, bc2, vc2, pc2 = blind_model.rollout(cal_sel_tok, n_passes, 0, None)
+                return RolloutTrajectory(
+                    readouts=rc2, boundary_states=bc2, module_inputs=mod_in_c, visible_states=vc2, prompt_features=pc2
+                )
+
+            cal_screen = evaluate_component_null_report(
+                bpd_blind,
+                clean_c,
+                _run_cal,
+                components_by_module={mod_name: list(range(c_blind))},
+                passes=[],
+                include_all_pass=True,
+                n_rotations=6,
+                seed=cal_seed + 900 + mult_idx,
+            )
+            best_cal_entry = max(cal_screen.entries, key=lambda e: e.z_rot)
+            c_star = int(best_cal_entry.component)
+
+            # Audit ONLY pre-selected c* out-of-sample on eval_tok with n_rotations
+            with bpd_blind.target_capture(pass_offset=0, update_means=True, detach_inputs=True):
+                ro_e, bs_e, vis_e, prm_e = blind_model.rollout(eval_tok, n_passes, 0, None)
+            mod_in_e = bpd_blind.collect_recorded_inputs(expected_passes=n_passes)
+            clean_e = RolloutTrajectory(
+                readouts=ro_e, boundary_states=bs_e, module_inputs=mod_in_e, visible_states=vis_e, prompt_features=prm_e
+            )
+
+            def _run_eval_b() -> RolloutTrajectory:
+                re2, be2, ve2, pe2 = blind_model.rollout(eval_tok, n_passes, 0, None)
+                return RolloutTrajectory(
+                    readouts=re2, boundary_states=be2, module_inputs=mod_in_e, visible_states=ve2, prompt_features=pe2
+                )
+
+            eval_b_rep = evaluate_component_null_report(
+                bpd_blind,
+                clean_e,
+                _run_eval_b,
+                components_by_module={mod_name: [c_star]},
+                passes=[],
+                include_all_pass=True,
+                n_rotations=n_rotations,
+                seed=seed + 300 + 100 * mult_idx,
+            )
+            e_blind = eval_b_rep.entries[0]
+            v_cos = float(
+                F.cosine_similarity(
+                    bpd_blind.wrappers[mod_name].V[:, c_star].detach().float(),
+                    v_unit,
+                    dim=0,
+                ).abs().item()
+            )
+
+        sweep_rows.append(
+            {
+                "effect_multiplier_vs_max_natural": float(mult),
+                "calibrated_sigma": sigma_val,
+                "calibration_raw_kl": cal_kl,
+                "instrument_power": {
+                    "raw_importance": e_inst.raw_importance,
+                    "rotation_null_mean": e_inst.rotation_null_mean,
+                    "rotation_null_std": e_inst.rotation_null_std,
+                    "net_importance": e_inst.net_importance,
+                    "z_rot": e_inst.z_rot,
+                    "exceed_count": e_inst.exceed_count,
+                    "n_rotations": e_inst.n_rotations,
+                    "p_rank": e_inst.p_rank,
+                    "detected_at_alpha": bool(e_inst.net_importance > 0.0 and e_inst.p_rank <= pos_alpha),
+                },
+                "blind_bpd_recovery": {
+                    "selected_component_on_cal": c_star,
+                    "read_alignment_abs_cos": v_cos,
+                    "raw_importance": e_blind.raw_importance,
+                    "rotation_null_mean": e_blind.rotation_null_mean,
+                    "rotation_null_std": e_blind.rotation_null_std,
+                    "net_importance": e_blind.net_importance,
+                    "z_rot": e_blind.z_rot,
+                    "exceed_count": e_blind.exceed_count,
+                    "n_rotations": e_blind.n_rotations,
+                    "p_rank": e_blind.p_rank,
+                    "detected_at_alpha": bool(e_blind.net_importance > 0.0 and e_blind.p_rank <= pos_alpha),
+                },
+            }
+        )
+
+    # Registered v2 pass rule: negative arm passes Bonferroni FWER=0.05 across all 8 o_proj+down_proj
+    # factors AND positive sweep detects at >= 1.0x natural scale (1.0x, 2.0x, 4.0x) at p_rank <= pos_alpha!
+    pos_ge_1x_inst = [
+        r["instrument_power"]["detected_at_alpha"]
+        for r in sweep_rows
+        if float(r["effect_multiplier_vs_max_natural"]) >= 1.0
+    ]
+    pos_ge_1x_blind = [
+        r["blind_bpd_recovery"]["detected_at_alpha"]
+        for r in sweep_rows
+        if float(r["effect_multiplier_vs_max_natural"]) >= 1.0
+    ]
+    passed_v2 = bool(
+        neg_eval.passed_negative_control
+        and all(pos_ge_1x_inst)
+        and all(pos_ge_1x_blind)
+    )
+
+    return {
+        "negative_arm": {
+            "scope": "core.{0..3}.{o_proj, down_proj} leading factor c=0 (8 factors)",
+            "n_rotations": n_rotations,
+            "fwer_alpha": fwer_alpha,
+            "bonferroni_alpha": neg_eval.bonferroni_alpha,
+            "max_raw_importance": neg_eval.max_raw_importance,
+            "mean_raw_importance": neg_eval.mean_raw_importance,
+            "mean_abs_net_importance": neg_eval.mean_abs_net_importance,
+            "max_abs_z_rot": neg_eval.max_abs_z_rot,
+            "min_p_rank": neg_eval.min_p_rank,
+            "min_p_rank_two_sided": neg_eval.min_p_rank_two_sided,
+            "passed_negative_control": neg_eval.passed_negative_control,
+            "factors": [
+                {
+                    "module": e.module,
+                    "component": e.component,
+                    "raw_importance": e.raw_importance,
+                    "rotation_null_mean": e.rotation_null_mean,
+                    "rotation_null_std": e.rotation_null_std,
+                    "net_importance": e.net_importance,
+                    "z_rot": e.z_rot,
+                    "exceed_count": e.exceed_count,
+                    "n_rotations": e.n_rotations,
+                    "p_rank": e.p_rank,
+                    "p_rank_two_sided": e.p_rank_two_sided,
+                }
+                for e in neg_eval.factor_entries
+            ],
+        },
+        "positive_sigma_sweep": {
+            "reference_max_natural_raw_cal": ref_natural_raw_cal,
+            "pos_alpha": pos_alpha,
+            "n_rotations": n_rotations,
+            "bpd_steps": bpd_steps,
+            "rows": sweep_rows,
+            "all_ge_1x_instrument_detected": all(pos_ge_1x_inst),
+            "all_ge_1x_blind_bpd_detected": all(pos_ge_1x_blind),
+        },
+        "gate_b2_passed": passed_v2,
+    }

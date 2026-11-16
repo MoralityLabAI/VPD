@@ -228,6 +228,25 @@ class TiedCINetwork(nn.Module):
         nn.init.normal_(self.out_proj.weight, mean=0.0, std=0.02)
         nn.init.constant_(self.out_proj.bias, 0.75)
 
+    @torch.no_grad()
+    def load_nested_state_only(self, state_only_net: "TiedCINetwork") -> None:
+        """Warm-start ``state_plus_clock`` at exact ``state_only`` parity (``W_clock = 0``).
+
+        Guarantees ``state_plus_clock(X, tau) == state_only(X)`` identically at step 0,
+        eliminating random-initialization optimization inversions where ``state_plus_clock``
+        underperforms ``state_only``.
+        """
+        if self.cfg.variant != "state_plus_clock" or state_only_net.cfg.variant != "state_only":
+            raise ValueError(
+                "load_nested_state_only requires target='state_plus_clock' and source='state_only'"
+            )
+        state_dim = state_only_net.in_dim
+        self.proj_in.bias.copy_(state_only_net.proj_in.bias)
+        self.proj_in.weight[:, :state_dim].copy_(state_only_net.proj_in.weight)
+        self.proj_in.weight[:, state_dim:].zero_()
+        self.blocks.load_state_dict(state_only_net.blocks.state_dict())
+        self.out_proj.load_state_dict(state_only_net.out_proj.state_dict())
+
     def _assemble_features(
         self,
         module_inputs: Mapping[str, Tensor],

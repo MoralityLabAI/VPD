@@ -471,7 +471,13 @@ def compose_interventional_path(
 
         with bpd_model.masked_components(schedules, record_inputs=True):
             traj = run_rollout_fn()
-        return traj.module_inputs[sink.module][:, sink_pass].float() @ w_sink.V[:, sink.component]
+            pert_mod_inputs = bpd_model.collect_recorded_inputs(expected_passes=n_passes)
+        sink_inputs = (
+            pert_mod_inputs[sink.module]
+            if sink.module in pert_mod_inputs
+            else traj.module_inputs[sink.module]
+        )
+        return sink_inputs[:, sink_pass].float() @ w_sink.V[:, sink.component]
 
     src_spec = [(path[0], start_pass)]
     relays_spec = [(path[k], start_pass + k) for k in range(1, n_steps)]
@@ -547,6 +553,195 @@ class FunctionalComponentMatch:
     ref_net_sustaining: float
     tgt_net_sustaining: float
     priority_score: float
+    centered_functional_similarity: float = 0.0
+
+
+@dataclass
+class UnmatchedSimilaritySummary:
+    """Reference distribution of functional similarity across unmatched same-module pairs."""
+
+    num_matched_pairs: int
+    num_unmatched_pairs: int
+    matched_mean_raw: float
+    unmatched_mean_raw: float
+    unmatched_std_raw: float
+    unmatched_median_raw: float
+    unmatched_p95_raw: float
+    raw_lift_over_unmatched: float
+    matched_mean_centered: float
+    unmatched_mean_centered: float
+    unmatched_std_centered: float
+    centered_lift_over_unmatched: float
+    n_permutations: int
+    permutation_p_rank: float
+
+    def to_dict(self) -> dict[str, float | int]:
+        return {
+            "num_matched_pairs": self.num_matched_pairs,
+            "num_unmatched_pairs": self.num_unmatched_pairs,
+            "matched_mean_raw": self.matched_mean_raw,
+            "unmatched_mean_raw": self.unmatched_mean_raw,
+            "unmatched_std_raw": self.unmatched_std_raw,
+            "unmatched_median_raw": self.unmatched_median_raw,
+            "unmatched_p95_raw": self.unmatched_p95_raw,
+            "raw_lift_over_unmatched": self.raw_lift_over_unmatched,
+            "matched_mean_centered": self.matched_mean_centered,
+            "unmatched_mean_centered": self.unmatched_mean_centered,
+            "unmatched_std_centered": self.unmatched_std_centered,
+            "centered_lift_over_unmatched": self.centered_lift_over_unmatched,
+            "n_permutations": self.n_permutations,
+            "permutation_p_rank": self.permutation_p_rank,
+        }
+
+
+@dataclass
+class McNemarDiscordance:
+    """Per-board paired concordance/discordance counts and exact two-sided McNemar p-value."""
+
+    n_boards: int
+    n_both_true: int
+    n_a_only: int
+    n_b_only: int
+    n_both_false: int
+    net_diff_boards: int
+    rate_a: float
+    rate_b: float
+    exact_two_sided_p: float
+
+    def to_dict(self) -> dict[str, float | int]:
+        return {
+            "n_boards": self.n_boards,
+            "n_both_true": self.n_both_true,
+            "n_a_only": self.n_a_only,
+            "n_b_only": self.n_b_only,
+            "n_both_false": self.n_both_false,
+            "net_diff_boards": self.net_diff_boards,
+            "rate_a": self.rate_a,
+            "rate_b": self.rate_b,
+            "exact_two_sided_p": self.exact_two_sided_p,
+        }
+
+
+@dataclass
+class ControlDrawDistribution:
+    """Summary of >= 20 random/rotation control draws against a targeted intervention."""
+
+    targeted_value: float
+    n_draws: int
+    draw_values: list[float]
+    mean: float
+    std: float
+    min_val: float
+    median_val: float
+    max_val: float
+    z_vs_draws: float
+    exceed_or_equal_count: int
+    empirical_p_rank: float
+
+    def to_dict(self) -> dict[str, object]:
+        return {
+            "targeted_value": self.targeted_value,
+            "n_draws": self.n_draws,
+            "draw_values": self.draw_values,
+            "mean": self.mean,
+            "std": self.std,
+            "min": self.min_val,
+            "median": self.median_val,
+            "max": self.max_val,
+            "z_vs_draws": self.z_vs_draws,
+            "exceed_or_equal_count": self.exceed_or_equal_count,
+            "empirical_p_rank": self.empirical_p_rank,
+        }
+
+
+def compute_mcnemar_discordance(
+    flags_a: list[bool] | Tensor,
+    flags_b: list[bool] | Tensor,
+) -> McNemarDiscordance:
+    """Compute exact paired discordance ``(n_10, n_01)`` and two-sided exact binomial McNemar p-value."""
+    la = [bool(x) for x in (flags_a.tolist() if isinstance(flags_a, Tensor) else flags_a)]
+    lb = [bool(x) for x in (flags_b.tolist() if isinstance(flags_b, Tensor) else flags_b)]
+    if len(la) != len(lb):
+        raise ValueError(f"Mismatched flag lengths: {len(la)} vs {len(lb)}")
+    n = len(la)
+    n11 = sum(1 for a, b in zip(la, lb) if a and b)
+    n10 = sum(1 for a, b in zip(la, lb) if a and not b)
+    n01 = sum(1 for a, b in zip(la, lb) if (not a) and b)
+    n00 = sum(1 for a, b in zip(la, lb) if (not a) and (not b))
+    m = n10 + n01
+    if m == 0:
+        p_val = 1.0
+    else:
+        k_min = min(n10, n01)
+        tail = sum(math.comb(m, j) for j in range(0, k_min + 1)) * (0.5 ** m)
+        p_val = min(1.0, 2.0 * float(tail))
+    denom = float(max(n, 1))
+    return McNemarDiscordance(
+        n_boards=n,
+        n_both_true=n11,
+        n_a_only=n10,
+        n_b_only=n01,
+        n_both_false=n00,
+        net_diff_boards=n10 - n01,
+        rate_a=float(n11 + n10) / denom,
+        rate_b=float(n11 + n01) / denom,
+        exact_two_sided_p=p_val,
+    )
+
+
+def summarize_control_draws(
+    targeted_value: float,
+    draw_values: list[float],
+    *,
+    higher_is_better: bool = True,
+    eps: float = 1e-8,
+) -> ControlDrawDistribution:
+    """Summarize ``draw_values`` and compute exact empirical rank p-value of ``targeted_value``."""
+    vals = [float(v) for v in draw_values]
+    k = len(vals)
+    if k == 0:
+        return ControlDrawDistribution(
+            targeted_value=float(targeted_value),
+            n_draws=0,
+            draw_values=[],
+            mean=0.0,
+            std=0.0,
+            min_val=0.0,
+            median_val=0.0,
+            max_val=0.0,
+            z_vs_draws=0.0,
+            exceed_or_equal_count=0,
+            empirical_p_rank=1.0,
+        )
+    t = torch.tensor(vals, dtype=torch.float64)
+    mean_v = float(t.mean().item())
+    std_v = float(t.std(unbiased=False).item()) if k > 1 else 0.0
+    sorted_v = sorted(vals)
+    med_v = (
+        sorted_v[k // 2]
+        if k % 2 == 1
+        else 0.5 * (sorted_v[k // 2 - 1] + sorted_v[k // 2])
+    )
+    if higher_is_better:
+        exceed = sum(1 for v in vals if v >= float(targeted_value))
+        z_val = (float(targeted_value) - mean_v) / (std_v + eps)
+    else:
+        exceed = sum(1 for v in vals if v <= float(targeted_value))
+        z_val = (mean_v - float(targeted_value)) / (std_v + eps)
+    p_emp = float(1 + exceed) / float(k + 1)
+    return ControlDrawDistribution(
+        targeted_value=float(targeted_value),
+        n_draws=k,
+        draw_values=vals,
+        mean=mean_v,
+        std=std_v,
+        min_val=sorted_v[0],
+        median_val=med_v,
+        max_val=sorted_v[-1],
+        z_vs_draws=z_val,
+        exceed_or_equal_count=exceed,
+        empirical_p_rank=p_emp,
+    )
 
 
 @dataclass
@@ -691,25 +886,63 @@ def extract_component_functional_profiles(
     return profiles
 
 
+def _centered_pair_similarity(
+    r_prof: ComponentFunctionalProfile,
+    t_prof: ComponentFunctionalProfile,
+    mod_ref_means: tuple[Tensor, Tensor, Tensor],
+    mod_tgt_means: tuple[Tensor, Tensor, Tensor],
+    *,
+    eps: float = 1e-8,
+) -> float:
+    rs_m, rt_m, rr_m = mod_ref_means
+    ts_m, tt_m, tr_m = mod_tgt_means
+    cs = _cosine_01(r_prof.mean_schedule - rs_m, t_prof.mean_schedule - ts_m, eps=eps)
+    ct = _cosine_01(r_prof.transition_signature - rt_m, t_prof.transition_signature - tt_m, eps=eps)
+    cr = _cosine_01(r_prof.readout_effect_curve - rr_m, t_prof.readout_effect_curve - tr_m, eps=eps)
+    return (cs + ct + cr) / 3.0
+
+
+def _module_profile_means(
+    profs: list[ComponentFunctionalProfile],
+) -> dict[str, tuple[Tensor, Tensor, Tensor]]:
+    by_mod: dict[str, list[ComponentFunctionalProfile]] = {}
+    for p in profs:
+        by_mod.setdefault(p.module, []).append(p)
+    out: dict[str, tuple[Tensor, Tensor, Tensor]] = {}
+    for mod, plist in by_mod.items():
+        ms = torch.stack([p.mean_schedule.float() for p in plist], dim=0).mean(dim=0)
+        mt = torch.stack([p.transition_signature.float() for p in plist], dim=0).mean(dim=0)
+        mr = torch.stack([p.readout_effect_curve.float() for p in plist], dim=0).mean(dim=0)
+        out[mod] = (ms, mt, mr)
+    return out
+
+
 def match_components_by_function(
     ref_profiles: list[ComponentFunctionalProfile],
     tgt_profiles: list[ComponentFunctionalProfile],
     *,
     require_ref_sustaining: bool = True,
+    require_tgt_sustaining: bool = True,
     eps: float = 1e-8,
 ) -> list[FunctionalComponentMatch]:
     """Match separately decomposed reference and target components strictly by behavioral function.
 
     Pairs each reference sustaining component with its highest-similarity counterpart in the
     same module of the target checkpoint's own decomposition (1-to-1 greedy matching without
-    replacement) using schedule, transition-operator, and readout-curve cosine similarity.
+    replacement) using schedule, transition-operator, and readout-curve similarity.
+    When ``require_tgt_sustaining=True``, strictly rejects target components with
+    ``net_all_pass_final <= 0.0`` so non-sustaining target directions are never selected.
     Never compares or projects weight vectors across checkpoints.
     """
+    ref_means = _module_profile_means(ref_profiles)
+    tgt_means = _module_profile_means(tgt_profiles)
+
     ref_candidates = [
-        p for p in ref_profiles if (p.role == "sustaining" or not require_ref_sustaining)
+        p
+        for p in ref_profiles
+        if ((p.role == "sustaining" and p.net_all_pass_final > 0.0) or not require_ref_sustaining)
     ]
     if not ref_candidates and require_ref_sustaining:
-        # Fallback if no component crossed the discrete sustaining threshold: rank by positive net sustaining effect
         ref_candidates = [p for p in ref_profiles if p.net_all_pass_final > 0.0]
 
     ref_candidates.sort(key=lambda p: p.net_all_pass_final, reverse=True)
@@ -717,31 +950,49 @@ def match_components_by_function(
     matches: list[FunctionalComponentMatch] = []
 
     for r_prof in ref_candidates:
-        same_mod_tgts = [
+        all_same_mod = [
             t
             for t in tgt_profiles
             if t.module == r_prof.module and (t.module, t.component) not in used_tgt
         ]
+        if require_tgt_sustaining:
+            same_mod_tgts = [
+                t for t in all_same_mod if t.role == "sustaining" and t.net_all_pass_final > 0.0
+            ]
+            if not same_mod_tgts:
+                # Relax discrete role ratio only among strictly positive net-sustaining target components
+                same_mod_tgts = [t for t in all_same_mod if t.net_all_pass_final > 0.0]
+        else:
+            same_mod_tgts = all_same_mod
+
         if not same_mod_tgts:
             continue
 
+        rm = ref_means[r_prof.module]
+        tm = tgt_means[r_prof.module]
         best_tgt: ComponentFunctionalProfile | None = None
-        best_tuple = (-1.0, 0.0, 0.0, 0.0)
+        best_tuple = (-1.0, 0.0, 0.0, 0.0, 0.0)
         for t_prof in same_mod_tgts:
             s_sim = _cosine_01(r_prof.mean_schedule, t_prof.mean_schedule, eps=eps)
             t_sim = _cosine_01(r_prof.transition_signature, t_prof.transition_signature, eps=eps)
             r_sim = _cosine_01(r_prof.readout_effect_curve, t_prof.readout_effect_curve, eps=eps)
             f_sim = (s_sim + t_sim + r_sim) / 3.0
-            if f_sim > best_tuple[0]:
-                best_tuple = (f_sim, s_sim, t_sim, r_sim)
+            c_sim = _centered_pair_similarity(r_prof, t_prof, rm, tm, eps=eps)
+            rank_key = 0.5 * f_sim + 0.5 * c_sim
+            if rank_key > best_tuple[0]:
+                best_tuple = (rank_key, f_sim, s_sim, t_sim, r_sim)
                 best_tgt = t_prof
 
         assert best_tgt is not None
-        f_sim, s_sim, t_sim, r_sim = best_tuple
+        _, f_sim, s_sim, t_sim, r_sim = best_tuple
+        c_sim = _centered_pair_similarity(r_prof, best_tgt, rm, tm, eps=eps)
         used_tgt.add((best_tgt.module, best_tgt.component))
-        # Prioritize functionally matched target components whose sustaining causal effect is weaker or active
+        # Require BOTH reference and target components to carry positive sustaining effect
+        joint_sustain = math.sqrt(
+            max(r_prof.net_all_pass_final, 0.0) * max(best_tgt.net_all_pass_final, 0.0)
+        )
         deficit = max(r_prof.net_all_pass_final - best_tgt.net_all_pass_final, 0.0)
-        score = f_sim * (deficit + 0.25 * max(r_prof.net_all_pass_final, 0.0) + 0.25 * max(best_tgt.net_all_pass_final, 0.0))
+        score = c_sim * (joint_sustain + 0.5 * deficit)
         matches.append(
             FunctionalComponentMatch(
                 module=r_prof.module,
@@ -754,11 +1005,127 @@ def match_components_by_function(
                 ref_net_sustaining=r_prof.net_all_pass_final,
                 tgt_net_sustaining=best_tgt.net_all_pass_final,
                 priority_score=score,
+                centered_functional_similarity=c_sim,
             )
         )
 
     matches.sort(key=lambda m: m.priority_score, reverse=True)
     return matches
+
+
+def compute_unmatched_similarity_baseline(
+    ref_profiles: list[ComponentFunctionalProfile],
+    tgt_profiles: list[ComponentFunctionalProfile],
+    matches: list[FunctionalComponentMatch],
+    *,
+    n_permutations: int = 199,
+    seed: int = 0,
+    eps: float = 1e-8,
+) -> UnmatchedSimilaritySummary:
+    """Compare matched functional similarity against the full off-diagonal unmatched distribution."""
+    ref_means = _module_profile_means(ref_profiles)
+    tgt_means = _module_profile_means(tgt_profiles)
+    matched_set = {(m.module, m.ref_component, m.tgt_component) for m in matches}
+
+    matched_raw: list[float] = []
+    unmatched_raw: list[float] = []
+    matched_cent: list[float] = []
+    unmatched_cent: list[float] = []
+
+    ref_by_mod: dict[str, list[ComponentFunctionalProfile]] = {}
+    tgt_by_mod: dict[str, list[ComponentFunctionalProfile]] = {}
+    for p in ref_profiles:
+        ref_by_mod.setdefault(p.module, []).append(p)
+    for p in tgt_profiles:
+        tgt_by_mod.setdefault(p.module, []).append(p)
+
+    cent_mats: dict[str, Tensor] = {}
+    mod_matched_indices: dict[str, list[tuple[int, int]]] = {}
+    for mod in sorted(set(ref_by_mod.keys()) & set(tgt_by_mod.keys())):
+        r_list = ref_by_mod[mod]
+        t_list = tgt_by_mod[mod]
+        rm = ref_means[mod]
+        tm = tgt_means[mod]
+        cmat = torch.zeros((len(r_list), len(t_list)), dtype=torch.float64)
+        m_pairs: list[tuple[int, int]] = []
+        for i, rp in enumerate(r_list):
+            for j, tp in enumerate(t_list):
+                s_sim = _cosine_01(rp.mean_schedule, tp.mean_schedule, eps=eps)
+                t_sim = _cosine_01(rp.transition_signature, tp.transition_signature, eps=eps)
+                r_sim = _cosine_01(rp.readout_effect_curve, tp.readout_effect_curve, eps=eps)
+                raw_s = (s_sim + t_sim + r_sim) / 3.0
+                cent_s = _centered_pair_similarity(rp, tp, rm, tm, eps=eps)
+                cmat[i, j] = cent_s
+                if (mod, rp.component, tp.component) in matched_set:
+                    matched_raw.append(raw_s)
+                    matched_cent.append(cent_s)
+                    m_pairs.append((i, j))
+                else:
+                    unmatched_raw.append(raw_s)
+                    unmatched_cent.append(cent_s)
+        cent_mats[mod] = cmat
+        if m_pairs:
+            mod_matched_indices[mod] = m_pairs
+
+    def _stats(arr: list[float]) -> tuple[float, float, float, float]:
+        if not arr:
+            return 0.0, 0.0, 0.0, 0.0
+        t = torch.tensor(arr, dtype=torch.float64)
+        mean_v = float(t.mean().item())
+        std_v = float(t.std(unbiased=False).item()) if len(arr) > 1 else 0.0
+        s = sorted(arr)
+        n = len(s)
+        med = s[n // 2] if n % 2 == 1 else 0.5 * (s[n // 2 - 1] + s[n // 2])
+        p95 = s[min(int(0.95 * (n - 1)), n - 1)]
+        return mean_v, std_v, med, p95
+
+    m_raw_mean, _, _, _ = _stats(matched_raw)
+    u_raw_mean, u_raw_std, u_raw_med, u_raw_p95 = _stats(unmatched_raw)
+    m_cent_mean, _, _, _ = _stats(matched_cent)
+    u_cent_mean, u_cent_std, _, _ = _stats(unmatched_cent)
+
+    obs_cent_sum = sum(
+        float(cent_mats[mod][i, j].item())
+        for mod, pairs in mod_matched_indices.items()
+        for (i, j) in pairs
+    )
+    gen = torch.Generator().manual_seed(seed)
+    exceed = 0
+    if mod_matched_indices and n_permutations > 0:
+        for _ in range(n_permutations):
+            perm_sum = 0.0
+            for mod, pairs in mod_matched_indices.items():
+                cmat = cent_mats[mod]
+                n_t = cmat.shape[1]
+                r_idxs = [i for (i, _) in pairs]
+                if n_t >= len(r_idxs):
+                    t_perm = torch.randperm(n_t, generator=gen)[: len(r_idxs)].tolist()
+                else:
+                    t_perm = torch.randint(0, n_t, (len(r_idxs),), generator=gen).tolist()
+                for ri, tj in zip(r_idxs, t_perm):
+                    perm_sum += float(cmat[ri, tj].item())
+            if perm_sum >= obs_cent_sum:
+                exceed += 1
+        p_perm = float(1 + exceed) / float(n_permutations + 1)
+    else:
+        p_perm = 1.0
+
+    return UnmatchedSimilaritySummary(
+        num_matched_pairs=len(matched_raw),
+        num_unmatched_pairs=len(unmatched_raw),
+        matched_mean_raw=m_raw_mean,
+        unmatched_mean_raw=u_raw_mean,
+        unmatched_std_raw=u_raw_std,
+        unmatched_median_raw=u_raw_med,
+        unmatched_p95_raw=u_raw_p95,
+        raw_lift_over_unmatched=m_raw_mean - u_raw_mean,
+        matched_mean_centered=m_cent_mean,
+        unmatched_mean_centered=u_cent_mean,
+        unmatched_std_centered=u_cent_std,
+        centered_lift_over_unmatched=m_cent_mean - u_cent_mean,
+        n_permutations=n_permutations,
+        permutation_p_rank=p_perm,
+    )
 
 
 def _apply_module_deltas_inplace(
@@ -826,6 +1193,8 @@ def apply_random_component_control_edit(
     reference_receipt: IntraCheckpointEditReceipt,
     *,
     exclude_matches: list[FunctionalComponentMatch] | None = None,
+    candidate_pool_by_module: dict[str, list[int]] | None = None,
+    sign: float = 1.0,
     seed: int = 0,
     eps: float = 1e-12,
 ) -> IntraCheckpointEditReceipt:
@@ -837,12 +1206,20 @@ def apply_random_component_control_edit(
     gen = torch.Generator().manual_seed(seed)
     deltas_by_mod: dict[str, Tensor] = {}
     counts_by_mod: dict[str, int] = {}
+    sgn = 1.0 if float(sign) >= 0.0 else -1.0
 
     for mod_name, k_count in sorted(reference_receipt.edited_modules.items()):
         if k_count <= 0:
             continue
         w_wrap = bpd_target.wrappers[mod_name]
-        pool = [c for c in range(w_wrap.C) if c not in excluded_by_mod.get(mod_name, set())]
+        base_pool = (
+            list(candidate_pool_by_module[mod_name])
+            if candidate_pool_by_module is not None and mod_name in candidate_pool_by_module
+            else list(range(w_wrap.C))
+        )
+        pool = [c for c in base_pool if c not in excluded_by_mod.get(mod_name, set())]
+        if len(pool) < k_count:
+            pool = [c for c in range(w_wrap.C) if c not in excluded_by_mod.get(mod_name, set())]
         if len(pool) < k_count:
             pool = list(range(w_wrap.C))
         perm = torch.randperm(len(pool), generator=gen)[:k_count].tolist()
@@ -852,7 +1229,7 @@ def apply_random_component_control_edit(
         for c_idx in chosen:
             v_c = w_wrap.V[:, c_idx].detach().cpu().float()
             u_c = w_wrap.U[c_idx, :].detach().cpu().float()
-            raw_delta = raw_delta + torch.outer(u_c, v_c)
+            raw_delta = raw_delta + sgn * torch.outer(u_c, v_c)
 
         target_frob = reference_receipt.frobenius_norm_by_module[mod_name]
         cur_frob = float(raw_delta.double().norm().item())

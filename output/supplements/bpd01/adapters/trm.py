@@ -15,7 +15,7 @@ x ``(l_cycles + 1)`` inner ``L_level`` invocations per H-cycle):
 from __future__ import annotations
 
 import csv
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 import hashlib
 import json
 from pathlib import Path
@@ -23,6 +23,7 @@ from typing import Any, Literal, Sequence
 
 import torch
 from torch import Tensor
+import torch.utils.checkpoint as torch_ckpt
 
 from mechinterp.loopscope02.scripts import sudoku_prop as SP
 from mechinterp.loopscope02.scripts.trm_sudoku import (
@@ -138,9 +139,11 @@ class TRMBPDAdapter:
         model: PureSudokuTRM,
         *,
         readout_at: Literal["outer_step", "h_cycle"] = "outer_step",
+        use_activation_checkpointing: bool = True,
     ) -> None:
         self.model = model
         self.readout_at = readout_at
+        self.use_activation_checkpointing = use_activation_checkpointing
         # Compute head rowspace projector strictly over digit vocabulary columns 2..10
         digit_w = model.lm_head.weight[2:11, :]  # [9, hidden_size]
         v_head, p_head, p_perp = compute_head_projector_f64(digit_w)
@@ -243,14 +246,49 @@ class TRMBPDAdapter:
         boundary_states: dict[int, Tensor] = {}
         visible_states: dict[int, Tensor] = {}
 
+        tied_wrappers = [
+            m
+            for m in self.model.layers.modules()
+            if hasattr(m, "calls") and hasattr(m, "record_inputs")
+        ]
+        use_ckpt = (
+            self.use_activation_checkpointing
+            and torch.is_grad_enabled()
+            and not any(bool(getattr(w, "record_inputs", False)) for w in tied_wrappers)
+        )
+
+        saved_states = [(w, w.mode, w.schedule, w.pass_offset) for w in tied_wrappers]
+
+        def _exec_l_level(z_main: Tensor, z_inj: Tensor, call_idx: int) -> Tensor:
+            if not use_ckpt:
+                return self.model.run_l_level(z_main, z_inj)
+
+            def _ckpt_fn(zm: Tensor, zi: Tensor) -> Tensor:
+                prev = [(w.mode, w.schedule, w.calls, w.pass_offset) for w, _, _, _ in saved_states]
+                try:
+                    for w, mode_f, sched_f, off_f in saved_states:
+                        w.mode = mode_f
+                        w.schedule = sched_f
+                        w.pass_offset = off_f
+                        w.calls = call_idx
+                    return self.model.run_l_level(zm, zi)
+                finally:
+                    for (w, _, _, _), (pm, ps, pc, po) in zip(saved_states, prev):
+                        w.mode = pm
+                        w.schedule = ps
+                        w.calls = pc
+                        w.pass_offset = po
+
+            return torch_ckpt.checkpoint(_ckpt_fn, z_main, z_inj, use_reentrant=False)  # type: ignore[return-value]
+
         for local_k in range(n_passes):
             tau = pass_offset + local_k
             visible_states[tau] = self._visible_projection(z_h)
             if (tau % cyc) < self.model.l_cycles:
-                z_l = self.model.run_l_level(z_l, z_h + x_emb)
+                z_l = _exec_l_level(z_l, z_h + x_emb, local_k)
                 boundary_states[tau] = z_l
             else:
-                z_h = self.model.run_l_level(z_h, z_l)
+                z_h = _exec_l_level(z_h, z_l, local_k)
                 if self.is_readout_pass(tau):
                     readouts[tau] = self.model.digit_logits(z_h)
                 boundary_states[tau] = z_h
@@ -260,7 +298,7 @@ class TRMBPDAdapter:
 
 @dataclass
 class SudokuHorizonMetrics:
-    """Exact board accuracy (final & ever-solved), cell accuracy, and oscillation across outer steps."""
+    """Exact board accuracy (final & ever-solved), cell accuracy, and tail limit cycles across outer steps."""
 
     board_exact_by_step: dict[int, float]
     cell_acc_by_step: dict[int, float]
@@ -268,6 +306,10 @@ class SudokuHorizonMetrics:
     ever_solved_rate: float
     period2_oscillation_rate: float
     step_flip_rate_tail: float
+    unsolved_tail_cycle_rate: float = 0.0
+    solved_final_flags: list[bool] = field(default_factory=list)
+    ever_solved_flags: list[bool] = field(default_factory=list)
+    tail_cycle_flags: list[bool] = field(default_factory=list)
 
 
 @torch.no_grad()
@@ -277,15 +319,19 @@ def evaluate_sudoku_horizon(
     targets: Tensor,
     *,
     eval_outer_steps: Sequence[int] = (16, 32, 64),
-    batch_size: int = 64,
+    batch_size: int = 256,
 ) -> SudokuHorizonMetrics:
-    """Evaluate exact Sudoku solve rate (final & ever-solved) and oscillation up to ``max(eval_outer_steps)``.
+    """Evaluate exact Sudoku solve rate (final & ever-solved), tail limit cycles, and per-board flags.
 
     ``inputs`` has shape ``[N, seq_len]`` (token IDs), ``targets`` has shape ``[N, seq_len]``
     with ground-truth digit indices ``0..8`` (corresponding to digits ``1..9``).
+    ``unsolved_tail_cycle_rate`` matches LOOPSCOPE-03: fraction of boards unsolved at ``max_s``
+    whose visible board sequence over the second half ``s = max_s // 2 + 1 .. max_s`` revisits
+    an exact earlier visible board state.
     """
     dev = model.embed_tokens.weight.device
     max_s = max(eval_outer_steps)
+    tail_start_s = max(max_s // 2 + 1, 1)
     milestones = set(eval_outer_steps)
     n_total = inputs.shape[0]
 
@@ -293,7 +339,11 @@ def evaluate_sudoku_horizon(
     cell_sums = {s: 0.0 for s in eval_outer_steps}
     ever_solved_total = 0
     osc_boards = 0
+    tail_cycle_boards = 0
     tail_flips = 0.0
+    all_final_flags: list[bool] = []
+    all_ever_flags: list[bool] = []
+    all_cycle_flags: list[bool] = []
 
     for start in range(0, n_total, batch_size):
         inp = inputs[start : start + batch_size].to(dev)
@@ -303,26 +353,52 @@ def evaluate_sudoku_horizon(
         z_h, z_l = model.init_states(bsz)
 
         ever_solved_batch = torch.zeros(bsz, dtype=torch.bool, device=dev)
-        preds_tail: list[Tensor] = []  # last 3 steps to detect period-2 oscillation
+        final_solved_batch = torch.zeros(bsz, dtype=torch.bool, device=dev)
+        preds_tail3: list[Tensor] = []  # last 3 steps to detect strict period-2
+        preds_second_half: list[Tensor] = []  # second half s > max_s // 2 for general limit cycles
         for s in range(1, max_s + 1):
             z_h, z_l = model.act_step(z_h, z_l, x_emb)
             pred = model.digit_logits(z_h).argmax(dim=-1)  # [B, seq_len] in 0..8
             match = pred == tgt
             board_exact_s = match.all(dim=-1)
             ever_solved_batch |= board_exact_s
+            if s == max_s:
+                final_solved_batch = board_exact_s
             if s in milestones:
                 exact_sums[s] += int(board_exact_s.sum().item())
                 cell_sums[s] += float(match.float().mean(dim=-1).sum().item())
             if s >= max_s - 2:
-                preds_tail.append(pred)
+                preds_tail3.append(pred)
+            if s >= tail_start_s:
+                preds_second_half.append(pred.to(torch.uint8).cpu())
 
-        ever_solved_total += int(ever_solved_batch.sum().item())
-        if len(preds_tail) == 3:
-            p_m2, p_m1, p_last = preds_tail
+        ever_list = [bool(v) for v in ever_solved_batch.cpu().tolist()]
+        final_list = [bool(v) for v in final_solved_batch.cpu().tolist()]
+        all_ever_flags.extend(ever_list)
+        all_final_flags.extend(final_list)
+        ever_solved_total += sum(ever_list)
+
+        if len(preds_tail3) == 3:
+            p_m2, p_m1, p_last = preds_tail3
             flips_last = (p_last != p_m1).any(dim=-1)
             period2 = flips_last & (p_last == p_m2).all(dim=-1)
             osc_boards += int(period2.sum().item())
             tail_flips += float((p_last != p_m1).float().mean(dim=-1).sum().item())
+
+        if len(preds_second_half) >= 2:
+            # Stack [T_half, B, seq_len] on CPU and check duplicate board states per unsolved board
+            half_stack = torch.stack(preds_second_half, dim=0).numpy()
+            for bi in range(bsz):
+                if not final_list[bi]:
+                    seen_bytes = {half_stack[ti, bi].tobytes() for ti in range(half_stack.shape[0])}
+                    cyc_flag = len(seen_bytes) < half_stack.shape[0]
+                else:
+                    cyc_flag = False
+                all_cycle_flags.append(cyc_flag)
+                if cyc_flag:
+                    tail_cycle_boards += 1
+        else:
+            all_cycle_flags.extend([False] * bsz)
 
     denom = float(max(n_total, 1))
     board_exact = {s: exact_sums[s] / denom for s in eval_outer_steps}
@@ -334,6 +410,10 @@ def evaluate_sudoku_horizon(
         ever_solved_rate=ever_solved_total / denom,
         period2_oscillation_rate=osc_boards / denom,
         step_flip_rate_tail=tail_flips / denom,
+        unsolved_tail_cycle_rate=tail_cycle_boards / denom,
+        solved_final_flags=all_final_flags,
+        ever_solved_flags=all_ever_flags,
+        tail_cycle_flags=all_cycle_flags,
     )
 
 

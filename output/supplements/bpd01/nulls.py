@@ -285,7 +285,7 @@ def calibrate_pass_null_losses(
 
 @dataclass
 class ComponentNullEntry:
-    """Side-by-side raw and net-of-rotation-null importance for one ``(module, pass, c)``."""
+    """Side-by-side raw, net-of-null, and exact rank p-value for one ``(module, pass, c)``."""
 
     module: str
     pass_idx: int  # -1 indicates all-pass pooled ablation
@@ -295,6 +295,10 @@ class ComponentNullEntry:
     rotation_null_std: float
     net_importance: float
     z_rot: float
+    n_rotations: int = 0
+    exceed_count: int = 0
+    p_rank: float = 1.0
+    p_rank_two_sided: float = 1.0
 
 
 @dataclass
@@ -317,9 +321,27 @@ class ComponentNullReport:
                 "rotation_null_std": e.rotation_null_std,
                 "net_importance": e.net_importance,
                 "z_rot": e.z_rot,
+                "n_rotations": e.n_rotations,
+                "exceed_count": e.exceed_count,
+                "p_rank": e.p_rank,
+                "p_rank_two_sided": e.p_rank_two_sided,
             }
             for e in self.entries
         ]
+
+
+def compute_rank_p_values(raw_val: float, null_vals: list[float] | Tensor) -> tuple[int, float, float]:
+    """Compute exact Monte Carlo rank p-values ``(exceed_count, p_upper, p_two_sided)``."""
+    nt = null_vals.double() if isinstance(null_vals, Tensor) else torch.tensor(null_vals, dtype=torch.float64)
+    k = int(nt.numel())
+    if k == 0:
+        return 0, 1.0, 1.0
+    exceed = int((nt >= float(raw_val)).sum().item())
+    below = int((nt <= float(raw_val)).sum().item())
+    p_up = float(1 + exceed) / float(k + 1)
+    p_lo = float(1 + below) / float(k + 1)
+    p_two = min(1.0, 2.0 * min(p_up, p_lo))
+    return exceed, p_up, p_two
 
 
 @torch.no_grad()
@@ -424,6 +446,7 @@ def evaluate_component_null_report(
                 n_std = float(null_t.std(unbiased=False).item())
                 net_imp = raw_imp - n_mean
                 z_rot = net_imp / (n_std + eps)
+                exceed, p_up, p_two = compute_rank_p_values(raw_imp, null_t)
                 entries.append(
                     ComponentNullEntry(
                         module=mod_name,
@@ -434,6 +457,10 @@ def evaluate_component_null_report(
                         rotation_null_std=n_std,
                         net_importance=net_imp,
                         z_rot=z_rot,
+                        n_rotations=len(null_vals),
+                        exceed_count=exceed,
+                        p_rank=p_up,
+                        p_rank_two_sided=p_two,
                     )
                 )
 
@@ -481,6 +508,7 @@ def evaluate_component_null_report(
                 n_std = float(null_t.std(unbiased=False).item())
                 net_imp = raw_imp - n_mean
                 z_rot = net_imp / (n_std + eps)
+                exceed, p_up, p_two = compute_rank_p_values(raw_imp, null_t)
                 entries.append(
                     ComponentNullEntry(
                         module=mod_name,
@@ -491,6 +519,10 @@ def evaluate_component_null_report(
                         rotation_null_std=n_std,
                         net_importance=net_imp,
                         z_rot=z_rot,
+                        n_rotations=len(null_vals),
+                        exceed_count=exceed,
+                        p_rank=p_up,
+                        p_rank_two_sided=p_two,
                     )
                 )
 

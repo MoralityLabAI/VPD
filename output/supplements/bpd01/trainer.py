@@ -4,7 +4,9 @@ and unrolled single-site-per-pass VPD baseline trainer for Gate B1.
 
 from __future__ import annotations
 
+import copy
 from dataclasses import dataclass, field, replace
+import math
 from typing import Any, Callable, Mapping, Sequence
 
 import torch
@@ -368,6 +370,32 @@ class BPDTrainer:
                 (self.cfg.coeff_stoch * loss_stoch).backward()
             del stoch_traj, loss_stoch
 
+        # 1b. Optional deterministic CI-masked reconstruction branch (Goodfire VPD 5th term)
+        loss_det_val = 0.0
+        if self.cfg.coeff_det > 0.0:
+            det_sched = deterministic_ci_schedules(ci_lower_leaf, delta_value=0.0)
+            det_traj = self.run_masked_rollout(
+                batch,
+                det_sched,
+                n_passes=n_passes,
+                pass_offset=pass_offset,
+                init_state=init_state,
+            )
+            loss_det, det_per_pass = trajectory_recon_loss(
+                det_traj,
+                clean_traj,
+                match_inner_boundary_states=self.cfg.match_inner_boundary_states,
+                pass_null_losses=self.pass_null_losses,
+                hinge_kappa=kappa,
+                state_boundary_weight=self.cfg.state_boundary_weight,
+            )
+            for tau, val in det_per_pass.items():
+                step_pass_losses[tau] = step_pass_losses.get(tau, 0.0) + self.cfg.coeff_det * val
+            loss_det_val = float(loss_det.detach().item())
+            if loss_det.requires_grad:
+                (self.cfg.coeff_det * loss_det).backward()
+            del det_traj, loss_det
+
         # 2. Persistent PGD adversarial mask reconstruction branch (single backward, no retain_graph)
         loss_adv_val = 0.0
         adv_source_grads: dict[str, Tensor] | None = None
@@ -462,6 +490,7 @@ class BPDTrainer:
 
         total_loss_val = (
             base_loss_val
+            + self.cfg.coeff_det * loss_det_val
             + self.cfg.coeff_stoch * loss_stoch_val
             + self.cfg.coeff_adv * loss_adv_val
         )
@@ -563,11 +592,14 @@ def train_ci_heads_on_frozen_components(
     batch_fn: Callable[[int], Any],
     eval_batch: Any,
     *,
+    val_batch: Any | None = None,
     visible_dim: int,
     prompt_dim: int,
     pass_null_losses: Mapping[int, float] | None = None,
     pass_tolerances: Mapping[int, float] | None = None,
     hinge_kappa: float | None = None,
+    warm_start_clock: bool = True,
+    det_recon_weight: float = 0.5,
     device: torch.device | str = "cpu",
 ) -> tuple[dict[CIVariant, TiedCINetwork], dict[str, dict[str, float]], dict[str, float]]:
     """Train ``state_only``, ``state_plus_clock``, and ``visible_only`` CI variants on shared ``(V, U)``.
@@ -575,6 +607,8 @@ def train_ci_heads_on_frozen_components(
     Holding the physical decomposition ``(V, U)`` fixed isolates the pure causal
     addressing capacity of the three CI observation spaces so that **Clock Gap** and
     **Visible Gap** are unaffected by distinct local minima in ``(V, U)``.
+    When ``warm_start_clock=True``, ``state_plus_clock`` initializes nested inside the
+    converged ``state_only`` network (``W_clock = 0``), preventing optimization inversions.
     """
     dev = torch.device(device)
     bpd_model.to(dev)
@@ -588,10 +622,58 @@ def train_ci_heads_on_frozen_components(
         else 0.0
     )
 
+    def _eval_clean_and_loss(net_eval: TiedCINetwork, target_batch: Any) -> tuple[float, dict[str, float]]:
+        with torch.no_grad():
+            with bpd_model.target_capture(pass_offset=0, detach_inputs=True):
+                e_ro, e_bs, e_vis, e_prm = rollout_adapter(target_batch, base_cfg.n_passes, 0, None)
+            e_in = bpd_model.collect_recorded_inputs(expected_passes=base_cfg.n_passes)
+            e_clean = RolloutTrajectory(
+                readouts=e_ro,
+                boundary_states=e_bs,
+                module_inputs=e_in,
+                visible_states=e_vis,
+                prompt_features=e_prm,
+            )
+            e_ci = net_eval.forward_trajectory(e_clean, pass_offset=0)
+            e_min, _ = bpd_minimality_loss(
+                e_ci.upper_leaky,
+                step=max(base_cfg.n_steps - 1, 0),
+                total_steps=max(base_cfg.n_steps, 1),
+                cfg=base_cfg.minimality,
+            )
+            e_sched = deterministic_ci_schedules(e_ci.lower_leaky, delta_value=0.0)
+            with bpd_model.masked_components(e_sched, pass_offset=0):
+                m_ro, m_bs, m_vis, m_prm = rollout_adapter(target_batch, base_cfg.n_passes, 0, None)
+            e_pred = RolloutTrajectory(
+                readouts=m_ro,
+                boundary_states=m_bs,
+                module_inputs={},
+                visible_states=m_vis,
+                prompt_features=m_prm,
+            )
+            e_rec, e_per_pass = trajectory_recon_loss(
+                e_pred,
+                e_clean,
+                match_inner_boundary_states=base_cfg.match_inner_boundary_states,
+                pass_null_losses=None,
+                hinge_kappa=0.0,
+                state_boundary_weight=base_cfg.state_boundary_weight,
+            )
+            e_shares = compute_pass_loss_shares(e_per_pass)
+            e_bud = active_component_budget(e_ci)
+            val_obj = float((e_rec + e_min).item())
+            metrics_d = {
+                "recon_loss": float(e_rec.item()),
+                **e_bud,
+                **{f"pass_{tau}_loss_share": sh for tau, sh in e_shares.items()},
+            }
+            return val_obj, metrics_d
+
     trained_nets: dict[CIVariant, TiedCINetwork] = {}
     variant_metrics: dict[str, dict[str, float]] = {}
 
     for var in variants:
+        torch.manual_seed(base_cfg.seed)
         ci_cfg = replace(base_cfg.ci, variant=var)
         net = TiedCINetwork(
             module_dims=module_dims,
@@ -600,10 +682,30 @@ def train_ci_heads_on_frozen_components(
             visible_dim=visible_dim if var == "visible_only" else None,
             prompt_dim=prompt_dim if var == "visible_only" else None,
         ).to(dev)
+        if var == "state_plus_clock" and warm_start_clock and "state_only" in trained_nets:
+            net.load_nested_state_only(trained_nets["state_only"])
+
         opt = torch.optim.AdamW(net.parameters(), lr=base_cfg.main_lr)
         rng = torch.Generator(device=dev).manual_seed(base_cfg.seed)
 
+        best_state: dict[str, Tensor] | None = None
+        best_val = float("inf")
+        val_every = max(base_cfg.n_steps // 5, 1)
+        if val_batch is not None:
+            v0, _ = _eval_clean_and_loss(net, val_batch)
+            best_val = v0
+            best_state = copy.deepcopy(net.state_dict())
+
         for step in range(base_cfg.n_steps):
+            if base_cfg.n_steps > 1:
+                frac = float(step) / float(base_cfg.n_steps - 1)
+                cos_decay = 0.5 * (1.0 + math.cos(math.pi * frac))
+                lr_s = base_cfg.main_lr * (
+                    base_cfg.main_lr_final_frac + (1.0 - base_cfg.main_lr_final_frac) * cos_decay
+                )
+                for pg in opt.param_groups:
+                    pg["lr"] = lr_s
+
             batch = batch_fn(step)
             with torch.no_grad():
                 with bpd_model.target_capture(
@@ -629,75 +731,149 @@ def train_ci_heads_on_frozen_components(
                 total_steps=base_cfg.n_steps,
                 cfg=base_cfg.minimality,
             )
-            sched = sample_stochastic_schedules(
-                ci_out.lower_leaky,
-                route_subset=True,
-                share_noise_across_passes=True,
-                generator=rng,
-            )
-            with bpd_model.masked_components(sched, pass_offset=0):
-                p_ro, p_bs, p_vis, p_prm = rollout_adapter(batch, base_cfg.n_passes, 0, None)
-            pred_traj = RolloutTrajectory(
-                readouts=p_ro,
-                boundary_states=p_bs,
-                module_inputs={},
-                visible_states=p_vis,
-                prompt_features=p_prm,
-            )
-            l_rec, _ = trajectory_recon_loss(
-                pred_traj,
-                clean_traj,
-                match_inner_boundary_states=base_cfg.match_inner_boundary_states,
-                pass_null_losses=null_map,
-                hinge_kappa=kappa,
-                state_boundary_weight=base_cfg.state_boundary_weight,
-            )
-            loss = l_min + l_rec
+
+            w_det = min(max(float(det_recon_weight), 0.0), 1.0)
+            l_rec_total = torch.zeros((), device=dev, dtype=torch.float32)
+            if w_det < 1.0:
+                sched = sample_stochastic_schedules(
+                    ci_out.lower_leaky,
+                    route_subset=True,
+                    share_noise_across_passes=True,
+                    generator=rng,
+                )
+                with bpd_model.masked_components(sched, pass_offset=0):
+                    p_ro, p_bs, p_vis, p_prm = rollout_adapter(batch, base_cfg.n_passes, 0, None)
+                pred_traj = RolloutTrajectory(
+                    readouts=p_ro,
+                    boundary_states=p_bs,
+                    module_inputs={},
+                    visible_states=p_vis,
+                    prompt_features=p_prm,
+                )
+                l_stoch, _ = trajectory_recon_loss(
+                    pred_traj,
+                    clean_traj,
+                    match_inner_boundary_states=base_cfg.match_inner_boundary_states,
+                    pass_null_losses=null_map,
+                    hinge_kappa=kappa,
+                    state_boundary_weight=base_cfg.state_boundary_weight,
+                )
+                l_rec_total = l_rec_total + (1.0 - w_det) * l_stoch
+
+            if w_det > 0.0:
+                det_sched = deterministic_ci_schedules(ci_out.lower_leaky, delta_value=0.0)
+                with bpd_model.masked_components(det_sched, pass_offset=0):
+                    d_ro, d_bs, d_vis, d_prm = rollout_adapter(batch, base_cfg.n_passes, 0, None)
+                det_traj = RolloutTrajectory(
+                    readouts=d_ro,
+                    boundary_states=d_bs,
+                    module_inputs={},
+                    visible_states=d_vis,
+                    prompt_features=d_prm,
+                )
+                l_det, _ = trajectory_recon_loss(
+                    det_traj,
+                    clean_traj,
+                    match_inner_boundary_states=base_cfg.match_inner_boundary_states,
+                    pass_null_losses=null_map,
+                    hinge_kappa=kappa,
+                    state_boundary_weight=base_cfg.state_boundary_weight,
+                )
+                l_rec_total = l_rec_total + w_det * l_det
+
+            loss = l_min + l_rec_total
             loss.backward()
             opt.step()
 
-        # Deterministic evaluation (un-hinged KL for unbiased cross-variant comparison)
-        with torch.no_grad():
-            with bpd_model.target_capture(pass_offset=0, detach_inputs=True):
-                e_ro, e_bs, e_vis, e_prm = rollout_adapter(eval_batch, base_cfg.n_passes, 0, None)
-            e_in = bpd_model.collect_recorded_inputs(expected_passes=base_cfg.n_passes)
-            e_clean = RolloutTrajectory(
-                readouts=e_ro,
-                boundary_states=e_bs,
-                module_inputs=e_in,
-                visible_states=e_vis,
-                prompt_features=e_prm,
-            )
-            e_ci = net.forward_trajectory(e_clean, pass_offset=0)
-            e_sched = deterministic_ci_schedules(e_ci.lower_leaky, delta_value=0.0)
-            with bpd_model.masked_components(e_sched, pass_offset=0):
-                m_ro, m_bs, m_vis, m_prm = rollout_adapter(eval_batch, base_cfg.n_passes, 0, None)
-            e_pred = RolloutTrajectory(
-                readouts=m_ro,
-                boundary_states=m_bs,
-                module_inputs={},
-                visible_states=m_vis,
-                prompt_features=m_prm,
-            )
-            e_rec, e_per_pass = trajectory_recon_loss(
-                e_pred,
-                e_clean,
-                match_inner_boundary_states=base_cfg.match_inner_boundary_states,
-                pass_null_losses=None,
-                hinge_kappa=0.0,
-                state_boundary_weight=base_cfg.state_boundary_weight,
-            )
-            e_shares = compute_pass_loss_shares(e_per_pass)
-            e_bud = active_component_budget(e_ci)
-            variant_metrics[var] = {
-                "recon_loss": float(e_rec.item()),
-                **e_bud,
-                **{f"pass_{tau}_loss_share": sh for tau, sh in e_shares.items()},
-            }
-            trained_nets[var] = net
+            if val_batch is not None and ((step + 1) % val_every == 0 or step + 1 == base_cfg.n_steps):
+                v_cur, _ = _eval_clean_and_loss(net, val_batch)
+                if v_cur <= best_val:
+                    best_val = v_cur
+                    best_state = copy.deepcopy(net.state_dict())
+
+        if best_state is not None:
+            net.load_state_dict(best_state)
+
+        _, m_eval = _eval_clean_and_loss(net, eval_batch)
+        variant_metrics[var] = m_eval
+        trained_nets[var] = net
 
     gaps = compute_ci_variant_gaps(variant_metrics)
     return trained_nets, variant_metrics, gaps
+
+
+def evaluate_ci_variants_multiseed(
+    bpd_model: BPDModel,
+    base_cfg: BPDConfig,
+    rollout_adapter: AdapterRolloutFn,
+    batch_fn_for_seed: Callable[[int, int], Any],
+    eval_batch: Any,
+    *,
+    val_batch: Any | None = None,
+    n_seeds: int = 3,
+    visible_dim: int,
+    prompt_dim: int,
+    pass_null_losses: Mapping[int, float] | None = None,
+    hinge_kappa: float | None = None,
+    device: torch.device | str = "cpu",
+) -> dict[str, Any]:
+    """Run ``n_seeds`` independent nested CI-head refits to quantify optimization noise."""
+    per_seed_variants: list[dict[str, dict[str, float]]] = []
+    per_seed_gaps: list[dict[str, float]] = []
+
+    for s_idx in range(n_seeds):
+        seed_val = base_cfg.seed + 1000 * s_idx
+        cfg_s = replace(base_cfg, seed=seed_val)
+        _, v_met, g_met = train_ci_heads_on_frozen_components(
+            bpd_model,
+            cfg_s,
+            rollout_adapter,
+            lambda st, sv=seed_val: batch_fn_for_seed(sv, st),
+            eval_batch,
+            val_batch=val_batch,
+            visible_dim=visible_dim,
+            prompt_dim=prompt_dim,
+            pass_null_losses=pass_null_losses,
+            hinge_kappa=hinge_kappa,
+            warm_start_clock=True,
+            device=device,
+        )
+        per_seed_variants.append(v_met)
+        per_seed_gaps.append(g_met)
+
+    def _mean_std(vals: list[float]) -> tuple[float, float]:
+        t = torch.tensor(vals, dtype=torch.float64)
+        m = float(t.mean().item())
+        sd = float(t.std(unbiased=False).item()) if len(vals) > 1 else 0.0
+        return m, sd
+
+    var_summary: dict[str, dict[str, float]] = {}
+    for var in ("state_only", "state_plus_clock", "visible_only"):
+        recs = [pv[var]["recon_loss"] for pv in per_seed_variants]
+        acts = [pv[var]["mean_active_per_pass"] for pv in per_seed_variants]
+        m_r, sd_r = _mean_std(recs)
+        m_a, sd_a = _mean_std(acts)
+        var_summary[var] = {
+            **per_seed_variants[0][var],
+            "recon_loss": m_r,
+            "recon_loss_std": sd_r,
+            "mean_active_per_pass": m_a,
+            "mean_active_per_pass_std": sd_a,
+        }
+
+    gap_summary: dict[str, float] = {}
+    for g_key in ("clock_gap_recon", "visible_gap_recon", "clock_gap_active", "visible_gap_active"):
+        g_vals = [pg[g_key] for pg in per_seed_gaps]
+        gm, gsd = _mean_std(g_vals)
+        gap_summary[g_key] = gm
+        gap_summary[f"{g_key}_std"] = gsd
+
+    return {
+        "n_seeds": n_seeds,
+        "ci_variants": var_summary,
+        "gaps": gap_summary,
+        "seed_gaps": per_seed_gaps,
+    }
 
 
 class UnrolledVPDTrainer:
@@ -754,15 +930,17 @@ class UnrolledVPDTrainer:
         self.optimizer = torch.optim.AdamW(
             comp_params + list(self.ci_net.parameters()), lr=cfg.main_lr
         )
-        # Standard VPD taxes every active site independently across passes (no switch penalty)
+        # Standard VPD taxes every active site independently across passes (no switch penalty,
+        # exact same normalized per-component coeff_level as BPDTrainer for like-for-like parity)
         self.unrolled_min_cfg = MinimalityConfig(
             pool_mode="sum_legacy",
             p_start=cfg.minimality.p_start,
             p_end=cfg.minimality.p_end,
             eps=cfg.minimality.eps,
             beta=cfg.minimality.beta,
-            coeff_level=cfg.minimality.coeff_level / float(max(cfg.n_passes, 1)),
+            coeff_level=cfg.minimality.coeff_level,
             coeff_switch=0.0,
+            normalize_by_c=cfg.minimality.normalize_by_c,
         )
 
     def total_unrolled_components(self) -> int:
@@ -812,7 +990,32 @@ class UnrolledVPDTrainer:
             prompt_features=prm,
         )
 
+    def run_faithfulness_warmup(self, steps: int | None = None) -> float:
+        """Warm up unrolled ``(V_tau, U_tau)`` on ``||W - (V_tau U_tau)^T||_F^2``."""
+        n_warm = self.cfg.faithfulness_warmup_steps if steps is None else int(steps)
+        if n_warm <= 0:
+            return float(unrolled_faithfulness_loss(self.wrappers).detach().item())
+        comp_params: list[nn.Parameter] = []
+        for w in self.wrappers.values():
+            comp_params.extend([w.V, w.U])
+        warm_opt = torch.optim.Adam(comp_params, lr=self.cfg.faithfulness_warmup_lr)
+        last = 0.0
+        for _ in range(n_warm):
+            warm_opt.zero_grad(set_to_none=True)
+            loss = unrolled_faithfulness_loss(self.wrappers)
+            loss.backward()
+            warm_opt.step()
+            last = float(loss.detach().item())
+        return last
+
     def train_step(self, batch: Any, step: int) -> dict[str, float]:
+        if self.cfg.n_steps <= 1:
+            lr = self.cfg.main_lr
+        else:
+            frac = min(max(float(step) / float(self.cfg.n_steps), 0.0), 1.0)
+            lr = self.cfg.main_lr * (1.0 + (self.cfg.main_lr_final_frac - 1.0) * frac)
+        for group in self.optimizer.param_groups:
+            group["lr"] = lr
         clean_traj = self._capture_clean(batch)
         self.optimizer.zero_grad(set_to_none=True)
         ci_out = self.ci_net(clean_traj.module_inputs)
@@ -832,16 +1035,36 @@ class UnrolledVPDTrainer:
         pred_traj = self._run_masked(batch, sched)
         if self.final_pass_only_kl and clean_traj.readouts:
             f_tau = max(clean_traj.readouts.keys())
-            l_rec = kl_divergence_logits(pred_traj.readouts[f_tau], clean_traj.readouts[f_tau])
+            l_stoch = kl_divergence_logits(pred_traj.readouts[f_tau], clean_traj.readouts[f_tau])
         else:
-            l_rec, _ = trajectory_recon_loss(
+            l_stoch, _ = trajectory_recon_loss(
                 pred_traj,
                 clean_traj,
                 match_inner_boundary_states=self.cfg.match_inner_boundary_states,
                 state_boundary_weight=self.cfg.state_boundary_weight,
             )
+        l_rec = self.cfg.coeff_stoch * l_stoch
+        if self.cfg.coeff_det > 0.0:
+            det_sched = deterministic_ci_schedules(ci_out.lower_leaky, delta_value=0.0)
+            det_traj = self._run_masked(batch, det_sched)
+            if self.final_pass_only_kl and clean_traj.readouts:
+                f_tau = max(clean_traj.readouts.keys())
+                l_det = kl_divergence_logits(det_traj.readouts[f_tau], clean_traj.readouts[f_tau])
+            else:
+                l_det, _ = trajectory_recon_loss(
+                    det_traj,
+                    clean_traj,
+                    match_inner_boundary_states=self.cfg.match_inner_boundary_states,
+                    state_boundary_weight=self.cfg.state_boundary_weight,
+                )
+            l_rec = l_rec + self.cfg.coeff_det * l_det
         loss = self.cfg.coeff_faith * l_faith + l_min + l_rec
         loss.backward()
+        if self.cfg.grad_clip_components > 0.0:
+            comp_ps: list[nn.Parameter] = []
+            for w in self.wrappers.values():
+                comp_ps.extend([w.V, w.U])
+            nn.utils.clip_grad_norm_(comp_ps, max_norm=self.cfg.grad_clip_components)
         self.optimizer.step()
         return {
             "total_loss": float(loss.detach().item()),

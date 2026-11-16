@@ -233,6 +233,8 @@ def bpd_minimality_loss(
 
     if switch_terms:
         switch_raw = torch.stack(switch_terms).sum()
+        if cfg.normalize_by_c and total_c > 0:
+            switch_raw = switch_raw / float(total_c)
         switch_weighted = cfg.coeff_switch * switch_raw
     else:
         switch_raw = torch.zeros_like(level_raw)
