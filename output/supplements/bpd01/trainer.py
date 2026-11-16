@@ -319,6 +319,9 @@ class BPDTrainer:
 
         self.optimizer.zero_grad(set_to_none=True)
         ci_out = self.ci_net.forward_trajectory(clean_traj, pass_offset=pass_offset)
+        ci_lower_leaf = {
+            k: v.detach().requires_grad_(True) for k, v in ci_out.lower_leaky.items()
+        }
 
         loss_faith = faithfulness_loss(self.bpd_model.wrappers)
         loss_min, min_stats = bpd_minimality_loss(
@@ -328,15 +331,17 @@ class BPDTrainer:
             cfg=self.cfg.minimality,
         )
 
-        total_loss = self.cfg.coeff_faith * loss_faith + loss_min
+        base_loss_val = float(
+            (self.cfg.coeff_faith * loss_faith.detach() + loss_min.detach()).item()
+        )
         step_pass_losses: dict[int, float] = {}
 
-        # 1. Stochastic mask reconstruction branch
+        # 1. Stochastic mask reconstruction branch (backprop immediately to free rollout graph)
         loss_stoch_val = 0.0
         if self.cfg.coeff_stoch > 0.0:
             share_noise = self.cfg.adversary.scope != "per_pass"
             stoch_sched = sample_stochastic_schedules(
-                ci_out.lower_leaky,
+                ci_lower_leaf,
                 route_subset=True,
                 share_noise_across_passes=share_noise,
                 generator=self.rng,
@@ -358,10 +363,12 @@ class BPDTrainer:
             )
             for tau, val in stoch_per_pass.items():
                 step_pass_losses[tau] = step_pass_losses.get(tau, 0.0) + self.cfg.coeff_stoch * val
-            total_loss = total_loss + self.cfg.coeff_stoch * loss_stoch
             loss_stoch_val = float(loss_stoch.detach().item())
+            if loss_stoch.requires_grad:
+                (self.cfg.coeff_stoch * loss_stoch).backward()
+            del stoch_traj, loss_stoch
 
-        # 2. Persistent PGD adversarial mask reconstruction branch
+        # 2. Persistent PGD adversarial mask reconstruction branch (single backward, no retain_graph)
         loss_adv_val = 0.0
         adv_source_grads: dict[str, Tensor] | None = None
         if self.cfg.coeff_adv > 0.0 and exec_mode == "closed_loop":
@@ -386,7 +393,7 @@ class BPDTrainer:
                 self.pgd.warmup_inner_steps(ci_det, _inner_eval, lr=adv_lr)
 
             adv_sched, leaf_sources = self.pgd.build_schedules(
-                ci_out.lower_leaky, requires_grad_sources=True
+                ci_lower_leaf, requires_grad_sources=True
             )
             adv_traj = self.run_masked_rollout(
                 batch, adv_sched, n_passes=n_passes, pass_offset=pass_offset, init_state=init_state
@@ -401,21 +408,28 @@ class BPDTrainer:
             )
             for tau, val in adv_per_pass.items():
                 step_pass_losses[tau] = step_pass_losses.get(tau, 0.0) + self.cfg.coeff_adv * val
-            leaf_list = [leaf_sources[name] for name in self.bpd_model.module_order]
-            grads_tuple = torch.autograd.grad(
-                loss_adv, leaf_list, retain_graph=True, allow_unused=True
-            )
-            adv_source_grads = {
-                name: (g.detach() if g is not None else torch.zeros_like(leaf_sources[name]))
-                for name, g in zip(self.bpd_model.module_order, grads_tuple)
-            }
-            total_loss = total_loss + self.cfg.coeff_adv * loss_adv
             loss_adv_val = float(loss_adv.detach().item())
+            if loss_adv.requires_grad:
+                (self.cfg.coeff_adv * loss_adv).backward()
+                adv_source_grads = {
+                    name: (
+                        leaf_sources[name].grad.detach() / self.cfg.coeff_adv
+                        if leaf_sources[name].grad is not None
+                        else torch.zeros_like(leaf_sources[name])
+                    )
+                    for name in self.bpd_model.module_order
+                }
+            else:
+                adv_source_grads = {
+                    name: torch.zeros_like(leaf_sources[name])
+                    for name in self.bpd_model.module_order
+                }
+            del adv_traj, loss_adv
         elif self.cfg.coeff_adv > 0.0 and exec_mode == "clean_window":
             # On variable-length short transplant windows, apply fresh single-step adversarial probe
             # without mutating full-horizon persistent PGD tensor shapes.
             stoch_adv = sample_stochastic_schedules(
-                ci_out.lower_leaky,
+                ci_lower_leaf,
                 route_subset=False,
                 share_noise_across_passes=True,
                 generator=self.rng,
@@ -433,10 +447,24 @@ class BPDTrainer:
             )
             for tau, val in adv_per_pass.items():
                 step_pass_losses[tau] = step_pass_losses.get(tau, 0.0) + self.cfg.coeff_adv * val
-            total_loss = total_loss + self.cfg.coeff_adv * loss_adv
             loss_adv_val = float(loss_adv.detach().item())
+            if loss_adv.requires_grad:
+                (self.cfg.coeff_adv * loss_adv).backward()
+            del adv_traj, loss_adv
 
-        total_loss.backward()
+        # 3. Faithfulness + minimality + accumulated CI leaf gradients through ci_net
+        head_loss = self.cfg.coeff_faith * loss_faith + loss_min
+        for name, leaf in ci_lower_leaf.items():
+            if leaf.grad is not None:
+                head_loss = head_loss + (ci_out.lower_leaky[name] * leaf.grad.detach()).sum()
+        if head_loss.requires_grad:
+            head_loss.backward()
+
+        total_loss_val = (
+            base_loss_val
+            + self.cfg.coeff_stoch * loss_stoch_val
+            + self.cfg.coeff_adv * loss_adv_val
+        )
         if self.cfg.grad_clip_components > 0.0:
             nn.utils.clip_grad_norm_(
                 self.bpd_model.component_parameters(), max_norm=self.cfg.grad_clip_components
@@ -454,7 +482,7 @@ class BPDTrainer:
         return StepMetrics(
             step=step,
             mode=exec_mode,
-            total_loss=float(total_loss.detach().item()),
+            total_loss=total_loss_val,
             faith_loss=float(loss_faith.detach().item()),
             min_loss=min_stats["total"],
             switch_loss=min_stats["switch_weighted"],

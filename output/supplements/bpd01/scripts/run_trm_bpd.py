@@ -21,9 +21,11 @@ from __future__ import annotations
 import argparse
 import copy
 from dataclasses import replace
+import gc
 import json
 from pathlib import Path
 import sys
+import time
 from typing import Any
 
 import torch
@@ -89,6 +91,21 @@ def _receipt_to_dict(rc: IntraCheckpointEditReceipt) -> dict[str, Any]:
     }
 
 
+def _release_gpu_memory() -> None:
+    gc.collect()
+    if torch.cuda.is_available():
+        torch.cuda.empty_cache()
+
+
+def _log_stage(t0: float, msg: str) -> None:
+    mem_str = ""
+    if torch.cuda.is_available():
+        alloc_mb = torch.cuda.memory_allocated() / (1024 * 1024)
+        res_mb = torch.cuda.memory_reserved() / (1024 * 1024)
+        mem_str = f" [cuda alloc={alloc_mb:.0f}MB reserved={res_mb:.0f}MB]"
+    print(f"[B4 +{time.perf_counter() - t0:6.1f}s] {msg}{mem_str}", file=sys.stderr, flush=True)
+
+
 def _fit_single_trm_decomposition(
     base_model: PureSudokuTRM,
     train_inputs: torch.Tensor,
@@ -96,6 +113,8 @@ def _fit_single_trm_decomposition(
     cfg: BPDConfig,
     *,
     device: str,
+    tag: str = "fit",
+    t0: float | None = None,
 ) -> tuple[BPDModel, BPDTrainer, TRMBPDAdapter, Any, Any, dict[str, Any], Any, RolloutTrajectory, dict[str, int], dict[int, float], dict[int, float]]:
     work_model = copy.deepcopy(base_model).to(device).eval()
     adapter = TRMBPDAdapter(work_model, readout_at="outer_step")
@@ -119,17 +138,22 @@ def _fit_single_trm_decomposition(
         device=device,
     )
     cached_train = adapter.make_batch_with_clean_cache(train_inputs.to(device), total_invocations)
-    cached_eval = adapter.make_batch_with_clean_cache(eval_inputs.to(device), total_invocations)
 
     trainer.run_faithfulness_warmup()
     null_losses = trainer.calibrate_baselines(cached_train)
 
     mode_counts = {"closed_loop": 0, "clean_window": 0}
     last_shares: dict[int, float] = {}
+    log_every = max(cfg.n_steps // 4, 1)
     for step in range(cfg.n_steps):
         sm = trainer.train_step(cached_train, step)
         mode_counts[sm.mode] = mode_counts.get(sm.mode, 0) + 1
         last_shares = sm.pass_loss_shares
+        if t0 is not None and ((step + 1) % log_every == 0 or step + 1 == cfg.n_steps):
+            _log_stage(
+                t0,
+                f"{tag}: step {step + 1}/{cfg.n_steps} ({sm.mode}) loss={sm.total_loss:.4f}",
+            )
 
     # Evaluate on a manageable eval slice for CI/trajectory diagnostics
     eval_slice_inputs = eval_inputs[: min(int(eval_inputs.shape[0]), max(cfg.batch_size, 16))]
@@ -173,6 +197,7 @@ def run_trm_bpd_pipeline(
     seed: int = 0,
 ) -> dict[str, object]:
     assert isinstance(ref_model, PureSudokuTRM) and isinstance(tgt_model, PureSudokuTRM)
+    t0 = time.perf_counter()
     clean_ref_base = copy.deepcopy(ref_model).to(device).eval()
     clean_tgt_base = copy.deepcopy(tgt_model).to(device).eval()
 
@@ -223,6 +248,7 @@ def run_trm_bpd_pipeline(
     )
 
     # 1a. Primary decomposition of reference checkpoint (match_inner_boundary_states=False, default)
+    _log_stage(t0, "1a. Fit gaoxin492 (match_inner_boundary_states=False)")
     (
         bpd_ref,
         ref_trainer,
@@ -236,11 +262,13 @@ def run_trm_bpd_pipeline(
         ref_null_losses,
         ref_last_shares,
     ) = _fit_single_trm_decomposition(
-        clean_ref_base, train_inputs, eval_inputs, base_cfg, device=device
+        clean_ref_base, train_inputs, eval_inputs, base_cfg, device=device, tag="ref_outer", t0=t0
     )
     sched_rep = extract_schedule(ref_ci_out)
+    _release_gpu_memory()
 
     # 1b. Side-by-side trajectory-loss mode comparison: match_inner_boundary_states=True
+    _log_stage(t0, "1b. Fit gaoxin492 (match_inner_boundary_states=True)")
     inner_cfg = replace(
         base_cfg,
         match_inner_boundary_states=True,
@@ -260,10 +288,13 @@ def run_trm_bpd_pipeline(
         inner_null_losses,
         inner_last_shares,
     ) = _fit_single_trm_decomposition(
-        clean_ref_base, train_inputs, eval_inputs, inner_cfg, device=device
+        clean_ref_base, train_inputs, eval_inputs, inner_cfg, device=device, tag="ref_inner", t0=t0
     )
+    del _bpd_ref_inner, _tr_inner, _ad_inner, _ct_inner, _ce_inner, _ci_inner, _traj_inner
+    _release_gpu_memory()
 
     # 2. Separate independent decomposition of target checkpoint (yagizdevre)
+    _log_stage(t0, "2. Fit yagizdevre (separate decomposition)")
     tgt_cfg = replace(base_cfg, seed=seed + 100)
     (
         bpd_tgt,
@@ -278,10 +309,13 @@ def run_trm_bpd_pipeline(
         tgt_null_losses,
         tgt_last_shares,
     ) = _fit_single_trm_decomposition(
-        clean_tgt_base, train_inputs, eval_inputs, tgt_cfg, device=device
+        clean_tgt_base, train_inputs, eval_inputs, tgt_cfg, device=device, tag="tgt_outer", t0=t0
     )
+    del _tgt_trainer, _cached_train_tgt
+    _release_gpu_memory()
 
     # Risk Audit 1: PGD adversary step-stability curve (time-shared vs pass-resonant)
+    _log_stage(t0, "3a. Risk Audit 1: PGD stability curve (shared_batch_and_pass)")
     def _eval_sched_loss(sched: Any) -> torch.Tensor:
         tr = ref_trainer.run_masked_rollout(cached_eval_ref, sched, n_passes=total_invocations)
         l_rec, _ = trajectory_recon_loss(
@@ -302,6 +336,8 @@ def run_trm_bpd_pipeline(
         steps_grid=pgd_steps_grid,
         seed=seed,
     )
+    _release_gpu_memory()
+    _log_stage(t0, "3b. Risk Audit 1: PGD stability curve (per_pass)")
     pgd_per_pass = evaluate_pgd_stability_curve(
         ref_ci_out.lower_leaky,
         c_map,
@@ -310,8 +346,10 @@ def run_trm_bpd_pipeline(
         steps_grid=pgd_steps_grid,
         seed=seed,
     )
+    _release_gpu_memory()
 
     # Risk Audit 2: Switch penalty sweep on frozen (V, U)
+    _log_stage(t0, "4. Risk Audit 2: Switch penalty sweep")
     switch_sweep_results: list[dict[str, float]] = []
     for sw_val in switch_sweep:
         sw_cfg = replace(
@@ -346,6 +384,11 @@ def run_trm_bpd_pipeline(
         finally:
             for p in bpd_ref.component_parameters():
                 p.requires_grad_(True)
+        del sw_trainer, sw_eval, sw_ci, sw_sched
+        _release_gpu_memory()
+
+    del ref_trainer, cached_train_ref
+    _release_gpu_memory()
 
     # Raw + Net-of-Rotation-Null Importance & Functional Profiles on BOTH separate decompositions
     def _ref_plain_rollout() -> RolloutTrajectory:
@@ -369,6 +412,7 @@ def run_trm_bpd_pipeline(
         )
 
     inspected_comps = {m: list(range(min(6, c_per_mod))) for m in bpd_ref.module_order}
+    _log_stage(t0, "5a. Evaluate component null report on gaoxin492")
     null_rep = evaluate_component_null_report(
         bpd_ref,
         ref_clean_traj,
@@ -379,6 +423,7 @@ def run_trm_bpd_pipeline(
         n_rotations=base_cfg.null_calibration.n_rotations_eval,
         seed=seed,
     )
+    _log_stage(t0, "5b. Classify transient/sustaining on gaoxin492")
     ref_classifications = classify_transient_sustaining(
         bpd_ref,
         ref_clean_traj,
@@ -389,6 +434,7 @@ def run_trm_bpd_pipeline(
         n_rotations=base_cfg.null_calibration.n_rotations_eval,
         seed=seed,
     )
+    _log_stage(t0, "5c. Classify transient/sustaining on yagizdevre")
     tgt_classifications = classify_transient_sustaining(
         bpd_tgt,
         tgt_clean_traj,
@@ -400,16 +446,21 @@ def run_trm_bpd_pipeline(
         seed=seed + 100,
     )
 
+    _log_stage(t0, "6a. Extract functional profiles + transition operator on gaoxin492")
     ref_profiles = extract_component_functional_profiles(
         bpd_ref, ref_ci_out, ref_clean_traj, _ref_plain_rollout, ref_classifications
     )
+    _release_gpu_memory()
+    _log_stage(t0, "6b. Extract functional profiles + transition operator on yagizdevre")
     tgt_profiles = extract_component_functional_profiles(
         bpd_tgt, tgt_ci_out, tgt_clean_traj, _tgt_plain_rollout, tgt_classifications
     )
+    _release_gpu_memory()
     functional_matches = match_components_by_function(ref_profiles, tgt_profiles)
     selected_matches = functional_matches[: min(top_k_edit, len(functional_matches))]
 
     # 1-step transition operator & 2-step interventional path check on top component per module
+    _log_stage(t0, "7. Compute top-1 transition operator + 2-step interventional path")
     top1_comps = {m: [0] for m in bpd_ref.module_order}
     trans_op = compute_transition_operator(
         bpd_ref, ref_clean_traj, _ref_plain_rollout, components_by_module=top1_comps
@@ -426,9 +477,12 @@ def run_trm_bpd_pipeline(
             "first_order_chain_product": path_res.first_order_chain_product,
             "transport_discrepancy": path_res.transport_discrepancy,
         }
+    del bpd_ref, ref_adapter, cached_eval_ref, ref_ci_out, ref_clean_traj, trans_op
+    _release_gpu_memory()
 
     # Gate B4: Intra-checkpoint sustaining edit strictly inside yagizdevre's own decomposition
     # + Matched-count/matched-norm Random Component Control + Rotation-Null Control
+    _log_stage(t0, "8. Evaluate WB-Stall s=64 horizons across clean, edited, random, and rotation arms")
     before_horizon = evaluate_sudoku_horizon(
         clean_tgt_base, eval_inputs, eval_targets, eval_outer_steps=eval_horizons
     )
@@ -443,6 +497,7 @@ def run_trm_bpd_pipeline(
     after_horizon = evaluate_sudoku_horizon(
         edited_tgt, eval_inputs, eval_targets, eval_outer_steps=eval_horizons
     )
+    del edited_tgt
 
     random_ctrl_tgt = copy.deepcopy(clean_tgt_base)
     random_receipt = apply_random_component_control_edit(
@@ -455,6 +510,7 @@ def run_trm_bpd_pipeline(
     random_horizon = evaluate_sudoku_horizon(
         random_ctrl_tgt, eval_inputs, eval_targets, eval_outer_steps=eval_horizons
     )
+    del random_ctrl_tgt
 
     rot_ctrl_tgt = copy.deepcopy(clean_tgt_base)
     rot_receipt = apply_rotation_null_control_edit(
@@ -468,6 +524,9 @@ def run_trm_bpd_pipeline(
     rot_horizon = evaluate_sudoku_horizon(
         rot_ctrl_tgt, eval_inputs, eval_targets, eval_outer_steps=eval_horizons
     )
+    del rot_ctrl_tgt
+    _release_gpu_memory()
+    _log_stage(t0, "9. Done")
 
     min_h = min(eval_horizons)
     s16_key = 16 if 16 in eval_horizons else min_h
