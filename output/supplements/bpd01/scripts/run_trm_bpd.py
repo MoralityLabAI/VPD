@@ -110,6 +110,28 @@ def _release_gpu_memory() -> None:
         torch.cuda.empty_cache()
 
 
+def _move_ci_and_traj(
+    ci_out: Any,
+    traj: RolloutTrajectory,
+    target_device: torch.device | str,
+) -> None:
+    dev = torch.device(target_device)
+    for d_attr in ("lower_leaky", "upper_leaky", "pre_sigmoid"):
+        mapping = getattr(ci_out, d_attr, None)
+        if isinstance(mapping, dict):
+            for k in list(mapping.keys()):
+                mapping[k] = mapping[k].to(dev)
+    traj.readouts = {k: v.to(dev) for k, v in traj.readouts.items()}
+    traj.boundary_states = {k: v.to(dev) for k, v in traj.boundary_states.items()}
+    traj.module_inputs = {k: v.to(dev) for k, v in traj.module_inputs.items()}
+    if isinstance(traj.visible_states, dict):
+        traj.visible_states = {k: v.to(dev) for k, v in traj.visible_states.items()}
+    elif isinstance(traj.visible_states, torch.Tensor):
+        traj.visible_states = traj.visible_states.to(dev)
+    if traj.prompt_features is not None:
+        traj.prompt_features = traj.prompt_features.to(dev)
+
+
 def _log_stage(t0: float, msg: str) -> None:
     mem_str = ""
     if torch.cuda.is_available():
@@ -232,26 +254,35 @@ def _fit_single_trm_decomposition(
             )
 
     ci_trained_state = {k: v.detach().cpu().clone() for k, v in trainer.ci_net.state_dict().items()}
+    del trainer.optimizer
+    _release_gpu_memory()
 
-    # Evaluate on a disjoint eval slice for CI/trajectory diagnostics
-    eval_slice_inputs = eval_inputs[: min(int(eval_inputs.shape[0]), max(bsz, 24))]
+    # Evaluate on a disjoint 16-board eval slice for CI/trajectory diagnostics
+    eval_slice_inputs = eval_inputs[: min(int(eval_inputs.shape[0]), 16)]
     cached_eval_slice = adapter.make_batch_with_clean_cache(
         eval_slice_inputs.to(device), total_invocations
     )
     eval_metrics, ci_out, clean_traj = trainer.evaluate(cached_eval_slice)
+    ci_out.pre_sigmoid.clear()
+    ci_out.upper_leaky.clear()
+    _move_ci_and_traj(ci_out, clean_traj, "cpu")
+    _release_gpu_memory()
 
     ood_metrics: dict[str, Any] | None = None
     if ood_invocations > total_invocations:
+        ood_slice_inputs = eval_slice_inputs[: min(int(eval_slice_inputs.shape[0]), 8)]
         cached_ood_eval = adapter.make_batch_with_clean_cache(
-            eval_slice_inputs.to(device), ood_invocations
+            ood_slice_inputs.to(device), ood_invocations
         )
-        trainer.run_clean_rollout(
+        ood_clean = trainer.run_clean_rollout(
             cached_ood_eval,
             n_passes=ood_invocations,
             pass_offset=0,
             update_means=(cfg.ablation.mode == "pass_mean"),
         )
-        ood_raw, _, _ = trainer.evaluate(cached_ood_eval, n_passes=ood_invocations)
+        del ood_clean
+        _release_gpu_memory()
+        ood_raw, ood_ci, ood_traj = trainer.evaluate(cached_ood_eval, n_passes=ood_invocations)
         ood_metrics = {
             "ood_outer_steps": int(ood_outer_steps or 0),
             "ood_invocations": int(ood_invocations),
@@ -259,7 +290,14 @@ def _fit_single_trm_decomposition(
             "final_kl": ood_raw["final_kl"],
             "mean_active_per_pass": ood_raw["mean_active_per_pass"],
         }
-        del cached_ood_eval
+        del cached_ood_eval, ood_ci, ood_traj
+        _release_gpu_memory()
+
+    # Stage fitted model/trainer on CPU so subsequent independent fits start from ~0 MB VRAM
+    work_model.to("cpu")
+    bpd_mod.to("cpu")
+    trainer.ci_net.to("cpu")
+    _release_gpu_memory()
 
     return (
         bpd_mod,
@@ -458,6 +496,12 @@ def run_trm_bpd_pipeline(
     del _tgt_trainer, _cached_train_tgt_batches, _tgt_ci_state
     _release_gpu_memory()
 
+    # Stage gaoxin492 artifacts onto GPU for Risk Audits 1-2 + Stages 5a, 5b, 6a, 7 (tgt stays on CPU)
+    bpd_ref.target_model.to(device)
+    bpd_ref.to(device)
+    ref_trainer.ci_net.to(device)
+    _move_ci_and_traj(ref_ci_out, ref_clean_traj, device)
+
     # Risk Audit 1: PGD adversary step-stability curve (time-shared vs pass-resonant)
     _log_stage(t0, "3a. Risk Audit 1: PGD stability curve (shared_batch_and_pass)")
 
@@ -491,12 +535,16 @@ def run_trm_bpd_pipeline(
         steps_grid=pgd_steps_grid,
         seed=seed,
     )
+    # Park ref_ci_out & ref_clean_traj on CPU so Stage 4 (sw_trainer.train_step) starts from ~125 MB VRAM
+    _move_ci_and_traj(ref_ci_out, ref_clean_traj, "cpu")
+    ref_trainer.ci_net.to("cpu")
+    del ref_trainer
     _release_gpu_memory()
 
     # Risk Audit 2: Warm-started multi-seed switch penalty sweep on frozen (V, U)
     _log_stage(t0, f"4. Risk Audit 2: Warm-started switch penalty sweep ({n_switch_seeds} seeds)")
     switch_sweep_results: list[dict[str, Any]] = []
-    sw_steps = max(n_steps // 6, 6)
+    sw_steps = 2 if is_fast_test else max(n_steps // 6, 6)
     for sw_val in switch_sweep:
         seed_recons: list[float] = []
         seed_actives: list[float] = []
@@ -532,7 +580,9 @@ def run_trm_bpd_pipeline(
                 for st in range(sw_cfg.n_steps):
                     b_st = cached_train_ref_batches[st % len(cached_train_ref_batches)]
                     sw_trainer.train_step(b_st, st)
-                sw_eval, sw_ci, _ = sw_trainer.evaluate(cached_eval_ref)
+                del sw_trainer.optimizer
+                _release_gpu_memory()
+                sw_eval, sw_ci, sw_traj = sw_trainer.evaluate(cached_eval_ref)
                 sw_sched = extract_schedule(sw_ci)
                 seed_recons.append(float(sw_eval["recon_loss"]))
                 seed_actives.append(float(sw_eval["mean_active_per_pass"]))
@@ -540,7 +590,7 @@ def run_trm_bpd_pipeline(
             finally:
                 for p in bpd_ref.component_parameters():
                     p.requires_grad_(True)
-            del sw_trainer, sw_eval, sw_ci, sw_sched
+            del sw_trainer, sw_eval, sw_ci, sw_traj, sw_sched
             _release_gpu_memory()
 
         t_rec = torch.tensor(seed_recons, dtype=torch.float64)
@@ -558,8 +608,9 @@ def run_trm_bpd_pipeline(
             }
         )
 
-    del ref_trainer, cached_train_ref_batches, ref_ci_state
+    del cached_train_ref_batches, ref_ci_state
     _release_gpu_memory()
+    _move_ci_and_traj(ref_ci_out, ref_clean_traj, device)
 
     # Raw + Net-of-Rotation-Null Importance & Functional Profiles on BOTH separate decompositions
     def _ref_plain_rollout() -> RolloutTrajectory:
@@ -611,44 +662,11 @@ def run_trm_bpd_pipeline(
         n_rotations=min(n_rot_eval, 8),
         seed=seed,
     )
-    _log_stage(t0, "5c. Classify transient/sustaining on yagizdevre")
-    tgt_classifications = classify_transient_sustaining(
-        bpd_tgt,
-        tgt_clean_traj,
-        _tgt_plain_rollout,
-        components_by_module=inspected_comps_tgt,
-        min_effect=1e-4,
-        sustain_ratio=1.25,
-        n_rotations=min(n_rot_eval, 8),
-        seed=seed + 100,
-    )
-
     _log_stage(t0, "6a. Extract functional profiles + transition operator on gaoxin492")
     ref_profiles = extract_component_functional_profiles(
         bpd_ref, ref_ci_out, ref_clean_traj, _ref_plain_rollout, ref_classifications
     )
     _release_gpu_memory()
-    _log_stage(t0, "6b. Extract functional profiles + transition operator on yagizdevre")
-    tgt_profiles = extract_component_functional_profiles(
-        bpd_tgt, tgt_ci_out, tgt_clean_traj, _tgt_plain_rollout, tgt_classifications
-    )
-    _release_gpu_memory()
-
-    # Strict functional matching: requires BOTH ref and tgt components to have positive sustaining effect
-    functional_matches = match_components_by_function(
-        ref_profiles,
-        tgt_profiles,
-        require_ref_sustaining=True,
-        require_tgt_sustaining=True,
-    )
-    selected_matches = functional_matches[: min(top_k_edit, len(functional_matches))]
-    unmatched_sim_summary = compute_unmatched_similarity_baseline(
-        ref_profiles,
-        tgt_profiles,
-        selected_matches,
-        n_permutations=199,
-        seed=seed,
-    )
 
     # 1-step transition operator & wired 2-step interventional path check on top active components
     _log_stage(t0, "7. Compute top-active transition operator + wired 2-step interventional path")
@@ -684,8 +702,53 @@ def run_trm_bpd_pipeline(
             "first_order_chain_product": path_res.first_order_chain_product,
             "transport_discrepancy": path_res.transport_discrepancy,
         }
+    bpd_ref.target_model.to("cpu")
+    bpd_ref.to("cpu")
+    _move_ci_and_traj(ref_ci_out, ref_clean_traj, "cpu")
     del ref_adapter, cached_eval_ref, ref_ci_out, trans_op
     _release_gpu_memory()
+
+    # Stage yagizdevre artifacts onto GPU for Stages 5c & 6b (ref is now on CPU)
+    bpd_tgt.target_model.to(device)
+    bpd_tgt.to(device)
+    _move_ci_and_traj(tgt_ci_out, tgt_clean_traj, device)
+
+    _log_stage(t0, "5c. Classify transient/sustaining on yagizdevre")
+    tgt_classifications = classify_transient_sustaining(
+        bpd_tgt,
+        tgt_clean_traj,
+        _tgt_plain_rollout,
+        components_by_module=inspected_comps_tgt,
+        min_effect=1e-4,
+        sustain_ratio=1.25,
+        n_rotations=min(n_rot_eval, 8),
+        seed=seed + 100,
+    )
+    _log_stage(t0, "6b. Extract functional profiles + transition operator on yagizdevre")
+    tgt_profiles = extract_component_functional_profiles(
+        bpd_tgt, tgt_ci_out, tgt_clean_traj, _tgt_plain_rollout, tgt_classifications
+    )
+    bpd_tgt.target_model.to("cpu")
+    bpd_tgt.to("cpu")
+    _move_ci_and_traj(tgt_ci_out, tgt_clean_traj, "cpu")
+    del tgt_adapter, cached_eval_tgt, tgt_ci_out
+    _release_gpu_memory()
+
+    # Strict functional matching: requires BOTH ref and tgt components to have positive sustaining effect
+    functional_matches = match_components_by_function(
+        ref_profiles,
+        tgt_profiles,
+        require_ref_sustaining=True,
+        require_tgt_sustaining=True,
+    )
+    selected_matches = functional_matches[: min(top_k_edit, len(functional_matches))]
+    unmatched_sim_summary = compute_unmatched_similarity_baseline(
+        ref_profiles,
+        tgt_profiles,
+        selected_matches,
+        n_permutations=199,
+        seed=seed,
+    )
 
     # Clean WB-Stall baselines at eval_horizons (16, 32, 64)
     _log_stage(t0, "8a. Evaluate clean WB-Stall s=64 baselines (gaoxin492 & yagizdevre)")
@@ -859,7 +922,7 @@ def run_trm_bpd_pipeline(
         arm_b_rot_horizons.append(hm_rot_b)
         del rot_ctrl_tgt
 
-    del bpd_tgt, tgt_adapter, cached_eval_tgt, tgt_ci_out, tgt_clean_traj
+    del bpd_tgt, tgt_clean_traj
     _release_gpu_memory()
     _log_stage(t0, "9. Done")
 
@@ -1089,6 +1152,11 @@ def main() -> int:
         help="Hard per-process CUDA VRAM ceiling (prevents Windows WDDM shared-RAM swap)",
     )
     ap.add_argument("--smoke", action="store_true", help="Fast deterministic CPU smoke run on mini-TRM")
+    ap.add_argument(
+        "--fast-rehearsal",
+        action="store_true",
+        help="Fast full-rank 9-stage CUDA rehearsal on real checkpoints (1 step, 2 PGD steps, 1 draw)",
+    )
     ap.add_argument("--out", type=Path, default=None)
     args = ap.parse_args()
 
@@ -1161,12 +1229,14 @@ def main() -> int:
             train_outer_steps=args.train_outer_steps,
             eval_horizons=(16, 32, 64),
             c_per_mod=args.c,
-            n_steps=args.steps,
+            n_steps=1 if args.fast_rehearsal else args.steps,
             batch_size=args.batch_size,
+            pgd_steps_grid=(0, 2) if args.fast_rehearsal else (0, 2, 5, 20, 80, 160),
+            switch_sweep=(0.0,) if args.fast_rehearsal else (0.0, 2e-4, 2e-3, 2e-2),
             top_k_edit=args.top_k_edit,
             edit_scale_delta=args.edit_scale,
             hinge_kappa=args.hinge_kappa,
-            n_control_draws=args.control_draws,
+            n_control_draws=1 if args.fast_rehearsal else args.control_draws,
             registration_commit=args.registration_commit,
             device=args.device,
         )
