@@ -46,6 +46,7 @@ mechinterp/bpd/
 ├── nulls.py                      # RMS-matched Haar rotation nulls (raw + net importance reporting)
 ├── analysis.py                   # Schedule, transient/sustaining, transition op, intra-checkpoint edits
 ├── trainer.py                    # Hybrid clean-window + closed-loop BPDTrainer & UnrolledVPDTrainer
+├── causal_ci.py                  # Closed-loop CI gating from the perturbed state (preflight / lagged)
 ├── adapters/
 │   ├── trm.py                    # 7M PureSudokuTRM adapter (outer-step readouts + optional inner z_L switch)
 │   ├── looped_chase.py           # LoopedChase pointer-chase adapter + planted rank-1 positive control
@@ -54,11 +55,21 @@ mechinterp/bpd/
 │   ├── run_trm_bpd.py            # Primary target & Gate B4: separate TRM decompositions + intra-checkpoint edit
 │   ├── bench_unrolled_vs_tied.py # Gate B1: Tied C vs Unrolled T*C stationary Pareto test
 │   ├── audit_hug_cal02_null.py   # Gate B2: HUG-CAL-02 8-factor negative + planted positive control
-│   └── run_looped_chase_bpd.py   # Gate B3: LoopedChase planted control + lam=0.1 vs lam=1.0 gaps
+│   ├── run_looped_chase_bpd.py   # Gate B3: LoopedChase planted control + lam=0.1 vs lam=1.0 gaps
+│   ├── audit_b4_v2_controls_and_ablation_split.py # B4 identity controls + zero/mean x sphere factorial
+│   ├── audit_b4_v2_closure_mechanism.py # BPD-01: local ulp error, FP32/FP64 closure, perturbation growth
+│   ├── audit_b4_v2_online_svd.py # Static vs clean-informed vs online SVD top-k (BF16 or FP32)
+│   ├── refit_b4_ci_frozen_factors.py # BPD-01 C: state_only CI refit on frozen stage-4 (V, U)
+│   ├── audit_b4_causal_ci.py     # BPD-01 C: registered causal-CI vs SVD/magnitude top-k scoring
+│   ├── diagnose_causal_ci_train_boards.py # BPD-01 C: replay identity + CI logit ties on training boards
+│   ├── b4_numerics.py            # float64 KL, flips, state divergence, FP64 RMSNorm patch, bootstrap
+│   └── reduce_bpd01.py           # NumPy reducer for the BPD-01 receipts
 ├── docs/
 │   ├── design_and_positioning.md # Formal equations, v008 audit, T=1 parity spec, and risk controls
 │   ├── positive_control_history.md # Audit trail of test_bpd_ci_and_nulls.py development runs
-│   └── registration.md           # Pre-registered falsifiable pass/fail criteria for Gates B1-B4
+│   ├── registration.md           # Pre-registered falsifiable pass/fail criteria for Gates B1-B4
+│   ├── BPD01_CUDA_BF16_CLOSURE_20261117.md # BPD-01 numerical closure + online SVD report
+│   └── B4_CAUSAL_CI_REFIT_REGISTRATION_20261117.md # BPD-01 C causal CI protocol
 └── tests/                        # Deterministic CPU unit & smoke tests
 ```
 

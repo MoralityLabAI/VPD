@@ -89,6 +89,7 @@ class PassMaskSchedule:
     comp_mask: Tensor
     delta_mask: Tensor | None = None
     routing_mask: Tensor | None = None
+    online_topk: int | None = None  # TiedComponentLinear: choose k writes from the current masked state
 
 
 @dataclass
@@ -189,12 +190,16 @@ class TiedComponentLinear(nn.Module):
         self.detach_recorded_inputs: bool = True
         self.update_running_means: bool = False
         self.recorded_inputs: list[Tensor] = []
+        # Each entry holds per-board disagreement versus optional clean-oracle
+        # mask for one invocation; it is diagnostic-only and never steers gating.
+        self.online_mask_disagreement_by_pass: list[Tensor] = []
 
     def reset_pass_state(self, *, pass_offset: int = 0) -> None:
         """Reset invocation counter and cached per-pass inputs before a rollout."""
         self.calls = 0
         self.pass_offset = pass_offset
         self.recorded_inputs = []
+        self.online_mask_disagreement_by_pass = []
 
     def reconstructed_weight(self) -> Tensor:
         """Return ``(V @ U).T`` of shape ``[d_out, d_in]`` in float32."""
@@ -335,9 +340,26 @@ class TiedComponentLinear(nn.Module):
         if self.schedule is None:
             raise RuntimeError("Component mode requires an active PassMaskSchedule")
 
-        mask_tau = self.schedule.comp_mask[:, local_call]  # [B, P, C] or broadcastable
+        reference_mask_tau = self.schedule.comp_mask[:, local_call]  # [B, P, C] or broadcastable
         xf = x.float()
         comp_acts = xf @ self.V  # [B, P, C]
+        mask_tau = reference_mask_tau
+
+        if self.schedule.online_topk is not None:
+            k = int(self.schedule.online_topk)
+            if not 1 <= k <= self.C:
+                raise ValueError(f"online_topk must be in [1, {self.C}], got {k}")
+            # The *actual current pre-weight input* determines the gate.
+            # This cannot depend on the target trajectory or future loop states.
+            # The clean-informed comp_mask, when provided, is a diagnostic
+            # reference only; it is never used to construct the output.
+            with torch.no_grad():
+                score = comp_acts.detach().abs() * self.U.detach().float().norm(dim=-1)
+                topk_indices = score.topk(k, dim=-1).indices
+                mask_tau = torch.zeros_like(comp_acts).scatter_(-1, topk_indices, 1.0)
+                oracle = reference_mask_tau.expand_as(mask_tau)
+                disagreement = (mask_tau - oracle).abs().mean(dim=(1, 2))
+                self.online_mask_disagreement_by_pass.append(disagreement.cpu())
 
         is_cal = (
             self.ablation.mode == "pass_mean"

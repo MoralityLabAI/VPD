@@ -1,0 +1,113 @@
+{
+  "audit": "B4_online_SVD_first_readout_pretrained_CPU_pilot",
+  "status": "completed_two_checkpoints",
+  "source_run": "https://github.com/MoralityLabAI/LoopedTransformers/actions/runs/44098152848",
+  "source_commit": "f6a23ac081cd38fbfbf040e605b6220304d4e977",
+  "torch_version": "2.15.0+cpu",
+  "device": "cpu",
+  "precision": "float32",
+  "n_passes": 21,
+  "readout_pass": 20,
+  "eval_boards": 4,
+  "component_count": 512,
+  "k_keep": 307,
+  "boards_sha256_prefix16": [
+    "04004d23f52502e3",
+    "dc38a297a795425e",
+    "edec95672e764ca5",
+    "a01f857b4134c6d6"
+  ],
+  "arms": [
+    "same_dtype_target_rerun",
+    "static_rank_k",
+    "clean_oracle_dynamic_topk",
+    "online_dynamic_topk"
+  ],
+  "results": {
+    "gaoxin492": {
+      "artifact_id": 14335655253,
+      "artifact_json_sha256": "be5048e0a302abac5fae20a828a1259115e6e6a7d67b0b71858ff8cbbbb11f5b",
+      "per_board_kl": {
+        "same_dtype_target_rerun": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "static_rank_k": [
+          0.06117859482765198,
+          0.05373263731598854,
+          0.006925062742084265,
+          0.1412346214056015
+        ],
+        "clean_oracle_dynamic_topk": [
+          0.04814528301358223,
+          0.027409158647060394,
+          0.001175055862404406,
+          0.008476353250443935
+        ],
+        "online_dynamic_topk": [
+          0.02493930421769619,
+          0.01922881416976452,
+          0.0015473258681595325,
+          0.008501822128891945
+        ]
+      },
+      "paired_online_minus_oracle_kl": [
+        -0.02320597879588604,
+        -0.008180344477295876,
+        0.0003722700057551265,
+        0.00002546887844800949
+      ],
+      "mean_mask_disagreement_by_module": {
+        "layers.0.down_proj": 0.007197893224656582,
+        "layers.0.o_proj": 0.007546905893832445,
+        "layers.1.down_proj": 0.00899377092719078,
+        "layers.1.o_proj": 0.008778516203165054
+      }
+    },
+    "yagizdevre": {
+      "artifact_id": 14333779896,
+      "artifact_json_sha256": "64618b598512fbcfbd83ead642552c22d5e33e42a305507a52c40017f56d0773",
+      "per_board_kl": {
+        "same_dtype_target_rerun": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "static_rank_k": [
+          0.00020005930855404586,
+          0.0002512346254661679,
+          0.000013472233149514068,
+          0.0009680382208898664
+        ],
+        "clean_oracle_dynamic_topk": [
+          0.00002215449967479799,
+          0.00008734448783798143,
+          0.00012002760922769085,
+          0.00012531649554148316
+        ],
+        "online_dynamic_topk": [
+          0.000027775591661338694,
+          0.00005722549030906521,
+          0.00016246001177933067,
+          0.0001480684441048652
+        ]
+      },
+      "paired_online_minus_oracle_kl": [
+        0.000005621091986540705,
+        -0.000030118997528916225,
+        0.000042432402551639825,
+        0.00002275194856338203
+      ],
+      "mean_mask_disagreement_by_module": {
+        "layers.0.down_proj": 0.0010494331363588572,
+        "layers.0.o_proj": 0.0013001656625419855,
+        "layers.1.down_proj": 0.0012627715477719903,
+        "layers.1.o_proj": 0.0011194272665306926
+      }
+    }
+  },
+  "reading": "Exploratory N=4 CPU FP32 check only. Pass 20 control closes exactly; online-versus-oracle paired signs are mixed and underpowered. CUDA BF16 original 16-board / 63-pass gate unresolved."
+}

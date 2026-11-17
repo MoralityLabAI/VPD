@@ -637,8 +637,11 @@ def train_ci_heads_on_frozen_components(
     warm_start_clock: bool = True,
     det_recon_weight: float = 0.5,
     device: torch.device | str = "cpu",
+    variants: tuple[CIVariant, ...] = ("state_only", "state_plus_clock", "visible_only"),
 ) -> tuple[dict[CIVariant, TiedCINetwork], dict[str, dict[str, float]], dict[str, float]]:
     """Train ``state_only``, ``state_plus_clock``, and ``visible_only`` CI variants on shared ``(V, U)``.
+
+    ``variants`` restricts training to a subset (gaps are reported only when all three ran).
 
     Holding the physical decomposition ``(V, U)`` fixed isolates the pure causal
     addressing capacity of the three CI observation spaces so that **Clock Gap** and
@@ -649,7 +652,6 @@ def train_ci_heads_on_frozen_components(
     dev = torch.device(device)
     bpd_model.to(dev)
     module_dims = {name: bpd_model.wrappers[name].d_in for name in bpd_model.module_order}
-    variants: tuple[CIVariant, ...] = ("state_only", "state_plus_clock", "visible_only")
     null_map = pass_null_losses if pass_null_losses is not None else pass_tolerances
     raw_kappa = base_cfg.null_calibration.hinge_kappa if hinge_kappa is None else hinge_kappa
     kappa = (
@@ -834,7 +836,11 @@ def train_ci_heads_on_frozen_components(
         variant_metrics[var] = m_eval
         trained_nets[var] = net
 
-    gaps = compute_ci_variant_gaps(variant_metrics)
+    gaps = (
+        compute_ci_variant_gaps(variant_metrics)
+        if {"state_only", "state_plus_clock", "visible_only"} <= set(variant_metrics)
+        else {}
+    )
     return trained_nets, variant_metrics, gaps
 
 
