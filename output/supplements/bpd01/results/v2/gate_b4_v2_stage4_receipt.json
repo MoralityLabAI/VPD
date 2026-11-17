@@ -1,7 +1,20 @@
 {
   "gate": "B4_v2_stages_1a_through_4_receipt",
   "status": "completed_stages_1a_1b_2_3a_3b_4_stopped_after_stage_4",
+  "gate_b4_verdict": "incomplete",
+  "gate_b4_passed": null,
   "registration_commit": "180f1bcbbc633a16bfd887a9593252cefd7a6a65",
+  "provenance": {
+    "extraction_script": "mechinterp/bpd/scripts/extract_stage4_from_pid.py",
+    "telemetry_log": "mechinterp/bpd/results/v2/gate_b4_v2_stage4_telemetry.json",
+    "weights_artifact": "mechinterp/bpd/results/v2/bpd_b4_v2_stage4_weights.pt",
+    "weights_mirror_artifact": "output/supplements/bpd01/results/v2/bpd_b4_v2_stage4_weights.pt",
+    "weights_sha256": "65ecb2ab6c4a144b3563cecf49d6a55b157201fa98ef0b6dc652ff3effc33cbc",
+    "weights_size_bytes": 25171817,
+    "factor_convention": "Top-level keys are bpd_ref (gaoxin492, match_inner=False) and bpd_tgt (yagizdevre, match_inner=False) across layers.{0,1}.{down_proj,o_proj}. V has shape [d_in, C] (read, float32) and U has shape [C, d_out] (write, float32) initialized via _svd_or_random_factors(W_target, c=512, init_svd=True); W_hat = (V @ U).T matches nn.Linear.weight [d_out, d_in].",
+    "includes_ci_networks": false,
+    "ci_networks_note": "run_trm_bpd.py deletes _tgt_trainer/_tgt_ci_state at line 496, ref_trainer at line 541, and ref_ci_state at line 611 prior to Stage 5a; CI networks are not in the weights file and gate-dependent follow-ups require refitting CI gates with (V, U) frozen."
+  },
   "c_per_module": 512,
   "num_train_boards": 128,
   "train_batch_size": 32,
