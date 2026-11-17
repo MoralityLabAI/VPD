@@ -1,0 +1,300 @@
+{
+  "audit": "B4_v2_zero_fit_zero_ci_diagnostics",
+  "weights_path": "mechinterp/bpd/results/v2/bpd_b4_v2_stage4_weights.pt",
+  "eval_boards": 16,
+  "n_passes": 63,
+  "gaoxin492_ref": {
+    "checkpoint": "gaoxin492",
+    "factors_key": "bpd_ref",
+    "exact_weight_residuals": {
+      "layers.0.down_proj": {
+        "w_target_fro": 8.437116622924805,
+        "w_recon_fro": 9.147738456726074,
+        "delta_w_fro": 3.5923593044281006,
+        "delta_over_target_fro": 0.42578044533729553,
+        "delta_over_recon_fro": 0.39270463585853577,
+        "entrywise_mse": 1.6409612726420164e-05,
+        "median_best_abs_cos_to_any_svd_read": 0.9094012379646301
+      },
+      "layers.0.o_proj": {
+        "w_target_fro": 7.542374134063721,
+        "w_recon_fro": 7.894428730010986,
+        "delta_w_fro": 2.4033782482147217,
+        "delta_over_target_fro": 0.31865009665489197,
+        "delta_over_recon_fro": 0.3044397830963135,
+        "entrywise_mse": 2.203455733251758e-05,
+        "median_best_abs_cos_to_any_svd_read": 0.9248731136322021
+      },
+      "layers.1.down_proj": {
+        "w_target_fro": 9.425622940063477,
+        "w_recon_fro": 9.8186616897583,
+        "delta_w_fro": 3.4462053775787354,
+        "delta_over_target_fro": 0.3656209707260132,
+        "delta_over_recon_fro": 0.35098525881767273,
+        "entrywise_mse": 1.5101536519068759e-05,
+        "median_best_abs_cos_to_any_svd_read": 0.8964266777038574
+      },
+      "layers.1.o_proj": {
+        "w_target_fro": 9.00468635559082,
+        "w_recon_fro": 9.056964874267578,
+        "delta_w_fro": 2.0795929431915283,
+        "delta_over_target_fro": 0.2309456318616867,
+        "delta_over_recon_fro": 0.2296125590801239,
+        "entrywise_mse": 1.6497446267749183e-05,
+        "median_best_abs_cos_to_any_svd_read": 0.9000686407089233
+      }
+    },
+    "all_components_on_separation_test": {
+      "comp_1_delta_1_sanity": {
+        "recon_loss": 0.25340646505355835,
+        "final_kl": 0.36531373858451843,
+        "pass_20_kl": 0.0059039718471467495,
+        "pass_41_kl": 0.3890016973018646,
+        "pass_62_kl": 0.36531373858451843
+      },
+      "comp_1_delta_0_pass_mean_fable_test": {
+        "recon_loss": 4.943675518035889,
+        "final_kl": 5.696885108947754,
+        "pass_20_kl": 3.9419989585876465,
+        "pass_41_kl": 5.192142486572266,
+        "pass_62_kl": 5.696885108947754
+      },
+      "comp_1_pure_vu_no_delta_bias": {
+        "recon_loss": 6.309725761413574,
+        "final_kl": 6.3201704025268555,
+        "pass_20_kl": 6.2866339683532715,
+        "pass_41_kl": 6.322373390197754,
+        "pass_62_kl": 6.3201704025268555
+      }
+    },
+    "shared_direction_and_activation_variance": {
+      "layers.0.down_proj": {
+        "frac_reads_within_cos_0_5_of_shared": 0.068359375,
+        "shared_singular_energy_frac": 0.06447155028581619,
+        "typical_isotropic_dir_var": 0.3578325907389323,
+        "input_var_along_shared_dir": 4.361141204833984,
+        "shared_over_typical_var_ratio": 12.187657909605523,
+        "abs_cos_shared_dir_with_global_mean_input": 0.5738565325737,
+        "mean_input_norm_over_rms_x": 0.410556823015213,
+        "component_var_over_m2_median_all": 0.5517808198928833,
+        "component_var_over_m2_median_shared_cluster": 0.1410178691148758,
+        "component_var_over_m2_median_outside_shared": 0.5824106335639954,
+        "pass_cond_var_over_m2_median_shared_cluster": 0.09339988231658936,
+        "pass_cond_var_over_m2_median_outside_shared": 0.4766697287559509
+      },
+      "layers.0.o_proj": {
+        "frac_reads_within_cos_0_5_of_shared": 0.091796875,
+        "shared_singular_energy_frac": 0.07300208508968353,
+        "typical_isotropic_dir_var": 0.8218509554862976,
+        "input_var_along_shared_dir": 17.66009521484375,
+        "shared_over_typical_var_ratio": 21.48819697410231,
+        "abs_cos_shared_dir_with_global_mean_input": 0.3305188715457916,
+        "mean_input_norm_over_rms_x": 0.4993077218532562,
+        "component_var_over_m2_median_all": 0.6910727620124817,
+        "component_var_over_m2_median_shared_cluster": 0.670911431312561,
+        "component_var_over_m2_median_outside_shared": 0.691565752029419,
+        "pass_cond_var_over_m2_median_shared_cluster": 0.1131352111697197,
+        "pass_cond_var_over_m2_median_outside_shared": 0.23312200605869293
+      },
+      "layers.1.down_proj": {
+        "frac_reads_within_cos_0_5_of_shared": 0.087890625,
+        "shared_singular_energy_frac": 0.07290934026241302,
+        "typical_isotropic_dir_var": 0.39674468835194904,
+        "input_var_along_shared_dir": 2.2213501930236816,
+        "shared_over_typical_var_ratio": 5.598941229058471,
+        "abs_cos_shared_dir_with_global_mean_input": 0.48150545358657837,
+        "mean_input_norm_over_rms_x": 0.34374842047691345,
+        "component_var_over_m2_median_all": 0.6548613905906677,
+        "component_var_over_m2_median_shared_cluster": 0.2597939670085907,
+        "component_var_over_m2_median_outside_shared": 0.6846451163291931,
+        "pass_cond_var_over_m2_median_shared_cluster": 0.13409113883972168,
+        "pass_cond_var_over_m2_median_outside_shared": 0.3819683790206909
+      },
+      "layers.1.o_proj": {
+        "frac_reads_within_cos_0_5_of_shared": 0.23828125,
+        "shared_singular_energy_frac": 0.14730116724967957,
+        "typical_isotropic_dir_var": 0.10232402384281158,
+        "input_var_along_shared_dir": 1.860081672668457,
+        "shared_over_typical_var_ratio": 18.17834759436242,
+        "abs_cos_shared_dir_with_global_mean_input": 0.6395144462585449,
+        "mean_input_norm_over_rms_x": 0.4954293370246887,
+        "component_var_over_m2_median_all": 0.41888704895973206,
+        "component_var_over_m2_median_shared_cluster": 0.2373194396495819,
+        "component_var_over_m2_median_outside_shared": 0.5303013920783997,
+        "pass_cond_var_over_m2_median_shared_cluster": 0.06311150640249252,
+        "pass_cond_var_over_m2_median_outside_shared": 0.2231503576040268
+      }
+    },
+    "gate_free_svd_60pct_baselines": {
+      "k_keep_of_512": 307,
+      "dynamic_top60_zero_ablation": {
+        "recon_loss": 0.03709039092063904,
+        "final_kl": 0.06290687620639801,
+        "pass_20_kl": 0.02007017284631729,
+        "pass_41_kl": 0.028294121846556664,
+        "pass_62_kl": 0.06290687620639801
+      },
+      "dynamic_top60_pass_mean_ablation": {
+        "recon_loss": 0.6746782660484314,
+        "final_kl": 0.46509307622909546,
+        "pass_20_kl": 0.6215910315513611,
+        "pass_41_kl": 0.9373506307601929,
+        "pass_62_kl": 0.46509307622909546
+      },
+      "static_rank307_svd_truncation": {
+        "recon_loss": 0.17116205394268036,
+        "final_kl": 0.09962537884712219,
+        "pass_20_kl": 0.03288400173187256,
+        "pass_41_kl": 0.38097673654556274,
+        "pass_62_kl": 0.09962537884712219
+      }
+    }
+  },
+  "yagizdevre_tgt": {
+    "checkpoint": "yagizdevre",
+    "factors_key": "bpd_tgt",
+    "exact_weight_residuals": {
+      "layers.0.down_proj": {
+        "w_target_fro": 7.792801856994629,
+        "w_recon_fro": 8.003868103027344,
+        "delta_w_fro": 1.8773651123046875,
+        "delta_over_target_fro": 0.24091015756130219,
+        "delta_over_recon_fro": 0.23455722630023956,
+        "entrywise_mse": 4.481633368413895e-06,
+        "median_best_abs_cos_to_any_svd_read": 0.6651839017868042
+      },
+      "layers.0.o_proj": {
+        "w_target_fro": 6.198618412017822,
+        "w_recon_fro": 6.4007248878479,
+        "delta_w_fro": 1.4886596202850342,
+        "delta_over_target_fro": 0.24015991389751434,
+        "delta_over_recon_fro": 0.23257672786712646,
+        "entrywise_mse": 8.453778718831018e-06,
+        "median_best_abs_cos_to_any_svd_read": 0.7099170684814453
+      },
+      "layers.1.down_proj": {
+        "w_target_fro": 9.226057052612305,
+        "w_recon_fro": 9.41002368927002,
+        "delta_w_fro": 2.3566787242889404,
+        "delta_over_target_fro": 0.2554372549057007,
+        "delta_over_recon_fro": 0.2504434287548065,
+        "entrywise_mse": 7.062192707962822e-06,
+        "median_best_abs_cos_to_any_svd_read": 0.7285407781600952
+      },
+      "layers.1.o_proj": {
+        "w_target_fro": 8.245560646057129,
+        "w_recon_fro": 8.265339851379395,
+        "delta_w_fro": 1.4354792833328247,
+        "delta_over_target_fro": 0.174091175198555,
+        "delta_over_recon_fro": 0.1736745685338974,
+        "entrywise_mse": 7.86056807555724e-06,
+        "median_best_abs_cos_to_any_svd_read": 0.6528539657592773
+      }
+    },
+    "all_components_on_separation_test": {
+      "comp_1_delta_1_sanity": {
+        "recon_loss": 0.5261631608009338,
+        "final_kl": 1.534240961074829,
+        "pass_20_kl": 0.004738576710224152,
+        "pass_41_kl": 0.039509836584329605,
+        "pass_62_kl": 1.534240961074829
+      },
+      "comp_1_delta_0_pass_mean_fable_test": {
+        "recon_loss": 9.97137451171875,
+        "final_kl": 8.911324501037598,
+        "pass_20_kl": 12.175277709960938,
+        "pass_41_kl": 8.827522277832031,
+        "pass_62_kl": 8.911324501037598
+      },
+      "comp_1_pure_vu_no_delta_bias": {
+        "recon_loss": 4.251981735229492,
+        "final_kl": 4.226502418518066,
+        "pass_20_kl": 4.312108516693115,
+        "pass_41_kl": 4.217335224151611,
+        "pass_62_kl": 4.226502418518066
+      }
+    },
+    "shared_direction_and_activation_variance": {
+      "layers.0.down_proj": {
+        "frac_reads_within_cos_0_5_of_shared": 0.291015625,
+        "shared_singular_energy_frac": 0.16545358300209045,
+        "typical_isotropic_dir_var": 0.31299469868342084,
+        "input_var_along_shared_dir": 4.707849979400635,
+        "shared_over_typical_var_ratio": 15.041309003646735,
+        "abs_cos_shared_dir_with_global_mean_input": 0.3973855674266815,
+        "mean_input_norm_over_rms_x": 0.39514467120170593,
+        "component_var_over_m2_median_all": 0.6099136471748352,
+        "component_var_over_m2_median_shared_cluster": 0.34900620579719543,
+        "component_var_over_m2_median_outside_shared": 0.7594000697135925,
+        "pass_cond_var_over_m2_median_shared_cluster": 0.20890043675899506,
+        "pass_cond_var_over_m2_median_outside_shared": 0.5268588662147522
+      },
+      "layers.0.o_proj": {
+        "frac_reads_within_cos_0_5_of_shared": 0.166015625,
+        "shared_singular_energy_frac": 0.11633693426847458,
+        "typical_isotropic_dir_var": 0.6703367233276367,
+        "input_var_along_shared_dir": 18.501882553100586,
+        "shared_over_typical_var_ratio": 27.60087864686107,
+        "abs_cos_shared_dir_with_global_mean_input": 0.41843774914741516,
+        "mean_input_norm_over_rms_x": 0.44658637046813965,
+        "component_var_over_m2_median_all": 0.8069027066230774,
+        "component_var_over_m2_median_shared_cluster": 0.6208664774894714,
+        "component_var_over_m2_median_outside_shared": 0.8316881656646729,
+        "pass_cond_var_over_m2_median_shared_cluster": 0.20794107019901276,
+        "pass_cond_var_over_m2_median_outside_shared": 0.3099591135978699
+      },
+      "layers.1.down_proj": {
+        "frac_reads_within_cos_0_5_of_shared": 0.12109375,
+        "shared_singular_energy_frac": 0.09042876958847046,
+        "typical_isotropic_dir_var": 0.31586291392644245,
+        "input_var_along_shared_dir": 4.441454887390137,
+        "shared_over_typical_var_ratio": 14.061337028076853,
+        "abs_cos_shared_dir_with_global_mean_input": 0.4147343933582306,
+        "mean_input_norm_over_rms_x": 0.32989904284477234,
+        "component_var_over_m2_median_all": 0.7597910761833191,
+        "component_var_over_m2_median_shared_cluster": 0.4608948826789856,
+        "component_var_over_m2_median_outside_shared": 0.8080003261566162,
+        "pass_cond_var_over_m2_median_shared_cluster": 0.23909930884838104,
+        "pass_cond_var_over_m2_median_outside_shared": 0.3322215974330902
+      },
+      "layers.1.o_proj": {
+        "frac_reads_within_cos_0_5_of_shared": 0.431640625,
+        "shared_singular_energy_frac": 0.26179081201553345,
+        "typical_isotropic_dir_var": 0.10662273317575455,
+        "input_var_along_shared_dir": 2.22776460647583,
+        "shared_over_typical_var_ratio": 20.893898891183294,
+        "abs_cos_shared_dir_with_global_mean_input": 0.6878750920295715,
+        "mean_input_norm_over_rms_x": 0.5757864713668823,
+        "component_var_over_m2_median_all": 0.27840811014175415,
+        "component_var_over_m2_median_shared_cluster": 0.18016976118087769,
+        "component_var_over_m2_median_outside_shared": 0.559539258480072,
+        "pass_cond_var_over_m2_median_shared_cluster": 0.05120925232768059,
+        "pass_cond_var_over_m2_median_outside_shared": 0.16475917398929596
+      }
+    },
+    "gate_free_svd_60pct_baselines": {
+      "k_keep_of_512": 307,
+      "dynamic_top60_zero_ablation": {
+        "recon_loss": 0.15853780508041382,
+        "final_kl": 0.46032169461250305,
+        "pass_20_kl": 0.006205087061971426,
+        "pass_41_kl": 0.009086621925234795,
+        "pass_62_kl": 0.46032169461250305
+      },
+      "dynamic_top60_pass_mean_ablation": {
+        "recon_loss": 1.512283205986023,
+        "final_kl": 1.857010841369629,
+        "pass_20_kl": 0.43717655539512634,
+        "pass_41_kl": 2.242662191390991,
+        "pass_62_kl": 1.857010841369629
+      },
+      "static_rank307_svd_truncation": {
+        "recon_loss": 0.06525008380413055,
+        "final_kl": 0.09900667518377304,
+        "pass_20_kl": 0.006043647415935993,
+        "pass_41_kl": 0.0906999260187149,
+        "pass_62_kl": 0.09900667518377304
+      }
+    }
+  }
+}
