@@ -1,0 +1,82 @@
+{
+  "gate": "B4_v2_stage1_to_stage4_paused_telemetry",
+  "status": "paused_at_stage_5a_after_stage_4_completion",
+  "registration_commit": "180f1bcbbc633a16bfd887a9593252cefd7a6a65",
+  "engine_commit": "136e9b0fc023fd6591ad8dcf4e6e58d634c1007e",
+  "command": "python mechinterp/bpd/scripts/run_trm_bpd.py --device cuda --max-vram-fraction 0.65 --registration-commit 180f1bcbbc633a16bfd887a9593252cefd7a6a65 --out mechinterp/bpd/results/v2/gate_b4_v2_receipt.json",
+  "note": "run_trm_bpd.py holds intermediate stage dictionaries in RAM and writes gate_b4_v2_receipt.json once at Stage 9. Process PID 275016 completed Stages 1a, 1b, 2, 3a, 3b, and 4 (41,255.7s = 11.46h elapsed) and was suspended at the start of Stage 5a to free host memory for interactive analysis.",
+  "config": {
+    "c_per_module": 512,
+    "total_components_across_4_modules": 2048,
+    "n_train": 128,
+    "batch_size": 32,
+    "train_outer_steps": 3,
+    "total_invocations": 63,
+    "steps": 240,
+    "hinge_kappa": 0.1,
+    "control_draws_configured": 39,
+    "max_vram_fraction": 0.65
+  },
+  "completed_stage_durations_sec": {
+    "stage_1a_gaoxin492_ref_outer_240_steps": 7205.8,
+    "stage_1b_gaoxin492_ref_inner_240_steps": 7969.5,
+    "stage_2_yagizdevre_tgt_outer_240_steps": 13513.1,
+    "stage_3a_pgd_shared_160_steps": 1567.1,
+    "stage_3b_pgd_per_pass_160_steps": 2078.3,
+    "stage_4_switch_penalty_sweep_4x3x40_steps": 8836.4,
+    "total_elapsed_at_stage_5a_entry": 41255.7
+  },
+  "fit_trajectories": {
+    "ref_outer_gaoxin492": [
+      {"step": 40, "elapsed_s": 1312.5, "mode": "clean_window", "loss": 2.0227, "faith": 3.36e-05, "active": 1425.6},
+      {"step": 80, "elapsed_s": 2449.7, "mode": "clean_window", "loss": 1.2416, "faith": 3.0e-05, "active": 1304.2},
+      {"step": 120, "elapsed_s": 3504.9, "mode": "clean_window", "loss": 0.4055, "faith": 2.24e-05, "active": 1310.3},
+      {"step": 160, "elapsed_s": 4665.9, "mode": "closed_loop", "loss": 0.3897, "faith": 1.61e-05, "active": 1289.2},
+      {"step": 200, "elapsed_s": 5845.5, "mode": "clean_window", "loss": 0.6395, "faith": 1.67e-05, "active": 1252.5},
+      {"step": 240, "elapsed_s": 7206.6, "mode": "clean_window", "loss": 0.5379, "faith": 1.67e-05, "active": 1217.3}
+    ],
+    "ref_inner_gaoxin492": [
+      {"step": 40, "elapsed_s": 9061.8, "mode": "closed_loop", "loss": 0.63, "faith": 8.33e-06, "active": 1131.4},
+      {"step": 80, "elapsed_s": 10384.2, "mode": "closed_loop", "loss": 0.4172, "faith": 7.81e-06, "active": 1085.6},
+      {"step": 120, "elapsed_s": 11714.7, "mode": "closed_loop", "loss": 0.357, "faith": 6.19e-06, "active": 1093.3},
+      {"step": 160, "elapsed_s": 12875.9, "mode": "closed_loop", "loss": 0.2363, "faith": 5.38e-06, "active": 1137.9},
+      {"step": 200, "elapsed_s": 13772.1, "mode": "clean_window", "loss": 0.0691, "faith": 4.43e-06, "active": 1297.3},
+      {"step": 240, "elapsed_s": 15198.5, "mode": "clean_window", "loss": 0.059, "faith": 4.36e-06, "active": 1363.4}
+    ],
+    "tgt_outer_yagizdevre": [
+      {"step": 40, "elapsed_s": 16442.3, "mode": "clean_window", "loss": 1.8336, "faith": 2.4e-05, "active": 1291.1},
+      {"step": 80, "elapsed_s": 18310.0, "mode": "clean_window", "loss": 0.5524, "faith": 2.6e-05, "active": 1201.0},
+      {"step": 120, "elapsed_s": 22123.8, "mode": "closed_loop", "loss": 10.7397, "faith": 1.37e-05, "active": 1180.4},
+      {"step": 160, "elapsed_s": 23935.3, "mode": "closed_loop", "loss": 0.3301, "faith": 1.28e-05, "active": 1213.9},
+      {"step": 200, "elapsed_s": 26611.7, "mode": "closed_loop", "loss": 0.1757, "faith": 8.47e-06, "active": 1213.6},
+      {"step": 240, "elapsed_s": 28723.6, "mode": "closed_loop", "loss": 0.1305, "faith": 6.41e-06, "active": 1216.1}
+    ]
+  },
+  "verbatim_stdout_lines": [
+    "[B4 +   0.8s] 1a. Fit gaoxin492 (C=512, outer_steps=3, match_inner=False) [cuda alloc=27MB reserved=44MB]",
+    "[B4 +1312.5s] ref_outer: step 40/240 (clean_window) loss=2.0227 faith=3.36e-05 active=1425.6 [cuda alloc=125MB reserved=3862MB]",
+    "[B4 +2449.7s] ref_outer: step 80/240 (clean_window) loss=1.2416 faith=3.00e-05 active=1304.2 [cuda alloc=125MB reserved=3838MB]",
+    "[B4 +3504.9s] ref_outer: step 120/240 (clean_window) loss=0.4055 faith=2.24e-05 active=1310.3 [cuda alloc=125MB reserved=3874MB]",
+    "[B4 +4665.9s] ref_outer: step 160/240 (closed_loop) loss=0.3897 faith=1.61e-05 active=1289.2 [cuda alloc=125MB reserved=9636MB]",
+    "[B4 +5845.5s] ref_outer: step 200/240 (clean_window) loss=0.6395 faith=1.67e-05 active=1252.5 [cuda alloc=125MB reserved=3910MB]",
+    "[B4 +7206.6s] ref_outer: step 240/240 (clean_window) loss=0.5379 faith=1.67e-05 active=1217.3 [cuda alloc=125MB reserved=3894MB]",
+    "[B4 +7229.0s] 1b. Fit gaoxin492 (match_inner_boundary_states=True) [cuda alloc=46MB reserved=94MB]",
+    "[B4 +9061.8s] ref_inner: step 40/240 (closed_loop) loss=0.6300 faith=8.33e-06 active=1131.4 [cuda alloc=125MB reserved=9566MB]",
+    "[B4 +10384.2s] ref_inner: step 80/240 (closed_loop) loss=0.4172 faith=7.81e-06 active=1085.6 [cuda alloc=125MB reserved=9634MB]",
+    "[B4 +11714.7s] ref_inner: step 120/240 (closed_loop) loss=0.3570 faith=6.19e-06 active=1093.3 [cuda alloc=125MB reserved=10378MB]",
+    "[B4 +12875.9s] ref_inner: step 160/240 (closed_loop) loss=0.2363 faith=5.38e-06 active=1137.9 [cuda alloc=125MB reserved=9642MB]",
+    "[B4 +13772.1s] ref_inner: step 200/240 (clean_window) loss=0.0691 faith=4.43e-06 active=1297.3 [cuda alloc=125MB reserved=1834MB]",
+    "[B4 +15198.5s] ref_inner: step 240/240 (clean_window) loss=0.0590 faith=4.36e-06 active=1363.4 [cuda alloc=125MB reserved=1810MB]",
+    "[B4 +15210.5s] 2. Fit yagizdevre (C=512, outer_steps=3, separate decomposition) [cuda alloc=46MB reserved=94MB]",
+    "[B4 +16442.3s] tgt_outer: step 40/240 (clean_window) loss=1.8336 faith=2.40e-05 active=1291.1 [cuda alloc=124MB reserved=3926MB]",
+    "[B4 +18310.0s] tgt_outer: step 80/240 (clean_window) loss=0.5524 faith=2.60e-05 active=1201.0 [cuda alloc=124MB reserved=3908MB]",
+    "[B4 +22123.8s] tgt_outer: step 120/240 (closed_loop) loss=10.7397 faith=1.37e-05 active=1180.4 [cuda alloc=124MB reserved=9568MB]",
+    "[B4 +23935.3s] tgt_outer: step 160/240 (closed_loop) loss=0.3301 faith=1.28e-05 active=1213.9 [cuda alloc=124MB reserved=9600MB]",
+    "[B4 +26611.7s] tgt_outer: step 200/240 (closed_loop) loss=0.1757 faith=8.47e-06 active=1213.6 [cuda alloc=124MB reserved=9574MB]",
+    "[B4 +28723.6s] tgt_outer: step 240/240 (closed_loop) loss=0.1305 faith=6.41e-06 active=1216.1 [cuda alloc=124MB reserved=9654MB]",
+    "[B4 +28773.9s] 3a. Risk Audit 1: PGD stability curve (shared_batch_and_pass) [cuda alloc=1725MB reserved=1742MB]",
+    "[B4 +30341.0s] 3b. Risk Audit 1: PGD stability curve (per_pass) [cuda alloc=1725MB reserved=1742MB]",
+    "[B4 +32419.3s] 4. Risk Audit 2: Warm-started switch penalty sweep (3 seeds) [cuda alloc=85MB reserved=102MB]",
+    "[B4 +41255.7s] 5a. Evaluate component null report on gaoxin492 (K=19 rotations) [cuda alloc=1705MB reserved=1776MB]"
+  ]
+}
