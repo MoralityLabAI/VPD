@@ -22,5 +22,6 @@ Report: `docs/BPD01_CUDA_BF16_CLOSURE_20261117.md`. Tables: `bpd01_tables.md`, `
 | Online vs clean-informed SVD top-307, CUDA FP32 | Identity floor <= 5e-8. Online is non-inferior at pass 20 on both checkpoints (descriptive, n = 16). | `gate_b4_v2_online_svd_cuda_fp32.json` |
 | Trained CI (historical) | CI weights deleted before the stage-4 export. The 0.0103159 receipt is clean-informed and cannot be re-scored. | `gate_b4_v2_stage4_receipt.json` |
 | B4-CAUSAL-CI-01 refit CI, CUDA FP32, reserved 64 | Floors closed except yagizdevre pass 62 (7.5e-5). Pass-20 decisions: H1 inconclusive (opposite signs); H2 causal CI top-307 worse than zero-fit online SVD on both checkpoints (+5.42, +6.45 KL); H3 non-inferiority to clean-informed CI not shown. The clean-informed CI top-307 also trails SVD magnitude top-307 at pass 20 (+0.13, +0.20). | `ci_refit/`, `gate_b4_causal_ci.json` |
+| B4-CAUSAL-CI-02 closed-loop CI, CUDA FP32, reserved 64 | Registered H4: closed-loop training improves causal top-307 gating on both checkpoints and all 64 boards (pass 20: 5.43 -> 1.48, 6.45 -> 0.87). H2: still worse than zero-fit online SVD (+1.48, +0.87). H1: better than magnitude top-307. H3: not shown. | `ci_closed_loop/`, `gate_b4_causal_ci_closed_loop.json` |
 
 Gate B4 v2 remains **INCOMPLETE**.

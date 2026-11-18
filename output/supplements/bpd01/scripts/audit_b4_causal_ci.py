@@ -280,6 +280,10 @@ def main() -> int:
     ap.add_argument("--device", default="cuda")
     ap.add_argument("--checkpoints", nargs="+", default=["gaoxin492", "yagizdevre"], choices=sorted(FACTOR_KEY))
     ap.add_argument("--ci-dir", type=Path, default=Path("mechinterp/bpd/results/v2/ci_refit"))
+    ap.add_argument("--ci-stem", default="seed0_state_only_ci",
+                    help="CI files are {ci-dir}/{checkpoint}_{ci-stem}.pt/.json")
+    ap.add_argument("--experiment", default="B4-CAUSAL-CI-01")
+    ap.add_argument("--registration", default="mechinterp/bpd/docs/B4_CAUSAL_CI_REFIT_REGISTRATION_20261117.md")
     ap.add_argument("--weights", type=Path, default=Path("mechinterp/bpd/results/v2/bpd_b4_v2_stage4_weights.pt"))
     ap.add_argument("--chunk", type=int, default=16)
     ap.add_argument("--out", type=Path, default=Path("mechinterp/bpd/results/v2/gate_b4_causal_ci.json"))
@@ -296,8 +300,9 @@ def main() -> int:
     train = wb["train_inputs"][:128]
 
     report: dict[str, Any] = {
-        "experiment": "B4-CAUSAL-CI-01",
-        "registration": "mechinterp/bpd/docs/B4_CAUSAL_CI_REFIT_REGISTRATION_20261117.md",
+        "experiment": args.experiment,
+        "registration": args.registration,
+        "ci_stem": args.ci_stem,
         "replaces_historical_trained_gate_receipt": False,
         "factor_weights_sha256": sha,
         "torch_version": torch.__version__,
@@ -311,8 +316,9 @@ def main() -> int:
     }
     t0 = time.time()
     for ck in args.checkpoints:
-        rec = json.loads((args.ci_dir / f"{ck}_seed0_state_only_ci.json").read_text(encoding="utf-8"))
-        ci = load_ci(args.ci_dir / f"{ck}_seed0_state_only_ci.pt", rec["ci_weights_sha256"], dev)
+        rec = json.loads((args.ci_dir / f"{ck}_{args.ci_stem}.json").read_text(encoding="utf-8"))
+        ci = load_ci(args.ci_dir / f"{ck}_{args.ci_stem}.pt", rec["ci_weights_sha256"], dev)
+        rec = {k: v for k, v in rec.items() if k not in ("train_history", "validation_history")}
         base = load_pretrained_trm(ck, dtype=torch.bfloat16, verify_sha256=True).float()
         c_map = default_trm_c_per_module(base, c=C)
         bpd_svd = BPDModel(copy.deepcopy(base).to(dev).eval(), c_map, max_passes=N_PASSES,

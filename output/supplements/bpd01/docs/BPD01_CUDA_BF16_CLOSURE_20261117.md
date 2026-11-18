@@ -33,11 +33,15 @@ python mechinterp/bpd/scripts/refit_b4_ci_frozen_factors.py --checkpoint yagizde
 python mechinterp/bpd/scripts/diagnose_causal_ci_train_boards.py --checkpoint gaoxin492   # CPU
 python mechinterp/bpd/scripts/diagnose_causal_ci_train_boards.py --checkpoint yagizdevre  # CPU
 python mechinterp/bpd/scripts/audit_b4_causal_ci.py --device cuda
+python mechinterp/bpd/scripts/train_b4_ci_closed_loop.py --checkpoint gaoxin492
+python mechinterp/bpd/scripts/train_b4_ci_closed_loop.py --checkpoint yagizdevre
+python mechinterp/bpd/scripts/audit_b4_causal_ci.py --device cuda --ci-dir mechinterp/bpd/results/v2/ci_closed_loop --ci-stem seed0_closed_loop_ci --experiment B4-CAUSAL-CI-02 --registration mechinterp/bpd/docs/B4_CAUSAL_CI_CLOSED_LOOP_REGISTRATION_20261118.md --out mechinterp/bpd/results/v2/gate_b4_causal_ci_closed_loop.json
 python mechinterp/bpd/scripts/reduce_bpd01.py
 ```
 
 Experiments A and B ran through `vramorama run --vram 8G` with `HF_HUB_OFFLINE=1`. The
-refits used 14 GB leases and the causal-CI scoring a 10 GB lease.
+refits used 14 GB leases, the closed-loop trainings 7 GB each, and each causal-CI scoring
+run a 10 GB lease.
 
 ## Experiment A: the identity controls under native CUDA BF16
 
@@ -340,7 +344,93 @@ Limits:
 - One refit seed per checkpoint, at batch 16 × 480 steps where B4 used 32 × 240.
 - A clean-trajectory training objective.
 
-The results do not cover a CI trained on its own closed-loop inputs.
+The results do not cover a CI trained on its own closed-loop inputs. Experiment C2 tests
+that next.
+
+## Experiment C2: closed-loop CI training (B4-CAUSAL-CI-02)
+
+### Protocol and training
+
+The protocol was registered at `e1bfdf05`
+([`B4_CAUSAL_CI_CLOSED_LOOP_REGISTRATION_20261118.md`](B4_CAUSAL_CI_CLOSED_LOOP_REGISTRATION_20261118.md))
+before any full training. It trains the CI on the policy it is scored with:
+- preflight observations of its own masked rollout;
+- a hard top-307 forward mask with a straight-through sigmoid gradient;
+- backpropagation through all 63 invocations;
+- scheduled sampling from clean observations, with p annealed from 1 to 0 over the first
+  120 steps.
+
+Each run is warm-started from the C refit CI and trained for 240 steps at batch 16, lr 3e-4,
+in FP32 with BF16-rounded weights and TF32 off. Both checkpoints trained at once under two
+7 GB leases, at 13.6 s/step with a 5.93 GiB peak. The reserved 64 boards were not read during
+training.
+
+Validation, on the 32 WB-Stall boards under the exact scored policy (mean KL over passes 20,
+41 and 62):
+
+| Checkpoint | step 0 | 48 | 96 | 144 | 192 (best) | 240 | CI weights SHA-256 |
+|---|---:|---:|---:|---:|---:|---:|---|
+| gaoxin492 | 5.473 | 2.608 | 1.945 | 1.419 | 1.415 | 1.467 | `e5675fe056d1f8d50a1b4f3a6a6b52377d69ed8d01bce2c942faa7a201c15f99` |
+| yagizdevre | 6.277 | 3.085 | 1.403 | 0.952 | 0.942 | 0.954 | `254e4fca5c1a3707d8af8f003d9bf8cf441a41f539ed630a4628f202c0d321a1` |
+
+### Registered scoring
+
+The scorer and settings match Experiment C: reserved 64, CUDA FP32. The floors are
+identical, so passes 20 and 41 are interpretable on both checkpoints and pass 62 on
+gaoxin492 only.
+
+Mean KL; the parenthesised numbers are summed argmax cell flips out of 5,184. S0–S2 and T1
+do not use the CI and repeat Experiment C exactly.
+
+| Arm | gaoxin p20 | gaoxin p41 | gaoxin p62 | yagiz p20 | yagiz p41 | yagiz p62 (uninterp.) |
+|---|---:|---:|---:|---:|---:|---:|
+| S2 SVD online magnitude | 0.0056 (42) | 0.111 | 0.731 | 1.3e-4 (8) | 0.0164 | 0.120 |
+| T3 refit CI, causal (Experiment C) | 5.428 (4599) | 5.464 | 5.467 | 6.454 (4608) | 6.202 | 6.178 |
+| **T3 closed-loop CI, causal** | **1.484 (2750)** | 1.411 | 1.410 | **0.866 (1860)** | 0.970 | 1.016 |
+| T2 closed-loop CI, clean-informed | 0.236 (230) | 0.207 | 0.127 | 0.149 (353) | 0.105 | 0.311 |
+| T4 closed-loop CI, causal lagged | 25.66 (3212) | 26.54 | 27.37 | 2.820 (2200) | 1.984 | 1.938 |
+| N1 closed-loop CI, continuous, clean-informed | 6.582 | 25.03 | 33.46 | 2.023 | 1.085 | 0.851 |
+| N2 closed-loop CI, continuous, causal | 5.525 | 8.797 | 9.494 | 2.607 | 6.290 | 5.878 |
+
+Registered pass-20 decisions (bootstrap 95% CI; board counts are new arm lower / higher):
+
+| Hypothesis | gaoxin492 | yagizdevre | Decision |
+|---|---|---|---|
+| **H4: T3 closed-loop − T3 refit** | −3.944 [−3.991, −3.898], 64 / 0 | −5.588 [−5.641, −5.535], 64 / 0 | **closed-loop CI better on both** |
+| H1: T3 − T1 | −5.086 [−5.136, −5.034], 64 / 0 | −3.554 [−3.600, −3.508], 64 / 0 | **T3 better on both** |
+| H2: T3 − S2 | +1.478 [+1.453, +1.504], 0 / 64 | +0.866 [+0.841, +0.892], 0 / 64 | **T3 worse on both** |
+| H3: (T3 − T2) − 0.10 · S0 | +1.245 [+1.192, +1.295] | +0.717 [+0.683, +0.752] | non-inferiority not shown |
+
+H4 holds at passes 41 and 62 as well, on every board.
+
+What changed and what did not:
+
+- **Mask drift.** Training the CI on its own rollouts reduces the drift after one masked
+  invocation. T3 vs T2 disagreement at invocation 1 falls to 1.2–2.8% on gaoxin492 and
+  1.1–1.8% on yagizdevre, from 4.2–6.1% and 2.9–3.7%. The rollout no longer collapses.
+- **Remaining damage.** Causal KL falls 3.7× (gaoxin492) and 7.5× (yagizdevre) but stays
+  0.87–1.48. That is 36–53% of cells
+  with a changed argmax at pass 20, against 0.2–0.8% for zero-fit online SVD.
+- **Gap to oracle gating.** The clean-informed use of the same CI (T2) remains 0.7–1.2 nats
+  better than causal use (T3 − T2 = +1.25 and +0.72 at pass 20).
+- **Specialisation.** The CI is now tuned to preflight top-307. Its lagged (T4) and
+  continuous (N1, N2) uses became much worse than in Experiment C: up to 27 nats for T4 on
+  gaoxin492. A CI trained for one observation and selection rule does not transfer to the
+  others.
+
+### Answer to priority 3, updated
+
+Closed-loop training is the right fix for the causal failure, which is confirmed by H4 on
+every board. Even so, trained gates on the stage-4 factors still do not beat untrained SVD
+selection. Causal BPD at top-307 is worse than zero-fit online SVD by 0.87–1.48 nats at
+pass 20 on both checkpoints.
+
+Part of the gap belongs to the factors, not the gate. Magnitude selection on the trained
+factors (T1) is destroyed (4.4–6.6) while the same rule on SVD factors is near-lossless. The
+stage-4 components behave as if they rely on cancellation between kept and dropped terms.
+
+Limits: one seed per checkpoint, 240 steps, and the validation curve flattens after 144
+steps.
 
 ## Registered-gate decisions
 
@@ -356,4 +446,7 @@ The results do not cover a CI trained on its own closed-loop inputs.
 | B4-CAUSAL-CI-01 H2, causal BPD vs zero-fit online SVD | T3 worse on both checkpoints |
 | B4-CAUSAL-CI-01 H3, causal CI non-inferior to clean-informed CI | Not shown |
 | Historical trained-gate receipt 0.0103159 | Not re-evaluable (CI weights deleted before export); clean-informed by construction |
+| B4-CAUSAL-CI-02 H4, closed-loop vs refit CI under causal top-307 | Closed-loop CI better on both checkpoints (−3.94, −5.59 KL at pass 20; 64/64 boards each) |
+| B4-CAUSAL-CI-02 H2, causal BPD vs zero-fit online SVD | T3 worse on both checkpoints (+1.48, +0.87) |
+| B4-CAUSAL-CI-02 H1 / H3 | H1 T3 better than magnitude top-307 on both; H3 not shown |
 | Gate B4 | INCOMPLETE (stages 5a–8c not run; 0.15 final-KL criterion untestable in BF16) |

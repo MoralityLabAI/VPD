@@ -13,6 +13,8 @@ statistics and Markdown tables:
 - Experiment C (when ``gate_b4_causal_ci.json`` holds decisions): registered H1-H3
   decisions, every paired contrast, per-board KL for all arms, causal vs
   clean-informed mask disagreement and CI density.
+- Experiment C2 (when ``gate_b4_causal_ci_closed_loop.json`` holds decisions): the same
+  tables for the closed-loop-trained CI, plus registered H4 (closed-loop vs refit T3).
 
 A readout is interpretable for mechanism classification only when every identity
 arm in that regime has per-board KL <= 1e-5 on all boards at that readout.
@@ -311,6 +313,47 @@ def reduce_causal(rec: dict[str, Any]) -> tuple[dict[str, Any], list[str]]:
     return out, md
 
 
+FIX_SEED = 20261118401
+
+
+def closed_loop_fix_effect(new: dict[str, Any], old: dict[str, Any]) -> tuple[dict[str, Any], list[str]]:
+    """Registered H4 for B4-CAUSAL-CI-02: KL(T3 closed-loop CI) - KL(T3 refit CI), same boards."""
+    if new["eval_board_indices"] != old["eval_board_indices"]:
+        raise ValueError("closed-loop and refit receipts score different boards")
+    out: dict[str, Any] = {"by_checkpoint": {}}
+    md = ["\nH4, closed-loop vs clean-trajectory CI under causal top-307 gating "
+          "(KL(T3 new) - KL(T3 refit); bootstrap 95% CI, 20,000 resamples, seed 20261118401):\n",
+          "| Checkpoint | Readout | mean | 95% CI | boards new lower / higher | interpretable |",
+          "|---|---|---:|---|---|---|"]
+    for ck in new["checkpoints"]:
+        rng = np.random.default_rng(FIX_SEED)
+        rows = {}
+        for t in READOUTS:
+            d = (np.array(new["checkpoints"][ck]["arms"]["T3"][f"pass_{t}"]["kl64"], dtype=np.float64)
+                 - np.array(old["checkpoints"][ck]["arms"]["T3"][f"pass_{t}"]["kl64"], dtype=np.float64))
+            boots = d[rng.integers(0, d.size, size=(N_BOOT, d.size))].mean(axis=1)
+            interp = bool(new["decisions"]["by_checkpoint"][ck][f"pass_{t}"]["interpretable"]
+                          and old["decisions"]["by_checkpoint"][ck][f"pass_{t}"]["interpretable"])
+            rows[f"pass_{t}"] = {"mean": float(d.mean()), "lower_2_5": float(np.quantile(boots, 0.025)),
+                                 "upper_97_5": float(np.quantile(boots, 0.975)), "n_negative": int((d < 0).sum()),
+                                 "n_positive": int((d > 0).sum()), "interpretable": interp,
+                                 "per_board": d.tolist()}
+            r = rows[f"pass_{t}"]
+            md.append(f"| {ck} | {t} | {fmt(r['mean'])} | [{fmt(r['lower_2_5'])}, {fmt(r['upper_97_5'])}]"
+                      f" | {r['n_negative']} / {r['n_positive']} | {'yes' if interp else 'no'} |")
+        out["by_checkpoint"][ck] = rows
+    p20 = [out["by_checkpoint"][ck]["pass_20"] for ck in out["by_checkpoint"]]
+    if all(r["interpretable"] and r["upper_97_5"] < 0 for r in p20):
+        verdict = "closed-loop CI better (upper bound < 0 on both checkpoints)"
+    elif all(r["interpretable"] and r["lower_2_5"] > 0 for r in p20):
+        verdict = "closed-loop CI worse (lower bound > 0 on both checkpoints)"
+    else:
+        verdict = "inconclusive"
+    out["H4_registered_pass20_decision"] = verdict
+    md.append(f"\nH4 registered pass-20 decision: **{verdict}**")
+    return out, md
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     base = Path("mechinterp/bpd/results/v2")
@@ -319,6 +362,7 @@ def main() -> int:
     ap.add_argument("--online-bf16", type=Path, default=base / "gate_b4_v2_online_svd.json")
     ap.add_argument("--online-fp32", type=Path, default=base / "gate_b4_v2_online_svd_cuda_fp32.json")
     ap.add_argument("--causal-ci", type=Path, default=base / "gate_b4_causal_ci.json")
+    ap.add_argument("--causal-ci-closed-loop", type=Path, default=base / "gate_b4_causal_ci_closed_loop.json")
     ap.add_argument("--out-json", type=Path, default=base / "bpd01_summary.json")
     ap.add_argument("--out-md", type=Path, default=base / "bpd01_tables.md")
     args = ap.parse_args()
@@ -358,6 +402,15 @@ def main() -> int:
             c_out, c_md = reduce_causal(crec)
             summary["experiment_C"] = c_out
             md += ["", "## Experiment C: refit CI, clean-informed vs causal gating (B4-CAUSAL-CI-01)"] + c_md
+            if args.causal_ci_closed_loop.exists():
+                c2 = json.loads(args.causal_ci_closed_loop.read_text(encoding="utf-8"))
+                if "decisions" in c2:
+                    c2_out, c2_md = reduce_causal(c2)
+                    fx, fx_md = closed_loop_fix_effect(c2, crec)
+                    c2_out["H4_closed_loop_vs_refit"] = fx
+                    summary["experiment_C2"] = c2_out
+                    md += ["", "## Experiment C2: closed-loop-trained CI under causal gating (B4-CAUSAL-CI-02)"]
+                    md += fx_md + c2_md
 
     args.out_json.write_text(json.dumps(summary, indent=1) + "\n", encoding="utf-8")
     args.out_md.write_text("\n".join(md) + "\n", encoding="utf-8")
